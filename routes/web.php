@@ -51,9 +51,13 @@ Route::get('Admin/Project', function(){
 
 //Route::get('Engineer/Accounts-Settings', 'PagesController@home1');
 
-//Route::get('Engineer/Actuals', 'PagesController@home1');
+Route::get('Engineer/Actuals', function(){
+    return view('Engineer/actuals');
+});
 
-//Route::get('Engineer/Cost-Estimation', 'PagesController@home1');
+Route::get('Engineer/Cost-Estimation', function(){
+    return view('Engineer/cost-estimation');
+});
 
 //Route::get('Engineer/Cost-Summary', 'PagesController@home1');
 
