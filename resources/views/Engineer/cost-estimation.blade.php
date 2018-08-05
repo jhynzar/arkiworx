@@ -1005,7 +1005,7 @@
                         
                 <div class="form-inline"> <br> 
                         
-                        <div class="form-group" style="margin-left: 100px">
+                        <div class="form-group" style="margin-left: 20px">
     <label for="showProject" class="text text-muted">Show</label>
       <select class="form-control"  name="sex" id="userType" style="width: 70px; height: 35px !important;">
         <option selected> 50  </option>
@@ -1042,10 +1042,7 @@
                 
                 
                 
-                <!-- Add Actuals Modal Button trigger-->
-                <div class="col-sm-3 pull-right">
-                    <br> <br> <button type="button" data-toggle="modal" data-target="#addActuals" class="btn btn-success waves-effect waves-light" style="margin-left: 10px; margin-top: 50px"> <i class="icon-plus"> </i>Actual Entry</button>
-                    </div> 
+               
                 
                 
              
@@ -1055,136 +1052,148 @@
 
             <!-- Tables start -->
             <!-- Row start -->
-            <div class="row">
-                <div class="col-sm-11 " style="margin-left: 50px;">
-              
- 
-                    <!-- Contextual classes table starts -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-header-text">Actuals List</h5>
+          
+                        
+                                  <div class="row">
+  
+
+                <!-- start col-lg-9 -->
+                <div class="col-xl-12 col-lg-12">
+                    <!-- Nav tabs -->
+                  
+                    <!-- end of tab-header -->
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="personal" role="tabpanel">
+                        
+                           
+                            
+                            
+                           <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-header-text">Pending Cost Estimations</h5>
+                                    
+                                </div>
+                                <!-- end of card-header  -->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="project-table">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                    <tr >
+                                                        <th class="text-center txt-primary pro-pic">Line Item</th>
+                                                        <th class="text-center txt-primary">Client</th>
+                                                        <th class="text-center txt-primary pro-pic">Project Name</th>                             
+                                                        <th class="text-center txt-primary">Action</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="text-center">
+                                                    <tr class="table-info">
+                                                         <td>01</td>
+                                                        <td>
+                                                            <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                        </td>
+                                                         <td>Soriano Residence</td>
+                                                      
+
+                                                   
+                                                        <td class="faq-table-btn">
+                                                              
+                                                           <a href="#" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Approve"><i class="icofont icofont-ui-edit"></i> Create Estimation </a>
+                             
+                                                               
+                                                        </td>
+                                                         
+                                                    </tr>
+                                                        
+                                                        
+                                                    <tr >
+                                                         <td>02</td>
+                                                        <td>
+                                                            <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
+                                                        </td>
+                                                         <td>Soriano Residence</td>
+                                                          
+
+                                                   
+                                                        <td class="faq-table-btn">
+                                                             <a href="#" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Approve"><i class="icofont icofont-ui-edit"></i> Create Estimation </a>
+                                                        </td>
+                                                      
+                                                    </tr>
+                                                        
+                                                        <tr class="table-info">
+                                                         <td>03</td>
+                                                        <td>
+                                                            <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
+                                                        </td>
+                                                         <td>Tapiru Residence</td>
+                                                      
+
+                                                   
+                                                        <td class="faq-table-btn">
+                                                            <a href="#" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Approve"><i class="icofont icofont-ui-edit"></i> Create Estimation </a>
+                                                        </td>
+                                                      
+                                                    </tr>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <tr >
+                                                         <td>04</td>
+                                                        <td>
+                                                            <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
+                                                        </td>
+                                                         <td>Dela Pena Residence</td>
+                                                
+
+                                                   
+                                                        <td class="faq-table-btn">
+                                                           <a href="#" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Approve"><i class="icofont icofont-ui-edit"></i> Create Estimation </a>
+                                                        </td>
+                                                      
+                                                    </tr>
+                                                   
+                                                    </tbody>
+                                                </table>
+                                                <!-- end of table -->
+                                            </div>
+                                            <!-- end of table responsive -->
+                                        </div>
+                                        <!-- end of project table -->
+                                    </div>
+                                    <!-- end of col-lg-12 -->
+                                </div>
+                                <!-- end of row -->
+                            </div> 
+                            
+                            
+                            
                             
                         </div>
-                        <div class="card-block">
-                            <div class="row">
-                                <div class="col-sm-12 table-responsive"> 
-                                    <table class="table table-hover "  >
-                                        <thead>
-                                        <tr >
-                                            <th style="color: black">#</th>
-                                            <th style="color: black">Description</th>
-                                            <th style="color: black">Amount</th>
-                                            <th style="color: black">Date</th>
-                                            <th><span class="text text-danger"> Action</span></th>
-                                            <th></th>
-                                            
-                                            
-                                           
-                                            
-                                            
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="table-warning">
-                                            <td>1</td>
-                                            <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
-                                           
-                                          
-                                         
-                                  
-                                            
-                 
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                           <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
-                                           
-                                        <tr class="table-info">
-                                           <td>3</td>
-                                          <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                           <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
-                                            
-                                        <tr>
-                                           <td>4</td>
-                                           <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
-                                            
-                                        <tr class="table-danger">
-                                           <td>5</td>
-                                          <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                           <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
-                                          
-                                        <tr>
-                                           <td>6</td>
-                                           <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                           <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
-                                            
-                                        </tr>
-                                        <tr class="table-warning">
-                                           <td>7</td>
-                                           <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
-                                        </tr>
-                                        <tr>
-                                           <td>8</td>
-                                            <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
-                                            
-                                        </tr>
-                                        <tr class="table-info">
-                                           <td>9</td>
-                                          <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                           <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
-                                        </tr>
-                                            
-                                             <tr class="table-warning">
-                                           <td>10</td>
-                                            <td>Cement</td>
-                                            <td>100.00</td>
-                                            <td>August-07-2018</td>
-                                            <td> <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button> </td>
-                                                 <td> <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light "> <span style="color: dimgray">Audit Trail</span></button> </td>
+                        <!-- end of tab-pane -->
+                        <!-- end of about us tab-pane -->
 
-                                        </tbody>
-                                    </table>
+                        <!-- start tab-pane of project tab -->
+                        <div class="tab-pane" id="project" role="tabpanel">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-header-text">Project List</h5>
+                                   
                                 </div>
-                            </div>
+                                <!-- end of card-header  -->
+      
+                            <!-- end of card-main -->
                         </div>
-                    </div>
-                    <!-- Contextual classes table ends -->
+                        <!-- end of project pane -->
 
-         
+
+                    </div>
+                    <!-- end of main tab content -->
                 </div>
-            </div>
+          
             <!-- Row end -->
             <!-- Tables end -->
         </div>
