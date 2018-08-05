@@ -47,11 +47,11 @@ class LoginController extends Controller
                 if($passw===$pass){
                     if($type==='Admin'){
                         //welcome page for admin
-                        header("Refresh:0;Admin/home");
+                        header("Refresh:0;Admin/Home");
                     }
                     else if($type==='Engineer'){
                         //welcome page for engi
-                        return 'Engi';
+                        header("Refresh:0;Engineer/Home");
                     }
                     else if($type==='Client'){
                         //welcome page for client

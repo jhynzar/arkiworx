@@ -23,7 +23,7 @@ Route::get('Forgot-Password', 'LoginController@forgotPass');
 
 //Admin di pa maayos ung ibang controllers at methods
 
-Route::get('Admin/home', 'PagesController@home1');
+Route::get('Admin/Home', 'PagesController@home1');
 
 Route::get('Admin/Accounts', 'AccountsController@accounts');
 
@@ -55,9 +55,11 @@ Route::get('Admin/Add-User', 'AccountsController@addusers');
 
 //Route::get('Engineer/Cost-Summary', 'PagesController@home1');
 
-//Route::get('Engineer/Home', 'PagesController@home1');
+Route::get('Engineer/Home', function(){
+    return view('Engineer/engi-home');
+});
 
-//Route::get('Engineer/Materials-Pricelist', 'PagesController@home1');
+Route::get('Engineer/Materials-Pricelist', 'MaterialsController@index');
 
 //Route::get('Engineer/Project-Progress', 'PagesController@home1');
 
