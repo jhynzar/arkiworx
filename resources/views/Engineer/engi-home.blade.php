@@ -163,7 +163,7 @@
                         <li class="dropdown">
                             <a href="accountsettings" >
                                 <span><img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image"></span>
-                                <span><b>Erwin</b>Andres</span>
+                                <span><b>Juliamar</b>Soriano</span>
 
                             </a>
                          
@@ -336,7 +336,7 @@
                         <h2 class="dashboard-total-products"><span class="counter">1</span></h2>
                         <span class="label label-danger">Assignment</span>This week
                         <div class="side-box bg-danger">
-                            <i class="icon-bubbles"></i>
+                            <i class="icon-calculator"></i>
                         </div>
                     </div>
                 </div>
@@ -352,7 +352,7 @@
                         <h2 class="dashboard-total-products"><span class="counter">58</span></h2>
                         <span class="label label-success">Completed</span>
                         <div class="side-box bg-success">
-                            <i class="icon-bubbles"></i>
+                            <i class="icon-layers"></i>
                         </div>
                     </div>
                 </div>
@@ -366,7 +366,7 @@
                         <h2 class="dashboard-total-products counter">3</h2>
                         <span class="label label-primary">Updates</span>
                         <div class="side-box bg-primary">
-                            <i class="icon-social-soundcloud"></i>
+                            <i class="icon-map"></i>
                         </div>
                     </div>
                 </div>
@@ -379,7 +379,7 @@
                         <h2 class="dashboard-total-products counter">38</h2>
                         <span class="label label-warning">Updates</span>This week
                         <div class="side-box bg-warning">
-                            <i class="icon-social-soundcloud"></i>
+                            <i class="icon-note"></i>
                         </div>
                     </div>
                 </div>
@@ -398,7 +398,7 @@
         <div class="card" >
             <div class="user-block-2">
                 <img class="img-fluid" src="../assets/images/avatar-1.png" alt="user-header">
-                <h5>Erwin Andres</h5>
+                <h5>Juliamar Soriano</h5>
                 <h6>Engineer</h6>
             </div>
             <div class="card-block">

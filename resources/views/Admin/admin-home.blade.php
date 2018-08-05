@@ -456,7 +456,7 @@
                         <h2 class="dashboard-total-products"><span class="counter">238</span></h2>
                         <span class="label label-success">Completed</span>
                         <div class="side-box bg-success">
-                            <i class="icon-bubbles"></i>
+                            <i class="icon-chart"></i>
                         </div>
                     </div>
                 </div>
@@ -472,7 +472,7 @@
                         <h2 class="dashboard-total-products">₱ <span class="counter">1,864,284.0</span></h2>
                         <i class="icon-arrow-up-circle"></i> This year
                         <div class="side-box bg-danger">
-                            <i class="icon-bubbles"></i>
+                            <i class="icon-briefcase"></i>
                         </div>
                     </div>
                 </div>
@@ -493,7 +493,7 @@
                         <h2 class="dashboard-total-products counter">3</h2>
                         <span class="label label-primary">Updates</span>
                         <div class="side-box bg-primary">
-                            <i class="icon-social-soundcloud"></i>
+                            <i class="icon-organization"></i>
                         </div>
                     </div>
                 </div>
@@ -506,7 +506,7 @@
                         <h2 class="dashboard-total-products counter">38</h2>
                         <span class="label label-warning">Updates</span>This week
                         <div class="side-box bg-warning">
-                            <i class="icon-social-soundcloud"></i>
+                            <i class="icon-note"></i>
                         </div>
                     </div>
                 </div>
