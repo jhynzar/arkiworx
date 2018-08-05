@@ -15,7 +15,30 @@ class MaterialsController extends Controller
     public function index()
     {
         //
-        return view('Engineer/materials-pricelist');
+
+        //latest dates
+        $latestDates = DB::table('tblprice')
+                    ->select('intMaterialId', DB::raw('MAX(dtmPriceAsOf) as latestDates'))
+                    ->groupBy('intMaterialId');
+
+        //latest prices
+        $latestPrices = DB::table('tblprice')
+                    ->joinSub($latestDates,'latestDates',function($join){
+                        $join->on('tblprice.dtmPriceAsOf','=','latestDates.latestDates');
+                    })
+                    ->select('intPrice','tblprice.intMaterialId','tblprice.dtmPriceAsOf');
+
+        //materials
+        $materials = DB::table('tblmaterials')
+                    ->joinSub($latestPrices,'latestPrices',function($join){
+                        $join->on('tblmaterials.intMaterialId','=','latestPrices.intMaterialId');
+                    })
+                    ->get();
+
+        //dd($materials);
+        return view('Engineer/materials-pricelist')->with('materials',$materials);
+
+
     }
 
     /**

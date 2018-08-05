@@ -427,104 +427,21 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr class="table-warning">
-                                            <td>1</td>
-                                            <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
-                                          
-                                         
-                                  
-                                            
-                 
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
-                                           
-                                        <tr class="table-info">
-                                           <td>3</td>
-                                           <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
-                                           
-                                        <tr>
-                                           <td>4</td>
-                                            <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
-                                            
-                                        <tr class="table-danger">
-                                           <td>5</td>
-                                           <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
-                                          
-                                        <tr>
-                                           <td>6</td>
-                                           <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
-                                            
-                                        </tr>
-                                        <tr class="table-warning">
-                                           <td>7</td>
-                                           <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
-                                        </tr>
-                                        <tr>
-                                           <td>8</td>
-                                            <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
-                                            
-                                        </tr>
-                                        <tr class="table-info">
-                                           <td>9</td>
-                                           <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
-                                        </tr>
-                                            
-                                             <tr class="table-warning">
-                                           <td>10</td>
-                                            <td>Cement</td>
-                                            <td>1</td>
-                                            <td>bag</td>
-                                            <td>150</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label label-warning">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light "> <span style="color: dimgray">View Price History</span></button> </td>
 
+                                        @foreach ($materials as $key=>$material)
+                                        <tr class=@if (($key+1)%2==0)
+                                                    "table-active" 
+                                                  @endif>
+                                            <td>{{ $key+1 }}</td>
+                                            <td>{{ $material->strMaterialName}}</td>
+                                            <td>1</td>
+                                            <td>{{ $material->strUnit}}</td>
+                                            <td>{{ $material->intPrice}}</td>
+                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label btn-info">Update Price</button> </td>
+                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label btn-warning "> View Price History</button> </td>
+                                        </tr>
+                                        @endforeach
+                                        
                                         </tbody>
                                     </table>
                                 </div>
