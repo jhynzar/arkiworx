@@ -27,7 +27,7 @@
                 <li class="dropdown">
                     <a href="accountsettings" >
                         <span><img class="img-circle " src="/assets/images/avatar-1.jpg" style="width:40px;" alt="User Image"></span>
-                        <span><b>Erwin</b>Andres</span>
+                        <span><b>Juliamar</b>Tapiru</span>
 
                     </a>
                  

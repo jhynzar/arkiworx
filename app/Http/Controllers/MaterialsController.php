@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MaterialsController extends Controller
 {
@@ -25,6 +26,7 @@ class MaterialsController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**
@@ -36,6 +38,19 @@ class MaterialsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $req = request()->all();
+        //dd($req);
+
+        DB::table('tblmaterials')->insertGetId(
+            [
+                'strMaterialName' => $req['materialDesc'],
+                'intMeasurement' => $req['materialPrice'],
+                'strUnit' => $req['materialUnit']
+            ]
+        );
+
+        dd(request()->all());
     }
 
     /**

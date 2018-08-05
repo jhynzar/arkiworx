@@ -83,33 +83,30 @@
                 
           
           
-        <form action="/action_page.php">
-    
-                                        <label class="text text-muted" style="margin-left: 450px"> <i>07 August 2018</i></label> <!-- current date -->
-  <br> 
+        <form action="Materials-Pricelist/Create" method="POST" >
+        {{ csrf_field() }}
+            <label class="text text-muted" style="margin-left: 450px"> <i>07 August 2018</i></label> <!-- current date -->
+            <br> 
             <div class="form-group">
-    <label for="materialDesc">Description:</label>
-    <input type="text" class="form-control" id="materialDesc" >
-  </div>
+                <label for="materialDesc">Description:</label>
+                <input type="text" class="form-control" id="materialDesc" name="materialDesc">
+            </div>
             <br>
             <div class="form-group form-inline">
-    <label for="materialQty">Quantity:</label>
-    <input type="number" class="form-control" id="materialQty" style="width: 150px !important;" placeholder="Select quantity">
-             <label for="materialUnit"  placeholder="Enter Unit">Unit:</label>
-    <input type="type" class="form-control" id="materialUnit" style="width: 130px !important;" placeholder="Enter Unit">
+                <label for="materialUnit"  placeholder="Enter Unit">Unit:</label>
+                <input type="type" class="form-control" id="materialUnit" name="materialUnit" style="width: 130px !important;" placeholder="Enter Unit">
                 <label for="materialPrice"  >Price:</label>
-    <input type="type" class="form-control" id="materialPrice" style="width: 130px !important;" placeholder="Enter Price">
-  </div>
+                <input type="type" class="form-control" id="materialPrice" name="materialPrice" style="width: 130px !important;" placeholder="Enter Price">
+            </div>
             
           
             
             <div class="modal-footer">
-        <hr>
-         <button type="submit" class="btn btn-success" data-dismiss="modal"><i class="icon icon-check"> </i>Add Material</button>
-        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px"><i class="icon icon-close" > </i>Cancel</button>
-       
-      </div>
-</form>
+                <hr>
+                <button type="submit" class="btn btn-success"><i class="icon icon-check"> </i>Add Material</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px"><i class="icon icon-close" > </i>Cancel</button>
+            </div>
+    </form>
          
           
       </div>

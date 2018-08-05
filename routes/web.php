@@ -61,6 +61,8 @@ Route::get('Engineer/Home', function(){
 
 Route::get('Engineer/Materials-Pricelist', 'MaterialsController@index');
 
+Route::post('Engineer/Materials-Pricelist/Create', 'MaterialsController@store');
+
 //Route::get('Engineer/Project-Progress', 'PagesController@home1');
 
 //Client
