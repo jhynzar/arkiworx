@@ -32,7 +32,7 @@
                 <ul class="sidebar-menu">
                     <li class="nav-level"><span style="color: #939393"><i>Navigation</i></span></li>
                     <li class=" treeview">
-                        <a class="waves-effect waves-dark" href="index">
+                        <a class="waves-effect waves-dark" href="../../Engineer/Home">
                             <i class="icon-speedometer"></i><span> Dashboard</span>
                         </a>                
                     </li>
@@ -40,9 +40,9 @@
                     
                    <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span> Cost</span><i class="icon-arrow-down"></i></a>
                         <ul class="treeview-menu">
-                            <li ><a class="waves-effect waves-dark" href="cost%20summary"><i class="icon-arrow-right"></i> Cost Summary</a></li>
-                            <li  ><a class="waves-effect waves-dark" href="cost%20estimation"><i class="icon-arrow-right"></i> Cost Estimation</a></li>
-                            <li><a class="waves-effect waves-dark" href="actuals"><i class="icon-arrow-right"></i> Actuals</a></li>
+                            <li ><a class="waves-effect waves-dark" href="../../Engineer/Cost-Summary"><i class="icon-arrow-right"></i> Cost Summary</a></li>
+                            <li  ><a class="waves-effect waves-dark" href="../../Engineer/Cost-Estimation"><i class="icon-arrow-right"></i> Cost Estimation</a></li>
+                            <li><a class="waves-effect waves-dark" href="../../Engineer/Actuals"><i class="icon-arrow-right"></i> Actuals</a></li>
                         </ul>
                     </li>
                     
@@ -62,7 +62,7 @@
                     
                     
                     <li class="treeview">
-                        <a class="waves-effect waves-dark" href="projectprogress">
+                        <a class="waves-effect waves-dark" href="../../Engineer/Project-Progress">
                             <i class="icon-chart"></i><span> Project Plan</span>
                         </a>                
                     </li>
@@ -80,7 +80,7 @@
                     </li>
                     
                     <li class="treeview">
-                        <a class="waves-effect waves-dark" href="accountsettings">
+                        <a class="waves-effect waves-dark" href="../../Engineer/Accounts-Settings">
                             <i class="icon-people"></i><span> Account Setting</span>
                         </a>                
                     </li>
