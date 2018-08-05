@@ -21,9 +21,9 @@
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
     <!--tabs-->
-    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> 
      <script src="/js/jquery.min.js"></script>
-     <script src="/js/bootstrap.min.js"></script>
+     <script src="/js/bootstrap.min.js"></script> -->
 
      <!-- Google font-->
      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">

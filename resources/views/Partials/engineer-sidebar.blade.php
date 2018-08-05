@@ -5,7 +5,7 @@
                 <div class="user-panel"> <br> <br> <br> 
                     <div class="f-left image"><img src="../assets/images/avatar-1.jpg" alt="User Image" class="img-circle"></div>
                     <div class="f-left info"> <br> <br>
-                        <p>Juliamar Tapiru</p>
+                        <p><b>Juliamar<b> K</p>
                         <p class="designation" ><span class="text-info"><span style="color: white">More</span></span><i class="icofont icofont-caret-down m-l-5" style="color: white"></i></p>
                     </div>
                 </div>

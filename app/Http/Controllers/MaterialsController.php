@@ -42,11 +42,17 @@ class MaterialsController extends Controller
         $req = request()->all();
         //dd($req);
 
-        DB::table('tblmaterials')->insertGetId(
+        $id = DB::table('tblmaterials')->insertGetId(
             [
                 'strMaterialName' => $req['materialDesc'],
-                'intMeasurement' => $req['materialPrice'],
                 'strUnit' => $req['materialUnit']
+            ]
+        );
+
+        DB::table('tblprice')->insertGetId(
+            [
+                'intPrice' => $req['materialPrice'],
+                'intMaterialId' => $id
             ]
         );
 
