@@ -17,9 +17,7 @@
      <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
      <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
      <!-- Google font-->
      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -345,29 +343,13 @@
         </aside>
        
      <!--tabs-->
-     
-       <div class="container" style="position: absolute; margin-top: 43px; margin-left: 220px">
- 
-  <ul class="nav nav-tabs" style="background-color: #f2f2f2"> 
-      
-     
-  
-    <li ><a href="Admin/home">Dashboard</a></li>
-   <li class="active"><a href="project">Project</a></li>
-      <li><a href="cost%20summary">Cost</a></li>
-      <li><a href="Admin/Project-Progress">Project Plan</a></li>
-      <li><a href="Admin/Calendar">Calendar</a></li>
-      <li><a href="Admin/Inbox">Inbox</a></li>
-      <li><a href="Admin/Accounts">Accounts</a></li>
-      
-  </ul>
-</div>
+   
      
      
      
      
      
-    <div class="content-wrapper" style="margin-top: 90px">  
+    <div class="content-wrapper" style="margin-top: 50px">  
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 
@@ -439,7 +421,7 @@
                 
                 <!-- Add User Modal Button trigger-->
                 <div class="col-sm-3 pull-right">
-                    <br> <br> <button type="button" data-toggle="modal" data-target="#addProject" class="btn btn-success waves-effect waves-light" style="margin-left: 45px; margin-top: 50px"> <i class="icon-plus"> </i>Add Project</button>
+                    <br> <br> <button type="button" data-toggle="modal" data-target="#addProject" class="btn btn-primary waves-effect waves-light" style="margin-left: 45px; margin-top: 50px"> + Add Project</button>
                     </div> 
              
                 
@@ -448,30 +430,206 @@
 
             <!-- Tables start -->
             <!-- Row start -->
+            
+            
             <div class="row">
                 <div class="col-sm-12">
               
  
                     <!-- Contextual classes table starts -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-header-text">Project List</h5>
+                   
+                        
+                        
+                        
+                        
+                        
+                        
+                                  <div class="row">
+  
+
+                <!-- start col-lg-9 -->
+                <div class="col-xl-12 col-lg-12">
+                    <!-- Nav tabs -->
+                    <div class="tab-header">
+                        <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">Pending Projects</a>
+                                <div class="slide"></div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#project" role="tab">On-Going Projects</a>
+                                <div class="slide"></div>
+                            </li>
+                           
+                            
+                        </ul>
+                    </div>
+                    <!-- end of tab-header -->
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="personal" role="tabpanel">
+                        
+                           
+                            
+                            
+                           <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-header-text">Project Cost Estimation</h5>
+                                    
+                                </div>
+                                <!-- end of card-header  -->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="project-table">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center txt-primary pro-pic">Line Item</th>
+                                                        <th class="text-center txt-primary">Client</th>
+                                                        <th class="text-center txt-primary pro-pic">Project Name</th>                             <th class="text-center txt-primary">Status</th>
+                                                        <th class="text-center txt-primary">Action</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="text-center">
+                                                    <tr>
+                                                         <td>01</td>
+                                                        <td>
+                                                            <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                        </td>
+                                                         <td>Soriano Residence</td>
+                                                        <td class="text-center"><span class="label label-success">Finished</span>
+
+                                                   
+                                                        <td class="faq-table-btn">
+                                                            <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                                                <i class="icofont icofont-eye-alt"></i>
+                                                            </button>
+                                                            
+                                                           <button type="button" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Approve"><i class="icon icon-check"></i>  </button>
+                                                            
+                                                           
+                                                            
+                                                            <button type="button" data-toggle="modal" data-target="#deletePendingProject" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"><i class="icofont icofont-ui-delete"></i>  </button>
+                                                               
+                                                        </td>
+                                                         
+                                                    </tr>
+                                                        
+                                                        
+                                                    <tr>
+                                                         <td>02</td>
+                                                        <td>
+                                                            <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
+                                                        </td>
+                                                         <td>Soriano Residence</td>
+                                                               <td class="text-center"><span class="label label-warning">Pending</span></td>
+
+                                                   
+                                                        <td class="faq-table-btn">
+                                                            <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                                                <i class="icofont icofont-eye-alt"></i>
+                                                            </button>
+                                                            
+                                                           <button type="button" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Approve"><i class="icon icon-check"></i>  </button>
+                                                            
+                                                           
+                                                            
+                                                            <button type="button" data-toggle="modal" data-target="#deletePendingProject" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"><i class="icofont icofont-ui-delete"></i>  </button>
+                                                        </td>
+                                                      
+                                                    </tr>
+                                                        
+                                                        <tr>
+                                                         <td>03</td>
+                                                        <td>
+                                                            <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
+                                                        </td>
+                                                         <td>Tapiru Residence</td>
+                                                         <td class="text-center"><span class="label label-warning">Pending</span></td>
+
+                                                   
+                                                        <td class="faq-table-btn">
+                                                            <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                                                <i class="icofont icofont-eye-alt"></i>
+                                                            </button>
+                                             
+                                                            <button type="button" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Approve"><i class="icon icon-check"></i>  </button>
+                                                            
+                                                           
+                                                            
+                                                            <button type="button" data-toggle="modal" data-target="#deletePendingProject" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"><i class="icofont icofont-ui-delete"></i>  </button>
+                                                        </td>
+                                                      
+                                                    </tr>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <tr>
+                                                         <td>04</td>
+                                                        <td>
+                                                            <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
+                                                        </td>
+                                                         <td>Dela Pena Residence</td>
+                                                         <td class="text-center"><span class="label label-warning">Pending</span></td>
+
+                                                   
+                                                        <td class="faq-table-btn">
+                                                            <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
+                                                                <i class="icofont icofont-eye-alt"></i>
+                                                            </button>
+                                             
+                                                            <button type="button" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Approve"><i class="icon icon-check"></i>  </button>
+                                                            
+                                                           
+                                                            
+                                                            <button type="button" data-toggle="modal" data-target="#deletePendingProject" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"><i class="icofont icofont-ui-delete"></i>  </button>
+                                                        </td>
+                                                      
+                                                    </tr>
+                                                   
+                                                    </tbody>
+                                                </table>
+                                                <!-- end of table -->
+                                            </div>
+                                            <!-- end of table responsive -->
+                                        </div>
+                                        <!-- end of project table -->
+                                    </div>
+                                    <!-- end of col-lg-12 -->
+                                </div>
+                                <!-- end of row -->
+                            </div> 
+                            
+                            
+                            
                             
                         </div>
-                        
-                              <!-- Row start -->
+                        <!-- end of tab-pane -->
+                        <!-- end of about us tab-pane -->
+
+                        <!-- start tab-pane of project tab -->
+                        <div class="tab-pane" id="project" role="tabpanel">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-header-text">Project List</h5>
+                                   
+                                </div>
+                                <!-- end of card-header  -->
+                               <!-- Row start -->
             <div class="row">
     <div class="col-xl-12 col-lg-12">
-        <div class="card">
+        
             <div class="card-block">
                 <div class="table-responsive">
                     <table class="table m-b-0 photo-table">
                         <thead>
                             <tr class="text-uppercase">
                                 <th>Line Item</th>
-                                <th>Project</th>
-                                <th>Client</th>
-                                <th>Status</th>
+                                 <th>Client</th>
+                                <th>Project</th>                          
+                                <th>Progress</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -479,16 +637,19 @@
                             
                             <tr>
                                 <th> 1 </th>
+                                <td>
+                                    <img class="img-fluid img-circle" src="../assets/images/avatar-4.png" alt="User">
+                                </td>
                                 
                                 <td>Appestia Project
                                     <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
                                 </td>
                                 
-                                <td>
-                                    <img class="img-fluid img-circle" src="../assets/images/avatar-4.png" alt="User">
-                                </td>
                                 
-                                <td>70%</td>
+                                
+                           <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 70% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -496,16 +657,19 @@
                             
                             <tr>
                                 <th> 2 </th>
+                                 <td>
+                                    <img class="img-fluid img-circle" src="../assets/images/avatar-2.png" alt="User">
+                                </td>
                                 
                                 <td>Reyes Residence
                                     <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
                                 </td>
                                 
-                                <td>
-                                    <img class="img-fluid img-circle" src="../assets/images/avatar-2.png" alt="User">
-                                </td>
+                               
                                 
-                                <td>85%</td>
+                                <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 85% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -513,15 +677,19 @@
                             <tr>
                                 <th> 3 </th>
                                 
-                                <td>Soriano Residence
-                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                </td>
-                                
                                 <td>
                                    <img class="img-fluid img-circle" src="../assets/images/avatar-1.png" alt="User">
                                 </td>
                                 
-                                <td>85%</td>
+                                <td>Soriano Residence
+                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
+                                </td>
+                                
+                                
+                                
+                                <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 30% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -529,15 +697,19 @@
                             <tr>
                                 <th> 4 </th>
                                 
-                                <td>Belife Project 
-                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                </td>
-                                
                                 <td>
                                    <img class="img-fluid img-circle" src="../assets/images/avatar-3.png" alt="User">
                                 </td>
                                 
-                                <td>65%</td>
+                                <td>Belife Project 
+                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
+                                </td>
+                                
+                                
+                                
+                                <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 65% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -545,15 +717,19 @@
                             <tr>
                                 <th> 5 </th>
                                 
-                                <td>Cthulhu Project 
-                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                </td>
-                                
                                 <td>
                                    <img class="img-fluid img-circle" src="../assets/images/avatar-5.png" alt="User">
                                 </td>
                                 
-                                <td>90%</td>
+                                <td>Cthulhu Project 
+                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
+                                </td>
+                                
+                                
+                                
+                               <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 90% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -562,15 +738,19 @@
                             <tr>
                                 <th> 6 </th>
                                 
-                                <td>Appestia Project
-                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                </td>
-                                
                                 <td>
                                     <img class="img-fluid img-circle" src="../assets/images/avatar-4.png" alt="User">
                                 </td>
                                 
-                                <td>70%</td>
+                                <td>Appestia Project
+                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
+                                </td>
+                                
+                                
+                                
+                                <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 70% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -579,15 +759,19 @@
                             <tr>
                                 <th> 7 </th>
                                 
-                                <td>Reyes Residence
-                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                </td>
-                                
                                 <td>
                                     <img class="img-fluid img-circle" src="../assets/images/avatar-2.png" alt="User">
                                 </td>
                                 
-                                <td>85%</td>
+                                <td>Reyes Residence
+                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
+                                </td>
+                                
+                                
+                                
+                                <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 80% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -595,15 +779,19 @@
                             <tr>
                                 <th> 8 </th>
                                 
-                                <td>Soriano Residence
-                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                </td>
-                                
                                 <td>
                                    <img class="img-fluid img-circle" src="../assets/images/avatar-1.png" alt="User">
                                 </td>
                                 
-                                <td>85%</td>
+                                <td>Soriano Residence
+                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
+                                </td>
+                                
+                                
+                                
+                                <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 70% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -611,15 +799,19 @@
                             <tr>
                                 <th> 9 </th>
                                 
-                                <td>Belife Project 
-                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                </td>
-                                
                                 <td>
                                    <img class="img-fluid img-circle" src="../assets/images/avatar-3.png" alt="User">
                                 </td>
                                 
-                                <td>65%</td>
+                                <td>Belife Project 
+                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
+                                </td>
+                                
+                                
+                                
+                                <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 65% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -627,15 +819,19 @@
                             <tr>
                                 <th> 10 </th>
                                 
-                                <td>Cthulhu Project 
-                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                </td>
-                                
                                 <td>
                                    <img class="img-fluid img-circle" src="../assets/images/avatar-5.png" alt="User">
                                 </td>
                                 
-                                <td>90%</td>
+                                <td>Cthulhu Project 
+                                    <p><i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
+                                </td>
+                                
+                                
+                                
+                               <td>
+                                     <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete"> 90% </button>
+                            </td>
                                 
                                 <td>  <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a> </td>
                             </tr>
@@ -645,31 +841,50 @@
                     </table>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
    
-         
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</div>
-            <!-- Row end -->
+    </div>
+                                <!-- end of row -->
+                            </div>
+                            <!-- end of card-main -->
+                        </div>
+                        <!-- end of project pane -->
+
+
+                    </div>
+                    <!-- end of main tab content -->
+                </div>
+            </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      
             <!-- Tables end -->
       
         
@@ -689,16 +904,93 @@
         Are you sure you want to deactivate this user's account? 
       </div>
       <div class="modal-footer">
+           <button type="button" class="btn btn-danger">Deactivate</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger">Deactivate</button>
+       
       </div>
     </div>
   </div>
 </div>
         
         
+        <!-- delete pending project modal -->
+       <div class="modal fade" id="deletePendingProject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: indianred !important">
+        <h5 class="modal-title" id="exampleModalLabel"><span style="color: white">Delete Project</span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this project? 
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         
+      </div>
+    </div>
+  </div>
+</div>                
         
+      <!-- Approve pending project modal -->              
+                    
+   <div class="modal fade" id="approvePendingProject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: skyblue !important">
+        <h5 class="modal-title" id="exampleModalLabel"><span style="color: white">Approve Project</span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to approve this project? 
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-info">Approve</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>                  
+                
+                                      
+                                      
+                                      
+                                      
+               <!-- view progress project Modal -->
+<div class="modal fade" id="viewProgress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: green !important">
+        <h5 class="modal-title" id="exampleModalLabel">Progress</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+   
+      </div>
+    </div>
+  </div>
+</div>                       
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
         
             <!-- view project details modal -->
 
@@ -784,8 +1076,8 @@
               <hr>
             <div class="modal-footer">
       
-         <button type="submit" class="btn btn-success" data-dismiss="modal"><i class="icon icon-check"> </i>Add Project</button>
-        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 290px"><i class="icon icon-close" > </i>Cancel</button>
+         <button type="submit" class="btn btn-warning" data-dismiss="modal"><i class="icon icon-check"> </i>Request for Cost Estimation</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 150px"><i class="icon icon-close" > </i>Cancel</button>
        
       </div>
 </form>
