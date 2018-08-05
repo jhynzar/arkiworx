@@ -1,7 +1,7 @@
 <!-- Navbar-->
 <header class="main-header-top hidden-print">
     
-    <a href="index" class="nav-brand"><img class="img-fluid logo" src="../assets/images/cat.jpg" alt="Theme-logo"></a> 
+    <a href="index" class="nav-brand"><img class="img-fluid logo" src="/assets/images/cat.jpg" alt="Theme-logo"></a> 
 
 
 
@@ -26,7 +26,7 @@
                 <!-- User Menu-->
                 <li class="dropdown">
                     <a href="accountsettings" >
-                        <span><img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image"></span>
+                        <span><img class="img-circle " src="/assets/images/avatar-1.jpg" style="width:40px;" alt="User Image"></span>
                         <span><b>Erwin</b>Andres</span>
 
                     </a>
@@ -78,23 +78,23 @@
                     <div class="dummy-column">
                         <h2>Popular</h2>
                         <a class="dummy-media-object" href="#!">
-                            <img src="../assets/images/avatar-1.jpg" alt="PagePreloadingEffect"/>
+                            <img src="/assets/images/avatar-1.jpg" alt="PagePreloadingEffect"/>
                             <h3>Page Preloading Effect</h3>
                         </a>
 
                         <a class="dummy-media-object" href="#!">
-                            <img src="../assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow"/>
+                            <img src="/assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow"/>
                             <h3>Draggable Dual-View Slideshow</h3>
                         </a>
                     </div>
                     <div class="dummy-column">
                         <h2>Recent</h2>
                         <a class="dummy-media-object" href="#!">
-                            <img src="../assets/images/avatar-1.jpg" alt="TooltipStylesInspiration"/>
+                            <img src="/assets/images/avatar-1.jpg" alt="TooltipStylesInspiration"/>
                             <h3>Tooltip Styles Inspiration</h3>
                         </a>
                         <a class="dummy-media-object" href="#!">
-                            <img src="../assets/images/avatar-1.jpg" alt="NotificationStyles"/>
+                            <img src="/assets/images/avatar-1.jpg" alt="NotificationStyles"/>
                             <h3>Notification Styles Inspiration</h3>
                         </a>
                     </div>
