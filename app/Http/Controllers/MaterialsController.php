@@ -102,6 +102,9 @@ class MaterialsController extends Controller
     public function edit($id)
     {
         //
+        
+        
+        
     }
 
     /**
@@ -114,6 +117,17 @@ class MaterialsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $req = request()->all();
+
+        DB::table('tblprice')
+            ->insertGetId(
+                [
+                    'intPrice' => $req['materialPriceUpdate'],
+                    'intMaterialId' => $req['materialIdToUpdate']
+                ]
+            );
+
+        dd(request()->all());
     }
 
     /**

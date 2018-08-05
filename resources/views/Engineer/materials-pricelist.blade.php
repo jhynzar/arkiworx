@@ -117,123 +117,7 @@
                 
                 
                 
-                
-           <!-- Update material price Modal --> 
-        
-        <div class="modal fade" id="updatePrice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content pull-center">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><span class="label label-info">Update Price</span></h4>
-      </div>
-      <div class="modal-body" style="background: #e5e5f2 !important; ">
- 
-                
-          
-          
-        <form action="/action_page.php">
-    
-                                        <label class="text text-muted" style="margin-left: 450px"> <i>07 August 2018</i></label> <!-- current date -->
-  <br> 
-            <div class="form-group">
-    <label for="updatePrice">Price:</label>
-    <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;">
-  </div>
-            
-        <div class="form-group form-inline">
-    <label for="usertype"><i>As of</i>:</label> <br>
-      <select class="form-control"  name="month" id="month" style="width: 150px !important;">
-        <option>January  </option>
-        <option>February  </option>
-        <option>March  </option>
-        <option>April  </option>
-        <option>May  </option>
-        <option>June  </option>
-        <option>July  </option>
-        <option selected >August  </option>
-        <option>September  </option>
-        <option>October</option>
-        <option>November  </option>
-        <option>December  </option>
-        
-      </select>
-            
-      <select class="form-control"  name="day" id="day" style="width: 80px !important;">
-          <option>1  </option>
-          <option>2  </option>
-          <option>3  </option>
-          <option>4  </option>
-          <option>5  </option>
-          <option>6  </option>
-          <option selected>7  </option>
-          <option>8  </option>
-          <option>9 </option>
-          <option>10  </option>
-          <option>11  </option>
-          <option>12  </option>
-          <option>13  </option>
-          <option>14  </option>
-          <option>15  </option>
-          <option>16  </option>
-          <option>17  </option>
-          <option>18  </option>
-          <option>19 </option>
-          <option>20  </option>
-          <option>21  </option>
-          <option>22  </option>
-          <option>23  </option>
-          <option>24  </option>
-          <option>25  </option>
-          <option>26  </option>
-          <option>27  </option>
-          <option>28  </option>
-          <option>29 </option>
-          <option>30  </option>
-          <option>31  </option>
-      </select>
-            
-      <select class="form-control"  name="year" id="year" style="width: 80px !important;">
-<option value="2001">2001</option>
-<option value="2002">2002</option>
-<option value="2003">2003</option>
-<option value="2004">2004</option>
-<option value="2005">2005</option>
-<option value="2006">2006</option>
-<option value="2007">2007</option>
-<option value="2008">2008</option>
-<option value="2009">2009</option>
-<option value="2010">2010</option>
-<option value="2011">2011</option>
-<option value="2012">2012</option>
-<option value="2013">2013</option>
-<option value="2014">2014</option>
-<option value="2015">2015</option>
-<option value="2016">2016</option>
-<option value="2017">2017</option>
-<option value="2018" selected >2018</option>
-</select>
-            
-            
-            
-  </div> 
-            
-          
-           <hr> 
-            <div class="modal-footer">
-        
-         <button type="submit" class="btn btn-success" data-dismiss="modal"><i class="icon icon-check"> </i>Update Price</button>
-        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px"><i class="icon icon-close" > </i>Cancel</button>
-       
-      </div>
-</form>
-         
-          
-      </div>
-      
-    </div>
-  </div>
-</div>        
+              
                 
                 
                 
@@ -437,9 +321,56 @@
                                             <td>1</td>
                                             <td>{{ $material->strUnit}}</td>
                                             <td>{{ $material->intPrice}}</td>
-                                            <td> <button data-toggle="modal" data-target="#updatePrice" class="btn label btn-info">Update Price</button> </td>
+                                            <td> <button data-toggle="modal" data-target="#update{{$key}}" class="btn label btn-info">Update Price</button> </td>
                                             <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label btn-warning "> View Price History</button> </td>
                                         </tr>
+
+                                             
+           <!-- Update material price Modal --> 
+        
+        <div class="modal fade" id="update{{$key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content pull-center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><span class="label label-info">Update Price</span></h4>
+      </div>
+      <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+     
+          
+                
+          
+          
+        <form action="Materials-Pricelist/{{$material->intMaterialId}}" method="POST">
+        <input type="hidden" name="_method" value="PATCH">
+        {{ csrf_field() }}
+        <!-- key for updating -->  
+     <input id="materialIdToUpdateInput" name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
+            <label class="text text-muted" style="margin-left: 450px"> <i>07 August 2018</i></label> <!-- current date -->
+            <br> 
+            <div class="form-group">
+            <label for="updatePrice">Price:</label>
+            <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name= style="width: 300px !important;">
+            </div>
+
+         
+           <hr> 
+            <div class="modal-footer">
+        
+         <button type="submit" class="btn btn-success"><i class="icon icon-check"> </i>Update Price</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px"><i class="icon icon-close" > </i>Cancel</button>
+       
+          </div>
+          </form>
+         
+          
+      </div>
+      
+    </div>
+  </div>
+</div>     
                                         @endforeach
                                         
                                         </tbody>
@@ -759,4 +690,17 @@
       <!-- Warning Section Ends -->
 
       
+@endsection
+
+@section('script')
+  <script>
+    $('#updatePrice').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var idToUpdate = button.data('idToUpdate') // Extract info from data-* attributes
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      var modal = $(this)
+      modal.find('.modal-body #materialIdToUpdate').val(idToUpdate)
+    })
+  </script>
 @endsection

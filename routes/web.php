@@ -69,6 +69,8 @@ Route::get('Engineer/Materials-Pricelist', 'MaterialsController@index');
 
 Route::post('Engineer/Materials-Pricelist/Create', 'MaterialsController@store');
 
+Route::patch('Engineer/Materials-Pricelist/{id}','MaterialsController@update');
+
 //Route::get('Engineer/Project-Progress', 'PagesController@home1');
 
 //Client
