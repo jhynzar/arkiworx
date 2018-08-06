@@ -37,9 +37,7 @@ Route::get('Admin/Add-User', 'AccountsController@addusers');
 
 //Route::get('Admin/Inbox', 'PagesController@home1');
 
-Route::get('Admin/Project', function(){
-    return view('Admin/project');
-});
+Route::get('Admin/Projects', 'ProjectsController@index');
 
 //Route::get('Admin/Project-Details', 'PagesController@home1');
 
