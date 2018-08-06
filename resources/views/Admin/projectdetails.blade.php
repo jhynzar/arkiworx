@@ -55,7 +55,7 @@
 
     <style>
         .sidebar .user-panel {
-            background-image: url('assets/images/ff.jpg') !important;
+            background-image: url('/assets/images/ff.jpg') !important;
         }
 
         .morphsearch-content {
@@ -370,7 +370,7 @@
 
     </aside>
 
-    <!--tabs-->
+  
 
     <div class="container" style="position: absolute; margin-top: 43px; margin-left: 220px">
 
@@ -407,7 +407,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 90px">
+    <div class="content-wrapper" style="margin-top: 45px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
             <div class="row">
@@ -507,7 +507,7 @@
                                                                         Monte City</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th scope="row" class="text text-primary">Engingeer</th>
+                                                                    <th scope="row" class="text text-primary">Engineer</th>
                                                                     <td>Erwin Andres</td>
                                                                 </tr>
                                                                 <tr>

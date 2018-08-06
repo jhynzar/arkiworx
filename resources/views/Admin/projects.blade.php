@@ -52,7 +52,7 @@
 
     <style>
         .sidebar .user-panel {
-            background-image: url('assets/images/ff.jpg') !important;
+            background-image: url('/assets/images/ff.jpg') !important;
         }
 
         .morphsearch-content {
@@ -374,10 +374,7 @@
 
     </aside>
 
-    <!--tabs-->
-
-
-
+   
 
 
 

@@ -54,7 +54,7 @@
 
     <style>
         .sidebar .user-panel {
-            background-image: url('assets/images/ff.jpg') !important;
+            background-image: url('/assets/images/ff.jpg') !important;
         }
 
         .morphsearch-content {
@@ -188,7 +188,7 @@
                                 <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Erwin</b>Andres</span>
+                                <b>Juliamar</b>Soriano</span>
 
                         </a>
 
@@ -290,7 +290,7 @@
                 <div class="f-left info">
                     <br>
                     <br>
-                    <p>Erwin Andres</p>
+                    <p><b>Juliamar</b></p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>
@@ -408,43 +408,11 @@
 
     </aside>
 
-    <!--tabs-->
-
-    <div class="container" style="position: absolute; margin-top: 43px; margin-left: 220px">
-
-        <ul class="nav nav-tabs" style="background-color: #f2f2f2">
+    
 
 
 
-            <li>
-                <a href="index">Dashboard</a>
-            </li>
-
-            <li class="active">
-                <a href="#">Cost</a>
-            </li>
-            <li>
-                <a href="materials%20pricelist">PriceList</a>
-            </li>
-            <li>
-                <a href="projectprogress">Project Plan</a>
-            </li>
-            <li>
-                <a href="calendar">Calendar</a>
-            </li>
-            <li>
-                <a href="inbox">Inbox</a>
-            </li>
-            <li>
-                <a href="accountsettings">Account Settings</a>
-            </li>
-
-        </ul>
-    </div>
-
-
-
-    <div class="content-wrapper" style="margin-top: 90px">
+    <div class="content-wrapper" style="margin-top: 45px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 
@@ -648,6 +616,34 @@
                                                 </table>
                                             </div>
                                         </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                         <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">TOTALS:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345</th>
+                                                            <th class="text-center text-primary">23365</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
                                     </div>
                                 </div>
 
