@@ -645,10 +645,11 @@
 
 
 
+            
+            
+    <!-- Add Custom Actual Modal -->
 
-    <!-- Update Actuals Modal -->
-
-    <div class="modal fade" id="updateActuals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="addCustomActual" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content pull-center">
                 <div class="modal-header">
@@ -656,7 +657,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <h4 class="modal-title" id="myModalLabel">
-                        <span class="label label-info">Update Entry</span>
+                        <span class="label label-info">Custom Actual Entry</span>
                     </h4>
                 </div>
                 <div class="modal-body" style="background: #e5e5f2 !important; ">
@@ -681,96 +682,15 @@
                             <input type="text" class="form-control" id="actualPrice" style="width: 200px !important;" placeholder="₱">
 
 
-
-                            <label for="ActualPrice">Quantity:</label>
-                            <input type="number" class="form-control" id="actualQuantity" style="width: 100px !important;">
                         </div>
 
-                        <div class="form-group form-inline">
-                            <label for="usertype">
-                                <i>As of</i>:</label>
-                            <br>
-                            <select class="form-control" name="month" id="month" style="width: 150px !important;">
-                                <option>January </option>
-                                <option>February </option>
-                                <option>March </option>
-                                <option>April </option>
-                                <option>May </option>
-                                <option>June </option>
-                                <option>July </option>
-                                <option selected>August </option>
-                                <option>September </option>
-                                <option>October</option>
-                                <option>November </option>
-                                <option>December </option>
-
-                            </select>
-
-                            <select class="form-control" name="day" id="day" style="width: 80px !important;">
-                                <option>1 </option>
-                                <option>2 </option>
-                                <option>3 </option>
-                                <option>4 </option>
-                                <option>5 </option>
-                                <option>6 </option>
-                                <option selected>7 </option>
-                                <option>8 </option>
-                                <option>9 </option>
-                                <option>10 </option>
-                                <option>11 </option>
-                                <option>12 </option>
-                                <option>13 </option>
-                                <option>14 </option>
-                                <option>15 </option>
-                                <option>16 </option>
-                                <option>17 </option>
-                                <option>18 </option>
-                                <option>19 </option>
-                                <option>20 </option>
-                                <option>21 </option>
-                                <option>22 </option>
-                                <option>23 </option>
-                                <option>24 </option>
-                                <option>25 </option>
-                                <option>26 </option>
-                                <option>27 </option>
-                                <option>28 </option>
-                                <option>29 </option>
-                                <option>30 </option>
-                                <option>31 </option>
-                            </select>
-
-                            <select class="form-control" name="year" id="year" style="width: 80px !important;">
-                                <option value="2001">2001</option>
-                                <option value="2002">2002</option>
-                                <option value="2003">2003</option>
-                                <option value="2004">2004</option>
-                                <option value="2005">2005</option>
-                                <option value="2006">2006</option>
-                                <option value="2007">2007</option>
-                                <option value="2008">2008</option>
-                                <option value="2009">2009</option>
-                                <option value="2010">2010</option>
-                                <option value="2011">2011</option>
-                                <option value="2012">2012</option>
-                                <option value="2013">2013</option>
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018" selected>2018</option>
-                            </select>
-
-
-
-                        </div>
 
 
                         <hr>
                         <div class="modal-footer">
 
                             <button type="submit" class="btn btn-success" data-dismiss="modal">
-                                <i class="icon icon-check"> </i>Update Entry</button>
+                                <i class="icon icon-check"> </i>Add Entry</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
                                 <i class="icon icon-close"> </i>Cancel</button>
 
@@ -783,6 +703,310 @@
             </div>
         </div>
     </div>
+        
+            
+            
+            
+            
+        
+            
+            
+        <!-- Add From Materials Actuals Modal -->
+
+    <div class="modal fade" id="addMaterialActual" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content pull-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <span class="label label-info">Material Actual Entry</span>
+                    </h4>
+                </div>
+                <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                    <form action="/action_page.php">
+
+                        <label class="text text-muted" style="margin-left: 450px">
+                            <i>07 August 2018</i>
+                        </label>
+                        <!-- current date -->
+                   
+                        <br>
+                        <br>
+                        
+                        
+                       <div> 
+                           <label>Category: </label>
+                           <select class="form-control" name="category" id="category" placeholder="Category" style="width: 300px !important;">
+                                <option>Concrete Slab </option>
+                                <option>Tiles </option>
+                                <option>Walls </option>
+                                <option>Paint </option>
+                                <option>Footing </option>
+                                <option>Column </option>
+                                <option>Footing Tie Beam </option>
+                                <option>Floor Beam </option>
+                                <option>Roof Beam </option>
+                                <option>Conrete Slab 2nd floor</option>
+                                <option>Ceiling works </option>
+                                <option>Roof</option>
+                                <option>Door and Windows </option>
+                                <option>Footing Tie Beam </option>
+                                <option>Septic Tank </option>
+                           
+                            </select>
+                     </div>     
+                        
+                         <br>
+                        <div> 
+                           <label>Material: </label>
+
+                            <select class="form-control" name="material" id="material" placeholder="Material/s" style="width: 300px !important;">
+                                <option>Cement</option>
+                                <option>Sand</option>
+                                <option>Gravel</option>
+                                <option>10 mm bars</option>
+                                <option>Tie Wire </option>
+                                <option>Gravel Bedding </option>
+                          
+                            </select>
+                     </div> 
+                            
+                          <br> <br>  
+                        
+                        <div class="form-group form-inline">
+                            <label>Qty:</label>
+                            <input type="number" class="form-control" id="" style="width: 90px !important;">
+                     
+                            <label>Unit:</label>
+                            <input type="text" class="form-control" id="" style="width: 130px !important;">
+
+
+
+                            <label for="ActualPrice">Unit Cost:</label>
+                            <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱">
+                            
+                            
+                        </div>
+
+                        
+                        <div class="form-group" > 
+                        
+                        <label for="ActualPrice">Total Unit Cost:</label>
+                            <input type="text" class="form-control" id="" style="width: 500px !important;"  placeholder="₱">
+                        </div> 
+
+
+                        <hr>
+                        <div class="modal-footer">
+
+                            <button type="submit" class="btn btn-success" data-dismiss="modal">
+                                <i class="icon icon-check"> </i>Add Entry</button>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                <i class="icon icon-close"> </i>Cancel</button>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+            
+            
+            
+            
+            
+            
+        <!-- Add New Material Actuals Modal -->
+
+    <div class="modal fade" id="addNewMaterialActual" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content pull-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <span class="label label-info">Add Material Actual Entry</span>
+                    </h4>
+                </div>
+                <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                    <form action="/action_page.php">
+
+                        <label class="text text-muted" style="margin-left: 450px">
+                            <i>07 August 2018</i>
+                        </label>
+                        <!-- current date -->
+                        <br>
+                
+                        <div> 
+                           <label>Material: </label>
+
+                            <select class="form-control" name="material" id="material" placeholder="Material/s" style="width: 300px !important;">
+                                <option>Cement</option>
+                                <option>Sand</option>
+                                <option>Gravel</option>
+                                <option>10 mm bars</option>
+                                <option>Tie Wire </option>
+                                <option>Gravel Bedding </option>
+                          
+                            </select>
+                     </div> 
+                            
+                          <br> <br>  
+                        
+                        <div class="form-group form-inline">
+                            <label>Qty:</label>
+                            <input type="number" class="form-control" id="" style="width: 90px !important;">
+                     
+                            <label>Unit:</label>
+                            <input type="text" class="form-control" id="" style="width: 130px !important;">
+
+
+
+                            <label for="ActualPrice">Unit Cost:</label>
+                            <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱">
+                            
+                            
+                        </div>
+
+                        
+                        <div class="form-group" > 
+                        
+                        <label for="ActualPrice">Total Unit Cost:</label>
+                            <input type="text" class="form-control" id="" style="width: 500px !important;"  placeholder="₱">
+                        </div>
+                       
+
+
+                        <hr>
+                        <div class="modal-footer">
+
+                            <button type="submit" class="btn btn-success" data-dismiss="modal">
+                                <i class="icon icon-check"> </i>Add Entry</button>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                <i class="icon icon-close"> </i>Cancel</button>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Update Actuals Modal -->
+
+    <div class="modal fade" id="updateActuals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content pull-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <span class="label label-info">Update Actual Entry</span>
+                    </h4>
+                </div>
+                <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                    <form action="/action_page.php">
+
+                        <label class="text text-muted" style="margin-left: 450px">
+                            <i>07 August 2018</i>
+                        </label>
+                        <!-- current date -->
+                        <br>
+                
+                        <div> 
+                           <label>Material: </label>
+
+                            <select class="form-control" name="material" id="material" placeholder="Material/s" style="width: 300px !important;">
+                                <option>Cement</option>
+                                <option>Sand</option>
+                                <option>Gravel</option>
+                                <option>10 mm bars</option>
+                                <option>Tie Wire </option>
+                                <option>Gravel Bedding </option>
+                          
+                            </select>
+                     </div> 
+                            
+                          <br> <br>  
+                        
+                        <div class="form-group form-inline">
+                            <label>Qty:</label>
+                            <input type="number" class="form-control" id="" style="width: 90px !important;">
+                     
+                            <label>Unit:</label>
+                            <input type="text" class="form-control" id="" style="width: 130px !important;">
+
+
+
+                            <label for="ActualPrice">Unit Cost:</label>
+                            <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱">
+                            
+                            
+                        </div>
+
+                        
+                        <div class="form-group" > 
+                        
+                        <label for="ActualPrice">Total Unit Cost:</label>
+                            <input type="text" class="form-control" id="" style="width: 500px !important;"  placeholder="₱">
+                        </div>
+                       
+
+
+                        <hr>
+                        <div class="modal-footer">
+
+                            <button type="submit" class="btn btn-success" data-dismiss="modal">
+                                <i class="icon icon-check"> </i>Add Entry</button>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                <i class="icon icon-close"> </i>Cancel</button>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+         
+            
+            
+            
+            
 
 
 
@@ -960,7 +1184,7 @@
                             <label for="usertype">
                                 <i>As of</i>:</label>
                             <br>
-                            <select class="form-control pull-center text-center" name="month" id="month" style="width: 300px !important;">
+                            <select class="form-control pull-center text-center" name="month" id="month" style="width: 500px !important;">
                                 <option>January-07-2018 </option>
                                 <option>January-20-2018</option>
                                 <option>February-26-2018 </option>
@@ -977,16 +1201,35 @@
 
                             &nbsp; &nbsp;
 
-                            <label for="materialPrice">Price:</label>
-                            <input type="text" class="form-control" id="materialPrice" style="width: 120px !important;" value="150" disabled>
+                        
                         </div>
 
+                              <div class="form-group form-inline">
+                            <label>Qty:</label>
+                            <input type="number" class="form-control" id="" style="width: 90px !important;" placeholder="2" disabled>
+                     
+                            <label>Unit:</label>
+                            <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="Bags" disabled>
 
+
+
+                            <label for="ActualPrice">Unit Cost:</label>
+                            <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱250.0" disabled>
+                            
+                            
+                        </div>
+
+                        
+                        <div class="form-group" > 
+                        
+                        <label for="ActualPrice">Total Unit Cost:</label>
+                            <input type="text" class="form-control" id="" style="width: 500px !important;"  placeholder="₱500.0" disabled>
+                        </div>
 
                         <div class="modal-footer">
                             <hr>
 
-                            <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 280px">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 280px" >
                                 <i class="icon icon-close"> </i>Close</button>
 
                         </div>
@@ -1179,13 +1422,19 @@
 
 
 
-                <!-- Add Actuals Modal Button trigger-->
+                <!-- Add 3 Actuals Modal Button trigger-->
                 <div class="col-sm-3 pull-right">
                     <br>
                     <br>
-                    <button type="button" data-toggle="modal" data-target="#addActuals" class="btn btn-success waves-effect waves-light"
-                        style="margin-left: 10px; margin-top: 50px">
-                        <i class="icon-plus"> </i>Actual Entry</button>
+                    <button type="button" data-toggle="modal" data-target="#addCustomActual" class="btn btn-success waves-effect waves-light"
+                        style=" margin-top: -30px"> 
+                        <i class="icon-plus"> </i>Add Custom Actual </button> <br> <br> 
+                    <button type="button" data-toggle="modal" data-target="#addMaterialActual" class="btn btn-primary waves-effect waves-light"
+                        style=" margin-top: -20px">
+                        <i class="icon-plus"> </i>Add from Materials  Actual</button> <br> <br> 
+                    <button type="button" data-toggle="modal" data-target="#addNewMaterialActual" class="btn btn-danger waves-effect waves-light"
+                        style=" margin-top: -10px">
+                        <i class="icon-plus"> </i>Add New Material Actual</button><br> <br> 
                 </div>
 
 
@@ -1211,14 +1460,14 @@
                                 <div class="col-sm-12 table-responsive">
                                     <table class="table table-hover ">
                                         <thead>
-                                            <tr>
+                                            <tr class="table-active">
                                                 <th style="color: black">#</th>
                                                 <th style="color: black">Description</th>
-                                                <th style="color: black">Amount</th>
                                                 <th style="color: black">Quantity</th>
                                                 <th style="color: black">Unit</th>
-                                                <th style="color: black">Date</th>
-                                                <th>
+                                                <th style="color: black">Unit Cost</th>
+                                                <th style="color: black">Total Unit Cost</th>
+                                                <th class="text-center">
                                                     <span class="text text-danger"> Action</span>
                                                 </th>
                                                 <th></th>
@@ -1230,16 +1479,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="table-warning">
-                                                <td>1</td>
-                                                <td>Cement
+                                            <tr class="table-info">
+                                                <td class="text-center">01</td>
+                                                <td class="text-center">Cement
                                                     <p>
                                                         <i class="icofont icofont-clock-time"></i>Updated</p>
                                                 </td>
-                                                <td>100.00</td>
-                                                <td>1</td>
-                                                <td>bag</td>
-                                                <td>August-07-2018</td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">bags</td>
+                                                <td class="text-center">250.0</td>
+                                                <td class="text-center">500.0</td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
                                                 </td>
@@ -1250,16 +1499,16 @@
                                                 </td>
                                             </tr>
 
-                                            <tr>
-                                                <td>2</td>
-                                                <td>HB 4
+                                           <tr>
+                                                <td class="text-center">02</td>
+                                                <td class="text-center">Metal Pipe
                                                     <p>
                                                         <i class="icofont icofont-clock-time"></i>Updated</p>
                                                 </td>
-                                                <td>150.00</td>
-                                                <td>15</td>
-                                                <td>pcs</td>
-                                                <td>August-07-2018</td>
+                                                <td class="text-center">4</td>
+                                                <td class="text-center">pcs</td>
+                                                <td class="text-center">350.0</td>
+                                                <td class="text-center">1400.0</td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
                                                 </td>
@@ -1271,13 +1520,15 @@
                                             </tr>
 
                                             <tr class="table-info">
-                                                <td>3</td>
-                                                <td>Steel Bar
+                                                <td class="text-center">03</td>
+                                                <td class="text-center">Steel Bar
+                                                    <p>
+                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
                                                 </td>
-                                                <td>200.00</td>
-                                                <td>1</td>
-                                                <td>pcs</td>
-                                                <td>August-03-2018</td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">pcs</td>
+                                                <td class="text-center">800</td>
+                                                <td class="text-center">1600.0</td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
                                                 </td>
@@ -1287,16 +1538,17 @@
                                                     </button>
                                                 </td>
                                             </tr>
+                                            
                                             <tr>
-                                                <td>4</td>
-                                                <td>Pipe
+                                                <td class="text-center">04</td>
+                                                <td class="text-center">Gravel
                                                     <p>
                                                         <i class="icofont icofont-clock-time"></i>Updated</p>
                                                 </td>
-                                                <td>350.00</td>
-                                                <td>2</td>
-                                                <td>pcs</td>
-                                                <td>August-02-2018</td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">bags</td>
+                                                <td class="text-center">450</td>
+                                                <td class="text-center">900.0</td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
                                                 </td>
@@ -1306,123 +1558,7 @@
                                                     </button>
                                                 </td>
                                             </tr>
-
-                                            <tr class="table-danger">
-                                                <td>5</td>
-                                                <td>Gravel
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td>200.00</td>
-                                                <td>1</td>
-                                                <td>bag</td>
-                                                <td>August-02-2018</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Cement
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td>100.00</td>
-                                                <td>1</td>
-                                                <td>bag</td>
-                                                <td>August-07-2018</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-
-                                            </tr>
-                                            <tr class="table-warning">
-                                                <td>7</td>
-                                                <td>HB 4
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td>150.00</td>
-                                                <td>15</td>
-                                                <td>pcs</td>
-                                                <td>August-07-2018</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>Steel Bar
-                                                </td>
-                                                <td>200.00</td>
-                                                <td>1</td>
-                                                <td>pcs</td>
-                                                <td>August-03-2018</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="table-info">
-                                                <td>9</td>
-                                                <td>Pipe
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td>350.00</td>
-                                                <td>2</td>
-                                                <td>pcs</td>
-                                                <td>August-02-2018</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="table-warning">
-                                                <td>10</td>
-                                                <td> Cement
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td>200.00</td>
-                                                <td>1</td>
-                                                <td>bag</td>
-                                                <td>August-02-2018</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
-
+                                           
                                         </tbody>
                                     </table>
                                 </div>
