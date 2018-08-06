@@ -550,7 +550,7 @@
                                                 <td>{{ $result->stremployeelname }}</td>
                                                 <!-- lastname-->
                                                 <td>{{ '@'.$result->varusername }}</td>
-                                                <td>{{ $result->intusertype }}</td>
+                                                <td>{{ $result->strusertype }}</td>
                                                 <td>
                                                     <a href="profile" class="btn btn-warning label label-warning" role="button">
                                                     View </a>
