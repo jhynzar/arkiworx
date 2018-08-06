@@ -29,27 +29,41 @@ Route::get('Admin/Accounts', 'AccountsController@accounts');
 
 Route::get('Admin/Add-User', 'AccountsController@addusers');
 
-//Route::get('Admin/Profile', 'AccountsController@profile');
-
-//Route::get('Admin/Account-Settings', 'PagesController@home1');
-
-//Route::get('Admin/Cost-Summary', 'PagesController@home1');
-
-//Route::get('Admin/Inbox', 'PagesController@home1');
-
-Route::get('Admin/Project', function(){
-    return view('Admin/project');
+Route::get('Admin/Profile', function(){ 
+    return view('Admin/profile');
 });
 
-//Route::get('Admin/Project-Details', 'PagesController@home1');
+Route::get('Admin/Account-Settings', function(){
+    return view('Admin/accountsettings');
+});
 
-//Route::get('Admin/Project-Progress', 'PagesController@home1');
+Route::get('Admin/Cost-Summary', function(){ 
+    return view ('Admin/cost summary');
+});
+
+Route::get('Admin/Inbox', function (){
+    return view ('Admin/inbox');
+});
+
+Route::get('Admin/Projects', 'ProjectsController@index');
+
+Route::get('Admin/Project-Details', function(){
+    return view ('Admin/projectdetails');
+});
+
+Route::get('Admin/Project-Progress', function(){
+    return view ('Admin/projectprogress');
+});
 
 //Engineer di pa maayos ung controllers at methods
 
-//Route::get('Engineer/Accounts', 'PagesController@home1');
+Route::get('Engineer/Accounts', function(){
+    return view ('Engineer/accounts');
+});
 
-//Route::get('Engineer/Accounts-Settings', 'PagesController@home1');
+Route::get('Engineer/Accounts-Settings', function (){
+    return view ('Engineer/account-settings');
+});
 
 Route::get('Engineer/Actuals', function(){
     return view('Engineer/actuals');
@@ -73,6 +87,8 @@ Route::post('Engineer/Materials-Pricelist/Create', 'MaterialsController@store');
 
 Route::patch('Engineer/Materials-Pricelist/{id}','MaterialsController@update');
 
-//Route::get('Engineer/Project-Progress', 'PagesController@home1');
+Route::get('Engineer/Project-Progress', function(){
+    return view ('Engineer/project-progress');
+});
 
 //Client

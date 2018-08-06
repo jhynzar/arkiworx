@@ -456,8 +456,8 @@
                 <div class="col-sm-3 pull-right">
                     <br>
                     <br>
-                    <button type="button" data-toggle="modal" data-target="#addProject" class="btn btn-primary waves-effect waves-light"
-                        style="margin-left: 45px; margin-top: 50px"> + Add Project</button>
+                    <button type="button" data-toggle="modal" data-target="#addProject" class="btn btn-primary waves-effect waves-light" style="margin-left: 45px; margin-top: 50px">
+                    + Add Project</button>
                 </div>
 
 
@@ -524,21 +524,27 @@
                                                                     <th class="text-center txt-primary pro-pic">Line Item</th>
                                                                     <th class="text-center txt-primary">Client</th>
                                                                     <th class="text-center txt-primary pro-pic">Project Name</th>
+                                                                    <th class="text-center txt-primary">Engineer</th>
                                                                     <th class="text-center txt-primary">Status</th>
                                                                     <th class="text-center txt-primary">Action</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody class="text-center">
+
+                                                                @foreach ( $pendingProjects as $key=>$pendingProject)
                                                                 <tr>
-                                                                    <td>01</td>
+                                                                    <td>{{$key+1}}</td>
                                                                     <td>
                                                                         <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
                                                                     </td>
-                                                                    <td>Soriano Residence</td>
+                                                                    <td>{{ $pendingProject->strProjectName }}</td>
+                                                                    <td>{{ $pendingProject->strEmployeeFName }}&nbsp;{{$pendingProject->strEmployeeLName}}</td>
                                                                     <td class="text-center">
-                                                                        <span class="label label-success">Finished</span>
-
-
+                                                                        @if ( $pendingProject->strProjectStatus == 'for approval' )
+                                                                            <span class="label label-success">Finished</span>
+                                                                        @elseif ( $pendingProject->strProjectStatus == 'pending' )
+                                                                            <span class="label label-warning">Pending</span>
+                                                                        @endif
                                                                         <td class="faq-table-btn">
                                                                             <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
                                                                                 <i class="icofont icofont-eye-alt"></i>
@@ -559,104 +565,7 @@
                                                                         </td>
 
                                                                 </tr>
-
-
-                                                                <tr>
-                                                                    <td>02</td>
-                                                                    <td>
-                                                                        <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
-                                                                    </td>
-                                                                    <td>Soriano Residence</td>
-                                                                    <td class="text-center">
-                                                                        <span class="label label-warning">Pending</span>
-                                                                    </td>
-
-
-                                                                    <td class="faq-table-btn">
-                                                                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                                                                            <i class="icofont icofont-eye-alt"></i>
-                                                                        </button>
-
-                                                                        <button type="button" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light"
-                                                                            data-toggle="tooltip" data-placement="top" title="Approve">
-                                                                            <i class="icon icon-check"></i>
-                                                                        </button>
-
-
-
-                                                                        <button type="button" data-toggle="modal" data-target="#deletePendingProject" class="btn btn-danger waves-effect waves-light"
-                                                                            data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                            <i class="icofont icofont-ui-delete"></i>
-                                                                        </button>
-                                                                    </td>
-
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td>03</td>
-                                                                    <td>
-                                                                        <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
-                                                                    </td>
-                                                                    <td>Tapiru Residence</td>
-                                                                    <td class="text-center">
-                                                                        <span class="label label-warning">Pending</span>
-                                                                    </td>
-
-
-                                                                    <td class="faq-table-btn">
-                                                                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                                                                            <i class="icofont icofont-eye-alt"></i>
-                                                                        </button>
-
-                                                                        <button type="button" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light"
-                                                                            data-toggle="tooltip" data-placement="top" title="Approve">
-                                                                            <i class="icon icon-check"></i>
-                                                                        </button>
-
-
-
-                                                                        <button type="button" data-toggle="modal" data-target="#deletePendingProject" class="btn btn-danger waves-effect waves-light"
-                                                                            data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                            <i class="icofont icofont-ui-delete"></i>
-                                                                        </button>
-                                                                    </td>
-
-                                                                </tr>
-
-
-
-
-                                                                <tr>
-                                                                    <td>04</td>
-                                                                    <td>
-                                                                        <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
-                                                                    </td>
-                                                                    <td>Dela Pena Residence</td>
-                                                                    <td class="text-center">
-                                                                        <span class="label label-warning">Pending</span>
-                                                                    </td>
-
-
-                                                                    <td class="faq-table-btn">
-                                                                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                                                                            <i class="icofont icofont-eye-alt"></i>
-                                                                        </button>
-
-                                                                        <button type="button" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light"
-                                                                            data-toggle="tooltip" data-placement="top" title="Approve">
-                                                                            <i class="icon icon-check"></i>
-                                                                        </button>
-
-
-
-                                                                        <button type="button" data-toggle="modal" data-target="#deletePendingProject" class="btn btn-danger waves-effect waves-light"
-                                                                            data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                            <i class="icofont icofont-ui-delete"></i>
-                                                                        </button>
-                                                                    </td>
-
-                                                                </tr>
-
+                                                                @endforeach
                                                             </tbody>
                                                         </table>
                                                         <!-- end of table -->
@@ -697,24 +606,27 @@
                                                                     <th>Line Item</th>
                                                                     <th>Client</th>
                                                                     <th>Project</th>
+                                                                    <th>Engineer</th>
                                                                     <th>Progress</th>
                                                                     <th>Action</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-
+                                                                @foreach ($ongoingProjects as $key=>$ongoingProject)
                                                                 <tr>
-                                                                    <th> 1 </th>
+                                                                    <th> {{$key+1}} </th>
                                                                     <td>
                                                                         <img class="img-fluid img-circle" src="../assets/images/avatar-4.png" alt="User">
                                                                     </td>
 
-                                                                    <td>Appestia Project
+                                                                    <td> {{$ongoingProject->strProjectName}}
                                                                         <p>
                                                                             <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
                                                                     </td>
 
-
+                                                                    <td>
+                                                                        {{ $ongoingProject->strEmployeeFName }}&nbsp;{{ $ongoingProject->strEmployeeLName }}
+                                                                    </td>
 
                                                                     <td>
                                                                         <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
@@ -722,239 +634,10 @@
                                                                     </td>
 
                                                                     <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
+                                                                        <a href="projectdetails" class="btn btn-warning label label-warning" role="button"> View Details </a>
                                                                     </td>
                                                                 </tr>
-
-
-                                                                <tr>
-                                                                    <th> 2 </th>
-                                                                    <td>
-                                                                        <img class="img-fluid img-circle" src="../assets/images/avatar-2.png" alt="User">
-                                                                    </td>
-
-                                                                    <td>Reyes Residence
-                                                                        <p>
-                                                                            <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                                                    </td>
-
-
-
-                                                                    <td>
-                                                                        <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
-                                                                            data-placement="top" title="Delete"> 85% </button>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
-                                                                    </td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <th> 3 </th>
-
-                                                                    <td>
-                                                                        <img class="img-fluid img-circle" src="../assets/images/avatar-1.png" alt="User">
-                                                                    </td>
-
-                                                                    <td>Soriano Residence
-                                                                        <p>
-                                                                            <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                                                    </td>
-
-
-
-                                                                    <td>
-                                                                        <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
-                                                                            data-placement="top" title="Delete"> 30% </button>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
-                                                                    </td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <th> 4 </th>
-
-                                                                    <td>
-                                                                        <img class="img-fluid img-circle" src="../assets/images/avatar-3.png" alt="User">
-                                                                    </td>
-
-                                                                    <td>Belife Project
-                                                                        <p>
-                                                                            <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                                                    </td>
-
-
-
-                                                                    <td>
-                                                                        <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
-                                                                            data-placement="top" title="Delete"> 65% </button>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
-                                                                    </td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <th> 5 </th>
-
-                                                                    <td>
-                                                                        <img class="img-fluid img-circle" src="../assets/images/avatar-5.png" alt="User">
-                                                                    </td>
-
-                                                                    <td>Cthulhu Project
-                                                                        <p>
-                                                                            <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                                                    </td>
-
-
-
-                                                                    <td>
-                                                                        <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
-                                                                            data-placement="top" title="Delete"> 90% </button>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
-                                                                    </td>
-                                                                </tr>
-
-
-                                                                <tr>
-                                                                    <th> 6 </th>
-
-                                                                    <td>
-                                                                        <img class="img-fluid img-circle" src="../assets/images/avatar-4.png" alt="User">
-                                                                    </td>
-
-                                                                    <td>Appestia Project
-                                                                        <p>
-                                                                            <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                                                    </td>
-
-
-
-                                                                    <td>
-                                                                        <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
-                                                                            data-placement="top" title="Delete"> 70% </button>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
-                                                                    </td>
-                                                                </tr>
-
-
-                                                                <tr>
-                                                                    <th> 7 </th>
-
-                                                                    <td>
-                                                                        <img class="img-fluid img-circle" src="../assets/images/avatar-2.png" alt="User">
-                                                                    </td>
-
-                                                                    <td>Reyes Residence
-                                                                        <p>
-                                                                            <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                                                    </td>
-
-
-
-                                                                    <td>
-                                                                        <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
-                                                                            data-placement="top" title="Delete"> 80% </button>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
-                                                                    </td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <th> 8 </th>
-
-                                                                    <td>
-                                                                        <img class="img-fluid img-circle" src="../assets/images/avatar-1.png" alt="User">
-                                                                    </td>
-
-                                                                    <td>Soriano Residence
-                                                                        <p>
-                                                                            <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                                                    </td>
-
-
-
-                                                                    <td>
-                                                                        <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
-                                                                            data-placement="top" title="Delete"> 70% </button>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
-                                                                    </td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <th> 9 </th>
-
-                                                                    <td>
-                                                                        <img class="img-fluid img-circle" src="../assets/images/avatar-3.png" alt="User">
-                                                                    </td>
-
-                                                                    <td>Belife Project
-                                                                        <p>
-                                                                            <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                                                    </td>
-
-
-
-                                                                    <td>
-                                                                        <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
-                                                                            data-placement="top" title="Delete"> 65% </button>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
-                                                                    </td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <th> 10 </th>
-
-                                                                    <td>
-                                                                        <img class="img-fluid img-circle" src="../assets/images/avatar-5.png" alt="User">
-                                                                    </td>
-
-                                                                    <td>Cthulhu Project
-                                                                        <p>
-                                                                            <i class="icofont icofont-clock-time"></i>Created 14.6.2018</p>
-                                                                    </td>
-
-
-
-                                                                    <td>
-                                                                        <button type="button" data-toggle="modal" data-target="#viewProgress" class="btn btn-success  waves-effect waves-light" data-toggle="tooltip"
-                                                                            data-placement="top" title="Delete"> 90% </button>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <a href="projectdetails" class="btn btn-warning label label-warning"
-                                                                            role="button"> View Details </a>
-                                                                    </td>
-                                                                </tr>
-
-
+                                                                @endforeach
                                                             </tbody>
                                                         </table>
                                                     </div>
