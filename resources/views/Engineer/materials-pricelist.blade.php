@@ -353,14 +353,14 @@ tbody{
                     <br>
                     <div class="form-group">
                         <label for="materialDesc">Description:</label>
-                        <input type="text" class="form-control" id="materialDesc" name="materialDesc">
+                        <input type="text" class="form-control" id="materialDesc" name="materialDesc" required/>
                     </div>
                     <br>
                     <div class="form-group form-inline">
                         <label for="materialUnit" placeholder="Enter Unit">Unit:</label>
-                        <input type="type" class="form-control" id="materialUnit" name="materialUnit" style="width: 130px !important;" placeholder="Enter Unit">
+                        <input type="type" class="form-control" id="materialUnit" name="materialUnit" style="width: 130px !important;" placeholder="Enter Unit" required/>
                         <label for="materialPrice">Price:</label>
-                        <input type="type" class="form-control" id="materialPrice" name="materialPrice" style="width: 130px !important;" placeholder="Enter Price">
+                        <input type="type" class="form-control" id="materialPrice" name="materialPrice" style="width: 130px !important;" placeholder="Enter Price" required/>
                     </div>
 
 

@@ -665,11 +665,11 @@ tbody{
                         <br>
                         <div class="form-group">
                             <label for="actualDesc">Description:</label>
-                            <input type="text" class="form-control" id="actualDesc" style="width: 550px !important;">
+                            <input type="text" class="form-control" id="actualDesc" style="width: 550px !important;" required/>
                         </div>
                         <div class="form-group form-inline">
                             <label for="ActualPrice">Price:</label>
-                            <input type="text" class="form-control" id="actualPrice" style="width: 200px !important;" placeholder="₱">
+                            <input type="text" class="form-control" id="actualPrice" style="width: 200px !important;" placeholder="₱" required/>
 
 
                         </div>
@@ -679,7 +679,7 @@ tbody{
                         <hr>
                         <div class="modal-footer">
 
-                            <button type="submit" class="btn btn-success" data-dismiss="modal">
+                            <button type="submit" class="btn btn-success" >
                                 <i class="icon icon-check"> </i>Add Entry</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
                                 <i class="icon icon-close"> </i>Cancel</button>
@@ -771,15 +771,15 @@ tbody{
                         
                         <div class="form-group form-inline">
                             <label>Qty:</label>
-                            <input type="number" class="form-control" id="" style="width: 90px !important;">
+                            <input type="number" class="form-control" id="" style="width: 90px !important;" required/>
                      
                             <label>Unit:</label>
-                            <input type="text" class="form-control" id="" style="width: 130px !important;">
+                            <input type="text" class="form-control" id="" style="width: 130px !important;" required/>
 
 
 
                             <label for="ActualPrice">Unit Cost:</label>
-                            <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱">
+                            <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱" required/>
                             
                             
                         </div>
@@ -788,14 +788,14 @@ tbody{
                         <div class="form-group" > 
                         
                         <label for="ActualPrice">Total Unit Cost:</label>
-                            <input type="text" class="form-control" id="" style="width: 500px !important;"  placeholder="₱">
+                            <input type="text" class="form-control" id="" style="width: 500px !important;"  placeholder="₱" required/>
                         </div> 
 
 
                         <hr>
                         <div class="modal-footer">
 
-                            <button type="submit" class="btn btn-success" data-dismiss="modal">
+                            <button type="submit" class="btn btn-success" >
                                 <i class="icon icon-check"> </i>Add Entry</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
                                 <i class="icon icon-close"> </i>Cancel</button>
@@ -860,15 +860,15 @@ tbody{
                         
                         <div class="form-group form-inline">
                             <label>Qty:</label>
-                            <input type="number" class="form-control" id="" style="width: 90px !important;">
+                            <input type="number" class="form-control" id="" style="width: 90px !important;" required/>
                      
                             <label>Unit:</label>
-                            <input type="text" class="form-control" id="" style="width: 130px !important;">
+                            <input type="text" class="form-control" id="" style="width: 130px !important;" required/>
 
 
 
                             <label for="ActualPrice">Unit Cost:</label>
-                            <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱">
+                            <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱" required/>
                             
                             
                         </div>
@@ -877,7 +877,7 @@ tbody{
                         <div class="form-group" > 
                         
                         <label for="ActualPrice">Total Unit Cost:</label>
-                            <input type="text" class="form-control" id="" style="width: 500px !important;"  placeholder="₱">
+                            <input type="text" class="form-control" id="" style="width: 500px !important;"  placeholder="₱" required/>
                         </div>
                        
 
@@ -885,7 +885,7 @@ tbody{
                         <hr>
                         <div class="modal-footer">
 
-                            <button type="submit" class="btn btn-success" data-dismiss="modal">
+                            <button type="submit" class="btn btn-success" >
                                 <i class="icon icon-check"> </i>Add Entry</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
                                 <i class="icon icon-close"> </i>Cancel</button>

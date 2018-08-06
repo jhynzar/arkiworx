@@ -79,7 +79,7 @@ class MaterialsController extends Controller
             ]
         );
 
-        dd(request()->all());
+        header ("Refresh: 0;../Materials-Pricelist");
     }
 
     /**
