@@ -54,7 +54,7 @@
 
     <style>
         .sidebar .user-panel {
-            background-image: url('assets/images/ff.jpg') !important;
+            background-image: url('/assets/images/ff.jpg') !important;
         }
 
         .morphsearch-content {
@@ -185,7 +185,7 @@
                                 <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Erwin</b>Andres</span>
+                                <b>Juliamar</b>Soriano</span>
 
                         </a>
 
@@ -286,7 +286,7 @@
                 <div class="f-left info">
                     <br>
                     <br>
-                    <p>Erwin Andres</p>
+                    <p><b>Juliamar</b></p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>

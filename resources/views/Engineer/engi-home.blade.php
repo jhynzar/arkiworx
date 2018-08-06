@@ -55,7 +55,7 @@
 
     <style>
         .sidebar .user-panel {
-            background-image: url('assets/images/ff.jpg') !important;
+            background-image: url('/assets/images/ff.jpg') !important;
         }
 
         .morphsearch-content {
@@ -271,7 +271,7 @@
                     <br>
                     <br>
                     <p>
-                        <b>Juliamar</b> K</p>
+                        <b>Juliamar</b> </p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>

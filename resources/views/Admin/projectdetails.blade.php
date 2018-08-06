@@ -55,7 +55,7 @@
 
     <style>
         .sidebar .user-panel {
-            background-image: url('assets/images/ff.jpg') !important;
+            background-image: url('/assets/images/ff.jpg') !important;
         }
 
         .morphsearch-content {
@@ -507,7 +507,7 @@
                                                                         Monte City</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th scope="row" class="text text-primary">Engingeer</th>
+                                                                    <th scope="row" class="text text-primary">Engineer</th>
                                                                     <td>Erwin Andres</td>
                                                                 </tr>
                                                                 <tr>
