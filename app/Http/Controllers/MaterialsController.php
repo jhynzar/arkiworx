@@ -33,6 +33,7 @@ class MaterialsController extends Controller
                     ->joinSub($latestPrices,'latestPrices',function($join){
                         $join->on('tblmaterials.intMaterialId','=','latestPrices.intMaterialId');
                     })
+                    ->orderBy('tblmaterials.intMaterialId','desc')
                     ->get();
 
         //dd($materials);
@@ -79,7 +80,8 @@ class MaterialsController extends Controller
             ]
         );
 
-        header ("Refresh: 0;../Materials-Pricelist");
+
+        header('Refresh:0;/Engineer/Materials-Pricelist');
     }
 
     /**

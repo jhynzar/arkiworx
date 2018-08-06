@@ -20,12 +20,14 @@ class ProjectsController extends Controller
                     ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
                     ->where('tblproject.strProjectStatus','=','pending')
                     ->orWhere('tblproject.strProjectStatus','=','for approval')
+                    ->orderBy('tblproject.intProjectId','desc')
                     ->get();
         
         $ongoingProjects = DB::table('tblproject')
                     ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
                     ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
                     ->where('tblproject.strProjectStatus','=','on going')
+                    ->orderBy('tblproject.intProjectId','desc')
                     ->get();
 
         $clients = DB::table('tblclient')->get();
@@ -59,6 +61,22 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {
         //
+        //dd(request()->all());
+        $req = request()->all();
+
+        DB::table('tblproject')
+            ->insertGetId(
+                [
+                    'strProjectName' => $req['projectName'],
+                    'txtProjectDesc' => $req['projectDesc'],
+                    'strProjectStatus' => 'pending',
+                    'strProjectLocation' => $req['projectLocation'],
+                    'intClientId' => $req['projectClient'],
+                    'intEmployeeId' => $req['projectEngineer']
+                ]
+            );
+
+        header('Refresh:0;/Admin/Projects');
     }
 
     /**

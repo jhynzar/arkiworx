@@ -845,8 +845,8 @@
 
 
 
-                                        <form action="/action_page.php">
-
+                                        <form action="/Admin/Projects" method="POST">
+                                            {{ csrf_field() }}
                                             <label class="text text-muted" style="margin-left: 450px">
                                                 <i>07 August 2018</i>
                                             </label>
@@ -854,7 +854,7 @@
                                             <br>
                                             <div class="form-group">
                                                 <label for="addProjectName">Project Name:</label>
-                                                <input type="text" class="form-control" id="projectName">
+                                                <input type="text" class="form-control" id="projectName" name="projectName">
                                             </div>
 
                                             <label class="text text-muted">
@@ -864,20 +864,16 @@
                                             <div class="form-group form-inline">
                                                 <label for="projectClient">Client:</label>
                                                 <select class="form-control" name="projectClient" id="projectClient" style="width: 200px !important;">
-                                                    <option selected>Julia </option>
-                                                    <!-- sample -->
-                                                    <option>Erwin </option>
-                                                    <option>Dustin </option>
-                                                    <option>Ros </option>
+                                                    @foreach ($clients as $client)
+                                                        <option value= {{ $client->intClientId }} >{{$client->strClientFName}}&nbsp;{{$client->strClientLName}}</option>
+                                                    @endforeach
                                                 </select>
 
                                                 <label for="projectEngineer">Engineer:</label>
                                                 <select class="form-control" name="projectEngineer" id="projectEngineer" style="width: 200px !important;">
-                                                    <option selected>Erwin </option>
-                                                    <!-- sample -->
-                                                    <option>Julia </option>
-                                                    <option>Dustin </option>
-                                                    <option>Ros </option>
+                                                    @foreach ($engineers as $engineer)                                          
+                                                        <option value= {{ $engineer->intEmployeeId}}> {{$engineer->strEmployeeFName}}&nbsp;{{$engineer->strEmployeeLName}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
@@ -887,19 +883,17 @@
                                             <div class="form-group">
                                                 <label> Project Description: </label>
                                                 <br>
-                                                <textarea rows="4" cols="68" placeholder="Project Details...">
-
-                                                </textarea>
+                                                <textarea id="projectDesc" name="projectDesc" rows="4" cols="68" placeholder="Project Details..."></textarea>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="addProjectlocation">Location:</label>
-                                                <input type="text" class="form-control" id="projectLocation">
+                                                <input type="text" class="form-control" id="projectLocation" name="projectLocation">
                                             </div>
                                             <hr>
                                             <div class="modal-footer">
 
-                                                <button type="submit" class="btn btn-warning" data-dismiss="modal">
+                                                <button type="submit" class="btn btn-warning">
                                                     <i class="icon icon-check"> </i>Request for Cost Estimation</button>
                                                 <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 150px">
                                                     <i class="icon icon-close"> </i>Cancel</button>
