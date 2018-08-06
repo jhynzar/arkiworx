@@ -1416,13 +1416,13 @@ tbody{
                 <div class="col-sm-3 pull-right">
                     <br>
                     <br>
-                    <button type="button" data-toggle="modal" data-target="#addCustomActual" class="btn btn-success waves-effect waves-light"
-                        style=" margin-top: -30px"> 
+                    <button type="button" data-toggle="modal" data-target="#addCustomActual" class="btn btn-primary waves-effect waves-light"
+                        style="position: absolute; margin-left: -500px;  margin-top: 79px"> 
                         <i class="icon-plus"> </i>Add Custom Actual </button> <br> <br> 
                     <button type="button" data-toggle="modal" data-target="#addMaterialActual" class="btn btn-primary waves-effect waves-light"
-                        style=" margin-top: -20px">
+                        style=" position: absolute; margin-left: -280px;  margin-top: 34px">
                         <i class="icon-plus"> </i>Add from Materials  Actual</button> <br> <br> 
-                    <button type="button" data-toggle="modal" data-target="#addNewMaterialActual" class="btn btn-danger waves-effect waves-light"
+                    <button type="button" data-toggle="modal" data-target="#addNewMaterialActual" class="btn btn-primary waves-effect waves-light"
                         style=" margin-top: -10px">
                         <i class="icon-plus"> </i>Add New Material Actual</button><br> <br> 
                 </div>
@@ -1458,7 +1458,7 @@ tbody{
                                                 <th style="color: black">Unit Cost</th>
                                                 <th style="color: black">Total Unit Cost</th>
                                                 <th class="text-center">
-                                                    <span class="text text-danger"> Action</span>
+                                                    <span class="text text-info"> Action</span>
                                                 </th>
                                                 <th></th>
 
@@ -1469,7 +1469,7 @@ tbody{
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="table-info">
+                                            <tr class="table-active">
                                                 <td class="text-center">01</td>
                                                 <td class="text-center">Cement
                                                     <p>
@@ -1480,7 +1480,7 @@ tbody{
                                                 <td class="text-center">250.0</td>
                                                 <td class="text-center">500.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
@@ -1500,7 +1500,7 @@ tbody{
                                                 <td class="text-center">350.0</td>
                                                 <td class="text-center">1400.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
@@ -1509,7 +1509,7 @@ tbody{
                                                 </td>
                                             </tr>
 
-                                            <tr class="table-info">
+                                            <tr class="table-active">
                                                 <td class="text-center">03</td>
                                                 <td class="text-center">Steel Bar
                                                     <p>
@@ -1520,7 +1520,7 @@ tbody{
                                                 <td class="text-center">800</td>
                                                 <td class="text-center">1600.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
@@ -1539,8 +1539,8 @@ tbody{
                                                 <td class="text-center">bags</td>
                                                 <td class="text-center">450</td>
                                                 <td class="text-center">900.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                               <td>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
@@ -1551,7 +1551,7 @@ tbody{
                                             
                                             
                                             
-                                            <tr class="table-info">
+                                            <tr class="table-active">
                                                 <td class="text-center">05</td>
                                                 <td class="text-center">Cement
                                                     <p>
@@ -1562,7 +1562,7 @@ tbody{
                                                 <td class="text-center">250.0</td>
                                                 <td class="text-center">500.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
@@ -1582,14 +1582,14 @@ tbody{
                                                 <td class="text-center">250.0</td>
                                                 <td class="text-center">500.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
                                                         <span style="color: dimgray">Audit Trail</span>
                                                     </button>
                                                 </td>
-                                            </tr><tr class="table-info">
+                                            </tr><tr class="table-active">
                                                 <td class="text-center">07</td>
                                                 <td class="text-center">Cement
                                                     <p>
@@ -1600,7 +1600,7 @@ tbody{
                                                 <td class="text-center">250.0</td>
                                                 <td class="text-center">500.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
@@ -1618,14 +1618,14 @@ tbody{
                                                 <td class="text-center">250.0</td>
                                                 <td class="text-center">500.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
                                                         <span style="color: dimgray">Audit Trail</span>
                                                     </button>
                                                 </td>
-                                            </tr><tr class="table-info">
+                                            </tr><tr class="table-active">
                                                 <td class="text-center">09</td>
                                                 <td class="text-center">Cement
                                                     <p>
@@ -1636,7 +1636,7 @@ tbody{
                                                 <td class="text-center">250.0</td>
                                                 <td class="text-center">500.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
@@ -1654,7 +1654,7 @@ tbody{
                                                 <td class="text-center">250.0</td>
                                                 <td class="text-center">500.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">

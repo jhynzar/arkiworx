@@ -94,6 +94,23 @@
             background-color: #778899 !important;
             color: white !important;
         }
+        
+          tr {
+width: 100%;
+display: inline-table;
+table-layout: fixed;
+}
+
+table{
+ height:300px;             
+ display: -moz-groupbox;    
+}
+tbody{
+  overflow-y: scroll;      
+  height: 250px;           
+  width: 100%;
+  position: absolute;
+}
 
     </style>
 
@@ -387,42 +404,7 @@
     </aside>
 
    
-
-    <div class="container" style="position: absolute; margin-top: 43px; margin-left: 220px">
-
-        <ul class="nav nav-tabs" style="background-color: #f2f2f2">
-
-
-
-            <li>
-                <a href="Admin/home">Dashboard</a>
-            </li>
-            <li>
-                <a href="Admin/Cost-Summary">Project</a>
-            </li>
-            <li class="active">
-                <a href="Admin/Cost-Summary">Cost</a>
-            </li>
-            <li>
-                <a href="Admin/Project-Progress">Project Plan</a>
-            </li>
-            <li>
-                <a href="Admin/Calendar">Calendar</a>
-            </li>
-            <li>
-                <a href="Admin/Inbox">Inbox</a>
-            </li>
-            <li>
-                <a href="Admin/Accounts">Accounts</a>
-            </li>
-
-        </ul>
-    </div>
-
-
-
-
-    <div class="content-wrapper" style="margin-top: 45px">
+<div class="content-wrapper" style="margin-top: 45px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 
@@ -431,10 +413,10 @@
                 <div class="col-sm-9 p-0">
                     <div class="main-header">
                         <h4>
-                            <i class="icon-briefcase"></i> Cost </h4>
+                            <i class="icon icon-briefcase"></i> Cost </h4>
                         <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
                             <li class="breadcrumb-item">
-                                <a href="Admin/home"></a>
+                                <a href="index"></a>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="#!">Cost Summary</a>
@@ -445,7 +427,7 @@
 
 
                         <div class="container" style=" position: absolute; margin-top: -40px; margin-left: 210px">
-                            <label class="text text-muted">Project Cost Summary for:</label>
+                            <label class="text text-muted">Project:</label>
                             <select class="form-control" name="project" id="project" style="width: 500px; height: 40px !important;">
 
                                 <option> Soriano Residence </option>
@@ -503,151 +485,185 @@
 
             <!-- Tables start -->
             <br>
-            <!-- Contextual classes table starts -->
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-header-text">Cost Summary</h5>
+            <!-- Row start -->
+            <div class="row">
+                <div class="col-sm-12">
 
-                </div>
-                <div class="card-block">
-                    <!-- Row start -->
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="card">
-                                <div class="card-block">
-                                    <div class="table-responsive">
-                                        <table class="table m-b-0 photo-table">
-                                            <thead>
-                                                <tr class="text-uppercase">
-                                                    <th>Line Item</th>
-                                                    <th>Description</th>
-                                                    <th>Estimated Cost</th>
-                                                    <th>Actuals</th>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
+                    <!-- Contextual classes table starts -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-header-text">Cost Summary</h5>
 
-                                                    <td> 1</td>
+                        </div>
+                        <div class="card-block">
+                            <!-- Row start -->
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12">
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <div class="table-responsive ">
+                                                <table class="table m-b-0 photo-table" >
+                                                    <thead >
+                                                        <tr >
+                                                            <th>Line Item</th>
+                                                            <th>Description</th>
+                                                            <th>Estimated Cost</th>
+                                                            <th>Actuals</th>
 
-                                                    <td>Building Permit</td>
-                                                    <td>-</td>
-                                                    <td>150,000.0</td>
-                                                </tr>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
 
-                                                <tr>
+                                                            <td> 1</td>
 
-                                                    <td> 2</td>
+                                                            <td>Building Permit</td>
+                                                            <td>-</td>
+                                                            <td>150,000.0</td>
+                                                        </tr>
 
-                                                    <td>HB 4</td>
-                                                    <td>3,000.0</td>
-                                                    <td>3,350.0</td>
-                                                </tr>
+                                                        <tr>
 
-                                                <tr>
+                                                            <td> 2</td>
 
-                                                    <td> 3</td>
+                                                            <td>HB 4</td>
+                                                            <td>3,000.0</td>
+                                                            <td>3,350.0</td>
+                                                        </tr>
 
-                                                    <td>Cement</td>
-                                                    <td>2,000.0</td>
-                                                    <td>2,000.0</td>
-                                                </tr>
+                                                        <tr>
 
-                                                <tr>
+                                                            <td> 3</td>
 
-                                                    <td> 4</td>
+                                                            <td>Cement</td>
+                                                            <td>2,000.0</td>
+                                                            <td>2,000.0</td>
+                                                        </tr>
 
-                                                    <td>Pipe</td>
-                                                    <td>12,000.0</td>
-                                                    <td>12,101.0</td>
-                                                </tr>
+                                                        <tr>
 
-                                                <tr>
+                                                            <td> 4</td>
 
-                                                    <td> 5</td>
+                                                            <td>Pipe</td>
+                                                            <td>12,000.0</td>
+                                                            <td>12,101.0</td>
+                                                        </tr>
 
-                                                    <td>Gravel</td>
-                                                    <td>5,000.0</td>
-                                                    <td>4,800.0</td>
-                                                </tr>
+                                                        <tr>
 
-                                                <tr>
+                                                            <td> 5</td>
 
-                                                    <td> 6</td>
+                                                            <td>Gravel</td>
+                                                            <td>5,000.0</td>
+                                                            <td>4,800.0</td>
+                                                        </tr>
 
-                                                    <td>Pipe</td>
-                                                    <td>12,000.0</td>
-                                                    <td>12,101.0</td>
-                                                </tr>
+                                                        <tr>
 
-                                                <tr>
+                                                            <td> 6</td>
 
-                                                    <td> 7</td>
+                                                            <td>Pipe</td>
+                                                            <td>12,000.0</td>
+                                                            <td>12,101.0</td>
+                                                        </tr>
 
-                                                    <td>HB 4</td>
-                                                    <td>3,000.0</td>
-                                                    <td>3,350.0</td>
-                                                </tr>
+                                                        <tr>
 
-                                                <tr>
+                                                            <td> 7</td>
 
-                                                    <td> 8</td>
+                                                            <td>HB 4</td>
+                                                            <td>3,000.0</td>
+                                                            <td>3,350.0</td>
+                                                        </tr>
 
-                                                    <td>Cement</td>
-                                                    <td>2,000.0</td>
-                                                    <td>2,000.0</td>
-                                                </tr>
+                                                        <tr>
 
-                                                <tr>
+                                                            <td> 8</td>
 
-                                                    <td> 9</td>
+                                                            <td>Cement</td>
+                                                            <td>2,000.0</td>
+                                                            <td>2,000.0</td>
+                                                        </tr>
 
-                                                    <td>Pipe</td>
-                                                    <td>12,000.0</td>
-                                                    <td>12,101.0</td>
-                                                </tr>
+                                                        <tr>
 
-                                                <tr>
+                                                            <td> 9</td>
 
-                                                    <td> 10</td>
+                                                            <td>Pipe</td>
+                                                            <td>12,000.0</td>
+                                                            <td>12,101.0</td>
+                                                        </tr>
 
-                                                    <td>Gravel</td>
-                                                    <td>5,000.0</td>
-                                                    <td>4,800.0</td>
-                                                </tr>
+                                                        <tr>
 
-                                            </tbody>
-                                        </table>
+                                                            <td> 10</td>
+
+                                                            <td>Gravel</td>
+                                                            <td>5,000.0</td>
+                                                            <td>4,800.0</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                     
+                                    
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
                                     </div>
                                 </div>
+
+
+
+
+
+
+
+                                <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">TOTALS:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345</th>
+                                                            <th class="text-center text-primary">23365</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
                             </div>
+                            <!-- Row end -->
+                            <!-- Tables end -->
                         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-                    <!-- Row end -->
-                    <!-- Tables end -->
-                </div>
 
 
                 <!-- deactivate user modal -->
