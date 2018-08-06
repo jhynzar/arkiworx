@@ -256,7 +256,136 @@
     <!-- end of nav bar -->
 
 
-    @include ('partials.engineer-sidebar')
+    <!-- Side-Nav-->
+    <aside class="main-sidebar hidden-print ">
+        <section class="sidebar" id="sidebar-scroll">
+
+            <div class="user-panel">
+                <br>
+                <br>
+                <br>
+                <div class="f-left image">
+                    <img src="/assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                </div>
+                <div class="f-left info">
+                    <br>
+                    <br>
+                    <p>
+                        <b>Juliamar</b> K</p>
+                    <p class="designation">
+                        <span class="text-info">
+                            <span style="color: white">More</span>
+                        </span>
+                        <i class="icofont icofont-caret-down m-l-5" style="color: white"></i>
+                    </p>
+                </div>
+            </div>
+            <!-- sidebar profile Menu-->
+            <ul class="nav sidebar-menu extra-profile-list">
+                <li>
+                    <a class="waves-effect waves-dark" href="profile">
+                        <i class="icon-user"></i>
+                        <span class="menu-text">View Profile</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="waves-effect waves-dark" href="../login">
+                        <i class="icon-logout"></i>
+                        <span class="menu-text">Logout</span>
+
+                        <span class="selected"></span>
+                    </a>
+                </li>
+            </ul>
+            <!-- Sidebar Menu-->
+            <ul class="sidebar-menu">
+                <li class="nav-level">
+                    <span style="color: #939393">
+                        <i>Navigation</i>
+                    </span>
+                </li>
+                <li class="active treeview">
+                    <a class="waves-effect waves-dark" href="../../Engineer/Home">
+                        <i class="icon-speedometer"></i>
+                        <span> Dashboard</span>
+                    </a>
+                </li>
+
+
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="#!">
+                        <i class="icon-briefcase"></i>
+                        <span> Cost</span>
+                        <i class="icon-arrow-down"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a class="waves-effect waves-dark" href="../../Engineer/Cost-Summary">
+                                <i class="icon-arrow-right"></i> Cost Summary</a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="../../Engineer/Cost-Estimation">
+                                <i class="icon-arrow-right"></i> Cost Estimation</a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="../../Engineer/Actuals">
+                                <i class="icon-arrow-right"></i> Actuals</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="../../Engineer/Materials-Pricelist">
+                        <i class="icon-notebook"></i>
+                        <span> Materials PriceList</span>
+                    </a>
+                </li>
+
+
+
+
+
+
+
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="../../Engineer/Project-Progress">
+                        <i class="icon-chart"></i>
+                        <span> Project Plan</span>
+                    </a>
+                </li>
+
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="calendar">
+                        <i class="icon-calendar"></i>
+                        <span> Calendar</span>
+                    </a>
+                </li>
+
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="inbox">
+                        <i class="icon-envelope-letter"></i>
+                        <span> Inbox</span>
+                    </a>
+                </li>
+
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="../../Engineer/Accounts-Settings">
+                        <i class="icon-people"></i>
+                        <span> Account Setting</span>
+                    </a>
+                </li>
+
+
+
+
+    </aside>
+    <!-- end of sidebar-->
+
 
 
     <!--tabs-->
@@ -700,8 +829,7 @@
                                                 <tr class="svg-icon">
                                                     <td>Sunday</td>
                                                     <td>
-                                                        <svg version="1.1" id="cloudDrizzleSun1" class="climacon climacon_cloudDrizzleSun"
-                                                            viewBox="15 15 70 70">
+                                                        <svg version="1.1" id="cloudDrizzleSun1" class="climacon climacon_cloudDrizzleSun" viewBox="15 15 70 70">
                                                             <clipPath id="cloudFillClip3">
                                                                 <path d="M15,15v70h70V15H15z M59.943,61.639c-3.02,0-12.381,0-15.999,0c-6.626,0-11.998-5.371-11.998-11.998c0-6.627,5.372-11.999,11.998-11.999c5.691,0,10.434,3.974,11.665,9.29c1.252-0.81,2.733-1.291,4.334-1.291c4.418,0,8,3.582,8,8C67.943,58.057,64.361,61.639,59.943,61.639z"
                                                                 />
@@ -774,8 +902,7 @@
                                                 <tr class="svg-icon">
                                                     <td>Monday</td>
                                                     <td>
-                                                        <svg version="1.1" id="cloudDrizzleAlt1" class="climacon climacon_cloudDrizzleAlt"
-                                                            viewBox="15 15 70 70">
+                                                        <svg version="1.1" id="cloudDrizzleAlt1" class="climacon climacon_cloudDrizzleAlt" viewBox="15 15 70 70">
                                                             <g class="climacon_iconWrap climacon_iconWrap-cloudDrizzleAlt">
                                                                 <g class="climacon_wrapperComponent climacon_wrapperComponent-drizzle">
                                                                     <path class="climacon_component climacon_component-stroke climacon_component-stroke_drizzle climacon_component-stroke_drizzle-left"
@@ -801,8 +928,7 @@
                                                 <tr class="svg-icon">
                                                     <td>Tuesday</td>
                                                     <td>
-                                                        <svg version="1.1" id="cloudRainAlt1" class="climacon climacon_cloudRainAlt"
-                                                            viewBox="15 15 70 70">
+                                                        <svg version="1.1" id="cloudRainAlt1" class="climacon climacon_cloudRainAlt" viewBox="15 15 70 70">
                                                             <clipPath id="cloudFillClip5">
                                                                 <path d="M15,15v70h70V15H15z M59.943,61.639c-3.02,0-12.381,0-15.999,0c-6.626,0-11.998-5.371-11.998-11.998c0-6.627,5.372-11.999,11.998-11.999c5.691,0,10.434,3.974,11.665,9.29c1.252-0.81,2.733-1.291,4.334-1.291c4.418,0,8,3.582,8,8C67.943,58.057,64.361,61.639,59.943,61.639z"
                                                                 />
@@ -829,8 +955,7 @@
                                                 <tr class="svg-icon">
                                                     <td>Wednesday</td>
                                                     <td>
-                                                        <svg version="1.1" id="cloudDrizzleSun" class="climacon climacon_cloudDrizzleSun"
-                                                            viewBox="15 15 70 70">
+                                                        <svg version="1.1" id="cloudDrizzleSun" class="climacon climacon_cloudDrizzleSun" viewBox="15 15 70 70">
                                                             <clipPath id="cloudFillClip6">
                                                                 <path d="M15,15v70h70V15H15z M59.943,61.639c-3.02,0-12.381,0-15.999,0c-6.626,0-11.998-5.371-11.998-11.998c0-6.627,5.372-11.999,11.998-11.999c5.691,0,10.434,3.974,11.665,9.29c1.252-0.81,2.733-1.291,4.334-1.291c4.418,0,8,3.582,8,8C67.943,58.057,64.361,61.639,59.943,61.639z"
                                                                 />
@@ -903,8 +1028,7 @@
                                                 <tr class="svg-icon">
                                                     <td>Thursday</td>
                                                     <td>
-                                                        <svg version="1.1" id="cloudDrizzleMoonAlt" class="climacon climacon_cloudDrizzleMoonAlt"
-                                                            viewBox="15 15 70 70">
+                                                        <svg version="1.1" id="cloudDrizzleMoonAlt" class="climacon climacon_cloudDrizzleMoonAlt" viewBox="15 15 70 70">
                                                             <clipPath id="cloudFillClip9">
                                                                 <path d="M15,15v70h70V15H15z M59.943,61.639c-3.02,0-12.381,0-15.999,0c-6.626,0-11.998-5.371-11.998-11.998c0-6.627,5.372-11.999,11.998-11.999c5.691,0,10.434,3.974,11.665,9.29c1.252-0.81,2.733-1.291,4.334-1.291c4.418,0,8,3.582,8,8C67.943,58.057,64.361,61.639,59.943,61.639z"
                                                                 />
@@ -944,8 +1068,7 @@
                                                 <tr class="svg-icon">
                                                     <td>Friday</td>
                                                     <td>
-                                                        <svg version="1.1" id="cloudSnowSunAlt1" class="climacon climacon_cloudSnowSunAlt"
-                                                            viewBox="15 15 70 70">
+                                                        <svg version="1.1" id="cloudSnowSunAlt1" class="climacon climacon_cloudSnowSunAlt" viewBox="15 15 70 70">
                                                             <clipPath id="cloudFillClip11">
                                                                 <path d="M15,15v70h70V15H15z M59.943,61.639c-3.02,0-12.381,0-15.999,0c-6.626,0-11.998-5.371-11.998-11.998c0-6.627,5.372-11.999,11.998-11.999c5.691,0,10.434,3.974,11.665,9.29c1.252-0.81,2.733-1.291,4.334-1.291c4.418,0,8,3.582,8,8C67.943,58.057,64.361,61.639,59.943,61.639z"
                                                                 />
@@ -1016,8 +1139,7 @@
                                                 <tr class="svg-icon">
                                                     <td>Saturday</td>
                                                     <td>
-                                                        <svg version="1.1" id="cloudLightning" class="climacon climacon_cloudLightning"
-                                                            viewBox="15 15 70 70">
+                                                        <svg version="1.1" id="cloudLightning" class="climacon climacon_cloudLightning" viewBox="15 15 70 70">
                                                             <g class="climacon_iconWrap climacon_iconWrap-cloudLightning">
                                                                 <g class="climacon_wrapperComponent climacon_wrapperComponent-lightning">
                                                                     <polygon class="climacon_component climacon_component-stroke climacon_component-stroke_lightning" points="48.001,51.641 57.999,51.641 52,61.641 58.999,61.641 46.001,77.639 49.601,65.641 43.001,65.641 "
