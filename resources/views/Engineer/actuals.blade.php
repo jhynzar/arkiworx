@@ -680,7 +680,7 @@ tbody{
                         <div class="modal-footer">
 
                             <button type="submit" class="btn btn-success" >
-                                <i class="icon icon-check"> </i>Add Entry</button>
+                               <a> <i class="icon icon-check"> </i>Add Entry</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
                                 <i class="icon icon-close"> </i>Cancel</button>
 
