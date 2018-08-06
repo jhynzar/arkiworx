@@ -7,7 +7,7 @@
 
     
         tr {
-width: 95%;
+width: 100%;
 display: inline-table;
 table-layout: fixed;
 }
@@ -369,7 +369,7 @@ tbody{
                         <hr>
                         <button type="submit" class="btn btn-success">
                             <i class="icon icon-check"> </i>Add Material</button>
-                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 265px">
                             <i class="icon icon-close"> </i>Cancel</button>
                     </div>
                 </form>
@@ -515,7 +515,7 @@ tbody{
                     <div class="form-inline">
                         <br>
 
-                        <div class="form-group" style="margin-left: 100px">
+                        <div class="form-group" style="margin-left: 20px">
                             <label for="showProject" class="text text-muted">Show</label>
                             <select class="form-control" name="sex" id="userType" style="width: 70px; height: 35px !important;">
                                 <option selected> 50 </option>
@@ -556,7 +556,7 @@ tbody{
             <div class="col-sm-3 pull-right">
                 <br>
                 <br>
-                <button type="button" data-toggle="modal" data-target="#addMaterial" class="btn btn-success waves-effect waves-light" style="margin-left: 10px; margin-top: 50px">
+                <button type="button" data-toggle="modal" data-target="#addMaterial" class="btn btn-primary waves-effect waves-light" style="margin-left: 10px; margin-top: 50px">
                     <i class="icon-plus"> </i>Add Material</button>
             </div>
 
@@ -569,7 +569,7 @@ tbody{
         <!-- Tables start -->
         <!-- Row start -->
         <div class="row">
-            <div class="col-sm-11 " style="margin-left: 50px;">
+            <div class="col-sm-12 " >
 
 
                 <!-- Contextual classes table starts -->
@@ -590,7 +590,7 @@ tbody{
                                             <th style="color: black">Unit</th>
                                             <th style="color: black">Price</th>
                                             <th>
-                                                <span class="text text-danger">&nbsp; &nbsp; Action</span>
+                                                <span class="text text-info">&nbsp; &nbsp; Action</span>
                                             </th>
                                             <th></th>
 
@@ -610,10 +610,10 @@ tbody{
                                             <td>{{ $material->strUnit}}</td>
                                             <td>{{ $material->intPrice}}</td>
                                             <td>
-                                                <button data-toggle="modal" data-target="#update{{$key}}" class="btn label btn-info">Update Price</button>
+                                                <button data-toggle="modal" data-target="#update{{$key}}" class="btn label label-light " style="background-color: #778899; color: white !important">Update Price</button>
                                             </td>
-                                            <td>
-                                                <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label btn-warning ">
+                                            <td class="text-left">
+                                                <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light" style="color:  gray !important">
                                                     View Price History</button>
                                             </td>
                                         </tr>
