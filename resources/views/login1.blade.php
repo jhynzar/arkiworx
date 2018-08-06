@@ -1,127 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Able Pro Responsive Bootstrap 4 Admin Template by Phoenixcoded</title>
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
+    <title>Able Pro Responsive Bootstrap 4 Admin Template by Phoenixcoded</title>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
 
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<meta name="description" content="Phoenixcoded">
-	<meta name="keywords"
-		  content=", Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
-	<meta name="author" content="Phoenixcoded">
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Phoenixcoded">
+    <meta name="keywords" content=", Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="Phoenixcoded">
 
-	<!-- Favicon icon -->
-	<link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
-	<!-- Google font-->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-	<!-- Font Awesome -->
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-	<!--ico Fonts-->
-	<link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+    <!--ico Fonts-->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
 
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css">
 
-	<!-- Style.css -->
-	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
-	<!-- Responsive.css-->
-	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
-	<!--color css-->
-	<link rel="stylesheet" type="text/css" href="assets/css/color/color-1.min.css" id="color"/>
-    
-    <style> 
-        
+    <!--color css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/color/color-1.min.css" id="color" />
+
+    <style>
         .login-card {
-            background-color: #e5e5ff !important; 
+            background-color: #e5e5ff !important;
         }
-        
+
     </style>
-   
-    
+
+
 
 </head>
+
 <body>
-<section class="login p-fixed d-flex text-center bg-primary common-img-bg">
-	<!-- Container-fluid starts -->
-	<div class="container-fluid">
-		<div class="row">
+    <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+        <!-- Container-fluid starts -->
+        <div class="container-fluid">
+            <div class="row">
 
-			<div class="col-sm-12">
-				<div class="login-card card-block">
-					<form class="md-float-material" action='Login' method="POST">
-						<h4 class="text-center txt-primary" >
-							<span><b>ARKIWORX</b></span>
-						</h4>
-						<h3 class="text-center txt-success" >
-							Sign In to your account
-						</h3>
-                <div class="md-input-wrapper">
-							<input type="text" class="md-form-control" name="UserN" style="background-color: white"/>
-							<label>Username</label>
-						</div>
-						<div class="md-input-wrapper">
-							<input type="password" name="PassW" class="md-form-control" style="background-color: white" />
-							<label>Password</label>
-						</div>
-						<div class="row">
-							<div class="col-sm-6 col-xs-12">
-							<div class="rkmd-checkbox checkbox-rotate checkbox-ripple m-b-25">
-								<label class="input-checkbox checkbox-primary">
-									<input type="checkbox" id="checkbox">
-									<span class="checkbox"></span>
-								</label>
-								<div class="captions">Remember Me</div>
+                <div class="col-sm-12">
+                    <div class="login-card card-block">
+                        <form class="md-float-material" action='Login' method="POST">
+                            <h4 class="text-center txt-primary">
+                                <span>
+                                    <b>ARKIWORX</b>
+                                </span>
+                            </h4>
+                            <h3 class="text-center txt-success">
+                                Sign In to your account
+                            </h3>
+                            <div class="md-input-wrapper">
+                                <input type="text" class="md-form-control" name="UserN" style="background-color: white" />
+                                <label>Username</label>
+                            </div>
+                            <div class="md-input-wrapper">
+                                <input type="password" name="PassW" class="md-form-control" style="background-color: white" />
+                                <label>Password</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="rkmd-checkbox checkbox-rotate checkbox-ripple m-b-25">
+                                        <label class="input-checkbox checkbox-primary">
+                                            <input type="checkbox" id="checkbox">
+                                            <span class="checkbox"></span>
+                                        </label>
+                                        <div class="captions">Remember Me</div>
 
-							</div>
-								</div>
-							<div class="col-sm-6 col-xs-12 forgot-phone text-right">
-								<a href="forgot-password" class="text-right f-w-600" style="color: indianredfcommon!important;"> Forget Password?</a>
-								</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-10 offset-xs-1">
-								
-                                <button type="submit" class="btn btn-md btn-block waves-effect text-center m-b-20" style="background: #222d32; color: skyblue">LOG IN</button>
-							</div>
-						</div>
-						<!-- <div class="card-footer"> -->
-						<div class="col-sm-12 col-xs-12 text-center">
-							
-							
-                            
-						</div>
-						{{ csrf_field() }}
-						<!-- </div> -->
-					</form>
-					<!-- end of form -->
-				</div>
-				<!-- end of login-card -->
-			</div>
-			<!-- end of col-sm-12 -->
-		</div>
-		<!-- end of row -->
-	</div>
-	<!-- end of container-fluid -->
-</section>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-12 forgot-phone text-right">
+                                    <a href="forgot-password" class="text-right f-w-600" style="color: indianredfcommon!important;"> Forget Password?</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-10 offset-xs-1">
 
-<!-- Warning Section Starts -->
-<!-- Older IE warning message -->
-<!--[if lt IE 9]>
+                                    <button type="submit" class="btn btn-md btn-block waves-effect text-center m-b-20" style="background: #222d32; color: skyblue">LOG IN</button>
+                                </div>
+                            </div>
+                            <!-- <div class="card-footer"> -->
+                            <div class="col-sm-12 col-xs-12 text-center">
+
+
+
+                            </div>
+                            {{ csrf_field() }}
+                            <!-- </div> -->
+                        </form>
+                        <!-- end of form -->
+                    </div>
+                    <!-- end of login-card -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
 <div class="ie-warning">
 	<h1>Warning!!</h1>
 	<p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
@@ -162,15 +164,16 @@
 	<p>Sorry for the inconvenience!</p>
 </div>
 <![endif]-->
-<!-- Warning Section Ends -->
-<!-- Required Jqurey -->
-<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="assets/plugins/tether/dist/js/tether.min.js"></script>
-<!-- Required Fremwork -->
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- waves effects.js -->
-<script src="assets/plugins/Waves/waves.min.js"></script>
-<!-- Custom js -->
-<script type="text/javascript" src="assets/pages/elements.js"></script>
+    <!-- Warning Section Ends -->
+    <!-- Required Jqurey -->
+    <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="assets/plugins/tether/dist/js/tether.min.js"></script>
+    <!-- Required Fremwork -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- waves effects.js -->
+    <script src="assets/plugins/Waves/waves.min.js"></script>
+    <!-- Custom js -->
+    <script type="text/javascript" src="assets/pages/elements.js"></script>
 </body>
+
 </html>

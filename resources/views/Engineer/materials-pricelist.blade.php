@@ -1,280 +1,314 @@
-@extends('layouts.master')
-
-@section ('body')
-    <div class="loader-bg">
-        <div class="loader-bar">
-        </div>
+@extends('layouts.master') @section ('body')
+<div class="loader-bg">
+    <div class="loader-bar">
     </div>
-    <div class="wrapper">
+</div>
+<div class="wrapper">
     <!--   <div class="loader-bg">
     <div class="loader-bar">
     </div>
 </div> -->
-        
-        
-        <!--log out modal -->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Log out</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p class="text-center text text-muted" style="font-size: 15px"> Are you sure you want to log-out?</p>
-      </div>
-      <div class="modal-footer">
-        <div class="actionsBtns">
-            <form action="/logout" method="post">
-                <a href="../login" class="btn btn-primary"> LOG OUT
-                            </a>
-	                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
-            </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-        @include ('partials.navbar')
-        
-        
-        @include ('partials.engineer-sidebar')
-       
-     
-     <!--tabs-->
-     
-       <div class="container" style="position: absolute; margin-top: 43px; margin-left: 220px">
- 
-  <ul class="nav nav-tabs" style="background-color: #f2f2f2"> 
-      
-     
-  
-    <li><a href="index">Dashboard</a></li>
-   
-      <li><a href="#">Cost</a></li>
-      <li class="active"><a href="materials%20pricelist">PriceList</a></li>
-      <li ><a href="projectprogress">Project Plan</a></li>
-      <li><a href="calendar">Calendar</a></li>
-      <li><a href="inbox">Inbox</a></li>
-      <li><a href="accountsettings">Account Settings</a></li>
-      
-  </ul>
-</div>
-     
-     
-     
-                
-                
-                
-              <!-- Add material Modal --> 
-        
-        <div class="modal fade" id="addMaterial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content pull-center">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><span class="label label-info">Add Material</span></h4>
-      </div>
-      <div class="modal-body" style="background: #e5e5f2 !important; ">
- 
-                
-          
-          
-        <form action="Materials-Pricelist/Create" method="POST" >
-        {{ csrf_field() }}
-            <label class="text text-muted" style="margin-left: 450px"> <i>07 August 2018</i></label> <!-- current date -->
-            <br> 
-            <div class="form-group">
-                <label for="materialDesc">Description:</label>
-                <input type="text" class="form-control" id="materialDesc" name="materialDesc">
+
+    <!--log out modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Log out</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center text text-muted" style="font-size: 15px"> Are you sure you want to log-out?</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="actionsBtns">
+                        <form action="/logout" method="post">
+                            <a href="../login" class="btn btn-primary"> LOG OUT
+                            </a>
+                            <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <br>
-            <div class="form-group form-inline">
-                <label for="materialUnit"  placeholder="Enter Unit">Unit:</label>
-                <input type="type" class="form-control" id="materialUnit" name="materialUnit" style="width: 130px !important;" placeholder="Enter Unit">
-                <label for="materialPrice"  >Price:</label>
-                <input type="type" class="form-control" id="materialPrice" name="materialPrice" style="width: 130px !important;" placeholder="Enter Price">
-            </div>
-            
-          
-            
-            <div class="modal-footer">
-                <hr>
-                <button type="submit" class="btn btn-success"><i class="icon icon-check"> </i>Add Material</button>
-                <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px"><i class="icon icon-close" > </i>Cancel</button>
-            </div>
-    </form>
-         
-          
-      </div>
-      
+        </div>
     </div>
-  </div>
-</div>  
-                
-                
-                
-              
-                
-                
-                
-                
-                
-        <!-- View Price History Modal --> 
-        
-        <div class="modal fade" id="viewPriceHistory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content pull-center">
-      <div class="modal-header bg-primary" >
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><span style="color: white"><b>Price History</b></span></h4>
-      </div>
-      <div class="modal-body" style="background: #e5e5f2 !important; ">
- 
-                
-          
-          
-        <form action="/action_page.php">
-    
-                                        
-  <br> 
-            <div class="form-group">
-    <label for="materialDesc">Description:</label>
-    <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;" value="Cement" disabled>
-              
-  </div>
-       
-            <div class="form-group form-inline">
-    
-             
-                
-                
-                
-    <label for="usertype"><i>As of</i>:</label> <br>
-      <select class="form-control pull-center text-center"  name="month" id="month" style="width: 300px !important;">
-        <option>January-07-2018  </option>
-        <option>January-20-2018</option>
-        <option>February-26-2018 </option>
-        <option>March-23-2018  </option>
-        <option >April-4-2018  </option>
-        <option>April-27-2018  </option>
-        <option>May-14-2018</option>
-        <option>June-8-2018  </option>
-        <option>July-22-2018  </option>
-        <option selected >Aug-7-2018  </option>
-        
-      </select>
-            
-          
-                &nbsp; &nbsp;
-                
-                <label for="materialPrice"  >Price:</label>
-      <input type="text" class="form-control" id="materialPrice" style="width: 120px !important;" value="150" disabled>
-  </div>
-            
-          
-            
-            <div class="modal-footer">
-        <hr>
-        
-        <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 280px"><i class="icon icon-close" > </i>Close</button>
-       
-      </div>
-</form>
-         
-          
-      </div>
-      
+
+    @include ('partials.navbar') @include ('partials.engineer-sidebar')
+
+
+    <!--tabs-->
+
+    <div class="container" style="position: absolute; margin-top: 43px; margin-left: 220px">
+
+        <ul class="nav nav-tabs" style="background-color: #f2f2f2">
+
+
+
+            <li>
+                <a href="index">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="#">Cost</a>
+            </li>
+            <li class="active">
+                <a href="materials%20pricelist">PriceList</a>
+            </li>
+            <li>
+                <a href="projectprogress">Project Plan</a>
+            </li>
+            <li>
+                <a href="calendar">Calendar</a>
+            </li>
+            <li>
+                <a href="inbox">Inbox</a>
+            </li>
+            <li>
+                <a href="accountsettings">Account Settings</a>
+            </li>
+
+        </ul>
     </div>
-  </div>
-</div>           
-                
-                
-                
-                
-     
-     
-    <div class="content-wrapper" style="margin-top: 90px">  
+
+
+
+
+
+
+    <!-- Add material Modal -->
+
+    <div class="modal fade" id="addMaterial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content pull-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <span class="label label-info">Add Material</span>
+                    </h4>
+                </div>
+                <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                    <form action="Materials-Pricelist/Create" method="POST">
+                        {{ csrf_field() }}
+                        <label class="text text-muted" style="margin-left: 450px">
+                            <i>07 August 2018</i>
+                        </label>
+                        <!-- current date -->
+                        <br>
+                        <div class="form-group">
+                            <label for="materialDesc">Description:</label>
+                            <input type="text" class="form-control" id="materialDesc" name="materialDesc">
+                        </div>
+                        <br>
+                        <div class="form-group form-inline">
+                            <label for="materialUnit" placeholder="Enter Unit">Unit:</label>
+                            <input type="type" class="form-control" id="materialUnit" name="materialUnit" style="width: 130px !important;" placeholder="Enter Unit">
+                            <label for="materialPrice">Price:</label>
+                            <input type="type" class="form-control" id="materialPrice" name="materialPrice" style="width: 130px !important;" placeholder="Enter Price">
+                        </div>
+
+
+
+                        <div class="modal-footer">
+                            <hr>
+                            <button type="submit" class="btn btn-success">
+                                <i class="icon icon-check"> </i>Add Material</button>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                <i class="icon icon-close"> </i>Cancel</button>
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- View Price History Modal -->
+
+    <div class="modal fade" id="viewPriceHistory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content pull-center">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <span style="color: white">
+                            <b>Price History</b>
+                        </span>
+                    </h4>
+                </div>
+                <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                    <form action="/action_page.php">
+
+
+                        <br>
+                        <div class="form-group">
+                            <label for="materialDesc">Description:</label>
+                            <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;" value="Cement" disabled>
+
+                        </div>
+
+                        <div class="form-group form-inline">
+
+
+
+
+
+                            <label for="usertype">
+                                <i>As of</i>:</label>
+                            <br>
+                            <select class="form-control pull-center text-center" name="month" id="month" style="width: 300px !important;">
+                                <option>January-07-2018 </option>
+                                <option>January-20-2018</option>
+                                <option>February-26-2018 </option>
+                                <option>March-23-2018 </option>
+                                <option>April-4-2018 </option>
+                                <option>April-27-2018 </option>
+                                <option>May-14-2018</option>
+                                <option>June-8-2018 </option>
+                                <option>July-22-2018 </option>
+                                <option selected>Aug-7-2018 </option>
+
+                            </select>
+
+
+                            &nbsp; &nbsp;
+
+                            <label for="materialPrice">Price:</label>
+                            <input type="text" class="form-control" id="materialPrice" style="width: 120px !important;" value="150" disabled>
+                        </div>
+
+
+
+                        <div class="modal-footer">
+                            <hr>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 280px">
+                                <i class="icon icon-close"> </i>Close</button>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="content-wrapper" style="margin-top: 90px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 
             <!-- Header Starts -->
             <div class="row" style="margin-top: -10px">
                 <div class="col-sm-9 p-0">
-                    <div class="main-header" >
-                       <h4><i class="icon-notebook"></i> Materials</h4>
-                    <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
-                        <li class="breadcrumb-item"><a href="index"></a>
-                        </li>
-                        <li class="breadcrumb-item"><a href="#!">PriceList</a>
-                        </li>
-                        
-                    </ol>
-                        
-                
+                    <div class="main-header">
+                        <h4>
+                            <i class="icon-notebook"></i> Materials</h4>
+                        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                            <li class="breadcrumb-item">
+                                <a href="index"></a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#!">PriceList</a>
+                            </li>
 
-                        
-                        
-                     
-        
-             <div class="input-group stylish-input-group" style="position: absolute; margin-top: -40px; margin-left: 300px">
-                    <input type="text" class="form-control"  placeholder="Search material" style="width: 400px" >
-                 <button type="submit" class="btn btn-primary">
-                            <span class="icon-magnifier"></span>
-                        </button>  
-                 
-                </div>   
-                        
-                <div class="form-inline"> <br> 
-                        
-                        <div class="form-group" style="margin-left: 100px">
-    <label for="showProject" class="text text-muted">Show</label>
-      <select class="form-control"  name="sex" id="userType" style="width: 70px; height: 35px !important;">
-        <option selected> 50  </option>
-        <option> 1  </option>
-          <option> 2  </option>
-          <option> 3 </option>
-          <option> 4  </option>
-          <option> 5  </option>
-          <option> 6  </option>
-          <option> 7  </option>
-          <option> 8  </option>
-          <option> 9 </option>
-      </select>
-    <label class="text text-muted"> Materials</label> 
-  </div>
-                        </div>            
-                       
-                        
+                        </ol>
+
+
+
+
+
+
+
+                        <div class="input-group stylish-input-group" style="position: absolute; margin-top: -40px; margin-left: 300px">
+                            <input type="text" class="form-control" placeholder="Search material" style="width: 400px">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="icon-magnifier"></span>
+                            </button>
+
+                        </div>
+
+                        <div class="form-inline">
+                            <br>
+
+                            <div class="form-group" style="margin-left: 100px">
+                                <label for="showProject" class="text text-muted">Show</label>
+                                <select class="form-control" name="sex" id="userType" style="width: 70px; height: 35px !important;">
+                                    <option selected> 50 </option>
+                                    <option> 1 </option>
+                                    <option> 2 </option>
+                                    <option> 3 </option>
+                                    <option> 4 </option>
+                                    <option> 5 </option>
+                                    <option> 6 </option>
+                                    <option> 7 </option>
+                                    <option> 8 </option>
+                                    <option> 9 </option>
+                                </select>
+                                <label class="text text-muted"> Materials</label>
+                            </div>
+                        </div>
+
+
                     </div>
-                    
+
                 </div>
-                
-                
-                
-                
-                
-                
-                
-                
-           
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <!-- Add User Modal Button trigger-->
                 <div class="col-sm-3 pull-right">
-                    <br> <br> <button type="button" data-toggle="modal" data-target="#addMaterial" class="btn btn-success waves-effect waves-light" style="margin-left: 10px; margin-top: 50px"> <i class="icon-plus"> </i>Add Material</button>
-                    </div> 
-                
-                
-             
-                
+                    <br>
+                    <br>
+                    <button type="button" data-toggle="modal" data-target="#addMaterial" class="btn btn-success waves-effect waves-light" style="margin-left: 10px; margin-top: 50px">
+                        <i class="icon-plus"> </i>Add Material</button>
+                </div>
+
+
+
+
             </div>
             <!-- Header end -->
 
@@ -282,97 +316,110 @@
             <!-- Row start -->
             <div class="row">
                 <div class="col-sm-11 " style="margin-left: 50px;">
-              
- 
+
+
                     <!-- Contextual classes table starts -->
                     <div class="card">
                         <div class="card-header">
                             <h5 class="card-header-text">Materials PriceList</h5>
-                            
+
                         </div>
                         <div class="card-block">
                             <div class="row">
-                                <div class="col-sm-12 table-responsive"> 
-                                    <table class="table table-hover "  >
+                                <div class="col-sm-12 table-responsive">
+                                    <table class="table table-hover ">
                                         <thead>
-                                        <tr >
-                                            <th style="color: black">#</th>
-                                            <th style="color: black">Description</th>
-                                            <th style="color: black">Qty</th>
-                                            <th style="color: black">Unit</th>
-                                            <th style="color: black">Price</th>
-                                            <th><span class="text text-danger">&nbsp; &nbsp;  Action</span></th>
-                                            <th></th>
-                                            
-                                            
-                                           
-                                            
-                                            
-                                        </tr>
+                                            <tr>
+                                                <th style="color: black">#</th>
+                                                <th style="color: black">Description</th>
+                                                <th style="color: black">Qty</th>
+                                                <th style="color: black">Unit</th>
+                                                <th style="color: black">Price</th>
+                                                <th>
+                                                    <span class="text text-danger">&nbsp; &nbsp; Action</span>
+                                                </th>
+                                                <th></th>
+
+
+
+
+
+                                            </tr>
                                         </thead>
                                         <tbody>
 
-                                        @foreach ($materials as $key=>$material)
-                                        <tr class=@if (($key+1)%2==0)
-                                                    "table-active" 
-                                                  @endif>
-                                            <td>{{ $key+1 }}</td>
-                                            <td>{{ $material->strMaterialName}}</td>
-                                            <td>1</td>
-                                            <td>{{ $material->strUnit}}</td>
-                                            <td>{{ $material->intPrice}}</td>
-                                            <td> <button data-toggle="modal" data-target="#update{{$key}}" class="btn label btn-info">Update Price</button> </td>
-                                            <td> <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label btn-warning "> View Price History</button> </td>
-                                        </tr>
-
-                                             
-           <!-- Update material price Modal --> 
-        
-        <div class="modal fade" id="update{{$key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content pull-center">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><span class="label label-info">Update Price</span></h4>
-      </div>
-      <div class="modal-body" style="background: #e5e5f2 !important; ">
+                                            @foreach ($materials as $key=>$material)
+                                            <tr class=@if (($key+1)%2==0) "table-active" @endif>
+                                                <td>{{ $key+1 }}</td>
+                                                <td>{{ $material->strMaterialName}}</td>
+                                                <td>1</td>
+                                                <td>{{ $material->strUnit}}</td>
+                                                <td>{{ $material->intPrice}}</td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#update{{$key}}" class="btn label btn-info">Update Price</button>
+                                                </td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label btn-warning ">
+                                                        View Price History</button>
+                                                </td>
+                                            </tr>
 
 
-     
-          
-                
-          
-          
-        <form action="Materials-Pricelist/{{$material->intMaterialId}}" method="POST">
-        <input type="hidden" name="_method" value="PATCH">
-        {{ csrf_field() }}
-        <!-- key for updating -->  
-     <input id="materialIdToUpdateInput" name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
-            <label class="text text-muted" style="margin-left: 450px"> <i>07 August 2018</i></label> <!-- current date -->
-            <br> 
-            <div class="form-group">
-            <label for="updatePrice">Price:</label>
-            <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name= style="width: 300px !important;">
-            </div>
+                                            <!-- Update material price Modal -->
 
-         
-           <hr> 
-            <div class="modal-footer">
-        
-         <button type="submit" class="btn btn-success"><i class="icon icon-check"> </i>Update Price</button>
-        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px"><i class="icon icon-close" > </i>Cancel</button>
-       
-          </div>
-          </form>
-         
-          
-      </div>
-      
-    </div>
-  </div>
-</div>     
-                                        @endforeach
-                                        
+                                            <div class="modal fade" id="update{{$key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content pull-center">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            <h4 class="modal-title" id="myModalLabel">
+                                                                <span class="label label-info">Update Price</span>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+
+
+
+                                                            <form action="Materials-Pricelist/{{$material->intMaterialId}}" method="POST">
+                                                                <input type="hidden" name="_method" value="PATCH"> {{ csrf_field() }}
+                                                                <!-- key for updating -->
+                                                                <input id="materialIdToUpdateInput" name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
+                                                                <label class="text text-muted" style="margin-left: 450px">
+                                                                    <i>07 August 2018</i>
+                                                                </label>
+                                                                <!-- current date -->
+                                                                <br>
+                                                                <div class="form-group">
+                                                                    <label for="updatePrice">Price:</label>
+                                                                    <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name=s tyle="width: 300px !important;">
+                                                                </div>
+
+
+                                                                <hr>
+                                                                <div class="modal-footer">
+
+                                                                    <button type="submit" class="btn btn-success">
+                                                                        <i class="icon icon-check"> </i>Update Price</button>
+                                                                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                                                        <i class="icon icon-close"> </i>Cancel</button>
+
+                                                                </div>
+                                                            </form>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endforeach
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -381,268 +428,296 @@
                     </div>
                     <!-- Contextual classes table ends -->
 
-         
+
                 </div>
             </div>
             <!-- Row end -->
             <!-- Tables end -->
         </div>
-        
-        
+
+
         <!-- deactivate user modal -->
-        
+
         <div class="modal fade" id="deactivateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: indianred !important">
-        <h5 class="modal-title" id="exampleModalLabel"><span style="color: white">Deactivate User</span></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to deactivate this user's account? 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger">Deactivate</button>
-      </div>
-    </div>
-  </div>
-</div>
-        
-        
-        
-        
-        
-            <!-- view project details modal -->
-
-<div class="modal fade" id="viewProjectDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><span class="label label-info">Project Details</span></h4>
-      </div>
-      <div class="modal-body">
-       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-        
-       
-        
-        
-        
-        <!-- Add project Modal --> 
-        
-        <div class="modal fade" id="addProject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content pull-center">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><span class="label label-info">Add Project</span></h4>
-      </div>
-      <div class="modal-body" style="background: #e5e5f2 !important; ">
- 
-                
-          
-          
-        <form action="/action_page.php">
-    
-                                        <label class="text text-muted" style="margin-left: 450px"> <i>07 August 2018</i></label> <!-- current date -->
-  <br> 
-            <div class="form-group">
-    <label for="addProjectName">Project Name:</label>
-    <input type="text" class="form-control" id="projectName">
-  </div>
-            
-             <label class="text text-muted"><i>Assign</i></label>
-            
-  <div class="form-group form-inline">
-    <label for="projectClient">Client:</label>
-      <select class="form-control"  name="projectClient" id="projectClient" style="width: 200px !important;">
-        <option selected >Julia        </option>  <!-- sample -->
-        <option>Erwin         </option>
-        <option>Dustin      </option>
-        <option>Ros      </option>
-      </select>
-      
-      <label for="projectEngineer">Engineer:</label>
-      <select class="form-control"  name="projectEngineer" id="projectEngineer" style="width: 200px !important;">
-        <option selected >Erwin       </option>  <!-- sample -->
-        <option>Julia        </option>
-        <option>Dustin      </option>
-        <option>Ros      </option>
-      </select>
-  </div> 
-            
-   
-
-  
-     <div class="form-group">       
-     <label> Project Description: </label>  <br>     
-     <textarea rows="4" cols="68" placeholder="Project Details...">
-
-</textarea>
-    </div> 
-       
-              <div class="form-group">
-    <label for="addProjectlocation">Location:</label>
-    <input type="text" class="form-control" id="projectLocation">
-  </div>
-            
-            <div class="modal-footer">
-        <hr>
-         <button type="submit" class="btn btn-success" data-dismiss="modal"><i class="icon icon-check"> </i>Add Project</button>
-        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 290px"><i class="icon icon-close" > </i>Cancel</button>
-       
-      </div>
-</form>
-         
-          
-      </div>
-      
-    </div>
-  </div>
-</div>
-        </div>
-      </div>
-        
-
-        <!-- Container-fluid ends -->
-    </div>
-</div>
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-     <!-- Add user Modal --> 
-        
-        <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content pull-center">
-      <div class="modal-header color color-info">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><span class="label label-danger">Edit User Account</span></h4>
-      </div>
-      <div class="modal-body" style="background: #e5e5f2 !important; ">
-          
-        <div class="row"> 
-            <div class="col-sm-4" style="margin-left: 210px !important;">
-                    <div class="card faq-left" >
-                        <div class="social-profile">
-                            <img class="img-fluid img-sm" src="../assets/images/social/profile.jpg" alt="">
-                            <div class="profile-hvr m-t-15">
-                                <i class="icofont icofont-ui-edit p-r-10 c-pointer"></i>
-                                <i class="icofont icofont-ui-delete c-pointer"></i>
-                            </div>
-                        </div>
-                        <div class="card-block">
-                        
-                            
-                            <div class="faq-profile-btn">
-                               <p class="text-muted"> Add image</p>
-   <div style="font-size: 10px !important;">                            
-       <form action="/action_page.php">
-  <input type="file" name="pic" accept="image/*"> <br> <br>
-           <input type="submit" class="btn btn-info">
-           </form>
-       </div> 
-
-                            </div>
-
-                        </div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: indianred !important">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <span style="color: white">Deactivate User</span>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <!-- end of card-block -->
+                    <div class="modal-body">
+                        Are you sure you want to deactivate this user's account?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger">Deactivate</button>
+                    </div>
+                </div>
             </div>
-          </div> 
-                
-          
-          
-        <form class="form-inline"  action="/action_page.php">
-  <div class="form-group">
-    <label for="fname">First Name: </label>
-    <input type="text" class="form-control" id="fname" placeholder="First name" >
-  </div>
-
-<div class="form-group">
-    <label for="lname">Last Name:</label>
-    <input type="text" class="form-control" id="lname" placeholder="Last name">
-  </div>
-            <br> <br>
-<div class="form-group">
-    <label for="user">User Name:</label>
-    <input type="text" class="form-control" id="lname" placeholder="User name">
-  </div>
-            
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd" placeholder="Password">
-  </div>
-    <br> <br>
-<div class="form-group">
-    <label for="email"  >Email Address:</label>
-    <input type="email" class="form-control" id="email" style="width: 200px !important;" placeholder="Email Address">
-  </div>
-           
-    <div class="form-group pull-center">
-    <label for="usertype">User Type:</label>
-      <select class="form-control"  name="usertype" id="userType" style="width: 150px !important;">
-        <option>Admin  </option>
-        <option>Client           </option>
-        <option>Engineer          </option>
-        <option>Architect        </option>
-      </select>
-  </div>        
-            
-        
-            
-    <div class="modal-footer">
-        <hr>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-danger" data-dismiss="modal">Update User</button>
-      </div>
-</form>
-          
-      </div>
-      
-    </div>
-  </div>
-</div>
         </div>
-      </div>
-        
 
-        <!-- Container-fluid ends -->
+
+
+
+
+        <!-- view project details modal -->
+
+        <div class="modal fade" id="viewProjectDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            <span class="label label-info">Project Details</span>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Add project Modal -->
+
+        <div class="modal fade" id="addProject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content pull-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            <span class="label label-info">Add Project</span>
+                        </h4>
+                    </div>
+                    <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                        <form action="/action_page.php">
+
+                            <label class="text text-muted" style="margin-left: 450px">
+                                <i>07 August 2018</i>
+                            </label>
+                            <!-- current date -->
+                            <br>
+                            <div class="form-group">
+                                <label for="addProjectName">Project Name:</label>
+                                <input type="text" class="form-control" id="projectName">
+                            </div>
+
+                            <label class="text text-muted">
+                                <i>Assign</i>
+                            </label>
+
+                            <div class="form-group form-inline">
+                                <label for="projectClient">Client:</label>
+                                <select class="form-control" name="projectClient" id="projectClient" style="width: 200px !important;">
+                                    <option selected>Julia </option>
+                                    <!-- sample -->
+                                    <option>Erwin </option>
+                                    <option>Dustin </option>
+                                    <option>Ros </option>
+                                </select>
+
+                                <label for="projectEngineer">Engineer:</label>
+                                <select class="form-control" name="projectEngineer" id="projectEngineer" style="width: 200px !important;">
+                                    <option selected>Erwin </option>
+                                    <!-- sample -->
+                                    <option>Julia </option>
+                                    <option>Dustin </option>
+                                    <option>Ros </option>
+                                </select>
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <label> Project Description: </label>
+                                <br>
+                                <textarea rows="4" cols="68" placeholder="Project Details...">
+
+                                </textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="addProjectlocation">Location:</label>
+                                <input type="text" class="form-control" id="projectLocation">
+                            </div>
+
+                            <div class="modal-footer">
+                                <hr>
+                                <button type="submit" class="btn btn-success" data-dismiss="modal">
+                                    <i class="icon icon-check"> </i>Add Project</button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 290px">
+                                    <i class="icon icon-close"> </i>Cancel</button>
+
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-     
-     
-     
-     
-     
+
+
+<!-- Container-fluid ends -->
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Add user Modal -->
+
+<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content pull-center">
+            <div class="modal-header color color-info">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <span class="label label-danger">Edit User Account</span>
+                </h4>
+            </div>
+            <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+                <div class="row">
+                    <div class="col-sm-4" style="margin-left: 210px !important;">
+                        <div class="card faq-left">
+                            <div class="social-profile">
+                                <img class="img-fluid img-sm" src="../assets/images/social/profile.jpg" alt="">
+                                <div class="profile-hvr m-t-15">
+                                    <i class="icofont icofont-ui-edit p-r-10 c-pointer"></i>
+                                    <i class="icofont icofont-ui-delete c-pointer"></i>
+                                </div>
+                            </div>
+                            <div class="card-block">
+
+
+                                <div class="faq-profile-btn">
+                                    <p class="text-muted"> Add image</p>
+                                    <div style="font-size: 10px !important;">
+                                        <form action="/action_page.php">
+                                            <input type="file" name="pic" accept="image/*">
+                                            <br>
+                                            <br>
+                                            <input type="submit" class="btn btn-info">
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- end of card-block -->
+                    </div>
+                </div>
+
+
+
+                <form class="form-inline" action="/action_page.php">
+                    <div class="form-group">
+                        <label for="fname">First Name: </label>
+                        <input type="text" class="form-control" id="fname" placeholder="First name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lname">Last Name:</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Last name">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="user">User Name:</label>
+                        <input type="text" class="form-control" id="lname" placeholder="User name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="form-control" id="email" style="width: 200px !important;" placeholder="Email Address">
+                    </div>
+
+                    <div class="form-group pull-center">
+                        <label for="usertype">User Type:</label>
+                        <select class="form-control" name="usertype" id="userType" style="width: 150px !important;">
+                            <option>Admin </option>
+                            <option>Client </option>
+                            <option>Engineer </option>
+                            <option>Architect </option>
+                        </select>
+                    </div>
+
+
+
+                    <div class="modal-footer">
+                        <hr>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger" data-dismiss="modal">Update User</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+<!-- Container-fluid ends -->
+</div>
+</div>
+
+
+
+
+
 
 <!-- Warning Section Starts -->
 <!-- Older IE warning message -->
@@ -687,20 +762,19 @@
           <p>Sorry for the inconvenience!</p>
       </div>
       <![endif]-->
-      <!-- Warning Section Ends -->
+<!-- Warning Section Ends -->
 
-      
-@endsection
 
-@section('script')
-  <script>
+@endsection @section('script')
+<script>
     $('#updatePrice').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) // Button that triggered the modal
-      var idToUpdate = button.data('idToUpdate') // Extract info from data-* attributes
-      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-      var modal = $(this)
-      modal.find('.modal-body #materialIdToUpdate').val(idToUpdate)
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var idToUpdate = button.data('idToUpdate') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-body #materialIdToUpdate').val(idToUpdate)
     })
-  </script>
+
+</script>
 @endsection

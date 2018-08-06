@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Able Pro Responsive Bootstrap 4 Admin Template by Phoenixcoded</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
@@ -12,7 +13,7 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Phoenixcoded">
     <meta name="keywords" content=", Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded">
@@ -37,31 +38,32 @@
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
     <!--color css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/color/color-1.min.css" id="color"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/color/color-1.min.css" id="color" />
 
 </head>
+
 <body>
 
-<div class="error-404">
-    <!-- Container-fluid starts -->
-    <div class="container-fluid">
-        <!-- Row start -->
-        <div class="row">
-            <div class="text-uppercase col-xs-12">
-                <h1>404</h1>
-                <h5>Page Not Found</h5>
-                <p>oops! page not found</p>
-                <a href="index.html" class="btn btn-error btn-lg waves-effect">back to home page</a>
+    <div class="error-404">
+        <!-- Container-fluid starts -->
+        <div class="container-fluid">
+            <!-- Row start -->
+            <div class="row">
+                <div class="text-uppercase col-xs-12">
+                    <h1>404</h1>
+                    <h5>Page Not Found</h5>
+                    <p>oops! page not found</p>
+                    <a href="index.html" class="btn btn-error btn-lg waves-effect">back to home page</a>
+                </div>
             </div>
+            <!-- Row end -->
         </div>
-        <!-- Row end -->
+        <!-- Container-fluid ends -->
     </div>
-    <!-- Container-fluid ends -->
-</div>
 
-<!-- Warning Section Starts -->
-<!-- Older IE warning message -->
-<!--[if lt IE 9]>
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
 <div class="ie-warning">
     <h1>Warning!!</h1>
     <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
@@ -102,11 +104,12 @@
     <p>Sorry for the inconvenience!</p>
 </div>
 <![endif]-->
-<!-- Warning Section Ends -->
-<script src="assets/plugins/tether/dist/js/tether.min.js"></script>
-<!-- Required Fremwork -->
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- waves effects.js -->
-<script src="assets/plugins/Waves/waves.min.js"></script>
+    <!-- Warning Section Ends -->
+    <script src="assets/plugins/tether/dist/js/tether.min.js"></script>
+    <!-- Required Fremwork -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- waves effects.js -->
+    <script src="assets/plugins/Waves/waves.min.js"></script>
 </body>
+
 </html>
