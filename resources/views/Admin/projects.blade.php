@@ -758,7 +758,139 @@
                                     </div>
                                     <div class="modal-footer">
 
-                                        <button type="button" class="btn btn-info">Approve</button>
+                                        <button type="button" data-toggle="modal" data-target="#createContract" class="btn btn-info">Create Contract</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                  
+                        
+                         <!-- Create Contract Modal -->
+
+                        <div class="modal fade" id="createContract" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background-color: skyblue !important">
+                                        <h5 class="modal-title" id="exampleModalLabel">
+                                            <span style="color: white">Create Contract</span>
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="form-group form-inline">
+                                                <label for="">Client Name:</label>
+                                                <input type="text" class="form-control" id="" name="" style="width: 200px !important;" required/>
+                                            <label for="">Project Name:</label>
+                                                <input type="text" class="form-control" id="" name="" style="width: 200px !important;" required/>
+                                                       <label for="">Project Amount:</label>
+                                                <input type="number" class="form-control" id="" name="" placeholder="₱" style="width: 150px" required/>
+                                            </div>
+                                        
+                                       
+                                        
+                                  
+                                        <div class="form-group form-inline text-center"> 
+                                           
+                                            <label>Issued on: </label>
+                                            <select class="form-control" name="" id=""  style="width: 150px !important;">
+                                                <option value=''>--Select Day--</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>8</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                                <option>19</option>
+                                                <option>20</option>
+                                                <option>21</option>
+                                                <option>22</option>
+                                                <option>23</option>
+                                                <option>24</option>
+                                                <option>25</option>
+                                                <option>26</option>
+                                                <option>27</option>
+                                                <option>28</option>
+                                                <option>29</option>
+                                                <option>30</option>
+                                                <option>31</option>
+                          
+                                            </select>
+                                            
+                                           <select class="form-control text-center" style="width: 300px !important;"> 
+                                            <option value=''>--Select Month--</option>
+                                               <option value='1'>January</option>
+                                               <option value='2'>February</option>
+                                               <option value='3'>March</option>
+                                               <option value='4'>April</option>
+                                               <option value='5'>May</option>
+                                               <option value='6'>June</option>
+                                               <option value='7'>July</option>
+                                               <option value='8'>August</option>
+                                               <option value='9'>September</option>
+                                               <option value='10'>October</option>
+                                               <option value='11'>November</option>
+                                               <option value='12'>December</option>
+                                               
+                                               </select>
+                                            
+                                            <select class="form-control" style="width: 100px !important;"> 
+                                           
+                                               <option value='1' selected>2018</option>
+                                             
+                                               
+                                               </select>
+                                        </div> 
+                                        
+                                        <div class="form-group form-inline ">
+                                                <label for="">Estimated Project Duration:</label>
+                                                <input type="number" class="form-control" id="" name="" style="width: 80px !important;" required/>
+                                                 
+                                            <select class="form-control" style="width: 100px !important;" > 
+                                        
+                                               <option  selected>Days</option>
+                                               <option >Weeks</option>
+                                               <option >Months</option>
+                                               <option >Year</option>
+                                      
+                                          </select>
+                                           
+                                           
+                                                
+                                          
+                                   
+                                            
+                                                <label for="">Location of Signing:</label>
+                                                <input type="text" class="form-control" id="" name="" style="width: 300px" required/>
+
+                                            
+                                            </div>
+                                        
+                                    
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                        
+                                        <a href="{{asset('documents/Contract.pdf')}}" target="_blank" type="button"  class="btn btn-info" > Save</a>
+                                        
+                                    
+                                      
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                     </div>
                                 </div>
@@ -854,7 +986,7 @@
                                             <br>
                                             <div class="form-group">
                                                 <label for="addProjectName">Project Name:</label>
-                                                <input type="text" class="form-control" id="projectName" name="projectName">
+                                                <input type="text" class="form-control" id="projectName" name="projectName" required/>
                                             </div>
 
                                             <label class="text text-muted">
@@ -883,7 +1015,7 @@
                                             <div class="form-group">
                                                 <label> Project Description: </label>
                                                 <br>
-                                                <textarea id="projectDesc" name="projectDesc" rows="4" cols="68" placeholder="Project Details..."></textarea>
+                                                <textarea id="projectDesc" name="projectDesc" rows="4" cols="68" ></textarea>
                                             </div>
 
                                             <div class="form-group">
