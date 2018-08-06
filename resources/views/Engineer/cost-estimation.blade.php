@@ -1182,12 +1182,16 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody class="text-center">
-                                                        <tr class="table-info">
-                                                            <td>01</td>
+                                                        @foreach ($pendingProjectCostEstimations as $key=>$pendingProjectCostEstimation)
+                                                        <tr class=@if ( ($key+1)%2 == 1)
+                                                                    "table-info"
+                                                                @endif
+                                                        >
+                                                            <td>{{$key+1}}</td>
                                                             <td>
                                                                 <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
                                                             </td>
-                                                            <td>Soriano Residence</td>
+                                                            <td>{{ $pendingProjectCostEstimation->strProjectName }}</td>
 
 
 
@@ -1201,61 +1205,7 @@
                                                             </td>
 
                                                         </tr>
-
-
-                                                        <tr>
-                                                            <td>02</td>
-                                                            <td>
-                                                                <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
-                                                            </td>
-                                                            <td>Soriano Residence</td>
-
-
-
-                                                            <td class="faq-table-btn">
-                                                                <a href="#" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
-                                                                    data-placement="top" title="Approve">
-                                                                    <i class="icofont icofont-ui-edit"></i> Create Estimation </a>
-                                                            </td>
-
-                                                        </tr>
-
-                                                        <tr class="table-info">
-                                                            <td>03</td>
-                                                            <td>
-                                                                <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
-                                                            </td>
-                                                            <td>Tapiru Residence</td>
-
-
-
-                                                            <td class="faq-table-btn">
-                                                                <a href="#" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
-                                                                    data-placement="top" title="Approve">
-                                                                    <i class="icofont icofont-ui-edit"></i> Create Estimation </a>
-                                                            </td>
-
-                                                        </tr>
-
-
-
-
-                                                        <tr>
-                                                            <td>04</td>
-                                                            <td>
-                                                                <img src="/assets/images/avatar-4.png" class="img-circle" alt="tbl">
-                                                            </td>
-                                                            <td>Dela Pena Residence</td>
-
-
-
-                                                            <td class="faq-table-btn">
-                                                                <a href="#" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
-                                                                    data-placement="top" title="Approve">
-                                                                    <i class="icofont icofont-ui-edit"></i> Create Estimation </a>
-                                                            </td>
-
-                                                        </tr>
+                                                        @endforeach
 
                                                     </tbody>
                                                 </table>

@@ -71,9 +71,7 @@ Route::get('Engineer/Actuals', function(){
     return view('Engineer/actuals');
 });
 
-Route::get('Engineer/Cost-Estimation', function(){
-    return view('Engineer/cost-estimation');
-});
+Route::get('Engineer/Cost-Estimation', 'CostEstimationsController@index');
 
 Route::get('Engineer/Cost-Summary', function(){
     return view('Engineer/cost-summary');
