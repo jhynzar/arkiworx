@@ -546,9 +546,13 @@
                                                                             <span class="label label-warning">Pending</span>
                                                                         @endif
                                                                         <td class="faq-table-btn">
-                                                                            <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                                                                                <i class="icofont icofont-eye-alt"></i>
-                                                                            </button>
+                                                                            
+                                                                          
+                                                                            
+                                                                            
+                                                                            <a href="{{asset('documents/CostEstimation.pdf')}}" target="_blank" type="button"  class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View" > <i class="icofont icofont-eye-alt"></i></a>
+                                                                            
+                                                                            
 
                                                                             <button type="button" data-toggle="modal" data-target="#approvePendingProject" class="btn btn-primary waves-effect waves-light"
                                                                                 data-toggle="tooltip" data-placement="top" title="Approve">
