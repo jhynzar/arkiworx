@@ -47,6 +47,8 @@ Route::get('Admin/Inbox', function (){
 
 Route::get('Admin/Projects', 'ProjectsController@index');
 
+Route::post('Admin/Projects','ProjectsController@store');
+
 Route::get('Admin/Project-Details', function(){
     return view ('Admin/projectdetails');
 });
