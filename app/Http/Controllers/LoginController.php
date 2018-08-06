@@ -42,7 +42,7 @@ class LoginController extends Controller
             if($account===1){
                 foreach ($results as $result) {
                     $pass = $result->varPassWord;
-                    $type = $result->intUserType;
+                    $type = $result->strUserType;
                 }
                 if($passw===$pass){
                     if($type==='Admin'){
