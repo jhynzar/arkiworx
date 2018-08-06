@@ -93,6 +93,29 @@
             background-color: #778899 !important;
             color: white !important;
         }
+        
+        
+        
+        
+        
+        tr {
+width: 100%;
+display: inline-table;
+table-layout: fixed;
+}
+
+table{
+ height:550px;             
+ display: -moz-groupbox;    
+}
+tbody{
+  overflow-y: scroll;      
+  height: 500px;           
+
+  position: absolute;
+}
+
+        
 
     </style>
 
@@ -1315,7 +1338,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 45px">
+    <div class="content-wrapper" style="margin-top: 40px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 
@@ -1427,7 +1450,7 @@
                                 <div class="col-sm-12 table-responsive">
                                     <table class="table table-hover ">
                                         <thead>
-                                            <tr class="table-active">
+                                            <tr>
                                                 <th style="color: black">#</th>
                                                 <th style="color: black">Description</th>
                                                 <th style="color: black">Quantity</th>
@@ -1516,6 +1539,120 @@
                                                 <td class="text-center">bags</td>
                                                 <td class="text-center">450</td>
                                                 <td class="text-center">900.0</td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                </td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
+                                                        <span style="color: dimgray">Audit Trail</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            
+                                            
+                                            
+                                            <tr class="table-info">
+                                                <td class="text-center">05</td>
+                                                <td class="text-center">Cement
+                                                    <p>
+                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
+                                                </td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">bags</td>
+                                                <td class="text-center">250.0</td>
+                                                <td class="text-center">500.0</td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                </td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
+                                                        <span style="color: dimgray">Audit Trail</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr >
+                                                <td class="text-center">06</td>
+                                                <td class="text-center">Cement
+                                                    <p>
+                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
+                                                </td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">bags</td>
+                                                <td class="text-center">250.0</td>
+                                                <td class="text-center">500.0</td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                </td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
+                                                        <span style="color: dimgray">Audit Trail</span>
+                                                    </button>
+                                                </td>
+                                            </tr><tr class="table-info">
+                                                <td class="text-center">07</td>
+                                                <td class="text-center">Cement
+                                                    <p>
+                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
+                                                </td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">bags</td>
+                                                <td class="text-center">250.0</td>
+                                                <td class="text-center">500.0</td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                </td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
+                                                        <span style="color: dimgray">Audit Trail</span>
+                                                    </button>
+                                                </td>
+                                            </tr><tr>
+                                                <td class="text-center">08</td>
+                                                <td class="text-center">Cement
+                                                    <p>
+                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
+                                                </td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">bags</td>
+                                                <td class="text-center">250.0</td>
+                                                <td class="text-center">500.0</td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                </td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
+                                                        <span style="color: dimgray">Audit Trail</span>
+                                                    </button>
+                                                </td>
+                                            </tr><tr class="table-info">
+                                                <td class="text-center">09</td>
+                                                <td class="text-center">Cement
+                                                    <p>
+                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
+                                                </td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">bags</td>
+                                                <td class="text-center">250.0</td>
+                                                <td class="text-center">500.0</td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
+                                                </td>
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
+                                                        <span style="color: dimgray">Audit Trail</span>
+                                                    </button>
+                                                </td>
+                                            </tr><tr>
+                                                <td class="text-center">10</td>
+                                                <td class="text-center">Cement
+                                                    <p>
+                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
+                                                </td>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">bags</td>
+                                                <td class="text-center">250.0</td>
+                                                <td class="text-center">500.0</td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#updateActuals" class="btn label label-warning">Update Entry</button>
                                                 </td>

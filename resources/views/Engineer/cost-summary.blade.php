@@ -95,6 +95,24 @@
             color: white !important;
         }
 
+        
+       tr {
+width: 100%;
+display: inline-table;
+table-layout: fixed;
+}
+
+table{
+ height:300px;             
+ display: -moz-groupbox;    
+}
+tbody{
+  overflow-y: scroll;      
+  height: 250px;           
+  width: 100%;
+  position: absolute;
+}
+
     </style>
 
 
@@ -326,7 +344,7 @@
                     </span>
                 </li>
                 <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="index">
+                    <a class="waves-effect waves-dark" href="#">
                         <i class="icon-speedometer"></i>
                         <span> Dashboard</span>
                     </a>
@@ -350,11 +368,11 @@
                                 <i class="icon-arrow-right"></i> Cost Summary</a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="cost%20estimation">
+                            <a class="waves-effect waves-dark" href="#">
                                 <i class="icon-arrow-right"></i> Cost Estimation</a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="actuals">
+                            <a class="waves-effect waves-dark" href="#">
                                 <i class="icon-arrow-right"></i> Actuals</a>
                         </li>
                     </ul>
@@ -364,7 +382,7 @@
 
 
                 <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="materials%20pricelist">
+                    <a class="waves-effect waves-dark" href="#">
                         <i class="icon-notebook"></i>
                         <span> Materials PriceList</span>
                     </a>
@@ -378,28 +396,28 @@
 
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="projectprogress">
+                    <a class="waves-effect waves-dark" href="#">
                         <i class="icon-chart"></i>
                         <span> Project Plan</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="calendar">
+                    <a class="waves-effect waves-dark" href="#">
                         <i class="icon-calendar"></i>
                         <span> Calendar</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="inbox">
+                    <a class="waves-effect waves-dark" href="#">
                         <i class="icon-envelope-letter"></i>
                         <span> Inbox</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="accountsettings">
+                    <a class="waves-effect waves-dark" href="#">
                         <i class="icon-people"></i>
                         <span> Account Setting</span>
                     </a>
@@ -510,10 +528,10 @@
                                 <div class="col-xl-12 col-lg-12">
                                     <div class="card">
                                         <div class="card-block">
-                                            <div class="table-responsive">
-                                                <table class="table m-b-0 photo-table">
-                                                    <thead>
-                                                        <tr class="text-uppercase">
+                                            <div class="table-responsive ">
+                                                <table class="table m-b-0 photo-table" >
+                                                    <thead >
+                                                        <tr >
                                                             <th>Line Item</th>
                                                             <th>Description</th>
                                                             <th>Estimated Cost</th>
@@ -621,22 +639,7 @@
                                         
                                         
                                         
-                                         <div class="card-block">
-                                            <div class="table-responsive">
-                                                <table class="table m-b-0 photo-table">
-                                                    <thead>
-                                                        <tr class="text-uppercase">
-                                                            <th class="text-left text-primary">TOTALS:</th>
-                                                            <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> 22345</th>
-                                                            <th class="text-center text-primary">23365</th>
-
-                                                        </tr>
-                                                    </thead>
-                                                  
-                                                </table>
-                                            </div>
-                                        </div>
+                                     
                                     
                                         
                                         
@@ -653,9 +656,24 @@
 
 
 
+                                <!-- TOTALS TABLE -->
 
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">TOTALS:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345</th>
+                                                            <th class="text-center text-primary">23365</th>
 
-
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
 
 
 
