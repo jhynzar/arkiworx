@@ -59,7 +59,9 @@ Route::get('Engineer/Cost-Estimation', function(){
     return view('Engineer/cost-estimation');
 });
 
-//Route::get('Engineer/Cost-Summary', 'PagesController@home1');
+Route::get('Engineer/Cost-Summary', function(){
+    return view('Engineer/cost-summary');
+});
 
 Route::get('Engineer/Home', function(){
     return view('Engineer/engi-home');
