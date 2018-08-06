@@ -408,43 +408,11 @@
 
     </aside>
 
-    <!--tabs-->
-
-    <div class="container" style="position: absolute; margin-top: 43px; margin-left: 220px">
-
-        <ul class="nav nav-tabs" style="background-color: #f2f2f2">
+    
 
 
 
-            <li>
-                <a href="index">Dashboard</a>
-            </li>
-
-            <li class="active">
-                <a href="#">Cost</a>
-            </li>
-            <li>
-                <a href="materials%20pricelist">PriceList</a>
-            </li>
-            <li>
-                <a href="projectprogress">Project Plan</a>
-            </li>
-            <li>
-                <a href="calendar">Calendar</a>
-            </li>
-            <li>
-                <a href="inbox">Inbox</a>
-            </li>
-            <li>
-                <a href="accountsettings">Account Settings</a>
-            </li>
-
-        </ul>
-    </div>
-
-
-
-    <div class="content-wrapper" style="margin-top: 90px">
+    <div class="content-wrapper" style="margin-top: 45px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 

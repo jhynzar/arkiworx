@@ -395,7 +395,7 @@
                         <label for="usertype">
                             <i>As of</i>:</label>
                         <br>
-                        <select class="form-control pull-center text-center" name="month" id="month" style="width: 300px !important;">
+                        <select class="form-control pull-center text-center" name="month" id="month" style="width: 500px !important;">
                             <option>January-07-2018 </option>
                             <option>January-20-2018</option>
                             <option>February-26-2018 </option>
@@ -410,13 +410,19 @@
                         </select>
 
 
-                        &nbsp; &nbsp;
+                        &nbsp; &nbsp; <br> <br> 
 
-                        <label for="materialPrice">Price:</label>
-                        <input type="text" class="form-control" id="materialPrice" style="width: 120px !important;" value="150" disabled>
+                        
                     </div>
 
 
+                    
+                    <div class="form-group form-inline">
+                        <label for="materialPrice">Unit:</label>
+                        <input type="text" class="form-control" id="" style="width: 120px !important;" value="200" disabled>
+                    <label for="materialPrice">Price:</label>
+                        <input type="text" class="form-control" id="" style="width: 120px !important;" value="200" placeholder="₱" disabled>
+                    </div>
 
                     <div class="modal-footer">
                         <hr>
@@ -439,7 +445,7 @@
 
 
 
-<div class="content-wrapper" style="margin-top: 90px">
+<div class="content-wrapper" style="margin-top: 30px">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
 

@@ -386,7 +386,7 @@
 
     </aside>
 
-    <!--tabs-->
+   
 
     <div class="container" style="position: absolute; margin-top: 43px; margin-left: 220px">
 
@@ -422,7 +422,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 90px">
+    <div class="content-wrapper" style="margin-top: 45px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 
