@@ -910,7 +910,59 @@ tbody{
             
             
             
-            
+             <!-- Update Custom Modal -->
+
+    <div class="modal fade" id="updateCustomActuals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content pull-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <span class="label label-info">Update Actual Entry</span>
+                    </h4>
+                </div>
+                <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                    <form action="/action_page.php">
+
+                        <label class="text text-muted" style="margin-left: 450px">
+                            <i>07 August 2018</i>
+                        </label>
+                        <!-- current date -->
+                        <br>
+         
+                        
+                        <div class="form-group" > 
+                        
+                        <label for="ActualPrice">Price:</label>
+                            <input type="text" class="form-control" id="" style="width: 550px !important;"  placeholder="₱">
+                        </div>
+                       
+
+
+                        <hr>
+                        <div class="modal-footer">
+
+                            <button type="submit" class="btn btn-success" data-dismiss="modal">
+                                <i class="icon icon-check"> </i>Add Entry</button>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                <i class="icon icon-close"> </i>Cancel</button>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+         
             
             
             
@@ -942,21 +994,7 @@ tbody{
                         <!-- current date -->
                         <br>
                 
-                        <div> 
-                           <label>Material: </label>
-
-                            <select class="form-control" name="material" id="material" placeholder="Material/s" style="width: 300px !important;">
-                                <option>Cement</option>
-                                <option>Sand</option>
-                                <option>Gravel</option>
-                                <option>10 mm bars</option>
-                                <option>Tie Wire </option>
-                                <option>Gravel Bedding </option>
-                          
-                            </select>
-                     </div> 
-                            
-                          <br> <br>  
+          
                         
                         <div class="form-group form-inline">
                             <label>Qty:</label>
@@ -1246,6 +1284,89 @@ tbody{
 
 
 
+ <!-- View Custom Audit Trail Modal -->
+
+    <div class="modal fade" id="viewCustomAudit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content pull-center">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <span style="color: white">
+                            <b>Audit Trail</b>
+                        </span>
+                    </h4>
+                </div>
+                <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                    <form action="/action_page.php">
+
+
+                        <br>
+                        <div class="form-group">
+                            <label for="materialDesc">Description:</label>
+                            <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;" value="General Requirements" disabled>
+
+                        </div>
+
+                        <div class="form-group form-inline">
+
+
+
+
+
+                            <label for="usertype">
+                                <i>As of</i>:</label>
+                            <br>
+                            <select class="form-control pull-center text-center" name="month" id="month" style="width: 500px !important;">
+                                <option>January-07-2018 </option>
+                                <option>January-20-2018</option>
+                                <option>February-26-2018 </option>
+                                <option>March-23-2018 </option>
+                                <option>April-4-2018 </option>
+                                <option>April-27-2018 </option>
+                                <option>May-14-2018</option>
+                                <option>June-8-2018 </option>
+                                <option>July-22-2018 </option>
+                                <option selected>Aug-7-2018 </option>
+
+                            </select>
+
+
+                            &nbsp; &nbsp;
+
+                        
+                        </div>
+
+                            
+
+                        
+                        <div class="form-group" > 
+                        
+                        <label for="ActualPrice">Price:</label>
+                            <input type="text" class="form-control" id="" style="width: 500px !important;"  placeholder="₱500.0" disabled>
+                        </div>
+
+                        <div class="modal-footer">
+                            <hr>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 280px" >
+                                <i class="icon icon-close"> </i>Close</button>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 
@@ -1424,13 +1545,13 @@ tbody{
                     <br>
                     <br>
                     <button type="button" data-toggle="modal" data-target="#addCustomActual" class="btn btn-primary waves-effect waves-light"
-                        style="position: absolute; margin-left: -500px;  margin-top: 79px"> 
+                        style="position: absolute; margin-left: -500px;  margin-top: 79px; "> 
                         <i class="icon-plus"> </i>Add Custom Actual </button> <br> <br> 
-                    <button type="button" data-toggle="modal" data-target="#addMaterialActual" class="btn btn-primary waves-effect waves-light"
-                        style=" position: absolute; margin-left: -280px;  margin-top: 34px">
+                    <button type="button" data-toggle="modal" data-target="#addMaterialActual" class="btn  waves-effect waves-light"
+                        style=" background-color: #2F4F4F; color: white; position: absolute; margin-left: -280px;  margin-top: 34px">
                         <i class="icon-plus"> </i>Add from Materials  Actual</button> <br> <br> 
-                    <button type="button" data-toggle="modal" data-target="#addNewMaterialActual" class="btn btn-primary waves-effect waves-light"
-                        style=" margin-top: -10px">
+                    <button type="button" data-toggle="modal" data-target="#addNewMaterialActual" class="btn  waves-effect waves-light"
+                        style="background-color: #2F4F4F; color: white; margin-top: -10px">
                         <i class="icon-plus"> </i>Add New Material Actual</button><br> <br> 
                 </div>
 
@@ -1478,19 +1599,18 @@ tbody{
                                         <tbody>
                                             <tr class="table-active">
                                                 <td class="text-center">01</td>
-                                                <td class="text-center">Cement
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
+                                                <td class="text-center">General Requirements
+                                              
                                                 </td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">bags</td>
-                                                <td class="text-center">250.0</td>
-                                                <td class="text-center">500.0</td>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">865,000.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateCustomActuals" class="btn label label-primary" style="color: white !important">Update Custom</button>
                                                 </td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
+                                                    <button data-toggle="modal" data-target="#viewCustomAudit" class="btn label label-light ">
                                                         <span style="color: dimgray">Audit Trail</span>
                                                     </button>
                                                 </td>
@@ -1499,15 +1619,14 @@ tbody{
                                            <tr>
                                                 <td class="text-center">02</td>
                                                 <td class="text-center">Metal Pipe
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
+                                                    
                                                 </td>
                                                 <td class="text-center">4</td>
                                                 <td class="text-center">pcs</td>
                                                 <td class="text-center">350.0</td>
                                                 <td class="text-center">1400.0</td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-primary" style="background-color: #2F4F4F !important">Update Material</button>
                                                 </td>
                                                 <td>
                                                     <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
@@ -1516,159 +1635,7 @@ tbody{
                                                 </td>
                                             </tr>
 
-                                            <tr class="table-active">
-                                                <td class="text-center">03</td>
-                                                <td class="text-center">Steel Bar
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">pcs</td>
-                                                <td class="text-center">800</td>
-                                                <td class="text-center">1600.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td class="text-center">04</td>
-                                                <td class="text-center">Gravel
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">bags</td>
-                                                <td class="text-center">450</td>
-                                                <td class="text-center">900.0</td>
-                                               <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            
-                                            
-                                            
-                                            <tr class="table-active">
-                                                <td class="text-center">05</td>
-                                                <td class="text-center">Cement
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">bags</td>
-                                                <td class="text-center">250.0</td>
-                                                <td class="text-center">500.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            
-                                            <tr >
-                                                <td class="text-center">06</td>
-                                                <td class="text-center">Cement
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">bags</td>
-                                                <td class="text-center">250.0</td>
-                                                <td class="text-center">500.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr><tr class="table-active">
-                                                <td class="text-center">07</td>
-                                                <td class="text-center">Cement
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">bags</td>
-                                                <td class="text-center">250.0</td>
-                                                <td class="text-center">500.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr><tr>
-                                                <td class="text-center">08</td>
-                                                <td class="text-center">Cement
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">bags</td>
-                                                <td class="text-center">250.0</td>
-                                                <td class="text-center">500.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr><tr class="table-active">
-                                                <td class="text-center">09</td>
-                                                <td class="text-center">Cement
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">bags</td>
-                                                <td class="text-center">250.0</td>
-                                                <td class="text-center">500.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr><tr>
-                                                <td class="text-center">10</td>
-                                                <td class="text-center">Cement
-                                                    <p>
-                                                        <i class="icofont icofont-clock-time"></i>Updated</p>
-                                                </td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">bags</td>
-                                                <td class="text-center">250.0</td>
-                                                <td class="text-center">500.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-info" style="background-color: #778899; color: white !important">Update Entry</button>
-                                                </td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                           
                                            
                                         </tbody>
                                     </table>
