@@ -587,7 +587,7 @@ tbody{
                                         <tr>
                                             <th style="color: black">#</th>
                                             <th style="color: black">Description</th>
-                                            <th style="color: black">Qty</th>
+                                          
                                             <th style="color: black">Unit</th>
                                             <th style="color: black">Price</th>
                                             <th>
@@ -608,7 +608,7 @@ tbody{
                                         <tr class=@if (($key+1)%2==0) "table-active" @endif>
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $material->strMaterialName}}</td>
-                                            <td>1</td>
+                                      
                                             <td>{{ $material->strUnit}}</td>
                                             <td>{{ $material->intPrice}}</td>
                                             <td>
