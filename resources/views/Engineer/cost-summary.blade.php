@@ -201,7 +201,7 @@ tbody{
 
                     <!-- User Menu-->
                     <li class="dropdown">
-                        <a href="accountsettings">
+                        <a href="/Engineer/Accounts-Settings">
                             <span>
                                 <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
@@ -344,7 +344,7 @@ tbody{
                     </span>
                 </li>
                 <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="#">
+                    <a class="waves-effect waves-dark" href="/Engineer/Home">
                         <i class="icon-speedometer"></i>
                         <span> Dashboard</span>
                     </a>
@@ -364,15 +364,15 @@ tbody{
                     </a>
                     <ul class="treeview-menu">
                         <li class="active">
-                            <a class="waves-effect waves-dark" href="cost%20summary">
+                            <a class="waves-effect waves-dark" href="/Engineer/Cost-Summary">
                                 <i class="icon-arrow-right"></i> Cost Summary</a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="#">
+                            <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
                                 <i class="icon-arrow-right"></i> Cost Estimation</a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="#">
+                            <a class="waves-effect waves-dark" href="/Engineer/Actuals">
                                 <i class="icon-arrow-right"></i> Actuals</a>
                         </li>
                     </ul>
@@ -382,7 +382,7 @@ tbody{
 
 
                 <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="#">
+                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
                         <i class="icon-notebook"></i>
                         <span> Materials PriceList</span>
                     </a>
@@ -396,28 +396,28 @@ tbody{
 
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="#">
+                    <a class="waves-effect waves-dark" href="/Engineer/Project-Progress">
                         <i class="icon-chart"></i>
                         <span> Project Plan</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="#">
+                    <a class="waves-effect waves-dark" href="/Engineer/Calendar">
                         <i class="icon-calendar"></i>
                         <span> Calendar</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="#">
+                    <a class="waves-effect waves-dark" href="/Engineer/Inbox">
                         <i class="icon-envelope-letter"></i>
                         <span> Inbox</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="#">
+                    <a class="waves-effect waves-dark" href="/Engineer/Accounts-Settings">
                         <i class="icon-people"></i>
                         <span> Account Setting</span>
                     </a>
