@@ -210,7 +210,7 @@ tbody{
                 <br>
                 <br>
                 <p>
-                    <b>Juliamar</b> K</p>
+                    <b>Juliamar</b> </p>
                 <p class="designation">
                     <span class="text-info">
                         <span style="color: white">More</span>
