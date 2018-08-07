@@ -67,9 +67,7 @@ Route::get('Engineer/Accounts-Settings', function (){
     return view ('Engineer/account-settings');
 });
 
-Route::get('Engineer/Actuals', function(){
-    return view('Engineer/actuals');
-});
+Route::get('Engineer/Actuals', 'ActualsController@index');
 
 Route::get('Engineer/Cost-Estimation', 'CostEstimationsController@index');
 
