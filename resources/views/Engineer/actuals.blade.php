@@ -940,7 +940,7 @@ tbody{
                         <div class="form-group" > 
                         
                         <label for="ActualPrice">Price:</label>
-                            <input type="text" class="form-control" id="" style="width: 550px !important;"  placeholder="₱">
+                            <input type="text" class="form-control" id="" style="width: 550px !important;"  placeholder="₱" required >
                         </div>
                        
 
@@ -1545,13 +1545,13 @@ tbody{
                     <br>
                     <br>
                     <button type="button" data-toggle="modal" data-target="#addCustomActual" class="btn btn-primary waves-effect waves-light"
-                        style="position: absolute; margin-left: -500px;  margin-top: 79px; "> 
+                        style="position: absolute; margin-left: -460px;  margin-top: 79px; "> 
                         <i class="icon-plus"> </i>Add Custom Actual </button> <br> <br> 
                     <button type="button" data-toggle="modal" data-target="#addMaterialActual" class="btn  waves-effect waves-light"
-                        style=" background-color: #2F4F4F; color: white; position: absolute; margin-left: -280px;  margin-top: 34px">
+                        style=" background-color: #2F4F4F; color: white; position: absolute; margin-left: -260px;  margin-top: 34px">
                         <i class="icon-plus"> </i>Add from Materials  Actual</button> <br> <br> 
                     <button type="button" data-toggle="modal" data-target="#addNewMaterialActual" class="btn  waves-effect waves-light"
-                        style="background-color: #2F4F4F; color: white; margin-top: -10px">
+                        style="background-color: #2F4F4F; color: white; margin-top: -14px">
                         <i class="icon-plus"> </i>Add New Material Actual</button><br> <br> 
                 </div>
 
@@ -1579,15 +1579,16 @@ tbody{
                                     <table class="table table-hover ">
                                         <thead>
                                             <tr>
-                                                <th style="color: black">#</th>
+                                                <th style="color: black">Line Item</th>
                                                 <th style="color: black">Description</th>
                                                 <th style="color: black">Quantity</th>
                                                 <th style="color: black">Unit</th>
                                                 <th style="color: black">Unit Cost</th>
-                                                <th style="color: black">Total Unit Cost</th>
-                                                <th class="text-center">
-                                                    <span class="text text-info"> Action</span>
+                                                <th class="text-center pull-center" style="color: black">Total <br>Unit Cost</th>
+                                                <th>
+                                                    
                                                 </th>
+                                                <th  class="text-center"> <span class="text text-info"> Action</span></th>
                                                 <th></th>
 
 
@@ -1606,14 +1607,28 @@ tbody{
                                                 <td class="text-center">-</td>
                                                 <td class="text-center">-</td>
                                                 <td class="text-center">865,000.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateCustomActuals" class="btn label label-primary" style="color: white !important">Update Custom</button>
+                                                <td >
+                                                    <button data-toggle="modal" data-target="#updateCustomActuals" class="btn btn btn-primary pull-right" style="" title="Update">Update</button>
                                                 </td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#viewCustomAudit" class="btn label label-light ">
-                                                        <span style="color: dimgray">Audit Trail</span>
-                                                    </button>
+                                                  
+                                                    <button data-toggle="modal" data-target="#viewCustomAudit" class="btn" style="background-color: #DCDCDC">
+                                                        <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
+                                                    </button> 
+                                              
+                                                    
                                                 </td>
+                                                
+                                                 <td>
+                                                  
+                                                    <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
+                                                        <i class="icofont icofont-ui-delete"> </i>
+                                                    </button> 
+                                              
+                                                    
+                                                </td>
+                                                
+                                             
                                             </tr>
 
                                            <tr>
@@ -1625,15 +1640,64 @@ tbody{
                                                 <td class="text-center">pcs</td>
                                                 <td class="text-center">350.0</td>
                                                 <td class="text-center">1400.0</td>
-                                                <td>
-                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn label label-primary" style="background-color: #2F4F4F !important">Update Material</button>
+                                                <td >
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+                                                    
                                                 </td>
+                                               
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn label label-light ">
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
                                                         <span style="color: dimgray">Audit Trail</span>
                                                     </button>
                                                 </td>
+                                               
+                                               
+                                               <td>
+                                                  
+                                                    <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
+                                                        <i class="icofont icofont-ui-delete"> </i>
+                                                    </button> 
+                                              
+                                                    
+                                                </td>
                                             </tr>
+                                            
+                                            
+                                             <tr class="table-active">
+                                                <td class="text-center">03</td>
+                                                <td class="text-center">Cement
+                                                    
+                                                </td>
+                                                <td class="text-center">4</td>
+                                                <td class="text-center">pcs</td>
+                                                <td class="text-center">350.0</td>
+                                                <td class="text-center">1400.0</td>
+                                                <td >
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+                                                    
+                                                </td>
+                                               
+                                               <td>
+                                                  
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
+                                                        <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
+                                                    </button> 
+                                              
+                                                    
+                                                </td>
+                                               
+                                               
+                                               <td>
+                                                  
+                                                    <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
+                                                        <i class="icofont icofont-ui-delete"> </i>
+                                                    </button> 
+                                              
+                                                    
+                                                </td>
+                                            </tr>
+                                            
+                                            
 
                                            
                                            
@@ -1653,25 +1717,26 @@ tbody{
         </div>
 
 
-        <!-- deactivate user modal -->
+        <!-- delete actuals modal -->
 
-        <div class="modal fade" id="deactivateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteActuals" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: indianred !important">
                         <h5 class="modal-title" id="exampleModalLabel">
-                            <span style="color: white">Deactivate User</span>
+                            <span style="color: white">Delete Actual Entry</span>
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        Are you sure you want to deactivate this user's account?
+                    <div class="modal-body text-center">
+                        <h6>ARE YOU SURE YOU WANT TO DELETE THIS ENTRY?</h6>
                     </div>
                     <div class="modal-footer">
+                         <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger">Deactivate</button>
+                       
                     </div>
                 </div>
             </div>
