@@ -591,8 +591,9 @@ tbody{
                                             <th style="color: black">Unit</th>
                                             <th style="color: black">Price</th>
                                             <th>
-                                                <span class="text text-info">&nbsp; &nbsp; Action</span>
+                                               
                                             </th>
+                                            <th> <span class="text text-info">&nbsp; &nbsp; Action</span></th>
                                             <th></th>
 
 
@@ -611,12 +612,21 @@ tbody{
                                             <td>{{ $material->strUnit}}</td>
                                             <td>{{ $material->intPrice}}</td>
                                             <td>
-                                                <button data-toggle="modal" data-target="#update{{$key}}" class="btn label label-light " style="background-color: #778899; color: white !important">Update Price</button>
+                                                <button data-toggle="modal" data-target="#update{{$key}}" class="btn btn-light " style="background-color: #778899; color: white !important">Update Price</button>
                                             </td>
-                                            <td class="text-left">
-                                                <button data-toggle="modal" data-target="#viewPriceHistory" class="btn label label-light" style="color:  gray !important">
-                                                    View Price History</button>
+                                            <td >
+                                                <button data-toggle="modal" data-target="#viewPriceHistory" class="btn btn btn-light pull-left text-left" style="color:  gray !important">
+                                                   Price History</button>
                                             </td>
+                                            
+                                             <td>
+                                                  
+                                                    <button data-toggle="modal" data-target="#deleteMaterial" class="btn btn-danger pull-right text-right " title="Delete">
+                                                        <i class="icofont icofont-ui-delete"> </i>
+                                                    </button> 
+                                              
+                                                    
+                                                </td>
                                         </tr>
 
 
@@ -716,7 +726,30 @@ tbody{
     </div>
 
 
+  <!-- delete material modal -->
 
+        <div class="modal fade" id="deleteMaterial" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: indianred !important">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <span style="color: white">Delete Material</span>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h6>ARE YOU SURE YOU WANT TO DELETE THIS MATERIAL?</h6>
+                    </div>
+                    <div class="modal-footer">
+                         <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     <!-- view project details modal -->
