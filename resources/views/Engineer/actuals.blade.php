@@ -345,7 +345,7 @@ tbody{
                     </span>
                 </li>
                 <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="index">
+                    <a class="waves-effect waves-dark" href="/Admin/Home">
                         <i class="icon-speedometer"></i>
                         <span> Dashboard</span>
                     </a>
@@ -664,8 +664,15 @@ tbody{
                         <br>
                         <br>
                         <div class="form-group">
-                            <label for="actualDesc">Description:</label>
-                            <input type="text" class="form-control" id="actualDesc" style="width: 550px !important;" required/>
+                            <select class="form-control" name="" id="" placeholder="" style="width: 500px !important;">
+                                <option>General Requrements </option>
+                                <option>Labor Cost</option>
+                                <option>Tool and Equipments </option>
+                                <option>Transportation Cost </option>
+                                <option>Contingency </option>
+                                
+                           
+                            </select>
                         </div>
                         <div class="form-group form-inline">
                             <label for="ActualPrice">Price:</label>

@@ -161,14 +161,17 @@
                 
                 
                         <!-- User Menu-->
-                        <li class="dropdown">
-                            <a href="accountsettings.html" >
-                                <span><img class="img-circle " src="assets/images/avatar-1.jpg" style="width:40px;" alt="User Image"></span>
-                                <span><b>Juliamar</b>Soriano</span>
+                       <li class="dropdown">
+                        <a href="/Admin/Account-Settings">
+                            <span>
+                                <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                            </span>
+                            <span>
+                                <b>Juliamar</b>Soriano</span>
 
-                            </a>
-                         
-                        </li>
+                        </a>
+
+                    </li>
                 
                 
                 <!-- window screen -->
@@ -282,20 +285,20 @@
                 <ul class="sidebar-menu">
                     <li class="nav-level"><span style="color: #939393"><i>Navigation</i></span></li>
                     <li class=" treeview">
-                        <a class="waves-effect waves-dark" href="index.html">
+                        <a class="waves-effect waves-dark" href="/Admin/Home">
                             <i class="icon-speedometer"></i><span> Dashboard</span>
                         </a>                
                     </li>
                     
                     <li class="treeview">
-                        <a class="waves-effect waves-dark" href="project.html">
+                        <a class="waves-effect waves-dark" href="/Admin/Projects">
                             <i class="icon-book-open"></i><span> Project</span>
                         </a>                
                     </li>
                     
                    
                     <li class="treeview">
-                        <a class="waves-effect waves-dark" href="cost%20summary.html">
+                        <a class="waves-effect waves-dark" href="/Admin/Cost-Summary">
                             <i class="icon-briefcase"></i><span> Cost Summary</span>
                         </a>                
                     </li>
@@ -307,25 +310,25 @@
                     
                     
                     <li class="treeview">
-                        <a class="waves-effect waves-dark" href="projectprogress.html">
+                        <a class="waves-effect waves-dark" href="/Admin/Project-Progress">
                             <i class="icon-chart"></i><span> Project Plan</span>
                         </a>                
                     </li>
                     
                     <li class="active treeview">
-                        <a class="waves-effect waves-dark" href="calendar.html">
+                        <a class="waves-effect waves-dark" href="/Admin/Calendar">
                             <i class="icon-calendar"></i><span> Calendar</span>
                         </a>                
                     </li>
                     
                     <li class="treeview">
-                        <a class="waves-effect waves-dark" href="inbox.html">
+                        <a class="waves-effect waves-dark" href="/Admin/Inbox">
                             <i class="icon-envelope-letter"></i><span> Inbox</span>
                         </a>                
                     </li>
                     
                     <li class="treeview">
-                        <a class="waves-effect waves-dark" href="accounts.html">
+                        <a class="waves-effect waves-dark" href="/Admin/Accounts">
                             <i class="icon-people"></i><span> Accounts</span>
                         </a>                
                     </li>
