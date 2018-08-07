@@ -41,6 +41,10 @@ Route::get('Admin/Cost-Summary', function(){
     return view ('Admin/cost summary');
 });
 
+Route::get('Admin/Calendar', function(){
+    return view ('Admin/calendar');
+});
+
 Route::get('Admin/Inbox', function (){
     return view ('Admin/inbox');
 });
@@ -59,6 +63,10 @@ Route::get('Admin/Project-Progress', function(){
 
 //Engineer di pa maayos ung controllers at methods
 
+Route::get('Engineer/Home', function(){
+    return view('Engineer/engi-home');
+});
+
 Route::get('Engineer/Accounts', function(){
     return view ('Engineer/accounts');
 });
@@ -75,9 +83,7 @@ Route::get('Engineer/Cost-Summary', function(){
     return view('Engineer/cost-summary');
 });
 
-Route::get('Engineer/Home', function(){
-    return view('Engineer/engi-home');
-});
+
 
 Route::get('Engineer/Materials-Pricelist', 'MaterialsController@index');
 
@@ -87,6 +93,14 @@ Route::patch('Engineer/Materials-Pricelist/{id}','MaterialsController@update');
 
 Route::get('Engineer/Project-Progress', function(){
     return view ('Engineer/project-progress');
+});
+
+Route::get('Engineer/Calendar', function(){
+    return view ('Engineer/calendar');
+});
+
+Route::get('Engineer/Inbox', function(){
+    return view ('Engineer/inbox');
 });
 
 //Client

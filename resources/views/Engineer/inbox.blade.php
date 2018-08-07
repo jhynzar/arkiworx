@@ -241,7 +241,7 @@
 
                     <!-- User Menu-->
                     <li class="dropdown">
-                        <a href="Admin/accountsettings">
+                        <a href="/Engineer/Accounts-Settings">
                             <span>
                                 <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
@@ -378,32 +378,50 @@
                     </a>
                 </li>
             </ul>
-            <!-- Sidebar Menu-->
+             <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
                 <li class="nav-level">
                     <span style="color: #939393">
                         <i>Navigation</i>
                     </span>
                 </li>
-                <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="Admin/home">
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Home">
                         <i class="icon-speedometer"></i>
                         <span> Dashboard</span>
                     </a>
                 </li>
 
-                <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Admin/Cost-Summary">
-                        <i class="icon-book-open"></i>
-                        <span> Project</span>
-                    </a>
-                </li>
-
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Admin/Cost-Summary">
+                    <a class="waves-effect waves-dark" href="#!">
                         <i class="icon-briefcase"></i>
-                        <span> Cost Summary</span>
+                        <span> Cost</span>
+                        <i class="icon-arrow-down"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Engineer/Cost-Summary">
+                                <i class="icon-arrow-right"></i> Cost Summary</a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                                <i class="icon-arrow-right"></i> Cost Estimation</a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Engineer/Actuals">
+                                <i class="icon-arrow-right"></i> Actuals</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
+                        <i class="icon-notebook"></i>
+                        <span> Materials PriceList</span>
                     </a>
                 </li>
 
@@ -414,37 +432,38 @@
 
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Admin/Project-Progress">
+                    <a class="waves-effect waves-dark" href="/Engineer/Project-Progress">
                         <i class="icon-chart"></i>
                         <span> Project Plan</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Admin/Calendar">
+                    <a class="waves-effect waves-dark" href="/Engineer/Calendar">
                         <i class="icon-calendar"></i>
                         <span> Calendar</span>
                     </a>
                 </li>
 
                 <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="Admin/Inbox">
+                    <a class="waves-effect waves-dark" href="/Engineer/Inbox">
                         <i class="icon-envelope-letter"></i>
                         <span> Inbox</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Admin/Accounts">
+                    <a class="waves-effect waves-dark" href="/Engineer/Accounts-Settings">
                         <i class="icon-people"></i>
-                        <span> Accounts</span>
+                        <span> Account Setting</span>
                     </a>
                 </li>
 
 
+
+
     </aside>
-
-
+    <!-- end of sidebar-->
     
 
 

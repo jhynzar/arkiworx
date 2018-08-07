@@ -179,8 +179,8 @@
 
 
                     <!-- User Menu-->
-                    <li class="dropdown">
-                        <a href="accountsettings">
+                   <li class="dropdown">
+                        <a href="/Admin/Account-Settings">
                             <span>
                                 <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
@@ -325,14 +325,14 @@
                     </span>
                 </li>
                 <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="home">
+                    <a class="waves-effect waves-dark" href="/Admin/Home">
                         <i class="icon-speedometer"></i>
                         <span> Dashboard</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Project">
+                    <a class="waves-effect waves-dark" href="/Admin/Projects">
                         <i class="icon-book-open"></i>
                         <span> Project</span>
                     </a>
@@ -340,7 +340,7 @@
 
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Cost-Summary">
+                    <a class="waves-effect waves-dark" href="/Admin/Cost-Summary">
                         <i class="icon-briefcase"></i>
                         <span> Cost Summary</span>
                     </a>
@@ -353,28 +353,28 @@
 
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Project-Progress">
+                    <a class="waves-effect waves-dark" href="/Admin/Project-Progress">
                         <i class="icon-chart"></i>
                         <span> Project Plan</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Calendar">
+                    <a class="waves-effect waves-dark" href="/Admin/Calendar">
                         <i class="icon-calendar"></i>
                         <span> Calendar</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="Inbox">
+                    <a class="waves-effect waves-dark" href="/Admin/Inbox">
                         <i class="icon-envelope-letter"></i>
                         <span> Inbox</span>
                     </a>
                 </li>
 
                 <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="Accounts">
+                    <a class="waves-effect waves-dark" href="/Admin/Accounts">
                         <i class="icon-people"></i>
                         <span> Accounts</span>
                     </a>
@@ -520,7 +520,7 @@
                                                 <td>{{ '@'.$result->varusername }}</td>
                                                 <td>{{ $result->strusertype }}</td>
                                                 <td>
-                                                    <a href="profile" class="btn btn-warning label label-warning" role="button">
+                                                    <a href="/Admin/Profile" class="btn btn-warning label label-warning" role="button">
                                                     View </a>
                                                 </td>
                                                 <td>
