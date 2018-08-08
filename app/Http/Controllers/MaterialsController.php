@@ -17,26 +17,25 @@ class MaterialsController extends Controller
         //
 
         //latest dates
-        $latestDates = DB::table('tblprice')
-                    ->select('intMaterialId', DB::raw('MAX(dtmPriceAsOf) as latestDates'))
-                    ->groupBy('intMaterialId');
+        
 
-        //latest prices
-        $latestPrices = DB::table('tblprice')
-                    ->joinSub($latestDates,'latestDates',function($join){
-                        $join->on('tblprice.dtmPriceAsOf','=','latestDates.latestDates');
-                    })
-                    ->select('intPrice','tblprice.intMaterialId','tblprice.dtmPriceAsOf');
-
-        //materials
-        $materials = DB::table('tblmaterials')
-                    ->joinSub($latestPrices,'latestPrices',function($join){
-                        $join->on('tblmaterials.intMaterialId','=','latestPrices.intMaterialId');
-                    })
-                    ->orderBy('tblmaterials.intMaterialId','desc')
-                    ->get();
-
+        $materials= DB::select('SELECT *
+        FROM (
+            SELECT t.intPriceId , t.intPrice, t.intMaterialId , t.dtmPriceAsOf
+            FROM (
+                SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
+                FROM tblprice
+                GROUP BY intMaterialId
+            ) as r 
+            INNER JOIN tblprice t
+            ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
+        ) as e
+        INNER JOIN tblmaterials f
+        ON (e.intMaterialId = f.intMaterialId)');
+         
+        
         //dd($materials);
+
         return view('Engineer/materials-pricelist')->with('materials',$materials);
 
 
