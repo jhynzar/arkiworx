@@ -23,12 +23,12 @@ class MaterialsController extends Controller
         FROM (
             SELECT t.intPriceId , t.intPrice, t.intMaterialId , t.dtmPriceAsOf
             FROM (
-                SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPrice
+                SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
                 FROM tblprice
                 GROUP BY intMaterialId
             ) as r 
             INNER JOIN tblprice t
-            ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPrice)
+            ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
         ) as e
         INNER JOIN tblmaterials f
         ON (e.intMaterialId = f.intMaterialId)');
