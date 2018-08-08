@@ -32,7 +32,7 @@ class LoginController extends Controller
             //invalid char
         }
         else if($userno<6 or $userno >12 or $passno<8 or $passno>16){
-            //kulang or sobra char
+            return 'Username must be > 6 & < 12, Password must be > 8 & < 16';
         }
         else{
             //db connection
