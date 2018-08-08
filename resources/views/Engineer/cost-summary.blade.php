@@ -149,7 +149,7 @@ tbody{
                     <div class="modal-footer">
                         <div class="actionsBtns">
                             <form action="/logout" method="post">
-                                <a href="../login" class="btn btn-primary"> LOG OUT
+                                <a href="/" class="btn btn-primary"> LOG OUT
                                 </a>
                                 <button class="btn btn-default" data-dismiss="modal">Cancel</button>
                             </form>
@@ -540,63 +540,74 @@ tbody{
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <tr class="table-active"> <td><b>General Requirements</b></td></tr>
                                                         <tr>
 
                                                             <td> 1</td>
 
                                                             <td>Building Permit</td>
-                                                            <td>-</td>
+                                                            <td>150,000.0</td>
                                                             <td>150,000.0</td>
                                                         </tr>
+                                                        <tr class="table-info">
+
+                                                            <td> 2</td>
+
+                                                            <td>Working drwaings</td>
+                                                            <td>80,000.0</td>
+                                                            <td>80,000.0</td>
+                                                        </tr>
+                                                        
+                                                        <tr class="table-active"> <td> <b>Concrete Slab</b> </td></tr>
 
                                                         <tr>
 
-                                                            <td> 2</td>
+                                                            <td> 1</td>
 
                                                             <td>HB 4</td>
                                                             <td>3,000.0</td>
                                                             <td>3,350.0</td>
+                                                        </tr>
+
+                                                        <tr class="table-info">
+
+                                                            <td > 2</td>
+
+                                                            <td>Cement</td>
+                                                            <td>2,000.0</td>
+                                                            <td>2,000.0</td>
                                                         </tr>
 
                                                         <tr>
 
                                                             <td> 3</td>
 
-                                                            <td>Cement</td>
-                                                            <td>2,000.0</td>
-                                                            <td>2,000.0</td>
-                                                        </tr>
-
-                                                        <tr>
-
-                                                            <td> 4</td>
-
                                                             <td>Pipe</td>
                                                             <td>12,000.0</td>
                                                             <td>12,101.0</td>
+                                                        </tr>
+
+                                                        <tr class="table-info">
+
+                                                            <td> 4</td>
+
+                                                            <td>Gravel</td>
+                                                            <td>-</td>
+                                                            <td>4,800.0</td>
                                                         </tr>
 
                                                         <tr>
 
                                                             <td> 5</td>
 
-                                                            <td>Gravel</td>
-                                                            <td>5,000.0</td>
-                                                            <td>4,800.0</td>
-                                                        </tr>
-
-                                                        <tr>
-
-                                                            <td> 6</td>
-
                                                             <td>Pipe</td>
                                                             <td>12,000.0</td>
                                                             <td>12,101.0</td>
                                                         </tr>
 
-                                                        <tr>
+                                                        <tr class="table-info">
 
-                                                            <td> 7</td>
+                                                            <td> 6</td>
 
                                                             <td>HB 4</td>
                                                             <td>3,000.0</td>
@@ -605,16 +616,16 @@ tbody{
 
                                                         <tr>
 
-                                                            <td> 8</td>
+                                                            <td> 7</td>
 
                                                             <td>Cement</td>
                                                             <td>2,000.0</td>
                                                             <td>2,000.0</td>
                                                         </tr>
 
-                                                        <tr>
+                                                        <tr class="table-info">
 
-                                                            <td> 9</td>
+                                                            <td > 8</td>
 
                                                             <td>Pipe</td>
                                                             <td>12,000.0</td>
@@ -623,7 +634,7 @@ tbody{
 
                                                         <tr>
 
-                                                            <td> 10</td>
+                                                            <td> 9</td>
 
                                                             <td>Gravel</td>
                                                             <td>5,000.0</td>

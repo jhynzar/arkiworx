@@ -154,7 +154,7 @@ tbody{
                     <div class="modal-footer">
                         <div class="actionsBtns">
                             <form action="/logout" method="post">
-                                <a href="../login" class="btn btn-primary"> LOG OUT
+                                <a href="/" class="btn btn-primary"> LOG OUT
                                 </a>
                                 <button class="btn btn-default" data-dismiss="modal">Cancel</button>
                             </form>
@@ -761,7 +761,7 @@ tbody{
                         
                          <br>
                         <div> 
-                           <label>Material: </label>
+                           <label>Estimated Material: </label> <!-- Estimated Materials for a specific category -->
 
                             <select class="form-control" name="material" id="material" placeholder="Material/s" style="width: 300px !important;">
                                 <option>Cement</option>
@@ -848,9 +848,32 @@ tbody{
                         </label>
                         <!-- current date -->
                         <br>
-                
+                        
+                        
+                         <div> 
+                           <label>Category: </label>
+                           <select class="form-control" name="category" id="category" placeholder="Category" style="width: 300px !important;">
+                                <option>Concrete Slab </option>
+                                <option>Tiles </option>
+                                <option>Walls </option>
+                                <option>Paint </option>
+                                <option>Footing </option>
+                                <option>Column </option>
+                                <option>Footing Tie Beam </option>
+                                <option>Floor Beam </option>
+                                <option>Roof Beam </option>
+                                <option>Conrete Slab 2nd floor</option>
+                                <option>Ceiling works </option>
+                                <option>Roof</option>
+                                <option>Door and Windows </option>
+                                <option>Footing Tie Beam </option>
+                                <option>Septic Tank </option>
+                           
+                            </select>
+                     </div> 
+                <br>
                         <div> 
-                           <label>Material: </label>
+                           <label>Materials List: </label> <!-- Selects materials that are not from estimated -->
 
                             <select class="form-control" name="material" id="material" placeholder="Material/s" style="width: 300px !important;">
                                 <option>Cement</option>
@@ -1545,13 +1568,13 @@ tbody{
                     <br>
                     <br>
                     <button type="button" data-toggle="modal" data-target="#addCustomActual" class="btn btn-primary waves-effect waves-light"
-                        style="position: absolute; margin-left: -460px;  margin-top: 79px; "> 
+                        style="position: absolute; margin-left: -480px;  margin-top: 79px; "> 
                         <i class="icon-plus"> </i>Add Custom Actual </button> <br> <br> 
                     <button type="button" data-toggle="modal" data-target="#addMaterialActual" class="btn  waves-effect waves-light"
-                        style=" background-color: #2F4F4F; color: white; position: absolute; margin-left: -260px;  margin-top: 34px">
+                        style=" background-color: #2F4F4F; color: white; position: absolute; margin-left: -270px;  margin-top: 34px">
                         <i class="icon-plus"> </i>Add from Materials  Actual</button> <br> <br> 
                     <button type="button" data-toggle="modal" data-target="#addNewMaterialActual" class="btn  waves-effect waves-light"
-                        style="background-color: #2F4F4F; color: white; margin-top: -14px">
+                        style="background-color: #2F4F4F; color: white; margin-top: -13px">
                         <i class="icon-plus"> </i>Add New Material Actual</button><br> <br> 
                 </div>
 
@@ -1598,7 +1621,8 @@ tbody{
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="table-active">
+                                            <tr class="table-active"> <td> <b>Concrete Slab</b></td></tr>
+                                            <tr class="table-info">
                                                 <td class="text-center">01</td>
                                                 <td class="text-center">General Requirements
                                               
@@ -1630,8 +1654,11 @@ tbody{
                                                 
                                              
                                             </tr>
+                                            
+                                            <tr class="table-active"> <td><b>Walls</b></td></tr>
 
-                                           <tr>
+                                           <tr class="table-info">
+                                                
                                                 <td class="text-center">02</td>
                                                 <td class="text-center">Metal Pipe
                                                     
@@ -1663,7 +1690,7 @@ tbody{
                                             </tr>
                                             
                                             
-                                             <tr class="table-active">
+                                             <tr>
                                                 <td class="text-center">03</td>
                                                 <td class="text-center">Cement
                                                     
@@ -1698,7 +1725,38 @@ tbody{
                                             </tr>
                                             
                                             
-
+                                            
+                                           <tr class="table-info">
+                                                
+                                                <td class="text-center">04</td>
+                                                <td class="text-center">Concrete Pipe
+                                                    
+                                                </td>
+                                                <td class="text-center">4</td>
+                                                <td class="text-center">pcs</td>
+                                                <td class="text-center">350.0</td>
+                                                <td class="text-center">1400.0</td>
+                                                <td >
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+                                                    
+                                                </td>
+                                               
+                                                <td>
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
+                                                        <span style="color: dimgray">Audit Trail</span>
+                                                    </button>
+                                                </td>
+                                               
+                                               
+                                               <td>
+                                                  
+                                                    <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
+                                                        <i class="icofont icofont-ui-delete"> </i>
+                                                    </button> 
+                                              
+                                                    
+                                                </td>
+                                            </tr>
                                            
                                            
                                         </tbody>

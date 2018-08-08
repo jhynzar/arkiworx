@@ -136,7 +136,7 @@
                     <div class="modal-footer">
                         <div class="actionsBtns">
                             <form action="/logout" method="post">
-                                <a href="Login" class="btn btn-primary"> LOG OUT
+                                <a href="/" class="btn btn-primary"> LOG OUT
                                 </a>
                                 <button class="btn btn-default" data-dismiss="modal">Cancel</button>
                             </form>
