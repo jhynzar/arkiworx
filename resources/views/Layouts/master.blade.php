@@ -102,7 +102,7 @@
     </head>
 
     <body class="sidebar-mini fixed">
-        @yield('body') @yield('scripts')
+        @yield('body') 
 
         <!-- Required Jqurey -->
         <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
@@ -155,6 +155,8 @@
             });
 
         </script>
+
+        @yield('script')
     </body>
 
     </html>

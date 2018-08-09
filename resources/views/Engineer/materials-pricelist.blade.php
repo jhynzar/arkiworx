@@ -1,37 +1,27 @@
-@extends('layouts.master') 
-
-@section('css')
+@extends('layouts.master') @section('css')
 
 <style>
+    tr {
+        width: 100%;
+        display: inline-table;
+        table-layout: fixed;
+    }
 
+    table {
+        height: 550px;
+        display: -moz-groupbox;
+    }
 
-    
-        tr {
-width: 100%;
-display: inline-table;
-table-layout: fixed;
-}
+    tbody {
+        overflow-y: scroll;
+        height: 500px;
 
-table{
- height:550px;             
- display: -moz-groupbox;    
-}
-tbody{
-  overflow-y: scroll;      
-  height: 500px;           
-
-  position: absolute;
-}
-
+        position: absolute;
+    }
 
 </style>
 
-@endsection
-
-
-
-
-@section ('body')
+@endsection @section ('body')
 <div class="loader-bg">
     <div class="loader-bar">
     </div>
@@ -100,16 +90,16 @@ tbody{
 
                 <!-- User Menu-->
                 <li class="dropdown">
-                        <a href="/Engineer/Accounts-Settings">
-                            <span>
-                                <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
-                            </span>
-                            <span>
-                                <b>Juliamar</b>Soriano</span>
+                    <a href="/Engineer/Accounts-Settings">
+                        <span>
+                            <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                        </span>
+                        <span>
+                            <b>Juliamar</b>Soriano</span>
 
-                        </a>
+                    </a>
 
-                    </li>
+                </li>
 
 
 
@@ -210,7 +200,8 @@ tbody{
                 <br>
                 <br>
                 <p>
-                    <b>Juliamar</b> </p>
+                    <b>Juliamar</b>
+                </p>
                 <p class="designation">
                     <span class="text-info">
                         <span style="color: white">More</span>
@@ -359,9 +350,11 @@ tbody{
                     <br>
                     <div class="form-group form-inline">
                         <label for="materialUnit" placeholder="Enter Unit">Unit:</label>
-                        <input type="type" class="form-control" id="materialUnit" name="materialUnit" style="width: 130px !important;" placeholder="Enter Unit" required/>
+                        <input type="type" class="form-control" id="materialUnit" name="materialUnit" style="width: 130px !important;" placeholder="Enter Unit"
+                            required/>
                         <label for="materialPrice">Price:</label>
-                        <input type="type" class="form-control" id="materialPrice" name="materialPrice" style="width: 130px !important;" placeholder="Enter Price" required/>
+                        <input type="type" class="form-control" id="materialPrice" name="materialPrice" style="width: 130px !important;" placeholder="Enter Price"
+                            required/>
                     </div>
 
 
@@ -390,89 +383,6 @@ tbody{
 
 
 
-<!-- View Price History Modal -->
-
-<div class="modal fade" id="viewPriceHistory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content pull-center">
-            <div class="modal-header bg-primary">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    <span style="color: white">
-                        <b>Price History</b>
-                    </span>
-                </h4>
-            </div>
-            <div class="modal-body" style="background: #e5e5f2 !important; ">
-
-
-
-
-                <form action="/action_page.php">
-
-
-                    <br>
-                    <div class="form-group">
-                        <label for="materialDesc">Description:</label>
-                        <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;" value="Cement" disabled>
-
-                    </div>
-
-                    <div class="form-group form-inline">
-
-
-
-
-
-                        <label for="usertype">
-                            <i>As of</i>:</label>
-                        <br>
-                        <select class="form-control pull-center text-center" name="month" id="month" style="width: 500px !important;">
-                            <option>January-07-2018 </option>
-                            <option>January-20-2018</option>
-                            <option>February-26-2018 </option>
-                            <option>March-23-2018 </option>
-                            <option>April-4-2018 </option>
-                            <option>April-27-2018 </option>
-                            <option>May-14-2018</option>
-                            <option>June-8-2018 </option>
-                            <option>July-22-2018 </option>
-                            <option selected>Aug-7-2018 </option>
-
-                        </select>
-
-
-                        &nbsp; &nbsp; <br> <br> 
-
-                        
-                    </div>
-
-
-                    
-                    <div class="form-group form-inline">
-                        <label for="materialPrice">Unit:</label>
-                        <input type="text" class="form-control" id="" style="width: 120px !important;" value="200" disabled>
-                    <label for="materialPrice">Price:</label>
-                        <input type="text" class="form-control" id="" style="width: 120px !important;" value="200" placeholder="₱" disabled>
-                    </div>
-
-                    <div class="modal-footer">
-                        <hr>
-
-                        <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 280px">
-                            <i class="icon icon-close"> </i>Close</button>
-
-                    </div>
-                </form>
-
-
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 
@@ -570,7 +480,7 @@ tbody{
         <!-- Tables start -->
         <!-- Row start -->
         <div class="row">
-            <div class="col-sm-12 " >
+            <div class="col-sm-12 ">
 
 
                 <!-- Contextual classes table starts -->
@@ -587,13 +497,15 @@ tbody{
                                         <tr>
                                             <th style="color: black">#</th>
                                             <th style="color: black">Description</th>
-                                          
+
                                             <th style="color: black">Unit</th>
                                             <th style="color: black">Price</th>
                                             <th>
-                                               
+
                                             </th>
-                                            <th> <span class="text text-info">&nbsp; &nbsp; Action</span></th>
+                                            <th>
+                                                <span class="text text-info">&nbsp; &nbsp; Action</span>
+                                            </th>
                                             <th></th>
 
 
@@ -608,25 +520,25 @@ tbody{
                                         <tr class=@if (($key+1)%2==0) "table-active" @endif>
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $material->strMaterialName}}</td>
-                                      
+
                                             <td>{{ $material->strUnit}}</td>
-                                            <td>{{ $material->intPrice}}</td>
+                                            <td>{{ $material->latestPrice}}</td>
                                             <td>
                                                 <button data-toggle="modal" data-target="#update{{$key}}" class="btn btn-light " style="background-color: #778899; color: white !important">Update Price</button>
                                             </td>
-                                            <td >
-                                                <button data-toggle="modal" data-target="#viewPriceHistory" class="btn btn btn-light pull-left text-left" style="color:  gray !important">
-                                                   Price History</button>
+                                            <td>
+                                                <button data-toggle="modal" data-target="#viewPriceHistory{{$key}}" class="btn btn btn-light pull-left text-left" style="color:  gray !important">
+                                                    Price History</button>
                                             </td>
-                                            
-                                             <td>
-                                                  
-                                                    <button data-toggle="modal" data-target="#deleteMaterial" class="btn btn-danger pull-right text-right " title="Delete">
-                                                        <i class="icofont icofont-ui-delete"> </i>
-                                                    </button> 
-                                              
-                                                    
-                                                </td>
+
+                                            <td>
+
+                                                <button data-toggle="modal" data-target="#deleteMaterial" class="btn btn-danger pull-right text-right " title="Delete">
+                                                    <i class="icofont icofont-ui-delete"> </i>
+                                                </button>
+
+
+                                            </td>
                                         </tr>
 
 
@@ -683,6 +595,91 @@ tbody{
                                                 </div>
                                             </div>
                                         </div>
+
+
+
+                                        <!-- View Price History Modal -->
+
+                                        <div class="modal fade" id="viewPriceHistory{{$key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content pull-center">
+                                                    <div class="modal-header bg-primary">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        <h4 class="modal-title" id="myModalLabel">
+                                                            <span style="color: white">
+                                                                <b>Price History</b>
+                                                            </span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                                                        <form action="/action_page.php">
+
+
+                                                            <br>
+                                                            <div class="form-group">
+                                                                <label for="materialDesc">Description:</label>
+                                                                <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;" value="{{$material->strMaterialName}}" disabled>
+
+                                                            </div>
+
+                                                            <div class="form-group form-inline">
+
+
+
+
+
+                                                                <label for="usertype">
+                                                                    <i>As of</i>:</label>
+                                                                <br>
+                                                                <select onchange="changePriceHistoryPriceInputValue(this,{{$key}})"class="form-control pull-center text-center" name="priceHistoryDatetimeSelect{{$key}}" style="width: 500px !important;">
+                                                                    <option selected>Pick date</option>
+                                                                    @foreach ($material->priceHistory as $priceHistoryKey=>$priceHistory)
+                                                                        <option value={{$priceHistory->intPrice}}
+                                                                        >{{$priceHistory->formattedDate}}</option>
+                                                                    @endforeach
+
+                                                                </select>
+
+
+                                                                &nbsp; &nbsp;
+                                                                <br>
+                                                                <br>
+
+
+                                                            </div>
+
+
+
+                                                            <div class="form-group form-inline">
+                                                                <label for="materialPrice">Unit:</label>
+                                                                <input type="text" class="form-control" id="" style="width: 120px !important;" value="{{$material->strUnit}}" disabled>
+                                                                <label for="materialPrice">Price:</label>
+                                                                <input type="text" class="form-control" id="priceHistoryPriceInput{{$key}}" style="width: 120px !important;" value="" placeholder="₱" disabled>
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <hr>
+
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 280px">
+                                                                    <i class="icon icon-close"> </i>Close</button>
+
+                                                            </div>
+                                                        </form>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                         @endforeach
 
                                     </tbody>
@@ -726,30 +723,30 @@ tbody{
     </div>
 
 
-  <!-- delete material modal -->
+    <!-- delete material modal -->
 
-        <div class="modal fade" id="deleteMaterial" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: indianred !important">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                            <span style="color: white">Delete Material</span>
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <h6>ARE YOU SURE YOU WANT TO DELETE THIS MATERIAL?</h6>
-                    </div>
-                    <div class="modal-footer">
-                         <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                       
-                    </div>
+    <div class="modal fade" id="deleteMaterial" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: indianred !important">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <span style="color: white">Delete Material</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <h6>ARE YOU SURE YOU WANT TO DELETE THIS MATERIAL?</h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
                 </div>
             </div>
         </div>
+    </div>
 
 
     <!-- view project details modal -->
@@ -1063,6 +1060,17 @@ tbody{
         var modal = $(this)
         modal.find('.modal-body #materialIdToUpdate').val(idToUpdate)
     })
+
+/*  //pricehistoryDatetimeSelect onChange Listener
+    $('#priceHistoryDatetimeSelect').on('change',function(){
+        alert(this.value);
+    })
+*/
+    function changePriceHistoryPriceInputValue(sel,key){
+        console.log(key);
+        $('#priceHistoryPriceInput'+key).val(sel.value);
+    }
+
 
 </script>
 @endsection

@@ -19,7 +19,7 @@ class MaterialsController extends Controller
         //latest dates
         
 
-        $materials= DB::select(
+        $materials = DB::select(
             '
             SELECT *
             FROM (
@@ -39,9 +39,46 @@ class MaterialsController extends Controller
         );
          
         
+
+        $prices = DB::table('tblprice')
+                    ->select('intPriceId','dtmPriceAsOf','intPrice','intMaterialId',DB::raw('DATE_FORMAT(dtmPriceAsOf,"%M-%d-%Y, %h:%i %p") as formattedDate'))
+                    ->get();
+
+
+
+
+        // logic for putting materials with price history in one variable
+        $materialsWithPriceHistory = array();
+
+        foreach($materials as $material){
+            $materialWithPriceHistory = new \stdClass();
+            $priceHistory = array();
+            foreach($prices as $price){
+                if($material->intMaterialId == $price->intMaterialId){
+                    array_push($priceHistory, $price);
+                }
+            }
+
+            //dd($priceHistory);
+            $materialWithPriceHistory = (object) [
+                'intMaterialId' => $material->intMaterialId,
+                'strMaterialName' => $material->strMaterialName,
+                'strUnit' => $material->strUnit,
+                'latestPrice' => $material->intPrice,
+                'priceHistory' => $priceHistory
+            ];
+
+            array_push($materialsWithPriceHistory,$materialWithPriceHistory);
+        }
+
+
+        //$materialsWithPriceHistory = (object) $arrayTest;
+
         //dd($materials);
 
-        return view('Engineer/materials-pricelist')->with('materials',$materials);
+        //dd($materialsWithPriceHistory{0}->priceHistory);
+
+        return view('Engineer/materials-pricelist')->with('materials',$materialsWithPriceHistory);
 
 
     }
