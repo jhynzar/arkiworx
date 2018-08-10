@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ActualsController extends Controller
 {
@@ -15,10 +16,42 @@ class ActualsController extends Controller
     {
         //
 
-        //[temporary]first on going project
-        //$actuals = DB::table()
+        //[temporary] one
+        $onGoingProjects = DB::table('tblproject')
+                ->where('strProjectStatus','=','on going')
+                ->where('intEmployeeId','=','777') //EmployeeId
+                ->get();
 
+        $onGoingProjectsWithCostSummary = array();
+        foreach($onGoingProjects as $onGoingProject){
+            
+            $materialEstimates = DB::table('tblmaterialestimates')
+                                ->where('intProjectId','=',$onGoingProject->intProjectId)
+                                ->get();
+            $materialActuals = DB::table('tblmaterialactuals')
+                                ->where('intProjectId','=',$onGoingProject->intProjectId)
+                                ->get();
+            $customEstimates = DB::table('tblcustomestimates')
+                                ->where('intProjectId','=',$onGoingProject->intProjectId)
+                                ->get();
+            $customActuals = DB::table('tblcustomactuals')
+                                ->where('intProjectId','=',$onGoingProject->intProjectId)
+                                ->get();
+            
 
+            $onGoingProjectWithCostSummary = (object) [
+                'projectDetails' => $onGoingProject,
+                'materialEstimates' => $materialEstimates,
+                'materialActuals' => $materialActuals,
+                'customEstimates' => $customEstimates,
+                'customActuals' => $customActuals
+            ];
+
+            array_push($onGoingProjectsWithCostSummary,$onGoingProjectWithCostSummary);
+        }
+        
+
+        dd($onGoingProjectsWithCostSummary);
         return view('Engineer/actuals');
     }
 
