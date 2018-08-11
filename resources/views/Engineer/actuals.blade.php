@@ -1622,7 +1622,7 @@ tbody{
                                         </thead>
                                         <tbody>
                                             <tr class="table-active"> <td> <b>Concrete Slab</b></td></tr>
-                                            <tr class="table-info">
+                                            <tr >
                                                 <td class="text-center">01</td>
                                                 <td class="text-center">General Requirements
                                               
@@ -1657,7 +1657,7 @@ tbody{
                                             
                                             <tr class="table-active"> <td><b>Walls</b></td></tr>
 
-                                           <tr class="table-info">
+                                           <tr >
                                                 
                                                 <td class="text-center">02</td>
                                                 <td class="text-center">Metal Pipe
@@ -1690,7 +1690,7 @@ tbody{
                                             </tr>
                                             
                                             
-                                             <tr>
+                                             <tr class="table-info">
                                                 <td class="text-center">03</td>
                                                 <td class="text-center">Cement
                                                     
@@ -1726,7 +1726,7 @@ tbody{
                                             
                                             
                                             
-                                           <tr class="table-info">
+                                           <tr >
                                                 
                                                 <td class="text-center">04</td>
                                                 <td class="text-center">Concrete Pipe
@@ -1759,6 +1759,40 @@ tbody{
                                             </tr>
                                            
                                            
+                                             <tr class="table-info">
+                                                <td class="text-center">05</td>
+                                                <td class="text-center">Cement
+                                                    
+                                                </td>
+                                                <td class="text-center">4</td>
+                                                <td class="text-center">pcs</td>
+                                                <td class="text-center">350.0</td>
+                                                <td class="text-center">1400.0</td>
+                                                <td >
+                                                    <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+                                                    
+                                                </td>
+                                               
+                                               <td>
+                                                  
+                                                    <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
+                                                        <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
+                                                    </button> 
+                                              
+                                                    
+                                                </td>
+                                               
+                                               
+                                               <td>
+                                                  
+                                                    <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
+                                                        <i class="icofont icofont-ui-delete"> </i>
+                                                    </button> 
+                                              
+                                                    
+                                                </td>
+                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>

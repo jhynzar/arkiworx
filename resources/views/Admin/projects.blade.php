@@ -18,6 +18,12 @@
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
 
 
+    <script src="/js/jquery-2.1.4.js"></script>
+    <script src="/js/jspdf.min.js"></script>
+    
+    
+    
+    
 
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -787,116 +793,60 @@
                                     <div class="modal-body">
                                         
                                         <div class="form-group form-inline">
-                                                <label for="">Client Name:</label>
-                                                <input type="text" class="form-control" id="" name="" style="width: 200px !important;" required/>
-                                            <label for="">Project Name:</label>
-                                                <input type="text" class="form-control" id="" name="" style="width: 200px !important;" required/>
-                                                       <label for="">Project Amount:</label>
-                                                <input type="number" class="form-control" id="" name="" placeholder="₱" style="width: 150px" required/>
+                                                <label class="text text-primary" for="">Client Name:</label>
+                                                <input type="text" class="form-control" id="clientName" name="" value="" style="width: 200px !important;" required/>
+                                            <label class="text text-primary" for="">Project Name:</label>
+                                                <input type="text" class="form-control" id="projectName" name="" value="" style="width: 200px !important;" required/>
+                                                       <label class="text text-primary" for="">Project Amount:</label>
+                                                <input type="number" class="form-control" id="projectAmount" name="" value="" placeholder="₱" style="width: 150px" required/>
                                             </div>
                                         
-                                       
                                         
+                                        
+                                        
+                                
+                                        <br> <br>
                                   
-                                        <div class="form-group form-inline text-center"> 
-                                           
-                                            <label>Issued on: </label>
-                                            <select class="form-control" name="" id=""  style="width: 150px !important;">
-                                                <option value=''>--Select Day--</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                                <option>7</option>
-                                                <option>8</option>
-                                                <option>8</option>
-                                                <option>10</option>
-                                                <option>11</option>
-                                                <option>12</option>
-                                                <option>13</option>
-                                                <option>14</option>
-                                                <option>15</option>
-                                                <option>16</option>
-                                                <option>17</option>
-                                                <option>18</option>
-                                                <option>19</option>
-                                                <option>20</option>
-                                                <option>21</option>
-                                                <option>22</option>
-                                                <option>23</option>
-                                                <option>24</option>
-                                                <option>25</option>
-                                                <option>26</option>
-                                                <option>27</option>
-                                                <option>28</option>
-                                                <option>29</option>
-                                                <option>30</option>
-                                                <option>31</option>
-                          
-                                            </select>
-                                            
-                                           <select class="form-control text-center" style="width: 300px !important;"> 
-                                            <option value=''>--Select Month--</option>
-                                               <option value='1'>January</option>
-                                               <option value='2'>February</option>
-                                               <option value='3'>March</option>
-                                               <option value='4'>April</option>
-                                               <option value='5'>May</option>
-                                               <option value='6'>June</option>
-                                               <option value='7'>July</option>
-                                               <option value='8'>August</option>
-                                               <option value='9'>September</option>
-                                               <option value='10'>October</option>
-                                               <option value='11'>November</option>
-                                               <option value='12'>December</option>
-                                               
-                                               </select>
-                                            
-                                            <select class="form-control" style="width: 100px !important;"> 
-                                           
-                                               <option value='1' selected>2018</option>
-                                             
-                                               
-                                               </select>
-                                        </div> 
-                                        
-                                        <div class="form-group form-inline ">
-                                                <label for="">Estimated Project Duration:</label>
-                                                <input type="number" class="form-control" id="" name="" style="width: 80px !important;" required/>
-                                                 
-                                            <select class="form-control" style="width: 100px !important;" > 
-                                        
-                                               <option  selected>Days</option>
-                                               <option >Weeks</option>
-                                               <option >Months</option>
-                                               <option >Year</option>
-                                      
-                                          </select>
-                                           
-                                           
-                                                
-                                          
-                                   
-                                            
-                                                <label for="">Location of Signing:</label>
-                                                <input type="text" class="form-control" id="" name="" style="width: 300px" required/>
+                                        <div class="md-group-add-on">
+                                                                            <span class="md-add-on">
+                                                                                <i class="icon icon-note"></i>
+                                                                            </span>
+                                                                            <div class="md-input-wrapper">
+                                                                                <textarea class="md-form-control" name="" id="projectDesc" value="" cols="2" rows="4"></textarea>
+                                                                                <label class="text text-primary">Project Description</label>
 
-                                            
-                                            </div>
+                                                                            </div>
+                                                                        </div>
                                         
                                     
                                         
                                     </div>
                                     <div class="modal-footer">
                                         
-                                        <a href="{{asset('documents/Contract.pdf')}}" target="_blank" type="button"  class="btn btn-info" > Save</a>
+                                    <!--    <a href="{{asset('documents/Contract.pdf')}}" target="_blank" type="button"  class="btn btn-info" > Save</a> -->
+                                        
+                                        <button type="submit" class="btn btn-info" id="button" form="form1" value="Submit">Save</button>
                                         
                                     
                                       
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                     </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                         
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
