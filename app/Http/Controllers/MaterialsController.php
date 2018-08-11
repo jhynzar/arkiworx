@@ -23,7 +23,7 @@ class MaterialsController extends Controller
             '
             SELECT *
             FROM (
-                SELECT t.intPriceId , t.intPrice, t.intMaterialId , t.dtmPriceAsOf
+                SELECT t.intPriceId , t.decPrice, t.intMaterialId , t.dtmPriceAsOf
                 FROM (
                     SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
                     FROM tblprice
@@ -34,6 +34,7 @@ class MaterialsController extends Controller
             ) as e
             INNER JOIN tblmaterials f
             ON (e.intMaterialId = f.intMaterialId)
+            WHERE f.intActive = 1
             ORDER BY f.strMaterialName ASC
             '
         );
@@ -41,7 +42,7 @@ class MaterialsController extends Controller
         
 
         $prices = DB::table('tblprice')
-                    ->select('intPriceId','dtmPriceAsOf','intPrice','intMaterialId',DB::raw('DATE_FORMAT(dtmPriceAsOf,"%M-%d-%Y, %h:%i %p") as formattedDate'))
+                    ->select('intPriceId','dtmPriceAsOf','decPrice','intMaterialId',DB::raw('DATE_FORMAT(dtmPriceAsOf,"%M-%d-%Y, %h:%i %p") as formattedDate'))
                     ->get();
 
 
@@ -64,7 +65,7 @@ class MaterialsController extends Controller
                 'intMaterialId' => $material->intMaterialId,
                 'strMaterialName' => $material->strMaterialName,
                 'strUnit' => $material->strUnit,
-                'latestPrice' => $material->intPrice,
+                'latestPrice' => $material->decPrice,
                 'priceHistory' => $priceHistory
             ];
 
@@ -110,13 +111,14 @@ class MaterialsController extends Controller
         $id = DB::table('tblmaterials')->insertGetId(
             [
                 'strMaterialName' => $req['materialDesc'],
-                'strUnit' => $req['materialUnit']
+                'strUnit' => $req['materialUnit'],
+                'intActive' => 1,
             ]
         );
 
         DB::table('tblprice')->insertGetId(
             [
-                'intPrice' => $req['materialPrice'],
+                'decPrice' => $req['materialPrice'],
                 'intMaterialId' => $id
             ]
         );
@@ -165,7 +167,7 @@ class MaterialsController extends Controller
         DB::table('tblprice')
             ->insertGetId(
                 [
-                    'intPrice' => $req['materialPriceUpdate'],
+                    'decPrice' => $req['materialPriceUpdate'],
                     'intMaterialId' => $req['materialIdToUpdate']
                 ]
             );
