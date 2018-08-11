@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Able Pro Responsive Bootstrap 4 Admin Template by Phoenixcoded</title>
+    <title>Arkiworx | Cost Management System and Progress Monitoring</title>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
