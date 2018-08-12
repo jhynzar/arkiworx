@@ -80,6 +80,9 @@ Route::get('Engineer/Accounts-Settings', function (){
 Route::get('Engineer/Actuals', 'ActualsController@index');
 
 Route::get('Engineer/Cost-Estimation', 'CostEstimationsController@index');
+Route::get('Engineer/Cost-Estimation-Computation', function(){
+    return view('Engineer/cost-estimation-computation');
+});
 
 Route::get('Engineer/Cost-Summary', function(){
     return view('Engineer/cost-summary');
