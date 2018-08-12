@@ -51,7 +51,7 @@ class ActualsController extends Controller
         }
         
 
-        dd($onGoingProjectsWithCostSummary);
+        //dd($onGoingProjectsWithCostSummary);
         return view('Engineer/actuals');
     }
 

@@ -1515,12 +1515,24 @@ tbody{
 
 
 
-                        <div class="input-group stylish-input-group" style="position: absolute; margin-top: -40px; margin-left: 300px">
-                            <input type="text" class="form-control" placeholder="Search " style="width: 400px">
-                            <button type="submit" class="btn btn-primary">
-                                <span class="icon-magnifier"></span>
-                            </button>
+                         <div class="container" style=" position: absolute; margin-top: -50px; margin-left: 210px">
+                            <label class="text text-muted">Project:</label>
+                            <select class="form-control" name="project" id="project" style="width: 500px; height: 40px !important;">
 
+                                <option> Soriano Residence </option>
+                                <option> Andres Residence </option>
+                                <option> Dela Pena Residence </option>
+                                <option> Alpasar Residence </option>
+                                <option> Reodica Residence </option>
+                                <option> Ascano Residence </option>
+                                <option> Macaya Residence </option>
+                                <option> Santos Residence </option>
+                                <option> Moina Residence </option>
+                                <option selected> Javier Residence </option>
+
+
+
+                            </select>
                         </div>
 
                         <div class="form-inline">

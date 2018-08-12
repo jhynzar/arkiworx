@@ -967,14 +967,14 @@
             <div class="row" style="margin-top: -10px">
                 <div class="col-sm-9 p-0">
                     <div class="main-header">
-                        <h3>
-                            <i class="icon-calculator"> </i> Estimation for</h3>
+                        <h4>
+                            <i class="icon-calculator"> </i> Cost </h4>
                         <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
                             <li class="breadcrumb-item">
-                            
+                                <a href="index"></a>
                             </li>
                             <li class="breadcrumb-item">
-                                <h4 class="text text-primary">Project 2</h4>
+                                <a href="#!">Cost Estimation</a>
                             </li>
 
                         </ol>
@@ -987,6 +987,26 @@
                                                                 <input type="text" style="width: 300px" class="form-control text-center" id=""  value="Project 2" disabled>
                                                                
                                                             </div>  -->
+                    
+                     <div style=" position: absolute; margin-top: -50; margin-left: 300px" >
+                            <label class="text text-muted">Project:</label>
+                            <select class="form-control text text-primary" name="project" id="project" style="width: 400px; height: 40px !important;" disabled>
+
+                                <option> Soriano Residence </option>
+                                <option> Andres Residence </option>
+                                <option> Dela Pena Residence </option>
+                                <option> Alpasar Residence </option>
+                                <option> Reodica Residence </option>
+                                <option> Ascano Residence </option>
+                                <option> Macaya Residence </option>
+                                <option> Santos Residence </option>
+                                <option> Moina Residence </option>
+                                <option selected> Javier Residence </option>
+
+
+
+                            </select>
+                        </div>
                 </div>
                 
                 
@@ -995,7 +1015,7 @@
 
                         </div>
                 
-                
+                <br> <br>
                 
                 
     <!-- Row start -->
