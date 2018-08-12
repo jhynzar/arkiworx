@@ -1,109 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-    <title>ArkiWorx | Cost Management and Progress Monitoring System</title>
-    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-     <![endif]-->
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <!-- Favicon icon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
-    <!-- iconfont -->
-    <link rel="stylesheet" type="text/css" href="../assets/icon/icofont/css/icofont.css">
-
-    <!-- simple line icon -->
-    <link rel="stylesheet" type="text/css" href="../assets/icon/simple-line-icons/css/simple-line-icons.css">
-
-    <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
-
-    <!-- Weather css -->
-    <link href="../assets/css/svg-weather.css" rel="stylesheet">
-
-    <!-- Echart js -->
-    <script src="../assets/plugins/charts/echarts/js/echarts-all.js"></script>
-
-    <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
-
-    <!-- Responsive.css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
-
-    <!--color css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/color/color-1.min.css" id="color" />
-    <!-- fullCalendar -->
-
-    <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.min.css" media="print">
-    <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
-
-    <style>
-        .sidebar .user-panel {
-            background-image: url('/assets/images/ff.jpg') !important;
-        }
-
-        .morphsearch-content {
-            background-color: #222d32 !important;
-
-
-        }
-
-        .main-header-top>.navbar {
-            background: #222d32 !important;
-        }
-
-
-        .sidebar-menu>li.active>a {
-            background: #222d32 !important;
-        }
-
-        .main-header-top {
-            background-color: #222d32 !important;
-        }
-
-        .sidebar-menu .treeview-menu>li.active>a {
-            color: #222d32 !important;
-        }
-
-
-        .modal-header {
-            background-color: #778899 !important;
-        }
-
-
-        .card-header {
-            background-color: #778899 !important;
-            color: white !important;
-        }
-
-
-        .modal-header {
-            background-color: #778899 !important;
-            color: white !important;
-        }
-
-    </style>
-
-
-
-</head>
-
-<body class="sidebar-mini fixed">
+@section('body')
     <div class="loader-bg">
         <div class="loader-bar">
         </div>
@@ -1062,7 +959,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 45px">
+    <div class="content-wrapper" style="margin-top: 30px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 
@@ -1070,185 +967,387 @@
             <div class="row" style="margin-top: -10px">
                 <div class="col-sm-9 p-0">
                     <div class="main-header">
-                        <h4>
-                            <i class="icon-calculator"> </i> Estimation</h4>
+                        <h3>
+                            <i class="icon-calculator"> </i> Estimation for</h3>
                         <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
                             <li class="breadcrumb-item">
-                                <a href="index"></a>
+                            
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="#!">Cost Estimation</a>
+                                <h4 class="text text-primary">Project 2</h4>
                             </li>
 
                         </ol>
 
-
-
-
-
-
-
-                        <div class="input-group stylish-input-group" style="position: absolute; margin-top: -40px; margin-left: 300px">
-                            <input type="text" class="form-control" placeholder="Search " style="width: 400px">
-                            <button type="submit" class="btn btn-primary">
-                                <span class="icon-magnifier"></span>
-                            </button>
-
-                        </div>
-
-                        <div class="form-inline">
-                            <br>
-
-                            <div class="form-group" style="margin-left: 20px">
-                                <label for="showProject" class="text text-muted">Show</label>
-                                <select class="form-control" name="sex" id="userType" style="width: 70px; height: 35px !important;">
-                                    <option selected> 50 </option>
-                                    <option> 1 </option>
-                                    <option> 2 </option>
-                                    <option> 3 </option>
-                                    <option> 4 </option>
-                                    <option> 5 </option>
-                                    <option> 6 </option>
-                                    <option> 7 </option>
-                                    <option> 8 </option>
-                                    <option> 9 </option>
-                                </select>
-                                <label class="text text-muted"> Item</label>
-                            </div>
-                        </div>
-
-
                     </div>
-
+                    
+                    <!--
+                    <div class="form-group form-inline" style="width: 600px; margin-left: 380px; margin-top: -50px !important;" >
+                                                                <h5 for="" class="text text-primary" >Estimation for Project:</h5> 
+                                                                <input type="text" style="width: 300px" class="form-control text-center" id=""  value="Project 2" disabled>
+                                                               
+                                                            </div>  -->
                 </div>
+                
+                
+                
+                                                          
 
+                        </div>
+                
+                
+                
+                
+    <!-- Row start -->
+    <div class="row">
+      <!-- Multiple Open Accordion start -->
+      <div class="col-lg-12">
+        <div class="card" style="height: 3200px">
+          <div class="card-header" style="background-color: #778899">
+            <h5 class="card-header-text">2 - Storey Project</h5>
+          </div>
+            
+          <div class="card-block accordion-block">
+              
+                    <div class="col-lg-11">
+                        <div class="card" style="margin-left: 80px; margin-top: 20px" >
+                            <div class="card-block accordion-block">
+              
+            <div id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="accordion-panel">
+                <div class="accordion-heading" role="tab" id="headingOne">
+                  <h3 class="card-title accordion-title">
+                    <a  class="accordion-msg table-active"  data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Column
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-panel">
+                <div class="accordion-heading" role="tab" id="headingTwo">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-primary"  data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Footing
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingThree">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Slab
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingFour">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Beams
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                 <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingFive">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Wall Footing
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingSix">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      Floor Beams
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingSeven">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      Roof Beams
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingEight">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      Mouldings
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingNine">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      Roofing
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                 <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingTen">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                      Windows
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                    <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingEleven">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                     Doors
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingTwelve">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                     Ceiling
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                 <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingThirteen">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                     Staircase
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                
+                 <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingFourteen">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                     Paint Ceiling
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourteen">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                 <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingFifteen">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                     Paint Walls
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseFifteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFifteen">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                
+                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingSixteen">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                     Electrical Works
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseSixteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSixteen">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingSeventeen">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                     Plumbing Works
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseSeventeen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeventeen">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingEighteen">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
+                     Tiles
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseEighteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEighteen">
+                  <div class="accordion-content accordion-desc">
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+                 
+                
+            </div>
+          </div>
+        </div>
+      </div>
+            </div>
+          </div> 
+        </div> 
+      <!-- Multiple Open Accordion ends -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
+    </div>
+    <!-- Row end -->
+                
+                
+                
+                
+                
 
 
             </div>
+            
+            
+            
+            
             <!-- Header end -->
 
-            <!-- Tables start -->
-            <!-- Row start -->
-
-
-            <div class="row">
-
-
-                <!-- start col-lg-9 -->
-                <div class="col-xl-12 col-lg-12">
-                    <!-- Nav tabs -->
-
-                    <!-- end of tab-header -->
-
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="personal" role="tabpanel">
-
-
-
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="card-header-text">Pending Cost Estimations</h5>
-
-                                </div>
-                                <!-- end of card-header  -->
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="project-table">
-                                            <div class="table-responsive">
-                                                <table class="table table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-center txt-primary pro-pic">Line Item</th>
-                                                            <th class="text-center txt-primary">Client</th>
-                                                            <th class="text-center txt-primary pro-pic">Project Name</th>
-                                                            <th class="text-center txt-primary">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="text-center">
-                                                        @foreach ($pendingProjectCostEstimations as $key=>$pendingProjectCostEstimation)
-                                                        <tr class=@if ( ($key+1)%2 == 1)
-                                                                    "table-info"
-                                                                @endif
-                                                        >
-                                                            <td>{{$key+1}}</td>
-                                                            <td>
-                                                                <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                            </td>
-                                                            <td>{{ $pendingProjectCostEstimation->strProjectName }}</td>
-
-
-
-                                                            <td class="faq-table-btn">
-
-                                                                <a href="#" data-toggle="modal" data-target="#chooseTemplate" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
-                                                                    data-placement="top" title="Approve">
-                                                                    <i class="icofont icofont-ui-edit"></i> Create Estimation </a>
-
-
-                                                            </td>
-
-                                                        </tr>
-                                                        @endforeach
-
-                                                    </tbody>
-                                                </table>
-                                                <!-- end of table -->
-                                            </div>
-                                            <!-- end of table responsive -->
-                                        </div>
-                                        <!-- end of project table -->
-                                    </div>
-                                    <!-- end of col-lg-12 -->
-                                </div>
-                                <!-- end of row -->
-                            </div>
-
-
-
-
-                        </div>
-                        <!-- end of tab-pane -->
-                        <!-- end of about us tab-pane -->
-
-                        <!-- start tab-pane of project tab -->
-                        <div class="tab-pane" id="project" role="tabpanel">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="card-header-text">Project List</h5>
-
-                                </div>
-                                <!-- end of card-header  -->
-
-                                <!-- end of card-main -->
-                            </div>
-                            <!-- end of project pane -->
-
-
-                        </div>
-                        <!-- end of main tab content -->
-                    </div>
-
-                    <!-- Row end -->
-                    <!-- Tables end -->
-                </div>
+          
 
 
                 <!-- deactivate user modal -->
@@ -1270,41 +1369,6 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 <button type="button" class="btn btn-danger">Deactivate</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                 <!-- choose template modal -->
-
-                <div class="modal fade" id="chooseTemplate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header" style=" background-color: #778899; color: white !important">
-                                <h5 class="modal-title" id="exampleModalLabel">
-                                    <span style="color: white" >Project Type</span>
-                                </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body" style="background-color: #e5e5f2 !important;">
-                                 <div class="form-group pull-center text-center">
-                        <label for="usertype">Project Template:</label>
-                        <select class="form-control" name="projectTemplate" id="projectTemplate" style="width: 250px; margin-left: 150px !important;" value="Choose template">
-                            <option> Bungalow </option>
-                            <option> 2-Storey </option>
-                            <option> 3-Storey </option>
-                            <option> 4-Storey </option>
-                            <option> 5-Storey </option>
-                            
-                        </select>
-                    </div>
-                            </div>
-                            <div class="modal-footer" >
-                                <button type="button" class="btn btn-primary"  >Save</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                               
                             </div>
                         </div>
                     </div>
@@ -1566,92 +1630,9 @@
 
 
 
+@endsection('body')
 
-
-
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-      <div class="ie-warning">
-          <h1>Warning!!</h1>
-          <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-          <div class="iew-container">
-              <ul class="iew-download">
-                  <li>
-                      <a href="http://www.google.com/chrome/">
-                          <img src="../assets/images/browser/chrome.png" alt="Chrome">
-                          <div>Chrome</div>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://www.mozilla.org/en-US/firefox/new/">
-                          <img src="../assets/images/browser/firefox.png" alt="Firefox">
-                          <div>Firefox</div>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="http://www.opera.com">
-                          <img src="../assets/images/browser/opera.png" alt="Opera">
-                          <div>Opera</div>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://www.apple.com/safari/">
-                          <img src="../assets/images/browser/safari.png" alt="Safari">
-                          <div>Safari</div>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                          <img src="../assets/images/browser/ie.png" alt="">
-                          <div>IE (9 & above)</div>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-          <p>Sorry for the inconvenience!</p>
-      </div>
-      <![endif]-->
-    <!-- Warning Section Ends -->
-
-    <!-- Required Jqurey -->
-    <script src="../assets/plugins/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="../assets/plugins/tether/dist/js/tether.min.js"></script>
-
-    <!-- Required Fremwork -->
-    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- waves effects.js -->
-    <script src="../assets/plugins/Waves/waves.min.js"></script>
-
-    <!-- Scrollbar JS-->
-    <script src="../assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-    <script src="../assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
-
-    <!--classic JS-->
-    <script src="../assets/plugins/classie/classie.js"></script>
-
-    <!-- notification -->
-    <script src="../assets/plugins/notification/js/bootstrap-growl.min.js"></script>
-
-    <!-- Rickshaw Chart js -->
-    <script src="../assets/plugins/d3/d3.js"></script>
-    <script src="../assets/plugins/rickshaw/rickshaw.js"></script>
-
-    <!-- Sparkline charts -->
-    <script src="../assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
-
-    <!-- Counter js  -->
-    <script src="../assets/plugins/waypoints/jquery.waypoints.min.js"></script>
-    <script src="../assets/plugins/countdown/js/jquery.counterup.js"></script>
-
-    <!-- custom js -->
-    <script type="text/javascript" src="../assets/js/main.min.js"></script>
-    <!-- welcome admin able -->
-    <script type="text/javascript" src="../assets/pages/dashboard.js"></script>
-    <script type="text/javascript" src="../assets/pages/elements.js"></script>
-    <script src="../assets/js/menu.min.js"></script>
+@section('script')
 
     <script>
         var $window = $(window);
@@ -1665,6 +1646,5 @@
         });
 
     </script>
-</body>
 
-</html>
+@endsection('script')
