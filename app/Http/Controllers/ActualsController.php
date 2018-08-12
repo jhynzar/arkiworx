@@ -16,42 +16,57 @@ class ActualsController extends Controller
     {
         //
 
-        //[temporary] one
+        //[temporary] For projects of [TEMPORARAY ENGINEER]
+        
         $onGoingProjects = DB::table('tblproject')
                 ->where('strProjectStatus','=','on going')
                 ->where('intEmployeeId','=','777') //EmployeeId
+                ->where('intActive','=',1)
                 ->get();
-
         $onGoingProjectsWithCostSummary = array();
         foreach($onGoingProjects as $onGoingProject){
             
             $materialEstimates = DB::table('tblmaterialestimates')
                                 ->where('intProjectId','=',$onGoingProject->intProjectId)
-                                ->get();
+                                ->get()
+                                ->toArray();
             $materialActuals = DB::table('tblmaterialactuals')
                                 ->where('intProjectId','=',$onGoingProject->intProjectId)
                                 ->get();
-            $customEstimates = DB::table('tblcustomestimates')
+
+            $materialActualsWithHistory = array();
+            foreach($materialActuals as $materialActual){
+                $materialActualHistory = DB::table('tblmaterialactualshistory')
+                                        ->where('intMaterialActualsId','=',$materialActual->intMaterialActualsId)
+                                        ->get();
+
+
+                $materialActualWithHistory = (object) [
+                    'materialActualsDetails' => $materialActual,
+                    'materialActualsHistory' => $materialActualHistory
+                ];
+
+                array_push($materialActualsWithHistory,$materialActualWithHistory);
+                
+            }
+            $projectRequirements = DB::table('tblprojectrequirements')
                                 ->where('intProjectId','=',$onGoingProject->intProjectId)
-                                ->get();
-            $customActuals = DB::table('tblcustomactuals')
-                                ->where('intProjectId','=',$onGoingProject->intProjectId)
-                                ->get();
+                                ->get()
+                                ->toArray();
             
 
             $onGoingProjectWithCostSummary = (object) [
                 'projectDetails' => $onGoingProject,
                 'materialEstimates' => $materialEstimates,
-                'materialActuals' => $materialActuals,
-                'customEstimates' => $customEstimates,
-                'customActuals' => $customActuals
+                'materialActuals' => $materialActualsWithHistory,
+                'projectRequirements' => $projectRequirements
             ];
 
             array_push($onGoingProjectsWithCostSummary,$onGoingProjectWithCostSummary);
         }
         
 
-        dd($onGoingProjectsWithCostSummary);
+        //dd($onGoingProjectsWithCostSummary);
         return view('Engineer/actuals');
     }
 
