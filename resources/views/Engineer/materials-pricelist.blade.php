@@ -640,7 +640,7 @@
                                                                 <select onchange="changePriceHistoryPriceInputValue(this,{{$key}})"class="form-control pull-center text-center" name="priceHistoryDatetimeSelect{{$key}}" style="width: 500px !important;">
                                                                     <option selected>Pick date</option>
                                                                     @foreach ($material->priceHistory as $priceHistoryKey=>$priceHistory)
-                                                                        <option value={{$priceHistory->intPrice}}
+                                                                        <option value={{$priceHistory->decPrice}}
                                                                         >{{$priceHistory->formattedDate}}</option>
                                                                     @endforeach
 

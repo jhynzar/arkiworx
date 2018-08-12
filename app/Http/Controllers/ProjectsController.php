@@ -19,6 +19,7 @@ class ProjectsController extends Controller
                     ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
                     ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
                     ->where('tblproject.strProjectStatus','=','pending')
+                    ->where('tblproject.intActive','=','1')
                     ->orWhere('tblproject.strProjectStatus','=','for approval')
                     ->orderBy('tblproject.intProjectId','desc')
                     ->get();
@@ -27,6 +28,7 @@ class ProjectsController extends Controller
                     ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
                     ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
                     ->where('tblproject.strProjectStatus','=','on going')
+                    ->where('tblproject.intActive','=','1')
                     ->orderBy('tblproject.intProjectId','desc')
                     ->get();
 
@@ -72,7 +74,8 @@ class ProjectsController extends Controller
                     'strProjectStatus' => 'pending',
                     'strProjectLocation' => $req['projectLocation'],
                     'intClientId' => $req['projectClient'],
-                    'intEmployeeId' => $req['projectEngineer']
+                    'intEmployeeId' => $req['projectEngineer'],
+                    'intActive' => 1
                 ]
             );
 
