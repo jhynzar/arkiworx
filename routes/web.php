@@ -53,6 +53,8 @@ Route::get('Admin/Projects', 'ProjectsController@index');
 
 Route::post('Admin/Projects','ProjectsController@store');
 
+Route::patch('Admin/Projects/{id}','ProjectsController@update');
+
 Route::get('Admin/Project-Details', function(){
     return view ('Admin/projectdetails');
 });

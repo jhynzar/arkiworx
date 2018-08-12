@@ -15,22 +15,31 @@ class ProjectsController extends Controller
     public function index()
     {
         //
-        $pendingProjects = DB::table('tblproject')
-                    ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
-                    ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
-                    ->where('tblproject.strProjectStatus','=','pending')
-                    ->where('tblproject.intActive','=','1')
-                    ->orWhere('tblproject.strProjectStatus','=','for approval')
-                    ->orderBy('tblproject.intProjectId','desc')
-                    ->get();
+        $pendingProjects = DB::select("
+        SELECT *
+        FROM tblproject
+        INNER JOIN tblclient
+        ON (tblproject.intClientId = tblclient.intClientId)
+        INNER JOIN tblemployee
+        ON (tblproject.intEmployeeId = tblemployee.intEmployeeId)
+        WHERE (tblproject.intActive = 1) AND
+        (tblproject.strProjectStatus = 'pending' OR tblproject.strProjectStatus = 'for approval')
+        ");
         
-        $ongoingProjects = DB::table('tblproject')
-                    ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
-                    ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
-                    ->where('tblproject.strProjectStatus','=','on going')
-                    ->where('tblproject.intActive','=','1')
-                    ->orderBy('tblproject.intProjectId','desc')
-                    ->get();
+        $ongoingProjects = DB::select("
+            
+        SELECT *
+        FROM tblproject
+        INNER JOIN tblclient
+        ON (tblproject.intClientId = tblclient.intClientId)
+        INNER JOIN tblemployee
+        ON (tblproject.intEmployeeId = tblemployee.intEmployeeId)
+        WHERE (tblproject.intActive = 1) AND
+        (tblproject.strProjectStatus = 'on going')
+        
+        ");
+
+        //TO DO
 
         $clients = DB::table('tblclient')->get();
 
@@ -113,7 +122,12 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //change from for approval to finished
+        DB::table('tblproject')
+            ->where('intProjectId','=',$id)
+            ->update(['strProjectStatus'=> 'on going']);
+
+            header('Refresh:0;/Admin/Projects');
     }
 
     /**
