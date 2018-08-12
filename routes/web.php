@@ -69,6 +69,14 @@ Route::get('Engineer/Home', function(){
     return view('Engineer/engi-home');
 });
 
+Route::get('Engineer/Engineer-Projects','EngineerProjectsController@index');
+
+Route::get('/Engineer/Engineer-Projects/{id}/Cost-Summary',function($id){
+    return $id;
+});
+
+Route::get('/Engineer/Engineer-Projects/{id}/Actuals','ActualsController@index');
+
 Route::get('Engineer/Accounts', function(){
     return view ('Engineer/accounts');
 });
@@ -76,8 +84,6 @@ Route::get('Engineer/Accounts', function(){
 Route::get('Engineer/Accounts-Settings', function (){
     return view ('Engineer/account-settings');
 });
-
-Route::get('Engineer/Actuals', 'ActualsController@index');
 
 Route::get('Engineer/Cost-Estimation', 'CostEstimationsController@index');
 Route::get('Engineer/Cost-Estimation-Computation', function(){

@@ -12,16 +12,15 @@ class ActualsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         //
-
         //[temporary] For projects of [TEMPORARAY ENGINEER]
         
         $onGoingProjects = DB::table('tblproject')
                 ->where('strProjectStatus','=','on going')
                 ->where('intEmployeeId','=','777') //EmployeeId
-                ->where('intActive','=',1)
+                ->where('intProjectId','=',$id)
                 ->get();
         $onGoingProjectsWithCostSummary = array();
         foreach($onGoingProjects as $onGoingProject){
@@ -67,7 +66,7 @@ class ActualsController extends Controller
         
 
         //dd($onGoingProjectsWithCostSummary);
-        return view('Engineer/actuals');
+        return view('Engineer/actuals',compact('onGoingProjectsWithCostSummary'));
     }
 
     /**
