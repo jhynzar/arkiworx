@@ -1300,6 +1300,24 @@
                         </div>
                   
                     </div>
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -1489,6 +1507,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -1689,6 +1726,24 @@
                         </div>
                   
                     </div>
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -1886,6 +1941,24 @@
                         </div>
                   
                     </div>
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -2076,6 +2149,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -2269,6 +2361,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -2462,6 +2573,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -2732,6 +2862,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -2902,6 +3051,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -3077,6 +3245,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -3239,6 +3426,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -3394,6 +3600,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -3532,6 +3757,24 @@
                         </div>
                   
                     </div>
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -3669,6 +3912,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
@@ -3697,9 +3959,265 @@
                 </div>
                 <div id="collapseSeventeen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeventeen">
                   <div class="accordion-content accordion-desc">
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
+                                        <!-- Column-->
+                      
+                      <br> 
+                       <div class="card">
+                        
+        <div class="row ">
+        
+          <div class="col-sm-6 col-xs-12 scroll"> <br>
+                    <div class="card" style="background-color: #A7FDCB">
+                        
+                         <div class="card-block">
+                             
+                   
+                        
+                             
+                          
+                             
+                             
+                    
+                             <div class="form-group form-inline">
+                           
+                            
+                                 <select class="form-control" name="" id="" style="width: 300px !important;">
+                                    <option selected> #14 THHN</option>
+                                    <option > #12 THHN </option>
+                                    <option > #10 THHN</option>
+                                     <option > #8 THHN</option> 
+                                </select>
+                                 
+                                <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+
+                                 
+                                 <br> <br>
+                                 
+                                 <label ><span class="text text-primary">Optional</span> </label><br>
+                                 <select class="form-control" name="" id="" style="width: 300px !important;">
+                                    <option selected> #14 THHN</option>
+                                    <option > #12 THHN </option>
+                                    <option > #10 THHN</option>
+                                     <option > #8 THHN</option> 
+                                </select>
+                                 
+                                <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+
+                                 
+                                 <br> <br>
+                                 
+                                 <label ><span class="text text-primary">Optional</span> </label><br>
+                                 <select class="form-control" name="" id="" style="width: 300px !important;">
+                                    <option selected> #14 THHN</option>
+                                    <option > #12 THHN </option>
+                                    <option > #10 THHN</option>
+                                     <option > #8 THHN</option> 
+                                </select>
+                                 
+                                <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+
+                                 
+                                 <br> <br>
+                                 <label ><span class="text text-primary">Optional</span> </label><br>
+                                 <select class="form-control" name="" id="" style="width: 300px !important;">
+                                    <option selected> #14 THHN</option>
+                                    <option > #12 THHN </option>
+                                    <option > #10 THHN</option>
+                                     <option > #8 THHN</option> 
+                                </select>
+                                 
+                                <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+
+                                 
+                                 <br> <br>
+                                 
+                                 <label > <b> Circuit Breaker </b></label><br>
+                                 <select class="form-control" name="" id="" style="width: 300px !important;">
+                                    <option selected> 15a</option>
+                                    <option > 20a </option>
+                                    <option > 30a</option>
+                                     <option > 60a</option> 
+                                </select>
+                                 
+                                <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+
+                                 
+                                 <br> <br>
+                                 
+                                 
+                                 <label class="label label-primary"> Accessories</label> <br> <br> 
+                                 
+                                 
+                                 <label >Panel Board: </label>  &nbsp; 
+                                  <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" > &nbsp; &nbsp;
+                                  <label >PVC Clips:</label>  &nbsp;  &nbsp; &nbsp;
+                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" >
+                                  
+                                 <br> <br>
+                                 <label >Lights:</label> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; 
+                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" > &nbsp;&nbsp;
+                                 <label >Junction Box:</label> &nbsp;
+                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" >
+                                 
+                                  <br> <br>
+                                 <label >Light Switch:</label> &nbsp;
+                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" > &nbsp;&nbsp;
+                                 <label >Utility Box:</label> &nbsp;&nbsp;  &nbsp;  &nbsp; 
+                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" >
+                                  <br> <br>
+                                 <label >Square Box:</label> &nbsp;&nbsp;
+                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" > &nbsp;&nbsp;
+                                 <label >Motor Pump:</label> &nbsp;&nbsp;
+                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" >
+                                  <br> <br>
+                                 <label class="text text-primary">Optional</label> <br> 
+                                 <label >Doorbell Buzzer:</label> &nbsp; 
+                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" > &nbsp;&nbsp; <br> <br>
+                                 <label >Smoke Alarm:</label> &nbsp;&nbsp;  &nbsp; &nbsp;
+                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1" >
+                                 
+                                 
+                         
+                                
+                                 
+                                
+                                 
+                           <br> <br>
+                                 <hr>
+                                 <div class="form-group form-inline">
+                                 
+                                <button type="button" class="btn" style="margin-left: 300px" >Compute</button>
+                                 </div>
+                        </div>
+                             
+                             
+                             
+                        </div>
+                    </div>
+          </div>
+            
+          <div class="col-sm-6 col-xs-12 scroll "><br>
+              
+              
+              <div class="card">
+                        
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>Material</th>
+                                            <th>Estimated Qty</th>
+                                            <th>Estimated Cost</th>
+                                           
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="table-success">
+                                            <td>Panel Board:</td>
+                                            <td>1 pc</td>
+                                            <td>400.0</td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>PVC Clips:</td>
+                                            <td>128 pcs</td>
+                                            <td>1200.0</td>
+                                       
+                                        </tr>
+                                            <tr class="table-warning">
+                                            <td>Lights:</td>
+                                            <td>5 pcs</td>
+                                            <td>1500.0</td>
+                                       
+                                        </tr>
+                                            
+                                            <tr class="table-success">
+                                            <td>Junction Box:</td>
+                                            <td>2 pcs</td>
+                                            <td>500.0</td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Light Switch:</td>
+                                            <td>8 pcs</td>
+                                            <td>1300.0</td>
+                                       
+                                        </tr>
+                                            
+                                            <tr class="table-success">
+                                            <td>Utility Box:</td>
+                                            <td>3 pc</td>
+                                            <td>300.0</td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Square Box:</td>
+                                            <td>2 pcs</td>
+                                            <td>600.0</td>
+                                       
+                                        </tr>
+                                            <tr class="table-warning">
+                                            <td>Doorbell Buzzer:</td>
+                                            <td>1 lot</td>
+                                            <td>1300.0</td>
+                                       
+                                        </tr>
+                                            
+                                             <tr class="table-success">
+                                            <td>Smoke Alarm:</td>
+                                            <td>1 lot</td>
+                                            <td>4000.0</td>
+                                       
+                                        </tr>
+                                            
+                                        
+                                        
+                                            
+                                      
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                               
+                            </div>
+                             
+                        </div>
+                  
+                    </div>
+              
+               <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
+                                
+              
+          </div>
+          
+          
+           
+            
+            
+        </div>
+      
+    </div>
+                      
+     <!-- Column ends -->
                   </div>
                 </div>
               </div>
@@ -3859,6 +4377,25 @@
                         </div>
                   
                     </div>
+                    
+                    <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>
                                 
               </div>
           </div>
