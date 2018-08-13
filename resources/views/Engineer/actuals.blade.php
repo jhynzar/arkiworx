@@ -1524,186 +1524,71 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="table-active">
-                                            <td>
-                                                <b>Concrete Slab</b>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">01</td>
-                                            <td class="text-center">General Requirements
+                                        <!-- HERE -->
 
-                                            </td>
-                                            <td class="text-center">-</td>
-                                            <td class="text-center">-</td>
-                                            <td class="text-center">-</td>
-                                            <td class="text-center">865,000.0</td>
-                                            <td>
-                                                <button data-toggle="modal" data-target="#updateCustomActuals" class="btn btn btn-primary pull-right" style="" title="Update">Update</button>
-                                            </td>
-                                            <td>
+                                        <!-- For displaying material actuals -->
+                                        
 
-                                                <button data-toggle="modal" data-target="#viewCustomAudit" class="btn" style="background-color: #DCDCDC">
-                                                    <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
-                                                </button>
+                                            <!-- For Category -->
+                                            @foreach ($projectWorkCategories as $workCategory)
+                                                <tr style="background-color: #1e242d">
+                                                    <td>
+                                                        <h5 style="color: white;padding-left: 10px;"><b>{{$workCategory->strWorkCategoryDesc}}</b></h5>
+                                                    </td>
+                                                </tr>
+                                                @foreach ($projectWorkSubCategories as $workSubCategory)
 
-
-                                            </td>
-
-                                            <td>
-
-                                                <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
-                                                    <i class="icofont icofont-ui-delete"> </i>
-                                                </button>
+                                                    <!-- For SubCategory -->
+                                                    @if ($workSubCategory->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                    <tr class="table-active">
+                                                        <td>
+                                                            <b style="padding-left: 30px;"> >&nbsp;{{$workSubCategory->strWorkSubCategoryDesc}}</b>
+                                                        </td>
+                                                    </tr>
 
 
-                                            </td>
+                                                        @foreach ($projectWithDetails->materialActuals as $materialActual)
+                                                            <!-- For Displaying Actuals -->
+                                                            @if (($materialActual->materialActualsDetails->intWorkCategoryId == $workCategory->intWorkCategoryId) && ($materialActual->materialActualsDetails->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId))
+                                                                <tr class="table-info">
+                                                                    <td class="text-center">03</td>
+                                                                    <td class="text-center">{{$materialActual->materialActualsDetails->strMaterialName}}
+
+                                                                    </td>
+                                                                    <td class="text-center">{{$materialActual->materialActualsHistory[0]->intQty}}</td>
+                                                                    <td class="text-center">{{$materialActual->materialActualsDetails->strUnit}}</td>
+                                                                    <td class="text-center">{{$materialActual->materialActualsDetails->latestPrice->decPrice}}</td>
+                                                                    <td class="text-center">{{$materialActual->materialActualsHistory[0]->decCost}}</td>
+                                                                    <td>
+                                                                        <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+
+                                                                    </td>
+
+                                                                    <td>
+
+                                                                        <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
+                                                                            <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
+                                                                        </button>
 
 
-                                        </tr>
-
-                                        <tr class="table-active">
-                                            <td>
-                                                <b>Walls</b>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-
-                                            <td class="text-center">02</td>
-                                            <td class="text-center">Metal Pipe
-
-                                            </td>
-                                            <td class="text-center">4</td>
-                                            <td class="text-center">pcs</td>
-                                            <td class="text-center">350.0</td>
-                                            <td class="text-center">1400.0</td>
-                                            <td>
-                                                <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
-
-                                            </td>
-
-                                            <td>
-                                                <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
-                                                    <span style="color: dimgray">Audit Trail</span>
-                                                </button>
-                                            </td>
+                                                                    </td>
 
 
-                                            <td>
+                                                                    <td>
 
-                                                <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
-                                                    <i class="icofont icofont-ui-delete"> </i>
-                                                </button>
-
-
-                                            </td>
-                                        </tr>
+                                                                        <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
+                                                                            <i class="icofont icofont-ui-delete"> </i>
+                                                                        </button>
 
 
-                                        <tr class="table-info">
-                                            <td class="text-center">03</td>
-                                            <td class="text-center">Cement
-
-                                            </td>
-                                            <td class="text-center">4</td>
-                                            <td class="text-center">pcs</td>
-                                            <td class="text-center">350.0</td>
-                                            <td class="text-center">1400.0</td>
-                                            <td>
-                                                <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
-
-                                            </td>
-
-                                            <td>
-
-                                                <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
-                                                    <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
-                                                </button>
-
-
-                                            </td>
-
-
-                                            <td>
-
-                                                <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
-                                                    <i class="icofont icofont-ui-delete"> </i>
-                                                </button>
-
-
-                                            </td>
-                                        </tr>
-
-
-
-                                        <tr>
-
-                                            <td class="text-center">04</td>
-                                            <td class="text-center">Concrete Pipe
-
-                                            </td>
-                                            <td class="text-center">4</td>
-                                            <td class="text-center">pcs</td>
-                                            <td class="text-center">350.0</td>
-                                            <td class="text-center">1400.0</td>
-                                            <td>
-                                                <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
-
-                                            </td>
-
-                                            <td>
-                                                <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
-                                                    <span style="color: dimgray">Audit Trail</span>
-                                                </button>
-                                            </td>
-
-
-                                            <td>
-
-                                                <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
-                                                    <i class="icofont icofont-ui-delete"> </i>
-                                                </button>
-
-
-                                            </td>
-                                        </tr>
-
-
-                                        <tr class="table-info">
-                                            <td class="text-center">05</td>
-                                            <td class="text-center">Cement
-
-                                            </td>
-                                            <td class="text-center">4</td>
-                                            <td class="text-center">pcs</td>
-                                            <td class="text-center">350.0</td>
-                                            <td class="text-center">1400.0</td>
-                                            <td>
-                                                <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
-
-                                            </td>
-
-                                            <td>
-
-                                                <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
-                                                    <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
-                                                </button>
-
-
-                                            </td>
-
-
-                                            <td>
-
-                                                <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
-                                                    <i class="icofont icofont-ui-delete"> </i>
-                                                </button>
-
-
-                                            </td>
-                                        </tr>
-
+                                                                    </td>
+                                                                </tr>
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                @endforeach
+                                            @endforeach
+                                        
                                     </tbody>
                                 </table>
                             </div>

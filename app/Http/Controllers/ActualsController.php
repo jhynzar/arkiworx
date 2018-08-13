@@ -15,58 +15,126 @@ class ActualsController extends Controller
     public function index($id)
     {
         //
-        //[temporary] For projects of [TEMPORARAY ENGINEER]
         
-        $onGoingProjects = DB::table('tblproject')
+
+        //getting project details
+        $project = DB::table('tblproject')
                 ->where('strProjectStatus','=','on going')
-                ->where('intEmployeeId','=','777') //EmployeeId
                 ->where('intProjectId','=',$id)
-                ->get();
-        $onGoingProjectsWithCostSummary = array();
-        foreach($onGoingProjects as $onGoingProject){
+                ->first();
             
-            $materialEstimates = DB::table('tblmaterialestimates')
-                                ->where('intProjectId','=',$onGoingProject->intProjectId)
-                                ->get()
-                                ->toArray();
-            $materialActuals = DB::table('tblmaterialactuals')
-                                ->where('intProjectId','=',$onGoingProject->intProjectId)
-                                ->get();
+        $materialEstimates = DB::table('tblmaterialestimates')
+                            ->where('intProjectId','=',$project->intProjectId)
+                            ->get()
+                            ->toArray();
+        $materialActuals = DB::table('tblmaterialactuals')
+                            ->join('tblmaterials','tblmaterials.intMaterialId','=','tblmaterialactuals.intMaterialId')
+                            ->join('tblworksubcategory','tblmaterialactuals.intWorkSubCategoryId','=','tblworksubcategory.intWorkSubCategoryId')
+                            ->join('tblworkcategory','tblworkcategory.intWorkCategoryId','=','tblworksubcategory.intWorkCategoryId')
+                            ->where('intProjectId','=',$project->intProjectId)
+                            ->get();
 
-            $materialActualsWithHistory = array();
-            foreach($materialActuals as $materialActual){
-                $materialActualHistory = DB::table('tblmaterialactualshistory')
-                                        ->where('intMaterialActualsId','=',$materialActual->intMaterialActualsId)
-                                        ->get();
+        $materialActualsWithHistory = array();
+        foreach($materialActuals as $materialActual){
+            //for getting latest (only order by, so data can be used in history viewing)
+            $materialActualHistory = DB::table('tblmaterialactualshistory')
+                                    ->where('intMaterialActualsId','=',$materialActual->intMaterialActualsId)
+                                    ->orderBy('dtmDate','desc')
+                                    ->get()
+                                    ->toArray();
 
+            $latestPrice = DB::table('tblprice')
+                        ->where('tblprice.intMaterialId','=',$materialActual->intMaterialId)
+                        ->orderBy('dtmPriceAsOf','desc')
+                        ->first();
 
-                $materialActualWithHistory = (object) [
-                    'materialActualsDetails' => $materialActual,
-                    'materialActualsHistory' => $materialActualHistory
-                ];
-
-                array_push($materialActualsWithHistory,$materialActualWithHistory);
-                
-            }
-            $projectRequirements = DB::table('tblprojectrequirements')
-                                ->where('intProjectId','=',$onGoingProject->intProjectId)
-                                ->get()
-                                ->toArray();
+            //adding latest price
             
-
-            $onGoingProjectWithCostSummary = (object) [
-                'projectDetails' => $onGoingProject,
-                'materialEstimates' => $materialEstimates,
-                'materialActuals' => $materialActualsWithHistory,
-                'projectRequirements' => $projectRequirements
+            $materialActualsDetails = (object) [
+                'intMaterialActualsId' => $materialActual->intMaterialActualsId,
+                'intMaterialId' => $materialActual->intMaterialId,
+                'intProjectId' => $materialActual->intProjectId,
+                'intWorkSubCategoryId' => $materialActual->intWorkSubCategoryId,
+                'strMaterialName' => $materialActual->strMaterialName,
+                'strUnit' => $materialActual->strUnit,
+                'intActive' => $materialActual->intActive,
+                'strWorkSubCategoryDesc' => $materialActual->strWorkSubCategoryDesc,
+                'intWorkCategoryId' => $materialActual->intWorkCategoryId,
+                'strWorkCategoryDesc' => $materialActual->strWorkCategoryDesc,
+                'latestPrice' => $latestPrice
             ];
 
-            array_push($onGoingProjectsWithCostSummary,$onGoingProjectWithCostSummary);
+            $materialActualWithHistory = (object) [
+                'materialActualsDetails' => $materialActualsDetails,
+                'materialActualsHistory' => $materialActualHistory
+            ];
+
+            array_push($materialActualsWithHistory,$materialActualWithHistory);
+            
         }
+        $projectRequirements = DB::table('tblprojectrequirements')
+                            ->where('intProjectId','=',$project->intProjectId)
+                            ->get()
+                            ->toArray();
         
 
-        //dd($onGoingProjectsWithCostSummary);
-        return view('Engineer/actuals',compact('onGoingProjectsWithCostSummary'));
+        $projectWithDetails = (object) [
+            'projectDetails' => $project,
+            'materialEstimates' => $materialEstimates,
+            'materialActuals' => $materialActualsWithHistory,
+            'projectRequirements' => $projectRequirements
+        ];
+
+
+        //for category and sub category
+        
+
+        $projectAllWorkCategoriesIds = DB::select("
+            SELECT tblworkcategory.intWorkCategoryId
+            FROM `tblmaterialactuals`
+            INNER JOIN `tblworksubcategory`
+            ON (tblmaterialactuals.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblmaterialactuals.intProjectId = :id
+            GROUP BY tblworkcategory.intWorkCategoryId       
+        ",['id'=>$id]);
+
+        $projectAllWorkSubCategoriesIds = DB::select("
+            SELECT tblworksubcategory.intWorkSubCategoryId
+            FROM `tblmaterialactuals`
+            INNER JOIN `tblworksubcategory`
+            ON (tblmaterialactuals.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblmaterialactuals.intProjectId = :id
+            GROUP BY tblworksubcategory.intWorkSubCategoryId
+        ",['id'=>$id]);
+
+
+        $projectWorkCategories = array();
+        foreach($projectAllWorkCategoriesIds as $workCategory){
+            $workCategoryDetails = DB::table('tblWorkCategory')
+                                ->where('intWorkCategoryId','=',$workCategory->intWorkCategoryId)
+                                ->first();
+
+            array_push($projectWorkCategories,$workCategoryDetails);
+        }
+
+        $projectWorkSubCategories = array();
+        foreach($projectAllWorkSubCategoriesIds as $workSubCategory){
+            $workSubCategoryDetails = DB::table('tblWorkSubCategory')
+                                ->where('intWorkSubCategoryId','=',$workSubCategory->intWorkSubCategoryId)
+                                ->first();
+
+            array_push($projectWorkSubCategories,$workSubCategoryDetails);
+        }
+
+
+
+        //dd($projectWorkSubCategories);
+        //dd($projectWithDetails);
+        return view('Engineer/actuals',compact('projectWithDetails','projectWorkCategories','projectWorkSubCategories'));
     }
 
     /**
