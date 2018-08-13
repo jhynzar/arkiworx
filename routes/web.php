@@ -76,6 +76,10 @@ Route::get('/Engineer/Engineer-Projects/{id}/Cost-Summary',function($id){
 });
 
 Route::get('/Engineer/Engineer-Projects/{id}/Actuals','ActualsController@index');
+//creating actuals
+Route::post('/Engineer/Engineer-Projects/{id}/Actuals/createMaterialActualNew','ActualsController@createMaterialActualNew');
+Route::post('/Engineer/Engineer-Projects/{id}/Actuals/createMaterialActualFrom','ActualsController@createMaterialActualFrom');
+Route::post('/Engineer/Engineer-Projects/{id}/Actuals/updateProjectRequirementActual','ActualsController@updateProjectRequirementActual');
 
 Route::get('Engineer/Accounts', function(){
     return view ('Engineer/accounts');
@@ -86,9 +90,7 @@ Route::get('Engineer/Accounts-Settings', function (){
 });
 
 Route::get('Engineer/Cost-Estimation', 'CostEstimationsController@index');
-Route::get('Engineer/Cost-Estimation-Computation', function(){
-    return view('Engineer/cost-estimation-computation');
-});
+Route::get('Engineer/Cost-Estimation-Computation', 'CostEstimationsController@createEstimation');
 
 Route::get('Engineer/Cost-Summary', function(){
     return view('Engineer/cost-summary');
