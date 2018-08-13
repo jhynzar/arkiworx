@@ -131,10 +131,39 @@ class ActualsController extends Controller
         }
 
 
+        //FOR ADD MODALS
+        //MATERIALS
+
+        $allMaterials = DB::table('tblmaterials')
+                        ->where('intActive','=',1)
+                        ->get();
+
+
+        $allCategories = DB::table('tblworkcategory')
+                        ->get();
+
+
+        $allCategoriesWithSub = array();
+        foreach($allCategories as $category){
+            $subCategories = DB::table('tblworksubcategory')
+                            ->where('tblworksubcategory.intWorkCategoryId','=',$category->intWorkCategoryId)
+                            ->get()
+                            ->toArray();
+
+            $categoryWithSub = (object) [
+                'intWorkCategoryId' => $category->intWorkCategoryId,
+                'strWorkCategoryDesc' => $category->strWorkCategoryDesc,
+                'subCategories' => $subCategories
+            ];
+
+            array_push($allCategoriesWithSub,$categoryWithSub);
+        }
+
+        //dd($allCategoriesWithSub);
 
         //dd($projectWorkSubCategories);
         //dd($projectWithDetails);
-        return view('Engineer/actuals',compact('projectWithDetails','projectWorkCategories','projectWorkSubCategories'));
+        return view('Engineer/actuals',compact('projectWithDetails','projectWorkCategories','projectWorkSubCategories','allCategoriesWithSub','allMaterials'));
     }
 
     /**
@@ -201,5 +230,18 @@ class ActualsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function createMaterialActualNew($id){
+        return 'createMaterialActualNew';
+    }
+
+    public function createMaterialActualFrom($id){
+        return 'createMaterialActualFrom';
+    }
+
+    public function updateProjectRequirementActual($id){
+        return 'updateProjectRequirementActual';
     }
 }

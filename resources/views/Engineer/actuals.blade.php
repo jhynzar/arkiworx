@@ -742,7 +742,7 @@
 
 
 
-                <form action="/action_page.php">
+                <form action="createNewMaterial">
 
                     <label class="text text-muted" style="margin-left: 450px">
                         <i>07 August 2018</i>
@@ -753,23 +753,19 @@
 
                     <div>
                         <label>Category: </label>
-                        <select class="form-control" name="category" id="category" placeholder="Category" style="width: 300px !important;">
-                            <option>Concrete Slab </option>
-                            <option>Tiles </option>
-                            <option>Walls </option>
-                            <option>Paint </option>
-                            <option>Footing </option>
-                            <option>Column </option>
-                            <option>Footing Tie Beam </option>
-                            <option>Floor Beam </option>
-                            <option>Roof Beam </option>
-                            <option>Conrete Slab 2nd floor</option>
-                            <option>Ceiling works </option>
-                            <option>Roof</option>
-                            <option>Door and Windows </option>
-                            <option>Footing Tie Beam </option>
-                            <option>Septic Tank </option>
+                        <select onchange="addNewMaterialActualOnChange(this)" class="form-control" name="category" id="category" placeholder="Category" style="width: 300px !important;">
+                            <option disabled selected>Pick a Category</option>
+                            @foreach ($allCategoriesWithSub as $key=>$category)
+                                <option value="{{$key}}">{{$category->strWorkCategoryDesc}}</option>
 
+                            @endforeach
+
+                        </select>
+                    </div>
+                    <div>
+                        <label>Sub Category: </label>
+                        <select class="form-control" name="newMaterialActualSubCategory" id="newMaterialActualSubCategory" placeholder="Category" style="width: 300px !important;">
+                            <option disabled selected>Pick a Category</option>
                         </select>
                     </div>
                     <br>
@@ -777,14 +773,10 @@
                         <label>Materials List: </label>
                         <!-- Selects materials that are not from estimated -->
 
-                        <select class="form-control" name="material" id="material" placeholder="Material/s" style="width: 300px !important;">
-                            <option>Cement</option>
-                            <option>Sand</option>
-                            <option>Gravel</option>
-                            <option>10 mm bars</option>
-                            <option>Tie Wire </option>
-                            <option>Gravel Bedding </option>
-
+                        <select class="form-control" name="newMaterialActualMaterialId" id="newMaterialActualMaterialId" placeholder="Material/s" style="width: 300px !important;">
+                            @foreach ($allMaterials as $material)
+                                <option value="{{$material->intMaterialId}}">{{$material->strMaterialName}}</option>
+                            @endforeach
                         </select>
                     </div>
 
@@ -793,15 +785,7 @@
 
                     <div class="form-group form-inline">
                         <label>Qty:</label>
-                        <input type="number" class="form-control" id="" style="width: 90px !important;" required/>
-
-                        <label>Unit:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;" required/>
-
-
-
-                        <label for="ActualPrice">Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱" required/>
+                        <input type="number" class="form-control" id="newMaterialActualQty" name="newMaterialActualQty" style="width: 90px !important;" required/>
 
 
                     </div>
@@ -810,7 +794,7 @@
                     <div class="form-group">
 
                         <label for="ActualPrice">Total Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 500px !important;" placeholder="₱" required/>
+                        <input type="text" class="form-control" id="newMaterialActualTotalCost" name="newMaterialActualTotalCost" style="width: 500px !important;" placeholder="₱" required/>
                     </div>
 
 
@@ -1782,4 +1766,39 @@
 
 
 @endsection @section('script')
+<script>
+    function addNewMaterialActualOnChange(e){
+
+        var allCategoriesWithSub = {!! json_encode($allCategoriesWithSub) !!};
+        console.log(allCategoriesWithSub[e.value].subCategories[0].strWorkSubCategoryDesc);
+
+        var subCategories = allCategoriesWithSub[e.value].subCategories;
+
+         $('#newMaterialActualSubCategory').empty();
+        
+        
+        var htmlString = "";
+        for(var key in subCategories){
+            console.log(subCategories[key].strWorkSubCategoryDesc);
+
+            htmlString += "<option value=" +subCategories[key].intWorkSubCategoryId+ " >"
+            htmlString += subCategories[key].strWorkSubCategoryDesc
+            htmlString += "</option>"
+
+
+        }
+        $('#newMaterialActualSubCategory').html(htmlString);
+        
+        /*
+        $('#addNewMaterialActualSubCategory').empty();
+
+        for(var subCategory in subCategories){
+            console.log(subCategory);
+            new Element('option')
+                .set(subCategory.strWorkSubCategoryDesc,subCategory.intWorkSubCategoryId)
+                .inject($('#addNewMaterialActualSubCategory'));
+        }
+        */
+    }
+</script>
 @endsection
