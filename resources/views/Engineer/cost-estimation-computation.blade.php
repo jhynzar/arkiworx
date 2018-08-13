@@ -1224,7 +1224,7 @@
                                  <hr>
                                  <div class="form-group form-inline">
                                 <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" name="" id="" style="width: 100px !important;">
-                                <button type="button" class="btn" style="margin-left: 90px" >Compute</button>
+                                <button type="button" id="computeColumn" class="btn" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -4723,10 +4723,16 @@
 
 
 
-@endsection('body')
+@endsection
 
 @section('script')
 
+
+    <script>
+        $('#computeColumn').click(function(){
+            console.log('haha');
+        });
+    </script>
     <script>
         var $window = $(window);
         var nav = $('.fixed-button');
@@ -4740,4 +4746,4 @@
 
     </script>
 
-@endsection('script')
+@endsection

@@ -91,4 +91,16 @@ class CostEstimationsController extends Controller
     {
         //
     }
+
+    public function createEstimation(){
+        //request id of project and template
+
+        $formulas = DB::table('tblFormulaValues')
+                    ->join('tblhorizontaloptions','tblHorizontalOptions.intHorizontalOptionsId','=','tblFormulaValues.intHorizontalOptionsId')
+                    ->join('tblverticaloptions','tblVerticalOptions.intVerticalOptionsId','=','tblFormulaValues.intVerticalOptionsId')
+                    ->get();
+        //dd($formulas);
+
+        return view('Engineer/cost-estimation-computation');
+    }
 }

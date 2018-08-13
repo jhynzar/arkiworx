@@ -285,7 +285,9 @@
                 <div class="f-left info">
                     <br>
                     <br>
-                    <p><b>Juliamar</b></p>
+                    <p>
+                        <b>Juliamar</b>
+                    </p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>
@@ -1184,10 +1186,7 @@
                                                     </thead>
                                                     <tbody class="text-center">
                                                         @foreach ($pendingProjectCostEstimations as $key=>$pendingProjectCostEstimation)
-                                                        <tr class=@if ( ($key+1)%2 == 1)
-                                                                    "table-info"
-                                                                @endif
-                                                        >
+                                                        <tr class=@if ( ($key+1)%2==1 ) "table-info" @endif>
                                                             <td>{{$key+1}}</td>
                                                             <td>
                                                                 <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
@@ -1274,38 +1273,42 @@
                         </div>
                     </div>
                 </div>
-                
-                 <!-- choose template modal -->
+
+                <!-- choose template modal -->
 
                 <div class="modal fade" id="chooseTemplate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div class="modal-header" style=" background-color: #778899; color: white !important">
-                                <h5 class="modal-title" id="exampleModalLabel">
-                                    <span style="color: white" >Project Type</span>
-                                </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body" style="background-color: #e5e5f2 !important;">
-                                 <div class="form-group pull-center text-center">
-                        <label for="usertype">Project Template:</label>
-                        <select class="form-control" name="projectTemplate" id="projectTemplate" style="width: 250px; margin-left: 150px !important;" value="Choose template">
-                            <option> Bungalow </option>
-                            <option> 2-Storey </option>
-                            <option> 3-Storey </option>
-                            <option> 4-Storey </option>
-                            <option> 5-Storey </option>
-                            
-                        </select>
-                    </div>
-                            </div>
-                            <div class="modal-footer" >
-                                <button type="button" class="btn btn-primary"  >Save</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                               
-                            </div>
+                            <form action="/Engineer/Cost-Estimation-Computation" method="POST">
+                                {{csrf_field()}}
+                                <div class="modal-header" style=" background-color: #778899; color: white !important">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        <span style="color: white">Project Type</span>
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" style="background-color: #e5e5f2 !important;">
+                                    <div class="form-group pull-center text-center">
+                                        <label for="usertype">Project Template:</label>
+                                        <select class="form-control" name="projectTemplate" id="projectTemplate" style="width: 250px; margin-left: 150px !important;"
+                                            value="Choose template">
+                                            <option> Bungalow </option>
+                                            <option> 2-Storey </option>
+                                            <option> 3-Storey </option>
+                                            <option> 4-Storey </option>
+                                            <option> 5-Storey </option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
