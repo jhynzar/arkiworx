@@ -76,10 +76,11 @@
             background-color: #222d32 !important;
         }
 
-        .modal-header {
-            background-color: #778899 !important;
-            color: white !important;
-        }
+       .scroll {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
 
     </style>
 
@@ -380,8 +381,401 @@
 
     <div class="content-wrapper" style="margin-top: 45px">
 
+         <!-- Container-fluid starts -->
+        <div class="container-fluid">
+
+            <!-- Header Starts -->
+            <div class="row" style="margin-top: -10px">
+                <div class="col-sm-9 p-0">
+                    <div class="main-header">
+                        <h4>
+                            <i class="icon-chart"> </i> Project Plan</h4>
+                        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                            <li class="breadcrumb-item">
+                                <a href="index"></a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#!">Project Schedule</a>
+                            </li>
+
+                        </ol>
+
+
+
+
+
+
+
+                        <div class="input-group stylish-input-group" style="position: absolute; margin-top: -40px; margin-left: 300px">
+                            <input type="text" class="form-control" placeholder="Search " style="width: 400px">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="icon-magnifier"></span>
+                            </button>
+
+                        </div>
+
+                        <div class="form-inline">
+                            <br>
+
+                            <div class="form-group" style="margin-left: 20px">
+                                <label for="showProject" class="text text-muted">Show</label>
+                                <select class="form-control" name="sex" id="userType" style="width: 70px; height: 35px !important;">
+                                    <option selected> 50 </option>
+                                    <option> 1 </option>
+                                    <option> 2 </option>
+                                    <option> 3 </option>
+                                    <option> 4 </option>
+                                    <option> 5 </option>
+                                    <option> 6 </option>
+                                    <option> 7 </option>
+                                    <option> 8 </option>
+                                    <option> 9 </option>
+                                </select>
+                                <label class="text text-muted"> Item</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- Header end -->
+
+            <!-- Tables start -->
+            <!-- Row start -->
+
+
+            <div class="row">
+
+
+                <!-- start col-lg-9 -->
+                <div class="col-xl-12 col-lg-12">
+                    <!-- Nav tabs -->
+
+                    <!-- end of tab-header -->
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="personal" role="tabpanel">
+
+
+
+
+                            <div class="card">
+                                <div class="card-header" style="background-color: #05D85C; color: white">
+                                    <h5 class="card-header-text">On-going Projects</h5>
+
+                                </div>
+                                <!-- end of card-header  -->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="project-table">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center txt-primary pro-pic">Line Item</th>
+                                                            <th class="text-center txt-primary">Client</th>
+                                                            <th class="text-center txt-primary pro-pic">Project Name</th>
+                                                            <th class="text-center txt-primary">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-center">
+                                                       
+                                                        <tr class= "table-success">
+                                                             
+                                                      
+                                                            <td>1</td>
+                                                            <td>
+                                                                <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                            </td>
+                                                            <td>Project 1</td>
+
+
+
+                                                            <td class="faq-table-btn">
+
+                                                                <a href="#" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-success waves-effect waves-light" data-toggle="tooltip"
+                                                                    data-placement="top" title="Create">
+                                                                    <i class="icofont icofont-ui-edit"></i> Create Project Schedule </a>
+
+
+                                                            </td>
+
+                                                        </tr>
+                                                      
+
+                                                    </tbody>
+                                                </table>
+                                                <!-- end of table -->
+                                            </div>
+                                            <!-- end of table responsive -->
+                                        </div>
+                                        <!-- end of project table -->
+                                    </div>
+                                    <!-- end of col-lg-12 -->
+                                </div>
+                                <!-- end of row -->
+                            </div>
+
+
+
+
+                        </div>
+                        <!-- end of tab-pane -->
+                        <!-- end of about us tab-pane -->
+
+                        <!-- start tab-pane of project tab -->
+                        <div class="tab-pane" id="project" role="tabpanel">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-header-text">Project List</h5>
+
+                                </div>
+                                <!-- end of card-header  -->
+
+                                <!-- end of card-main -->
+                            </div>
+                            <!-- end of project pane -->
+
+
+                        </div>
+                        <!-- end of main tab content -->
+                    </div>
+
+                    <!-- Row end -->
+                    <!-- Tables end -->
+                </div>
+
+
+                <!-- deactivate user modal -->
+
+                <div class="modal fade" id="deactivateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: indianred !important">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    <span style="color: white">Deactivate User</span>
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to deactivate this user's account?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger">Deactivate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- create project schedule modal -->
+
+                <div class="modal fade" id="createProjectSchedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header bg-success" >
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    <span style="color: white" >Estimated Project Schedule</span>
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body scroll" >
+                                 <div class="form-group form-inline">
+                        <label for="usertype">ACTIVITIES:</label> <br> <br>
+                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="General Requirements" disabled> <br> <br>
+                                     <label for="sex">Start Date:</label> 
+                                <input type="date" name="" class="form-control" id="" style="width:170px" >
+                                    &nbsp; &nbsp;  <label for="sex">End Date:</label>
+                                      <input type="date" name="" class="form-control" id="" style="width:170px" >
+                    </div>
+                                
+                                   <div class="form-group form-inline">
+                        <br> <br>
+                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Site Preparation" disabled> <br> <br>
+                                     <label for="sex">Start Date:</label> 
+                                <input type="date" name="" class="form-control" id="" style="width:170px" >
+                                    &nbsp; &nbsp;  <label for="sex">End Date:</label>
+                                      <input type="date" name="" class="form-control" id="" style="width:170px" >
+                    </div>
+                                
+                                 <div class="form-group form-inline">
+                        <br> <br>
+                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Columns" disabled> <br> <br>
+                                     <label for="sex">Start Date:</label> 
+                                <input type="date" name="" class="form-control" id="" style="width:170px" >
+                                    &nbsp; &nbsp;  <label for="sex">End Date:</label>
+                                      <input type="date" name="" class="form-control" id="" style="width:170px" >
+                    </div>
+                                
+                                 <div class="form-group form-inline">
+                        <br> <br>
+                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Concrete Slab" disabled> <br> <br>
+                                     <label for="sex">Start Date:</label> 
+                                <input type="date" name="" class="form-control" id="" style="width:170px" >
+                                    &nbsp; &nbsp;  <label for="sex">End Date:</label>
+                                      <input type="date" name="" class="form-control" id="" style="width:170px" >
+                    </div>
+                                
+                                
+                                
+                            </div>
+                            <div class="modal-footer" >
+                                <button type="button" class="btn btn-success"  >Save</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- view project details modal -->
+
+                <div class="modal fade" id="viewProjectDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    <span class="label label-info">Project Details</span>
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Add project Modal -->
+
+                <div class="modal fade" id="addProject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content pull-center">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    <span class="label label-info">Add Project</span>
+                                </h4>
+                            </div>
+                            <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                                <form action="/action_page.php">
+
+                                    <label class="text text-muted" style="margin-left: 450px">
+                                        <i>07 August 2018</i>
+                                    </label>
+                                    <!-- current date -->
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="addProjectName">Project Name:</label>
+                                        <input type="text" class="form-control" id="projectName">
+                                    </div>
+
+                                    <label class="text text-muted">
+                                        <i>Assign</i>
+                                    </label>
+
+                                    <div class="form-group form-inline">
+                                        <label for="projectClient">Client:</label>
+                                        <select class="form-control" name="projectClient" id="projectClient" style="width: 200px !important;">
+                                            <option selected>Julia </option>
+                                            <!-- sample -->
+                                            <option>Erwin </option>
+                                            <option>Dustin </option>
+                                            <option>Ros </option>
+                                        </select>
+
+                                        <label for="projectEngineer">Engineer:</label>
+                                        <select class="form-control" name="projectEngineer" id="projectEngineer" style="width: 200px !important;">
+                                            <option selected>Erwin </option>
+                                            <!-- sample -->
+                                            <option>Julia </option>
+                                            <option>Dustin </option>
+                                            <option>Ros </option>
+                                        </select>
+                                    </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <label> Project Description: </label>
+                                        <br>
+                                        <textarea rows="4" cols="68" placeholder="Project Details...">
+
+                                        </textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="addProjectlocation">Location:</label>
+                                        <input type="text" class="form-control" id="projectLocation">
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <hr>
+                                        <button type="submit" class="btn btn-success" data-dismiss="modal">
+                                            <i class="icon icon-check"> </i>Add Project</button>
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 290px">
+                                            <i class="icon icon-close"> </i>Cancel</button>
+
+                                    </div>
+                                </form>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Main content ends -->
+
+
         <!-- Container-fluid ends -->
     
 
@@ -482,6 +876,56 @@
         });
 
     </script>
+        
+        <script>
+         $(function () {
+   var bindDatePicker = function() {
+		$(".date").datetimepicker({
+        format:'YYYY-MM-DD',
+			icons: {
+				time: "fa fa-clock-o",
+				date: "fa fa-calendar",
+				up: "fa fa-arrow-up",
+				down: "fa fa-arrow-down"
+			}
+		}).find('input:first').on("blur",function () {
+			// check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+			// update the format if it's yyyy-mm-dd
+			var date = parseDate($(this).val());
+
+			if (! isValidDate(date)) {
+				//create date based on momentjs (we have that)
+				date = moment().format('YYYY-MM-DD');
+			}
+
+			$(this).val(date);
+		});
+	}
+   
+   var isValidDate = function(value, format) {
+		format = format || false;
+		// lets parse the date to the best of our knowledge
+		if (format) {
+			value = parseDate(value);
+		}
+
+		var timestamp = Date.parse(value);
+
+		return isNaN(timestamp) == false;
+   }
+   
+   var parseDate = function(value) {
+		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+		if (m)
+			value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+		return value;
+   }
+   
+   bindDatePicker();
+ });
+        </script>
+        
 </body>
 
 </html>

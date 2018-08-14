@@ -1295,7 +1295,7 @@
                                         <select class="form-control" name="projectTemplate" id="projectTemplate" style="width: 250px; margin-left: 150px !important;"
                                             value="Choose template">
                                             <option> Bungalow </option>
-                                            <option> 2-Storey </option>
+                                            <option selected> 2-Storey </option>
                                             <option> 3-Storey </option>
                                             <option> 4-Storey </option>
                                             <option> 5-Storey </option>
