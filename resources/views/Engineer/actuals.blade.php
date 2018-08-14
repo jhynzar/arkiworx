@@ -742,8 +742,9 @@
 
 
 
-                <form action="createNewMaterial">
-
+                <form action="Actuals/createMaterialActualNew" method="POST">
+                    {{csrf_field()}}
+                    <input type="hidden" name="_method" value="POST">
                     <label class="text text-muted" style="margin-left: 450px">
                         <i>07 August 2018</i>
                     </label>

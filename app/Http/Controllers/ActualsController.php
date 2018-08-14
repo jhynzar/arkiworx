@@ -234,7 +234,29 @@ class ActualsController extends Controller
 
 
     public function createMaterialActualNew($id){
-        return 'createMaterialActualNew';
+
+
+        $request = request()->all();
+
+        $insertedMaterialActualsId = DB::table('tblmaterialactuals')
+                    ->insertGetId(
+                        [
+                            'intMaterialId' => $request['newMaterialActualMaterialId'],
+                            'intProjectId' => $id,
+                            'intWorkSubCategoryId' => $request['newMaterialActualSubCategory']
+                        ]
+                    );
+
+        DB::table('tblmaterialactualshistory')
+                    ->insertGetId(
+                        [
+                            'intQty' => $request['newMaterialActualQty'],
+                            'decCost' => $request['newMaterialActualTotalCost'],
+                            'intMaterialActualsId' => $insertedMaterialActualsId
+                        ]
+                    );
+        
+        header('Refresh:0;/Engineer/Engineer-Projects/'.$id.'/Actuals');
     }
 
     public function createMaterialActualFrom($id){
