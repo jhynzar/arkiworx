@@ -356,26 +356,17 @@ tbody{
 
 
 
-                <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="#!">
+            <li class="active treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
                         <i class="icon-briefcase"></i>
-                        <span> Cost</span>
-                        <i class="icon-arrow-down"></i>
+                        <span> Projects</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li class="active">
-                            <a class="waves-effect waves-dark" href="/Engineer/Cost-Summary">
-                                <i class="icon-arrow-right"></i> Cost Summary</a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
-                                <i class="icon-arrow-right"></i> Cost Estimation</a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="/Engineer/Actuals">
-                                <i class="icon-arrow-right"></i> Actuals</a>
-                        </li>
-                    </ul>
+                </li>
+                 <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                        <i class="icon-calculator"></i>
+                        <span> Estimation</span>
+                    </a>
                 </li>
 
 
@@ -439,13 +430,13 @@ tbody{
                 <div class="col-sm-9 p-0">
                     <div class="main-header">
                         <h4>
-                            <i class="icon icon-briefcase"></i> Cost </h4>
+                            <i class="icon icon-briefcase"></i> Cost Summary </h4>
                         <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
                             <li class="breadcrumb-item">
                                 <a href="index"></a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="#!">Cost Summary</a>
+                                <a href="/Engineer/Engineer-Projects" data-toggle="tooltip" data-placement="top" title="Back"><span class="text text-primary">Projects Table</span></a>
                             </li>
 
                         </ol>

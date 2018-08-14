@@ -238,28 +238,19 @@
 
 
 
-
-                <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="#!">
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
                         <i class="icon-briefcase"></i>
-                        <span> Cost</span>
-                        <i class="icon-arrow-down"></i>
+                        <span> Projects</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li>
-                            <a class="waves-effect waves-dark" href="/Engineer/Cost-Summary">
-                                <i class="icon-arrow-right"></i> Cost Summary</a>
-                        </li>
-                        <li class="active">
-                            <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
-                                <i class="icon-arrow-right"></i> Cost Estimation</a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="/Engineer/Actuals">
-                                <i class="icon-arrow-right"></i> Actuals</a>
-                        </li>
-                    </ul>
                 </li>
+                 <li class="active treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                        <i class="icon-calculator"></i>
+                        <span> Estimation</span>
+                    </a>
+                </li>
+
 
 
 
