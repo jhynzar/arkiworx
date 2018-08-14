@@ -71,8 +71,8 @@ Route::get('Engineer/Home', function(){
 
 Route::get('Engineer/Engineer-Projects','EngineerProjectsController@index');
 
-Route::get('/Engineer/Engineer-Projects/{id}/Cost-Summary',function($id){
-    return $id;
+Route::get('/Engineer/Engineer-Projects/{id}/Cost-Summary',function(){
+    return view('Engineer/cost-summary');
 });
 
 Route::get('/Engineer/Engineer-Projects/{id}/Actuals','ActualsController@index');
