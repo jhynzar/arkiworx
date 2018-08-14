@@ -1077,7 +1077,7 @@
                                 <option> Macaya Residence </option>
                                 <option> Santos Residence </option>
                                 <option> Moina Residence </option>
-                                <option selected> Javier Residence </option>
+                                <option selected> Project 1 </option>
 
 
 
@@ -1098,7 +1098,7 @@
     <div class="row">
       <!-- Multiple Open Accordion start -->
       <div class="col-lg-12">
-        <div class="card" style="height: 3200px">
+        <div class="card" style="height: 3500px">
           <div class="card-header" style="background-color: #778899">
             <h5 class="card-header-text">2 - Storey Project</h5>
             
@@ -1122,6 +1122,123 @@
                             
                             
                             <div class="card-block accordion-block">
+                                
+                                
+                                
+                                
+                                <div class="accordion-panel">
+                <div class=" accordion-heading" role="tab" id="headingTwenty">
+                  <h3 class="card-title accordion-title">
+                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
+                      General Requirements
+                    </a>
+                  </h3>
+                </div>
+                <div id="collapseTwenty" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwenty">
+                  <div class="accordion-content accordion-desc">
+                    <!-- Column-->
+                      
+                      <br> 
+                       <div class="card"  >
+                        
+        <div class="row ">
+        
+       
+            
+          <div class="col-sm-12 col-xs-12 ">
+                <div>
+              
+              <div class="card" style="background-color: #A7FDCB">
+                        
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="form-group form-inline">
+                           
+                            
+                                 <label class="text text-default"><b>Permit</b> </label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                                    <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
+                                    <label> Building Permit</label>
+                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                    
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                                    <label> Temporary Facilities</label>
+                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                     <label> Workers' Barracks</label>
+                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+
+                                 
+                                 <br> <br>
+                                 
+                               <label class="text text-default"><b>Earthworks</b> </label>  <br><br>
+                                    <label> Excavation</label>
+                                <input type="number" name="" class="form-control" id="" style="width: 150px !important;" placeholder="">
+                                    
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                                    <label> Backfill</label>
+                                <input type="number" name="" class="form-control" id="" style="width: 150px !important;" placeholder="">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                                     <label> Lastillas</label>
+                                <input type="number" name="" class="form-control" id="" style="width: 150px !important;" placeholder="Optional">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                                     <label> Soil Poisoning</label>
+                                <input type="number" name="" class="form-control" id="" style="width: 150px !important;" placeholder="Optional">
+                                 
+                                    <br> <br> <br> <br>
+                         
+                                
+                                 <label class="text text-default"><b>Labor Cost</b> </label>  
+                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                    
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                                    <label class="text text-default"><b>Tools and Equipments</b> </label>  
+                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                                     <label class="text text-default"><b>Transportation</b> </label>  
+                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                 
+                                     <br> <br> <br> <br>
+                                    <label class="text text-default"><b>Contingency</b> </label> 
+                                <input type="number" name="" class="form-control" id="" style="width: 300px !important;" placeholder="">
+                                 &nbsp; &nbsp; &nbsp; &nbsp; 
+                                    <label class="text text-default"><b>Overhead Profit</b> </label> 
+                                <input type="number" name="" class="form-control" id="" style="width: 300px !important;" placeholder="">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                                    <button type="button" class="btn btn-success"  >Save</button>
+                       
+                                    
+                                 
+                         
+                                
+                        </div>
+                                
+                               
+                            </div>
+                             
+                        </div>
+                  
+                    </div>
+                  
+                                
+              </div>
+          </div>
+          
+          
+           
+            
+            
+        </div>
+      
+    </div>
+                      
+     <!-- Column ends -->
+                  </div>
+                </div>
+              </div>
+                                
+                                
+                                
+                                
+                                
               <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingOne">
                   <h3 class="card-title accordion-title">
@@ -4401,8 +4518,15 @@
           </div>
         </div>
       </div>
+            <div class="form-group form-inline" >
+                                  <button type="button" class="btn btn-outline-success" style="margin-left: 800px" >Save as pdf</button>
+                            <button type="submit" class="btn btn-primary "  >Submit</button>
+                                 </div>
+            
             </div>
+         
           </div> 
+        
         </div> 
       <!-- Multiple Open Accordion ends -->
 
@@ -4412,8 +4536,7 @@
                 
                 
                 
-                
-                
+        
 
 
             </div>
