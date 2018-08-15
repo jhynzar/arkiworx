@@ -586,7 +586,7 @@
                  <!-- create project schedule modal -->
 
                 <div class="modal fade" id="createProjectSchedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header bg-success" >
                                 <h5 class="modal-title" id="exampleModalLabel">
@@ -598,39 +598,67 @@
                             </div>
                             <div class="modal-body scroll" >
                                  <div class="form-group form-inline">
-                        <label for="usertype">ACTIVITIES:</label> <br> <br>
+                        <h6 class="text text-default" style="margin-left: 380px">ACTIVITIES:</h6> <br> <br>
+                                   
+                                     <label class="text text-primary"> Task 1</label> &nbsp;&nbsp;&nbsp;
                         <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="General Requirements" disabled> <br> <br>
-                                     <label for="sex">Start Date:</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:170px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date:</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:170px" >
+                                     <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
+                                <input type="date" name="" class="form-control" id="" style="width:180px" >
+                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
+                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
+                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
+                                      <select class="form-control" style="width: 100px" disabled> 
+                                     <option></option>
+                                          <option></option>
+                                     </select>
                     </div>
                                 
                                    <div class="form-group form-inline">
                         <br> <br>
+                                       <label class="text text-primary"> Task 2</label> &nbsp;&nbsp;&nbsp;
                         <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Site Preparation" disabled> <br> <br>
-                                     <label for="sex">Start Date:</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:170px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date:</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:170px" >
+                                      <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
+                                <input type="date" name="" class="form-control" id="" style="width:180px" >
+                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
+                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
+                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
+                                      <select class="form-control" style="width: 100px"> 
+                                     <option>Task 1</option>
+                                       
+                                     </select>
                     </div>
                                 
                                  <div class="form-group form-inline">
                         <br> <br>
+                                     <label class="text text-primary"> Task 3</label> &nbsp;&nbsp;&nbsp;
                         <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Columns" disabled> <br> <br>
-                                     <label for="sex">Start Date:</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:170px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date:</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:170px" >
+                                     <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
+                                <input type="date" name="" class="form-control" id="" style="width:180px" >
+                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
+                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
+                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
+                                      
+                                      <select class="form-control" style="width: 100px" > 
+                                     <option>Task 1 </option>
+                                          <option> Task 2</option>
+                                     </select>
                     </div>
                                 
                                  <div class="form-group form-inline">
                         <br> <br>
+                                     <label class="text text-primary"> Task 4</label> &nbsp;&nbsp;&nbsp;
                         <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Concrete Slab" disabled> <br> <br>
-                                     <label for="sex">Start Date:</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:170px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date:</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:170px" >
+                                    <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
+                                <input type="date" name="" class="form-control" id="" style="width:180px" >
+                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
+                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
+                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
+                                      
+                                      <select class="form-control" style="width: 100px" > 
+                                     <option> Task 1</option>
+                                          <option>Task 2</option>
+                                          <option>Task 3</option>
+                                     </select>
                     </div>
                                 
                                 

@@ -3543,7 +3543,7 @@
                   </div>
                 </div>
               </div>
-                
+              <!--  
                  <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingFourteen">
                   <h3 class="card-title accordion-title">
@@ -3554,7 +3554,7 @@
                 </div>
                 <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourteen">
                   <div class="accordion-content accordion-desc">
-                    <!-- Column-->
+                    
                       
                       <br> 
                        <div class="card">
@@ -3683,7 +3683,7 @@
                   
                     </div>
                     
-                    <!-- TOTALS TABLE -->
+             
 
                                     <div class="card-block">
                                             <div class="table-responsive">
@@ -3713,16 +3713,18 @@
       
     </div>
                       
-     <!-- Column ends -->
+     <!-- Column ends
                   </div>
                 </div>
               </div>
+                                
+                                -->
                 
                 
                  <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingFifteen">
                   <h3 class="card-title accordion-title">
-                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
                      Paint Ceiling
                     </a>
                   </h3>
@@ -3877,7 +3879,7 @@
                  <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingSixteen">
                   <h3 class="card-title accordion-title">
-                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
                      Paint Walls
                     </a>
                   </h3>
@@ -4034,7 +4036,7 @@
                 <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingSeventeen">
                   <h3 class="card-title accordion-title">
-                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
                      Electrical Works
                     </a>
                   </h3>
@@ -4307,7 +4309,7 @@
                 <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingEighteen">
                   <h3 class="card-title accordion-title">
-                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
+                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
                      Plumbing Works
                     </a>
                   </h3>
@@ -4324,7 +4326,7 @@
                 <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingNineteen">
                   <h3 class="card-title accordion-title">
-                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
+                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
                      Tiles
                     </a>
                   </h3>
