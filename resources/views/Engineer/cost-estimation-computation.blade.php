@@ -59,7 +59,7 @@
         <header class="main-header-top hidden-print">
 
             <a href="index" class="nav-brand">
-                <img class="img-fluid logo" src="../assets/images/cat.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="/assets/images/cat.jpg" alt="Theme-logo">
             </a>
 
 
@@ -87,7 +87,7 @@
                     <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="/assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
                                 <b>Juliamar</b>Soriano</span>
@@ -146,23 +146,23 @@
                         <div class="dummy-column">
                             <h2>Popular</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="PagePreloadingEffect" />
+                                <img src="/assets/images/avatar-1.jpg" alt="PagePreloadingEffect" />
                                 <h3>Page Preloading Effect</h3>
                             </a>
 
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow" />
+                                <img src="/assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow" />
                                 <h3>Draggable Dual-View Slideshow</h3>
                             </a>
                         </div>
                         <div class="dummy-column">
                             <h2>Recent</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="TooltipStylesInspiration" />
+                                <img src="/assets/images/avatar-1.jpg" alt="TooltipStylesInspiration" />
                                 <h3>Tooltip Styles Inspiration</h3>
                             </a>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="NotificationStyles" />
+                                <img src="/assets/images/avatar-1.jpg" alt="NotificationStyles" />
                                 <h3>Notification Styles Inspiration</h3>
                             </a>
                         </div>
@@ -187,7 +187,7 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="../assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                    <img src="/assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
@@ -1059,16 +1059,7 @@
                             <label class="text text-muted">Project:</label>
                             <select class="form-control text text-primary" name="project" id="project" style="width: 400px; height: 40px !important;" disabled>
 
-                                <option> Soriano Residence </option>
-                                <option> Andres Residence </option>
-                                <option> Dela Pena Residence </option>
-                                <option> Alpasar Residence </option>
-                                <option> Reodica Residence </option>
-                                <option> Ascano Residence </option>
-                                <option> Macaya Residence </option>
-                                <option> Santos Residence </option>
-                                <option> Moina Residence </option>
-                                <option selected> Project 1 </option>
+                                <option selected> {{$project->strProjectName}} </option>
 
 
 
@@ -4730,7 +4721,7 @@
                         <div class="col-sm-4" style="margin-left: 210px !important;">
                             <div class="card faq-left">
                                 <div class="social-profile">
-                                    <img class="img-fluid img-sm" src="../assets/images/social/profile.jpg" alt="">
+                                    <img class="img-fluid img-sm" src="/assets/images/social/profile.jpg" alt="">
                                     <div class="profile-hvr m-t-15">
                                         <i class="icofont icofont-ui-edit p-r-10 c-pointer"></i>
                                         <i class="icofont icofont-ui-delete c-pointer"></i>

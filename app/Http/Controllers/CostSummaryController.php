@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ActualsController extends Controller
+class CostSummaryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,6 @@ class ActualsController extends Controller
     public function index($id)
     {
         //
-        
-
         //getting project details
         $project = DB::table('tblproject')
                 ->where('strProjectStatus','=','on going')
@@ -168,7 +166,7 @@ class ActualsController extends Controller
 
         //dd($projectWorkSubCategories);
         //dd($projectWithDetails);
-        return view('Engineer/actuals',compact('projectWithDetails','projectWorkCategories','projectWorkSubCategories','allCategoriesWithSub','allMaterials'));
+        return view('Engineer/cost-summary',compact('projectWithDetails','projectWorkCategories','projectWorkSubCategories','allCategoriesWithSub','allMaterials'));
     }
 
     /**
@@ -235,40 +233,5 @@ class ActualsController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    public function createMaterialActualNew($id){
-
-
-        $request = request()->all();
-
-        $insertedMaterialActualsId = DB::table('tblmaterialactuals')
-                    ->insertGetId(
-                        [
-                            'intMaterialId' => $request['newMaterialActualMaterialId'],
-                            'intProjectId' => $id,
-                            'intWorkSubCategoryId' => $request['newMaterialActualSubCategory']
-                        ]
-                    );
-
-        DB::table('tblmaterialactualshistory')
-                    ->insertGetId(
-                        [
-                            'intQty' => $request['newMaterialActualQty'],
-                            'decCost' => $request['newMaterialActualTotalCost'],
-                            'intMaterialActualsId' => $insertedMaterialActualsId
-                        ]
-                    );
-        
-        header('Refresh:0;/Engineer/Engineer-Projects/'.$id.'/Actuals');
-    }
-
-    public function createMaterialActualFrom($id){
-        return 'createMaterialActualFrom';
-    }
-
-    public function updateProjectRequirementActual($id){
-        return 'updateProjectRequirementActual';
     }
 }
