@@ -92,7 +92,7 @@ class CostEstimationsController extends Controller
         //
     }
 
-    public function createEstimation(){
+    public function createEstimation($id){
         //request id of project and template
 
         $formulas = DB::select("
@@ -100,6 +100,10 @@ class CostEstimationsController extends Controller
         ");
         //dd($formulas);
 
-        return view('Engineer/cost-estimation-computation',compact('formulas'));
+        $project =  DB::table('tblproject')
+                    ->where('intProjectId','=',$id)
+                    ->first();
+
+        return view('Engineer/cost-estimation-computation',compact('formulas','project'));
     }
 }
