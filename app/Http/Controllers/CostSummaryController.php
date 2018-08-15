@@ -86,13 +86,76 @@ class CostSummaryController extends Controller
             'projectRequirements' => $projectRequirements
         ];
 
+        //-----organizing the data for displaying
+
+        $projectCostSummary = array();
+        $projectPartneredEstimates = array();
+        $projectPartneredActuals = array();
+        foreach($materialEstimates as $keyEstimate=>$estimate){
+            foreach($materialActualsWithHistory as $keyActual=>$actual){
+                if(
+                    $estimate->intMaterialId == $actual->materialActualsDetails->intMaterialId &&
+                    $estimate->intWorkCategoryId == $actual->materialActualsDetails->intWorkCategoryId &&
+                    $estimate->intWorkSubCategoryId == $actual->materialActualsDetails->intWorkSubCategoryId
+                    ){
+                    $costSummary = (object) [
+                        'estimate' => $estimate,
+                        'actual' => $actual
+                    ];
+
+                    array_push($projectCostSummary, $costSummary);
+                    array_push($projectPartneredEstimates, $keyEstimate); //for identifying lones
+                    array_push($projectPartneredActuals, $keyActual); // for identifying lones
+                    break;
+                }
+            }
+        }
+
+        //removing of partnered actuals and estimates
+        //reverse sorting, so largest index will be the first to be removed. So it won't affect the index of others
+        rsort($projectPartneredEstimates);
+        rsort($projectPartneredActuals);
+
+        //removing
+        foreach($projectPartneredEstimates as $indexToRemove){
+            array_splice($materialEstimates,$indexToRemove,1);
+        }
+        foreach($projectPartneredActuals as $indexToRemove){
+            array_splice($materialActualsWithHistory,$indexToRemove,1);
+
+        }
+
+        $projectLoneEstimates = $materialEstimates; //for clarity only
+        $projectLoneActuals = $materialActualsWithHistory; //for clarity only
+
+        //pushing of lone actuals and estimates
+        foreach($projectLoneEstimates as $loneEstimate){
+            $loneEstimatePush = (object) [
+                'estimate' => $loneEstimate,
+                'actual' => null,
+            ];
+            array_push($projectCostSummary,$loneEstimatePush);
+        }
+        foreach($projectLoneActuals as $loneActual){
+            $loneActualPush = (object) [
+                'estimate' => null,
+                'actual' => $loneActual,
+            ];
+            array_push($projectCostSummary,$loneActualPush);
+        }
+
+        //dd($projectPartneredActuals);
+        //dd($projectPartneredEstimates);
+        //dd($projectLoneEstimates);
+        //dd($projectLoneActuals);
+        //dd($projectCostSummary);
         //dd($projectWithDetails);
 
-
+        //---------WORK CATEGORIES
         //for category and sub category
         
-
-        $projectAllWorkCategoriesIds = DB::select("
+        //actuals categories and sub categories
+        $projectActualsAllWorkCategoriesIds = DB::select("
             SELECT tblworkcategory.intWorkCategoryId
             FROM `tblmaterialactuals`
             INNER JOIN `tblworksubcategory`
@@ -103,7 +166,7 @@ class CostSummaryController extends Controller
             GROUP BY tblworkcategory.intWorkCategoryId       
         ",['id'=>$id]);
 
-        $projectAllWorkSubCategoriesIds = DB::select("
+        $projectActualsAllWorkSubCategoriesIds = DB::select("
             SELECT tblworksubcategory.intWorkSubCategoryId
             FROM `tblmaterialactuals`
             INNER JOIN `tblworksubcategory`
@@ -114,9 +177,82 @@ class CostSummaryController extends Controller
             GROUP BY tblworksubcategory.intWorkSubCategoryId
         ",['id'=>$id]);
 
+        //actuals categories and sub categories
+        $projectActualsAllWorkCategoriesIds = DB::select("
+            SELECT tblworkcategory.intWorkCategoryId
+            FROM `tblmaterialactuals`
+            INNER JOIN `tblworksubcategory`
+            ON (tblmaterialactuals.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblmaterialactuals.intProjectId = :id
+            GROUP BY tblworkcategory.intWorkCategoryId       
+        ",['id'=>$id]);
 
-        $projectWorkCategories = array();
-        foreach($projectAllWorkCategoriesIds as $workCategory){
+        $projectActualsAllWorkSubCategoriesIds = DB::select("
+            SELECT tblworksubcategory.intWorkSubCategoryId
+            FROM `tblmaterialactuals`
+            INNER JOIN `tblworksubcategory`
+            ON (tblmaterialactuals.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblmaterialactuals.intProjectId = :id
+            GROUP BY tblworksubcategory.intWorkSubCategoryId
+        ",['id'=>$id]);
+
+        //estimates categories and sub categories
+        $projectEstimatesAllWorkCategoriesIds = DB::select("
+            SELECT tblworkcategory.intWorkCategoryId
+            FROM `tblmaterialestimates`
+            INNER JOIN `tblworksubcategory`
+            ON (tblmaterialestimates.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblmaterialestimates.intProjectId = :id
+            GROUP BY tblworkcategory.intWorkCategoryId      
+        ",['id'=>$id]);
+
+        
+
+        $projectEstimatesAllWorkSubCategoriesIds = DB::select("
+            SELECT tblworksubcategory.intWorkSubCategoryId
+            FROM `tblmaterialestimates`
+            INNER JOIN `tblworksubcategory`
+            ON (tblmaterialestimates.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblmaterialestimates.intProjectId = :id
+            GROUP BY tblworksubcategory.intWorkSubCategoryId
+        ",['id'=>$id]);
+
+        
+
+        // ACTUALS WORK CATEGORIES data to pass to view
+        $projectWorkCategories = array(); 
+        foreach($projectActualsAllWorkCategoriesIds as $workCategory){
+            $workCategoryDetails = DB::table('tblWorkCategory')
+                                ->where('intWorkCategoryId','=',$workCategory->intWorkCategoryId)
+                                ->first();
+
+            array_push($projectWorkCategories,$workCategoryDetails);
+        }
+        
+        // ESTIMATES WORK CATEGORIES
+        foreach($projectEstimatesAllWorkCategoriesIds as $workCategory){
+
+            //Duplicate checker
+            $isDuplicate = false;
+            foreach($projectWorkCategories as $workCategoryCheck){
+                if($workCategory->intWorkCategoryId == $workCategoryCheck->intWorkCategoryId){
+                    $isDuplicate = true;
+                    break;
+                }
+            }
+
+            if($isDuplicate){
+                continue;
+            }
+
             $workCategoryDetails = DB::table('tblWorkCategory')
                                 ->where('intWorkCategoryId','=',$workCategory->intWorkCategoryId)
                                 ->first();
@@ -124,8 +260,13 @@ class CostSummaryController extends Controller
             array_push($projectWorkCategories,$workCategoryDetails);
         }
 
+        //dd($projectWorkCategories);
+
+        //---------WORK SUB CATEGORIES
+
+         // ACTUALS WORK SUB CATEGORIES data to pass to view
         $projectWorkSubCategories = array();
-        foreach($projectAllWorkSubCategoriesIds as $workSubCategory){
+        foreach($projectActualsAllWorkSubCategoriesIds as $workSubCategory){
             $workSubCategoryDetails = DB::table('tblWorkSubCategory')
                                 ->where('intWorkSubCategoryId','=',$workSubCategory->intWorkSubCategoryId)
                                 ->first();
@@ -133,40 +274,38 @@ class CostSummaryController extends Controller
             array_push($projectWorkSubCategories,$workSubCategoryDetails);
         }
 
+        // ESTIMATES WORK SUB CATEGORIES
+        foreach($projectEstimatesAllWorkSubCategoriesIds as $workSubCategory){
 
-        //FOR ADD MODALS
-        //MATERIALS
+            //Duplicate checker
+            $isDuplicate = false;
+            foreach($projectWorkSubCategories as $workSubCategoryCheck){
+                if($workSubCategory->intWorkSubCategoryId == $workSubCategoryCheck->intWorkSubCategoryId){
+                    $isDuplicate = true;
+                    break;
+                }
+            }
 
-        $allMaterials = DB::table('tblmaterials')
-                        ->where('intActive','=',1)
-                        ->get();
+            if($isDuplicate){
+                continue;
+            }
 
+            $workSubCategoryDetails = DB::table('tblWorkSubCategory')
+                                ->where('intWorkSubCategoryId','=',$workSubCategory->intWorkSubCategoryId)
+                                ->first();
 
-        $allCategories = DB::table('tblworkcategory')
-                        ->get();
-
-
-        $allCategoriesWithSub = array();
-        foreach($allCategories as $category){
-            $subCategories = DB::table('tblworksubcategory')
-                            ->where('tblworksubcategory.intWorkCategoryId','=',$category->intWorkCategoryId)
-                            ->get()
-                            ->toArray();
-
-            $categoryWithSub = (object) [
-                'intWorkCategoryId' => $category->intWorkCategoryId,
-                'strWorkCategoryDesc' => $category->strWorkCategoryDesc,
-                'subCategories' => $subCategories
-            ];
-
-            array_push($allCategoriesWithSub,$categoryWithSub);
+            array_push($projectWorkSubCategories,$workSubCategoryDetails);
         }
+
+        //dd($projectWorkSubCategories);
+
 
         //dd($allCategoriesWithSub);
 
         //dd($projectWorkSubCategories);
         //dd($projectWithDetails);
-        return view('Engineer/cost-summary',compact('projectWithDetails','projectWorkCategories','projectWorkSubCategories','allCategoriesWithSub','allMaterials'));
+        //dd($projectCostSummary);
+        return view('Engineer/cost-summary',compact('projectCostSummary','projectWorkCategories','projectWorkSubCategories'));
     }
 
     /**
