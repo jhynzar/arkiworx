@@ -549,7 +549,7 @@
                                                                                 data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-map"> </i>Project Schedule
                                                                             </a>
-                                                                            <a href="#"  type="button"  class="btn btn-warning waves-effect waves-light"
+                                                                            <a href="/Engineer/Project-Progress/Materials-Usage"  type="button"  class="btn btn-warning waves-effect waves-light"
                                                                                 data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-graph"> </i>Material Usage
                                                                             </a>
@@ -566,6 +566,7 @@
                                                                     <td>2</td>
                                                                     <td>
                                                                         <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                                        &nbsp; &nbsp; Client Name
                                                                     </td>
                                                                     <td>Project 7</td>
                                                                 
