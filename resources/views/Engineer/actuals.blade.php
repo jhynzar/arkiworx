@@ -1524,11 +1524,11 @@
                                                     </tr>
 
 
-                                                        @foreach ($projectWithDetails->materialActuals as $materialActual)
+                                                        @foreach ($projectWithDetails->materialActuals as $keyActual=>$materialActual)
                                                             <!-- For Displaying Actuals -->
                                                             @if (($materialActual->materialActualsDetails->intWorkCategoryId == $workCategory->intWorkCategoryId) && ($materialActual->materialActualsDetails->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId))
                                                                 <tr class="table-info">
-                                                                    <td class="text-center">03</td>
+                                                                    <td class="text-center">{{$keyActual+1}}</td>
                                                                     <td class="text-center">{{$materialActual->materialActualsDetails->strMaterialName}}
 
                                                                     </td>
