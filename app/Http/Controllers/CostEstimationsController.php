@@ -16,12 +16,13 @@ class CostEstimationsController extends Controller
     {
         //
 
-        $pendingProjectCostEstimations = DB::table('tblproject')
-                                        ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
-                                        ->where('tblproject.intEmployeeId','=','777')//EMPLOYEE ID
-                                        ->where('tblproject.strProjectStatus','=','pending')
-                                        ->orderBy('tblproject.intProjectId','desc')
-                                        ->get();
+        $pendingProjectCostEstimations = 
+            DB::table('tblproject')
+            ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+            ->where('tblproject.intEmployeeId','=','777')//EMPLOYEE ID
+            ->where('tblproject.strProjectStatus','=','pending')
+            ->orderBy('tblproject.intProjectId','desc')
+            ->get();
 
         return view('Engineer/cost-estimation',compact('pendingProjectCostEstimations'));
     }
@@ -96,14 +97,96 @@ class CostEstimationsController extends Controller
         //request id of project and template
 
         $formulas = DB::select("
-        select f.decvalue as 'Values', h.strDesc as 'X', v.strDesc as 'Y', w.strDesc as 'Works' from tblformulavalues f inner join tblhorizontaloptions h on h.intHorizontalOptionsId = f.intHorizontalOptionsId inner join tblverticaloptions v on v.intVerticalOptionsId = f.intVerticalOptionsId inner join tblworksformula w on v.intWoksFormulaId = w.intWorksFormulaId and h.intHorizontalOptionsId = w.intWorksFormulaId
+        select X.h as Horizontal, X.v as Vertical, X.f as Value, X.Work as Work
+        from 
+        (
+            select tblhorizontaloptions.intHorizontalOptionsId as h, tblhorizontaloptions.intWoksFormulaId as Work, tblformulavalues.decValue as f, tblformulavalues.intVerticalOptionsId as v
+            from tblformulavalues inner join tblhorizontaloptions
+            on tblformulavalues.inthorizontaloptionsid = tblhorizontaloptions.inthorizontaloptionsid
+            
+        ) X 
+        inner JOIN
+        (
+            select tblverticaloptions.intVerticalOptionsId as v, tblverticaloptions.intWoksFormulaId as Work, tblformulavalues.decValue as f, tblformulavalues.intHorizontalOptionsId as h
+            from tblformulavalues inner join tblverticaloptions
+            on tblformulavalues.intVerticalOptionsId = tblverticaloptions.intVerticalOptionsId
+            
+        ) Y
+        on X.Work = Y.Work and X.v = Y.v and X.h = Y.h
         ");
-        //dd($formulas);
+
+        
+        $AnswersArray = array();
+        foreach($formulas as $formula){
+            $Answers = (object)[
+                'X' => $formula -> Horizontal,
+                'Y' => $formula -> Vertical,
+                'Values' => $formula -> Value,
+                'Work' => $formula -> Work
+            ];
+            array_push($AnswersArray,$Answers);
+        }
+        //$Work = array_search(1, array_column($AnswersArray, 'Work'));
+        /*$X = 2;   //horizontal
+        $Y = 11; //vertical
+        $Z = 1; //work category
+        foreach($AnswersArray as $workArr){
+            if($X === $workArr->X && $Y === $workArr->Y && $Z === $workArr->Work){
+                dd($workArr->Values);
+            }
+        }*/
+
+        $materials = DB::select("
+        SELECT tblprice.dtmPriceAsOf as Date, tblprice.decPrice as Price, tblmaterials.strMaterialName as Material, tblprice.intMaterialId as Id
+        FROM tblprice INNER JOIN tblmaterials 
+        ON tblprice.intMaterialId = tblmaterials.intMaterialId 
+        WHERE tblmaterials.intActive = 1 
+        ORDER by tblprice.intMaterialId, tblprice.dtmPriceAsOf
+        ");
+        $MaterialArray = array();
+        foreach($materials as $material){
+            $MaterialArr = (object)[
+                'date' => $material -> Date,
+                'price' => $material -> Price,
+                'materialName' => $material -> Material,
+                'MaterialId' => $material -> Id
+            ];
+            array_push($MaterialArray,$MaterialArr);
+        }
+
+        /*$materialid = 1; //material Id
+        $date1 = '';
+        foreach($MaterialArray as $materialindex){
+            $date2 = $materialindex->date;
+            $materialid2 = $materialindex->MaterialId;
+            if($date1 < $date2 && $materialid === $materialid2){
+                $date1 = $date2;
+                $presyo = $materialindex -> price;
+            }
+        }
+        dd($presyo);*/
 
         $project =  DB::table('tblproject')
                     ->where('intProjectId','=',$id)
                     ->first();
 
-        return view('Engineer/cost-estimation-computation',compact('formulas','project'));
+        return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray'));
+    }
+
+    public function saveEstimation(){
+        //general construction ;
+        $BuildingPermit = $_POST['BuildingPermit'];
+        $TemporaryFacilities = $_POST['TemporaryFacilities'];
+        $WorkersBarracks = $_POST['WorkersBarracks'];
+        $Excavation = $_POST['Excavation'];
+        $Backfill = $_POST['Backfill'];
+        $Lastillas = $_POST['Lastillas'];
+        $SoilPoisoning = $_POST['SoilPoisoning'];
+        $LaborCost = $_POST['LaborCost'];
+        $ToolsEquipments = $_POST['ToolsEquipments'];
+        $Transportation = $_POST['Transportation'];
+        $Contigency = $_POST['Contigency'];
+        $OverheadProfit = $_POST['OverheadProfit'];
+        return $BuildingPermit;
     }
 }
