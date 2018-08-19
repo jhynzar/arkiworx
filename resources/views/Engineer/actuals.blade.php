@@ -1464,7 +1464,7 @@
         <!-- Tables start -->
         <!-- Row start -->
         <div class="row">
-            <div class="col-sm-12 ">
+            <div class="col-sm-12">
 
 
                 <!-- Contextual classes table starts -->
@@ -1475,7 +1475,7 @@
                     </div>
                     <div class="card-block">
                         <div class="row">
-                            <div class="col-sm-12 table-responsive">
+                            <div class="col-sm-12 ">
                                 <table class="table table-hover ">
                                     <thead>
                                         <tr>
