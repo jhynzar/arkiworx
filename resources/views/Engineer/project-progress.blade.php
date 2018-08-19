@@ -88,7 +88,7 @@
                     <li class="dropdown">
                         <a href="/Admin/Account-Settings">
                             <span>
-                                <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="/assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
                                 <b>Juliamar</b>Soriano</span>
@@ -190,7 +190,7 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="../assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                    <img src="/assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
@@ -449,6 +449,7 @@
                                                                     <td>1</td>
                                                                     <td>
                                                                         <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                                        &nbsp; &nbsp; Client Name
                                                                     </td>
                                                                     <td>Project 5</td>
                                                                    
@@ -530,6 +531,7 @@
                                                                     <td>1</td>
                                                                     <td>
                                                                         <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                                        &nbsp; &nbsp; Client Name
                                                                     </td>
                                                                     <td>Project 6</td>
                                                                
@@ -540,18 +542,17 @@
 
 
 
-                                               
 
 
 
-                                                                             <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-primary waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
+                                                                             <a href="/Engineer/Project-Progress/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
+                                                                                data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-map"> </i>Project Schedule
-                                                                            </button>
-                                                                            <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-warning waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
+                                                                            </a>
+                                                                            <a href="#"  type="button"  class="btn btn-warning waves-effect waves-light"
+                                                                                data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-graph"> </i>Material Usage
-                                                                            </button>
+                                                                            </a>
 
 
 
@@ -579,14 +580,14 @@
 
 
 
-                                                                           <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-primary waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
+                                                                            <a href="Engineer/Project-Progress/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
+                                                                                data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-map"> </i>Project Schedule
-                                                                            </button>
-                                                                            <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-warning waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
+                                                                            </a>
+                                                                            <a href="#"  type="button"  class="btn btn-warning waves-effect waves-light"
+                                                                                data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-graph"> </i>Material Usage
-                                                                            </button>
+                                                                            </a>
 
 
 

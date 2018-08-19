@@ -88,7 +88,7 @@
                     <li class="dropdown">
                         <a href="/Admin/Account-Settings">
                             <span>
-                                <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="/assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
                                 <b>Juliamar</b>Soriano</span>
@@ -190,7 +190,7 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="../assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                    <img src="/assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
@@ -223,29 +223,47 @@
                     </a>
                 </li>
             </ul>
-          <!-- Sidebar Menu-->
+           <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
                 <li class="nav-level">
                     <span style="color: #939393">
                         <i>Navigation</i>
                     </span>
                 </li>
-                <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Home">
+                <li class=" treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Home">
                         <i class="icon-speedometer"></i>
                         <span> Dashboard</span>
                     </a>
                 </li>
 
+
+
+
+
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Projects">
-                        <i class="icon-book-open"></i>
-                        <span> Project</span>
+                    <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
+                        <i class="icon-briefcase"></i>
+                        <span> Projects</span>
+                    </a>
+                </li>
+                 <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                        <i class="icon-calculator"></i>
+                        <span> Estimation</span>
                     </a>
                 </li>
 
 
-               
+
+
+
+                <li class=" treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
+                        <i class="icon-notebook"></i>
+                        <span> Materials PriceList</span>
+                    </a>
+                </li>
 
 
 
@@ -253,31 +271,31 @@
 
 
 
-                <li class="active  treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Project-Progress">
+                <li class="active treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Project-Progress">
                         <i class="icon-chart"></i>
                         <span> Project Plan</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Calendar">
+                    <a class="waves-effect waves-dark" href="/Engineer/Calendar">
                         <i class="icon-calendar"></i>
                         <span> Calendar</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Inbox">
+                    <a class="waves-effect waves-dark" href="/Engineer/Inbox">
                         <i class="icon-envelope-letter"></i>
                         <span> Inbox</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Accounts">
+                    <a class="waves-effect waves-dark" href="/Engineer/Accounts-Settings">
                         <i class="icon-people"></i>
-                        <span> Accounts</span>
+                        <span> Account Setting</span>
                     </a>
                 </li>
 
@@ -289,390 +307,7 @@
 
 
     <div class="content-wrapper" style="margin-top: 30px">
-        <!-- Container-fluid starts -->
-        <div class="container-fluid">
-<div style="position: absolute; margin-top: 90px; margin-left: 850px">
-
-                        <div class="form-inline" >
-                            <br>
-
-                            <div class="form-group pull-center">
-                                <label for="showProject" class="text text-muted">Show</label>
-                                <select class="form-control" name="sex" id="userType" style="width: 70px; height: 35px !important;">
-                                    <option selected> 10 </option>
-                                    <option> 1 </option>
-                                    <option> 2 </option>
-                                    <option> 3 </option>
-                                    <option> 4 </option>
-                                    <option> 5 </option>
-                                    <option> 6 </option>
-                                    <option> 7 </option>
-                                    <option> 8 </option>
-                                    <option> 9 </option>
-                                </select>
-                                <label class="text text-muted"> Projects</label>
-                            </div>
-                        </div>
-
-                        </div>
-            <!-- Header Starts -->
-            <div class="row" style="margin-top: -10px">
-                <div class="col-sm-9 p-0">
-                    <div class="main-header">
-                        <h4>
-                            <i class="icon-book-open"></i> Project Plan</h4>
-                        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
-                            <li class="breadcrumb-item">
-                                <a href="Admin/home"></a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="#!">Projects List</a>
-                            </li>
-
-                        </ol>
-
-
-
-
-
-
-
-                    </div>
-
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-            <!-- Header end -->
-
-            <!-- Tables start -->
-            <!-- Row start -->
-
-
-            <div class="row">
-                <div class="col-sm-12">
-
-
-                    <!-- Contextual classes table starts -->
-
-
-
-
-
-
-
-                    <div class="row">
-
-
-                        <!-- start col-lg-9 -->
-                        <div class="col-xl-12 col-lg-12">
-                            <!-- Nav tabs -->
-                            <div class="tab-header">
-                                <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
-                                   
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#project" role="tab">Project Plans</a>
-                                        <div class="slide"></div>
-                                    </li>
-
-
-                                </ul>
-                            </div>
-                            <!-- end of tab-header -->
-
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="personal" role="tabpanel">
-
-
-                                    <div class="card">
-                                        <div class="card-header" style="background-color: #4CAF50 !important">
-                                            <h5 class="card-header-text">Project List</h5>
-
-                                        </div>
-                                        <!-- end of card-header  -->
-                                        <!-- Row start -->
-                                         <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="project-table">
-                                                    <div class="table-responsive">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="text-center txt-primary pro-pic">Line Item</th>
-                                                                    <th class="text-center txt-primary">Client</th>
-                                                                    <th class="text-center txt-primary pro-pic">Project Name</th>
-                                                                  
-                                                                    
-                                                                    <th class="text-center txt-primary">Action</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody class="text-center">
-
-                                                              
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>
-                                                                        <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                        &nbsp; &nbsp; Client Name
-                                                                    </td>
-                                                                    <td>Project 6</td>
-                                                               
-                                                                    
-                                                                       
-                                                                        <td class="faq-table-btn">
-
-
-
-
-                                               
-
-
-
-                                                                             <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-primary waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
-                                                                                 <i class="icon-map"> </i>Project Schedule
-                                                                            </button>
-                                                                            <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-warning waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
-                                                                                 <i class="icon-graph"> </i>Material Usage
-                                                                            </button>
-
-
-
-                                                                         
-
-                                                                        </td>
-
-                                                                </tr>
-                                                                
-                                                                     <tr>
-                                                                    <td>2</td>
-                                                                    <td>
-                                                                        <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                        &nbsp; &nbsp; Client Name
-                                                                    </td>
-                                                                    <td>Project 7</td>
-                                                                
-                                                                    
-                                                                       
-                                                                        <td class="faq-table-btn">
-
-
-
-
-                                               
-
-
-
-                                                                           <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-primary waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
-                                                                                 <i class="icon-map"> </i>Project Schedule
-                                                                            </button>
-                                                                            <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-warning waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
-                                                                                 <i class="icon-graph"> </i>Material Usage
-                                                                            </button>
-
-
-
-                                                                         
-
-                                                                        </td>
-
-                                                                </tr>
-
-
-
-
-                                                            </tbody>
-                                                        </table>
-                                                        <!-- end of table -->
-                                                    </div>
-                                                    <!-- end of table responsive -->
-                                                </div>
-                                                <!-- end of project table -->
-                                            </div>
-                                            <!-- end of col-lg-12 -->
-                                        </div>
-                                        </div>
-                                        <!-- end of card-main -->
-                                    </div>
-                                    <!-- end of project pane -->
-
-
-                                </div>
-                                <!-- end of main tab content -->
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <!-- Tables end -->
-
-
-
-                        <!-- deactivate user modal -->
-
-                        <div class="modal fade" id="deactivateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header" style="background-color: indianred !important">
-                                        <h5 class="modal-title" id="exampleModalLabel">
-                                            <span style="color: white">Deactivate User</span>
-                                        </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Are you sure you want to deactivate this user's account?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger">Deactivate</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- delete pending project modal -->
-                        <div class="modal fade" id="deletePendingProject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header" style="background-color: indianred !important">
-                                        <h5 class="modal-title" id="exampleModalLabel">
-                                            <span style="color: white">Delete Project</span>
-                                        </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Are you sure you want to delete this project?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-
-                        <!-- view progress project Modal -->
-                        <div class="modal fade" id="viewProgress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header" style="background-color: green !important">
-                                        <h5 class="modal-title" id="exampleModalLabel">Progress</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ...
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-
-                        <!-- view project details modal -->
-
-                        <div class="modal fade" id="viewProjectDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <h4 class="modal-title" id="myModalLabel">
-                                            <span class="label label-info">Project Details</span>
-                                        </h4>
-                                    </div>
-                                    <div class="modal-body">
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-                      
-                    </div>
-                </div>
-
-
-                <!-- Container-fluid ends -->
-            </div>
+       
         </div>
 
 

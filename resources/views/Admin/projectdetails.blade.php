@@ -326,13 +326,6 @@
                 </li>
 
 
-                <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Cost-Summary">
-                        <i class="icon-briefcase"></i>
-                        <span> Cost Summary</span>
-                    </a>
-                </li>
-
 
 
 
@@ -372,36 +365,7 @@
 
   
 
-    <div class="container" style="position: absolute; margin-top: 43px; margin-left: 220px">
-
-        <ul class="nav nav-tabs" style="background-color: #f2f2f2">
-
-
-
-            <li>
-                <a href="Admin/home">Dashboard</a>
-            </li>
-            <li class="active">
-                <a href="project">Project</a>
-            </li>
-            <li>
-                <a href="cost%20summary">Cost</a>
-            </li>
-            <li>
-                <a href="Admin/Project-Progress">Project Plan</a>
-            </li>
-            <li>
-                <a href="Admin/Calendar">Calendar</a>
-            </li>
-            <li>
-                <a href="Admin/Inbox">Inbox</a>
-            </li>
-            <li>
-                <a href="Admin/Accounts">Accounts</a>
-            </li>
-
-        </ul>
-    </div>
+   
 
 
 
@@ -426,7 +390,7 @@
                                 <b>Project Details</b>
                         </li>
                         <li class="breadcrumb-item" style="margin-left: 550px">
-                            <a href="project" class="text text-success"> Back to Project List</a>
+                            <a href="/Admin/Projects" class="text text-success"> Back to Project List</a>
                         </li>
                     </ol>
                 </div>

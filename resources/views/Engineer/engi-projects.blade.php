@@ -292,23 +292,69 @@
 
 
 
+  <div class="form-inline">
+                            <br>
+                        <div style="position: absolute; margin-top: 110px; margin-left: 1100 !important">
+                            <div class="form-group pull-center">
+                                <label for="showProject" class="text text-muted">Show</label>
+                                <select class="form-control" name="sex" id="userType" style="width: 70px; height: 35px !important;">
+                                    <option selected> 10 </option>
+                                    <option> 1 </option>
+                                    <option> 2 </option>
+                                    <option> 3 </option>
+                                    <option> 4 </option>
+                                    <option> 5 </option>
+                                    <option> 6 </option>
+                                    <option> 7 </option>
+                                    <option> 8 </option>
+                                    <option> 9 </option>
+                                </select>
+                                <label class="text text-muted"> Projects</label>
+                            </div>
+                        </div>
+            </div>
 
-
-<div class="content-wrapper" style="margin-top: 45px">
+<div class="content-wrapper" style="margin-top: 10px">
     <!-- Container-fluid starts -->
+   
     <div class="container-fluid">
-
+ 
         <!-- Header Starts -->
         <div class="row" style="margin-top: -10px">
+            <br> 
             <div class="col-sm-9 p-0">
-                <div class="main-header">
-                    <h4>
-                        <i class="icofont icofont-document-folder"> </i> Engineer Projects</h4>
+                     <div class="main-header">
+                        <h4>
+                            <i class="icon-book-open"></i> Projects</h4>
+                        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                            <li class="breadcrumb-item">
+                                <a href="Admin/home"></a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#!">Projects List</a>
+                            </li>
+
+                        </ol>
 
 
 
-                </div>
 
+
+
+
+                        <div class="input-group stylish-input-group" style="position: absolute; margin-top: -60px; margin-left: 300px">
+                            <input type="text" class="form-control" placeholder="Search project" style="width: 400px">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="icon-magnifier"></span>
+                            </button>
+
+                        </div>
+
+                      
+
+
+                    </div>
+             
             </div>
 
 
@@ -336,12 +382,14 @@
         <!-- Tables start -->
         <!-- Row start -->
 
-
+<br> <br>
         <div class="row">
 
 
             <!-- start col-lg-9 -->
             <div class="col-xl-12 col-lg-12">
+                
+                
                 <!-- Nav tabs -->
 
                 <!-- end of tab-header -->
@@ -376,7 +424,8 @@
                                                     <tr class=@if($key%2==1) "table-info" @endif>
                                                         <td>{{$key+1}}</td>
                                                         <td>
-                                                            <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                            <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl"> 
+                                                            &nbsp; &nbsp; Client Name
                                                         </td>
                                                         <td>{{$project->strProjectName}}</td>
 
@@ -385,14 +434,14 @@
                                                         <td class="faq-table-btn">
 
                                                             <a href="/Engineer/Engineer-Projects/{{$project->intProjectId}}/Cost-Summary" class="btn btn-success waves-effect waves-light"
-                                                                data-placement="top" title="Approve">
+                                                                data-toggle="tooltip" data-placement="top" title="View">
                                                                 <i style="font-size: 20px"class="icofont icofont-calculator"></i> 
-                                                                View Cost Summary
+                                                                Cost Summary
                                                             </a>
                                                             <a href="/Engineer/Engineer-Projects/{{$project->intProjectId}}/Actuals" class="btn btn-primary waves-effect waves-light"
-                                                                data-placement="top" title="Approve">
+                                                                 data-toggle="tooltip" data-placement="top" title="View">
                                                                 <i style="font-size: 20px"class="icofont icofont-file-document"></i> 
-                                                                View Actuals
+                                                                Actuals
                                                             </a>
 
                                                         </td>
