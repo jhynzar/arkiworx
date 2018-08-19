@@ -1369,7 +1369,7 @@
 
 
 
-<div class="content-wrapper" style="margin-top: 40px">
+<div class="content-wrapper" style="margin-top: 30px">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
 
@@ -1441,16 +1441,14 @@
                 <br>
                 <br>
                 <button type="button" data-toggle="modal" data-target="#addCustomActual" class="btn btn-primary waves-effect waves-light"
-                    style="position: absolute; margin-left: -480px;  margin-top: 79px; ">
+                    style="position: absolute; margin-left: -210px;  margin-top: 55px; ">
                     <i class="icon-plus"> </i>Add Custom Actual </button>
                 <br>
                 <br>
-                <button type="button" data-toggle="modal" data-target="#addMaterialActual" class="btn  waves-effect waves-light" style=" background-color: #2F4F4F; color: white; position: absolute; margin-left: -270px;  margin-top: 34px">
-                    <i class="icon-plus"> </i>Add from Materials Actual</button>
-                <br>
+               
                 <br>
                 <button type="button" data-toggle="modal" data-target="#addNewMaterialActual" class="btn  waves-effect waves-light" style="background-color: #2F4F4F; color: white; margin-top: -13px">
-                    <i class="icon-plus"> </i>Add New Material Actual</button>
+                    <i class="icon-plus"> </i>Add Material Actual</button>
                 <br>
                 <br>
             </div>
@@ -1464,7 +1462,7 @@
         <!-- Tables start -->
         <!-- Row start -->
         <div class="row">
-            <div class="col-sm-12 ">
+            <div class="col-sm-12">
 
 
                 <!-- Contextual classes table starts -->
@@ -1475,7 +1473,7 @@
                     </div>
                     <div class="card-block">
                         <div class="row">
-                            <div class="col-sm-12 table-responsive">
+                            <div class="col-sm-12 ">
                                 <table class="table table-hover ">
                                     <thead>
                                         <tr>

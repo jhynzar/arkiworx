@@ -359,7 +359,7 @@
 
 
 
-                <li class="active treeview">
+                <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
                         <i class="icon-briefcase"></i>
                         <span> Projects</span>
@@ -389,7 +389,7 @@
 
 
 
-                <li class="treeview">
+                <li class="active treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Project-Progress">
                         <i class="icon-chart"></i>
                         <span> Project Plan</span>
@@ -433,14 +433,14 @@
                 <div class="col-sm-9 p-0">
                     <div class="main-header">
                         <h4>
-                            <i class="icon icon-briefcase"></i> Cost Summary </h4>
+                            <i class="icon-graph"></i> Materials Usage </h4>
                         <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
                             <li class="breadcrumb-item">
                                 <a href="index"></a>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="/Engineer/Engineer-Projects" data-toggle="tooltip" data-placement="top" title="Back">
-                                    <span class="text text-primary">Projects Table</span>
+                                    <span class="text text-primary">Materials Table</span>
                                 </a>
                             </li>
 
@@ -470,14 +470,7 @@
 
 
                 <!-- Show Report Button trigger-->
-                <div class="col-sm-3 pull-right">
-                    <br>
-                    <br>
-                    <button type="button" data-toggle="modal" data-target="#showReports" class="btn btn-success waves-effect waves-light" style="margin-left: -20px; margin-top: 20px">
-                        <i class="icon-list"> </i>Show Reports</button>
-                </div>
-
-                <br>
+              
                 <br>
             </div>
             <!-- Header end -->
@@ -492,7 +485,7 @@
                     <!-- Contextual classes table starts -->
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-header-text">Cost Summary</h5>
+                            <h5 class="card-header-text">Materials Usage</h5>
 
                         </div>
                         <div class="card-block">
@@ -505,14 +498,14 @@
                                                 <table class="table m-b-0 photo-table">
                                                     <thead>
                                                         <tr>
-                                                            <th>Line Item</th>
+                                                            <th class="text-center">Line Item</th>
                                                             <th>Description</th>
-                                                            <th class="text-center" style="background-color: coral;  color: black !important">Qty</th>
+                                                            <th class="text-center" style="background-color: coral;  color: black !important">Estimated Qty</th>
                                                             <th class=" text-center" style="background-color: coral;  color: black !important">Unit</th>
-                                                            <th style="background-color: coral;  color: black !important">Estimated Cost</th>
-                                                            <th class=" text-center" style="background-color: lightgreen; color: black !important">Qty</th>
+                                                            
+                                                            <th class=" text-center" style="background-color: lightgreen; color: black !important">Qty Used</th>
                                                             <th style="background-color: lightgreen; color: black !important">Unit</th>
-                                                            <th class=" text-center" style="background-color: lightgreen; color: black !important">Actuals</th>
+                                                            
 
 
                                                         </tr>
@@ -520,103 +513,73 @@
                                                     <tbody>
                                                         <!-- DYNAMIC DATA -->
                                                         <!-- For Category -->
-                                                        @foreach ($projectWorkCategories as $workCategory)
-                                                            <tr style="background-color: #1e242d">
-                                                                <td>
-                                                                    <h5 style="color: white;padding-left: 10px;">
-                                                                        <b>{{$workCategory->strWorkCategoryDesc}}</b>
-                                                                    </h5>
-                                                                </td>
-                                                            </tr>
-                                                            @foreach ($projectWorkSubCategories as $workSubCategory)
+                                                     
+                                                            
+                                                          
 
                                                             <!-- For SubCategory -->
-                                                                @if ($workSubCategory->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                                
                                                                 <tr class="table-active">
                                                                     <td>
-                                                                        <b style="padding-left: 30px;"> >&nbsp;{{$workSubCategory->strWorkSubCategoryDesc}}</b>
+                                                                        <b style="padding-left: 30px;"> >&nbsp;Slab</b>
                                                                     </td>
                                                                 </tr>
-                                                                    @foreach ($projectCostSummary as $keyCostSummary=>$costSummary)
+                                                                
 
-                                                                        @if (
-                                                                            ($costSummary->estimate == null) &&
-                                                                            ($costSummary->actual->materialActualsDetails->intWorkCategoryId == $workCategory->intWorkCategoryId) &&
-                                                                            ($costSummary->actual->materialActualsDetails->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId)
-                                                                        )
                                                                             <tr>
-                                                                                <td>{{$keyCostSummary+1}}</td>
+                                                                                <td class="text-center">1</td>
 
-                                                                                <td>{{$costSummary->actual->materialActualsDetails->strMaterialName}}</td>
-                                                                                <td class="text-center " style="background-color: coral;  color: black !important">-</td>
-                                                                                <th class="text-center" style="background-color: coral;   !important">-</th>
-                                                                                <td style="background-color: coral;  color: black !important">-</td>
+                                                                                <td>Cement</td>
+                                                                                <td class="text-center " style="background-color: coral;  color: black !important">10</td>
+                                                                                <th class="text-center" style="background-color: coral;   !important">Bag</th>
+                                                                               
                                                                                 <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{$costSummary->actual->materialActualsHistory[0]->intQty}}</b>
+                                                                                    <b>3</b>
                                                                                 </th>
                                                                                 <th style="background-color: lightgreen;color: black !important">
-                                                                                    <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
+                                                                                    <b>Bag</b>
                                                                                 </th>
-                                                                                <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{$costSummary->actual->materialActualsHistory[0]->decCost}}</b>
-                                                                                </td>
+                                                                               
                                                                             </tr>
-                                                                        @elseif (
-                                                                            ($costSummary->actual == null) &&
-                                                                            ($costSummary->estimate->intWorkCategoryId == $workCategory->intWorkCategoryId) &&
-                                                                            ($costSummary->estimate->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId)
-                                                                        )
+                                                                      
                                                                             <tr>
 
-                                                                                <td>{{$keyCostSummary+1}}</td>
+                                                                                <td class="text-center">2</td>
 
-                                                                                <td>{{$costSummary->estimate->strMaterialName}}</td>
-                                                                                <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->intQty}}</td>
-                                                                                <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
-                                                                                <td style="background-color: coral;  color: black !important">{{$costSummary->estimate->decCost}}</td>
+                                                                                <td>Sand</td>
+                                                                                <td class="text-center " style="background-color: coral;  color: black !important">10</td>
+                                                                                <th class="text-center" style="background-color: coral;   !important">Cu.M</th>
+                                                                               
                                                                                 <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                    <b>-</b>
+                                                                                    <b>5</b>
                                                                                 </th>
                                                                                 <th style="background-color: lightgreen;color: black !important">
-                                                                                    <b>-</b>
+                                                                                    <b>Cu.M</b>
                                                                                 </th>
-                                                                                <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                    <b>-</b>
-                                                                                </td>
+                                                                               
                                                                             </tr>
-                                                                        @elseif (
-                                                                            ($costSummary->estimate != null) &&
-                                                                            ($costSummary->actual != null) &&
-                                                                            ($costSummary->estimate->intWorkCategoryId == $workCategory->intWorkCategoryId) &&
-                                                                            ($costSummary->estimate->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId)
-                                                                        )
+                                                                         <tr class="table-active">
+                                                                    <td>
+                                                                        <b style="padding-left: 30px;"> >&nbsp;Column</b>
+                                                                    </td>
+                                                                </tr>
                                                                         <tr>
 
-                                                                            <td>{{$keyCostSummary+1}}</td>
+                                                                            <td class="text-center">1</td>
 
-                                                                            <td>{{$costSummary->estimate->strMaterialName}}</td>
-                                                                            <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->intQty}}</td>
-                                                                            <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
-                                                                            <td style="background-color: coral;  color: black !important">{{$costSummary->estimate->decCost}}</td>
+                                                                            <td>Cement</td>
+                                                                            <td class="text-center " style="background-color: coral;  color: black !important">8</td>
+                                                                            <th class="text-center" style="background-color: coral;   !important">Bag</th>
+                                                                           
                                                                             <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{$costSummary->actual->materialActualsHistory[0]->intQty}}</b>
+                                                                                <b>3</b>
                                                                             </th>
                                                                             <th style="background-color: lightgreen;color: black !important">
-                                                                                <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
+                                                                                <b>Cu.M</b>
                                                                             </th>
-                                                                            <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{$costSummary->actual->materialActualsHistory[0]->decCost}}</b>
-                                                                            </td>
+                                                                           
                                                                         </tr>
-                                                                        @endif
-                                                                        
-
-                                                                    @endforeach
-
-                                                                @endif 
-                                                            @endforeach
-                                                        @endforeach
-
+                                                                     
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -642,25 +605,6 @@
 
 
 
-
-                                <!-- TOTALS TABLE -->
-
-                                <div class="card-block">
-                                    <div class="table-responsive">
-                                        <table class="table m-b-0 photo-table">
-                                            <thead>
-                                                <tr class="text-uppercase">
-                                                    <th class="text-left text-primary">TOTALS:</th>
-                                                    <th class="text-center"></th>
-                                                    <th class="text-center text-primary"> 22345</th>
-                                                    <th class="text-center text-primary">23365</th>
-
-                                                </tr>
-                                            </thead>
-
-                                        </table>
-                                    </div>
-                                </div>
 
 
 

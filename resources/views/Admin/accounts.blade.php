@@ -339,12 +339,7 @@
                 </li>
 
 
-                <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Cost-Summary">
-                        <i class="icon-briefcase"></i>
-                        <span> Cost Summary</span>
-                    </a>
-                </li>
+               
 
 
 

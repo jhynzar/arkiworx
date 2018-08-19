@@ -1058,7 +1058,28 @@
     <div class="content-wrapper" style="margin-top: 45px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
+             <div style="position: absolute; margin-top: 60px; margin-left: 900px">
+            <div class="form-inline" >
+                            <br>
 
+                            <div class="form-group" style="margin-left: 20px">
+                                <label for="showProject" class="text text-muted">Show</label>
+                                <select class="form-control" name="sex" id="userType" style="width: 70px; height: 35px !important;">
+                                    <option selected> 50 </option>
+                                    <option> 1 </option>
+                                    <option> 2 </option>
+                                    <option> 3 </option>
+                                    <option> 4 </option>
+                                    <option> 5 </option>
+                                    <option> 6 </option>
+                                    <option> 7 </option>
+                                    <option> 8 </option>
+                                    <option> 9 </option>
+                                </select>
+                                <label class="text text-muted"> Item</label>
+                            </div>
+                        </div>
+            </div><br> 
             <!-- Header Starts -->
             <div class="row" style="margin-top: -10px">
                 <div class="col-sm-9 p-0">
@@ -1089,26 +1110,7 @@
 
                         </div>
 
-                        <div class="form-inline">
-                            <br>
-
-                            <div class="form-group" style="margin-left: 20px">
-                                <label for="showProject" class="text text-muted">Show</label>
-                                <select class="form-control" name="sex" id="userType" style="width: 70px; height: 35px !important;">
-                                    <option selected> 50 </option>
-                                    <option> 1 </option>
-                                    <option> 2 </option>
-                                    <option> 3 </option>
-                                    <option> 4 </option>
-                                    <option> 5 </option>
-                                    <option> 6 </option>
-                                    <option> 7 </option>
-                                    <option> 8 </option>
-                                    <option> 9 </option>
-                                </select>
-                                <label class="text text-muted"> Item</label>
-                            </div>
-                        </div>
+                       
 
 
                     </div>
@@ -1140,7 +1142,7 @@
             <!-- Tables start -->
             <!-- Row start -->
 
-
+<br> 
             <div class="row">
 
 
@@ -1181,6 +1183,7 @@
                                                             <td>{{$key+1}}</td>
                                                             <td>
                                                                 <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                                &nbsp; &nbsp; Client Name
                                                             </td>
                                                             <td>{{ $pendingProjectCostEstimation->strProjectName }}</td>
 
@@ -1219,8 +1222,8 @@
                                                                                 <label for="usertype">Project Template:</label>
                                                                                 <select class="form-control" name="projectTemplate" id="projectTemplate" style="width: 250px; margin-left: 150px !important;"
                                                                                     value="Choose template">
-                                                                                    <option> Bungalow </option>
-                                                                                    <option selected> 2-Storey </option>
+                                                                                    <option selected> 1 Storey </option>
+                                                                                    <option > 2-Storey </option>
                                                                                     <option> 3-Storey </option>
                                                                                     <option> 4-Storey </option>
                                                                                     <option> 5-Storey </option>
