@@ -1364,40 +1364,40 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td>Cement Bags (40kg):</td>
-                                            <td id="ColumnCementBag">5 pcs</td>
-                                            <td id="ColumnCementCost">2000.00</td>
+                                            <td id=""></td>
+                                            <td id="ColumnCementBag"></td>
+                                            <td id="ColumnCementCost"></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Sand:</td>
-                                            <td id="ColumnSand">75 cubic meters</td>
-                                            <td id="ColumnSandCost">700.00</td>
+                                            <td id=""></td>
+                                            <td id="ColumnSand"></td>
+                                            <td id="ColumnSandCost"></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>Gravel:</td>
-                                            <td id="ColumnGravel">80 cubic meters</td>
-                                            <td id="ColumnGravelCost">900.00</td>
+                                            <td id=""></td>
+                                            <td id="ColumnGravel"></td>
+                                            <td id="ColumnGravelCost"></td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id="ColumnSteelBar">12mm Steelbar:</td>
-                                            <td id="ColumnSteelBarQty">81 pcs</td>
-                                            <td id="ColumnSteelBarCost">2000.00</td>
+                                            <td id="ColumnSteelBar"></td>
+                                            <td id="ColumnSteelBarQty"></td>
+                                            <td id="ColumnSteelBarCost"></td>
                                            
                                         </tr>
                                             <tr>
-                                            <td id="ColumnTieBar">Tie Bars:</td>
-                                            <td id="ColumnTieBarQty">75 pcs</td>
-                                            <td id="ColumnTieBarCost">700.00</td>
+                                            <td id="ColumnTieBar"></td>
+                                            <td id="ColumnTieBarQty"></td>
+                                            <td id="ColumnTieBarCost"></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td id="ColumnTieWire">#16 G.I Wire:</td>
-                                            <td id="ColumnTieWireKg">8 kg</td>
-                                            <td id="ColumnTieWireCost">700.00</td>
+                                            <td id="ColumnTieWire"></td>
+                                            <td id="ColumnTieWireKg"></td>
+                                            <td id="ColumnTieWireCost"></td>
                                            
                                         </tr>
                                       
@@ -1452,10 +1452,11 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                    <option selected>Class A </option>
-                                    <option >Class B </option>
-                                    <option >Class C </option>
+                                <select class="form-control" name="" id="footingCC" style="width: 160px !important;">
+                                    <option value="1" selected>Class AA </option>
+                                     <option value="2" >Class A </option>
+                                    <option value="3">Class B </option>
+                                    <option value="4" >Class C </option>
                                 </select>
                             </div>
                              
@@ -1503,19 +1504,19 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="footingTirebarSize" style="width: 150px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                    <option selected>30 cm </option>
-                                    <option >40 cm </option>
+                                <select class="form-control" name="" id="footingTiewire" style="width: 140px !important;">
+                                    <option value="30" selected>30 cm </option>
+                                    <option value="40" >40 cm </option>
                                     
                                 </select>
                             </div> 
