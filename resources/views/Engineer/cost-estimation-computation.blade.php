@@ -1401,7 +1401,24 @@
                         </div>
                   
                     </div>
-                                
+                                  <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary"> </th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>       
               </div>
           </div>
           
@@ -1473,21 +1490,21 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                    <option selected>6 meters </option>
-                                    <option >7.5 meters </option>
-                                    <option >9 meters </option>
-                                    <option >12 meters </option>
+                                <select class="form-control" name="" id="footingBarLength" style="width: 136px !important;">
+                                    <option value="6" selected>6 meters </option>
+                                    <option value="7.5" >7.5 meters </option>
+                                    <option value="9" >9 meters </option>
+                                    <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="footingBarSize" style="width: 170px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                             </div> <br> <br>
                                  
@@ -1536,48 +1553,48 @@
                                     <table class="table">
                                         <thead>
                                         <tr>
-                                            <th>Material</th>
-                                            <th>Estimated Qty</th>
-                                            <th>Estimated Cost</th>
+                                            <th id="" ></th>
+                                            <th></th>
+                                            <th></th>
                                            
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td>Cement Bags (40kg):</td>
-                                            <td>5 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id="" ></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>Gravel:</td>
-                                            <td>80 cubic meters</td>
-                                            <td>900.0</td>
+                                            <td id="" ></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td>12mm Steelbar:</td>
-                                            <td>81 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>#16 G.I Wire:</td>
-                                            <td>8kg</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                       
@@ -1601,7 +1618,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            <th class="text-center text-primary"> </th>
                                                             
 
                                                         </tr>
@@ -1650,10 +1667,11 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                    <option selected>Class A </option>
-                                    <option >Class B </option>
-                                    <option >Class C </option>
+                                <select class="form-control" name="" id="slabCementClassMixture" style="width: 160px !important;">
+                                    <option value="AA" selected>Class A </option>
+                                    <option value="A" >Class A </option>
+                                    <option value="B" >Class B </option>
+                                    <option value="C" >Class C </option>
                                 </select>
                             </div>
                              
@@ -1679,36 +1697,36 @@
                                  <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Spacing:</label>
-                                <select class="form-control" name="" id="" style="width: 130px !important;">
-                                    <option selected>10.0 cm </option>
-                                    <option >12.5 cm </option>
-                                    <option >15.0 cm </option>
-                                    <option >17.5 cm </option>
-                                    <option >20.0 cm </option>
-                                    <option >22.5 cm </option>
-                                    <option >25.0 cm </option>
+                                <select class="form-control" name="" id="slabBarSpacing" style="width: 130px !important;">
+                                    <option value="10.0" selected>10.0 cm </option>
+                                    <option value="12.5" >12.5 cm </option>
+                                    <option value="15.0" >15.0 cm </option>
+                                    <option value="17.5" >17.5 cm </option>
+                                    <option value="20.0" >20.0 cm </option>
+                                    <option value="22.5" >22.5 cm </option>
+                                    <option value="25.0" >25.0 cm </option>
                                 </select>
                                      <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="" style="width: 130px !important;">
-                                    <option selected>6 meters </option>
-                                    <option >7.5 meters </option>
-                                    <option >9 meters </option>
-                                    <option >12 meters </option>
+                                <select class="form-control" name="" id="slabBarLength" style="width: 130px !important;">
+                                    <option value="6" selected>6 meters </option>
+                                    <option value="7.5" >7.5 meters </option>
+                                    <option value="9" >9 meters </option>
+                                    <option value="12" >12 meters </option>
                                 </select>
                             </div> <br> <br>
                                  
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 155px !important;">
-                                    <option selected>Class A </option>
-                                    <option >Class B </option>
-                                    <option >Class C </option>
+                                <select class="form-control" name="" id="slabBarSize" style="width: 155px !important;">
+                                    <option value="A" selected>Class A </option>
+                                    <option value="B" >Class B </option>
+                                    <option value="C" >Class C </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                    <option selected>30 cm </option>
-                                    <option >40 cm </option>
+                                <select class="form-control" name="" id="slabTiewire" style="width: 140px !important;">
+                                    <option value="30" selected>30 cm </option>
+                                    <option value="40" >40 cm </option>
                                     
                                 </select>
                             </div> 
@@ -1717,14 +1735,14 @@
                                  <br> <br>
                                  <div class="form-group">
                                  <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 120px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="slabTireBarSize" style="width: 120px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                             </div>
                                  
@@ -1763,40 +1781,40 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td>Cement Bags (40kg):</td>
-                                            <td>5 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>Gravel:</td>
-                                            <td>80 cubic meters</td>
-                                            <td>900.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td>12mm Steelbar:</td>
-                                            <td>81 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>#16 G.I Wire:</td>
-                                            <td>8kg</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                       
@@ -1819,7 +1837,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            <th class="text-center text-primary"> </th>
                                                             
 
                                                         </tr>
@@ -1874,10 +1892,11 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                    <option selected>Class A </option>
-                                    <option >Class B </option>
-                                    <option >Class C </option>
+                                <select class="form-control" name="" id="beamsCementClassMxture" style="width: 160px !important;">
+                                    <option value="AA" selected>Class AA </option>
+                                    <option value="A" >Class A </option>
+                                    <option value="B" >Class B </option>
+                                    <option value="C" >Class C </option>
                                 </select>
                             </div>
                              
@@ -1907,40 +1926,40 @@
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                    <option selected>6 meters </option>
-                                    <option >7.5 meters </option>
-                                    <option >9 meters </option>
-                                    <option >12 meters </option>
+                                <select class="form-control" name="" id="beamsBarLength" style="width: 136px !important;">
+                                    <option value="6" selected>6 meters </option>
+                                    <option value="7.5" >7.5 meters </option>
+                                    <option value="9" >9 meters </option>
+                                    <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="beamsBarSize" style="width: 170px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                             </div> <br> <br>
                                  
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="beamsTieBarSize" style="width: 150px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                    <option selected>30 cm </option>
-                                    <option >40 cm </option>
+                                <select class="form-control" name="" id="beamsTiewire" style="width: 140px !important;">
+                                    <option value="30" selected>30 cm </option>
+                                    <option value="40" >40 cm </option>
                                     
                                 </select>
                             </div> 
@@ -1978,40 +1997,40 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td>Cement Bags (40kg):</td>
-                                            <td>5 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>Gravel:</td>
-                                            <td>80 cubic meters</td>
-                                            <td>900.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td>12mm Steelbar:</td>
-                                            <td>81 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>#16 G.I Wire:</td>
-                                            <td>8kg</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                       
@@ -2034,7 +2053,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            <th class="text-center text-primary"> </th>
                                                             
 
                                                         </tr>
@@ -2085,10 +2104,11 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                    <option selected>Class A </option>
-                                    <option >Class B </option>
-                                    <option >Class C </option>
+                                <select class="form-control" name="" id="wallFootingCementClassMixture" style="width: 160px !important;">
+                                    <option value="AA" selected>Class AA </option>
+                                     <option value="A" >Class A </option>
+                                    <option value="B" >Class B </option>
+                                    <option value="C" >Class C </option>
                                 </select>
                             </div>
                              
@@ -2115,40 +2135,40 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                    <option selected>6 meters </option>
-                                    <option >7.5 meters </option>
-                                    <option >9 meters </option>
-                                    <option >12 meters </option>
+                                <select class="form-control" name="" id="wallFootingBarLength" style="width: 136px !important;">
+                                    <option value="6" selected>6 meters </option>
+                                    <option value="7.5" >7.5 meters </option>
+                                    <option value="9" >9 meters </option>
+                                    <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="wallFootingBarSize" style="width: 170px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                             </div> <br> <br>
                                  
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="wallFootingTieBarSize" style="width: 150px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                    <option selected>30 cm </option>
-                                    <option >40 cm </option>
+                                <select class="form-control" name="" id="wallFootigTiewire" style="width: 140px !important;">
+                                    <option value="30" selected>30 cm </option>
+                                    <option value="40" >40 cm </option>
                                     
                                 </select>
                             </div> 
@@ -2186,40 +2206,40 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td>Cement Bags (40kg):</td>
-                                            <td>5 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>Gravel:</td>
-                                            <td>80 cubic meters</td>
-                                            <td>900.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td>12mm Steelbar:</td>
-                                            <td>81 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>#16 G.I Wire:</td>
-                                            <td>8kg</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                       
@@ -2243,7 +2263,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            <th class="text-center text-primary"> </th>
                                                             
 
                                                         </tr>
@@ -2294,10 +2314,11 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                    <option selected>Class A </option>
-                                    <option >Class B </option>
-                                    <option >Class C </option>
+                                <select class="form-control" name="" id="floorBeamsCementClassMixture" style="width: 160px !important;">
+                                    <option value="AA" selected>Class AA </option>
+                                    <option value="A" >Class A </option>
+                                    <option value="B" >Class B </option>
+                                    <option value="C" >Class C </option>
                                 </select>
                             </div>
                              
@@ -2327,40 +2348,40 @@
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                    <option selected>6 meters </option>
-                                    <option >7.5 meters </option>
-                                    <option >9 meters </option>
-                                    <option >12 meters </option>
+                                <select class="form-control" name="" id="floorBeamsBarLength" style="width: 136px !important;">
+                                    <option value="6" selected>6 meters </option>
+                                    <option value="7.5" >7.5 meters </option>
+                                    <option value="9" >9 meters </option>
+                                    <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="floorBeamsBarSize" style="width: 170px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                             </div> <br> <br>
                                  
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="floorBeamsTieBarSize" style="width: 150px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                    <option selected>30 cm </option>
-                                    <option >40 cm </option>
+                                <select class="form-control" name="" id="floorBeamsTiewire" style="width: 140px !important;">
+                                    <option value="30" selected>30 cm </option>
+                                    <option value="40" >40 cm </option>
                                     
                                 </select>
                             </div> 
@@ -2398,40 +2419,40 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td>Cement Bags (40kg):</td>
-                                            <td>5 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>Gravel:</td>
-                                            <td>80 cubic meters</td>
-                                            <td>900.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td>12mm Steelbar:</td>
-                                            <td>81 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>#16 G.I Wire:</td>
-                                            <td>8kg</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                       
@@ -2455,7 +2476,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            <th class="text-center text-primary"> </th>
                                                             
 
                                                         </tr>
@@ -2506,10 +2527,11 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                    <option selected>Class A </option>
-                                    <option >Class B </option>
-                                    <option >Class C </option>
+                                <select class="form-control" name="" id="roofBeamsCementClassMixture" style="width: 160px !important;">
+                                    <option value="AA" selected>Class A </option>
+                                    <option value="A" >Class A </option>
+                                    <option value="B" >Class B </option>
+                                    <option value="C" >Class C </option>
                                 </select>
                             </div>
                              
@@ -2539,40 +2561,40 @@
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                    <option selected>6 meters </option>
-                                    <option >7.5 meters </option>
-                                    <option >9 meters </option>
-                                    <option >12 meters </option>
+                                <select class="form-control" name="" id="roofBeamsBarLength" style="width: 136px !important;">
+                                    <option value="6" selected>6 meters </option>
+                                    <option value="7.5" >7.5 meters </option>
+                                    <option value="9" >9 meters </option>
+                                    <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="roofBeamsBarSize" style="width: 170px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                             </div> <br> <br>
                                  
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                    <option selected>6 mm</option>
-                                    <option >10 mm </option>
-                                    <option >12 mm </option>
-                                    <option >16 mm </option>
-                                    <option >20 mm </option>
-                                    <option >22 mm </option>
-                                    <option >25 mm </option>
+                                <select class="form-control" name="" id="roofBeamsTieBarSize" style="width: 150px !important;">
+                                    <option value="6" selected>6 mm</option>
+                                    <option value="10" >10 mm </option>
+                                    <option value="12" >12 mm </option>
+                                    <option value="16" >16 mm </option>
+                                    <option value="20" >20 mm </option>
+                                    <option value="22" >22 mm </option>
+                                    <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                    <option selected>30 cm </option>
-                                    <option >40 cm </option>
+                                <select class="form-control" name="" id="roofBeamsTiewire" style="width: 140px !important;">
+                                    <option value="30" selected>30 cm </option>
+                                    <option value="40" >40 cm </option>
                                     
                                 </select>
                             </div> 
@@ -2610,40 +2632,40 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td>Cement Bags (40kg):</td>
-                                            <td>5 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>Gravel:</td>
-                                            <td>80 cubic meters</td>
-                                            <td>900.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td>12mm Steelbar:</td>
-                                            <td>81 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>#16 G.I Wire:</td>
-                                            <td>8kg</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                       
@@ -2667,7 +2689,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> 22345.0</th>
+                                                            <th class="text-center text-primary"> </th>
                                                             
 
                                                         </tr>
@@ -2748,10 +2770,11 @@
                                  
                                  <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                    <option selected>Class A </option>
-                                    <option >Class B </option>
-                                    <option >Class C </option>
+                                <select class="form-control" name="" id="masonryCementClassMixture" style="width: 160px !important;">
+                                    <option value="AA" selected>Class AA </option>
+                                    <option value="A" >Class A </option>
+                                    <option value="B" >Class B </option>
+                                    <option value="B" >Class C </option>
                                 </select>
                             </div><br><br>
                                  
@@ -2814,10 +2837,11 @@
                                  
                                  <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                    <option selected>Class A </option>
-                                    <option >Class B </option>
-                                    <option >Class C </option>
+                                <select class="form-control" name="" id="masonryCementClassMixture" style="width: 160px !important;">
+                                    <option value="AA" selected>Class AA </option>
+                                    <option value="A" >Class A </option>
+                                    <option value="B" >Class B </option>
+                                    <option value="C" >Class C </option>
                                 </select>
                             </div><br><br>
                                  
@@ -2851,17 +2875,17 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                    <option selected>40 cm</option>
-                                    <option >60 cm</option>
-                                    <option >80 cm</option>
+                                <select class="form-control" name="" id="masonryBarSize" style="width: 136px !important;">
+                                    <option value="40" selected>40 cm</option>
+                                    <option value="60" >60 cm</option>
+                                    <option value="80" >80 cm</option>
                                 
                                 </select>
                                      <label for="">Bar Layer:</label>
-                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                    <option selected>2</option>
-                                    <option >3 </option>
-                                    <option >4</option>
+                                <select class="form-control" name="" id="masonryBarLayer" style="width: 150px !important;">
+                                    <option value="2" selected>2</option>
+                                    <option value="3" >3 </option>
+                                    <option value="4" >4</option>
                                    
                                 </select>
                             </div> 
@@ -2899,2103 +2923,48 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td>Cement Bags (40kg):</td>
-                                            <td>5 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>Gravel:</td>
-                                            <td>80 cubic meters</td>
-                                            <td>900.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td>12mm Steelbar:</td>
-                                            <td>81 pcs</td>
-                                            <td>2000.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                             <tr>
-                                            <td>Sand:</td>
-                                            <td>75 cubic meters</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td>#16 G.I Wire:</td>
-                                            <td>8kg</td>
-                                            <td>700.0</td>
+                                            <td id=""></td>
+                                            <td></td>
+                                            <td></td>
                                            
                                         </tr>
                                       
                                         </tbody>
                                     </table>
-                                </div>
-                                
                                
-                            </div>
-                             
-                        </div>
-                  
-                    </div>
                     
-                    <!-- TOTALS TABLE -->
-
-
-
-                        <!--////////////////////////////////////////////////////////////////////////////////////////////-->
-                        <!--////////////////////////////////////////////////////////////////////////////////////////////-->
-                        <!--////////////////////////////////////////////////////////////////////////////////////////////-->
-                        <!--////////////////////////////////////////////////////////////////////////////////////////////-->
-                        <!--////////////////////////////////////////////////////////////////////////////////////////////-->
-                        <div class="card-block accordion-block">
-
-                            <div class="col-lg-12">
-                                <div style="margin-left: 800px; margin-top: 20px">
-                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addCustom">Add Custom Category</button>
-                                </div>
-                                <div class="card" style="margin-top: 30px">
-
-
-                                    <div class="card-block accordion-block">
-
-
-
-
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingTwenty">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty" aria-expanded="false"
-                                                        aria-controls="collapseTwenty">
-                                                        General Requirements
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseTwenty" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwenty">
-                                                <div class="accordion-content accordion-desc">
-                                                    <!-- Column-->
-
-                                                    <br>
-                                                    <div class="card">
-
-                                                        <div class="row ">
-
-
-
-                                                            <div class="col-sm-12 col-xs-12 ">
-                                                                <div>
-
-                                                                    <div class="card" style="background-color: #A7FDCB">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="form-group form-inline">
-
-
-                                                                                    <label class="text text-default">
-                                                                                        <b>Permit</b>
-                                                                                    </label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    &nbsp;
-                                                                                    <label class="text text-default">
-                                                                                        <b>Miscellaneous</b>
-                                                                                    </label>
-                                                                                    <br>
-                                                                                    <br>
-                                                                                    <label> Building Permit</label>
-                                                                                    <input type="number" name="BuildingPermit" class="form-control" id="" style="width: 180px !important;" placeholder=""> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    <label> Temporary Facilities</label>
-                                                                                    <input type="number" name="TemporaryFacilities" class="form-control" id="" style="width: 180px !important;" placeholder="">
-                                                                                    <label> Workers' Barracks</label>
-                                                                                    <input type="number" name="WorkersBarracks" class="form-control" id="" style="width: 180px !important;" placeholder="">
-
-
-                                                                                    <br>
-                                                                                    <br>
-
-                                                                                    <label class="text text-default">
-                                                                                        <b>Earthworks</b>
-                                                                                    </label>
-                                                                                    <br>
-                                                                                    <br>
-                                                                                    <label> Excavation</label>
-                                                                                    <input type="number" name="Excavation" class="form-control" id="" style="width: 150px !important;" placeholder=""> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    <label> Backfill</label>
-                                                                                    <input type="number" name="Backfill" class="form-control" id="" style="width: 150px !important;" placeholder=""> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    <label> Lastillas</label>
-                                                                                    <input type="number" name="Lastillas" class="form-control" id="" style="width: 150px !important;" placeholder="Optional"> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    <label> Soil Poisoning</label>
-                                                                                    <input type="number" name="SoilPoisoning" class="form-control" id="" style="width: 150px !important;" placeholder="Optional">
-
-                                                                                    <br>
-                                                                                    <br>
-                                                                                    <br>
-                                                                                    <br>
-
-
-                                                                                    <label class="text text-default">
-                                                                                        <b>Labor Cost</b>
-                                                                                    </label>
-                                                                                    <input type="number" name="LaborCost" class="form-control" id="" style="width: 180px !important;" placeholder=""> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    <label class="text text-default">
-                                                                                        <b>Tools and Equipments</b>
-                                                                                    </label>
-                                                                                    <input type="number" name="ToolsEquipments" class="form-control" id="" style="width: 180px !important;" placeholder=""> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    <label class="text text-default">
-                                                                                        <b>Transportation</b>
-                                                                                    </label>
-                                                                                    <input type="number" name="Transportation" class="form-control" id="" style="width: 180px !important;" placeholder="">
-
-                                                                                    <br>
-                                                                                    <br>
-                                                                                    <br>
-                                                                                    <br>
-                                                                                    <label class="text text-default">
-                                                                                        <b>Contingency</b>
-                                                                                    </label>
-                                                                                    <input type="number" name="Contigency" class="form-control" id="" style="width: 300px !important;" placeholder=""> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    <label class="text text-default">
-                                                                                        <b>Overhead Profit</b>
-                                                                                    </label>
-                                                                                    <input type="number" name="OverheadProfit" class="form-control" id="" style="width: 300px !important;" placeholder=""> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                    <!-- bb -->
-                                                                                    <button type="button" class="btn btn-success">Save</button>
-
-
-
-
-
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-
-
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <!-- Column ends -->
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingOne">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false"
-                                                        aria-controls="collapseOne">
-                                                        Column
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                                                <div class="accordion-content accordion-desc">
-
-
-                                                    <!-- Column-->
-
-                                                    <br>
-                                                    <div class="card">
-
-                                                        <div class="row ">
-
-                                                            <div class="col-sm-6 col-xs-12">
-                                                                <br>
-                                                                <div class="card" style="background-color: #A7FDCB">
-
-                                                                    <div class="card-block">
-
-
-                                                                        <div class="form-group pull-center">
-                                                                            <label for="">Cement Class Mixture:</label>
-                                                                            <select class="form-control" name="" id="ColumnCC" style="width: 160px !important;">
-                                                                                <option value=1 selected>Class AA </option>
-                                                                                <option value=2>Class A </option>
-                                                                                <option value=3>Class B </option>
-                                                                                <option value=4>Class C </option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div>
-                                                                            <label for="">Volume:</label>
-                                                                            <br>
-
-                                                                            <input type="number" name="" id="ColumnVolume" style="width: 160px !important;">
-                                                                            <label class="text text-default">m^3</label>
-
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="form-group form-inline">
-
-                                                                            <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;">
-                                                                            <label>Width:</label>
-                                                                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;">
-                                                                            <label>Length:</label>
-                                                                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;">
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="container" style="margin-left: -20px !important">
-                                                                                <H6 class="text text-primary">Metal Reinforcement</H6>
-                                                                            </div>
-                                                                            <br>
-                                                                            <div class="form-group">
-                                                                                <label> Number of bars per Column:</label>
-                                                                                <input type="number" name="" id="ColumnNoOfBars" class="form-control" id="" style="width: 100px !important;">
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Length:</label>
-                                                                                <select class="form-control" name="" id="ColumnsBarLeng" style="width: 136px !important;">
-                                                                                    <option value="6" selected>6 meters </option>
-                                                                                    <option value="7.5">7.5 meters </option>
-                                                                                    <option value="9">9 meters </option>
-                                                                                    <option value="12">12 meters </option>
-                                                                                </select>
-                                                                                <label for="">Bar Size:</label>
-                                                                                <select class="form-control" name="" id="ColumnsBarSize" style="width: 170px !important;">
-                                                                                    <option value=6 selected>6 mm</option>
-                                                                                    <option value=10>10 mm </option>
-                                                                                    <option value=12>12 mm </option>
-                                                                                    <option value=16>16 mm </option>
-                                                                                    <option value=20>20 mm </option>
-                                                                                    <option value=22>22 mm </option>
-                                                                                    <option value=25>25 mm </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Tie Bar Size:</label>
-                                                                                <select class="form-control" name="" id="ColumnsTieBarSize" style="width: 150px !important;">
-                                                                                    <option value=6 selected>6 mm</option>
-                                                                                    <option value=10>10 mm </option>
-                                                                                    <option value=12>12 mm </option>
-                                                                                    <option value=16>16 mm </option>
-                                                                                    <option value=20>20 mm </option>
-                                                                                    <option value=22>22 mm </option>
-                                                                                    <option value=25>25 mm </option>
-                                                                                </select>
-                                                                                <label for="">Tie wire:</label>
-                                                                                <select class="form-control" name="" id="ColumnsTieWire" style="width: 140px !important;">
-                                                                                    <option value=30 selected>30 cm </option>
-                                                                                    <option value=40>40 cm </option>
-
-                                                                                </select>
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <hr>
-                                                                            <div class="form-group form-inline">
-                                                                                <label class="text text-default">
-                                                                                    <b>Column(s): </b>
-                                                                                </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    name="" id="HowManyColumns" style="width: 100px !important;">
-                                                                                <button type="button" id="computeColumn" class="btn" style="margin-left: 90px">Compute</button>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <br>
-                                                                <div>
-
-                                                                    <div class="card">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <!--<th>Unit</th>-->
-                                                                                                <th>Estimated Cost</th>
-
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <tr class="table-success">
-                                                                                                <td id="ColumnCement" name="ColumnCement1">-------</td>
-                                                                                                <td id="ColumnCementBag" name="ColumnCementBag1">0</td>
-                                                                                                <!--<td>pcs</td>-->
-                                                                                                <td id="ColumnCementCost" name="ColumnCementCost1">0.00</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td id="ColumnS" name="ColumnS1">-------</td>
-                                                                                                <td id="ColumnSand" name="ColumnSand1">0</td>
-                                                                                                <!--<td>m^3</td>-->
-                                                                                                <td id="ColumnSandCost" name="ColumnSandCost1">0.00</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td id="ColumnG" name="ColumnG1">-------</td>
-                                                                                                <td id="ColumnGravel" name="ColumnGravel1">0</td>
-                                                                                                <!--<td>m^3</td>-->
-                                                                                                <td id="ColumnGravelCost" name="ColumnGravelCost1">0.00</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="text text-primary">
-                                                                                                <td>
-                                                                                                    <b>Metal Reinforcement</b>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr class="table-success">
-                                                                                                <td id="ColumnSteelBar" name="ColumnSteelBar1">-------</td>
-                                                                                                <td id="ColumnSteelBarQty" name="ColumnSteelBarQty1">0</td>
-                                                                                                <td>pcs</td>
-                                                                                                <td id="ColumnSteelBarCost" name="ColumnSteelBarCost1">0.00</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td id="ColumnTieBar" name="ColumnTieBar1">-------</td>
-                                                                                                <td id="ColumnTieBarQty" name="ColumnTieBarQty1">0</td>
-                                                                                                <td>pcs</td>
-                                                                                                <td id="ColumnTieBarCost" name="ColumnTieBarCost1">0.00</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td id="ColumnTieWire" name="ColumnTieWire1">-------</td>
-                                                                                                <td id="ColumnTieWireQty" name="ColumnTieWireKg1">0</td>
-                                                                                                <td>kg</td>
-                                                                                                <td id="ColumnTieWireCost" name="ColumnTieWireCost1">0.00</td>
-
-                                                                                            </tr>
-
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <!-- Column ends -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-panel">
-                                            <div class="accordion-heading" role="tab" id="headingTwo">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-                                                        aria-controls="collapseTwo">
-                                                        Footing
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                                <div class="accordion-content accordion-desc">
-                                                    <!-- Column-->
-
-                                                    <br>
-                                                    <div class="card">
-
-                                                        <div class="row ">
-
-                                                            <div class="col-sm-6 col-xs-12">
-                                                                <br>
-                                                                <div class="card" style="background-color: #A7FDCB">
-
-                                                                    <div class="card-block">
-
-
-                                                                        <div class="form-group pull-center">
-                                                                            <label for="">Cement Class Mixture:</label>
-                                                                            <select class="form-control" name="" id="" style="width: 160px !important;">
-                                                                                <option selected>Class A </option>
-                                                                                <option>Class B </option>
-                                                                                <option>Class C </option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div>
-                                                                            <label for="">Volume:</label>
-                                                                            <br>
-
-                                                                            <input type="number" name="" id="" style="width: 160px !important;">
-                                                                            <label class="text text-default"> cu.m </label>
-
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="form-group form-inline">
-
-                                                                            <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Width:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Length:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="container" style="margin-left: -20px !important">
-                                                                                <H6 class="text text-primary">Metal Reinforcement</H6>
-                                                                            </div>
-                                                                            <br>
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Length:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                                                                    <option selected>6 meters </option>
-                                                                                    <option>7.5 meters </option>
-                                                                                    <option>9 meters </option>
-                                                                                    <option>12 meters </option>
-                                                                                </select>
-                                                                                <label for="">Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Tie Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                                <label for="">Tie wire:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                                                                    <option selected>30 cm </option>
-                                                                                    <option>40 cm </option>
-
-                                                                                </select>
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <hr>
-                                                                            <div class="form-group form-inline">
-                                                                                <label class="text text-default">
-                                                                                    <b>Footing(s): </b>
-                                                                                </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn btn-primary" style="margin-left: 90px">Compute</button>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <br>
-                                                                <div>
-
-                                                                    <div class="card">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <th>Estimated Cost</th>
-
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <tr class="table-success">
-                                                                                                <td>Cement Bags (40kg):</td>
-                                                                                                <td>5 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>Gravel:</td>
-                                                                                                <td>80 cubic meters</td>
-                                                                                                <td>900.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="text text-primary">
-                                                                                                <td>
-                                                                                                    <b>Metal Reinforcement</b>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr class="table-success">
-                                                                                                <td>12mm Steelbar:</td>
-                                                                                                <td>81 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>#16 G.I Wire:</td>
-                                                                                                <td>8kg</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    <!-- TOTALS TABLE -->
-
-                                                                    <div class="card-block">
-                                                                        <div class="table-responsive">
-                                                                            <table class="table m-b-0 photo-table">
-                                                                                <thead>
-                                                                                    <tr class="text-uppercase">
-                                                                                        <th class="text-left text-primary">Total Cost:</th>
-                                                                                        <th class="text-center"></th>
-                                                                                        <th class="text-center text-primary"> 22345.0</th>
-
-
-                                                                                    </tr>
-                                                                                </thead>
-
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <!-- Column ends -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingThree">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-                                                        aria-controls="collapseThree">
-                                                        Slab
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                                <div class="accordion-content accordion-desc">
-                                                    <!-- Column-->
-
-                                                    <br>
-                                                    <div class="card">
-
-                                                        <div class="row ">
-
-                                                            <div class="col-sm-6 col-xs-12">
-                                                                <br>
-                                                                <div class="card" style="background-color: #A7FDCB">
-                                                                    <div class="card-block">
-
-
-                                                                        <div class="form-group pull-center">
-                                                                            <label for="">Cement Class Mixture:</label>
-                                                                            <select class="form-control" name="" id="" style="width: 160px !important;">
-                                                                                <option selected>Class A </option>
-                                                                                <option>Class B </option>
-                                                                                <option>Class C </option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div>
-                                                                            <label for="">Volume:</label>
-                                                                            <br>
-
-                                                                            <input type="number" name="" id="" style="width: 160px !important;">
-                                                                            <label class="text text-default"> cu.m </label>
-
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="form-group form-inline">
-
-                                                                            <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Width:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Length:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="container" style="margin-left: -20px !important">
-                                                                                <H6 class="text text-primary">Metal Reinforcement</H6>
-                                                                            </div>
-                                                                            <br>
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Spacing:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 130px !important;">
-                                                                                    <option selected>10.0 cm </option>
-                                                                                    <option>12.5 cm </option>
-                                                                                    <option>15.0 cm </option>
-                                                                                    <option>17.5 cm </option>
-                                                                                    <option>20.0 cm </option>
-                                                                                    <option>22.5 cm </option>
-                                                                                    <option>25.0 cm </option>
-                                                                                </select>
-                                                                                <label for="">Bar Length:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 130px !important;">
-                                                                                    <option selected>6 meters </option>
-                                                                                    <option>7.5 meters </option>
-                                                                                    <option>9 meters </option>
-                                                                                    <option>12 meters </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 155px !important;">
-                                                                                    <option selected>Class A </option>
-                                                                                    <option>Class B </option>
-                                                                                    <option>Class C </option>
-                                                                                </select>
-                                                                                <label for="">Tie wire:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                                                                    <option selected>30 cm </option>
-                                                                                    <option>40 cm </option>
-
-                                                                                </select>
-                                                                            </div>
-
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group">
-                                                                                <label for="">Tie Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 120px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                            </div>
-
-
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <hr>
-                                                                            <div class="form-group form-inline">
-                                                                                <label class="text text-default">
-                                                                                    <b>Slab(s): </b>
-                                                                                </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn btn-success" style="margin-left: 90px">Compute</button>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <br>
-                                                                <div>
-
-                                                                    <div class="card">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <th>Estimated Cost</th>
-
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <tr class="table-success">
-                                                                                                <td>Cement Bags (40kg):</td>
-                                                                                                <td>5 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>Gravel:</td>
-                                                                                                <td>80 cubic meters</td>
-                                                                                                <td>900.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="text text-primary">
-                                                                                                <td>
-                                                                                                    <b>Metal Reinforcement</b>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr class="table-success">
-                                                                                                <td>12mm Steelbar:</td>
-                                                                                                <td>81 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>#16 G.I Wire:</td>
-                                                                                                <td>8kg</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <!-- TOTALS TABLE -->
-
-                                                                    <div class="card-block">
-                                                                        <div class="table-responsive">
-                                                                            <table class="table m-b-0 photo-table">
-                                                                                <thead>
-                                                                                    <tr class="text-uppercase">
-                                                                                        <th class="text-left text-primary">Total Cost:</th>
-                                                                                        <th class="text-center"></th>
-                                                                                        <th class="text-center text-primary"> 22345.0</th>
-
-
-                                                                                    </tr>
-                                                                                </thead>
-
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-
-                                                    <!-- Column ends -->
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingFour">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
-                                                        aria-controls="collapseFour">
-                                                        Beams
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                                <div class="accordion-content accordion-desc">
-                                                    <!-- Column-->
-
-                                                    <br>
-                                                    <div class="card">
-
-                                                        <div class="row ">
-
-                                                            <div class="col-sm-6 col-xs-12">
-                                                                <br>
-                                                                <div class="card" style="background-color: #A7FDCB">
-
-                                                                    <div class="card-block">
-
-
-                                                                        <div class="form-group pull-center">
-                                                                            <label for="">Cement Class Mixture:</label>
-                                                                            <select class="form-control" name="" id="" style="width: 160px !important;">
-                                                                                <option selected>Class A </option>
-                                                                                <option>Class B </option>
-                                                                                <option>Class C </option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div>
-                                                                            <label for="">Volume:</label>
-                                                                            <br>
-
-                                                                            <input type="number" name="" id="" style="width: 160px !important;">
-                                                                            <label class="text text-default"> cu.m </label>
-
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="form-group form-inline">
-
-                                                                            <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Width:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Length:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="container" style="margin-left: -20px !important">
-                                                                                <H6 class="text text-primary">Metal Reinforcement</H6>
-                                                                            </div>
-                                                                            <br>
-                                                                            <div class="form-group">
-                                                                                <label> Direct Counting:</label>
-                                                                                <input type="number" name="" class="form-control" id="" style="width: 100px !important;">
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Length:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                                                                    <option selected>6 meters </option>
-                                                                                    <option>7.5 meters </option>
-                                                                                    <option>9 meters </option>
-                                                                                    <option>12 meters </option>
-                                                                                </select>
-                                                                                <label for="">Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Tie Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                                <label for="">Tie wire:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                                                                    <option selected>30 cm </option>
-                                                                                    <option>40 cm </option>
-
-                                                                                </select>
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <hr>
-                                                                            <div class="form-group form-inline">
-                                                                                <label class="text text-default">
-                                                                                    <b>Beam(s): </b>
-                                                                                </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn" style="margin-left: 90px">Compute</button>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <br>
-                                                                <div>
-
-                                                                    <div class="card">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <th>Estimated Cost</th>
-
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <tr class="table-success">
-                                                                                                <td>Cement Bags (40kg):</td>
-                                                                                                <td>5 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>Gravel:</td>
-                                                                                                <td>80 cubic meters</td>
-                                                                                                <td>900.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="text text-primary">
-                                                                                                <td>
-                                                                                                    <b>Metal Reinforcement</b>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr class="table-success">
-                                                                                                <td>12mm Steelbar:</td>
-                                                                                                <td>81 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>#16 G.I Wire:</td>
-                                                                                                <td>8kg</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <!-- TOTALS TABLE -->
-
-                                                                    <div class="card-block">
-                                                                        <div class="table-responsive">
-                                                                            <table class="table m-b-0 photo-table">
-                                                                                <thead>
-                                                                                    <tr class="text-uppercase">
-                                                                                        <th class="text-left text-primary">Total Cost:</th>
-                                                                                        <th class="text-center"></th>
-                                                                                        <th class="text-center text-primary"> 22345.0</th>
-
-
-                                                                                    </tr>
-                                                                                </thead>
-
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <!-- Column ends -->
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingFive">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false"
-                                                        aria-controls="collapseFive">
-                                                        Wall Footing
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                                                <div class="accordion-content accordion-desc">
-                                                    <!-- Column-->
-
-                                                    <br>
-                                                    <div class="card">
-
-                                                        <div class="row ">
-
-                                                            <div class="col-sm-6 col-xs-12">
-                                                                <br>
-                                                                <div class="card" style="background-color: #A7FDCB">
-
-                                                                    <div class="card-block">
-
-
-                                                                        <div class="form-group pull-center">
-                                                                            <label for="">Cement Class Mixture:</label>
-                                                                            <select class="form-control" name="" id="" style="width: 160px !important;">
-                                                                                <option selected>Class A </option>
-                                                                                <option>Class B </option>
-                                                                                <option>Class C </option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div>
-                                                                            <label for="">Volume:</label>
-                                                                            <br>
-
-                                                                            <input type="number" name="" id="" style="width: 160px !important;">
-                                                                            <label class="text text-default"> cu.m </label>
-
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="form-group form-inline">
-
-                                                                            <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Width:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Length:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="container" style="margin-left: -20px !important">
-                                                                                <H6 class="text text-primary">Metal Reinforcement</H6>
-                                                                            </div>
-                                                                            <br>
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Length:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                                                                    <option selected>6 meters </option>
-                                                                                    <option>7.5 meters </option>
-                                                                                    <option>9 meters </option>
-                                                                                    <option>12 meters </option>
-                                                                                </select>
-                                                                                <label for="">Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Tie Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                                <label for="">Tie wire:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                                                                    <option selected>30 cm </option>
-                                                                                    <option>40 cm </option>
-
-                                                                                </select>
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <hr>
-                                                                            <div class="form-group form-inline">
-                                                                                <label class="text text-default">
-                                                                                    <b>Wall Footing(s): </b>
-                                                                                </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn btn-primary" style="margin-left: 90px">Compute</button>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <br>
-                                                                <div>
-
-                                                                    <div class="card">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <th>Estimated Cost</th>
-
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <tr class="table-success">
-                                                                                                <td>Cement Bags (40kg):</td>
-                                                                                                <td>5 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>Gravel:</td>
-                                                                                                <td>80 cubic meters</td>
-                                                                                                <td>900.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="text text-primary">
-                                                                                                <td>
-                                                                                                    <b>Metal Reinforcement</b>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr class="table-success">
-                                                                                                <td>12mm Steelbar:</td>
-                                                                                                <td>81 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>#16 G.I Wire:</td>
-                                                                                                <td>8kg</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    <!-- TOTALS TABLE -->
-
-                                                                    <div class="card-block">
-                                                                        <div class="table-responsive">
-                                                                            <table class="table m-b-0 photo-table">
-                                                                                <thead>
-                                                                                    <tr class="text-uppercase">
-                                                                                        <th class="text-left text-primary">Total Cost:</th>
-                                                                                        <th class="text-center"></th>
-                                                                                        <th class="text-center text-primary"> 22345.0</th>
-
-
-                                                                                    </tr>
-                                                                                </thead>
-
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <!-- Column ends -->
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingSix">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
-                                                        aria-controls="collapseSix">
-                                                        Floor Beams
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-                                                <div class="accordion-content accordion-desc">
-                                                    <!-- Column-->
-
-                                                    <br>
-                                                    <div class="card">
-
-                                                        <div class="row ">
-
-                                                            <div class="col-sm-6 col-xs-12">
-                                                                <br>
-                                                                <div class="card" style="background-color: #A7FDCB">
-
-                                                                    <div class="card-block">
-
-
-                                                                        <div class="form-group pull-center">
-                                                                            <label for="">Cement Class Mixture:</label>
-                                                                            <select class="form-control" name="" id="" style="width: 160px !important;">
-                                                                                <option selected>Class A </option>
-                                                                                <option>Class B </option>
-                                                                                <option>Class C </option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div>
-                                                                            <label for="">Volume:</label>
-                                                                            <br>
-
-                                                                            <input type="number" name="" id="" style="width: 160px !important;">
-                                                                            <label class="text text-default"> cu.m </label>
-
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="form-group form-inline">
-
-                                                                            <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Width:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Length:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="container" style="margin-left: -20px !important">
-                                                                                <H6 class="text text-primary">Metal Reinforcement</H6>
-                                                                            </div>
-                                                                            <br>
-                                                                            <div class="form-group">
-                                                                                <label> Direct Counting:</label>
-                                                                                <input type="number" name="" class="form-control" id="" style="width: 100px !important;">
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Length:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                                                                    <option selected>6 meters </option>
-                                                                                    <option>7.5 meters </option>
-                                                                                    <option>9 meters </option>
-                                                                                    <option>12 meters </option>
-                                                                                </select>
-                                                                                <label for="">Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Tie Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                                <label for="">Tie wire:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                                                                    <option selected>30 cm </option>
-                                                                                    <option>40 cm </option>
-
-                                                                                </select>
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <hr>
-                                                                            <div class="form-group form-inline">
-                                                                                <label class="text text-default">
-                                                                                    <b>Floor Beam(s): </b>
-                                                                                </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn btn-success" style="margin-left: 90px">Compute</button>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <br>
-                                                                <div>
-
-                                                                    <div class="card">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <th>Estimated Cost</th>
-
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <tr class="table-success">
-                                                                                                <td>Cement Bags (40kg):</td>
-                                                                                                <td>5 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>Gravel:</td>
-                                                                                                <td>80 cubic meters</td>
-                                                                                                <td>900.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="text text-primary">
-                                                                                                <td>
-                                                                                                    <b>Metal Reinforcement</b>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr class="table-success">
-                                                                                                <td>12mm Steelbar:</td>
-                                                                                                <td>81 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>#16 G.I Wire:</td>
-                                                                                                <td>8kg</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    <!-- TOTALS TABLE -->
-
-                                                                    <div class="card-block">
-                                                                        <div class="table-responsive">
-                                                                            <table class="table m-b-0 photo-table">
-                                                                                <thead>
-                                                                                    <tr class="text-uppercase">
-                                                                                        <th class="text-left text-primary">Total Cost:</th>
-                                                                                        <th class="text-center"></th>
-                                                                                        <th class="text-center text-primary"> 22345.0</th>
-
-
-                                                                                    </tr>
-                                                                                </thead>
-
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <!-- Column ends -->
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingSeven">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false"
-                                                        aria-controls="collapseSeven">
-                                                        Roof Beams
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
-                                                <div class="accordion-content accordion-desc">
-                                                    <!-- Column-->
-
-                                                    <br>
-                                                    <div class="card">
-
-                                                        <div class="row ">
-
-                                                            <div class="col-sm-6 col-xs-12">
-                                                                <br>
-                                                                <div class="card" style="background-color: #A7FDCB">
-
-                                                                    <div class="card-block">
-
-
-                                                                        <div class="form-group pull-center">
-                                                                            <label for="">Cement Class Mixture:</label>
-                                                                            <select class="form-control" name="" id="" style="width: 160px !important;">
-                                                                                <option selected>Class A </option>
-                                                                                <option>Class B </option>
-                                                                                <option>Class C </option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div>
-                                                                            <label for="">Volume:</label>
-                                                                            <br>
-
-                                                                            <input type="number" name="" id="" style="width: 160px !important;">
-                                                                            <label class="text text-default"> cu.m </label>
-
-                                                                        </div>
-                                                                        <br>
-                                                                        <div class="form-group form-inline">
-
-                                                                            <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Width:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Length:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="container" style="margin-left: -20px !important">
-                                                                                <H6 class="text text-primary">Metal Reinforcement</H6>
-                                                                            </div>
-                                                                            <br>
-                                                                            <div class="form-group">
-                                                                                <label> Direct Counting:</label>
-                                                                                <input type="number" name="" class="form-control" id="" style="width: 100px !important;">
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Length:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                                                                    <option selected>6 meters </option>
-                                                                                    <option>7.5 meters </option>
-                                                                                    <option>9 meters </option>
-                                                                                    <option>12 meters </option>
-                                                                                </select>
-                                                                                <label for="">Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 170px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Tie Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                                                                    <option selected>6 mm</option>
-                                                                                    <option>10 mm </option>
-                                                                                    <option>12 mm </option>
-                                                                                    <option>16 mm </option>
-                                                                                    <option>20 mm </option>
-                                                                                    <option>22 mm </option>
-                                                                                    <option>25 mm </option>
-                                                                                </select>
-                                                                                <label for="">Tie wire:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 140px !important;">
-                                                                                    <option selected>30 cm </option>
-                                                                                    <option>40 cm </option>
-
-                                                                                </select>
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <hr>
-                                                                            <div class="form-group form-inline">
-                                                                                <label class="text text-default">
-                                                                                    <b>Roof Beam(s): </b>
-                                                                                </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn" style="margin-left: 90px">Compute</button>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <br>
-                                                                <div>
-
-                                                                    <div class="card">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <th>Estimated Cost</th>
-
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <tr class="table-success">
-                                                                                                <td>Cement Bags (40kg):</td>
-                                                                                                <td>5 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>Gravel:</td>
-                                                                                                <td>80 cubic meters</td>
-                                                                                                <td>900.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="text text-primary">
-                                                                                                <td>
-                                                                                                    <b>Metal Reinforcement</b>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr class="table-success">
-                                                                                                <td>12mm Steelbar:</td>
-                                                                                                <td>81 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>#16 G.I Wire:</td>
-                                                                                                <td>8kg</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    <!-- TOTALS TABLE -->
-
-                                                                    <div class="card-block">
-                                                                        <div class="table-responsive">
-                                                                            <table class="table m-b-0 photo-table">
-                                                                                <thead>
-                                                                                    <tr class="text-uppercase">
-                                                                                        <th class="text-left text-primary">Total Cost:</th>
-                                                                                        <th class="text-center"></th>
-                                                                                        <th class="text-center text-primary"> 22345.0</th>
-
-
-                                                                                    </tr>
-                                                                                </thead>
-
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <!-- Column ends -->
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingNine">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false"
-                                                        aria-controls="collapseNine">
-                                                        Masonry
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
-                                                <div class="accordion-content accordion-desc">
-                                                    <!-- Column-->
-
-                                                    <br>
-                                                    <div class="card">
-
-                                                        <div class="row ">
-
-                                                            <div class="col-sm-6 col-xs-12 scroll">
-                                                                <br>
-                                                                <div class="card" style="background-color: #A7FDCB">
-
-                                                                    <div class="card-block">
-
-
-                                                                        <div class="form-group pull-center">
-                                                                            <label for="">
-                                                                                <b>Concrete HollowBlocks:</b>
-                                                                            </label>
-                                                                            <br>
-
-                                                                        </div>
-
-
-
-
-
-                                                                        <div class="form-group form-inline">
-
-                                                                            <label>Area:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;" placeholder="Optional">
-                                                                            <label>Width:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <label>Length:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 90px !important;">
-                                                                            <br>
-                                                                            <br>
-
-
-
-
-
-                                                                            <div class="form-group pull-center">
-                                                                                <label for="">
-                                                                                    <b>Mortar:</b>
-                                                                                </label>
-
-                                                                            </div>
-                                                                            <br>
-
-                                                                            <div class="form-group pull-center">
-                                                                                <label for="">Cement Class Mixture:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                                                                    <option selected>Class A </option>
-                                                                                    <option>Class B </option>
-                                                                                    <option>Class C </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-                                                                            <div class="form-group form-inline">
-                                                                                <label for="">Volume:</label>
-                                                                                <input type="number" name="" class="form-control" style="width: 140px" id="" placeholder="Optional">
-                                                                                <label for="">Thickness:</label>
-                                                                                <input type="number" name="" style="width: 140px" class="form-control" id="">
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group">
-                                                                                <label for="">Area:</label>
-                                                                                <input type="number" name="" class="form-control" style="width: 160px" id="" placeholder="Optional">
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group form-inline">
-                                                                                <label for="">Width:</label>
-                                                                                <input type="number" name="" style="width: 150px" class="form-control" id="">
-                                                                                <label for="">Length:</label>
-                                                                                <input type="number" name="" style="width: 160px" class="form-control" id="">
-                                                                            </div>
-
-
-
-                                                                            <br>
-                                                                            <br>
-
-                                                                            <div class="form-group pull-center">
-                                                                                <label for="">
-                                                                                    <b>Hollow Cores:</b>
-                                                                                </label>
-
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <div class="form-group form-inline">
-                                                                                <label for="">Volume:</label>
-                                                                                <input type="number" name="" class="form-control" style="width: 140px" id="" placeholder="Optional">
-                                                                                <label for="">Thickness:</label>
-                                                                                <input type="number" name="" style="width: 140px" class="form-control" id="">
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group">
-                                                                                <label for="">Area:</label>
-                                                                                <input type="number" name="" class="form-control" style="width: 160px" id="" placeholder="Optional">
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group form-inline">
-                                                                                <label for="">Width:</label>
-                                                                                <input type="number" name="" style="width: 150px" class="form-control" id="">
-                                                                                <label for="">Length:</label>
-                                                                                <input type="number" name="" style="width: 160px" class="form-control" id="">
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-
-                                                                            <div class="form-group pull-center">
-                                                                                <label for="">
-                                                                                    <b>Plaster:</b>
-                                                                                </label>
-
-                                                                            </div>
-                                                                            <br>
-
-                                                                            <div class="form-group pull-center">
-                                                                                <label for="">Cement Class Mixture:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 160px !important;">
-                                                                                    <option selected>Class A </option>
-                                                                                    <option>Class B </option>
-                                                                                    <option>Class C </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-                                                                            <div class="form-group form-inline">
-                                                                                <label for="">Volume:</label>
-                                                                                <input type="number" name="" class="form-control" style="width: 140px" id="" placeholder="Optional">
-                                                                                <label for="">Thickness:</label>
-                                                                                <input type="number" name="" style="width: 140px" class="form-control" id="">
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group">
-                                                                                <label for="">Area:</label>
-                                                                                <input type="number" name="" class="form-control" style="width: 160px" id="" placeholder="Optional">
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group form-inline">
-                                                                                <label for="">Width:</label>
-                                                                                <input type="number" name="" style="width: 150px" class="form-control" id="">
-                                                                                <label for="">Length:</label>
-                                                                                <input type="number" name="" style="width: 160px" class="form-control" id="">
-                                                                            </div>
-
-
-                                                                            <br>
-                                                                            <br>
-
-                                                                            <div class="container" style="margin-left: -20px !important">
-                                                                                <H6 class="text text-primary">Metal Reinforcement</H6>
-                                                                            </div>
-                                                                            <br>
-
-                                                                            <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Size:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 136px !important;">
-                                                                                    <option selected>40 cm</option>
-                                                                                    <option>60 cm</option>
-                                                                                    <option>80 cm</option>
-
-                                                                                </select>
-                                                                                <label for="">Bar Layer:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 150px !important;">
-                                                                                    <option selected>2</option>
-                                                                                    <option>3 </option>
-                                                                                    <option>4</option>
-
-                                                                                </select>
-                                                                            </div>
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <hr>
-                                                                            <div class="form-group form-inline">
-                                                                                <label class="text text-danger">
-                                                                                    <b>How Many of these?</b>
-                                                                                </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn btn-success" style="margin-left: 50px">Compute</button>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <br>
-                                                                <div>
-
-                                                                    <div class="card">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <th>Estimated Cost</th>
-
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <tr class="table-success">
-                                                                                                <td>Cement Bags (40kg):</td>
-                                                                                                <td>5 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>Gravel:</td>
-                                                                                                <td>80 cubic meters</td>
-                                                                                                <td>900.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="text text-primary">
-                                                                                                <td>
-                                                                                                    <b>Metal Reinforcement</b>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr class="table-success">
-                                                                                                <td>12mm Steelbar:</td>
-                                                                                                <td>81 pcs</td>
-                                                                                                <td>2000.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Sand:</td>
-                                                                                                <td>75 cubic meters</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>#16 G.I Wire:</td>
-                                                                                                <td>8kg</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-
-                                                                                        </tbody>
-                                                                                    </table>
+                   
                                                                                 </div>
 
 
