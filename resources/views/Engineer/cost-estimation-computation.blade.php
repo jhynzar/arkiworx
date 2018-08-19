@@ -1074,17 +1074,7 @@
 
         <form action="Cost-Estimation-Save" method="POST">
             <!-- Row start -->
-            <div class="row">
-                <!-- Multiple Open Accordion start -->
-                <div class="col-lg-12">
-                    <div class="card" style="height: 3500px">
-                        <div class="card-header" style="background-color: #778899">
-                            <h5 class="card-header-text">2 - Storey Project</h5>
-
-                        </div>
-
-                
-                <br> <br>
+            
                 
                 
     <!-- Row start -->
