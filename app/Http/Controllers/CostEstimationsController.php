@@ -213,8 +213,74 @@ class CostEstimationsController extends Controller
         $ColumnTieWireKg = $_POST['ColumnTieWireKg'];
         $ColumnTieWireCost = $_POST['ColumnTieWireCost'];
 
+        //--saving of data
+        //- static
+        // $id = projectId
+        // 5 = column (subcategoryId static from database)
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnCement,
+                'intQty' => $ColumnCementBag,
+                'decCost' => $ColumnCementCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnS,
+                'intQty' => $ColumnSand,
+                'decCost' => $ColumnSandCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnG,
+                'intQty' => $ColumnGravel,
+                'decCost' => $ColumnGravelCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnSteelBar,
+                'intQty' => $ColumnSteelBarQty,
+                'decCost' => $ColumnSteelBarCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnTieBar,
+                'intQty' => $ColumnTieBarQty,
+                'decCost' => $ColumnTieBarCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnTieWire,
+                'intQty' => $ColumnTieWireKg,
+                'decCost' => $ColumnTieWireCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        
+
         //footing
 
-        dd($OverheadProfit);
+        //dd($OverheadProfit);
     }
 }

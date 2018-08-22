@@ -545,8 +545,8 @@
 
 
 
-                <form action="/action_page.php">
-
+                <form action="Actuals/updateProjectRequirementActual" method="POST">
+                    {{csrf_field()}}
                     <label class="text text-muted" style="margin-left: 450px">
                         <i>07 August 2018</i>
                     </label>
@@ -565,7 +565,7 @@
                     <div class="form-group form-inline">
                     
                         <label for="ActualPrice">Price:</label>
-                        <input type="text" class="form-control" id="actualPrice" style="width: 200px !important;" placeholder="₱" required/>
+                        <input type="text" class="form-control" id="actualPrice" name="actualPrice" style="width: 200px !important;" placeholder="₱" required/>
 
 
                     </div>

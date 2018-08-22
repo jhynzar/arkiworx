@@ -277,6 +277,14 @@ class ActualsController extends Controller
     }
 
     public function updateProjectRequirementActual($id){
-        return 'updateProjectRequirementActual';
+
+        $req = request()->all();
+
+        DB::table('tblprojectrequirements')
+            ->where('tblprojectrequirements.intRequirementId','=', $req['projectRequirementId'])
+            ->update(['decActualPrice' => $req['actualPrice']]);
+
+
+        header('Refresh:0;/Engineer/Engineer-Projects/'.$id.'/Actuals');
     }
 }
