@@ -1373,40 +1373,40 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td id="ColumnCement"><input type="hidden" id="ColumnCement1" name="ColumnCement" value=''></td>
-                                            <td id="ColumnCementBag"><input type="hidden" id="ColumnCementBag1" name="ColumnCementBag" value=''></td>
-                                            <td id="ColumnCementCost"><input type="hidden" id="ColumnCementCost1" name="ColumnCementCost" value=''></td>
+                                            <td id="ColumnCement"></td><input type="hidden" id="ColumnCement1" name="ColumnCement" value=''>
+                                            <td id="ColumnCementBag"></td><input type="hidden" id="ColumnCementBag1" name="ColumnCementBag" value=''>
+                                            <td id="ColumnCementCost"></td><input type="hidden" id="ColumnCementCost1" name="ColumnCementCost" value=''>
                                            
                                         </tr>
                                         <tr>
-                                            <td id="ColumnS"><input type="hidden" id="ColumnS1" name="ColumnS" value=''></td>
-                                            <td id="ColumnSand"><input type="hidden" id="ColumnSand1" name="ColumnSand" value=''></td>
-                                            <td id="ColumnSandCost"><input type="hidden" id="ColumnSandCost1" name="ColumnSandCost" value=''></td>
+                                            <td id="ColumnS"></td><input type="hidden" id="ColumnS1" name="ColumnS" value=''>
+                                            <td id="ColumnSand"></td><input type="hidden" id="ColumnSand1" name="ColumnSand" value=''>
+                                            <td id="ColumnSandCost"></td><input type="hidden" id="ColumnSandCost1" name="ColumnSandCost" value=''>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td id="ColumnG"><input type="hidden" id="ColumnG1" name="ColumnG" value=''></td>
-                                            <td id="ColumnGravel"><input type="hidden" id="ColumnGravel1" name="ColumnGravel" value=''></td>
-                                            <td id="ColumnGravelCost"><input type="hidden" id="ColumnGravelCost1" name="ColumnGravelCost" value=''></td>
+                                            <td id="ColumnG"></td><input type="hidden" id="ColumnG1" name="ColumnG" value=''>
+                                            <td id="ColumnGravel"></td><input type="hidden" id="ColumnGravel1" name="ColumnGravel" value=''>
+                                            <td id="ColumnGravelCost"></td><input type="hidden" id="ColumnGravelCost1" name="ColumnGravelCost" value=''>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id="ColumnSteelBar"><input type="hidden" id="ColumnSteelBar1" name="ColumnSteelBar" value=''></td>
-                                            <td id="ColumnSteelBarQty"><input type="hidden" id="ColumnSteelBarQty1" name="ColumnSteelBarQty" value=''></td>
-                                            <td id="ColumnSteelBarCost"><input type="hidden" id="ColumnSteelBarCost1" name="ColumnSteelBarCost" value=''></td>
+                                            <td id="ColumnSteelBar"></td><input type="hidden" id="ColumnSteelBar1" name="ColumnSteelBar" value=''>
+                                            <td id="ColumnSteelBarQty"></td><input type="hidden" id="ColumnSteelBarQty1" name="ColumnSteelBarQty" value=''>
+                                            <td id="ColumnSteelBarCost"></td><input type="hidden" id="ColumnSteelBarCost1" name="ColumnSteelBarCost" value=''>
                                            
                                         </tr>
                                             <tr>
-                                            <td id="ColumnTieBar"><input type="hidden" id="ColumnTieBar1" name="ColumnTieBar" value=''></td>
-                                            <td id="ColumnTieBarQty"><input type="hidden" id="ColumnTieBarQty1" name="ColumnTieBarQty" value=''></td>
-                                            <td id="ColumnTieBarCost"><input type="hidden" id="ColumnTieBarCost1" name="ColumnTieBarCost" value=''></td>
+                                            <td id="ColumnTieBar"></td><input type="hidden" id="ColumnTieBar1" name="ColumnTieBar" value=''>
+                                            <td id="ColumnTieBarQty"></td><input type="hidden" id="ColumnTieBarQty1" name="ColumnTieBarQty" value=''>
+                                            <td id="ColumnTieBarCost"></td><input type="hidden" id="ColumnTieBarCost1" name="ColumnTieBarCost" value=''>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td id="ColumnTieWire"><input type="hidden" id="ColumnTieWire1" name="ColumnTieWire" value=''></td>
-                                            <td id="ColumnTieWireKg"><input type="hidden" id="ColumnTieWireKg1" name="ColumnTieWireKg" value=''></td>
-                                            <td id="ColumnTieWireCost"><input type="hidden" id="ColumnTieWireCost1" name="ColumnTieWireCost" value=''></td>
+                                            <td id="ColumnTieWire"></td><input type="hidden" id="ColumnTieWire1" name="ColumnTieWire" value=''>
+                                            <td id="ColumnTieWireKg"></td><input type="hidden" id="ColumnTieWireKg1" name="ColumnTieWireKg" value=''>
+                                            <td id="ColumnTieWireCost"></td><input type="hidden" id="ColumnTieWireCost1" name="ColumnTieWireCost" value=''>
                                            
                                         </tr>
                                       
@@ -4994,7 +4994,7 @@
         $("#ColumnG").html(name);
         $("#ColumnGravel").html(Gravel);
         $("#ColumnGravelCost").html(price);
-        $("#ColumnG1").val(name);
+        $("#ColumnG1").val(materialid);
         $("#ColumnGravel1").val(Gravel);
         $("#ColumnGravelCost1").val(price);
         
