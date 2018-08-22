@@ -136,8 +136,8 @@ class ActualsController extends Controller
         }
 
 
-        //FOR ADD MODALS
-        //MATERIALS
+        //----FOR ADD MODALS
+        //--MATERIALS
 
         $allMaterials = DB::table('tblmaterials')
                         ->where('intActive','=',1)
@@ -164,11 +164,19 @@ class ActualsController extends Controller
             array_push($allCategoriesWithSub,$categoryWithSub);
         }
 
+        //--CUSTOM ACTUALS
+        $allProjectRequirementsWithNoActuals = DB::table('tblprojectrequirements')
+                                            ->where('tblprojectrequirements.intProjectId','=',$id)//Project ID
+                                            ->where('tblprojectrequirements.decActualPrice','=',null)
+                                            ->get();
+
+        //dd($allProjectRequirementsWithNoActuals);
+
         //dd($allCategoriesWithSub);
 
         //dd($projectWorkSubCategories);
         //dd($projectWithDetails);
-        return view('Engineer/actuals',compact('projectWithDetails','projectWorkCategories','projectWorkSubCategories','allCategoriesWithSub','allMaterials'));
+        return view('Engineer/actuals',compact('projectWithDetails','projectWorkCategories','projectWorkSubCategories','allCategoriesWithSub','allMaterials','allProjectRequirementsWithNoActuals'));
     }
 
     /**

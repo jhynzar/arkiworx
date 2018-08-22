@@ -17,11 +17,13 @@ class EngineerProjectsController extends Controller
         //temporary employee id
 
         $onGoingProjects = DB::table('tblproject')
+        ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
         ->where('strProjectStatus','=','on going')
         ->where('intEmployeeId','=','777') //EmployeeId
         ->where('intActive','=',1)
         ->get();
 
+        //dd($onGoingProjects);
         return view('Engineer/engi-projects',compact('onGoingProjects'));
     }
 

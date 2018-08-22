@@ -554,17 +554,16 @@
                     <br>
                     <br>
                     <div class="form-group">
-                        <select class="form-control" name="" id="" placeholder="" style="width: 500px !important;">
-                            <option>General Requrements </option>
-                            <option>Labor Cost</option>
-                            <option>Tool and Equipments </option>
-                            <option>Transportation Cost </option>
-                            <option>Contingency </option>
-
+                        <select class="form-control" name="projectRequirementId" id="projectRequirementId" placeholder="" style="width: 500px !important;">
+                            <option disabled selected>Pick a project requirement</option>
+                            @foreach ($allProjectRequirementsWithNoActuals as $projectRequirement)
+                                <option value="{{$projectRequirement->intRequirementId}}">{{$projectRequirement->strDesc}}</option>
+                            @endforeach
 
                         </select>
                     </div>
                     <div class="form-group form-inline">
+                    
                         <label for="ActualPrice">Price:</label>
                         <input type="text" class="form-control" id="actualPrice" style="width: 200px !important;" placeholder="₱" required/>
 
