@@ -1186,7 +1186,9 @@
                                     <label class="text text-default"><b>Overhead Profit</b> </label> 
                                 <input type="number" name="" class="form-control" id="" style="width: 300px !important;" placeholder="">
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
-                                    <button type="button" class="btn btn-success"  >Save</button>
+                                    <button type="button" class="btn btn-success"  >Compute</button>
+                                    
+                                    
                        
                                     
                                  
@@ -1201,7 +1203,24 @@
                   
                     </div>
                   
-                                
+                         <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                         
+                                                            <th class="text-center text-primary"> 123456 </th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>       
               </div>
           </div>
           
