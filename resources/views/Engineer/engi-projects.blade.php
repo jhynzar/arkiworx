@@ -314,7 +314,7 @@
                         </div>
             </div>
 
-<div class="content-wrapper" style="margin-top: 10px">
+<div class="content-wrapper" style="margin-top: 0px">
     <!-- Container-fluid starts -->
    
     <div class="container-fluid">

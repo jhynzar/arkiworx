@@ -424,7 +424,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 45px">
+    <div class="content-wrapper" style="margin-top: 30px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 

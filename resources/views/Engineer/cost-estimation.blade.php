@@ -1055,7 +1055,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 45px">
+    <div class="content-wrapper" style="margin-top: 30px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
              <div style="position: absolute; margin-top: 60px; margin-left: 900px">
@@ -1192,7 +1192,7 @@
                                                             <td class="faq-table-btn">
 
                                                                 <a href="#" data-toggle="modal" data-target="#chooseTemplate{{$key}}" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
-                                                                    data-placement="top" title="Approve">
+                                                                  data-placement="top" title="Create">
                                                                     <i class="icofont icofont-ui-edit"></i> Create Estimation </a>
 
 
