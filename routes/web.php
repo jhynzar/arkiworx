@@ -98,7 +98,7 @@ Route::get('Engineer/Project-Progress/Materials-Usage', function(){
 
 Route::get('Engineer/Cost-Estimation', 'CostEstimationsController@index');
 Route::post('Engineer/Cost-Estimation/{id}/Cost-Estimation-Computation', 'CostEstimationsController@createEstimation');
-//Route::post('Engineer/Cost-Estimation/Cost-Estimation-Save', 'CostEstimationsController@saveEstimation');
+Route::post('Engineer/Cost-Estimation/{id}/Cost-Estimation-Save', 'CostEstimationsController@saveEstimation');
 
 Route::get('Engineer/Cost-Summary', function(){
     return view('Engineer/cost-summary');

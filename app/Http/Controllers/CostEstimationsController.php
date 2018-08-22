@@ -100,14 +100,14 @@ class CostEstimationsController extends Controller
         select X.h as Horizontal, X.v as Vertical, X.f as Value, X.Work as Work
         from 
         (
-            select tblhorizontaloptions.intHorizontalOptionsId as h, tblhorizontaloptions.intWoksFormulaId as Work, tblformulavalues.decValue as f, tblformulavalues.intVerticalOptionsId as v
+            select tblhorizontaloptions.intHorizontalOptionsId as h, tblhorizontaloptions.intWorksFormulaId as Work, tblformulavalues.decValue as f, tblformulavalues.intVerticalOptionsId as v
             from tblformulavalues inner join tblhorizontaloptions
             on tblformulavalues.inthorizontaloptionsid = tblhorizontaloptions.inthorizontaloptionsid
             
         ) X 
         inner JOIN
         (
-            select tblverticaloptions.intVerticalOptionsId as v, tblverticaloptions.intWoksFormulaId as Work, tblformulavalues.decValue as f, tblformulavalues.intHorizontalOptionsId as h
+            select tblverticaloptions.intVerticalOptionsId as v, tblverticaloptions.intWorksFormulaId as Work, tblformulavalues.decValue as f, tblformulavalues.intHorizontalOptionsId as h
             from tblformulavalues inner join tblverticaloptions
             on tblformulavalues.intVerticalOptionsId = tblverticaloptions.intVerticalOptionsId
             
@@ -127,8 +127,8 @@ class CostEstimationsController extends Controller
             array_push($AnswersArray,$Answers);
         }
         //$Work = array_search(1, array_column($AnswersArray, 'Work'));
-        /*$X = 2;   //horizontal
-        $Y = 11; //vertical
+        /*$X = 1;   //horizontal
+        $Y = 2; //vertical
         $Z = 1; //work category
         foreach($AnswersArray as $workArr){
             if($X === $workArr->X && $Y === $workArr->Y && $Z === $workArr->Work){
@@ -173,7 +173,7 @@ class CostEstimationsController extends Controller
         return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray'));
     }
 
-    public function saveEstimation(){
+    public function saveEstimation($id){
         //general construction ;
         $BuildingPermit = $_POST['BuildingPermit'];
         $TemporaryFacilities = $_POST['TemporaryFacilities'];
@@ -187,6 +187,33 @@ class CostEstimationsController extends Controller
         $Transportation = $_POST['Transportation'];
         $Contigency = $_POST['Contigency'];
         $OverheadProfit = $_POST['OverheadProfit'];
-        return $BuildingPermit;
+        //column
+        $ColumnCement = $_POST['ColumnCement'];
+        $ColumnCementBag = $_POST['ColumnCementBag'];
+        $ColumnCementCost = $_POST['ColumnCementCost'];
+        
+        $ColumnS = $_POST['ColumnS'];
+        $ColumnSand = $_POST['ColumnSand'];
+        $ColumnSandCost = $_POST['ColumnSandCost'];
+        
+        $ColumnG = $_POST['ColumnG'];
+        $ColumnGravel = $_POST['ColumnGravel'];
+        $ColumnGravelCost = $_POST['ColumnGravelCost'];
+        
+        $ColumnSteelBar = $_POST['ColumnSteelBar'];
+        $ColumnSteelBarQty = $_POST['ColumnSteelBarQty'];
+        $ColumnSteelBarCost = $_POST['ColumnSteelBarCost'];
+        
+        $ColumnTieBar = $_POST['ColumnTieBar'];
+        $ColumnTieBarQty = $_POST['ColumnTieBarQty'];
+        $ColumnTieBarCost = $_POST['ColumnTieBarCost'];
+        
+        $ColumnTieWire = $_POST['ColumnTieWire'];
+        $ColumnTieWireKg = $_POST['ColumnTieWireKg'];
+        $ColumnTieWireCost = $_POST['ColumnTieWireCost'];
+
+        //footing
+
+        dd($OverheadProfit);
     }
 }

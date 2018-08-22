@@ -990,7 +990,7 @@
                         <label class="text text-default">
                             <b>Work category:</b>
                         </label>
-                        <select class="form-control" name="" id="" placeholder="" style="width: 500px !important;">
+                        <select class="form-control" id="" placeholder="" style="width: 500px !important;">
                             <option>Form works </option>
                             <option>Scaffolding</option>
                             <option>Auxilary </option>
@@ -1074,7 +1074,7 @@
 
         <form action="Cost-Estimation-Save" method="POST">
             <!-- Row start -->
-            
+            {{csrf_field()}}
                 
                 
     <!-- Row start -->
@@ -1141,50 +1141,50 @@
                                  <label class="text text-default"><b>Permit</b> </label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                <input type="number" class="form-control" name="BuildingPermit" style="width: 180px !important;" placeholder="">
                                     
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Temporary Facilities</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                <input type="number" class="form-control" name="TemporaryFacilities" style="width: 180px !important;" placeholder="">
                                      <label> Workers' Barracks</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                <input type="number" class="form-control" name="WorkersBarracks" style="width: 180px !important;" placeholder="">
 
                                  
                                  <br> <br>
                                  
                                <label class="text text-default"><b>Earthworks</b> </label>  <br><br>
                                     <label> Excavation</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 150px !important;" placeholder="">
+                                <input type="number" class="form-control" name="Excavation" style="width: 150px !important;" placeholder="">
                                     
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Backfill</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 150px !important;" placeholder="">
+                                <input type="number" class="form-control" name="Backfill" style="width: 150px !important;" placeholder="">
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                      <label> Lastillas</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 150px !important;" placeholder="Optional">
+                                <input type="number" class="form-control" name="Lastillas" style="width: 150px !important;" placeholder="Optional">
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                      <label> Soil Poisoning</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 150px !important;" placeholder="Optional">
+                                <input type="number" class="form-control" name="SoilPoisoning" style="width: 150px !important;" placeholder="Optional">
                                  
                                     <br> <br> <br> <br>
                          
                                 
                                  <label class="text text-default"><b>Labor Cost</b> </label>  
-                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                <input type="number" class="form-control" name="LaborCost" style="width: 180px !important;" placeholder="">
                                     
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Tools and Equipments</b> </label>  
-                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                <input type="number" class="form-control" name="ToolsEquipments" style="width: 180px !important;" placeholder="">
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                      <label class="text text-default"><b>Transportation</b> </label>  
-                                <input type="number" name="" class="form-control" id="" style="width: 180px !important;" placeholder="">
+                                <input type="number" class="form-control" name="Transportation" style="width: 180px !important;" placeholder="">
                                  
                                      <br> <br> <br> <br>
                                     <label class="text text-default"><b>Contingency</b> </label> 
-                                <input type="number" name="" class="form-control" id="" style="width: 300px !important;" placeholder="">
+                                <input type="number" class="form-control" name="Contigency" style="width: 300px !important;" placeholder="">
                                  &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Overhead Profit</b> </label> 
-                                <input type="number" name="" class="form-control" id="" style="width: 300px !important;" placeholder="">
+                                <input type="number" class="form-control" name="OverheadProfit" style="width: 300px !important;" placeholder="">
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <button type="button" class="btn btn-success"  >Save</button>
                        
@@ -1249,7 +1249,7 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="ColumnCC" style="width: 160px !important;">
+                                <select class="form-control" id="ColumnCC" style="width: 160px !important;">
                                     <option value="1" selected>Class AA </option>
                                     <option value="2">Class A </option>
                                     <option value="3">Class B </option>
@@ -1260,7 +1260,7 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" name="" id="ColumnVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="ColumnVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
@@ -1279,18 +1279,18 @@
                                  <br>
                                  <div class="form-group">
                                 <label> Number of bars per Column:</label>
-                                <input type="number" name="" id="ColumnNoOfBars" class="form-control" id="" style="width: 100px !important;" >
+                                <input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" >
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="ColumnsBarLeng" style="width: 136px !important;">
+                                <select class="form-control" id="ColumnsBarLeng" style="width: 136px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="ColumnsBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="ColumnsBarSize" style="width: 170px !important;">
                                     <option value=6 selected>6 mm</option>
                                     <option value=10>10 mm </option>
                                     <option value=12>12 mm </option>
@@ -1304,7 +1304,7 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="ColumnsTieBarSize" style="width: 150px !important;">
+                                <select class="form-control" id="ColumnsTieBarSize" style="width: 150px !important;">
                                     <option value=6 selected>6 mm</option>
                                     <option value=10>10 mm </option>
                                     <option value=12>12 mm </option>
@@ -1314,7 +1314,7 @@
                                     <option value=25>25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="ColumnsTieWire" style="width: 140px !important;">
+                                <select class="form-control" id="ColumnsTieWire" style="width: 140px !important;">
                                     <option value=30 selected>30 cm </option>
                                     <option value=40>40 cm </option>
                                     
@@ -1324,7 +1324,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" name="" id="HowManyColumns" style="width: 100px !important;">
+                                <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;">
                                 <button type="button" id="computeColumn" class="btn" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -1354,40 +1354,40 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td id=""></td>
-                                            <td id="ColumnCementBag"></td>
-                                            <td id="ColumnCementCost"></td>
+                                            <td id="ColumnCement"><input type="hidden" id="ColumnCement1" name="ColumnCement" value=''></td>
+                                            <td id="ColumnCementBag"><input type="hidden" id="ColumnCementBag1" name="ColumnCementBag" value=''></td>
+                                            <td id="ColumnCementCost"><input type="hidden" id="ColumnCementCost1" name="ColumnCementCost" value=''></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td id=""></td>
-                                            <td id="ColumnSand"></td>
-                                            <td id="ColumnSandCost"></td>
+                                            <td id="ColumnS"><input type="hidden" id="ColumnS1" name="ColumnS" value=''></td>
+                                            <td id="ColumnSand"><input type="hidden" id="ColumnSand1" name="ColumnSand" value=''></td>
+                                            <td id="ColumnSandCost"><input type="hidden" id="ColumnSandCost1" name="ColumnSandCost" value=''></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td id="ColumnGravel"></td>
-                                            <td id="ColumnGravelCost"></td>
+                                            <td id="ColumnG"><input type="hidden" id="ColumnG1" name="ColumnG" value=''></td>
+                                            <td id="ColumnGravel"><input type="hidden" id="ColumnGravel1" name="ColumnGravel" value=''></td>
+                                            <td id="ColumnGravelCost"><input type="hidden" id="ColumnGravelCost1" name="ColumnGravelCost" value=''></td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id="ColumnSteelBar"></td>
-                                            <td id="ColumnSteelBarQty"></td>
-                                            <td id="ColumnSteelBarCost"></td>
+                                            <td id="ColumnSteelBar"><input type="hidden" id="ColumnSteelBar1" name="ColumnSteelBar" value=''></td>
+                                            <td id="ColumnSteelBarQty"><input type="hidden" id="ColumnSteelBarQty1" name="ColumnSteelBarQty" value=''></td>
+                                            <td id="ColumnSteelBarCost"><input type="hidden" id="ColumnSteelBarCost1" name="ColumnSteelBarCost" value=''></td>
                                            
                                         </tr>
                                             <tr>
-                                            <td id="ColumnTieBar"></td>
-                                            <td id="ColumnTieBarQty"></td>
-                                            <td id="ColumnTieBarCost"></td>
+                                            <td id="ColumnTieBar"><input type="hidden" id="ColumnTieBar1" name="ColumnTieBar" value=''></td>
+                                            <td id="ColumnTieBarQty"><input type="hidden" id="ColumnTieBarQty1" name="ColumnTieBarQty" value=''></td>
+                                            <td id="ColumnTieBarCost"><input type="hidden" id="ColumnTieBarCost1" name="ColumnTieBarCost" value=''></td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td id="ColumnTieWire"></td>
-                                            <td id="ColumnTieWireKg"></td>
-                                            <td id="ColumnTieWireCost"></td>
+                                            <td id="ColumnTieWire"><input type="hidden" id="ColumnTieWire1" name="ColumnTieWire" value=''></td>
+                                            <td id="ColumnTieWireKg"><input type="hidden" id="ColumnTieWireKg1" name="ColumnTieWireKg" value=''></td>
+                                            <td id="ColumnTieWireCost"><input type="hidden" id="ColumnTieWireCost1" name="ColumnTieWireCost" value=''></td>
                                            
                                         </tr>
                                       
@@ -1410,7 +1410,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> </th>
+                                                            <th class="text-center text-primary" id="TotalCostColumn"> </th>
                                                             
 
                                                         </tr>
@@ -1459,7 +1459,7 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="footingCC" style="width: 160px !important;">
+                                <select class="form-control" id="footingCC" style="width: 160px !important;">
                                     <option value="1" selected>Class AA </option>
                                      <option value="2" >Class A </option>
                                     <option value="3">Class B </option>
@@ -1470,7 +1470,7 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" name="" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
@@ -1490,14 +1490,14 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="footingBarLength" style="width: 136px !important;">
+                                <select class="form-control" id="footingBarLength" style="width: 136px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="footingBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="footingBarSize" style="width: 170px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -1511,7 +1511,7 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="footingTirebarSize" style="width: 150px !important;">
+                                <select class="form-control" id="footingTirebarSize" style="width: 150px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -1521,7 +1521,7 @@
                                     <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="footingTiewire" style="width: 140px !important;">
+                                <select class="form-control" id="footingTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
                                     <option value="40" >40 cm </option>
                                     
@@ -1531,7 +1531,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Footing(s): </b> </label>&nbsp; <input type="number" class="form-control" name="" id="" style="width: 100px !important;">
+                                <label class="text text-default"><b>Footing(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
                                 <button type="button" class="btn btn-primary" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -1667,7 +1667,7 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="slabCementClassMixture" style="width: 160px !important;">
+                                <select class="form-control" id="slabCementClassMixture" style="width: 160px !important;">
                                     <option value="AA" selected>Class A </option>
                                     <option value="A" >Class A </option>
                                     <option value="B" >Class B </option>
@@ -1678,7 +1678,7 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" name="" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
@@ -1697,7 +1697,7 @@
                                  <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Spacing:</label>
-                                <select class="form-control" name="" id="slabBarSpacing" style="width: 130px !important;">
+                                <select class="form-control" id="slabBarSpacing" style="width: 130px !important;">
                                     <option value="10.0" selected>10.0 cm </option>
                                     <option value="12.5" >12.5 cm </option>
                                     <option value="15.0" >15.0 cm </option>
@@ -1707,7 +1707,7 @@
                                     <option value="25.0" >25.0 cm </option>
                                 </select>
                                      <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="slabBarLength" style="width: 130px !important;">
+                                <select class="form-control" id="slabBarLength" style="width: 130px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
@@ -1718,13 +1718,13 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="slabBarSize" style="width: 155px !important;">
+                                <select class="form-control" id="slabBarSize" style="width: 155px !important;">
                                     <option value="A" selected>Class A </option>
                                     <option value="B" >Class B </option>
                                     <option value="C" >Class C </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="slabTiewire" style="width: 140px !important;">
+                                <select class="form-control" id="slabTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
                                     <option value="40" >40 cm </option>
                                     
@@ -1735,7 +1735,7 @@
                                  <br> <br>
                                  <div class="form-group">
                                  <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="slabTireBarSize" style="width: 120px !important;">
+                                <select class="form-control" id="slabTireBarSize" style="width: 120px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -1751,7 +1751,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Slab(s): </b> </label>&nbsp; <input type="number" class="form-control" name="" id="" style="width: 100px !important;">
+                                <label class="text text-default"><b>Slab(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
                                 <button type="button" class="btn btn-success" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -1892,7 +1892,7 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="beamsCementClassMxture" style="width: 160px !important;">
+                                <select class="form-control" id="beamsCementClassMxture" style="width: 160px !important;">
                                     <option value="AA" selected>Class AA </option>
                                     <option value="A" >Class A </option>
                                     <option value="B" >Class B </option>
@@ -1903,7 +1903,7 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" name="" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
@@ -1922,18 +1922,18 @@
                                  <br>
                                  <div class="form-group">
                                 <label> Direct Counting:</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 100px !important;" >
+                                <input type="number" class="form-control" id="" style="width: 100px !important;" >
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="beamsBarLength" style="width: 136px !important;">
+                                <select class="form-control" id="beamsBarLength" style="width: 136px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="beamsBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="beamsBarSize" style="width: 170px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -1947,7 +1947,7 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="beamsTieBarSize" style="width: 150px !important;">
+                                <select class="form-control" id="beamsTieBarSize" style="width: 150px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -1957,7 +1957,7 @@
                                     <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="beamsTiewire" style="width: 140px !important;">
+                                <select class="form-control" id="beamsTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
                                     <option value="40" >40 cm </option>
                                     
@@ -1967,7 +1967,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" name="" id="" style="width: 100px !important;">
+                                <label class="text text-default"><b>Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
                                 <button type="button" class="btn" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -2104,7 +2104,7 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="wallFootingCementClassMixture" style="width: 160px !important;">
+                                <select class="form-control" id="wallFootingCementClassMixture" style="width: 160px !important;">
                                     <option value="AA" selected>Class AA </option>
                                      <option value="A" >Class A </option>
                                     <option value="B" >Class B </option>
@@ -2115,7 +2115,7 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" name="" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
@@ -2135,14 +2135,14 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="wallFootingBarLength" style="width: 136px !important;">
+                                <select class="form-control" id="wallFootingBarLength" style="width: 136px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="wallFootingBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="wallFootingBarSize" style="width: 170px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -2156,7 +2156,7 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="wallFootingTieBarSize" style="width: 150px !important;">
+                                <select class="form-control" id="wallFootingTieBarSize" style="width: 150px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -2166,7 +2166,7 @@
                                     <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="wallFootigTiewire" style="width: 140px !important;">
+                                <select class="form-control" id="wallFootigTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
                                     <option value="40" >40 cm </option>
                                     
@@ -2176,7 +2176,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Wall Footing(s): </b> </label>&nbsp; <input type="number" class="form-control" name="" id="" style="width: 100px !important;">
+                                <label class="text text-default"><b>Wall Footing(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
                                 <button type="button" class="btn btn-primary" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -2314,7 +2314,7 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="floorBeamsCementClassMixture" style="width: 160px !important;">
+                                <select class="form-control" id="floorBeamsCementClassMixture" style="width: 160px !important;">
                                     <option value="AA" selected>Class AA </option>
                                     <option value="A" >Class A </option>
                                     <option value="B" >Class B </option>
@@ -2325,7 +2325,7 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" name="" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
@@ -2344,18 +2344,18 @@
                                  <br>
                                  <div class="form-group">
                                 <label> Direct Counting:</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 100px !important;" >
+                                <input type="number" class="form-control" id="" style="width: 100px !important;" >
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="floorBeamsBarLength" style="width: 136px !important;">
+                                <select class="form-control" id="floorBeamsBarLength" style="width: 136px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="floorBeamsBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="floorBeamsBarSize" style="width: 170px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -2369,7 +2369,7 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="floorBeamsTieBarSize" style="width: 150px !important;">
+                                <select class="form-control" id="floorBeamsTieBarSize" style="width: 150px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -2379,7 +2379,7 @@
                                     <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="floorBeamsTiewire" style="width: 140px !important;">
+                                <select class="form-control" id="floorBeamsTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
                                     <option value="40" >40 cm </option>
                                     
@@ -2389,7 +2389,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Floor Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" name="" id="" style="width: 100px !important;">
+                                <label class="text text-default"><b>Floor Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
                                 <button type="button" class="btn btn-success" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -2527,7 +2527,7 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="roofBeamsCementClassMixture" style="width: 160px !important;">
+                                <select class="form-control" id="roofBeamsCementClassMixture" style="width: 160px !important;">
                                     <option value="AA" selected>Class A </option>
                                     <option value="A" >Class A </option>
                                     <option value="B" >Class B </option>
@@ -2538,7 +2538,7 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" name="" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
@@ -2557,18 +2557,18 @@
                                  <br>
                                  <div class="form-group">
                                 <label> Direct Counting:</label>
-                                <input type="number" name="" class="form-control" id="" style="width: 100px !important;" >
+                                <input type="number" class="form-control" id="" style="width: 100px !important;" >
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" name="" id="roofBeamsBarLength" style="width: 136px !important;">
+                                <select class="form-control" id="roofBeamsBarLength" style="width: 136px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="roofBeamsBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="roofBeamsBarSize" style="width: 170px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -2582,7 +2582,7 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
-                                <select class="form-control" name="" id="roofBeamsTieBarSize" style="width: 150px !important;">
+                                <select class="form-control" id="roofBeamsTieBarSize" style="width: 150px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -2592,7 +2592,7 @@
                                     <option value="25" >25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
-                                <select class="form-control" name="" id="roofBeamsTiewire" style="width: 140px !important;">
+                                <select class="form-control" id="roofBeamsTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
                                     <option value="40" >40 cm </option>
                                     
@@ -2602,7 +2602,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Roof Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" name="" id="" style="width: 100px !important;">
+                                <label class="text text-default"><b>Roof Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
                                 <button type="button" class="btn" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -2770,7 +2770,7 @@
                                  
                                  <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="masonryCementClassMixture" style="width: 160px !important;">
+                                <select class="form-control" id="masonryCementClassMixture" style="width: 160px !important;">
                                     <option value="AA" selected>Class AA </option>
                                     <option value="A" >Class A </option>
                                     <option value="B" >Class B </option>
@@ -2780,22 +2780,22 @@
                                  
                              <div class="form-group form-inline">
                                 <label for="">Volume:</label>
-                                <input type="number" name="" class="form-control" style="width: 140px" id="" placeholder="Optional">
+                                <input type="number" class="form-control" style="width: 140px" id="" placeholder="Optional">
                                   <label for="">Thickness:</label>
-                                <input type="number" name="" style="width: 140px" class="form-control" id="" >
+                                <input type="number" style="width: 140px" class="form-control" id="" >
                             </div>  
                                  <br> <br>
                                  <div class="form-group">
                                 <label for="">Area:</label>
-                                <input type="number" name="" class="form-control" style="width: 160px" id="" placeholder="Optional">
+                                <input type="number" class="form-control" style="width: 160px" id="" placeholder="Optional">
                             </div> 
                                  
                                  <br> <br>
                                  <div class="form-group form-inline">
                                 <label for="">Width:</label>
-                                <input type="number" name="" style="width: 150px" class="form-control" id="" >
+                                <input type="number" style="width: 150px" class="form-control" id="" >
                                      <label for="">Length:</label>
-                                <input type="number" name="" style="width: 160px" class="form-control" id="" >
+                                <input type="number" style="width: 160px" class="form-control" id="" >
                             </div> 
                                  
                                  
@@ -2810,22 +2810,22 @@
                                  
                              <div class="form-group form-inline">
                                 <label for="">Volume:</label>
-                                <input type="number" name="" class="form-control" style="width: 140px" id="" placeholder="Optional">
+                                <input type="number" class="form-control" style="width: 140px" id="" placeholder="Optional">
                                   <label for="">Thickness:</label>
-                                <input type="number" name="" style="width: 140px" class="form-control" id="" >
+                                <input type="number" style="width: 140px" class="form-control" id="" >
                             </div>  
                                  <br> <br>
                                  <div class="form-group">
                                 <label for="">Area:</label>
-                                <input type="number" name="" class="form-control" style="width: 160px" id="" placeholder="Optional">
+                                <input type="number" class="form-control" style="width: 160px" id="" placeholder="Optional">
                             </div> 
                                  
                                  <br> <br>
                                  <div class="form-group form-inline">
                                 <label for="">Width:</label>
-                                <input type="number" name="" style="width: 150px" class="form-control" id="" >
+                                <input type="number" style="width: 150px" class="form-control" id="" >
                                      <label for="">Length:</label>
-                                <input type="number" name="" style="width: 160px" class="form-control" id="" >
+                                <input type="number" style="width: 160px" class="form-control" id="" >
                             </div> 
                                  
                                   <br><br>
@@ -2837,7 +2837,7 @@
                                  
                                  <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" name="" id="masonryCementClassMixture" style="width: 160px !important;">
+                                <select class="form-control" id="masonryCementClassMixture" style="width: 160px !important;">
                                     <option value="AA" selected>Class AA </option>
                                     <option value="A" >Class A </option>
                                     <option value="B" >Class B </option>
@@ -2847,22 +2847,22 @@
                                  
                              <div class="form-group form-inline">
                                 <label for="">Volume:</label>
-                                <input type="number" name="" class="form-control" style="width: 140px" id="" placeholder="Optional">
+                                <input type="number" class="form-control" style="width: 140px" id="" placeholder="Optional">
                                   <label for="">Thickness:</label>
-                                <input type="number" name="" style="width: 140px" class="form-control" id="" >
+                                <input type="number" style="width: 140px" class="form-control" id="" >
                             </div>  
                                  <br> <br>
                                  <div class="form-group">
                                 <label for="">Area:</label>
-                                <input type="number" name="" class="form-control" style="width: 160px" id="" placeholder="Optional">
+                                <input type="number" class="form-control" style="width: 160px" id="" placeholder="Optional">
                             </div> 
                                  
                                  <br> <br>
                                  <div class="form-group form-inline">
                                 <label for="">Width:</label>
-                                <input type="number" name="" style="width: 150px" class="form-control" id="" >
+                                <input type="number" style="width: 150px" class="form-control" id="" >
                                      <label for="">Length:</label>
-                                <input type="number" name="" style="width: 160px" class="form-control" id="" >
+                                <input type="number" style="width: 160px" class="form-control" id="" >
                             </div> 
                                  
                                  
@@ -2875,14 +2875,14 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Size:</label>
-                                <select class="form-control" name="" id="masonryBarSize" style="width: 136px !important;">
+                                <select class="form-control" id="masonryBarSize" style="width: 136px !important;">
                                     <option value="40" selected>40 cm</option>
                                     <option value="60" >60 cm</option>
                                     <option value="80" >80 cm</option>
                                 
                                 </select>
                                      <label for="">Bar Layer:</label>
-                                <select class="form-control" name="" id="masonryBarLayer" style="width: 150px !important;">
+                                <select class="form-control" id="masonryBarLayer" style="width: 150px !important;">
                                     <option value="2" selected>2</option>
                                     <option value="3" >3 </option>
                                     <option value="4" >4</option>
@@ -2893,7 +2893,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" name="" id="" style="width: 100px !important;">
+                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
                                 <button type="button" class="btn btn-success" style="margin-left: 50px" >Compute</button>
                                  </div>
                         </div>
@@ -3069,14 +3069,14 @@
 
                                                                             <label>Analoc: </label>
                                                                             <br>
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> 1.2 x 1.2 </option>
                                                                                 <option> 1.6 x 1.2 </option>
                                                                                 <option> 0.6 x 1.2</option>
 
                                                                             </select>
 
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
 
                                                                             <br>
@@ -3084,12 +3084,12 @@
 
                                                                             <label>Steel casement: </label>
                                                                             <br>
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> 0.8 x 1.2 </option>
                                                                                 <option> 0.7 x 1 </option>
                                                                                 <option> 0.6 x 2.1</option>
                                                                             </select>
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
 
 
@@ -3106,7 +3106,7 @@
                                                                                     <b>Window(s): </b>
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
+                                                                                    id="" style="width: 100px !important;">
                                                                                 <button type="button" class="btn btn-primary" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -3253,14 +3253,14 @@
 
                                                                             <label>Door Type: </label>
                                                                             <br>
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> Panel Door </option>
                                                                                 <option> Analoc </option>
                                                                                 <option> Flush Door</option>
                                                                                 <option> Poly Door</option>
                                                                             </select>
 
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
 
                                                                             <br>
@@ -3272,13 +3272,13 @@
                                                                                 </span>
                                                                             </label>
                                                                             <br>
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> Panel Door </option>
                                                                                 <option> Analoc </option>
                                                                                 <option> Flush Door</option>
                                                                                 <option> Poly Door</option>
                                                                             </select>
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
                                                                             <br>
                                                                             <br>
 
@@ -3290,13 +3290,13 @@
                                                                                 </label>
                                                                             </label>
                                                                             <br>
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> Panel Door </option>
                                                                                 <option> Analoc </option>
                                                                                 <option> Flush Door</option>
                                                                                 <option> Poly Door</option>
                                                                             </select>
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
                                                                             <br>
                                                                             <br>
                                                                             <label>Door Knob: </label>
@@ -3474,7 +3474,7 @@
                                                                             <br>
                                                                             <br>
                                                                             <label>Lumber: </label>
-                                                                            <select class="form-control" name="" id="" style="width: 130px !important;">
+                                                                            <select class="form-control" id="" style="width: 130px !important;">
                                                                                 <option selected> 1 x 2 </option>
                                                                                 <option>2 x 2 </option>
                                                                                 <option>2 x 3 </option>
@@ -3485,7 +3485,7 @@
 
 
                                                                             <label>Spacing: </label>
-                                                                            <select class="form-control" name="" id="" style="width: 130px !important;">
+                                                                            <select class="form-control" id="" style="width: 130px !important;">
                                                                                 <option selected> 30 x 30 </option>
                                                                                 <option>30 x 60 </option>
                                                                                 <option>40 x 40 </option>
@@ -3504,18 +3504,18 @@
                                                                             <br>
                                                                             <br>
                                                                             <label>Width: </label>
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 140px !important;" placeholder="">
+                                                                            <input type="number" class="form-control" id="" style="width: 140px !important;" placeholder="">
 
 
 
                                                                             <label>Length: </label>
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 140px !important;" placeholder="">
+                                                                            <input type="number" class="form-control" id="" style="width: 140px !important;" placeholder="">
 
 
                                                                             <br>
                                                                             <br>
                                                                             <label>Board Size: </label>
-                                                                            <select class="form-control" name="" id="" style="width: 310px !important;">
+                                                                            <select class="form-control" id="" style="width: 310px !important;">
                                                                                 <option selected> 30 x 30 </option>
                                                                                 <option>40 x 40 </option>
                                                                                 <option>40 x 60 </option>
@@ -3537,7 +3537,7 @@
                                                                                     <b>Celing(s): </b>
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;"
+                                                                                    id="" style="width: 100px !important;"
                                                                                     placeholder="1">
                                                                                 <button type="button" class="btn" style="margin-left: 300px">Compute</button>
                                                                             </div>
@@ -3671,7 +3671,7 @@
                             <label >Rise:</label>
                             <input type="number" class="form-control" id="" style="width: 150px !important;" placeholder="Height" > &nbsp; &nbsp;
                                  <label >Riser: </label>
-                                 <select class="form-control" name="" id="" style="width: 170px !important;">
+                                 <select class="form-control" id="" style="width: 170px !important;">
                                     <option selected> 17 cm </option>
                                     <option > 18 cm </option>
                                     <option >20 cm </option>
@@ -3872,7 +3872,7 @@
 
                                                                             <div class="form-group form-inline">
 
-                                                                                <select class="form-control" name="" id="" style="width: 450px !important;">
+                                                                                <select class="form-control" id="" style="width: 450px !important;">
                                                                                     <option selected> Primer </option>
                                                                                     <option> Enamel </option>
                                                                                     <option>Roof </option>
@@ -3890,7 +3890,7 @@
                                                                                     <b>How Many of these?</b>
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
+                                                                                    id="" style="width: 100px !important;">
                                                                                 <button type="button" class="btn btn-primary" style="margin-left: 90px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -4040,7 +4040,7 @@
 
                                                                             <div class="form-group form-inline">
 
-                                                                                <select class="form-control" name="" id="" style="width: 450px !important;">
+                                                                                <select class="form-control" id="" style="width: 450px !important;">
                                                                                     <option selected> Primer </option>
                                                                                     <option> Enamel </option>
                                                                                     <option>Roof </option>
@@ -4058,7 +4058,7 @@
                                                                                     <b>How Many of these?</b>
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
-                                                                                    name="" id="" style="width: 100px !important;">
+                                                                                    id="" style="width: 100px !important;">
                                                                                 <button type="button" class="btn btn-success" style="margin-left: 90px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -4184,14 +4184,14 @@
                                                                         <div class="form-group form-inline">
 
 
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> #14 THHN</option>
                                                                                 <option> #12 THHN </option>
                                                                                 <option> #10 THHN</option>
                                                                                 <option> #8 THHN</option>
                                                                             </select>
 
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
 
                                                                             <br>
@@ -4201,14 +4201,14 @@
                                                                                 <span class="text text-primary">Optional</span>
                                                                             </label>
                                                                             <br>
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> #14 THHN</option>
                                                                                 <option> #12 THHN </option>
                                                                                 <option> #10 THHN</option>
                                                                                 <option> #8 THHN</option>
                                                                             </select>
 
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
 
                                                                             <br>
@@ -4218,14 +4218,14 @@
                                                                                 <span class="text text-primary">Optional</span>
                                                                             </label>
                                                                             <br>
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> #14 THHN</option>
                                                                                 <option> #12 THHN </option>
                                                                                 <option> #10 THHN</option>
                                                                                 <option> #8 THHN</option>
                                                                             </select>
 
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
 
                                                                             <br>
@@ -4234,14 +4234,14 @@
                                                                                 <span class="text text-primary">Optional</span>
                                                                             </label>
                                                                             <br>
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> #14 THHN</option>
                                                                                 <option> #12 THHN </option>
                                                                                 <option> #10 THHN</option>
                                                                                 <option> #8 THHN</option>
                                                                             </select>
 
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
 
                                                                             <br>
@@ -4251,14 +4251,14 @@
                                                                                 <b> Circuit Breaker </b>
                                                                             </label>
                                                                             <br>
-                                                                            <select class="form-control" name="" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> 15a</option>
                                                                                 <option> 20a </option>
                                                                                 <option> 30a</option>
                                                                                 <option> 60a</option>
                                                                             </select>
 
-                                                                            <input type="number" name="" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
 
                                                                             <br>
@@ -4539,7 +4539,7 @@
 
                                                                             <div class="form-group form-inline">
                                                                                 <label for="">Width:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 130px !important;">
+                                                                                <select class="form-control" id="" style="width: 130px !important;">
                                                                                     <option selected> 30 </option>
                                                                                     <option> 60 </option>
                                                                                     <option>45 </option>
@@ -4550,7 +4550,7 @@
                                                                                     <b>x</b>
                                                                                 </label> &nbsp; &nbsp;
                                                                                 <label for="">Length:</label>
-                                                                                <select class="form-control" name="" id="" style="width: 130px !important;">
+                                                                                <select class="form-control" id="" style="width: 130px !important;">
                                                                                     <option selected> 60 </option>
                                                                                     <option> 60 </option>
                                                                                     <option>90</option>
@@ -4880,23 +4880,22 @@
 
 <script>
 
-    var searchValues = function (X,Y,Work){
+    var searchValues = function (X1,Y1,Work1){
         var AnswersArray = {!!json_encode($AnswersArray)!!};
-        //var X = x;     //horizontal
-        //var Y = y;    //vertical
-        //var Work = w;//work
         for ( var column in AnswersArray ) {
             var values = AnswersArray[column];
-            if(Y === values['Y'] && X === values['X'] && Work === values['Work']){
-            var value = values['Values'];
+            var X2 = values['X'];
+            var Y2 = values['Y'];
+            var Work2 = values['Work'];
+            if(X1 == X2 && Y1 == Y2 && Work1 == Work2 ){
+               var answer = values['Values'];
             }
         }
-        return values;
+        return { Answer: answer }; 
     }
 
     var searchPrice = function (materialid){
         var MaterialArray = {!!json_encode($MaterialArray)!!};
-        //var materialid = 1; //material Id
         var date1 = '';
         for( var column in MaterialArray){
             var materialindex = MaterialArray[column];
@@ -4915,9 +4914,9 @@
     }
 
     $("#computeColumn").click(function () {
-        var x = 1; //horizontal
-        var w = 1; //work
-        var CC = $("#ColumnCC").val(); //vertical
+        var X1 = 1; //horizontal
+        var Work1 = 1; //work
+        var Y1 = $("#ColumnCC").val(); //vertical
         var NoOfCol = $("#HowManyColumns").val();
         //$("#HowManyColumns").val("");
         var T = $("#ColumnThickness").val();
@@ -4937,9 +4936,11 @@
         var V = T * A;
         $("#ColumnVolume").val(V);
 
-        var search = searchValues(x,CC,w);
-        var value = search.values;
-        var Cement = (V * value) * NoOfCol; //cement qty
+            var formulas = searchValues(X1,Y1,Work1);
+            var formula = formulas.Answer;
+            console.log(formulas);
+           // var formulavalue = formula.value3;
+        var Cement = (V * formula) * NoOfCol; //cement qty
             var materialid = 1; //material id from db
             var search = searchPrice(materialid);
             var name = search.materialname;
@@ -4948,6 +4949,9 @@
         $("#ColumnCement").html(name);
         $("#ColumnCementBag").html(Cement);
         $("#ColumnCementCost").html(price);
+        $("#ColumnCement1").val(materialid);
+        $("#ColumnCementBag1").val(Cement);
+        $("#ColumnCementCost1").val(price);
 
         var Sand = (V * 0.5) * NoOfCol; //sand qty
             var materialid = 2; //material id from db
@@ -4958,6 +4962,9 @@
         $("#ColumnS").html(name);
         $("#ColumnSand").html(Sand);
         $("#ColumnSandCost").html(price);
+        $("#ColumnS1").val(materialid);
+        $("#ColumnSand1").val(Sand);
+        $("#ColumnSandCost1").val(price);
 
         var Gravel = (V * 1.0) * NoOfCol; //gravel qty
             var materialid = 3; //material id from db
@@ -4968,6 +4975,9 @@
         $("#ColumnG").html(name);
         $("#ColumnGravel").html(Gravel);
         $("#ColumnGravelCost").html(price);
+        $("#ColumnG1").val(name);
+        $("#ColumnGravel1").val(Gravel);
+        $("#ColumnGravelCost1").val(price);
         
         //metals
         var BarPcs = NoOfBars * NoOfCol; //pcs steel bars
@@ -4979,6 +4989,9 @@
         $("#ColumnSteelBar").html(name);
         $("#ColumnSteelBarQty").html(BarPcs);
         $("#ColumnSteelBarCost").html(price);
+        $("#ColumnSteelBar1").val(materialid);
+        $("#ColumnSteelBarQty1").val(BarPcs);
+        $("#ColumnSteelBarCost1").val(price);
 
         var x = 16 * BarSize;
         var TieBar = TieBarSize + "mm  Tie Bar";
@@ -4992,6 +5005,9 @@
         $("#ColumnTieBar").html(name);
         $("#ColumnTieBarQty").html(TieBarPcs);
         $("#ColumnTieBarCost").html(price);
+        $("#ColumnTieBar1").val(materialid);
+        $("#ColumnTieBarQty1").val(TieBarPcs);
+        $("#ColumnTieBarCost1").val(price);
 
         var TieWires = ((NoOfBars * TieBarPcs) * TieWireLeng) * 53; //tie wires
             var materialid = 6; //material id from db
@@ -5000,8 +5016,11 @@
             var price = search.materialprice;
             price = TieWires * price;
         $("#ColumnTieWire").html(name);
-        $("#ColumnTieWireQty").html(TieWires);
+        $("#ColumnTieWireKg").html(TieWires);
         $("#ColumnTieWireCost").html(price);
+        $("#ColumnTieWire1").val(materialid);
+        $("#ColumnTieWireKg1").val(TieWires);
+        $("#ColumnTieWireCost1").val(price);
     });
 </script>
 
