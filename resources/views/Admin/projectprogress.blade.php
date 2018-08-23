@@ -226,9 +226,10 @@
           <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
                 <li class="nav-level">
-                    <span style="color: #939393">
-                        <i>Navigation</i>
+                     <span >
+                        <h6 class="text-center" ><b><span style="color:  #222d32" >Hello</span><span class="text text-success">!</span> </b><span class="text text-primary">Admin</span></h6>
                     </span>
+                    <hr> 
                 </li>
                 <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Admin/Home">
@@ -288,7 +289,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 30px">
+    <div class="content-wrapper" style="margin-top: 20px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 <div style="position: absolute; margin-top: 90px; margin-left: 850px">
@@ -442,14 +443,14 @@
 
 
 
-                                                                             <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-primary waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
+                                                                              <a href="#"  type="button"  class="btn btn-primary waves-effect waves-light"
+                                                                                data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-map"> </i>Project Schedule
-                                                                            </button>
-                                                                            <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-warning waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
+                                                                            </a>
+                                                                            <a href="#"  type="button"  class="btn btn-warning waves-effect waves-light"
+                                                                                data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-graph"> </i>Material Usage
-                                                                            </button>
+                                                                            </a>
 
 
 
@@ -478,14 +479,14 @@
 
 
 
-                                                                           <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-primary waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
+                                                                          <a href="#"  type="button"  class="btn btn-primary waves-effect waves-light"
+                                                                                data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-map"> </i>Project Schedule
-                                                                            </button>
-                                                                            <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-warning waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
+                                                                            </a>
+                                                                            <a href="#"  type="button"  class="btn btn-warning waves-effect waves-light"
+                                                                                data-toggle="tooltip" data-placement="top" title="View">
                                                                                  <i class="icon-graph"> </i>Material Usage
-                                                                            </button>
+                                                                            </a>
 
 
 

@@ -340,9 +340,10 @@ tbody{
             <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
                 <li class="nav-level">
-                    <span style="color: #939393">
-                        <i>Navigation</i>
+                     <span >
+                        <h6 class="text-center" ><b><span style="color:  #222d32" >Hello</span><span class="text text-success">!</span> </b><span class="text text-primary">Admin</span></h6>
                     </span>
+                    <hr> 
                 </li>
                 <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Admin/Home">
