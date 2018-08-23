@@ -215,6 +215,6 @@ class CostEstimationsController extends Controller
 
         //footing
 
-        dd($OverheadProfit);
+        dd($ColumnCement);
     }
 }
