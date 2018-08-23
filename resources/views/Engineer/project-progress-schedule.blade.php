@@ -2,63 +2,60 @@
 <html lang="en">
 
 <head>
-    <title>ArkiWorx | Cost Management and Progress Monitoring System</title>
-    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ArkiWorx | Cost Management and Progress Monitoring System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
      <![endif]-->
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <!-- Favicon icon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <!-- Favicon icon -->
+        <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+        <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--tabs-->
+        <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> 
+     <script src="/js/jquery.min.js"></script>
+     <script src="/js/bootstrap.min.js"></script> -->
 
-    <!-- Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <!-- Google font-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-    <!-- iconfont -->
-    <link rel="stylesheet" type="text/css" href="/assets/icon/icofont/css/icofont.css">
+        <!-- iconfont -->
+        <link rel="stylesheet" type="text/css" href="/assets/icon/icofont/css/icofont.css">
 
-    <!-- simple line icon -->
-    <link rel="stylesheet" type="text/css" href="/assets/icon/simple-line-icons/css/simple-line-icons.css">
+        <!-- simple line icon -->
+        <link rel="stylesheet" type="text/css" href="/assets/icon/simple-line-icons/css/simple-line-icons.css">
 
-    <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+        <!-- Required Fremwork -->
+        <link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
 
-    <!-- Weather css -->
-    <link href="/assets/css/svg-weather.css" rel="stylesheet">
+        <!-- Weather css -->
+        <link href="/assets/css/svg-weather.css" rel="stylesheet">
 
-    <!-- Echart js -->
-    <script src="/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+        <!-- Echart js -->
+        <script src="/assets/plugins/charts/echarts/js/echarts-all.js"></script>
 
-        
-    <!-- Style.css [REPLACED FOR FRAPPE]-->
-    <link rel="stylesheet" type="text/css" href="/assets/css/mainForFrappe.css"> 
+        <!-- Style.css [REPLACED FOR FRAPPE]-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/mainForFrappe.css"> 
 
-    <!-- Responsive.css-->
-    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+        <!-- Responsive.css-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
 
-    <!--color css-->
-    <link rel="stylesheet" type="text/css" href="/assets/css/color/color-1.min.css" id="color" />
-    <!-- fullCalendar -->
+        <!--color css-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/color/color-1.min.css" id="color" />
 
-    <link rel="stylesheet" href="/Admin/bower_components/fullcalendar/dist/fullcalendar.min.css" media="print">
-    <link rel="stylesheet" href="/Admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
-
-
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <!-- fullCalendar -->
+        <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.min.css" media="print">
+        <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
 
 
 
@@ -460,7 +457,7 @@
 
 
 
-                <li class=" active treeview">
+                <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Project-Progress">
                         <i class="icon-chart"></i>
                         <span> Project Plan</span>
