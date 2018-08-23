@@ -342,14 +342,22 @@
             <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
                 <li class="nav-level">
-                    <span style="color: #939393">
-                        <i>Navigation</i>
+                    <span >
+                        <h6 class="text-center" ><b><span style="color:  #222d32" >Hello</span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
                     </span>
+                    <hr> 
                 </li>
                 <li class=" treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Home">
                         <i class="icon-speedometer"></i>
                         <span> Dashboard</span>
+                    </a>
+                </li>
+                
+                 <li class=" treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
+                        <i class="icon-notebook"></i>
+                        <span> Materials PriceList</span>
                     </a>
                 </li>
 
@@ -375,12 +383,7 @@
 
 
 
-                <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
-                        <i class="icon-notebook"></i>
-                        <span> Materials PriceList</span>
-                    </a>
-                </li>
+               
 
 
 
@@ -652,8 +655,8 @@
                                                 <tr class="text-uppercase">
                                                     <th class="text-left text-primary">TOTALS:</th>
                                                     <th class="text-center"></th>
-                                                    <th class="text-center text-primary"> 22345</th>
-                                                    <th class="text-center text-primary">23365</th>
+                                                    <th class="text-center text-primary"> </th>
+                                                    <th class="text-center text-primary"></th>
 
                                                 </tr>
                                             </thead>
