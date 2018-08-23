@@ -316,6 +316,11 @@ class ActualsController extends Controller
 
         $request = request()->all();
 
+        $materialIdLatestPrice = DB::table('tblprice')
+                                ->where('tblprice.intMaterialId','=',$request['newMaterialActualMaterialId'])
+                                ->orderBy('tblprice.dtmPriceAsOf','desc')
+                                ->first();
+
         $insertedMaterialActualsId = DB::table('tblmaterialactuals')
                     ->insertGetId(
                         [
@@ -329,7 +334,7 @@ class ActualsController extends Controller
                     ->insertGetId(
                         [
                             'intQty' => $request['newMaterialActualQty'],
-                            'decCost' => $request['newMaterialActualTotalCost'],
+                            'decCost' => $request['newMaterialActualQty'] * $materialIdLatestPrice->decPrice,
                             'intMaterialActualsId' => $insertedMaterialActualsId
                         ]
                     );

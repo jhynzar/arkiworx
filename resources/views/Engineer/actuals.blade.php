@@ -784,13 +784,6 @@
                     </div>
 
 
-                    <div class="form-group">
-
-                        <label for="ActualPrice">Total Unit Cost:</label>
-                        <input type="text" class="form-control" id="newMaterialActualTotalCost" name="newMaterialActualTotalCost" style="width: 500px !important;" placeholder="₱" required/>
-                    </div>
-
-
 
                     <hr>
                     <div class="modal-footer">
