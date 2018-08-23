@@ -283,6 +283,10 @@ class CostSummaryController extends Controller
 
         //================PROJECT REQUIREMENTS
 
+        
+        //----Extracting project requirements
+        $allProjectRequirements = $projectWithDetails->projectRequirements;
+
         //projectrequirements categories and sub categories
 
         $projectRequirementsAllWorkCategoriesIds = DB::select("
@@ -332,15 +336,29 @@ class CostSummaryController extends Controller
         
 
         //dd($projectRequirementsWorkSubCategories);
-        //----Extracting project requirements
 
         //dd($projectWithDetails);
-
-        $allProjectRequirements = $projectWithDetails->projectRequirements;
         
 
         
         //-----For Computation of totals
+        $totalEstimatedCost = 0;
+        $totalActualsCost = 0;
+
+        //Estimated Materials
+        foreach($projectWithDetails->materialEstimates as $estimatedMaterials){
+            $totalEstimatedCost += $estimatedMaterials->decCost;
+        }
+        //Actuals Materials
+        foreach($projectWithDetails->materialActuals as $actualMaterials){
+            $totalActualsCost += $actualMaterials->materialActualsHistory[0]->decCost;
+        }
+
+        //Estimated and Actual Project Requirements
+        foreach($projectWithDetails->projectRequirements as $projectRequirement){
+            $totalEstimatedCost += $projectRequirement->decEstimatedPrice;
+            $totalActualsCost += $projectRequirement->decActualPrice;
+        }
 
         //dd($projectWorkSubCategories);
 
@@ -356,7 +374,9 @@ class CostSummaryController extends Controller
             'projectWorkSubCategories',
             'allProjectRequirements',
             'projectRequirementsWorkCategories',
-            'projectRequirementsWorkSubCategories'
+            'projectRequirementsWorkSubCategories',
+            'totalEstimatedCost',
+            'totalActualsCost'
         ));
     }
 

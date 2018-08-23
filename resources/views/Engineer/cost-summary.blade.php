@@ -709,8 +709,8 @@
                                                 <tr class="text-uppercase">
                                                     <th class="text-left text-primary">TOTALS:</th>
                                                     <th class="text-center"></th>
-                                                    <th class="text-center text-primary"> 22345</th>
-                                                    <th class="text-center text-primary">23365</th>
+                                                    <th class="text-center text-primary"> {{$totalEstimatedCost}}</th>
+                                                    <th class="text-center text-primary">{{$totalActualsCost}}</th>
 
                                                 </tr>
                                             </thead>
