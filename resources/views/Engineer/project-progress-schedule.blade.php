@@ -644,6 +644,7 @@
     <script>
 		var tasks = [
 			{
+                
 				start: '2018-10-01',
 				end: '2018-10-03',
 				name: 'Building Permit',

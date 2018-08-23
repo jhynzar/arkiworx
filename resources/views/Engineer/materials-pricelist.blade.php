@@ -561,14 +561,13 @@
                                                             <input type="hidden" name="_method" value="PATCH"> {{ csrf_field() }}
                                                             <!-- key for updating -->
                                                             <input id="materialIdToUpdateInput" name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
-                                                            <label class="text text-muted" style="margin-left: 450px">
-                                                                <i>07 August 2018</i>
-                                                            </label>
-                                                            <!-- current date -->
-                                                            <br>
-                                                            <div class="form-group">
-                                                                <label for="updatePrice">Price:</label>
-                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name=s tyle="width: 300px !important;">
+                                                            
+                                                          
+                                                            <div class="form-group form-inline">
+                                                                <label for="updatePrice">Old Price:</label>
+                                                                <input type="text" class="form-control" id="" name="" name=s tyle="width: 100px !important;" disabled> 
+                                                               &nbsp; &nbsp;  <label for="updatePrice">New Price:</label> 
+                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name=s tyle="width: 100px !important;">
                                                             </div>
 
 
