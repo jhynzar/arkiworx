@@ -408,7 +408,7 @@
             <ul class="sidebar-menu">
                 <li class="nav-level">
                     <span >
-                        <h4 class="text-center" ><b><span style="color:  #222d32" ><b>Hello</b></span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h4>
+                        <h6 class="text-center" ><b><span style="color:  #222d32" ><b>Hello</b></span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
                     </span>
                     <hr> 
                 </li>
@@ -457,14 +457,14 @@
 
 
 
-                <li class="treeview">
+                <li class="active treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Project-Progress">
                         <i class="icon-chart"></i>
                         <span> Project Plan</span>
                     </a>
                 </li>
 
-                <li class="active treeview">
+                <li class=" treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Calendar">
                         <i class="icon-calendar"></i>
                         <span> Calendar</span>
@@ -493,24 +493,51 @@
 
 
     <!-- end of sidebar-->
-    
+    <div class="content-wrapper" style="background-color: white; ">
+      
 
-    <div class="content-wrapper" style="margin-top: 45px">
+    <div class="" style="margin-top: 45px; margin-left: -80px">
         <!-- FRAPPE START -->
-        <div class="container " style="">
-            <div class="container form-group form-inline" style="margin-left: 250px"> <br><br> <br>
+        <div class="container " style="background-color: white; ">
+           
+            <div class="container form-group form-inline" style="background-color: white; margin-top: -80px; margin-left: 180px"> <br><br> <br>
+             
+               
+                    <div style="margin-left: -200px; margin-top: -3px">
+                        <h4>
+                            <i class="icon-graph"></i> Gantt </h4>
+                        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                            <li class="breadcrumb-item">
+                                <a href="/Engineer/Project-Progress"></a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/Engineer/Project-Progress" data-toggle="tooltip" data-placement="right" title="back" >Projects List</a>
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+
+
+
+
+                 
+
+               
             <button type="button" class="form-control btn btn-outline-danger" name="" id="" onclick="gantt_chart.change_view_mode('Quarter Day')">Quarter Day</button> &nbsp;
             <button type="button" class="form-control btn btn-outline-info" name="" id="" onclick="gantt_chart.change_view_mode('Half Day')" >Half Day</button> &nbsp;
             <button type="button" class="form-control btn btn-outline-warning" name="" id="" onclick="gantt_chart.change_view_mode('Day')" >Day</button> &nbsp;
             <button type="button" class="form-control btn btn-outline-success" name="" id="" onclick="gantt_chart.change_view_mode('Week')" >Week</button> &nbsp;
             <button type="button" class="form-control btn btn-outline-primary" name="" id="" onclick="gantt_chart.change_view_mode('Month')" >Month</button> &nbsp;
         </div>
-            <div class="gantt-target scroll"></div>
+            <div class="gantt-target scroll" style="width: 1100px; height 900px !important"></div>
         </div>
         <!-- FRAPPE END -->
 
 
     </div>
+        </div>
     <!-- content wrapper end-->
 
 
