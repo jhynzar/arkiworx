@@ -431,10 +431,6 @@
                 </li>
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e5654869bcd89fa8d1e3d4d0795edb2bdd53e77c
                <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
                         <i class="icon-briefcase"></i>
