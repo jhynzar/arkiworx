@@ -518,7 +518,64 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <!-- FOR PROJECT REQUIREMENTS -->
+                                                        @foreach ($projectRequirementsWorkCategories as $workCategory)
+                                                            <tr style="background-color: #1e242d">
+                                                                <td>
+                                                                    <h5 style="color: white;padding-left: 10px;">
+                                                                        <b>{{$workCategory->strWorkCategoryDesc}}</b>
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            @foreach ($projectRequirementsWorkSubCategories as $workSubCategory)
+
+                                                            <!-- For SubCategory -->
+                                                                @if ($workSubCategory->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                                <tr class="table-active">
+                                                                    <td>
+                                                                        <b style="padding-left: 30px;"> >&nbsp;{{$workSubCategory->strWorkSubCategoryDesc}}</b>
+                                                                    </td>
+                                                                </tr>
+                                                                    @foreach ($allProjectRequirements as $keyProjectRequirement=>$projectRequirement)
+                                                                            @if (
+                                                                                ($projectRequirement->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId) &&
+                                                                                ($projectRequirement->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                                            )
+                                                                                <tr>
+                                                                                    <td>{{$keyProjectRequirement+1}}</td>
+
+                                                                                    <td>{{$projectRequirement->strDesc}}</td>
+                                                                                    <td class="text-center " style="background-color: coral;  color: black !important">-</td>
+                                                                                    <th class="text-center" style="background-color: coral;   !important">-</th>
+                                                                                    <td style="background-color: coral;  color: black !important">{{$projectRequirement->decEstimatedPrice}}</td>
+                                                                                    <th class="text-center " style="background-color: lightgreen; color: black !important">
+                                                                                        <b>-</b>
+                                                                                    </th>
+                                                                                    <th style="background-color: lightgreen;color: black !important">
+                                                                                        <b>-</b>
+                                                                                    </th>
+                                                                                    <td class="text-left" style="background-color: lightgreen; color: black !important">
+                                                                                        @if($projectRequirement->decActualPrice != null)
+                                                                                            <b>{{$projectRequirement->decActualPrice}}</b>
+                                                                                        @else
+                                                                                            <b>-</b>
+                                                                                        @endif
+                                                                                        
+                                                                                    </td>
+                                                                                </tr>
+                                                                            @endif
+
+                                                                    @endforeach
+
+                                                                @endif 
+                                                            @endforeach
+                                                        @endforeach
+
+
+
+
                                                         <!-- DYNAMIC DATA -->
+                                                        <!-- FOR MATERIALS --> 
                                                         <!-- For Category -->
                                                         @foreach ($projectWorkCategories as $workCategory)
                                                             <tr style="background-color: #1e242d">
