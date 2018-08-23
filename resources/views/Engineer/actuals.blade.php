@@ -1501,6 +1501,70 @@
                                     <tbody>
                                         <!-- HERE -->
 
+                                        @foreach ($projectRequirementsWorkCategories as $workCategory)
+                                            <tr style="background-color: #1e242d">
+                                                <td>
+                                                    <h5 style="color: white;padding-left: 10px;">
+                                                        <b>{{$workCategory->strWorkCategoryDesc}}</b>
+                                                    </h5>
+                                                </td>
+                                            </tr>
+                                            @foreach ($projectRequirementsWorkSubCategories as $workSubCategory)
+
+                                            <!-- For SubCategory -->
+                                                @if ($workSubCategory->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                <tr class="table-active">
+                                                    <td>
+                                                        <b style="padding-left: 30px;"> >&nbsp;{{$workSubCategory->strWorkSubCategoryDesc}}</b>
+                                                    </td>
+                                                </tr>
+                                                    @foreach ($allProjectRequirements as $keyProjectRequirement=>$projectRequirement)
+                                                            @if (
+                                                                ($projectRequirement->decActualPrice != null) &&
+                                                                ($projectRequirement->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId) &&
+                                                                ($projectRequirement->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                            )
+                                                            <tr class="table-info">
+                                                                    <td class="text-center">{{$keyProjectRequirement+1}}</td>
+                                                                    <td class="text-center">{{$projectRequirement->strDesc}}
+
+                                                                    </td>
+                                                                    <td class="text-center">-</td>
+                                                                    <td class="text-center">-</td>
+                                                                    <td class="text-center">-</td>
+                                                                    <td class="text-center">{{$projectRequirement->decActualPrice}}</td>
+                                                                    <td>
+                                                                        <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+
+                                                                    </td>
+
+                                                                    <td>
+
+                                                                        <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
+                                                                            <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
+                                                                        </button>
+
+
+                                                                    </td>
+
+
+                                                                    <td>
+
+                                                                        <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
+                                                                            <i class="icofont icofont-ui-delete"> </i>
+                                                                        </button>
+
+
+                                                                    </td>
+                                                                </tr>
+                                                            @endif
+
+                                                    @endforeach
+
+                                                @endif 
+                                            @endforeach
+                                        @endforeach
+
                                         <!-- For displaying material actuals -->
                                         
 

@@ -74,6 +74,8 @@ class CostSummaryController extends Controller
             
         }
         $projectRequirements = DB::table('tblprojectrequirements')
+                            ->join('tblworksubcategory','tblprojectrequirements.intWorkSubCategoryId','=','tblworksubcategory.intWorkSubCategoryId')
+                            ->join('tblworkcategory','tblworksubcategory.intWorkCategoryId','=','tblworkcategory.intWorkCategoryId')
                             ->where('intProjectId','=',$project->intProjectId)
                             ->get()
                             ->toArray();
@@ -154,28 +156,6 @@ class CostSummaryController extends Controller
         //---------WORK CATEGORIES
         //for category and sub category
         
-        //actuals categories and sub categories
-        $projectActualsAllWorkCategoriesIds = DB::select("
-            SELECT tblworkcategory.intWorkCategoryId
-            FROM `tblmaterialactuals`
-            INNER JOIN `tblworksubcategory`
-            ON (tblmaterialactuals.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
-            INNER JOIN `tblworkcategory`
-            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
-            WHERE tblmaterialactuals.intProjectId = :id
-            GROUP BY tblworkcategory.intWorkCategoryId       
-        ",['id'=>$id]);
-
-        $projectActualsAllWorkSubCategoriesIds = DB::select("
-            SELECT tblworksubcategory.intWorkSubCategoryId
-            FROM `tblmaterialactuals`
-            INNER JOIN `tblworksubcategory`
-            ON (tblmaterialactuals.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
-            INNER JOIN `tblworkcategory`
-            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
-            WHERE tblmaterialactuals.intProjectId = :id
-            GROUP BY tblworksubcategory.intWorkSubCategoryId
-        ",['id'=>$id]);
 
         //actuals categories and sub categories
         $projectActualsAllWorkCategoriesIds = DB::select("
@@ -227,6 +207,8 @@ class CostSummaryController extends Controller
 
         
 
+        
+
         // ACTUALS WORK CATEGORIES data to pass to view
         $projectWorkCategories = array(); 
         foreach($projectActualsAllWorkCategoriesIds as $workCategory){
@@ -259,6 +241,8 @@ class CostSummaryController extends Controller
 
             array_push($projectWorkCategories,$workCategoryDetails);
         }
+
+        
 
         //dd($projectWorkCategories);
 
@@ -297,6 +281,85 @@ class CostSummaryController extends Controller
             array_push($projectWorkSubCategories,$workSubCategoryDetails);
         }
 
+        //================PROJECT REQUIREMENTS
+
+        
+        //----Extracting project requirements
+        $allProjectRequirements = $projectWithDetails->projectRequirements;
+
+        //projectrequirements categories and sub categories
+
+        $projectRequirementsAllWorkCategoriesIds = DB::select("
+            SELECT tblworkcategory.intWorkCategoryId
+            FROM `tblprojectrequirements`
+            INNER JOIN `tblworksubcategory`
+            ON (tblprojectrequirements.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblprojectrequirements.intProjectId = :id
+            GROUP BY tblworkcategory.intWorkCategoryId
+        ",['id'=>$id]);
+
+        $projectRequirementsAllWorkSubCategoriesIds = DB::select("
+            SELECT tblworksubcategory.intWorkSubCategoryId
+            FROM `tblprojectrequirements`
+            INNER JOIN `tblworksubcategory`
+            ON (tblprojectrequirements.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblprojectrequirements.intProjectId = :id
+            GROUP BY tblworksubcategory.intWorkSubCategoryId
+        ",['id'=>$id]);
+
+        // PROJECT REQUIREMENTS WORK CATEGORIES
+
+        $projectRequirementsWorkCategories = array();
+
+        foreach($projectRequirementsAllWorkCategoriesIds as $workCategory){
+            $workCategoryDetails = DB::table('tblWorkCategory')
+                                ->where('intWorkCategoryId','=',$workCategory->intWorkCategoryId)
+                                ->first();
+
+            array_push($projectRequirementsWorkCategories, $workCategoryDetails);
+        }
+
+        // Project requirements WORK SUB 
+        $projectRequirementsWorkSubCategories = array();
+        foreach($projectRequirementsAllWorkSubCategoriesIds as $workSubCategory){
+            $workSubCategoryDetails = DB::table('tblWorkSubCategory')
+                                ->where('intWorkSubCategoryId','=',$workSubCategory->intWorkSubCategoryId)
+                                ->first();
+
+            array_push($projectRequirementsWorkSubCategories,$workSubCategoryDetails);
+        }
+        
+        
+
+        //dd($projectRequirementsWorkSubCategories);
+
+        //dd($projectWithDetails);
+        
+
+        
+        //-----For Computation of totals
+        $totalEstimatedCost = 0;
+        $totalActualsCost = 0;
+
+        //Estimated Materials
+        foreach($projectWithDetails->materialEstimates as $estimatedMaterials){
+            $totalEstimatedCost += $estimatedMaterials->decCost;
+        }
+        //Actuals Materials
+        foreach($projectWithDetails->materialActuals as $actualMaterials){
+            $totalActualsCost += $actualMaterials->materialActualsHistory[0]->decCost;
+        }
+
+        //Estimated and Actual Project Requirements
+        foreach($projectWithDetails->projectRequirements as $projectRequirement){
+            $totalEstimatedCost += $projectRequirement->decEstimatedPrice;
+            $totalActualsCost += $projectRequirement->decActualPrice;
+        }
+
         //dd($projectWorkSubCategories);
 
 
@@ -305,7 +368,16 @@ class CostSummaryController extends Controller
         //dd($projectWorkSubCategories);
         //dd($projectWithDetails);
         //dd($projectCostSummary);
-        return view('Engineer/cost-summary',compact('projectCostSummary','projectWorkCategories','projectWorkSubCategories'));
+        return view('Engineer/cost-summary',compact(
+            'projectCostSummary',
+            'projectWorkCategories',
+            'projectWorkSubCategories',
+            'allProjectRequirements',
+            'projectRequirementsWorkCategories',
+            'projectRequirementsWorkSubCategories',
+            'totalEstimatedCost',
+            'totalActualsCost'
+        ));
     }
 
     /**
