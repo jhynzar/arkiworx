@@ -564,8 +564,8 @@
                                                             
                                                           
                                                             <div class="form-group form-inline">
-                                                                <label for="updatePrice">Old Price:</label>
-                                                                <input type="text" class="form-control" id="" name="" name=s tyle="width: 100px !important;" disabled> 
+                                                                <label for="updatePrice">Current Price:</label>
+                                                                <input type="text" class="form-control" id="" name="" value="{{ $material->latestPrice}}" tyle="width: 100px !important;" disabled> 
                                                                &nbsp; &nbsp;  <label for="updatePrice">New Price:</label> 
                                                                 <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name=s tyle="width: 100px !important;">
                                                             </div>
