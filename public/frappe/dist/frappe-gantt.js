@@ -573,6 +573,8 @@ class Bar {
             subtitle: subtitle,
             task: this.task
         });
+        
+        
     }
 
     update_bar_position({ x = null, width = null }) {

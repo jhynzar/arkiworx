@@ -342,14 +342,22 @@
             <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
                 <li class="nav-level">
-                    <span style="color: #939393">
-                        <i>Navigation</i>
+                    <span >
+                        <h6 class="text-center" ><b><span style="color:  #222d32" >Hello</span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
                     </span>
+                    <hr> 
                 </li>
                 <li class=" treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Home">
                         <i class="icon-speedometer"></i>
                         <span> Dashboard</span>
+                    </a>
+                </li>
+                
+                 <li class=" treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
+                        <i class="icon-notebook"></i>
+                        <span> Materials PriceList</span>
                     </a>
                 </li>
 
@@ -375,12 +383,7 @@
 
 
 
-                <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
-                        <i class="icon-notebook"></i>
-                        <span> Materials PriceList</span>
-                    </a>
-                </li>
+               
 
 
 
@@ -424,7 +427,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 45px">
+    <div class="content-wrapper" style="margin-top: 30px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 
@@ -518,7 +521,64 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <!-- FOR PROJECT REQUIREMENTS -->
+                                                        @foreach ($projectRequirementsWorkCategories as $workCategory)
+                                                            <tr style="background-color: #1e242d">
+                                                                <td>
+                                                                    <h5 style="color: white;padding-left: 10px;">
+                                                                        <b>{{$workCategory->strWorkCategoryDesc}}</b>
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            @foreach ($projectRequirementsWorkSubCategories as $workSubCategory)
+
+                                                            <!-- For SubCategory -->
+                                                                @if ($workSubCategory->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                                <tr class="table-active">
+                                                                    <td>
+                                                                        <b style="padding-left: 30px;"> >&nbsp;{{$workSubCategory->strWorkSubCategoryDesc}}</b>
+                                                                    </td>
+                                                                </tr>
+                                                                    @foreach ($allProjectRequirements as $keyProjectRequirement=>$projectRequirement)
+                                                                            @if (
+                                                                                ($projectRequirement->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId) &&
+                                                                                ($projectRequirement->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                                            )
+                                                                                <tr>
+                                                                                    <td>{{$keyProjectRequirement+1}}</td>
+
+                                                                                    <td>{{$projectRequirement->strDesc}}</td>
+                                                                                    <td class="text-center " style="background-color: coral;  color: black !important">-</td>
+                                                                                    <th class="text-center" style="background-color: coral;   !important">-</th>
+                                                                                    <td style="background-color: coral;  color: black !important">{{$projectRequirement->decEstimatedPrice}}</td>
+                                                                                    <th class="text-center " style="background-color: lightgreen; color: black !important">
+                                                                                        <b>-</b>
+                                                                                    </th>
+                                                                                    <th style="background-color: lightgreen;color: black !important">
+                                                                                        <b>-</b>
+                                                                                    </th>
+                                                                                    <td class="text-left" style="background-color: lightgreen; color: black !important">
+                                                                                        @if($projectRequirement->decActualPrice != null)
+                                                                                            <b>{{$projectRequirement->decActualPrice}}</b>
+                                                                                        @else
+                                                                                            <b>-</b>
+                                                                                        @endif
+                                                                                        
+                                                                                    </td>
+                                                                                </tr>
+                                                                            @endif
+
+                                                                    @endforeach
+
+                                                                @endif 
+                                                            @endforeach
+                                                        @endforeach
+
+
+
+
                                                         <!-- DYNAMIC DATA -->
+                                                        <!-- FOR MATERIALS --> 
                                                         <!-- For Category -->
                                                         @foreach ($projectWorkCategories as $workCategory)
                                                             <tr style="background-color: #1e242d">
@@ -652,8 +712,11 @@
                                                 <tr class="text-uppercase">
                                                     <th class="text-left text-primary">TOTALS:</th>
                                                     <th class="text-center"></th>
-                                                    <th class="text-center text-primary"> 22345</th>
-                                                    <th class="text-center text-primary">23365</th>
+
+
+                                                    <th class="text-center text-primary"> {{$totalEstimatedCost}}</th>
+                                                    <th class="text-center text-primary">{{$totalActualsCost}}</th>
+
 
                                                 </tr>
                                             </thead>

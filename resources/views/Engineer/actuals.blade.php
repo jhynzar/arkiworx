@@ -238,9 +238,10 @@
         <!-- Sidebar Menu-->
         <ul class="sidebar-menu">
             <li class="nav-level">
-                <span style="color: #939393">
-                    <i>Navigation</i>
-                </span>
+               <span >
+                        <h6 class="text-center" ><b><span style="color:  #222d32" >Hello</span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
+                    </span>
+                    <hr> 
             </li>
             <li class=" treeview">
                 <a class="waves-effect waves-dark" href="/Engineer/Home">
@@ -251,7 +252,12 @@
 
 
 
-
+<li class=" treeview">
+                <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
+                    <i class="icon-notebook"></i>
+                    <span> Materials PriceList</span>
+                </a>
+            </li>
 
 
             <li class="active treeview">
@@ -271,12 +277,7 @@
 
 
 
-            <li class=" treeview">
-                <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
-                    <i class="icon-notebook"></i>
-                    <span> Materials PriceList</span>
-                </a>
-            </li>
+            
 
 
 
@@ -545,8 +546,8 @@
 
 
 
-                <form action="/action_page.php">
-
+                <form action="Actuals/updateProjectRequirementActual" method="POST">
+                    {{csrf_field()}}
                     <label class="text text-muted" style="margin-left: 450px">
                         <i>07 August 2018</i>
                     </label>
@@ -565,7 +566,7 @@
                     <div class="form-group form-inline">
                     
                         <label for="ActualPrice">Price:</label>
-                        <input type="text" class="form-control" id="actualPrice" style="width: 200px !important;" placeholder="₱" required/>
+                        <input type="text" class="form-control" id="actualPrice" name="actualPrice" style="width: 200px !important;" placeholder="₱" required/>
 
 
                     </div>
@@ -780,13 +781,6 @@
                         <input type="number" class="form-control" id="newMaterialActualQty" name="newMaterialActualQty" style="width: 90px !important;" required/>
 
 
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="ActualPrice">Total Unit Cost:</label>
-                        <input type="text" class="form-control" id="newMaterialActualTotalCost" name="newMaterialActualTotalCost" style="width: 500px !important;" placeholder="₱" required/>
                     </div>
 
 
@@ -1368,7 +1362,7 @@
 
 
 
-<div class="content-wrapper" style="margin-top: 30px">
+<div class="content-wrapper" style="margin-top: 10px">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
 
@@ -1499,6 +1493,70 @@
                                     </thead>
                                     <tbody>
                                         <!-- HERE -->
+
+                                        @foreach ($projectRequirementsWorkCategories as $workCategory)
+                                            <tr style="background-color: #1e242d">
+                                                <td>
+                                                    <h5 style="color: white;padding-left: 10px;">
+                                                        <b>{{$workCategory->strWorkCategoryDesc}}</b>
+                                                    </h5>
+                                                </td>
+                                            </tr>
+                                            @foreach ($projectRequirementsWorkSubCategories as $workSubCategory)
+
+                                            <!-- For SubCategory -->
+                                                @if ($workSubCategory->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                <tr class="table-active">
+                                                    <td>
+                                                        <b style="padding-left: 30px;"> >&nbsp;{{$workSubCategory->strWorkSubCategoryDesc}}</b>
+                                                    </td>
+                                                </tr>
+                                                    @foreach ($allProjectRequirements as $keyProjectRequirement=>$projectRequirement)
+                                                            @if (
+                                                                ($projectRequirement->decActualPrice != null) &&
+                                                                ($projectRequirement->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId) &&
+                                                                ($projectRequirement->intWorkCategoryId == $workCategory->intWorkCategoryId)
+                                                            )
+                                                            <tr class="table-info">
+                                                                    <td class="text-center">{{$keyProjectRequirement+1}}</td>
+                                                                    <td class="text-center">{{$projectRequirement->strDesc}}
+
+                                                                    </td>
+                                                                    <td class="text-center">-</td>
+                                                                    <td class="text-center">-</td>
+                                                                    <td class="text-center">-</td>
+                                                                    <td class="text-center">{{$projectRequirement->decActualPrice}}</td>
+                                                                    <td>
+                                                                        <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+
+                                                                    </td>
+
+                                                                    <td>
+
+                                                                        <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
+                                                                            <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
+                                                                        </button>
+
+
+                                                                    </td>
+
+
+                                                                    <td>
+
+                                                                        <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
+                                                                            <i class="icofont icofont-ui-delete"> </i>
+                                                                        </button>
+
+
+                                                                    </td>
+                                                                </tr>
+                                                            @endif
+
+                                                    @endforeach
+
+                                                @endif 
+                                            @endforeach
+                                        @endforeach
 
                                         <!-- For displaying material actuals -->
                                         

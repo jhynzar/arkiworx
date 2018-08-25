@@ -232,14 +232,22 @@
         <!-- Sidebar Menu-->
         <ul class="sidebar-menu">
             <li class="nav-level">
-                <span style="color: #939393">
-                    <i>Navigation</i>
-                </span>
+                <span >
+                        <h6 class="text-center" ><b><span style="color:  #222d32" >Hello</span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
+                    </span>
+                    <hr> 
             </li>
             <li class=" treeview">
                 <a class="waves-effect waves-dark" href="/Engineer/Home">
                     <i class="icon-speedometer"></i>
                     <span> Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="active treeview">
+                <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
+                    <i class="icon-notebook"></i>
+                    <span> Materials PriceList</span>
                 </a>
             </li>
 
@@ -260,12 +268,7 @@
 
 
 
-            <li class="active treeview">
-                <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
-                    <i class="icon-notebook"></i>
-                    <span> Materials PriceList</span>
-                </a>
-            </li>
+            
 
 
 
@@ -380,7 +383,7 @@
 
 
 
-<div class="content-wrapper" style="margin-top: 30px">
+<div class="content-wrapper" style="margin-top: 10px">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
 
@@ -558,14 +561,13 @@
                                                             <input type="hidden" name="_method" value="PATCH"> {{ csrf_field() }}
                                                             <!-- key for updating -->
                                                             <input id="materialIdToUpdateInput" name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
-                                                            <label class="text text-muted" style="margin-left: 450px">
-                                                                <i>07 August 2018</i>
-                                                            </label>
-                                                            <!-- current date -->
-                                                            <br>
-                                                            <div class="form-group">
-                                                                <label for="updatePrice">Price:</label>
-                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name=s tyle="width: 300px !important;">
+                                                            
+                                                          
+                                                            <div class="form-group form-inline">
+                                                                <label for="updatePrice">Current Price:</label>
+                                                                <input type="text" class="form-control" id="" name="" value="{{ $material->latestPrice}}" tyle="width: 100px !important;" disabled> 
+                                                               &nbsp; &nbsp;  <label for="updatePrice">New Price:</label> 
+                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name=s tyle="width: 100px !important;">
                                                             </div>
 
 

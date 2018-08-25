@@ -1,25 +1,209 @@
-@extends('layouts.master')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('css')
-<style>
+<head>
+<meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ArkiWorx | Cost Management and Progress Monitoring System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-.scroll {
-    max-height: 450px;
-    overflow-y: auto;
-    
-   
-}
+        <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+     <![endif]-->
 
-</style>
-@endsection
-@section ('body')
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <!-- Favicon icon -->
+        <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+        <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+        <!--tabs-->
+        <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> 
+     <script src="/js/jquery.min.js"></script>
+     <script src="/js/bootstrap.min.js"></script> -->
+
+        <!-- Google font-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <!-- iconfont -->
+        <link rel="stylesheet" type="text/css" href="/assets/icon/icofont/css/icofont.css">
+
+        <!-- simple line icon -->
+        <link rel="stylesheet" type="text/css" href="/assets/icon/simple-line-icons/css/simple-line-icons.css">
+
+        <!-- Required Fremwork -->
+        <link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+        <!-- Weather css -->
+        <link href="/assets/css/svg-weather.css" rel="stylesheet">
+
+        <!-- Echart js -->
+        <script src="/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+
+        <!-- Style.css [REPLACED FOR FRAPPE]-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/mainForFrappe.css"> 
+
+        <!-- Responsive.css-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+
+        <!--color css-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/color/color-1.min.css" id="color" />
+
+        <!-- fullCalendar -->
+        <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.min.css" media="print">
+        <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
+
+
+
+    <style>
+        .sidebar .user-panel {
+            background-image: url('/assets/images/ff.jpg') !important;
+        }
+
+        .morphsearch-content {
+            background-color: #222d32 !important;
+            color: white !important;
+        }
+
+        .main-header-top>.navbar {
+            background: #222d32 !important;
+        }
+
+
+        .sidebar-menu>li.active>a {
+            background: #222d32 !important;
+        }
+
+        .main-header-top {
+            background-color: #222d32 !important;
+        }
+
+
+        .col-sm-3 {
+            background-color: white !important;
+
+        }
+
+        .col-sm-9 {
+            margin-top: -68px !important;
+        }
+
+
+
+        .panel-teal .panel-heading {
+
+            border: none !important;
+        }
+
+
+
+        .main-header {
+            margin-top: -5px !important;
+        }
+
+
+        .col-sm-3 {
+            position: relative;
+            margin-left: 10px;
+            float: left;
+            width: 20%;
+        }
+
+
+        .col-sm-9 {
+            float: left;
+
+            width: 79%;
+        }
+
+
+
+        .form-control,
+        .form-group label {
+            margin-right: 10px !important;
+            font-size: 14px;
+        }
+
+
+
+
+        .nav-email li {
+            line-height: 40px !important;
+        }
+
+
+
+
+        .btn-compose {
+            color: white !important;
+        }
+
+
+
+
+
+        .modal-header {
+            background-color: #293952 !important;
+            color: white !important;
+        }
+
+        .modal-body {
+            background-color: #e5e5f2 !important;
+        }
+
+        .modal-header {
+            background-color: #778899 !important;
+            color: white !important;
+        }
+
+    </style>
+
+    <!-- FRAPPE START -->
+    <link rel="stylesheet" href="/frappe/dist/frappe-gantt.css" />
+	<script src="/frappe/dist/frappe-gantt.js"></script>
+
+    <style>
+		body {
+			font-family: sans-serif;
+			
+		}
+		.container {
+			width: 80%;
+			margin: 0 auto;
+		}
+		/* custom class */
+		.gantt .bar-milestone .bar {
+			fill: tomato;
+		}
+             
+        /* CUSTOM CSS JULIA ADDED */
+        .scroll {
+            max-height: 500px;
+            max-width:  1000px;
+            overflow-y: auto;
+            overflow-x: scroll;
+        }
+
+
+	</style>
+    <!-- FRAPPE END -->
+
+</head>
+
+<body class="sidebar-mini fixed">
+    <div class="loader-bg">
+        <div class="loader-bar">
+        </div>
+    </div>
     <div class="wrapper">
         <!--   <div class="loader-bg">
     <div class="loader-bar">
     </div>
 </div> -->
-
-
 
 
 
@@ -53,14 +237,11 @@
 
 
 
-
-
-
         <!-- Navbar-->
         <header class="main-header-top hidden-print">
 
             <a href="Admin/home" class="nav-brand">
-                <img class="img-fluid logo" src="../assets/images/cat.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="/assets/images/cat.jpg" alt="Theme-logo">
             </a>
 
 
@@ -86,7 +267,7 @@
 
                     <!-- User Menu-->
                     <li class="dropdown">
-                        <a href="/Admin/Account-Settings">
+                        <a href="/Engineer/Accounts-Settings">
                             <span>
                                 <img class="img-circle " src="/assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
@@ -110,7 +291,7 @@
                     <li>
 
 
-                        <a href="#" data-toggle="modal" data-target="#logoutModal">
+                        <a href="Login" data-toggle="modal" data-target="#logoutModal">
                             <i class="icon-logout"></i> LOG
                             <b>OUT</b>
                         </a>
@@ -145,23 +326,23 @@
                         <div class="dummy-column">
                             <h2>Popular</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="PagePreloadingEffect" />
+                                <img src="/assets/images/avatar-1.jpg" alt="PagePreloadingEffect" />
                                 <h3>Page Preloading Effect</h3>
                             </a>
 
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow" />
+                                <img src="/assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow" />
                                 <h3>Draggable Dual-View Slideshow</h3>
                             </a>
                         </div>
                         <div class="dummy-column">
                             <h2>Recent</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="TooltipStylesInspiration" />
+                                <img src="/assets/images/avatar-1.jpg" alt="TooltipStylesInspiration" />
                                 <h3>Tooltip Styles Inspiration</h3>
                             </a>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="NotificationStyles" />
+                                <img src="/assets/images/avatar-1.jpg" alt="NotificationStyles" />
                                 <h3>Notification Styles Inspiration</h3>
                             </a>
                         </div>
@@ -190,7 +371,7 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="/assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                    <img src="../assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
@@ -207,7 +388,7 @@
             <!-- sidebar profile Menu-->
             <ul class="nav sidebar-menu extra-profile-list">
                 <li>
-                    <a class="waves-effect waves-dark" href="profile">
+                    <a class="waves-effect waves-dark" href="Admin/profile">
                         <i class="icon-user"></i>
                         <span class="menu-text">View Profile</span>
                         <span class="selected"></span>
@@ -223,25 +404,31 @@
                     </a>
                 </li>
             </ul>
-           <!-- Sidebar Menu-->
+             <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
                 <li class="nav-level">
-                    <span style="color: #939393">
-                        <i>Navigation</i>
+                    <span >
+                        <h6 class="text-center" ><b><span style="color:  #222d32" ><b>Hello</b></span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
                     </span>
+                    <hr> 
                 </li>
-                <li class=" treeview">
+                <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Home">
                         <i class="icon-speedometer"></i>
                         <span> Dashboard</span>
                     </a>
                 </li>
-
-
-
-
-
+                
+                
                 <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
+                        <i class="icon-notebook"></i>
+                        <span> Materials PriceList</span>
+                    </a>
+                </li>
+
+
+               <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
                         <i class="icon-briefcase"></i>
                         <span> Projects</span>
@@ -257,8 +444,7 @@
 
 
 
-
-                <li class=" treeview">
+                <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
                         <i class="icon-notebook"></i>
                         <span> Materials PriceList</span>
@@ -278,7 +464,7 @@
                     </a>
                 </li>
 
-                <li class="treeview">
+                <li class=" treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Calendar">
                         <i class="icon-calendar"></i>
                         <span> Calendar</span>
@@ -300,235 +486,454 @@
                 </li>
 
 
+
     </aside>
+    <!-- end of sidebar-->
+    
+
+
+    <!-- end of sidebar-->
+    <div class="content-wrapper" style="background-color: white; ">
+      
+
+    <div class="" style="margin-top: 45px; margin-left: -80px">
+        <!-- FRAPPE START -->
+        <div class="container " style="background-color: white; ">
+           
+            <div class="container form-group form-inline" style="background-color: white; margin-top: -80px; margin-left: 180px"> <br><br> <br>
+             
+               
+                    <div style="margin-left: -200px; margin-top: -3px">
+                        <h4>
+                            <i class="icon-graph"></i> Gantt </h4>
+                        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                            <li class="breadcrumb-item">
+                                <a href="/Engineer/Project-Progress"></a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/Engineer/Project-Progress" data-toggle="tooltip" data-placement="right" title="back" >Projects List</a>
+                            </li>
+
+                        </ol>
+
+                    </div>
 
 
 
 
 
-    <div class="content-wrapper" style="margin-top: 30px">
-       
+                 
+
+               
+            <button type="button" class="form-control btn btn-outline-danger" name="" id="" onclick="gantt_chart.change_view_mode('Quarter Day')">Quarter Day</button> &nbsp;
+            <button type="button" class="form-control btn btn-outline-info" name="" id="" onclick="gantt_chart.change_view_mode('Half Day')" >Half Day</button> &nbsp;
+            <button type="button" class="form-control btn btn-outline-warning" name="" id="" onclick="gantt_chart.change_view_mode('Day')" >Day</button> &nbsp;
+            <button type="button" class="form-control btn btn-outline-success" name="" id="" onclick="gantt_chart.change_view_mode('Week')" >Week</button> &nbsp;
+            <button type="button" class="form-control btn btn-outline-primary" name="" id="" onclick="gantt_chart.change_view_mode('Month')" >Month</button> &nbsp;
         </div>
-
-
-
-
-
-
-<!-- create project schedule modal -->
-
-                <div class="modal fade" id="createProjectSchedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header" style="background-color: #4CAF50   !important" >
-                                <h4 class="modal-title" id="exampleModalLabel">
-                                    <span  style="color: white" >Estimated Project Schedule</span>
-                                </h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body scroll" >
-                                 <div class="form-group form-inline">
-                        <h6 class="text text-default" style="margin-left: 380px">ACTIVITIES:</h6> <br> <br>
-                                   
-                                     <label class="text text-primary"> Task 1</label> &nbsp;&nbsp;&nbsp;
-                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="General Requirements" disabled> <br> <br>
-                                     <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
-                                      <select class="form-control" style="width: 100px" disabled> 
-                                     <option></option>
-                                          <option></option>
-                                     </select>
-                    </div>
-                                
-                                   <div class="form-group form-inline">
-                        <br> <br>
-                                       <label class="text text-primary"> Task 2</label> &nbsp;&nbsp;&nbsp;
-                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Site Preparation" disabled> <br> <br>
-                                      <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
-                                      <select class="form-control" style="width: 100px"> 
-                                     <option>Task 1</option>
-                                       
-                                     </select>
-                    </div>
-                                
-                                 <div class="form-group form-inline">
-                        <br> <br>
-                                     <label class="text text-primary"> Task 3</label> &nbsp;&nbsp;&nbsp;
-                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Columns" disabled> <br> <br>
-                                     <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
-                                      
-                                      <select class="form-control" style="width: 100px" > 
-                                     <option>Task 1 </option>
-                                          <option> Task 2</option>
-                                     </select>
-                    </div>
-                                
-                                 <div class="form-group form-inline">
-                        <br> <br>
-                                     <label class="text text-primary"> Task 4</label> &nbsp;&nbsp;&nbsp;
-                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Concrete Slab" disabled> <br> <br>
-                                    <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
-                                      
-                                      <select class="form-control" style="width: 100px" > 
-                                     <option> Task 1</option>
-                                          <option>Task 2</option>
-                                          <option>Task 3</option>
-                                     </select>
-                    </div>
-                                
-                                
-                                
-                            </div>
-                            <div class="modal-footer" >
-                                <button type="button" class="btn btn-success"  >Save</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- Add user Modal -->
-
-        <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content pull-center">
-                    <div class="modal-header color color-info">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">
-                            <span class="label label-danger">Edit User Account</span>
-                        </h4>
-                    </div>
-                    <div class="modal-body" style="background: #e5e5f2 !important; ">
-
-                        <div class="row">
-                            <div class="col-sm-4" style="margin-left: 210px !important;">
-                                <div class="card faq-left">
-                                    <div class="social-profile">
-                                        <img class="img-fluid img-sm" src="../assets/images/social/profile.jpg" alt="">
-                                        <div class="profile-hvr m-t-15">
-                                            <i class="icofont icofont-ui-edit p-r-10 c-pointer"></i>
-                                            <i class="icofont icofont-ui-delete c-pointer"></i>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-
-
-                                        <div class="faq-profile-btn">
-                                            <p class="text-muted"> Add image</p>
-                                            <div style="font-size: 10px !important;">
-                                                <form action="/action_page.php">
-                                                    <input type="file" name="pic" accept="image/*">
-                                                    <br>
-                                                    <br>
-                                                    <input type="submit" class="btn btn-info">
-                                                </form>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- end of card-block -->
-                            </div>
-                        </div>
-
-
-
-                        <form class="form-inline" action="/action_page.php">
-                            <div class="form-group">
-                                <label for="fname">First Name: </label>
-                                <input type="text" class="form-control" id="fname" placeholder="First name">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="lname">Last Name:</label>
-                                <input type="text" class="form-control" id="lname" placeholder="Last name">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="form-group">
-                                <label for="user">User Name:</label>
-                                <input type="text" class="form-control" id="lname" placeholder="User name">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="pwd">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Password">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="form-group">
-                                <label for="email">Email Address:</label>
-                                <input type="email" class="form-control" id="email" style="width: 200px !important;" placeholder="Email Address">
-                            </div>
-
-                            <div class="form-group pull-center">
-                                <label for="usertype">User Type:</label>
-                                <select class="form-control" name="usertype" id="userType" style="width: 150px !important;">
-                                    <option>Admin </option>
-                                    <option>Client </option>
-                                    <option>Engineer </option>
-                                    <option>Architect </option>
-                                </select>
-                            </div>
-
-
-
-                            <div class="modal-footer">
-                                <hr>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-danger" data-dismiss="modal">Update User</button>
-                            </div>
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
+            <div class="gantt-target scroll" style="width: 1100px; height 900px !important"></div>
         </div>
+        <!-- FRAPPE END -->
+
+
     </div>
-    </div>
-
-
-    <!-- Container-fluid ends -->
-    </div>
-    </div>
-
-@endsection
+        </div>
+    <!-- content wrapper end-->
 
 
 
-@section('script')
-@endsection
+
+
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+      <div class="ie-warning">
+          <h1>Warning!!</h1>
+          <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+          <div class="iew-container">
+              <ul class="iew-download">
+                  <li>
+                      <a href="http://www.google.com/chrome/">
+                          <img src="../assets/images/browser/chrome.png" alt="Chrome">
+                          <div>Chrome</div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.mozilla.org/en-US/firefox/new/">
+                          <img src="../assets/images/browser/firefox.png" alt="Firefox">
+                          <div>Firefox</div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://www.opera.com">
+                          <img src="../assets/images/browser/opera.png" alt="Opera">
+                          <div>Opera</div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.apple.com/safari/">
+                          <img src="../assets/images/browser/safari.png" alt="Safari">
+                          <div>Safari</div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                          <img src="../assets/images/browser/ie.png" alt="">
+                          <div>IE (9 & above)</div>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <p>Sorry for the inconvenience!</p>
+      </div>
+      <![endif]-->
+    <!-- Warning Section Ends -->
+
+    <!-- Required Jqurey -->
+    <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/assets/plugins/tether/dist/js/tether.min.js"></script>
+
+    <!-- Required Fremwork -->
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- waves effects.js -->
+    <script src="/assets/plugins/Waves/waves.min.js"></script>
+
+    <!-- Scrollbar JS-->
+    <script src="/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+
+    <!--classic JS-->
+    <script src="/assets/plugins/classie/classie.js"></script>
+
+    <!-- notification -->
+    <script src="/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+    <!-- Rickshaw Chart js -->
+    <script src="/assets/plugins/d3/d3.js"></script>
+    <script src="/assets/plugins/rickshaw/rickshaw.js"></script>
+
+    <!-- Sparkline charts -->
+    <script src="/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+
+    <!-- Counter js  -->
+    <script src="/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="/assets/plugins/countdown/js/jquery.counterup.js"></script>
+
+    <!-- custom js -->
+    <script type="text/javascript" src="/assets/js/main.min.js"></script>
+    <!-- welcome admin able -->
+    <script type="text/javascript" src="/assets/pages/dashboard.js"></script>
+    <script type="text/javascript" src="/assets/pages/elements.js"></script>
+    <script src="/assets/js/menu.min.js"></script>
+
+    <script>
+        var $window = $(window);
+        var nav = $('.fixed-button');
+        $window.scroll(function () {
+            if ($window.scrollTop() >= 200) {
+                nav.addClass('active');
+            } else {
+                nav.removeClass('active');
+            }
+        });
+
+    </script>
+    <!-- FRAPPE START -->
+    <script>
+		var tasks = [
+			{
+                
+				start: '2018-10-01',
+				end: '2018-10-03',
+				name: 'Building Permit',
+				id: "Task 0",
+				progress: 100
+			},
+			{
+				start: '2018-10-03',
+				end: '2018-10-06',
+				name: 'Planning',
+				id: "Task 1",
+				progress: 100,
+				dependencies: 'Task 0'
+			},
+			{
+				start: '2018-10-04',
+				end: '2018-10-08',
+				name: 'Excavation',
+				id: "Task 2",
+				progress: 80,
+				dependencies: 'Task 1'
+			},
+			{
+				start: '2018-10-08',
+				end: '2018-10-09',
+				name: 'Back Fill',
+				id: "Task 3",
+				progress: 0,
+				dependencies: 'Task 2'
+			},
+			{
+				start: '2018-10-10',
+				end: '2018-10-11',
+				name: 'Lastillas',
+				id: "Task 4",
+				progress: 0,
+				dependencies: 'Task 3'
+			},
+			{
+				start: '2018-10-12',
+				end: '2018-10-15',
+				name: 'Soil Posoining',
+				id: "Task 5",
+				progress: 0,
+				dependencies: 'Task 4'
+			},
+            
+            {
+				start: '2018-10-15',
+				end: '2019-01-24',
+				name: 'General Construction',
+				id: "Task 6",
+				progress: 0,
+				dependencies: 'Task 5'
+			},
+            
+            {
+				start: '2018-10-15',
+				end: '2018-10-22',
+				name: 'Column',
+				id: "Task 7",
+				progress: 0,
+				dependencies: 'Task 6'
+			},
+            {
+				start: '2018-10-15',
+				end: '2018-10-19',
+				name: 'Footing',
+				id: "Task 8",
+				progress: 0,
+				dependencies: 'Task 6'
+			},
+            {
+				start: '2018-10-19',
+				end: '2018-10-29',
+				name: 'Slab',
+				id: "Task 9",
+				progress: 0,
+				dependencies: 'Task 8'
+			},
+            
+            {
+				start: '2018-10-29',
+				end: '2018-11-04',
+				name: 'Beams',
+				id: "Task 10",
+				progress: 0,
+				dependencies: 'Task 9'
+			},
+            
+             {
+				start: '2018-11-04',
+				end: '2018-11-08',
+				name: 'Wall Footing',
+				id: "Task 11",
+				progress: 0,
+				dependencies: 'Task 10'
+			},
+            
+             {
+				start: '2018-11-04',
+				end: '2018-11-11',
+				name: 'Floor Beams',
+				id: "Task 12",
+				progress: 0,
+				dependencies: 'Task 10'
+			},
+            
+            {
+				start: '2018-11-11',
+				end: '2018-11-29',
+				name: 'Masonry',
+				id: "Task 13",
+				progress: 0,
+				dependencies: 'Task 12'
+			},
+            
+            {
+				start: '2018-11-29',
+				end: '2018-12-08',
+				name: 'Roofing',
+				id: "Task 14",
+				progress: 0,
+				dependencies: 'Task 13'
+			},
+            
+            {
+				start: '2018-12-08',
+				end: '2018-12-15',
+				name: 'Windows',
+				id: "Task 15",
+				progress: 0,
+				dependencies: 'Task 14'
+			},
+            
+            {
+				start: '2018-12-08',
+				end: '2018-12-18',
+				name: 'Doors',
+				id: "Task 16",
+				progress: 0,
+				dependencies: 'Task 14'
+			},
+            
+             {
+				start: '2018-12-08',
+				end: '2018-12-20',
+				name: 'Ceiling',
+				id: "Task 17",
+				progress: 0,
+				dependencies: 'Task 14'
+			},
+            
+            {
+				start: '2018-12-20',
+				end: '2018-12-25',
+				name: 'Paint Ceiling',
+				id: "Task 18",
+				progress: 0,
+				dependencies: 'Task 17'
+			},
+            
+            {
+				start: '2018-12-20',
+				end: '2018-12-26',
+				name: 'Paint Walls',
+				id: "Task 19",
+				progress: 0,
+				dependencies: 'Task 17'
+			},
+            
+            {
+				start: '2018-12-26',
+				end: '2019-01-02',
+				name: 'Staircase',
+				id: "Task 20",
+				progress: 0,
+				dependencies: 'Task 19'
+			},
+            
+            {
+				start: '2019-01-02',
+				end: '2019-01-10',
+				name: 'Plumbing Works',
+				id: "Task 21",
+				progress: 0,
+				dependencies: 'Task 20'
+			},
+            
+            {
+				start: '2019-01-10',
+				end: '2019-01-15',
+				name: 'Electrical Works',
+				id: "Task 22",
+				progress: 0,
+				dependencies: 'Task 21'
+			},
+            
+            {
+				start: '2019-01-15',
+				end: '2019-01-24',
+				name: 'Tiles',
+				id: "Task 23",
+				progress: 0,
+				dependencies: 'Task 22'
+			},
+            
+            {
+				start: '2019-01-24',
+				end: '2019-01-26',
+				name: 'Inspection',
+				id: "Task 24",
+				progress: 0,
+				dependencies: 'Task 23'
+			},
+            
+             {
+				start: '2019-01-26',
+				end: '2019-01-27',
+				name: 'Turn Over',
+				id: "Task 25",
+				progress: 0,
+				dependencies: 'Task 24'
+			},
+            
+            
+            
+            
+            
+            
+            
+            
+            
+		]
+        
+        
+        
+     
+        
+       // var gantt = new Gantt("#gantt", tasks, {
+   // header_height: 50,
+   // column_width: 30,
+   // step: 24,
+   // view_modes: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'],
+   // bar_height: 20,
+   // bar_corner_radius: 3,
+   // arrow_curve: 5,
+   // padding: 18,
+   // view_mode: 'Day',   
+   // date_format: 'YYYY-MM-DD',
+//custom_popup_html: null
+//});
+    
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+		var gantt_chart = new Gantt(".gantt-target", tasks, {
+			on_click: function (task) {
+				console.log(task);
+			},
+			on_date_change: function(task, start, end) {
+				console.log(task, start, end);
+			},
+			on_progress_change: function(task, progress) {
+				console.log(task, progress);
+			},
+			on_view_change: function(mode) {
+				console.log(mode);
+			},
+            view_mode:'Day'
+		});
+		console.log(gantt_chart);
+	</script>
+    <!-- FRAPPE END -->
+</body>
+
+</html>

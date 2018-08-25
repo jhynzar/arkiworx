@@ -76,6 +76,8 @@ class ActualsController extends Controller
             
         }
         $projectRequirements = DB::table('tblprojectrequirements')
+                            ->join('tblworksubcategory','tblprojectrequirements.intWorkSubCategoryId','=','tblworksubcategory.intWorkSubCategoryId')
+                            ->join('tblworkcategory','tblworksubcategory.intWorkCategoryId','=','tblworkcategory.intWorkCategoryId')
                             ->where('intProjectId','=',$project->intProjectId)
                             ->get()
                             ->toArray();
@@ -135,6 +137,57 @@ class ActualsController extends Controller
             array_push($projectWorkSubCategories,$workSubCategoryDetails);
         }
 
+        //=====PROJECT REQUIREMENTS VIEWING
+
+        //----Extracting project requirements
+        $allProjectRequirements = $projectWithDetails->projectRequirements;
+
+        //projectrequirements categories and sub categories
+
+        $projectRequirementsAllWorkCategoriesIds = DB::select("
+            SELECT tblworkcategory.intWorkCategoryId
+            FROM `tblprojectrequirements`
+            INNER JOIN `tblworksubcategory`
+            ON (tblprojectrequirements.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblprojectrequirements.intProjectId = :id && tblprojectrequirements.decActualPrice IS NOT NULL
+            GROUP BY tblworkcategory.intWorkCategoryId
+        ",['id'=>$id]);
+
+        $projectRequirementsAllWorkSubCategoriesIds = DB::select("
+            SELECT tblworksubcategory.intWorkSubCategoryId
+            FROM `tblprojectrequirements`
+            INNER JOIN `tblworksubcategory`
+            ON (tblprojectrequirements.intWorkSubCategoryId = tblworksubcategory.intWorkSubCategoryId)
+            INNER JOIN `tblworkcategory`
+            ON (tblworkcategory.intWorkCategoryId = tblworksubcategory.intWorkCategoryId)
+            WHERE tblprojectrequirements.intProjectId = :id && tblprojectrequirements.decActualPrice IS NOT NULL
+            GROUP BY tblworksubcategory.intWorkSubCategoryId
+        ",['id'=>$id]);
+
+        // PROJECT REQUIREMENTS WORK CATEGORIES
+
+        $projectRequirementsWorkCategories = array();
+
+        foreach($projectRequirementsAllWorkCategoriesIds as $workCategory){
+            $workCategoryDetails = DB::table('tblWorkCategory')
+                                ->where('intWorkCategoryId','=',$workCategory->intWorkCategoryId)
+                                ->first();
+
+            array_push($projectRequirementsWorkCategories, $workCategoryDetails);
+        }
+
+        // Project requirements WORK SUB 
+        $projectRequirementsWorkSubCategories = array();
+        foreach($projectRequirementsAllWorkSubCategoriesIds as $workSubCategory){
+            $workSubCategoryDetails = DB::table('tblWorkSubCategory')
+                                ->where('intWorkSubCategoryId','=',$workSubCategory->intWorkSubCategoryId)
+                                ->first();
+
+            array_push($projectRequirementsWorkSubCategories,$workSubCategoryDetails);
+        }
+
 
         //----FOR ADD MODALS
         //--MATERIALS
@@ -170,13 +223,25 @@ class ActualsController extends Controller
                                             ->where('tblprojectrequirements.decActualPrice','=',null)
                                             ->get();
 
+        //
+
         //dd($allProjectRequirementsWithNoActuals);
 
         //dd($allCategoriesWithSub);
 
         //dd($projectWorkSubCategories);
         //dd($projectWithDetails);
-        return view('Engineer/actuals',compact('projectWithDetails','projectWorkCategories','projectWorkSubCategories','allCategoriesWithSub','allMaterials','allProjectRequirementsWithNoActuals'));
+        return view('Engineer/actuals',compact(
+            'projectWithDetails',
+            'projectWorkCategories',
+            'projectWorkSubCategories',
+            'allCategoriesWithSub',
+            'allMaterials',
+            'allProjectRequirementsWithNoActuals',        
+            'allProjectRequirements',
+            'projectRequirementsWorkCategories',
+            'projectRequirementsWorkSubCategories'
+        ));
     }
 
     /**
@@ -251,6 +316,11 @@ class ActualsController extends Controller
 
         $request = request()->all();
 
+        $materialIdLatestPrice = DB::table('tblprice')
+                                ->where('tblprice.intMaterialId','=',$request['newMaterialActualMaterialId'])
+                                ->orderBy('tblprice.dtmPriceAsOf','desc')
+                                ->first();
+
         $insertedMaterialActualsId = DB::table('tblmaterialactuals')
                     ->insertGetId(
                         [
@@ -264,7 +334,7 @@ class ActualsController extends Controller
                     ->insertGetId(
                         [
                             'intQty' => $request['newMaterialActualQty'],
-                            'decCost' => $request['newMaterialActualTotalCost'],
+                            'decCost' => $request['newMaterialActualQty'] * $materialIdLatestPrice->decPrice,
                             'intMaterialActualsId' => $insertedMaterialActualsId
                         ]
                     );
@@ -277,6 +347,14 @@ class ActualsController extends Controller
     }
 
     public function updateProjectRequirementActual($id){
-        return 'updateProjectRequirementActual';
+
+        $req = request()->all();
+
+        DB::table('tblprojectrequirements')
+            ->where('tblprojectrequirements.intRequirementId','=', $req['projectRequirementId'])
+            ->update(['decActualPrice' => $req['actualPrice']]);
+
+
+        header('Refresh:0;/Engineer/Engineer-Projects/'.$id.'/Actuals');
     }
 }

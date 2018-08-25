@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
     <html>
 
     <head>
@@ -43,6 +43,13 @@
 
         <!-- Echart js -->
         <script src="/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+        
+      
+        
+        
+        
+        
+        
 
         <!-- Style.css -->
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
@@ -56,6 +63,8 @@
         <!-- fullCalendar -->
         <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.min.css" media="print">
         <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
+        
+        
 
         <style>
             .sidebar .user-panel {
@@ -104,6 +113,9 @@
     <body class="sidebar-mini fixed">
         @yield('body') 
 
+        
+        
+    
         <!-- Required Jqurey -->
         <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
         <script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
