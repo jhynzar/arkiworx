@@ -1,5 +1,10 @@
-<!-- @extends('layouts.master')
+@extends('layouts.master')
 @section('css')
+
+
+	<script src="/js/jspdf.js"></script>
+	<script src="/js/jquery-2.1.3.js"></script>
+	<script src="/js/pdfFromHTML.js"></script>
 <style>
 
 .scroll {
@@ -1079,7 +1084,7 @@
             <!-- Row start -->
             {{csrf_field()}}
                 
-                
+          <div id="HTMLtoPDF">      
     <!-- Row start -->
     <div class="row">
       <!-- Multiple Open Accordion start -->
@@ -1144,7 +1149,7 @@
                                  <label class="text text-default"><b>Permit</b> </label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-                                <input type="number" class="form-control" name="BuildingPermit" style="width: 180px !important;" placeholder="">
+                                <input type="number"  class="form-control" name="BuildingPermit" style="width: 180px !important;" placeholder="">
                                     
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Temporary Facilities</label>
@@ -4692,8 +4697,38 @@
                                 </div>
                             </div>
                         </div>
+            
+          </div>
+          
+          
+          
+          
+           
+          <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Overall Total Cost:</th>
+                                                         
+                                                            <th class="text-center text-primary"> 123456 </th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
+                                            </div>
+                                        </div>  
+          
+          
+          
+          
+          
+          
                         <div class="form-group form-inline">
-                            <button type="button" class="btn btn-outline-success" style="margin-left: 800px">Save as pdf</button>
+                            <a type="button" class="btn btn-outline-success" style="margin-left: 800px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
+                           
                             <button type="submit" class="btn btn-primary ">Save Estimation</button>
                         </div>
 
@@ -4704,8 +4739,8 @@
             </div>
             <!-- Multiple Open Accordion ends -->
 
-
-    </div>
+            </div>
+   
     <!-- Row end -->
 
     </form>
