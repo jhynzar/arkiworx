@@ -39,7 +39,40 @@ class ProjectsController extends Controller
         
         ");
 
-        //TO DO
+        //getting the totalEstimatedCost of a pending project
+
+        $pendingProjectsWithTotalEstimatedCost = array();
+        
+        foreach($pendingProjects as $project){
+            $projectTotalEstimatedCost = 0;
+
+            $allEstimatedMaterials = DB::table('tblmaterialestimates')
+                                ->where('tblmaterialestimates.intProjectId','=',$project->intProjectId)
+                                ->get();
+
+            foreach($allEstimatedMaterials as $estimatedMaterial){
+                $projectTotalEstimatedCost += $estimatedMaterial->decCost;
+            }
+
+            $allProjectRequirements = DB::table('tblprojectrequirements')
+                                ->where('tblprojectrequirements.intProjectId','=',$project->intProjectId)
+                                ->get();
+
+            foreach($allProjectRequirements as $projectRequirement){
+                $projectTotalEstimatedCost += $projectRequirement->decEstimatedPrice;
+            }
+
+            $projectWithEstimatedCost = (object) [
+                'projectDetails' => $project,
+                'totalEstimatedCost' => $projectTotalEstimatedCost
+            ];
+
+            array_push($pendingProjectsWithTotalEstimatedCost,$projectWithEstimatedCost);
+        }
+
+        //dd($pendingProjectsWithTotalEstimatedCost);
+
+        //For Add New Project
 
         $clients = DB::table('tblclient')->get();
 
@@ -48,9 +81,8 @@ class ProjectsController extends Controller
                     ->where('tblaccounts.strUserType','=','engineer')
                     ->get();
 
-        //dd($pendingProjects);
 
-        return view('Admin/projects',compact('pendingProjects','ongoingProjects','clients','engineers'));
+        return view('Admin/projects',compact('pendingProjectsWithTotalEstimatedCost','ongoingProjects','clients','engineers'));
     }
 
     /**
