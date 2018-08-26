@@ -1150,11 +1150,7 @@
                                 <label class="text text-default"><b>Permit</b> </label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-<<<<<<< HEAD
                                 <input type="number" class="form-control" id="BuildingPermit" name="BuildingPermit" style="width: 180px !important;" placeholder="">
-=======
-                                <input type="number"  class="form-control" name="BuildingPermit" style="width: 180px !important;" placeholder="">
->>>>>>> a48630947e69d3494118fb9f224e16fcba6e4582
                                     
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Temporary Facilities</label>
@@ -1386,7 +1382,6 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-<<<<<<< HEAD
                                             <td id="ColumnCement"></td>
                                             <td id="ColumnCementBag"></td>
                                             <td id="ColumnCementCost"></td>
@@ -1402,28 +1397,10 @@
                                             <td id="ColumnG"></td>
                                             <td id="ColumnGravel"></td>
                                             <td id="ColumnGravelCost"></td>
-=======
-                                            <td id="ColumnCement"></td><input type="hidden" id="ColumnCement1" name="ColumnCement" value=''>
-                                            <td id="ColumnCementBag"></td><input type="hidden" id="ColumnCementBag1" name="ColumnCementBag" value=''>
-                                            <td id="ColumnCementCost"></td><input type="hidden" id="ColumnCementCost1" name="ColumnCementCost" value=''>
-                                           
-                                        </tr>
-                                        <tr>
-                                            <td id="ColumnS"></td><input type="hidden" id="ColumnS1" name="ColumnS" value=''>
-                                            <td id="ColumnSand"></td><input type="hidden" id="ColumnSand1" name="ColumnSand" value=''>
-                                            <td id="ColumnSandCost"></td><input type="hidden" id="ColumnSandCost1" name="ColumnSandCost" value=''>
-                                       
-                                        </tr>
-                                        <tr class="table-warning">
-                                            <td id="ColumnG"></td><input type="hidden" id="ColumnG1" name="ColumnG" value=''>
-                                            <td id="ColumnGravel"></td><input type="hidden" id="ColumnGravel1" name="ColumnGravel" value=''>
-                                            <td id="ColumnGravelCost"></td><input type="hidden" id="ColumnGravelCost1" name="ColumnGravelCost" value=''>
->>>>>>> a48630947e69d3494118fb9f224e16fcba6e4582
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-<<<<<<< HEAD
                                             <td id="ColumnSteelBar"></td>
                                             <td id="ColumnSteelBarQty"></td>
                                             <td id="ColumnSteelBarCost"></td>
@@ -1439,23 +1416,6 @@
                                             <td id="ColumnTieWire"></td>
                                             <td id="ColumnTieWireKg"></td>
                                             <td id="ColumnTieWireCost"></td>
-=======
-                                            <td id="ColumnSteelBar"></td><input type="hidden" id="ColumnSteelBar1" name="ColumnSteelBar" value=''>
-                                            <td id="ColumnSteelBarQty"></td><input type="hidden" id="ColumnSteelBarQty1" name="ColumnSteelBarQty" value=''>
-                                            <td id="ColumnSteelBarCost"></td><input type="hidden" id="ColumnSteelBarCost1" name="ColumnSteelBarCost" value=''>
-                                           
-                                        </tr>
-                                            <tr>
-                                            <td id="ColumnTieBar"></td><input type="hidden" id="ColumnTieBar1" name="ColumnTieBar" value=''>
-                                            <td id="ColumnTieBarQty"></td><input type="hidden" id="ColumnTieBarQty1" name="ColumnTieBarQty" value=''>
-                                            <td id="ColumnTieBarCost"></td><input type="hidden" id="ColumnTieBarCost1" name="ColumnTieBarCost" value=''>
-                                       
-                                        </tr>
-                                        <tr class="table-warning">
-                                            <td id="ColumnTieWire"></td><input type="hidden" id="ColumnTieWire1" name="ColumnTieWire" value=''>
-                                            <td id="ColumnTieWireKg"></td><input type="hidden" id="ColumnTieWireKg1" name="ColumnTieWireKg" value=''>
-                                            <td id="ColumnTieWireCost"></td><input type="hidden" id="ColumnTieWireCost1" name="ColumnTieWireCost" value=''>
->>>>>>> a48630947e69d3494118fb9f224e16fcba6e4582
                                            
                                         </tr>
                                       
@@ -5017,7 +4977,7 @@
             var materialindex = MaterialArray[column];
             var date2 = materialindex['date'];
             var materialid2 = materialindex['MaterialId'];
-            if(date1 < date2 && materialid === materialid2){
+            if(date1 < date2 && materialid == materialid2){
                 date1 = date2;
                 var materyales = materialindex['materialName'];
                 var presyo = materialindex['price'];
@@ -5104,19 +5064,11 @@
             var price = Gravel * price;
             price1 += price;
         $("#ColumnG").html(name);
-<<<<<<< HEAD
         $("#ColumnGravel").html(Gravel1);
         $("#ColumnGravelCost").html(price1);
         $("#ColumnG1").val(materialid);
         $("#ColumnGravel1").val(Gravel1);
         $("#ColumnGravelCost1").val(price1);
-=======
-        $("#ColumnGravel").html(Gravel);
-        $("#ColumnGravelCost").html(price);
-        $("#ColumnG1").val(materialid);
-        $("#ColumnGravel1").val(Gravel);
-        $("#ColumnGravelCost1").val(price);
->>>>>>> a48630947e69d3494118fb9f224e16fcba6e4582
         
         //metals
         var BarPcs1 = 0;//$("#ColumnSteelBarQty").val();
