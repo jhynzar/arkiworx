@@ -318,6 +318,14 @@ class CostEstimationsController extends Controller
 
         //footing
 
-        dd($ColumnCement);
+        // ALWAYS MAKE THIS LAST
+
+        // update project status
+        DB::table('tblproject')
+        ->where('tblproject.intProjectId','=',$id)
+        ->update(['strProjectStatus' => 'for approval']);
+
+        //refresh
+        header('Refresh:0;/Engineer/Cost-Estimation');
     }
 }
