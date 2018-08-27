@@ -447,42 +447,42 @@
                                                             </thead>
                                                             <tbody class="text-center">
 
-                                                              
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>
-                                                                        <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                        &nbsp; &nbsp; Client Name
-                                                                    </td>
-                                                                    <td>Project 5</td>
-                                                                   
-                                                                    
-                                                                       
-                                                                        <td class="faq-table-btn">
-
-
-
-
-                                               
-
-
-
-                                                                            <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-success waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="Create">
-                                                                                 <i class="icon-note"> </i>Create Project Schedule
-                                                                            </button>
-
-
-
-                                                                         
-
+                                                                @foreach ($pendingProjectSchedules as $projectKey=>$project)
+                                                                    <tr>
+                                                                        <td>{{$projectKey+1}}</td>
+                                                                        <td>
+                                                                            <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                                            &nbsp; &nbsp; {{$project->strClientFName}}&nbsp;{{$project->strClientLName}}
                                                                         </td>
+                                                                        <td>{{$project->strProjectName}}</td>
+                                                                    
+                                                                        
+                                                                        
+                                                                            <td class="faq-table-btn">
 
-                                                                </tr>
 
 
 
+                                                
 
+
+
+                                                                                <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-success waves-effect waves-light"
+                                                                                    data-toggle="tooltip" data-placement="top" title="Create">
+                                                                                    <i class="icon-note"> </i>Create Project Schedule
+                                                                                </button>
+
+
+
+                                                                            
+
+                                                                            </td>
+
+                                                                    </tr>
+
+                                                                @endforeach
+
+                                                              
                                                             </tbody>
                                                         </table>
                                                         <!-- end of table -->
@@ -529,80 +529,42 @@
                                                             </thead>
                                                             <tbody class="text-center">
 
-                                                              
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>
-                                                                        <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                        &nbsp; &nbsp; Client Name
-                                                                    </td>
-                                                                    <td>Project 6</td>
-                                                               
-                                                                    
-                                                                       
-                                                                        <td class="faq-table-btn">
-
-
-
-
-
-
-
-                                                                             <a href="/Engineer/Project-Progress/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="View">
-                                                                                 <i class="icon-map"> </i>Project Schedule
-                                                                            </a>
-                                                                            <a href="/Engineer/Project-Progress/Materials-Usage"  type="button"  class="btn btn-warning waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="View">
-                                                                                 <i class="icon-graph"> </i>Material Usage
-                                                                            </a>
-
-
-
-                                                                         
-
+                                                                @foreach ($finishedProjectSchedules as $projectKey=>$project)
+                                                                    <tr>
+                                                                        <td>{{$projectKey + 1}}</td>
+                                                                        <td>
+                                                                            <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
+                                                                            &nbsp; &nbsp; {{$project->strClientFName}}&nbsp;{{$project->strClientLName}}
                                                                         </td>
-
-                                                                </tr>
+                                                                        <td>{{$project->strProjectName}}</td>
                                                                 
-                                                                     <tr>
-                                                                    <td>2</td>
-                                                                    <td>
-                                                                        <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                        &nbsp; &nbsp; Client Name
-                                                                    </td>
-                                                                    <td>Project 7</td>
-                                                                
-                                                                    
-                                                                       
-                                                                        <td class="faq-table-btn">
+                                                                        
+                                                                        
+                                                                            <td class="faq-table-btn">
 
 
 
 
-                                               
 
 
 
-                                                                            <a href="Engineer/Project-Progress/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="View">
-                                                                                 <i class="icon-map"> </i>Project Schedule
-                                                                            </a>
-                                                                            <a href="#"  type="button"  class="btn btn-warning waves-effect waves-light"
-                                                                                data-toggle="tooltip" data-placement="top" title="View">
-                                                                                 <i class="icon-graph"> </i>Material Usage
-                                                                            </a>
+                                                                                <a href="/Engineer/Project-Progress/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
+                                                                                    data-toggle="tooltip" data-placement="top" title="View">
+                                                                                    <i class="icon-map"> </i>Project Schedule
+                                                                                </a>
+                                                                                <a href="/Engineer/Project-Progress/Materials-Usage"  type="button"  class="btn btn-warning waves-effect waves-light"
+                                                                                    data-toggle="tooltip" data-placement="top" title="View">
+                                                                                    <i class="icon-graph"> </i>Material Usage
+                                                                                </a>
 
 
 
-                                                                         
+                                                                            
 
-                                                                        </td>
+                                                                            </td>
 
-                                                                </tr>
-
-
-
+                                                                    </tr>
+                                                                @endforeach
 
                                                             </tbody>
                                                         </table>
