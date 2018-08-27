@@ -4999,6 +4999,12 @@
 
 <script>
 
+    function computeAndDisplayOverallTotal(){
+        var overAllTotal = parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val());
+
+        $("#OverallTotalCost").html(overAllTotal);
+    }
+
     var searchValues = function (X1,Y1,Work1){
         var AnswersArray = {!!json_encode($AnswersArray)!!};
         for ( var column in AnswersArray ) {
@@ -5082,6 +5088,8 @@
         totalGeneralReq  += parseFloat($("#OverheadProfit").val()) ;
         $("#totalGeneralReq").html(parseFloat(totalGeneralReq));
         $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));
+
+        computeAndDisplayOverallTotal();
     });
 
    $("#computeColumn").click(function () {
@@ -5153,6 +5161,8 @@
 
     $("#ColumnTotalCost1").val( parseFloat($("#ColumnCementCost1").val()) + parseFloat($("#ColumnSandCost1").val()) + parseFloat($("#ColumnGravelCost1").val()) + parseFloat($("#ColumnSteelBarCost1").val()) + parseFloat($("#ColumnTieBarCost1").val()) + parseFloat($("#ColumnTieWireCost1").val()) );
     $("#ColumnTotalCost").html( $("#ColumnTotalCost1").val() );
+
+        computeAndDisplayOverallTotal();
     });
 
 //#########################################################################################################################################################################################
