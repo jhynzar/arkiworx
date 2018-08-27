@@ -1216,6 +1216,7 @@
 
                                     <div class="card-block">
                                             <div class="table-responsive">
+                                            <input type=hidden id="totalGeneralReq1" name="totalGeneralReq" value="1715709.06">
                                                 <table class="table m-b-0 photo-table">
                                                     <thead>
                                                         <tr class="text-uppercase">
@@ -1439,6 +1440,7 @@
                                     <input type="hidden" id="ColumnTieWire1"            name="ColumnTieWire" value='6'>
                                     <input type="hidden" id="ColumnTieWireKg1"          name="ColumnTieWireKg" value='6'>
                                     <input type="hidden" id="ColumnTieWireCost1"        name="ColumnTieWireCost" value='360'>
+                                    <input type="hidden" id="ColumnTotalCost1"          name="ColumnTotalCost" value='16020'>
                                 </div>
                                 
                                
@@ -1456,7 +1458,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary" id="TotalCostColumn"> 16020 </th>
+                                                            <th class="text-center text-primary" id="ColumnTotalCost"> 16020 </th>
                                                             
 
                                                         </tr>
@@ -1656,6 +1658,7 @@
                                     <input type="hidden" id="FootingTieWire1"            name="FootingTieWire" value='6'>
                                     <input type="hidden" id="FootingTieWireKg1"          name="FootingTieWireKg" value='2.50'>
                                     <input type="hidden" id="FootingTieWireCost1"        name="FootingTieWireCost" value='150'>
+                                    <input type="hidden" id="FootingTotalCost1"        name="FootingTotalCost" value='5643.50'>
                                 </div>
                                 
                                
@@ -1674,7 +1677,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> </th>
+                                                            <th class="text-center text-primary" id="FootingTotalCost"> 5643.50 </th>
                                                             
 
                                                         </tr>
@@ -1885,6 +1888,7 @@
                                     <input type="hidden" id="SlabTieWire1"            name="SlabTieWire" value='6'>
                                     <input type="hidden" id="SlabTieWireKg1"          name="SlabTieWireKg" value='2'>
                                     <input type="hidden" id="SlabTieWireCost1"        name="SlabTieWireCost" value='120'>
+                                    <input type="hidden" id="SlabTotalCost1"          name="SlabTotalCost" value='24675'>
                                 </div>
                                 
                                
@@ -1902,7 +1906,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary" id=""> 24675 </th>
+                                                            <th class="text-center text-primary" id="SlabTotalCost"> 24675 </th>
                                                             
 
                                                         </tr>
@@ -2063,8 +2067,8 @@
                                         <tbody>
                                         <tr class="table-success">
                                             <td id="BeamCement">cement 40kg</td>
-                                            <td id="BeamCementBag">14</td>
-                                            <td id="BeamCementCost">3290</td>
+                                            <td id="BeamCementBag">13</td>
+                                            <td id="BeamCementCost">3055</td>
                                            
                                         </tr>
                                         <tr>
@@ -2075,50 +2079,51 @@
                                         </tr>
                                         <tr class="table-warning">
                                             <td id="BeamG">gravel</td>
-                                            <td id="BeamGravel">1.50</td>
-                                            <td id="BeamGravelCost">2250</td>
+                                            <td id="BeamGravel">1.60</td>
+                                            <td id="BeamGravelCost">2400</td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
                                             <td id="BeamSteelBar">Main bars-12mmØ</td>
-                                            <td id="BeamSteelBarQty">36</td>
-                                            <td id="BeamSteelBarCost">6552</td>
+                                            <td id="BeamSteelBarQty">37</td>
+                                            <td id="BeamSteelBarCost">6734</td>
                                            
                                         </tr>
                                             <tr>
                                             <td id="BeamTieBar">ties/stirrups bars-10mmØ</td>
-                                            <td id="BeamTieBarQty">24</td>
-                                            <td id="BeamTieBarCost">2928</td>
+                                            <td id="BeamTieBarQty">36</td>
+                                            <td id="BeamTieBarCost">4392</td>
                                        
                                         </tr>
                                         <tr class="table-warning">
                                             <td id="BeamTieWire">Tie wire</td>
-                                            <td id="BeamTieWireKg">6</td>
-                                            <td id="BeamTieWireCost">360</td>
+                                            <td id="BeamTieWireKg">7</td>
+                                            <td id="BeamTieWireCost">420</td>
                                            
                                         </tr>
                                       
                                         </tbody>
                                     </table>
                                     <input type="hidden" id="BeamCement1"             name="BeamCement" value='1'>
-                                    <input type="hidden" id="BeamCementBag1"          name="BeamCementBag" value='14.00'>
-                                    <input type="hidden" id="BeamCementCost1"         name="BeamCementCost" value='3290'>
+                                    <input type="hidden" id="BeamCementBag1"          name="BeamCementBag" value='13.00'>
+                                    <input type="hidden" id="BeamCementCost1"         name="BeamCementCost" value='3055'>
                                     <input type="hidden" id="BeamS1"                  name="BeamS" value='2'>
                                     <input type="hidden" id="BeamSand1"               name="BeamSand" value='0.80'>
                                     <input type="hidden" id="BeamSandCost1"           name="BeamSandCost" value='640'>
                                     <input type="hidden" id="BeamG1"                  name="BeamG" value='3'>
-                                    <input type="hidden" id="BeamGravel1"             name="BeamGravel" value='1.50'>
-                                    <input type="hidden" id="BeamGravelCost1"         name="BeamGravelCost" value='2250'>
+                                    <input type="hidden" id="BeamGravel1"             name="BeamGravel" value='1.60'>
+                                    <input type="hidden" id="BeamGravelCost1"         name="BeamGravelCost" value='2400'>
                                     <input type="hidden" id="BeamSteelBar1"           name="BeamSteelBar" value='4'>
-                                    <input type="hidden" id="BeamSteelBarQty1"        name="BeamSteelBarQty" value='26'>
-                                    <input type="hidden" id="BeamSteelBarCost1"       name="BeamSteelBarCost" value='6652'>
+                                    <input type="hidden" id="BeamSteelBarQty1"        name="BeamSteelBarQty" value='37'>
+                                    <input type="hidden" id="BeamSteelBarCost1"       name="BeamSteelBarCost" value='6734'>
                                     <input type="hidden" id="BeamTieBar1"             name="BeamTieBar" value='5'>
-                                    <input type="hidden" id="BeamTieBarQty1"          name="BeamTieBarQty" value='24'>
-                                    <input type="hidden" id="BeamTieBarCost1"         name="BeamTieBarCost" value='2928'>
+                                    <input type="hidden" id="BeamTieBarQty1"          name="BeamTieBarQty" value='36'>
+                                    <input type="hidden" id="BeamTieBarCost1"         name="BeamTieBarCost" value='4392'>
                                     <input type="hidden" id="BeamTieWire1"            name="BeamTieWire" value='6'>
-                                    <input type="hidden" id="BeamTieWireKg1"          name="BeamTieWireKg" value='6'>
-                                    <input type="hidden" id="BeamTieWireCost1"        name="BeamTieWireCost" value='360'>
+                                    <input type="hidden" id="BeamTieWireKg1"          name="BeamTieWireKg" value='7'>
+                                    <input type="hidden" id="BeamTieWireCost1"        name="BeamTieWireCost" value='420'>
+                                    <input type="hidden" id="BeamTotalCost1"          name="BeamTotalCost" value='17641'>
                                 </div>
                                 
                                
@@ -2136,7 +2141,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> </th>
+                                                            <th class="text-center text-primary" id="BeamTotalCost"> 17641 </th>
                                                             
 
                                                         </tr>
@@ -4762,12 +4767,13 @@
            
           <div class="card-block">
                                             <div class="table-responsive">
+                                            <input type=hidden id="OverallTotalCost1" name="OverallTotalCost" value="">
                                                 <table class="table m-b-0 photo-table">
                                                     <thead>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Overall Total Cost:</th>
                                                          
-                                                            <th class="text-center text-primary"> 123456 </th>
+                                                            <th class="text-center text-primary" id="OverallTotalCost">  </th>
                                                             
 
                                                         </tr>
@@ -5075,6 +5081,7 @@
         totalGeneralReq  += parseFloat($("#Contigency").val()) ;
         totalGeneralReq  += parseFloat($("#OverheadProfit").val()) ;
         $("#totalGeneralReq").html(parseFloat(totalGeneralReq));
+        $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));
     });
 
    $("#computeColumn").click(function () {
@@ -5143,6 +5150,9 @@
         $("#ColumnTieWire1").val(6);
         $("#ColumnTieWireKg1").val(TieWires);
         $("#ColumnTieWireCost1").val(price);
+
+    $("#ColumnTotalCost1").val( parseFloat($("#ColumnCementCost1").val()) + parseFloat($("#ColumnSandCost1").val()) + parseFloat($("#ColumnGravelCost1").val()) + parseFloat($("#ColumnSteelBarCost1").val()) + parseFloat($("#ColumnTieBarCost1").val()) + parseFloat($("#ColumnTieWireCost1").val()) );
+    $("#ColumnTotalCost").html( $("#ColumnTotalCost1").val() );
     });
 
 //#########################################################################################################################################################################################
@@ -5176,6 +5186,9 @@ $("#computeFooting").click(function () {
         $("#FootingG1").val(3);
         $("#FootingGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#FootingGravel1").val()));
         $("#FootingGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#FootingGravelCost1").val()));
+
+    $("#FootingTotalCost1").val( parseFloat($("#FootingCementCost1").val()) + parseFloat($("#FootingSandCost1").val()) + parseFloat($("#FootingGravelCost1").val()) /*+ parseFloat($("#FootingSteelBarCost1").val()) + parseFloat($("#FootingTieBarCost1").val()) + parseFloat($("#FootingTieWireCost1").val()) */);
+    $("#FootingTotalCost").html( $("#FootingTotalCost1").val() );
 });
 
 $("#computeSlab").click(function () {
@@ -5208,6 +5221,9 @@ $("#computeSlab").click(function () {
     $("#SlabG1").val(3);
     $("#SlabGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#SlabGravel1").val()));
     $("#SlabGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#SlabGravelCost1").val()));
+
+    $("#SlabTotalCost1").val( parseFloat($("#SlabCementCost1").val()) + parseFloat($("#SlabSandCost1").val()) + parseFloat($("#SlabGravelCost1").val()) /*+ parseFloat($("#SlabSteelBarCost1").val()) + parseFloat($("#SlabTieBarCost1").val()) + parseFloat($("#SlabTieWireCost1").val()) */);
+    $("#SlabTotalCost").html( $("#SlabTotalCost1").val() );
 });
 
 $("#computeBeam").click(function () {
@@ -5240,7 +5256,14 @@ $("#computeBeam").click(function () {
     $("#BeamG1").val(3);
     $("#BeamGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#BeamGravel1").val()));
     $("#BeamGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#BeamGravelCost1").val()));
+
+    $("#BeamTotalCost1").val( parseFloat($("#BeamCementCost1").val()) + parseFloat($("#BeamSandCost1").val()) + parseFloat($("#BeamGravelCost1").val()) /*+ parseFloat($("#BeamSteelBarCost1").val()) + parseFloat($("#BeamTieBarCost1").val()) + parseFloat($("#BeamTieWireCost1").val()) */);
+    $("#BeamTotalCost").html( $("#BeamTotalCost1").val() );
 });
+
+$("#OverallTotalCost1").val( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val()) );
+$("#OverallTotalCost").html($("#OverallTotalCost1").val());
+
 </script>
 
 @endsection -->
