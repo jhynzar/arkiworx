@@ -251,8 +251,207 @@ class CostEstimationsController extends Controller
         $ColumnTieWireKg = $_POST['ColumnTieWireKg'];
         $ColumnTieWireCost = $_POST['ColumnTieWireCost'];
 
+        //--saving of data
+        //$BuildingPermit = $_POST['BuildingPermit'];
+        //$TemporaryFacilities = $_POST['TemporaryFacilities'];
+        //$WorkersBarracks = $_POST['WorkersBarracks'];
+        //$Excavation = $_POST['Excavation'];
+        //$Backfill = $_POST['Backfill'];
+        //$Lastillas = $_POST['Lastillas'];
+        //$SoilPoisoning = $_POST['SoilPoisoning'];
+        //------$LaborCost = $_POST['LaborCost'];
+        //$ToolsEquipments = $_POST['ToolsEquipments'];
+        //$Transportation = $_POST['Transportation'];
+        //$Contigency = $_POST['Contigency'];
+        //$OverheadProfit = $_POST['OverheadProfit'];
+
+        //General construction
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 1,
+            'strDesc' => 'Building Permit',
+            'decEstimatedPrice' => $BuildingPermit,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 2,
+            'strDesc' => 'Temporary Facilities',
+            'decEstimatedPrice' => $TemporaryFacilities,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 2,
+            'strDesc' => 'WorkersBarracks',
+            'decEstimatedPrice' => $WorkersBarracks,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 3,
+            'strDesc' => 'Excavation',
+            'decEstimatedPrice' => $Excavation,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 3,
+            'strDesc' => 'Backfill',
+            'decEstimatedPrice' => $Backfill,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 3,
+            'strDesc' => 'Lastillas',
+            'decEstimatedPrice' => $Lastillas,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 3,
+            'strDesc' => 'Soil Poisoning',
+            'decEstimatedPrice' => $SoilPoisoning,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 4,
+            'strDesc' => 'Tools And Equipments',
+            'decEstimatedPrice' => $ToolsEquipments,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 4,
+            'strDesc' => 'Transportation',
+            'decEstimatedPrice' => $Transportation,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 4,
+            'strDesc' => 'Contingency',
+            'decEstimatedPrice' => $Contigency,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 4,
+            'strDesc' => 'OverheadProfit',
+            'decEstimatedPrice' => $OverheadProfit,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+        //Labour Insert - TEMPORARY
+        DB::table('tblprojectrequirements')
+        ->insertGetId([
+            'intWorkSubCategoryId' => 4,
+            'strDesc' => 'Labor Cost',
+            'decEstimatedPrice' => $LaborCost,
+            'decActualPrice' => null, 
+            'intProjectId' => $id,
+        ]);
+
+
+
+        //- static
+        // $id = projectId
+        // 5 = column (subcategoryId static from database)
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnCement,
+                'intQty' => $ColumnCementBag,
+                'decCost' => $ColumnCementCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnS,
+                'intQty' => $ColumnSand,
+                'decCost' => $ColumnSandCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnG,
+                'intQty' => $ColumnGravel,
+                'decCost' => $ColumnGravelCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnSteelBar,
+                'intQty' => $ColumnSteelBarQty,
+                'decCost' => $ColumnSteelBarCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnTieBar,
+                'intQty' => $ColumnTieBarQty,
+                'decCost' => $ColumnTieBarCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $ColumnTieWire,
+                'intQty' => $ColumnTieWireKg,
+                'decCost' => $ColumnTieWireCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 5
+            ]
+        );
+
         //footing
 
-        dd($ColumnCement);
+        // ALWAYS MAKE THIS LAST
+
+        // update project status
+        DB::table('tblproject')
+        ->where('tblproject.intProjectId','=',$id)
+        ->update(['strProjectStatus' => 'for approval']);
+
+        //refresh
+        header('Refresh:0;/Engineer/Cost-Estimation');
     }
 }
