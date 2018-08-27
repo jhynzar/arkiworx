@@ -21,6 +21,7 @@ class ProjectProgressController extends Controller
                                 ->select('tblproject.intProjectId')
                                 ->leftJoin('tblschedules','tblproject.intProjectId','=','tblschedules.intProjectId')
                                 ->where('tblschedules.intProjectId','=',null)
+                                ->where('tblproject.strProjectStatus','=','on going')
                                 ->get();
 
         $pendingProjectSchedules = array();
@@ -42,7 +43,7 @@ class ProjectProgressController extends Controller
             FROM tblproject
             INNER JOIN tblclient ON tblclient.intClientId = tblproject.intClientId
             LEFT JOIN tblschedules ON tblproject.intProjectId = tblschedules.intProjectId
-            WHERE tblschedules.intProjectId IS NOT NULL AND tblproject.intActive = 1
+            WHERE tblschedules.intProjectId IS NOT NULL AND tblproject.strProjectStatus = 'on going' AND tblproject.intActive = 1
         ");
 
         $finishedProjectSchedules = array();
@@ -56,9 +57,7 @@ class ProjectProgressController extends Controller
             array_push($finishedProjectSchedules,$projectDetails);
         }
 
-
-
-        //Return
+        //pass to view
         return view ('Engineer/project-progress',compact(
             'pendingProjectSchedules',
             'finishedProjectSchedules'
