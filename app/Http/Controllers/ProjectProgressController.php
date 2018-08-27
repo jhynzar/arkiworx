@@ -32,9 +32,38 @@ class ProjectProgressController extends Controller
                             ->where('tblproject.intActive','=',1)
                             ->first();
 
-            array_push($pendingProjectSchedules,$projectDetails);
+            $projectRequirementsWorkSubCategoryIds = DB::select("
+                SELECT tblprojectrequirements.intWorkSubCategoryId
+                FROM tblprojectrequirements
+                WHERE tblprojectrequirements.intProjectId = :id
+                GROUP BY tblprojectrequirements.intWorkSubCategoryId
+            ",[$projectId->intProjectId]);
+
+            $materialsWorkSubCategoryIds = DB::select("
+                SELECT tblmaterialestimates.intWorkSubCategoryId
+                FROM tblmaterialestimates
+                WHERE tblmaterialestimates.intProjectId = :id
+                GROUP BY tblmaterialestimates.intWorkSubCategoryId
+            ",[$projectId->intProjectId]);
+            
+            $projectWorkSubCategoryIds = array_merge($projectRequirementsWorkSubCategoryIds,$materialsWorkSubCategoryIds);
+
+            $projectWorkSubCategories = array();
+            foreach($projectWorkSubCategoryIds as $workSubCategoryId){
+                $workSubCategoryDetails = DB::table('tblworksubcategory')
+                                        ->where('tblworksubcategory.intWorkSubCategoryId','=',$workSubCategoryId->intWorkSubCategoryId)
+                                        ->first();
+                array_push($projectWorkSubCategories, $workSubCategoryDetails);
+            }
+
+            $project = (object) [
+                'projectDetails' => $projectDetails,
+                'projectWorkSubCategories' => $projectWorkSubCategories
+            ];
+
+            array_push($pendingProjectSchedules,$project);
         }
-        
+        //dd($pendingProjectSchedules);
 
         //Projects with schedules
 
@@ -80,9 +109,35 @@ class ProjectProgressController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id)
     {
         //
+        $req = request()->all();
+
+        //dd($req);
+        $activitiesIds = array();
+        for($x = 0; $x < $req['activitiesCount']; $x++){
+            $subCategoryId = $req['subCategoryId'.$x];
+            $startDate = $req['startDate'.$x];
+            $endDate = $req['endDate'.$x];
+            $dependency = $req['dependency'.$x] == -1 ? null : $activitiesIds[$req['dependency'.$x]];
+
+            $activityId = DB::table('tblschedules')
+                        ->insertGetId([
+                            'dtmEstimatedStart' => $startDate,
+                            'dtmEstimatedEnd' => $endDate,
+                            'dtmActualStart' => null,
+                            'dtmActualEnd' => null,
+                            'intProjectId' => $id,
+                            'intWorkSubCategoryId' => $subCategoryId,
+                            'intDependencyScheduleId' => $dependency
+                        ]);
+            
+            array_push($activitiesIds,$activityId);
+        }
+
+        //refresh
+        header('Refresh:0;/Engineer/Project-Progress');
     }
 
     /**

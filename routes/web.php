@@ -114,6 +114,8 @@ Route::patch('Engineer/Materials-Pricelist/{id}','MaterialsController@update');
 
 Route::get('Engineer/Project-Progress', 'ProjectProgressController@index');
 
+Route::post('Engineer/Project-Progress/{id}', 'ProjectProgressController@store');
+
 Route::get('Engineer/Calendar', function(){
     return view ('Engineer/calendar');
 });
