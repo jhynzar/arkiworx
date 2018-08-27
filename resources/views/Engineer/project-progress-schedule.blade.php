@@ -241,7 +241,7 @@
         <header class="main-header-top hidden-print">
 
             <a href="Admin/home" class="nav-brand">
-                <img class="img-fluid logo" src="/assets/images/cat.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="/assets/images/GG.jpg" alt="Theme-logo">
             </a>
 
 
@@ -371,7 +371,7 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="../assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                    <img src="/assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
@@ -428,12 +428,7 @@
                 </li>
 
 
-               <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
-                        <i class="icon-briefcase"></i>
-                        <span> Projects</span>
-                    </a>
-                </li>
+                
                  <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
                         <i class="icon-calculator"></i>
@@ -441,6 +436,13 @@
                     </a>
                 </li>
 
+               <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
+                        <i class="icon-briefcase"></i>
+                        <span> Projects</span>
+                    </a>
+                </li>
+                
 
 
 

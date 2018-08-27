@@ -64,7 +64,7 @@
 <header class="main-header-top hidden-print">
 
     <a href="index" class="nav-brand">
-        <img class="img-fluid logo" src="/assets/images/cat.jpg" alt="Theme-logo">
+        <img class="img-fluid logo" src="/assets/images/GG.jpg" alt="Theme-logo">
     </a>
 
 
@@ -250,6 +250,12 @@
             </li>
 
 
+<li class="active treeview">
+                <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                    <i class="icon-calculator"></i>
+                    <span> Estimation</span>
+                </a>
+            </li>
 
 
 
@@ -259,13 +265,7 @@
                     <span> Projects</span>
                 </a>
             </li>
-            <li class="active treeview">
-                <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
-                    <i class="icon-calculator"></i>
-                    <span> Estimation</span>
-                </a>
-            </li>
-
+            
 
 
 
