@@ -5156,8 +5156,8 @@
         $("#ColumnTieWireKg").html(parseFloat(TieWires).toFixed(2));
         $("#ColumnTieWireCost").html(parseFloat(price).toFixed(2));
         $("#ColumnTieWire1").val(6);
-        $("#ColumnTieWireKg1").val(parseFloat(TieWires).toFixed(2));
-        $("#ColumnTieWireCost1").val(parseFloat(price).toFixed(2));
+        $("#ColumnTieWireKg1").val(TieWires);
+        $("#ColumnTieWireCost1").val(price);
 
     $("#ColumnTotalCost1").val( parseFloat($("#ColumnCementCost1").val()) + parseFloat($("#ColumnSandCost1").val()) + parseFloat($("#ColumnGravelCost1").val()) + parseFloat($("#ColumnSteelBarCost1").val()) + parseFloat($("#ColumnTieBarCost1").val()) + parseFloat($("#ColumnTieWireCost1").val()) );
     $("#ColumnTotalCost").html( parseFloat($("#ColumnTotalCost1").val()).toFixed(2) );
