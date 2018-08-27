@@ -87,10 +87,6 @@ Route::get('Engineer/Accounts-Settings', function (){
     return view ('Engineer/account-settings');
 });
 
-Route::get('Engineer/Project-Progress/Schedule', function(){
-    return view ('Engineer/project-progress-schedule');
-});
-
 Route::get('Engineer/Project-Progress/Materials-Usage', function(){
     return view ('Engineer/project-progress-materials');
 });
@@ -113,6 +109,8 @@ Route::post('Engineer/Materials-Pricelist/Create', 'MaterialsController@store');
 Route::patch('Engineer/Materials-Pricelist/{id}','MaterialsController@update');
 
 Route::get('Engineer/Project-Progress', 'ProjectProgressController@index');
+
+Route::get('Engineer/Project-Progress/{id}/Schedule', 'ProjectProgressController@viewSchedule');
 
 Route::post('Engineer/Project-Progress/{id}', 'ProjectProgressController@store');
 

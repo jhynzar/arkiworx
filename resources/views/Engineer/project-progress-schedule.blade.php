@@ -644,6 +644,40 @@
     </script>
     <!-- FRAPPE START -->
     <script>
+        var allProjectSchedules = {!!json_encode($allProjectSchedules)!!};
+
+        console.log(allProjectSchedules);
+
+        var scheduledTasks = [];
+
+        for(x = 0; x < allProjectSchedules.length ; x++){
+
+            if(allProjectSchedules[x]['intDependencyScheduleId'] == null){
+                task = {
+                    start: allProjectSchedules[x]['dtmEstimatedStart'],
+                    end: allProjectSchedules[x]['dtmEstimatedEnd'],
+                    name: allProjectSchedules[x]['strWorkSubCategoryDesc'],
+                    id: allProjectSchedules[x]['intScheduleId']
+                };
+            }else{
+                task = {
+                    start: allProjectSchedules[x]['dtmEstimatedStart'],
+                    end: allProjectSchedules[x]['dtmEstimatedEnd'],
+                    name: allProjectSchedules[x]['strWorkSubCategoryDesc'],
+                    id: allProjectSchedules[x]['intScheduleId'],
+                    dependencies: [ allProjectSchedules[x]['intDependencyScheduleId'] ]
+                };
+            }
+
+            scheduledTasks.push(task);
+           
+        }
+
+        console.log(scheduledTasks);
+
+        var tasks = scheduledTasks;
+
+        /*
 		var tasks = [
 			{
                 
@@ -880,7 +914,9 @@
             
             
             
-		]
+        ]*/
+
+        console.log(tasks);
         
         
         

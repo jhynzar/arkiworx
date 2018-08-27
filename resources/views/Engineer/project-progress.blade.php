@@ -611,7 +611,7 @@
 
 
 
-                                                                                <a href="/Engineer/Project-Progress/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
+                                                                                <a href="/Engineer/Project-Progress/{{$project->intProjectId}}/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
                                                                                     data-toggle="tooltip" data-placement="top" title="View">
                                                                                     <i class="icon-map"> </i>Project Schedule
                                                                                 </a>
