@@ -317,6 +317,14 @@
                         <span> Materials PriceList</span>
                     </a>
                 </li>
+                
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                        <i class="icon-calculator"></i>
+                        <span> Estimation</span>
+                    </a>
+                </li>
+
                
             <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
@@ -324,13 +332,7 @@
                         <span> Projects</span>
                     </a>
                 </li>
-                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
-                        <i class="icon-calculator"></i>
-                        <span> Estimation</span>
-                    </a>
-                </li>
-
+                 
 
 
               

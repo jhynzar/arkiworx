@@ -330,6 +330,13 @@
                     </a>
                 </li>
                 
+                <li class=" treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
+                        <i class="icon-notebook"></i>
+                        <span> Materials PriceList</span>
+                    </a>
+                </li>
+                
                  <li class="active treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
                         <i class="icon-calculator"></i>
@@ -353,12 +360,7 @@
 
 
 
-                <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
-                        <i class="icon-notebook"></i>
-                        <span> Materials PriceList</span>
-                    </a>
-                </li>
+                
 
 
 

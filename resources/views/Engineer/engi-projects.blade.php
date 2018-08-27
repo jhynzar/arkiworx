@@ -233,6 +233,15 @@
                 </a>
             </li>
 
+            
+            <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                        <i class="icon-calculator"></i>
+                        <span> Estimation</span>
+                    </a>
+                </li>
+
+
 
 
                 <li class="active treeview">
@@ -241,14 +250,7 @@
                         <span> Projects</span>
                     </a>
                 </li>
-                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
-                        <i class="icon-calculator"></i>
-                        <span> Estimation</span>
-                    </a>
-                </li>
-
-
+                 
 
 
            

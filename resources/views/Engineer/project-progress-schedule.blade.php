@@ -428,12 +428,7 @@
                 </li>
 
 
-               <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
-                        <i class="icon-briefcase"></i>
-                        <span> Projects</span>
-                    </a>
-                </li>
+                
                  <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
                         <i class="icon-calculator"></i>
@@ -441,6 +436,13 @@
                     </a>
                 </li>
 
+               <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
+                        <i class="icon-briefcase"></i>
+                        <span> Projects</span>
+                    </a>
+                </li>
+                
 
 
 
