@@ -5153,14 +5153,14 @@
             var TieWires = (((parseFloat($("#ColumnNoOfBars").val()) * TieBarPcs) * parseFloat($("#ColumnsTieWire").val())) / 53) + parseFloat($("#ColumnTieWireKg1").val());
             var price = TieWires * price;
         $("#ColumnTieWire").html(search.materialname);
-        $("#ColumnTieWireKg").html(TieWires);
-        $("#ColumnTieWireCost").html(price);
+        $("#ColumnTieWireKg").html(parseFloat(TieWires).toFixed(2));
+        $("#ColumnTieWireCost").html(parseFloat(price).toFixed(2));
         $("#ColumnTieWire1").val(6);
-        $("#ColumnTieWireKg1").val(TieWires);
-        $("#ColumnTieWireCost1").val(price);
+        $("#ColumnTieWireKg1").val(parseFloat(TieWires).toFixed(2));
+        $("#ColumnTieWireCost1").val(parseFloat(price).toFixed(2));
 
     $("#ColumnTotalCost1").val( parseFloat($("#ColumnCementCost1").val()) + parseFloat($("#ColumnSandCost1").val()) + parseFloat($("#ColumnGravelCost1").val()) + parseFloat($("#ColumnSteelBarCost1").val()) + parseFloat($("#ColumnTieBarCost1").val()) + parseFloat($("#ColumnTieWireCost1").val()) );
-    $("#ColumnTotalCost").html( $("#ColumnTotalCost1").val() );
+    $("#ColumnTotalCost").html( parseFloat($("#ColumnTotalCost1").val()).toFixed(2) );
 
         computeAndDisplayOverallTotal();
     });
