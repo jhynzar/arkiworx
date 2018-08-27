@@ -1649,6 +1649,7 @@
                                     <input type="hidden" id="FootingG1"                  name="FootingG" value='3'>
                                     <input type="hidden" id="FootingGravel1"             name="FootingGravel" value='0.80'>
                                     <input type="hidden" id="FootingGravelCost1"         name="FootingGravelCost" value='1200'>
+
                                     <input type="hidden" id="FootingSteelBar1"           name="FootingSteelBar" value='4'>
                                     <input type="hidden" id="FootingSteelBarQty1"        name="FootingSteelBarQty" value='13'>
                                     <input type="hidden" id="FootingSteelBarCost1"       name="FootingSteelBarCost" value='2366'>
@@ -1720,31 +1721,31 @@
                          <div class="card-block">
                              
                    
-                        <div class="form-group pull-center">
+                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="slabCementClassMixture" style="width: 160px !important;">
-                                    <option value="AA" selected>Class A </option>
-                                    <option value="A" >Class A </option>
-                                    <option value="B" >Class B </option>
-                                    <option value="C" >Class C </option>
+                                <select class="form-control" id="SlabCC" style="width: 160px !important;">
+                                    <option value="1" selected>Class AA </option>
+                                    <option value="2">Class A </option>
+                                    <option value="3">Class B </option>
+                                    <option value="4">Class C </option>
                                 </select>
                             </div>
                              
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="SlabVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="SlabThickness" style="width: 90px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="SlabWidth" style="width: 90px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="SlabLength" style="width: 90px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -1806,8 +1807,8 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Slab(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
-                                <button type="button" class="btn btn-success" style="margin-left: 90px" >Compute</button>
+                                <label class="text text-default"><b>Slab(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManySlabs" style="width: 100px !important;">
+                                <button type="button" class="btn btn-success" id="computeSlab" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -1825,7 +1826,7 @@
                         <div class="card-block">
                             <div class="row">
                                 <div class="table-responsive">
-                                    <table class="table">
+                                <table class="table">
                                         <thead>
                                         <tr>
                                             <th>Material</th>
@@ -1836,45 +1837,54 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="SlabCement">cement 40kg</td>
+                                            <td id="SlabCementBag">25</td>
+                                            <td id="SlabCementCost">5875</td>
                                            
                                         </tr>
                                         <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="SlabS">sand</td>
+                                            <td id="SlabSand">3</td>
+                                            <td id="SlabSandCost">2400</td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="SlabG">gravel</td>
+                                            <td id="SlabGravel">6</td>
+                                            <td id="SlabGravelCost">9000</td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="SlabSteelBar">Main bars-12mmØ</td>
+                                            <td id="SlabSteelBarQty">40</td>
+                                            <td id="SlabSteelBarCost">7280</td>
                                            
                                         </tr>
-                                            <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
-                                       
-                                        </tr>
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="SlabTieWire">Tie wire</td>
+                                            <td id="SlabTieWireKg">2</td>
+                                            <td id="SlabTieWireCost">120</td>
                                            
                                         </tr>
                                       
                                         </tbody>
                                     </table>
+                                    <input type="hidden" id="SlabCement1"             name="SlabCement" value='1'>
+                                    <input type="hidden" id="SlabCementBag1"          name="SlabCementBag" value='25'>
+                                    <input type="hidden" id="SlabCementCost1"         name="SlabCementCost" value='5875'>
+                                    <input type="hidden" id="SlabS1"                  name="SlabS" value='2'>
+                                    <input type="hidden" id="SlabSand1"               name="SlabSand" value='3'>
+                                    <input type="hidden" id="SlabSandCost1"           name="SlabSandCost" value='2400'>
+                                    <input type="hidden" id="SlabG1"                  name="SlabG" value='3'>
+                                    <input type="hidden" id="SlabGravel1"             name="SlabGravel" value='6'>
+                                    <input type="hidden" id="SlabGravelCost1"         name="SlabGravelCost" value='9000'>
+                                    <input type="hidden" id="SlabSteelBar1"           name="SlabSteelBar" value='4'>
+                                    <input type="hidden" id="SlabSteelBarQty1"        name="SlabSteelBarQty" value='40'>
+                                    <input type="hidden" id="SlabSteelBarCost1"       name="SlabSteelBarCost" value='7280'>
+                                    <input type="hidden" id="SlabTieWire1"            name="SlabTieWire" value='6'>
+                                    <input type="hidden" id="SlabTieWireKg1"          name="SlabTieWireKg" value='2'>
+                                    <input type="hidden" id="SlabTieWireCost1"        name="SlabTieWireCost" value='120'>
                                 </div>
                                 
                                
@@ -1892,7 +1902,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                             <th class="text-center"></th>
-                                                            <th class="text-center text-primary"> </th>
+                                                            <th class="text-center text-primary" id=""> 24675 </th>
                                                             
 
                                                         </tr>
@@ -1945,31 +1955,31 @@
                          <div class="card-block">
                              
                    
-                        <div class="form-group pull-center">
+                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="beamsCementClassMxture" style="width: 160px !important;">
-                                    <option value="AA" selected>Class AA </option>
-                                    <option value="A" >Class A </option>
-                                    <option value="B" >Class B </option>
-                                    <option value="C" >Class C </option>
+                                <select class="form-control" id="BeamCC" style="width: 160px !important;">
+                                    <option value="1" selected>Class AA </option>
+                                    <option value="2">Class A </option>
+                                    <option value="3">Class B </option>
+                                    <option value="4">Class C </option>
                                 </select>
                             </div>
                              
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="BeamVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="BeamThickness" style="width: 90px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="BeamWidth" style="width: 90px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="BeamLength" style="width: 90px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -2022,8 +2032,8 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
-                                <button type="button" class="btn" style="margin-left: 90px" >Compute</button>
+                                <label class="text text-default"><b>Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyBeams" style="width: 100px !important;">
+                                <button type="button" class="btn" id="computeBeam" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -2041,7 +2051,7 @@
                         <div class="card-block">
                             <div class="row">
                                 <div class="table-responsive">
-                                    <table class="table">
+                                <table class="table">
                                         <thead>
                                         <tr>
                                             <th>Material</th>
@@ -2052,45 +2062,63 @@
                                         </thead>
                                         <tbody>
                                         <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="BeamCement">cement 40kg</td>
+                                            <td id="BeamCementBag">14</td>
+                                            <td id="BeamCementCost">3290</td>
                                            
                                         </tr>
                                         <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="BeamS">sand</td>
+                                            <td id="BeamSand">.80</td>
+                                            <td id="BeamSandCost">640</td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="BeamG">gravel</td>
+                                            <td id="BeamGravel">1.50</td>
+                                            <td id="BeamGravelCost">2250</td>
                                            
                                         </tr>
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="BeamSteelBar">Main bars-12mmØ</td>
+                                            <td id="BeamSteelBarQty">36</td>
+                                            <td id="BeamSteelBarCost">6552</td>
                                            
                                         </tr>
                                             <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="BeamTieBar">ties/stirrups bars-10mmØ</td>
+                                            <td id="BeamTieBarQty">24</td>
+                                            <td id="BeamTieBarCost">2928</td>
                                        
                                         </tr>
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="BeamTieWire">Tie wire</td>
+                                            <td id="BeamTieWireKg">6</td>
+                                            <td id="BeamTieWireCost">360</td>
                                            
                                         </tr>
                                       
                                         </tbody>
                                     </table>
+                                    <input type="hidden" id="BeamCement1"             name="BeamCement" value='1'>
+                                    <input type="hidden" id="BeamCementBag1"          name="BeamCementBag" value='14.00'>
+                                    <input type="hidden" id="BeamCementCost1"         name="BeamCementCost" value='3290'>
+                                    <input type="hidden" id="BeamS1"                  name="BeamS" value='2'>
+                                    <input type="hidden" id="BeamSand1"               name="BeamSand" value='0.80'>
+                                    <input type="hidden" id="BeamSandCost1"           name="BeamSandCost" value='640'>
+                                    <input type="hidden" id="BeamG1"                  name="BeamG" value='3'>
+                                    <input type="hidden" id="BeamGravel1"             name="BeamGravel" value='1.50'>
+                                    <input type="hidden" id="BeamGravelCost1"         name="BeamGravelCost" value='2250'>
+                                    <input type="hidden" id="BeamSteelBar1"           name="BeamSteelBar" value='4'>
+                                    <input type="hidden" id="BeamSteelBarQty1"        name="BeamSteelBarQty" value='26'>
+                                    <input type="hidden" id="BeamSteelBarCost1"       name="BeamSteelBarCost" value='6652'>
+                                    <input type="hidden" id="BeamTieBar1"             name="BeamTieBar" value='5'>
+                                    <input type="hidden" id="BeamTieBarQty1"          name="BeamTieBarQty" value='24'>
+                                    <input type="hidden" id="BeamTieBarCost1"         name="BeamTieBarCost" value='2928'>
+                                    <input type="hidden" id="BeamTieWire1"            name="BeamTieWire" value='6'>
+                                    <input type="hidden" id="BeamTieWireKg1"          name="BeamTieWireKg" value='6'>
+                                    <input type="hidden" id="BeamTieWireCost1"        name="BeamTieWireCost" value='360'>
                                 </div>
                                 
                                
@@ -5148,6 +5176,70 @@ $("#computeFooting").click(function () {
         $("#FootingG1").val(3);
         $("#FootingGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#FootingGravel1").val()));
         $("#FootingGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#FootingGravelCost1").val()));
+});
+
+$("#computeSlab").click(function () {
+    
+    var X1 = 1; //horizontal
+    var Work1 = 1; //work
+    var A = $("#SlabWidth").val() * $("#SlabLength").val();
+    var V = $("#SlabThickness").val() * A;
+    $("#SlabVolume").val(V);
+
+        var EstiConcretes = ConcreteEsti($("#HowManySlabs").val(),V,X1,$("#SlabCC").val(),Work1);
+
+    $("#SlabCement").html(EstiConcretes.cement);
+    $("#SlabCementBag").html(parseFloat(EstiConcretes.cementqty) + parseFloat($("#SlabCementBag1").val()));
+    $("#SlabCementCost").html(parseFloat(EstiConcretes.cementcost) + parseFloat($("#SlabCementCost1").val()));
+    $("#SlabCement1").val(1);
+    $("#SlabCementBag1").val(parseFloat(EstiConcretes.cementqty) + parseFloat($("#SlabCementBag1").val()));
+    $("#SlabCementCost1").val(parseFloat(EstiConcretes.cementcost) + parseFloat($("#SlabCementCost1").val()));
+
+    $("#SlabS").html(EstiConcretes.sand);
+    $("#SlabSand").html(parseFloat(EstiConcretes.sandqty) + parseFloat($("#SlabSand1").val()));
+    $("#SlabSandCost").html(parseFloat(EstiConcretes.sandcost) + parseFloat($("#SlabSandCost1").val()));
+    $("#SlabS1").val(2);
+    $("#SlabSand1").val(parseFloat(EstiConcretes.sandqty) + parseFloat($("#SlabSand1").val()));
+    $("#SlabSandCost1").val(parseFloat(EstiConcretes.sandcost) + parseFloat($("#SlabSandCost1").val()));
+
+    $("#SlabG").html(EstiConcretes.gravel);
+    $("#SlabGravel").html(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#SlabGravel1").val()));
+    $("#SlabGravelCost").html(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#SlabGravelCost1").val()));
+    $("#SlabG1").val(3);
+    $("#SlabGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#SlabGravel1").val()));
+    $("#SlabGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#SlabGravelCost1").val()));
+});
+
+$("#computeBeam").click(function () {
+    
+    var X1 = 1; //horizontal
+    var Work1 = 1; //work
+    var A = $("#BeamWidth").val() * $("#BeamLength").val();
+    var V = $("#BeamThickness").val() * A;
+    $("#BeamVolume").val(V);
+
+        var EstiConcretes = ConcreteEsti($("#HowManyBeams").val(),V,X1,$("#BeamCC").val(),Work1);
+
+    $("#BeamCement").html(EstiConcretes.cement);
+    $("#BeamCementBag").html(parseFloat(EstiConcretes.cementqty) + parseFloat($("#BeamCementBag1").val()));
+    $("#BeamCementCost").html(parseFloat(EstiConcretes.cementcost) + parseFloat($("#BeamCementCost1").val()));
+    $("#BeamCement1").val(1);
+    $("#BeamCementBag1").val(parseFloat(EstiConcretes.cementqty) + parseFloat($("#BeamCementBag1").val()));
+    $("#BeamCementCost1").val(parseFloat(EstiConcretes.cementcost) + parseFloat($("#BeamCementCost1").val()));
+
+    $("#BeamS").html(EstiConcretes.sand);
+    $("#BeamSand").html(parseFloat(EstiConcretes.sandqty) + parseFloat($("#BeamSand1").val()));
+    $("#BeamSandCost").html(parseFloat(EstiConcretes.sandcost) + parseFloat($("#BeamSandCost1").val()));
+    $("#BeamS1").val(2);
+    $("#BeamSand1").val(parseFloat(EstiConcretes.sandqty) + parseFloat($("#BeamSand1").val()));
+    $("#BeamSandCost1").val(parseFloat(EstiConcretes.sandcost) + parseFloat($("#BeamSandCost1").val()));
+
+    $("#BeamG").html(EstiConcretes.gravel);
+    $("#BeamGravel").html(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#BeamGravel1").val()));
+    $("#BeamGravelCost").html(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#BeamGravelCost1").val()));
+    $("#BeamG1").val(3);
+    $("#BeamGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#BeamGravel1").val()));
+    $("#BeamGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#BeamGravelCost1").val()));
 });
 </script>
 
