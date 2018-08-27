@@ -277,7 +277,6 @@ class CostEstimationsController extends Controller
                 'intWorkSubCategoryId' => 5
             ]
         );
-        
 
         //footing
 
