@@ -198,6 +198,7 @@ class ActualsController extends Controller
 
 
         $allCategories = DB::table('tblworkcategory')
+                        ->where('tblworkcategory.intWorkCategoryId','!=',1)
                         ->get();
 
 
