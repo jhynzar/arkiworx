@@ -96,7 +96,45 @@ class CostEstimationsController extends Controller
 
     public function createEstimation($id){
         //request id of project and template
+/*        $templateid = $_POST['projectTemplate'];
+        $templateid = array($templateid);
 
+        $template1 = DB::select("
+        select *
+        from tblprojectrequirementstemplate
+        WHERE intProjectTemplateId = ?
+        order by intWorksubcategoryid asc
+        ",$templateid);
+
+        $TemplateArray1 = array();
+        foreach($template1 as $fields1){
+            $TemplateArr1 = (object)[
+                'cost' => $fields1 -> decCost,
+                'category' => $fields1 -> intWorkSubCategoryId
+            ];
+            array_push($TemplateArray1,$TemplateArr1);
+        }
+        //dd($TemplateArray1);
+
+        $template2 = DB::select("
+        select *
+        from tblmaterialestimationtemplate  
+        WHERE intProjectTemplateId = ?
+        ",$templateid);
+
+        $TemplateArray2 = array();
+        $c = 5;
+        $m = 0;
+        foreach($template2 as $fields2){
+                $TemplateArr2 = (object)[
+                    'qty' => $fields2 -> decQty,
+                    'category' => $fields2 -> intWorkSubCategoryId,
+                    'material' => $fields2 -> intMaterialId
+                ];
+                array_push($TemplateArray2,$TemplateArr2);
+        }
+        //dd($TemplateArray2);
+*/
         $formulas = DB::select("
         select X.h as Horizontal, X.v as Vertical, X.f as Value, X.Work as Work
         from 
@@ -171,7 +209,7 @@ class CostEstimationsController extends Controller
                     ->where('intProjectId','=',$id)
                     ->first();
 
-        return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray'));
+        return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray','TemplateArray1','TemplateArray2'));
     }
 
     public function saveEstimation($id){
@@ -280,6 +318,6 @@ class CostEstimationsController extends Controller
 
         //footing
 
-        //dd($OverheadProfit);
+        dd($ColumnCement);
     }
 }
