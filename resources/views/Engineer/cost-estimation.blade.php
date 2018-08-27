@@ -1227,11 +1227,11 @@
                                                                                 <label for="usertype">Project Template:</label>
                                                                                 <select class="form-control" name="projectTemplate" id="projectTemplate" style="width: 250px; margin-left: 150px !important;"
                                                                                     value="Choose template">
-                                                                                    <option selected> 1 Storey </option>
-                                                                                    <option > 2-Storey </option>
-                                                                                    <option> 3-Storey </option>
-                                                                                    <option> 4-Storey </option>
-                                                                                    <option> 5-Storey </option>
+                                                                                    <option value=1  selected> 1 Storey </option>
+                                                                                    <option value=2> 2-Storey </option>
+                                                                                    <option value=3> 3-Storey </option>
+                                                                                    <option value=4> 4-Storey </option>
+                                                                                    <option value=5> 5-Storey </option>
 
                                                                                 </select>
                                                                             </div>
@@ -1239,7 +1239,6 @@
                                                                         <div class="modal-footer">
                                                                             <button type="submit" class="btn btn-primary">Save</button>
                                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-
                                                                         </div>
                                                                     </form>
                                                                 </div>
