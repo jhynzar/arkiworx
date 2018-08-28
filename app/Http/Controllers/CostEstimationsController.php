@@ -226,7 +226,7 @@ class CostEstimationsController extends Controller
         $Transportation = $_POST['Transportation'];
         $Contigency = $_POST['Contigency'];
         $OverheadProfit = $_POST['OverheadProfit'];
-        //column
+        //column 
         $ColumnCement = $_POST['ColumnCement'];
         $ColumnCementBag = $_POST['ColumnCementBag'];
         $ColumnCementCost = $_POST['ColumnCementCost'];
@@ -250,7 +250,70 @@ class CostEstimationsController extends Controller
         $ColumnTieWire = $_POST['ColumnTieWire'];
         $ColumnTieWireKg = $_POST['ColumnTieWireKg'];
         $ColumnTieWireCost = $_POST['ColumnTieWireCost'];
+                //Footing 
+                $FootingCement = $_POST['FootingCement'];
+                $FootingCementBag = $_POST['FootingCementBag'];
+                $FootingCementCost = $_POST['FootingCementCost'];
+                
+                $FootingS = $_POST['FootingS'];
+                $FootingSand = $_POST['FootingSand'];
+                $FootingSandCost = $_POST['FootingSandCost'];
+                
+                $FootingG = $_POST['FootingG'];
+                $FootingGravel = $_POST['FootingGravel'];
+                $FootingGravelCost = $_POST['FootingGravelCost'];
+                
+                $FootingSteelBar = $_POST['FootingSteelBar'];
+                $FootingSteelBarQty = $_POST['FootingSteelBarQty'];
+                $FootingSteelBarCost = $_POST['FootingSteelBarCost'];
 
+                $FootingTieWire = $_POST['FootingTieWire'];
+                $FootingTieWireKg = $_POST['FootingTieWireKg'];
+                $FootingTieWireCost = $_POST['FootingTieWireCost'];
+                        //Slab 
+        $SlabCement = $_POST['SlabCement'];
+        $SlabCementBag = $_POST['SlabCementBag'];
+        $SlabCementCost = $_POST['SlabCementCost'];
+        
+        $SlabS = $_POST['SlabS'];
+        $SlabSand = $_POST['SlabSand'];
+        $SlabSandCost = $_POST['SlabSandCost'];
+        
+        $SlabG = $_POST['SlabG'];
+        $SlabGravel = $_POST['SlabGravel'];
+        $SlabGravelCost = $_POST['SlabGravelCost'];
+        
+        $SlabSteelBar = $_POST['SlabSteelBar'];
+        $SlabSteelBarQty = $_POST['SlabSteelBarQty'];
+        $SlabSteelBarCost = $_POST['SlabSteelBarCost'];
+        
+        $SlabTieWire = $_POST['SlabTieWire'];
+        $SlabTieWireKg = $_POST['SlabTieWireKg'];
+        $SlabTieWireCost = $_POST['SlabTieWireCost'];
+        //Beam 
+        $BeamCement = $_POST['BeamCement'];
+        $BeamCementBag = $_POST['BeamCementBag'];
+        $BeamCementCost = $_POST['BeamCementCost'];
+        
+        $BeamS = $_POST['BeamS'];
+        $BeamSand = $_POST['BeamSand'];
+        $BeamSandCost = $_POST['BeamSandCost'];
+        
+        $BeamG = $_POST['BeamG'];
+        $BeamGravel = $_POST['BeamGravel'];
+        $BeamGravelCost = $_POST['BeamGravelCost'];
+        
+        $BeamSteelBar = $_POST['BeamSteelBar'];
+        $BeamSteelBarQty = $_POST['BeamSteelBarQty'];
+        $BeamSteelBarCost = $_POST['BeamSteelBarCost'];
+        
+        $BeamTieBar = $_POST['BeamTieBar'];
+        $BeamTieBarQty = $_POST['BeamTieBarQty'];
+        $BeamTieBarCost = $_POST['BeamTieBarCost'];
+        
+        $BeamTieWire = $_POST['BeamTieWire'];
+        $BeamTieWireKg = $_POST['BeamTieWireKg'];
+        $BeamTieWireCost = $_POST['BeamTieWireCost'];
         //--saving of data
         //$BuildingPermit = $_POST['BuildingPermit'];
         //$TemporaryFacilities = $_POST['TemporaryFacilities'];
@@ -442,8 +505,170 @@ class CostEstimationsController extends Controller
             ]
         );
 
-        //footing
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $FootingCement,
+                'intQty' => $FootingCementBag,
+                'decCost' => $FootingCementCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 6
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $FootingS,
+                'intQty' => $FootingSand,
+                'decCost' => $FootingSandCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 6
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $FootingG,
+                'intQty' => $FootingGravel,
+                'decCost' => $FootingGravelCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 6
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $FootingSteelBar,
+                'intQty' => $FootingSteelBarQty,
+                'decCost' => $FootingSteelBarCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 6
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $FootingTieWire,
+                'intQty' => $FootingTieWireKg,
+                'decCost' => $FootingTieWireCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 6
+            ]
+        );
 
+        //slab
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $SlabCement,
+                'intQty' => $SlabCementBag,
+                'decCost' => $SlabCementCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 7
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $SlabS,
+                'intQty' => $SlabSand,
+                'decCost' => $SlabSandCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 7
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $SlabG,
+                'intQty' => $SlabGravel,
+                'decCost' => $SlabGravelCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 7
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $SlabSteelBar,
+                'intQty' => $SlabSteelBarQty,
+                'decCost' => $SlabSteelBarCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 7
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $SlabTieWire,
+                'intQty' => $SlabTieWireKg,
+                'decCost' => $SlabTieWireCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 7
+            ]
+        );
+
+        //beam
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $BeamCement,
+                'intQty' => $BeamCementBag,
+                'decCost' => $BeamCementCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 8
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $BeamS,
+                'intQty' => $BeamSand,
+                'decCost' => $BeamSandCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 8
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $BeamG,
+                'intQty' => $BeamGravel,
+                'decCost' => $BeamGravelCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 8
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $BeamSteelBar,
+                'intQty' => $BeamSteelBarQty,
+                'decCost' => $BeamSteelBarCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 8
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $BeamTieBar,
+                'intQty' => $BeamTieBarQty,
+                'decCost' => $BeamTieBarCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 8
+            ]
+        );
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $BeamTieWire,
+                'intQty' => $BeamTieWireKg,
+                'decCost' => $BeamTieWireCost,
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => 8
+            ]
+        );
         // ALWAYS MAKE THIS LAST
 
         // update project status
