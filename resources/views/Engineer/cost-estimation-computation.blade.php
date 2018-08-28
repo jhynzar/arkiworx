@@ -5002,8 +5002,8 @@
     function computeAndDisplayOverallTotal(){
         var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
 
-        $("#OverallTotalCost").html(overAllTotal);
-        $("#OverallTotalCost1").val(overAllTotal);
+        $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2));
+        $("#OverallTotalCost1").val(parseFloat(overAllTotal));
     }
 
     var searchValues = function (X1,Y1,Work1){
