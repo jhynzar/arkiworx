@@ -5000,7 +5000,7 @@
 <script>
 
     function computeAndDisplayOverallTotal(){
-        var overAllTotal = parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val());
+        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
 
         $("#OverallTotalCost").html(overAllTotal);
     }
