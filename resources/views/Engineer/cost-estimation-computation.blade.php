@@ -64,7 +64,7 @@
 <header class="main-header-top hidden-print">
 
     <a href="index" class="nav-brand">
-        <img class="img-fluid logo" src="/assets/images/cat.jpg" alt="Theme-logo">
+        <img class="img-fluid logo" src="/assets/images/GG.jpg" alt="Theme-logo">
     </a>
 
 
@@ -250,6 +250,12 @@
             </li>
 
 
+<li class="active treeview">
+                <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                    <i class="icon-calculator"></i>
+                    <span> Estimation</span>
+                </a>
+            </li>
 
 
 
@@ -259,13 +265,7 @@
                     <span> Projects</span>
                 </a>
             </li>
-            <li class="active treeview">
-                <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
-                    <i class="icon-calculator"></i>
-                    <span> Estimation</span>
-                </a>
-            </li>
-
+            
 
 
 
@@ -4999,6 +4999,12 @@
 
 <script>
 
+    function computeAndDisplayOverallTotal(){
+        var overAllTotal = parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val());
+
+        $("#OverallTotalCost").html(overAllTotal);
+    }
+
     var searchValues = function (X1,Y1,Work1){
         var AnswersArray = {!!json_encode($AnswersArray)!!};
         for ( var column in AnswersArray ) {
@@ -5082,6 +5088,8 @@
         totalGeneralReq  += parseFloat($("#OverheadProfit").val()) ;
         $("#totalGeneralReq").html(parseFloat(totalGeneralReq));
         $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));
+
+        computeAndDisplayOverallTotal();
     });
 
    $("#computeColumn").click(function () {
@@ -5145,14 +5153,16 @@
             var TieWires = (((parseFloat($("#ColumnNoOfBars").val()) * TieBarPcs) * parseFloat($("#ColumnsTieWire").val())) / 53) + parseFloat($("#ColumnTieWireKg1").val());
             var price = TieWires * price;
         $("#ColumnTieWire").html(search.materialname);
-        $("#ColumnTieWireKg").html(TieWires);
-        $("#ColumnTieWireCost").html(price);
+        $("#ColumnTieWireKg").html(parseFloat(TieWires).toFixed(2));
+        $("#ColumnTieWireCost").html(parseFloat(price).toFixed(2));
         $("#ColumnTieWire1").val(6);
         $("#ColumnTieWireKg1").val(TieWires);
         $("#ColumnTieWireCost1").val(price);
 
     $("#ColumnTotalCost1").val( parseFloat($("#ColumnCementCost1").val()) + parseFloat($("#ColumnSandCost1").val()) + parseFloat($("#ColumnGravelCost1").val()) + parseFloat($("#ColumnSteelBarCost1").val()) + parseFloat($("#ColumnTieBarCost1").val()) + parseFloat($("#ColumnTieWireCost1").val()) );
-    $("#ColumnTotalCost").html( $("#ColumnTotalCost1").val() );
+    $("#ColumnTotalCost").html( parseFloat($("#ColumnTotalCost1").val()).toFixed(2) );
+
+        computeAndDisplayOverallTotal();
     });
 
 //#########################################################################################################################################################################################

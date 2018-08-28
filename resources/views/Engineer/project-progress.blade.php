@@ -60,7 +60,7 @@
         <header class="main-header-top hidden-print">
 
             <a href="Admin/home" class="nav-brand">
-                <img class="img-fluid logo" src="../assets/images/cat.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="../assets/images/GG.jpg" alt="Theme-logo">
             </a>
 
 
@@ -246,6 +246,12 @@
                 </li>
 
 
+ <li class="treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                        <i class="icon-calculator"></i>
+                        <span> Estimation</span>
+                    </a>
+                </li>
 
 
 
@@ -255,13 +261,7 @@
                         <span> Projects</span>
                     </a>
                 </li>
-                 <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
-                        <i class="icon-calculator"></i>
-                        <span> Estimation</span>
-                    </a>
-                </li>
-
+                
 
 
 
@@ -452,9 +452,9 @@
                                                                         <td>{{$projectKey+1}}</td>
                                                                         <td>
                                                                             <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                            &nbsp; &nbsp; {{$project->strClientFName}}&nbsp;{{$project->strClientLName}}
+                                                                            &nbsp; &nbsp; {{$project->projectDetails->strClientFName}}&nbsp;{{$project->projectDetails->strClientLName}}
                                                                         </td>
-                                                                        <td>{{$project->strProjectName}}</td>
+                                                                        <td>{{$project->projectDetails->strProjectName}}</td>
                                                                     
                                                                         
                                                                         
@@ -467,7 +467,7 @@
 
 
 
-                                                                                <button type="button" data-toggle="modal" data-target="#createProjectSchedule" class="btn btn-success waves-effect waves-light"
+                                                                                <button type="button" data-toggle="modal" data-target="#createProjectSchedule{{$projectKey}}" class="btn btn-success waves-effect waves-light"
                                                                                     data-toggle="tooltip" data-placement="top" title="Create">
                                                                                     <i class="icon-note"> </i>Create Project Schedule
                                                                                 </button>
@@ -479,6 +479,69 @@
                                                                             </td>
 
                                                                     </tr>
+
+                                                                    <!-- create project schedule modal -->
+
+                                                                    <div class="modal fade" id="createProjectSchedule{{$projectKey}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-lg" role="document">
+                                                                            <div class="modal-content">
+                                                                                <form action="Project-Progress/{{$project->projectDetails->intProjectId}}" method="POST">
+                                                                                    {{csrf_field()}}
+
+                                                                                    <input type="hidden" name="activitiesCount" value="{{count($project->projectWorkSubCategories)}}">
+                                                                                    <div class="modal-header" style="background-color: #4CAF50   !important" >
+                                                                                        <h4 class="modal-title" id="exampleModalLabel">
+                                                                                            <span  style="color: white" >Estimated Project Schedule</span>
+                                                                                        </h4>
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                            <span aria-hidden="true">&times;</span>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div class="modal-body scroll" >
+                                                                                        <h6 class="text text-default" style="margin-left: 380px">ACTIVITIES:</h6> <br> <br>
+                                                                                        @foreach ($project->projectWorkSubCategories as $subCategoryKey=>$subCategory)
+                                                                                        <div class="form-group form-inline">
+                                                                                            
+                                                                                                    
+                                                                                                <label class="text text-primary"> Task {{$subCategoryKey + 1}}</label> &nbsp;&nbsp;&nbsp;
+                                                                                                <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="{{$subCategory->strWorkSubCategoryDesc}}" disabled> <br> <br>
+                                                                                                <input type="hidden" id="subCategoryId{{$subCategoryKey}}" name="subCategoryId{{$subCategoryKey}}" value="{{$subCategory->intWorkSubCategoryId}}">
+                                                                                                <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
+                                                                                                <input type="date" id="startDate{{$subCategoryKey}}" name="startDate{{$subCategoryKey}}" class="form-control" style="width:180px" >
+                                                                                                &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
+                                                                                                <input type="date" id="endDate{{$subCategoryKey}}" name="endDate{{$subCategoryKey}}" class="form-control" style="width:180px" >
+                                                                                                &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
+                                                                                                <select id="dependency{{$subCategoryKey}}" name="dependency{{$subCategoryKey}}" class="form-control" style="width: 100px"> 
+                                                                                                    <option value="-1">None</option>
+                                                                                                    @if ($subCategoryKey != 0)
+                                                                                                        @foreach ($project->projectWorkSubCategories as $optionsSubCategoryKey=>$optionsSubCategory)
+                                                                                                            @if ($optionsSubCategoryKey < $subCategoryKey)
+                                                                                                                <option value="{{$optionsSubCategoryKey}}">Task {{$optionsSubCategoryKey + 1}}</option>
+
+                                                                                                            @endif
+                                                                                                        @endforeach
+                                                                                                    @endif
+                                                                                                </select>
+                                                                                        </div>
+                                                                                        <br> <br>
+
+                                                                                        @endforeach
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                    </div>
+                                                                                    <div class="modal-footer" >
+                                                                                        <button type="submit" class="btn btn-success"  >Save</button>
+                                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                                                    
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- CREATE PROJECT SCHEDULE MODAL END -->
+
 
                                                                 @endforeach
 
@@ -548,7 +611,7 @@
 
 
 
-                                                                                <a href="/Engineer/Project-Progress/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
+                                                                                <a href="/Engineer/Project-Progress/{{$project->intProjectId}}/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
                                                                                     data-toggle="tooltip" data-placement="top" title="View">
                                                                                     <i class="icon-map"> </i>Project Schedule
                                                                                 </a>
@@ -748,95 +811,6 @@
 
 
 
-<!-- create project schedule modal -->
-
-                <div class="modal fade" id="createProjectSchedule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header" style="background-color: #4CAF50   !important" >
-                                <h4 class="modal-title" id="exampleModalLabel">
-                                    <span  style="color: white" >Estimated Project Schedule</span>
-                                </h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body scroll" >
-                                 <div class="form-group form-inline">
-                        <h6 class="text text-default" style="margin-left: 380px">ACTIVITIES:</h6> <br> <br>
-                                   
-                                     <label class="text text-primary"> Task 1</label> &nbsp;&nbsp;&nbsp;
-                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="General Requirements" disabled> <br> <br>
-                                     <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
-                                      <select class="form-control" style="width: 100px" disabled> 
-                                     <option></option>
-                                          <option></option>
-                                     </select>
-                    </div>
-                                
-                                   <div class="form-group form-inline">
-                        <br> <br>
-                                       <label class="text text-primary"> Task 2</label> &nbsp;&nbsp;&nbsp;
-                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Site Preparation" disabled> <br> <br>
-                                      <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
-                                      <select class="form-control" style="width: 100px"> 
-                                     <option>Task 1</option>
-                                       
-                                     </select>
-                    </div>
-                                
-                                 <div class="form-group form-inline">
-                        <br> <br>
-                                     <label class="text text-primary"> Task 3</label> &nbsp;&nbsp;&nbsp;
-                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Columns" disabled> <br> <br>
-                                     <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
-                                      
-                                      <select class="form-control" style="width: 100px" > 
-                                     <option>Task 1 </option>
-                                          <option> Task 2</option>
-                                     </select>
-                    </div>
-                                
-                                 <div class="form-group form-inline">
-                        <br> <br>
-                                     <label class="text text-primary"> Task 4</label> &nbsp;&nbsp;&nbsp;
-                        <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="Concrete Slab" disabled> <br> <br>
-                                    <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
-                                <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                    &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                      <input type="date" name="" class="form-control" id="" style="width:180px" >
-                                      &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
-                                      
-                                      <select class="form-control" style="width: 100px" > 
-                                     <option> Task 1</option>
-                                          <option>Task 2</option>
-                                          <option>Task 3</option>
-                                     </select>
-                    </div>
-                                
-                                
-                                
-                            </div>
-                            <div class="modal-footer" >
-                                <button type="button" class="btn btn-success"  >Save</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
 

@@ -152,7 +152,7 @@
         <header class="main-header-top hidden-print">
 
             <a href="index" class="nav-brand">
-                <img class="img-fluid logo" src="../assets/images/cat.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="../assets/images/GG.jpg" alt="Theme-logo">
             </a>
 
 
@@ -330,6 +330,13 @@
                     </a>
                 </li>
                 
+                <li class=" treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
+                        <i class="icon-notebook"></i>
+                        <span> Materials PriceList</span>
+                    </a>
+                </li>
+                
                  <li class="active treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
                         <i class="icon-calculator"></i>
@@ -353,12 +360,7 @@
 
 
 
-                <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
-                        <i class="icon-notebook"></i>
-                        <span> Materials PriceList</span>
-                    </a>
-                </li>
+                
 
 
 
