@@ -5198,7 +5198,7 @@ $("#computeFooting").click(function () {
         $("#FootingGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#FootingGravel1").val()));
         $("#FootingGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#FootingGravelCost1").val()));
 
-    $("#FootingTotalCost1").val( parseFloat($("#FootingCementCost1").val()) + parseFloat($("#FootingSandCost1").val()) + parseFloat($("#FootingGravelCost1").val()) + parseFloat($("#FootingSteelBarCost1").val()) + parseFloat($("#FootingTieBarCost1").val()) + parseFloat($("#FootingTieWireCost1").val()) );
+    $("#FootingTotalCost1").val( parseFloat($("#FootingCementCost1").val()) + parseFloat($("#FootingSandCost1").val()) + parseFloat($("#FootingGravelCost1").val()) + parseFloat($("#FootingSteelBarCost1").val()) + parseFloat($("#FootingTieWireCost1").val()) );
     $("#FootingTotalCost").html( parseFloat($("#FootingTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
 });
@@ -5234,7 +5234,7 @@ $("#computeSlab").click(function () {
     $("#SlabGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#SlabGravel1").val()));
     $("#SlabGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#SlabGravelCost1").val()));
 
-    $("#SlabTotalCost1").val( parseFloat($("#SlabCementCost1").val()) + parseFloat($("#SlabSandCost1").val()) + parseFloat($("#SlabGravelCost1").val()) + parseFloat($("#SlabSteelBarCost1").val()) + parseFloat($("#SlabTieBarCost1").val()) + parseFloat($("#SlabTieWireCost1").val()) );
+    $("#SlabTotalCost1").val( parseFloat($("#SlabCementCost1").val()) + parseFloat($("#SlabSandCost1").val()) + parseFloat($("#SlabGravelCost1").val()) + parseFloat($("#SlabSteelBarCost1").val()) + parseFloat($("#SlabTieWireCost1").val()) );
     $("#SlabTotalCost").html( parseFloat($("#SlabTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
 });
