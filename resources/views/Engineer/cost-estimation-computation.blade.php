@@ -5087,7 +5087,7 @@
         totalGeneralReq  += parseFloat($("#Transportation").val()) ;
         totalGeneralReq  += parseFloat($("#Contigency").val()) ;
         totalGeneralReq  += parseFloat($("#OverheadProfit").val()) ;
-        $("#totalGeneralReq").html(parseFloat(totalGeneralReq));
+        $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2));
         $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));
 
         computeAndDisplayOverallTotal();
@@ -5199,7 +5199,7 @@ $("#computeFooting").click(function () {
         $("#FootingGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#FootingGravelCost1").val()));
 
     $("#FootingTotalCost1").val( parseFloat($("#FootingCementCost1").val()) + parseFloat($("#FootingSandCost1").val()) + parseFloat($("#FootingGravelCost1").val()) + parseFloat($("#FootingSteelBarCost1").val()) + parseFloat($("#FootingTieBarCost1").val()) + parseFloat($("#FootingTieWireCost1").val()) );
-    $("#FootingTotalCost").html( $("#FootingTotalCost1").val() );
+    $("#FootingTotalCost").html( parseFloat($("#FootingTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
 });
 
@@ -5235,7 +5235,7 @@ $("#computeSlab").click(function () {
     $("#SlabGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#SlabGravelCost1").val()));
 
     $("#SlabTotalCost1").val( parseFloat($("#SlabCementCost1").val()) + parseFloat($("#SlabSandCost1").val()) + parseFloat($("#SlabGravelCost1").val()) + parseFloat($("#SlabSteelBarCost1").val()) + parseFloat($("#SlabTieBarCost1").val()) + parseFloat($("#SlabTieWireCost1").val()) );
-    $("#SlabTotalCost").html( $("#SlabTotalCost1").val() );
+    $("#SlabTotalCost").html( parseFloat($("#SlabTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
 });
 
@@ -5271,12 +5271,12 @@ $("#computeBeam").click(function () {
     $("#BeamGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#BeamGravelCost1").val()));
 
     $("#BeamTotalCost1").val( parseFloat($("#BeamCementCost1").val()) + parseFloat($("#BeamSandCost1").val()) + parseFloat($("#BeamGravelCost1").val()) + parseFloat($("#BeamSteelBarCost1").val()) + parseFloat($("#BeamTieBarCost1").val()) + parseFloat($("#BeamTieWireCost1").val()) );
-    $("#BeamTotalCost").html( $("#BeamTotalCost1").val() );
+    $("#BeamTotalCost").html( parseFloat($("#BeamTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
 });
 
 $("#OverallTotalCost1").val( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val()) );
-$("#OverallTotalCost").html($("#OverallTotalCost1").val() );
+$("#OverallTotalCost").html( parseFloat($("#OverallTotalCost1").val()).toFixed(2) );
 
 </script>
 
