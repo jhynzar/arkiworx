@@ -448,7 +448,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $ColumnCement,
-                'intQty' => $ColumnCementBag,
+                'decQty' => $ColumnCementBag,
                 'decCost' => $ColumnCementCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 5
@@ -458,7 +458,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $ColumnS,
-                'intQty' => $ColumnSand,
+                'decQty' => $ColumnSand,
                 'decCost' => $ColumnSandCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 5
@@ -468,7 +468,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $ColumnG,
-                'intQty' => $ColumnGravel,
+                'decQty' => $ColumnGravel,
                 'decCost' => $ColumnGravelCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 5
@@ -478,7 +478,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $ColumnSteelBar,
-                'intQty' => $ColumnSteelBarQty,
+                'decQty' => $ColumnSteelBarQty,
                 'decCost' => $ColumnSteelBarCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 5
@@ -488,7 +488,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $ColumnTieBar,
-                'intQty' => $ColumnTieBarQty,
+                'decQty' => $ColumnTieBarQty,
                 'decCost' => $ColumnTieBarCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 5
@@ -498,7 +498,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $ColumnTieWire,
-                'intQty' => $ColumnTieWireKg,
+                'decQty' => $ColumnTieWireKg,
                 'decCost' => $ColumnTieWireCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 5
@@ -509,7 +509,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $FootingCement,
-                'intQty' => $FootingCementBag,
+                'decQty' => $FootingCementBag,
                 'decCost' => $FootingCementCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 6
@@ -519,7 +519,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $FootingS,
-                'intQty' => $FootingSand,
+                'decQty' => $FootingSand,
                 'decCost' => $FootingSandCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 6
@@ -529,7 +529,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $FootingG,
-                'intQty' => $FootingGravel,
+                'decQty' => $FootingGravel,
                 'decCost' => $FootingGravelCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 6
@@ -539,7 +539,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $FootingSteelBar,
-                'intQty' => $FootingSteelBarQty,
+                'decQty' => $FootingSteelBarQty,
                 'decCost' => $FootingSteelBarCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 6
@@ -549,7 +549,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $FootingTieWire,
-                'intQty' => $FootingTieWireKg,
+                'decQty' => $FootingTieWireKg,
                 'decCost' => $FootingTieWireCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 6
@@ -561,7 +561,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $SlabCement,
-                'intQty' => $SlabCementBag,
+                'decQty' => $SlabCementBag,
                 'decCost' => $SlabCementCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 7
@@ -571,7 +571,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $SlabS,
-                'intQty' => $SlabSand,
+                'decQty' => $SlabSand,
                 'decCost' => $SlabSandCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 7
@@ -581,7 +581,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $SlabG,
-                'intQty' => $SlabGravel,
+                'decQty' => $SlabGravel,
                 'decCost' => $SlabGravelCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 7
@@ -591,7 +591,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $SlabSteelBar,
-                'intQty' => $SlabSteelBarQty,
+                'decQty' => $SlabSteelBarQty,
                 'decCost' => $SlabSteelBarCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 7
@@ -601,7 +601,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $SlabTieWire,
-                'intQty' => $SlabTieWireKg,
+                'decQty' => $SlabTieWireKg,
                 'decCost' => $SlabTieWireCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 7
@@ -613,7 +613,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $BeamCement,
-                'intQty' => $BeamCementBag,
+                'decQty' => $BeamCementBag,
                 'decCost' => $BeamCementCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 8
@@ -623,7 +623,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $BeamS,
-                'intQty' => $BeamSand,
+                'decQty' => $BeamSand,
                 'decCost' => $BeamSandCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 8
@@ -633,7 +633,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $BeamG,
-                'intQty' => $BeamGravel,
+                'decQty' => $BeamGravel,
                 'decCost' => $BeamGravelCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 8
@@ -643,7 +643,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $BeamSteelBar,
-                'intQty' => $BeamSteelBarQty,
+                'decQty' => $BeamSteelBarQty,
                 'decCost' => $BeamSteelBarCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 8
@@ -653,7 +653,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $BeamTieBar,
-                'intQty' => $BeamTieBarQty,
+                'decQty' => $BeamTieBarQty,
                 'decCost' => $BeamTieBarCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 8
@@ -663,7 +663,7 @@ class CostEstimationsController extends Controller
         ->insertGetId(
             [
                 'intMaterialId' => $BeamTieWire,
-                'intQty' => $BeamTieWireKg,
+                'decQty' => $BeamTieWireKg,
                 'decCost' => $BeamTieWireCost,
                 'intProjectId' => $id ,
                 'intWorkSubCategoryId' => 8

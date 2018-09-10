@@ -334,7 +334,7 @@ class ActualsController extends Controller
         DB::table('tblmaterialactualshistory')
                     ->insertGetId(
                         [
-                            'intQty' => $request['newMaterialActualQty'],
+                            'decQty' => $request['newMaterialActualQty'],
                             'decCost' => $request['newMaterialActualQty'] * $materialIdLatestPrice->decPrice,
                             'intMaterialActualsId' => $insertedMaterialActualsId
                         ]

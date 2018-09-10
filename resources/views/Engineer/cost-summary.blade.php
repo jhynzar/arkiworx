@@ -612,7 +612,7 @@
                                                                                 <th class="text-center" style="background-color: coral;   !important">-</th>
                                                                                 <td style="background-color: coral;  color: black !important">-</td>
                                                                                 <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{$costSummary->actual->materialActualsHistory[0]->intQty}}</b>
+                                                                                    <b>{{$costSummary->actual->materialActualsHistory[0]->decQty}}</b>
                                                                                 </th>
                                                                                 <th style="background-color: lightgreen;color: black !important">
                                                                                     <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
@@ -631,7 +631,7 @@
                                                                                 <td>{{$keyCostSummary+1}}</td>
 
                                                                                 <td>{{$costSummary->estimate->strMaterialName}}</td>
-                                                                                <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->intQty}}</td>
+                                                                                <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->decQty}}</td>
                                                                                 <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
                                                                                 <td style="background-color: coral;  color: black !important">{{$costSummary->estimate->decCost}}</td>
                                                                                 <th class="text-center " style="background-color: lightgreen; color: black !important">
@@ -655,11 +655,11 @@
                                                                             <td>{{$keyCostSummary+1}}</td>
 
                                                                             <td>{{$costSummary->estimate->strMaterialName}}</td>
-                                                                            <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->intQty}}</td>
+                                                                            <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->decQty}}</td>
                                                                             <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
                                                                             <td style="background-color: coral;  color: black !important">{{$costSummary->estimate->decCost}}</td>
                                                                             <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{$costSummary->actual->materialActualsHistory[0]->intQty}}</b>
+                                                                                <b>{{$costSummary->actual->materialActualsHistory[0]->decQty}}</b>
                                                                             </th>
                                                                             <th style="background-color: lightgreen;color: black !important">
                                                                                 <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
