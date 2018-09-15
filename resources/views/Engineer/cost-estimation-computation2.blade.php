@@ -2982,7 +2982,7 @@
                                  <hr>
                                  <div class="form-group form-inline">
                                 <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
-                                <button type="button" class="btn btn-primary" style="margin-left: 50px" >Compute</button>
+                                <button type="button" class="btn btn-success" style="margin-left: 50px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -3195,7 +3195,7 @@
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
                                                                                     id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn " style="margin-left: 300px">Compute</button>
+                                                                                <button type="button" class="btn btn-primary" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -3354,26 +3354,59 @@
                                                                             <br>
                                                                             <br>
 
-                                                                          
-                                                                          
-                                                                            
-                                                                            
-                                                                            <label>Door Accessories: </label>
+                                                                            <label>Door Type:
+                                                                                <span class="text text-default">
+                                                                                    <b>Optional</b>
+                                                                                </span>
+                                                                            </label>
                                                                             <br>
                                                                             <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> Door Knob </option>
-                                                                                <option> Door Stopper </option>
-                                                                                <option> Lock Set</option>
-                                                                                <option> Door Closer</option>
+                                                                                <option selected> Panel Door </option>
+                                                                                <option> Analoc </option>
+                                                                                <option> Flush Door</option>
+                                                                                <option> Poly Door</option>
                                                                             </select>
-
                                                                             <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <br>
+                                                                            <br>
+
+                                                                            <label>Door Type:
+                                                                                <label>Door Type:
+                                                                                    <span class="text text-default">
+                                                                                        <b>Optional</b>
+                                                                                    </span>
+                                                                                </label>
+                                                                            </label>
+                                                                            <br>
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
+                                                                                <option selected> Panel Door </option>
+                                                                                <option> Analoc </option>
+                                                                                <option> Flush Door</option>
+                                                                                <option> Poly Door</option>
+                                                                            </select>
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <br>
+                                                                            <br>
+                                                                            <label>Door Knob: </label>
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1"> &nbsp; &nbsp;
+                                                                            <label>Door Stopper:</label>
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1">
+
+                                                                            <br>
+                                                                            <br>
+                                                                            <label>Lock Set:</label> &nbsp;&nbsp;&nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1"> &nbsp;&nbsp;
+                                                                            <label>Door Closer:</label> &nbsp;&nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1">
+
+
+
+
+
 
 
                                                                             <br>
                                                                             <br>
-                                                                            
-                                                                           
                                                                             <hr>
                                                                             <div class="form-group form-inline">
 
@@ -3594,7 +3627,7 @@
                                                                                 <input type="number" class="form-control"
                                                                                     id="" style="width: 100px !important;"
                                                                                     placeholder="1">
-                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px">Compute</button>
+                                                                                <button type="button" class="btn" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -3689,7 +3722,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--  
+                                        
                  <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingFourteen">
                   <h3 class="card-title accordion-title">
@@ -3859,12 +3892,12 @@
       
     </div>
                       
-     <!-- Column ends
+     
                   </div>
                 </div>
               </div>
                                 
-                                -->
+                                
 
 
                                         <div class="accordion-panel">
@@ -3946,7 +3979,7 @@
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
                                                                                     id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn" style="margin-left: 90px">Compute</button>
+                                                                                <button type="button" class="btn btn-primary" style="margin-left: 90px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -4114,7 +4147,7 @@
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
                                                                                     id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn btn-primary" style="margin-left: 90px">Compute</button>
+                                                                                <button type="button" class="btn btn-success" style="margin-left: 90px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -4251,11 +4284,61 @@
 
                                                                             <br>
                                                                             <br>
-                                                                           
 
-                                                
-                                                                              <label> Circuit Breaker</label>
-                                                                            <br> 
+                                                                            <label>
+                                                                                <span class="text text-primary">Optional</span>
+                                                                            </label>
+                                                                            <br>
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
+                                                                                <option selected> #14 THHN</option>
+                                                                                <option> #12 THHN </option>
+                                                                                <option> #10 THHN</option>
+                                                                                <option> #8 THHN</option>
+                                                                            </select>
+
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+
+
+                                                                            <br>
+                                                                            <br>
+
+                                                                            <label>
+                                                                                <span class="text text-primary">Optional</span>
+                                                                            </label>
+                                                                            <br>
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
+                                                                                <option selected> #14 THHN</option>
+                                                                                <option> #12 THHN </option>
+                                                                                <option> #10 THHN</option>
+                                                                                <option> #8 THHN</option>
+                                                                            </select>
+
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+
+
+                                                                            <br>
+                                                                            <br>
+                                                                            <label>
+                                                                                <span class="text text-primary">Optional</span>
+                                                                            </label>
+                                                                            <br>
+                                                                            <select class="form-control" id="" style="width: 300px !important;">
+                                                                                <option selected> #14 THHN</option>
+                                                                                <option> #12 THHN </option>
+                                                                                <option> #10 THHN</option>
+                                                                                <option> #8 THHN</option>
+                                                                            </select>
+
+                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+
+
+                                                                            <br>
+                                                                            <br>
+
+                                                                            <label>
+                                                                                <b> Circuit Breaker </b>
+                                                                            </label>
+                                                                            <br>
                                                                             <select class="form-control" id="" style="width: 300px !important;">
                                                                                 <option selected> 15a</option>
                                                                                 <option> 20a </option>
@@ -4270,33 +4353,59 @@
                                                                             <br>
 
 
-                                                                            <label > Accessories</label>
+                                                                            <label class="label label-primary"> Accessories</label>
                                                                             <br>
-                                                                            
-                                                                            
-                                                                            
-                                                                              <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> PVC Clips</option>
-                                                                                <option> Lights </option>
-                                                                                  <option> Light Switch </option>
-                                                                                <option> Junction Box</option>
-                                                                                <option> Utility Box</option>
-                                                                                  <option> Sqaure Box</option>
-                                                                                  <option> Motor Pump</option>
-                                                                                  <option> Doorbell Buzzer</option>
-                                                                                  <option> Smoke Alarm</option>
-                                                                            </select>
+                                                                            <br>
 
-                                                                         <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
-                                                                           
+                                                                            <label>Panel Board: </label> &nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1"> &nbsp; &nbsp;
+                                                                            <label>PVC Clips:</label> &nbsp; &nbsp; &nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1">
+
+                                                                            <br>
+                                                                            <br>
+                                                                            <label>Lights:</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                                            &nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1"> &nbsp;&nbsp;
+                                                                            <label>Junction Box:</label> &nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1">
+
+                                                                            <br>
+                                                                            <br>
+                                                                            <label>Light Switch:</label> &nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1"> &nbsp;&nbsp;
+                                                                            <label>Utility Box:</label> &nbsp;&nbsp; &nbsp; &nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1">
+                                                                            <br>
+                                                                            <br>
+                                                                            <label>Square Box:</label> &nbsp;&nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1"> &nbsp;&nbsp;
+                                                                            <label>Motor Pump:</label> &nbsp;&nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1">
+                                                                            <br>
+                                                                            <br>
+                                                                            <label class="text text-primary">Optional</label>
+                                                                            <br>
+                                                                            <label>Doorbell Buzzer:</label> &nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1"> &nbsp;&nbsp;
+                                                                            <br>
+                                                                            <br>
+                                                                            <label>Smoke Alarm:</label> &nbsp;&nbsp; &nbsp; &nbsp;
+                                                                            <input type="number" class="form-control" id="" style="width: 100px !important;" placeholder="1">
+
+
+
+
+
+
 
                                                                             <br>
                                                                             <br>
                                                                             <hr>
                                                                             <div class="form-group form-inline">
 
-                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px">Compute</button>
+                                                                                <button type="button" class="btn" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -4542,7 +4651,7 @@
 
                                                                             <hr>
                                                                             <div class="form-group form-inline">
-                                                                                <button type="button" class="btn btn-primary" style="margin-left: 300px">Compute</button>
+                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
 
