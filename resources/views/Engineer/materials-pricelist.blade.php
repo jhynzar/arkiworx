@@ -64,7 +64,7 @@
     <header class="main-header-top hidden-print">
 
         <a href="index" class="nav-brand">
-            <img class="img-fluid logo" src="/assets/images/GG.jpg" alt="Theme-logo">
+            <img class="img-fluid logo" src="" alt="Theme-logo">
         </a>
 
 
@@ -411,10 +411,10 @@
 
 
 
-                    <div class="input-group stylish-input-group" style="position: absolute; margin-top: -40px; margin-left: 300px">
-                        <input type="text" class="form-control" placeholder="Search material" style="width: 400px">
-                        <button type="submit" class="btn btn-primary">
-                            <span class="icon-magnifier"></span>
+                    <div class="input-group stylish-input-group" style="position: absolute; margin-top: -40px; margin-left: 200px">
+                        <input type="text" class="form-control" placeholder="Search material" style="width: 300px">
+                        <button type="submit" class="btn btn-info" style=" color: WHITE ">
+                            <span >Search</span>
                         </button>
 
                     </div>
@@ -463,7 +463,7 @@
             <div class="col-sm-3 pull-right">
                 <br>
                 <br>
-                <button type="button" data-toggle="modal" data-target="#addMaterial" class="btn btn-primary waves-effect waves-light" style="margin-left: 10px; margin-top: 50px">
+                <button type="button" data-toggle="modal" data-target="#addMaterial" class="btn btn-success waves-effect waves-light" style="margin-left: 10px; margin-top: 50px">
                     <i class="icon-plus"> </i>Add Material</button>
             </div>
 
@@ -520,7 +520,7 @@
                                             <td>{{ $material->strUnit}}</td>
                                             <td>{{ $material->latestPrice}}</td>
                                             <td>
-                                                <button data-toggle="modal" data-target="#update{{$key}}" class="btn btn-light " style="background-color: #778899; color: white !important">Update Price</button>
+                                                <button data-toggle="modal" data-target="#update{{$key}}" class="btn btn-warning " style="color: white !important">Update Price</button>
                                             </td>
                                             <td>
                                                 <button data-toggle="modal" data-target="#viewPriceHistory{{$key}}" class="btn btn btn-light pull-left text-left" style="color:  gray !important">

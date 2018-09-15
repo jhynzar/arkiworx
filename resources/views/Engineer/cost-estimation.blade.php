@@ -57,28 +57,7 @@
             background-image: url('/assets/images/ff.jpg') !important;
         }
 
-        .morphsearch-content {
-            background-color: #222d32 !important;
-
-
-        }
-
-        .main-header-top>.navbar {
-            background: #222d32 !important;
-        }
-
-
-        .sidebar-menu>li.active>a {
-            background: #222d32 !important;
-        }
-
-        .main-header-top {
-            background-color: #222d32 !important;
-        }
-
-        .sidebar-menu .treeview-menu>li.active>a {
-            color: #222d32 !important;
-        }
+     
 
 
         .modal-header {
@@ -152,7 +131,7 @@
         <header class="main-header-top hidden-print">
 
             <a href="index" class="nav-brand">
-                <img class="img-fluid logo" src="../assets/images/GG.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="../assets/images/.jpg" alt="Theme-logo">
             </a>
 
 
@@ -1107,13 +1086,9 @@
 
 
 
-                        <div class="input-group stylish-input-group" style="position: absolute; margin-top: -40px; margin-left: 300px">
-                            <input type="text" class="form-control" placeholder="Search " style="width: 400px">
-                            <button type="submit" class="btn btn-primary">
-                                <span class="icon-magnifier"></span>
-                            </button>
-
-                        </div>
+                    
+                        
+                  
 
                        
 
@@ -1178,8 +1153,8 @@
                                                         <tr>
                                                             <th class="text-center txt-primary pro-pic">Line Item</th>
                                                             <th class="text-center txt-primary">Client</th>
-                                                            <th class="text-center txt-primary pro-pic">Project Name</th>
-                                                            <th class="text-center txt-primary">Action</th>
+                                                            <th class="text-center txt-success pro-pic">Project Name</th>
+                                                            <th class="text-center txt-danger">Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="text-center">
