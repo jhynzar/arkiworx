@@ -1589,7 +1589,7 @@
                                                                     <td class="text-center">{{$materialActual->materialActualsDetails->strMaterialName}}
 
                                                                     </td>
-                                                                    <td class="text-center">{{$materialActual->materialActualsHistory[0]->intQty}}</td>
+                                                                    <td class="text-center">{{$materialActual->materialActualsHistory[0]->decQty}}</td>
                                                                     <td class="text-center">{{$materialActual->materialActualsDetails->strUnit}}</td>
                                                                     <td class="text-center">{{$materialActual->materialActualsDetails->latestPrice->decPrice}}</td>
                                                                     <td class="text-center">{{$materialActual->materialActualsHistory[0]->decCost}}</td>
