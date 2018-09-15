@@ -385,7 +385,7 @@
 
 
 
-<div class="content-wrapper" style="margin-top: 10px">
+<div class="content-wrapper" style="margin-top: 35px">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
 
