@@ -1105,7 +1105,7 @@
             
             
             
-          <div class="card-block accordion-block">
+          <div class="card-block accordion-block ">
             
                     <div class="col-lg-12"> <div style="margin-left: 800px; margin-top: 20px"> <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addCustom" >Add Custom Category</button>
                             </div>
@@ -4232,7 +4232,7 @@
                                                         <div class="row ">
 
                                                             <div class="col-sm-6 col-xs-12 scroll">
-                                                                <br>
+                                                                
                                                                 <div class="card" style="background-color: #A7FDCB">
 
                                                                     <div class="card-block">
@@ -4247,44 +4247,16 @@
                                                                         <div class="form-group form-inline">
 
 
-                                                                            <select class="form-control" id="" style="width: 300px !important;">
+                                                                            <select class="form-control" id="" style="width: 350px !important;">
                                                                                 <option selected> #14 THHN</option>
                                                                                 <option> #12 THHN </option>
                                                                                 <option> #10 THHN</option>
                                                                                 <option> #8 THHN</option>
-                                                                            </select>
-
-                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
-
-
-                                                                            <br>
-                                                                            <br>
-                                                                           
-
-                                                
-                                                                              <label> Circuit Breaker</label>
-                                                                            <br> 
-                                                                            <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> 15a</option>
-                                                                                <option> 20a </option>
-                                                                                <option> 30a</option>
-                                                                                <option> 60a</option>
-                                                                            </select>
-
-                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
-
-
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <label > Accessories</label>
-                                                                            <br>
-                                                                            
-                                                                            
-                                                                            
-                                                                              <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> PVC Clips</option>
+                                                                                <option> Circuit Breaker 15a</option>
+                                                                                <option> Circuit Breaker 20a </option>
+                                                                                <option> Circuit Breaker 30a</option>
+                                                                                <option> Circuit Breaker 60a</option>
+                                                                                  <option> PVC Clips</option>
                                                                                 <option> Lights </option>
                                                                                   <option> Light Switch </option>
                                                                                 <option> Junction Box</option>
@@ -4293,7 +4265,12 @@
                                                                                   <option> Motor Pump</option>
                                                                                   <option> Doorbell Buzzer</option>
                                                                                   <option> Smoke Alarm</option>
+                                                                                
                                                                             </select>
+
+                                                                         
+                                                                      
+                                                                           
 
                                                                          <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
 
@@ -4315,7 +4292,7 @@
                                                             </div>
 
                                                             <div class="col-sm-6 col-xs-12 scroll ">
-                                                                <br>
+                                                                
 
 
                                                                 <div class="card">
