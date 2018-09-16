@@ -75,10 +75,10 @@
                      <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="../assets/images/erwin.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Juliamar</b>Soriano</span>
+                                <b>Erwin</b>Andres</span>
 
                         </a>
 
@@ -134,23 +134,23 @@
                         <div class="dummy-column">
                             <h2>Popular</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="PagePreloadingEffect" />
+                                <img src="../assets/images/erwin.jpg" alt="PagePreloadingEffect" />
                                 <h3>Page Preloading Effect</h3>
                             </a>
 
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow" />
+                                <img src="../assets/images/erwin.jpg" alt="DraggableDualViewSlideshow" />
                                 <h3>Draggable Dual-View Slideshow</h3>
                             </a>
                         </div>
                         <div class="dummy-column">
                             <h2>Recent</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="TooltipStylesInspiration" />
+                                <img src="../assets/images/erwin.jpg" alt="TooltipStylesInspiration" />
                                 <h3>Tooltip Styles Inspiration</h3>
                             </a>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="NotificationStyles" />
+                                <img src="../assets/images/erwin.jpg" alt="NotificationStyles" />
                                 <h3>Notification Styles Inspiration</h3>
                             </a>
                         </div>
@@ -177,13 +177,13 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="/assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                    <img src="/assets/images/erwin.jpg" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
                     <br>
                     <p>
-                        <b>Juliamar</b> </p>
+                        <b>Erwin</b> </p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>
@@ -434,8 +434,8 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="card">
                         <div class="user-block-2">
-                            <img class="img-fluid" src="../assets/images/avatar-1.png" alt="user-header">
-                            <h5>Juliamar Soriano</h5>
+                            <img class="img-fluid" src="../assets/images/erwin.png" alt="user-header">
+                            <h5>Erwin Andres</h5>
                             <h6>Engineer</h6>
                         </div>
                         <div class="card-block">
