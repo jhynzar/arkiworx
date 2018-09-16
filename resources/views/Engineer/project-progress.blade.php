@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master-engineer')
 
 @section('css')
 <style>
@@ -60,7 +60,7 @@
         <header class="main-header-top hidden-print">
 
             <a href="Admin/home" class="nav-brand">
-                <img class="img-fluid logo" src="../assets/images/GG.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="../assets/images/.jpg" alt="Theme-logo">
             </a>
 
 
@@ -309,7 +309,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 10px">
+    <div class="content-wrapper" style="margin-top: 35px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 <div style="position: absolute; margin-top: 90px; margin-left: 850px">
@@ -439,10 +439,10 @@
                                                                 <tr>
                                                                     <th class="text-center txt-primary pro-pic">Line Item</th>
                                                                     <th class="text-center txt-primary">Client</th>
-                                                                    <th class="text-center txt-primary pro-pic">Project Name</th>
+                                                                    <th class="text-center txt-success pro-pic">Project Name</th>
                                                                    
                                                                     
-                                                                    <th class="text-center txt-primary">Action</th>
+                                                                    <th class="text-center txt-danger">Action</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody class="text-center">
@@ -467,7 +467,7 @@
 
 
 
-                                                                                <button type="button" data-toggle="modal" data-target="#createProjectSchedule{{$projectKey}}" class="btn btn-success waves-effect waves-light"
+                                                                                <button type="button" data-toggle="modal" data-target="#createProjectSchedule{{$projectKey}}" class="btn btn-primary waves-effect waves-light"
                                                                                     data-toggle="tooltip" data-placement="top" title="Create">
                                                                                     <i class="icon-note"> </i>Create Project Schedule
                                                                                 </button>
@@ -584,10 +584,10 @@
                                                                 <tr>
                                                                     <th class="text-center txt-primary pro-pic">Line Item</th>
                                                                     <th class="text-center txt-primary">Client</th>
-                                                                    <th class="text-center txt-primary pro-pic">Project Name</th>
+                                                                    <th class="text-center txt-success pro-pic">Project Name</th>
                                                                   
                                                                     
-                                                                    <th class="text-center txt-primary">Action</th>
+                                                                    <th class="text-center txt-danger">Action</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody class="text-center">

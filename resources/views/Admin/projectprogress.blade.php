@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master-admin')
 
 @section('css')
 <style>
@@ -12,7 +12,15 @@
 
 </style>
 @endsection
-@section ('body')
+
+@section('body')
+<body class="sidebar-mini fixed">
+    <div class="loader-bg">
+        <div class="loader-bar">
+        </div>
+    </div>
+
+
     <div class="wrapper">
         <!--   <div class="loader-bg">
     <div class="loader-bar">
@@ -289,7 +297,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 20px">
+    <div class="content-wrapper" style="margin-top: 35px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 <div style="position: absolute; margin-top: 90px; margin-left: 850px">
@@ -891,8 +899,8 @@
     <!-- Container-fluid ends -->
     </div>
     </div>
-
 @endsection
+
 
 
 

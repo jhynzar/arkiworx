@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master-engineer')
 @section('css')
 
 
@@ -64,7 +64,7 @@
 <header class="main-header-top hidden-print">
 
     <a href="index" class="nav-brand">
-        <img class="img-fluid logo" src="/assets/images/GG.jpg" alt="Theme-logo">
+        <img class="img-fluid logo" src="/assets/images/.jpg" alt="Theme-logo">
     </a>
 
 
@@ -1147,18 +1147,21 @@
                            
                             
     
-                                <label class="text text-default"><b>Permit</b> </label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                                <label class="text text-default"><b>Permit</b> </label>  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-                                <input type="number" class="form-control" value="50000" id="BuildingPermit" name="BuildingPermit" style="width: 180px !important;" placeholder="">
-                                    
+                                <input type="number" class="form-control" value="50000" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">
+                                     &nbsp; &nbsp; &nbsp; &nbsp; 
+                                    <label> DENR <span class="text text-primary"><i>Optional</i></span></label>  &nbsp; 
+                                <input type="number" class="form-control" value="30000" id="DENR" name="WorkersBarracks" style="width: 100px !important;" placeholder="">
+                                 
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Temporary Facilities</label>
-                                <input type="number" class="form-control" value="10000" id="TemporaryFacilities" name="TemporaryFacilities" style="width: 180px !important;" placeholder="">
-                                     <label> Workers' Barracks</label>
-                                <input type="number" class="form-control" value="10000" id="WorkersBarracks" name="WorkersBarracks" style="width: 180px !important;" placeholder="">
-
-                                 
+                                <input type="number" class="form-control" value="10000" id="TemporaryFacilities" name="TemporaryFacilities" style="width: 100px !important;" placeholder="">
+                                     &nbsp; &nbsp; &nbsp; &nbsp; 
+                                    <label> Workers' Barracks</label>
+                                <input type="number" class="form-control" value="10000" id="WorkersBarracks" name="WorkersBarracks" style="width: 100px !important;" placeholder="">
+ &nbsp; &nbsp; &nbsp; &nbsp; 
                                  <br> <br>
                                  
                                <label class="text text-default"><b>Earthworks</b> </label>  <br><br>
@@ -1190,11 +1193,16 @@
                                  
                                      <br> <br> <br> <br>
                                     <label class="text text-default"><b>Contingency</b> </label> 
-                                <input type="number" class="form-control" value="104453.28" id="Contigency" name="Contigency" style="width: 300px !important;" placeholder="">
+                                <input type="number" class="form-control" value="104453.28" id="Contigency" name="Contigency" style="width: 200px !important;" placeholder="">
                                  &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Overhead Profit</b> </label> 
-                                <input type="number" class="form-control" value="261133.18" id="OverheadProfit" name="OverheadProfit" style="width: 300px !important;" placeholder="">
-                                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                                <select style="width: 200px" class="form-control" id="overheadProfit" > 
+                                    <option  value="0.1" selected> 10%</option>
+                                    <option value="0.2"> 20% </option>
+                                    
+                                    </select> 
+                                    <input type="hidden" id="OverheadProfit" value="">
+                                    &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
                                     <button type="button" class="btn btn-success" id="ComputeGeneralReq" >Compute</button>
                                     
                                     

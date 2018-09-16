@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('css')
+@extends('layouts.master-engineer') @section('css')
 <style>
     tr {
         width: 100%;
@@ -73,7 +73,7 @@
     <header class="main-header-top hidden-print">
 
         <a href="index" class="nav-brand">
-            <img class="img-fluid logo" src="/assets/images/GG.jpg" alt="Theme-logo">
+            <img class="img-fluid logo" src="/assets/images/.jpg" alt="Theme-logo">
         </a>
 
 
@@ -1364,7 +1364,7 @@
 
 
 
-<div class="content-wrapper" style="margin-top: 10px">
+<div class="content-wrapper" style="margin-top: 35px">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
 

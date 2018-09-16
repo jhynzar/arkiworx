@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('body')
+@extends('layouts.master-engineer') @section('body')
 <div class="loader-bg">
     <div class="loader-bar">
     </div>
@@ -47,7 +47,7 @@
     <header class="main-header-top hidden-print">
 
         <a href="index" class="nav-brand">
-            <img class="img-fluid logo" src="../assets/images/GG.jpg" alt="Theme-logo">
+            <img class="img-fluid logo" src="../assets/images/.jpg" alt="Theme-logo">
         </a>
 
 
@@ -345,13 +345,15 @@
 
 
 
-                        <div class="input-group stylish-input-group" style="position: absolute; margin-top: -60px; margin-left: 300px">
-                            <input type="text" class="form-control" placeholder="Search project" style="width: 400px">
-                            <button type="submit" class="btn btn-primary">
-                                <span class="icon-magnifier"></span>
+                        <div class="input-group stylish-input-group" style="position: absolute; margin-top: -60px; margin-left: 200px">
+                            <input type="text" class="form-control" placeholder="Search project" style="width: 300px">
+                            <button type="submit" class="btn btn-primary" style="b color: white">
+                              Search
                             </button>
 
                         </div>
+                         
+                         
 
                       
 
@@ -385,7 +387,7 @@
         <!-- Tables start -->
         <!-- Row start -->
 
-<br> <br>
+
         <div class="row">
 
 
@@ -419,7 +421,7 @@
                                                         <th class="text-center txt-primary pro-pic">Line Item</th>
                                                         <th class="text-center txt-primary">Client</th>
                                                         <th class="text-center txt-primary pro-pic">Project Name</th>
-                                                        <th class="text-center txt-primary">Action</th>
+                                                        <th class="text-center txt-danger">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="text-center">
@@ -441,7 +443,7 @@
                                                                 <i style="font-size: 20px"class="icofont icofont-calculator"></i> 
                                                                 Cost Summary
                                                             </a>
-                                                            <a href="/Engineer/Engineer-Projects/{{$project->intProjectId}}/Actuals" class="btn btn-primary waves-effect waves-light"
+                                                            <a href="/Engineer/Engineer-Projects/{{$project->intProjectId}}/Actuals" class="btn btn-warning waves-effect waves-light"
                                                                  data-toggle="tooltip" data-placement="top" title="View">
                                                                 <i style="font-size: 20px"class="icofont icofont-file-document"></i> 
                                                                 Actuals
