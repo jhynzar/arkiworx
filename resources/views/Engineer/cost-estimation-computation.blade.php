@@ -64,7 +64,7 @@
 <header class="main-header-top hidden-print">
 
     <a href="index" class="nav-brand">
-        <img class="img-fluid logo" src="/assets/images/.jpg" alt="Theme-logo">
+        <img class="img-fluid logo" src="/assets/images/NYETA2.png" alt="Theme-logo">
     </a>
 
 

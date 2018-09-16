@@ -174,7 +174,7 @@ tbody{
         <header class="main-header-top hidden-print">
 
             <a href="Admin/home" class="nav-brand">
-                <img class="img-fluid logo" src="../assets/images/GG.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="../assets/images/NYETA.png" alt="Theme-logo">
             </a>
 
 
