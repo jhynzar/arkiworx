@@ -132,6 +132,16 @@ class ProjectsController extends Controller
     public function show($id)
     {
         //
+        $projectDetails = DB::table('tblproject')
+                ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
+                ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                ->where('tblproject.intProjectId','=',$id)
+                ->first();
+
+        //dd($projectDetails);
+        return view('Admin/projectdetails',compact(
+            'projectDetails'
+        ));
     }
 
     /**
@@ -171,5 +181,20 @@ class ProjectsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    //save the updated details of project
+    public function updateDetails($id){
+        //dd(request()->all());
+
+        DB::table('tblproject')
+            ->where('tblproject.intProjectId','=',$id)
+            ->update([
+                'strProjectName' => request()->projectName,
+                'txtProjectDesc' => request()->projectDesc
+            ]);
+
+            header('Refresh:0;/Admin/Projects/'.$id);
     }
 }

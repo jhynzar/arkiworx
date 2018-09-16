@@ -133,6 +133,14 @@
         <!-- notification -->
         <script src="/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
 
+        <!-- pie chart.js -->
+        <script type="text/javascript" src="/assets/plugins/bower-jquery-easyPieChart/dist/jquery.easypiechart.min.js"></script>
+        <script type="text/javascript" src="/assets/pages/counter.js"></script>
+
+        <!-- Date picker.js -->
+        <script type="text/javascript" src="/assets/plugins/moment/moment.js"></script>
+        <script type="text/javascript" src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
         <!-- Rickshaw Chart js -->
         <script src="/assets/plugins/d3/d3.js"></script>
         <script src="/assets/plugins/rickshaw/rickshaw.js"></script>
@@ -146,6 +154,9 @@
 
         <!-- custom js -->
         <script type="text/javascript" src="/assets/js/main.min.js"></script>
+        <script type="text/javascript" src="/assets/pages/profile.js"></script>
+        <script type="text/javascript" src="/assets/pages/elements.js"></script>
+        <script type="text/javascript" src="/assets/js/menu.min.js"></script>
         <!-- welcome admin able -->
         <script type="text/javascript" src="/assets/pages/dashboard.js"></script>
         <script type="text/javascript" src="/assets/pages/elements.js"></script>
