@@ -57,27 +57,7 @@
             background-image: url('/assets/images/ff.jpg') !important;
         }
 
-        .morphsearch-content {
-            background-color: #222d32 !important;
-            color: white !important;
-        }
-
-        .main-header-top>.navbar {
-            background: #222d32 !important;
-        }
-
-
-        .sidebar-menu>li.active>a {
-            background: #222d32 !important;
-        }
-
-        .main-header-top {
-            background-color: #222d32 !important;
-        }
-
-
-        }
-
+      
         .card-header {
             background-color: #778899 !important;
             color: white !important;
