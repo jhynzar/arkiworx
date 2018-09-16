@@ -396,9 +396,9 @@
 
                         <div class="input-group stylish-input-group" style="position: absolute; margin-top: -60px; margin-left: 300px">
                             <form action='Search' method='GET'>
-                                <input type="text" name='search' class="form-control" placeholder="Search user" style="width: 400px">
-                                <button type="submit" class="btn btn-primary">
-                                    <span class="icon-magnifier"></span>
+                                <input type="text" name='search' class="form-control" placeholder="Search user" style="width: 250px">
+                                <button type="submit" class="btn " style="background-color: #222d32; color: white">
+                                  SEARCH
                                 </button>
                                 {{ csrf_field() }}
                             </form>
