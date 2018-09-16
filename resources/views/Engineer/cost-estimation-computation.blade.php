@@ -4239,14 +4239,13 @@
                                                                         <div class="form-group form-inline">
 
 
-                                                                            <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> #14 THHN</option>
-                                                                                <option> #12 THHN </option>
-                                                                                <option> #10 THHN</option>
-                                                                                <option> #8 THHN</option>
+                                                                            <select class="form-control" id="ElectricalWorksMaterial" style="width: 300px !important;">
+                                                                                <option value=43 selected> #14 THHN</option>
+                                                                                <option value=44> #12 THHN </option>
+                                                                                <option value=45> #10 THHN</option>
                                                                             </select>
 
-                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="ElectricalWorksMaterialQ" style="width: 60px !important;" placeholder="+">
 
 
                                                                             <br>
@@ -4296,7 +4295,7 @@
                                                                             <hr>
                                                                             <div class="form-group form-inline">
 
-                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px">Compute</button>
+                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px" id="ComputeElectricalWorks">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -4396,8 +4395,8 @@
                                                                                 <input type="hidden" id="Electrical12thhnQ1"                                    name="Electrical12thhnQ" value='0.5'>
                                                                                 <input type="hidden" id="Electrical10thhn1"                                    name="Electrical10thhn" value='1410'>
                                                                                 <input type="hidden" id="Electrical10thhnQ1"                                    name="Electrical10thhnQ" value='0.3'>
-                                                                                <input type="hidden" id="Electricalconduit1"                                   name="Electricalconduit" value='16'>
-                                                                                <input type="hidden" id="ElectricalconduitQ1"                                   name="ElectricalconduitQ" value='1600'>
+                                                                                <input type="hidden" id="Electricalconduit1"                                   name="Electricalconduit" value='1600'>
+                                                                                <input type="hidden" id="ElectricalconduitQ1"                                   name="ElectricalconduitQ" value='16'>
                                                                                 <input type="hidden" id="Electricalpvcclips1"                                  name="Electricalpvcclips" value='75'>
                                                                                 <input type="hidden" id="ElectricalpvcclipsQ1"                                  name="ElectricalpvcclipsQ" value='25'>
                                                                                 <input type="hidden" id="Electricalbushing1"                                   name="Electricalbushing" value='180'>
@@ -4410,7 +4409,7 @@
                                                                                 <input type="hidden" id="ElectricallightswitchnutilityboxQ1"                    name="ElectricallightswitchnutilityboxQ" value='4'>
                                                                                 <input type="hidden" id="Electricalcurrentoutletsncovernutilitybox1"           name="Electricalcurrentoutletsncovernutilitybox" value='1800'>
                                                                                 <input type="hidden" id="ElectricalcurrentoutletsncovernutilityboxQ1"           name="ElectricalcurrentoutletsncovernutilityboxQ" value='9'>
-                                                                                <input type="hidden" id="ElectricalTotalCost1"                                 name="ElectricalTotalCost" value='24675'>
+                                                                                <input type="hidden" id="ElectricalTotalCost1"                                 name="ElectricalTotalCost" value='9165'>
                                                                             </div>
 
 
@@ -4429,7 +4428,7 @@
                                                                                 <tr class="text-uppercase">
                                                                                     <th class="text-left text-primary">Total Cost:</th>
                                                                                     <th class="text-center"></th>
-                                                                                    <th class="text-center text-primary"  id="ElectricalTotalCost2"> 22345.00</th>
+                                                                                    <th class="text-center text-primary"  id="ElectricalTotalCost2"> 9165.00</th>
 
 
                                                                                 </tr>
@@ -4988,7 +4987,14 @@
             gravelcost: GravelCost
         };
     }
-
+    var DirectCountingEsti = function(Q,mId){
+        var search = searchPrice(mId);
+        var price = search.materialprice;
+        var total = parseFloat(Q)*parseFloat(mId);
+        return{
+            totals: total
+        };
+    }
     $("#ComputeGeneralReq").click(function() {
         var totalGeneralReq = 0;
         totalGeneralReq  += parseFloat($("#BuildingPermit").val()) ;
@@ -5007,6 +5013,14 @@
         $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));
 
         computeAndDisplayOverallTotal();
+    });
+
+    $("#ComputeElectricalWorks").click(function(){
+        if($("#ElectricalWorksMaterial").val()==43){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
     });
 
    $("#computeColumn").click(function () {
