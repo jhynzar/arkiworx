@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('body')
+@extends('layouts.master-engineer') @section('body')
 <div class="loader-bg">
     <div class="loader-bar">
     </div>

@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('css')
+@extends('layouts.master-engineer') @section('css')
 <style>
     tr {
         width: 100%;
