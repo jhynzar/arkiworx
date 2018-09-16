@@ -518,7 +518,7 @@
                                             <td>{{ $material->strMaterialName}}</td>
 
                                             <td>{{ $material->strUnit}}</td>
-                                            <td>{{ $material->latestPrice}}</td>
+                                            <td>{{ number_format($material->latestPrice,2)}}</td>
                                             <td>
                                                 <button data-toggle="modal" data-target="#update{{$key}}" class="btn btn-warning " style="color: white !important">Update Price</button>
                                             </td>
