@@ -1105,7 +1105,7 @@
             
             
             
-          <div class="card-block accordion-block">
+          <div class="card-block accordion-block ">
             
                     <div class="col-lg-12"> <div style="margin-left: 800px; margin-top: 20px"> <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addCustom" >Add Custom Category</button>
                             </div>
@@ -4232,7 +4232,7 @@
                                                         <div class="row ">
 
                                                             <div class="col-sm-6 col-xs-12 scroll">
-                                                                <br>
+                                                                
                                                                 <div class="card" style="background-color: #A7FDCB">
 
                                                                     <div class="card-block">
@@ -4247,54 +4247,34 @@
                                                                         <div class="form-group form-inline">
 
 
-                                                                            <select class="form-control" id="ElectricalWorksMaterial" style="width: 300px !important;">
-                                                                                <option value=43 selected> #14 THHN</option>
+                                                                            <select class="form-control" id="ElectricalWorksMaterials" style="width: 350px !important;">
+                                                                                <option value=43 selected> #14 THHN </option>
                                                                                 <option value=44> #12 THHN </option>
-                                                                                <option value=45> #10 THHN</option>
+                                                                                <option value=45> #10 THHN </option>
+                                                                                <option value=46> 3/4" Electrical Pipe PVC Conduit </option>
+                                                                                <option value=47> PVC Clips</option>
+                                                                                <option value=48> Bushing </option>
+                                                                                <option value=49> Lights </option>
+                                                                                <option value=50> Junction Box</option>
+                                                                                <option value=51> Light Switch + Utility Box</option>
+                                                                                <option value=52> Current Outlets + Cover + Utility box</option>
+                                                                                <option value=> Light Switch </option>
+                                                                                <option value=> Utility Box</option>
+                                                                                <option value=> Sqaure Box</option>
+                                                                                <option value=> Motor Pump</option>
+                                                                                <option value=> Doorbell Buzzer</option>
+                                                                                <option value=> Smoke Alarm   </option>
+                                                                                <option value=> Circuit Breaker 15a</option>
+                                                                                <option value=> Circuit Breaker 20a </option>
+                                                                                <option value=> Circuit Breaker 30a</option>
+                                                                                <option value=> Circuit Breaker 60a</option>
                                                                             </select>
 
-                                                                            <input type="number" class="form-control" id="ElectricalWorksMaterialQ" style="width: 60px !important;" placeholder="+">
-
-
-                                                                            <br>
-                                                                            <br>
+                                                                         
+                                                                      
                                                                            
 
-                                                
-                                                                              <label> Circuit Breaker</label>
-                                                                            <br> 
-                                                                            <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> 15a</option>
-                                                                                <option> 20a </option>
-                                                                                <option> 30a</option>
-                                                                                <option> 60a</option>
-                                                                            </select>
-
-                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
-
-
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <label > Accessories</label>
-                                                                            <br>
-                                                                            
-                                                                            
-                                                                            
-                                                                              <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> PVC Clips</option>
-                                                                                <option> Lights </option>
-                                                                                  <option> Light Switch </option>
-                                                                                <option> Junction Box</option>
-                                                                                <option> Utility Box</option>
-                                                                                  <option> Sqaure Box</option>
-                                                                                  <option> Motor Pump</option>
-                                                                                  <option> Doorbell Buzzer</option>
-                                                                                  <option> Smoke Alarm</option>
-                                                                            </select>
-
-                                                                         <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                         <input type="number" class="form-control" id="ElectricalWorksMaterialQ" style="width: 60px !important;" placeholder="+">
 
                                                                            
 
@@ -4314,7 +4294,7 @@
                                                             </div>
 
                                                             <div class="col-sm-6 col-xs-12 scroll ">
-                                                                <br>
+                                                                
 
 
                                                                 <div class="card">
@@ -5027,8 +5007,60 @@
         if($("#ElectricalWorksMaterial").val()==43){
             var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
             var total = product.totals;
+            $("Electrical14thhn1").val( parseFloat($("Electrical14thhn1").val()) + parseFloat(total) );
+            $("Electrical14thhnQ1").val( parseFloat($("Electrical14thhnQ1").val()) + parseFloat($("#ElectricalWorksMaterialQ").val()) );
+            $("ElectricalTotalCost1").val( parseFloat($("ElectricalTotalCost1").val()) + parseFloat(total) );
+            $("thhn10P").val( parseFloat($("Electrical14thhn1").val()) + parseFloat(total) );
+            $("thhn10Q").val( parseFloat($("Electrical14thhnQ1").val()) + parseFloat($("#ElectricalWorksMaterialQ").val()) );
+            $("ElectricalTotalCost2").val( parseFloat($("ElectricalTotalCost1").val()) + parseFloat(total) );
+        }
+        if($("#ElectricalWorksMaterial").val()==44){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
             
         }
+        if($("#ElectricalWorksMaterial").val()==45){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==46){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==47){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==48){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==49){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==50){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==51){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==52){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+
+        computeAndDisplayOverallTotal();
     });
 
    $("#computeColumn").click(function () {
