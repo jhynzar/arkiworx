@@ -504,14 +504,14 @@
                                                                                             
                                                                                                     
                                                                                                 <label class="text text-primary"> Task {{$subCategoryKey + 1}}</label> &nbsp;&nbsp;&nbsp;
-                                                                                                <input type="text" name="" class="form-control" id="" style="width:400px" placeholder="{{$subCategory->strWorkSubCategoryDesc}}" disabled> <br> <br>
+                                                                                                <input type="text" name="" class="form-control" style="width:400px" placeholder="{{$subCategory->strWorkSubCategoryDesc}}" disabled> <br> <br>
                                                                                                 <input type="hidden" id="subCategoryId{{$subCategoryKey}}" name="subCategoryId{{$subCategoryKey}}" value="{{$subCategory->intWorkSubCategoryId}}">
                                                                                                 <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
                                                                                                 <input type="date" id="startDate{{$subCategoryKey}}" name="startDate{{$subCategoryKey}}" class="form-control" style="width:180px" >
                                                                                                 &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
                                                                                                 <input type="date" id="endDate{{$subCategoryKey}}" name="endDate{{$subCategoryKey}}" class="form-control" style="width:180px" >
                                                                                                 &nbsp; &nbsp;  <label for="sex">Dependencies <i class="icon-organization text text-primary"></i>&nbsp;: &nbsp;</label>
-                                                                                                <select id="dependency{{$subCategoryKey}}" name="dependency{{$subCategoryKey}}" class="form-control" style="width: 100px"> 
+                                                                                                <select id="dependency{{$subCategoryKey}}" name="dependency{{$subCategoryKey}}" onchange="onDependencyChange(this,{{$projectKey}},{{$subCategoryKey}})" class="form-control" style="width: 100px"> 
                                                                                                     <option value="-1">None</option>
                                                                                                     @if ($subCategoryKey != 0)
                                                                                                         @foreach ($project->projectWorkSubCategories as $optionsSubCategoryKey=>$optionsSubCategory)
@@ -887,7 +887,7 @@
                             <br>
                             <div class="form-group">
                                 <label for="user">User Name:</label>
-                                <input type="text" class="form-control" id="lname" placeholder="User name">
+                                <input type="text" class="form-control" id="user" placeholder="User name">
                             </div>
 
                             <div class="form-group">
@@ -938,4 +938,19 @@
 
 
 @section('script')
+    <script>
+        function onDependencyChange(selectTag,projectKey,subCategoryKey){
+
+            if(selectTag.value != -1){
+                fromDate = $('#createProjectSchedule'+projectKey+' #endDate'+selectTag.value);
+                thisDate = $('#createProjectSchedule'+projectKey+' #startDate'+subCategoryKey);
+
+                thisDate.val(fromDate.val());
+                thisDate.prop("disabled",true);
+            }else{
+                thisDate.val("");
+                thisDate.prop("disabled",false);
+            }
+        }
+    </script>
 @endsection
