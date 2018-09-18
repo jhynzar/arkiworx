@@ -567,9 +567,9 @@
                                                           
                                                             <div class="form-group form-inline">
                                                                 <label for="updatePrice">Current Price:</label>
-                                                                <input type="text" class="form-control" id="" name="" value="{{ $material->latestPrice}}" tyle="width: 100px !important;" disabled> 
+                                                                <input type="text" class="form-control" id="" name="" value="{{ $material->latestPrice}}" style="width: 130px !important;" disabled> 
                                                                &nbsp; &nbsp;  <label for="updatePrice">New Price:</label> 
-                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name=s tyle="width: 100px !important;">
+                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" style="width: 130px !important;">
                                                             </div>
 
 
@@ -578,7 +578,7 @@
 
                                                                 <button type="submit" class="btn btn-success">
                                                                     <i class="icon icon-check"> </i>Update Price</button>
-                                                                <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                                                <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 260px">
                                                                     <i class="icon icon-close"> </i>Cancel</button>
 
                                                             </div>
