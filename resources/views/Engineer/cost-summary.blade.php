@@ -1,4 +1,23 @@
 @extends('layouts.master-engineer')
+@section('css')
+<style>
+    tr {
+            width: 100%;
+            display: inline-table;
+            table-layout: fixed;
+        }
+        table {
+            height: 300px;
+            display: -moz-groupbox;
+        }
+        tbody {
+            overflow-y: scroll;
+            height: 250px;
+            width: 100%;
+            position: absolute;
+        }
+</style>
+@endsection
 @section('body')
     <div class="loader-bg">
         <div class="loader-bar">
