@@ -448,7 +448,7 @@
                                                                                     <td>{{$projectRequirement->strDesc}}</td>
                                                                                     <td class="text-center " style="background-color: coral;  color: black !important">-</td>
                                                                                     <th class="text-center" style="background-color: coral;   !important">-</th>
-                                                                                    <td style="background-color: coral;  color: black !important">{{$projectRequirement->decEstimatedPrice}}</td>
+                                                                                    <td style="background-color: coral;  color: black !important">{{number_format($projectRequirement->decEstimatedPrice,2)}}</td>
                                                                                     <th class="text-center " style="background-color: lightgreen; color: black !important">
                                                                                         <b>-</b>
                                                                                     </th>
@@ -457,7 +457,7 @@
                                                                                     </th>
                                                                                     <td class="text-left" style="background-color: lightgreen; color: black !important">
                                                                                         @if($projectRequirement->decActualPrice != null)
-                                                                                            <b>{{$projectRequirement->decActualPrice}}</b>
+                                                                                            <b>{{number_format($projectRequirement->decActualPrice,2)}}</b>
                                                                                         @else
                                                                                             <b>-</b>
                                                                                         @endif
@@ -516,7 +516,7 @@
                                                                                     <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
                                                                                 </th>
                                                                                 <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{$costSummary->actual->materialActualsHistory[0]->decCost}}</b>
+                                                                                    <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decCost,2)}}</b>
                                                                                 </td>
                                                                             </tr>
                                                                         @elseif (
@@ -531,7 +531,7 @@
                                                                                 <td>{{$costSummary->estimate->strMaterialName}}</td>
                                                                                 <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->decQty}}</td>
                                                                                 <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
-                                                                                <td style="background-color: coral;  color: black !important">{{$costSummary->estimate->decCost}}</td>
+                                                                                <td style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decCost,2)}}</td>
                                                                                 <th class="text-center " style="background-color: lightgreen; color: black !important">
                                                                                     <b>-</b>
                                                                                 </th>
@@ -555,7 +555,7 @@
                                                                             <td>{{$costSummary->estimate->strMaterialName}}</td>
                                                                             <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->decQty}}</td>
                                                                             <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
-                                                                            <td style="background-color: coral;  color: black !important">{{$costSummary->estimate->decCost}}</td>
+                                                                            <td style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decCost,2)}}</td>
                                                                             <th class="text-center " style="background-color: lightgreen; color: black !important">
                                                                                 <b>{{$costSummary->actual->materialActualsHistory[0]->decQty}}</b>
                                                                             </th>
@@ -563,7 +563,7 @@
                                                                                 <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
                                                                             </th>
                                                                             <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{$costSummary->actual->materialActualsHistory[0]->decCost}}</b>
+                                                                                <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decCost,2)}}</b>
                                                                             </td>
                                                                         </tr>
                                                                         @endif
