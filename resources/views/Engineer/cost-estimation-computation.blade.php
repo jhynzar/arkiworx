@@ -5154,8 +5154,7 @@ $("#computeBeam").click(function () {
         computeAndDisplayOverallTotal();
 });
 
-$("#OverallTotalCost1").val( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val()) );
-$("#OverallTotalCost").html( parseFloat($("#OverallTotalCost1").val()).toFixed(2) );
+computeAndDisplayOverallTotal();
 
 </script>
 
