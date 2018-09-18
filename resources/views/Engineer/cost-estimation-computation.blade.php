@@ -1201,7 +1201,7 @@
                                     <option value="0.2"> 20% </option>
                                     
                                     </select> 
-                                    <input type="hidden" id="OverheadProfit" value="">
+                                    <input type="hidden" id="OverheadProfit" name="OverheadProfit" value="">
                                     &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
                                     <button type="button" class="btn btn-success" id="ComputeGeneralReq" >Compute</button>
                                     
@@ -4878,7 +4878,7 @@
     function computeAndDisplayOverallTotal(){
         var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
 
-        $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2));
+        $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         $("#OverallTotalCost1").val(parseFloat(overAllTotal));
     }
 
@@ -4962,6 +4962,9 @@
         totalGeneralReq  += parseFloat($("#ToolsEquipments").val()) ;
         totalGeneralReq  += parseFloat($("#Transportation").val()) ;
         totalGeneralReq  += parseFloat($("#Contigency").val()) ;
+
+        $("#OverheadProfit").val( totalGeneralReq * $("#overheadProfit").val()); //computation of overheadProfit
+
         totalGeneralReq  += parseFloat($("#OverheadProfit").val()) ;
         $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2));
         $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));

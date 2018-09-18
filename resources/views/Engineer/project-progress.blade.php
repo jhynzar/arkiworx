@@ -946,10 +946,10 @@
                 thisDate = $('#createProjectSchedule'+projectKey+' #startDate'+subCategoryKey);
 
                 thisDate.val(fromDate.val());
-                thisDate.prop("disabled",true);
+                thisDate.prop("readonly",true);
             }else{
                 thisDate.val("");
-                thisDate.prop("disabled",false);
+                thisDate.prop("readonly",false);
             }
         }
     </script>
