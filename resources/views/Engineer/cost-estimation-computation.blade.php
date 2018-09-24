@@ -5000,7 +5000,7 @@
         $("#OverheadProfit").val( totalGeneralReq * $("#overheadProfit").val()); //computation of overheadProfit
 
         totalGeneralReq  += parseFloat($("#OverheadProfit").val()) ;
-        $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2));
+        $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));
 
         computeAndDisplayOverallTotal();

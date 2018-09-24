@@ -96,7 +96,7 @@ class CostEstimationsController extends Controller
 
     public function createEstimation($id){
         //request id of project and template
-/*        $templateid = $_POST['projectTemplate'];
+        $templateid = $_POST['projectTemplate'];
         $templateid = array($templateid);
 
         $template1 = DB::select("
@@ -134,7 +134,7 @@ class CostEstimationsController extends Controller
                 array_push($TemplateArray2,$TemplateArr2);
         }
         //dd($TemplateArray2);
-*/
+
         $formulas = DB::select("
         select X.h as Horizontal, X.v as Vertical, X.f as Value, X.Work as Work
         from 

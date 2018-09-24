@@ -1122,9 +1122,6 @@
                                                                                     <option value=1  selected> 1 Storey </option>
                                                                                     <option value=2> 2-Storey </option>
                                                                                     <option value=3> 3-Storey </option>
-                                                                                    <option value=4> 4-Storey </option>
-                                                                                    <option value=5> 5-Storey </option>
-
                                                                                 </select>
                                                                             </div>
                                                                         </div>
