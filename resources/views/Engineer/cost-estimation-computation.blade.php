@@ -1095,19 +1095,6 @@
             
           </div>
             
-            
-            
-            
-            @foreach ( $TemplateArray2 as $key=>$record )
-            <input type="hidden" id="CategoryId{{ $record -> id }}"             name="CategoryId{{ $record -> id }}"    value='{{ $record -> category }}'>
-            <input type="hidden" id="MaterialId{{ $record -> id }}"             name="MaterialId{{ $record -> id }}"    value='{{ $record -> material }}'>
-            <input type="hidden" id="Quantity{{ $record -> id }}"               name="Quantity{{ $record -> id }}"      value='{{ $record -> qty }}'>
-            <input type="hidden" id="Cost{{ $record -> id }}"                   name="Cost{{ $record -> id }}"          value='{{ $record -> cost }}'>
-            @endforeach
-            
-            
-            
-            
           <div class="card-block accordion-block ">
             
                     <div class="col-lg-12"> <div style="margin-left: 800px; margin-top: 20px"> <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addCustom" >Add Custom Category</button>
@@ -1154,7 +1141,7 @@
                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input type="number" class="form-control" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
                                      &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> DENR <span class="text text-primary"><i>Optional</i></span></label>  &nbsp; 
-                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 2)<input type="number" class="form-control" value="{{ $record -> cost }}" id="DENR" name="WorkersBarracks" style="width: 100px !important;" placeholder="">@endif @endforeach
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 2)<input type="number" class="form-control" value="{{ $record -> cost }}" id="DENR" name="DENR" style="width: 100px !important;" placeholder="">@endif @endforeach
                                  
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Temporary Facilities</label>
@@ -1222,13 +1209,13 @@
 
                                     <div class="card-block">
                                             <div class="table-responsive">
-                                            <input type=hidden id="totalGeneralReq1" name="totalGeneralReq" value="1715709.06">
+                                            <input type=hidden id="totalGeneralReq1" name="totalGeneralReq" value="0">
                                                 <table class="table m-b-0 photo-table">
                                                     <thead>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                          
-                                                            <th class="text-center text-primary" id="totalGeneralReq"> 1715709.06 </th>
+                                                            <th class="text-center text-primary" id="totalGeneralReq">  </th>
                                                             
 
                                                         </tr>
@@ -1253,9 +1240,12 @@
                 </div>
               </div>
                                 
-                                
-                                
-                                
+              @foreach ( $TemplateArray2 as $key=>$record )
+            <input type="hidden" id="CategoryId{{ $record -> id }}"             name="CategoryId{{ $record -> id }}"    value='{{ $record -> category }}'>
+            <input type="hidden" id="MaterialId{{ $record -> id }}"             name="MaterialId{{ $record -> id }}"    value='{{ $record -> material }}'>
+            <input type="hidden" id="Quantity{{ $record -> id }}"               name="Quantity{{ $record -> id }}"      value='{{ $record -> qty }}'>
+            <input type="hidden" id="Cost{{ $record -> id }}"                   name="Cost{{ $record -> id }}"          value='{{ $record -> cost }}'>
+            @endforeach
                                 
               <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingOne">
@@ -5003,6 +4993,7 @@
     $("#ComputeGeneralReq").click(function() {
         var totalGeneralReq = 0;
         totalGeneralReq  += parseFloat($("#BuildingPermit").val()) ;
+        totalGeneralReq  += parseFloat($("#DENR").val()) ;
         totalGeneralReq  += parseFloat($("#TemporaryFacilities").val()) ;
         totalGeneralReq  += parseFloat($("#WorkersBarracks").val()) ;
         totalGeneralReq  += parseFloat($("#Excavation").val()) ;
@@ -5014,9 +5005,8 @@
         totalGeneralReq  += parseFloat($("#Transportation").val()) ;
         totalGeneralReq  += parseFloat($("#Contigency").val()) ;
 
-        $("#OverheadProfit").val( totalGeneralReq * $("#overheadProfit").val()); //computation of overheadProfit
+        //$("#OverheadProfit").val( totalGeneralReq * $("#OverheadProfit").val()); //computation of overheadProfit
 
-        totalGeneralReq  += parseFloat($("#OverheadProfit").val()) ;
         $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));
 
