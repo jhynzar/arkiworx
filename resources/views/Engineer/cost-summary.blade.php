@@ -83,7 +83,7 @@
                     <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="/assets/images/erwin.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="/assets/images/erwin.png" style="width:40px;" alt="User Image">
                             </span>
                             <span>
                                 <b>Erwin</b>Andres</span>
@@ -141,23 +141,23 @@
                         <div class="dummy-column">
                             <h2>Popular</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/erwin.jpg" alt="PagePreloadingEffect" />
+                                <img src="../assets/images/erwin.png" alt="PagePreloadingEffect" />
                                 <h3>Page Preloading Effect</h3>
                             </a>
 
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/erwin.jpg" alt="DraggableDualViewSlideshow" />
+                                <img src="../assets/images/erwin.png" alt="DraggableDualViewSlideshow" />
                                 <h3>Draggable Dual-View Slideshow</h3>
                             </a>
                         </div>
                         <div class="dummy-column">
                             <h2>Recent</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/erwin.jpg" alt="TooltipStylesInspiration" />
+                                <img src="../assets/images/erwin.png" alt="TooltipStylesInspiration" />
                                 <h3>Tooltip Styles Inspiration</h3>
                             </a>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/erwin.jpg" alt="NotificationStyles" />
+                                <img src="../assets/images/erwin.png" alt="NotificationStyles" />
                                 <h3>Notification Styles Inspiration</h3>
                             </a>
                         </div>
@@ -183,7 +183,7 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="../assets/images/erwin.jpg" alt="User Image" class="img-circle">
+                    <img src="/assets/images/erwin.png" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>

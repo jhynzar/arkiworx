@@ -2385,6 +2385,7 @@
                 </div>
               </div>
                 
+                                <!--
                 <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingSix">
                   <h3 class="card-title accordion-title">
@@ -2395,7 +2396,7 @@
                 </div>
                 <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                   <div class="accordion-content accordion-desc">
-                    <!-- Column-->
+                  
                       
                       <br> 
                        <div class="card">
@@ -2563,7 +2564,7 @@
                   
                     </div>
                     
-                    <!-- TOTALS TABLE -->
+                  
 
                                     <div class="card-block">
                                             <div class="table-responsive">
@@ -2593,10 +2594,13 @@
       
     </div>
                       
-     <!-- Column ends -->
+     
                   </div>
                 </div>
               </div>
+                                
+                                
+                                -->
                 
                 <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingSeven">
