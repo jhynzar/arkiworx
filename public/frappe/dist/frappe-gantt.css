@@ -1,6 +1,5 @@
 .gantt .grid-background {
-  fill: none;
-}
+  fill: none; }
 
 .gantt .grid-header {
   fill: #98fb98;
@@ -11,7 +10,7 @@
   fill: #ffffff; }
 
 .gantt .grid-row:nth-child(even) {
-  fill: #d4ebf2; }
+  fill:  #d4ebf2;; }
 
 .gantt .row-line {
   stroke: #ebeff2; }
@@ -51,10 +50,10 @@
 
 .gantt .bar-label {
   fill: #000000;
-    font-weight: 200;
+  font-weight: 200;
   dominant-baseline: central;
   text-anchor: middle;
-    text-align: left;
+  text-align: left;
   font-size: 12px;
   font-weight: lighter; }
   .gantt .bar-label.big {
@@ -98,7 +97,7 @@
 
 .gantt-container {
   position: relative;
-  
+  overflow: auto;
   font-size: 12px; }
   .gantt-container .popup-wrapper {
     position: absolute;

@@ -188,6 +188,29 @@
             overflow-x: scroll;
         }
 
+        /* -- BAR COLORS -- */
+        /* -- color of main bar -- */
+		/* normal */
+		.gantt .bar-normal .bar {
+			fill: grey;
+		}
+
+		/* overdue */
+		.gantt .bar-overdue .bar-overdue {
+			fill: #df5c3b;
+		}
+
+		/* -- color of progress bar -- */
+		/* work in progress */
+		.gantt .progress-wip .bar-progress {
+			fill: skyblue;
+		}
+
+		/* completed */
+		.gantt .progress-completed .bar-progress {
+			fill: lawngreen;
+		}
+
 
 	</style>
     <!-- FRAPPE END -->
@@ -657,7 +680,9 @@
                     start: allProjectSchedules[x]['dtmEstimatedStart'],
                     end: allProjectSchedules[x]['dtmEstimatedEnd'],
                     name: allProjectSchedules[x]['strWorkSubCategoryDesc'],
-                    id: allProjectSchedules[x]['intScheduleId']
+                    id: allProjectSchedules[x]['intScheduleId'],
+                    custom_class: 'progress-wip bar-normal bar-overdue',
+                    overdue: allProjectSchedules[x]['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
                 };
             }else{
                 task = {
@@ -665,6 +690,8 @@
                     end: allProjectSchedules[x]['dtmEstimatedEnd'],
                     name: allProjectSchedules[x]['strWorkSubCategoryDesc'],
                     id: allProjectSchedules[x]['intScheduleId'],
+                    custom_class: 'progress-wip bar-normal bar-overdue',
+                    overdue: allProjectSchedules[x]['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
                     dependencies: [ allProjectSchedules[x]['intDependencyScheduleId'] ]
                 };
             }
