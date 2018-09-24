@@ -109,6 +109,7 @@ class CostEstimationsController extends Controller
         $TemplateArray1 = array();
         foreach($template1 as $fields1){
             $TemplateArr1 = (object)[
+                'id' => $fields1 -> intProjectRequirementsTemplateId,
                 'cost' => $fields1 -> decCost,
                 'category' => $fields1 -> intWorkSubCategoryId
             ];
@@ -117,16 +118,38 @@ class CostEstimationsController extends Controller
         //dd($TemplateArray1);
 
         $template2 = DB::select("
-        select *
-        from tblmaterialestimationtemplate  
-        WHERE intProjectTemplateId = ?
-        ",$templateid);
+        SELECT  a.intMaterialEstimationTemplateId as intMaterialEstimationTemplateId,
+                a.decQty as decQty,
+                a.intWorkSubCategoryId as intWorkSubCategoryId,
+                a.intMaterialId as intMaterialId,
+                (a.decQty*b.Price) as decCost
+        FROM tblmaterialestimationtemplate a INNER JOIN 
+        (   
+            SELECT e.price as Price, e.material as Material
+            FROM 
+            (
+                SELECT t.decPrice as price, t.intMaterialId as material
+                FROM 
+                (
+                    SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
+                    FROM tblprice
+                    GROUP BY intMaterialId
+                ) as r 
+                INNER JOIN tblprice t
+                ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
+            ) as e
+            INNER JOIN tblmaterials f
+            ON (e.material = f.intMaterialId)
+            WHERE f.intActive = 1
+        ) as b
+        ON b.Material = a.intMaterialId
+        WHERE intProjectTemplateId = ?",$templateid);
 
         $TemplateArray2 = array();
-        $c = 5;
-        $m = 0;
         foreach($template2 as $fields2){
                 $TemplateArr2 = (object)[
+                    'id' => $fields2 -> intMaterialEstimationTemplateId,
+                    'cost' => $fields2 -> decCost,
                     'qty' => $fields2 -> decQty,
                     'category' => $fields2 -> intWorkSubCategoryId,
                     'material' => $fields2 -> intMaterialId

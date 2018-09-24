@@ -1098,9 +1098,12 @@
             
             
             
-            
-            
-           
+            @foreach ( $TemplateArray2 as $key=>$record )
+            <input type="hidden" id="CategoryId{{ $record -> id }}"             name="CategoryId{{ $record -> id }}"    value='{{ $record -> category }}'>
+            <input type="hidden" id="MaterialId{{ $record -> id }}"             name="MaterialId{{ $record -> id }}"    value='{{ $record -> material }}'>
+            <input type="hidden" id="Quantity{{ $record -> id }}"               name="Quantity{{ $record -> id }}"      value='{{ $record -> qty }}'>
+            <input type="hidden" id="Cost{{ $record -> id }}"                   name="Cost{{ $record -> id }}"          value='{{ $record -> cost }}'>
+            @endforeach
             
             
             
@@ -1145,63 +1148,58 @@
                             <div class="row">
                                 <div class="form-group form-inline">
                            
-                            
-    
                                 <label class="text text-default"><b>Permit</b> </label>  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-                                <input type="number" class="form-control" value="50000" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input type="number" class="form-control" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
                                      &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> DENR <span class="text text-primary"><i>Optional</i></span></label>  &nbsp; 
-                                <input type="number" class="form-control" value="30000" id="DENR" name="WorkersBarracks" style="width: 100px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 2)<input type="number" class="form-control" value="{{ $record -> cost }}" id="DENR" name="WorkersBarracks" style="width: 100px !important;" placeholder="">@endif @endforeach
                                  
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Temporary Facilities</label>
-                                <input type="number" class="form-control" value="10000" id="TemporaryFacilities" name="TemporaryFacilities" style="width: 100px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 3)<input type="number" class="form-control" value="{{ $record -> cost }}" id="TemporaryFacilities" name="TemporaryFacilities" style="width: 100px !important;" placeholder="">@endif @endforeach
                                      &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Workers' Barracks</label>
-                                <input type="number" class="form-control" value="10000" id="WorkersBarracks" name="WorkersBarracks" style="width: 100px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 4)<input type="number" class="form-control" value="{{ $record -> cost }}" id="WorkersBarracks" name="WorkersBarracks" style="width: 100px !important;" placeholder="">@endif @endforeach
  &nbsp; &nbsp; &nbsp; &nbsp; 
                                  <br> <br>
                                  
                                <label class="text text-default"><b>Earthworks</b> </label>  <br><br>
                                     <label> Excavation</label>
-                                <input type="number" class="form-control" value="225" id="Excavation" name="Excavation" style="width: 150px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 5)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Excavation" name="Excavation" style="width: 150px !important;" placeholder="">@endif @endforeach
                                     
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Backfill</label>
-                                <input type="number" class="form-control" value="225" id="Backfill" name="Backfill" style="width: 150px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 6)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Backfill" name="Backfill" style="width: 150px !important;" placeholder="">@endif @endforeach
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                      <label> Lastillas</label>
-                                <input type="number" class="form-control" value="800" id="Lastillas" name="Lastillas" style="width: 150px !important;" placeholder="Optional">
+                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 7)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Lastillas" name="Lastillas" style="width: 150px !important;" placeholder="Optional">@endif @endforeach
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                      <label> Soil Poisoning</label>
-                                <input type="number" class="form-control" value="56000" id="SoilPoisoning" name="SoilPoisoning" style="width: 150px !important;" placeholder="Optional">
+                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 8)<input type="number" class="form-control" value="{{ $record -> cost }}" id="SoilPoisoning" name="SoilPoisoning" style="width: 150px !important;" placeholder="Optional">@endif @endforeach
                                  
                                     <br> <br> <br> <br>
-                         
-                                
                                  <label class="text text-default"><b>Labor Cost</b> </label>  
-                                <input type="number" class="form-control"  value="1122872.60"  id="LaborCost" name="LaborCost" style="width: 180px !important;" placeholder="">
+                                 @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 9)<input type="number" class="form-control"  value="{{ $record -> cost }}"  id="LaborCost" name="LaborCost" style="width: 180px !important;" placeholder="">@endif @endforeach
                                     
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Tools and Equipments</b> </label>  
-                                <input type="number" class="form-control" value="50000" id="ToolsEquipments" name="ToolsEquipments" style="width: 180px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 10)<input type="number" class="form-control" value="{{ $record -> cost }}" id="ToolsEquipments" name="ToolsEquipments" style="width: 180px !important;" placeholder="">@endif @endforeach
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                      <label class="text text-default"><b>Transportation</b> </label>  
-                                <input type="number" class="form-control"  value="50000"  id="Transportation" name="Transportation" style="width: 180px !important;" placeholder="">
+                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 11)<input type="number" class="form-control"  value="{{ $record -> cost }}"  id="Transportation" name="Transportation" style="width: 180px !important;" placeholder="">@endif @endforeach
                                  
                                      <br> <br> <br> <br>
                                     <label class="text text-default"><b>Contingency</b> </label> 
-                                <input type="number" class="form-control" value="104453.28" id="Contigency" name="Contigency" style="width: 200px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 12)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Contigency" name="Contigency" style="width: 200px !important;" placeholder="">@endif @endforeach
                                  &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Overhead Profit</b> </label> 
-                                <select style="width: 200px" class="form-control" id="overheadProfit" > 
+                                <select style="width: 200px" class="form-control" id="OverheadProfit" > 
                                     <option  value="0.1" selected> 10%</option>
                                     <option value="0.2"> 20% </option>
-                                    
+
                                     </select> 
-                                    <input type="hidden" id="OverheadProfit" name="OverheadProfit" value="">
                                     &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
                                     <button type="button" class="btn btn-success" id="ComputeGeneralReq" >Compute</button>
                                     
@@ -4901,6 +4899,21 @@
 
 
 <script>
+
+    var TemplateArray1 = {!!json_encode($TemplateArray1)!!};
+    for ( var column in TemplateArray1 ) {
+            var values = TemplateArray1[column];
+            var tempcost = values['cost'];
+            var tempcategory1 = values['category'];
+    }
+
+    var TemplateArray2 = {!!json_encode($TemplateArray2)!!};
+    for ( var column in TemplateArray2 ) {
+            var values = TemplateArray2[column];
+            var tempqty = values['cost'];
+            var tempcategory2 = values['category'];
+            var tempmaterial = values['material'];
+    }
 
     function computeAndDisplayOverallTotal(){
         var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
