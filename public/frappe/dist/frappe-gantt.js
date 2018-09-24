@@ -25,7 +25,7 @@ const month_names = [
 ];
 
 var date_utils = {
-    parse(date, date_separator = '-', time_separator = ':') {
+    parse(date, date_separator = '-', time_separator = /[.:]/) {
         if (date instanceof Date) {
             return date;
         }
@@ -44,6 +44,10 @@ var date_utils = {
             let vals = date_parts;
 
             if (time_parts && time_parts.length) {
+                if (time_parts.length == 4) {
+                    time_parts[3] = '0.' + time_parts[3];
+                    time_parts[3] = parseFloat(time_parts[3]) * 1000;
+                }
                 vals = vals.concat(time_parts);
             }
 
@@ -61,15 +65,19 @@ var date_utils = {
                 val = val + 1;
             }
 
+            if (i === 6) {
+                return padStart(val + '', 3, '0');
+            }
+
             return padStart(val + '', 2, '0');
         });
         const date_string = `${vals[0]}-${vals[1]}-${vals[2]}`;
-        const time_string = `${vals[3]}:${vals[4]}:${vals[5]}`;
+        const time_string = `${vals[3]}:${vals[4]}:${vals[5]}.${vals[6]}`;
 
         return date_string + (with_time ? ' ' + time_string : '');
     },
 
-    format(date, format_string = 'YYYY-MM-DD HH:mm:ss') {
+    format(date, format_string = 'YYYY-MM-DD HH:mm:ss.SSS') {
         const values = this.get_date_values(date).map(d => padStart(d, 2, 0));
         const format_map = {
             YYYY: values[0],
@@ -78,6 +86,7 @@ var date_utils = {
             HH: values[3],
             mm: values[4],
             ss: values[5],
+            SSS:values[6],
             D: values[2],
             MMMM: month_names[+values[1]],
             MMM: month_names[+values[1]]
@@ -395,9 +404,16 @@ class Bar {
             date_utils.diff(this.task._end, this.task._start, 'hour') /
             this.gantt.options.step;
         this.width = this.gantt.options.column_width * this.duration;
+
+        /* [added] */
+        this.overdue_duration = 
+            date_utils.diff(this.task._overdue, this.task._start, 'hour') /
+            this.gantt.options.step;
+        this.overdue_width = this.gantt.options.column_width * this.overdue_duration;
+        /* [added] end */
         this.progress_width =
             this.gantt.options.column_width *
-                this.duration *
+                this.overdue_duration * /* [added]/[modified] */
                 (this.task.progress / 100) || 0;
         this.group = createSVG('g', {
             class: 'bar-wrapper ' + (this.task.custom_class || ''),
@@ -432,11 +448,35 @@ class Bar {
     }
 
     draw() {
+        /* [added] */
+        this.draw_overdue_bar();
+        /* [added] end */
         this.draw_bar();
         this.draw_progress_bar();
         this.draw_label();
         this.draw_resize_handles();
     }
+
+    /* [added] */
+    draw_overdue_bar() {
+        this.$bar_overdue = createSVG('rect', {
+            x: this.x,
+            y: this.y,
+            width: this.overdue_width,
+            height: this.height,
+            rx: this.corner_radius,
+            ry: this.corner_radius,
+            class: 'bar-overdue',
+            append_to: this.bar_group
+        });
+
+        animateSVG(this.$bar_overdue, 'width', 0, this.overdue_width);
+
+        if (this.invalid) {
+            this.$bar_overdue.classList.add('bar-invalid');
+        }
+    }
+    /* [added] end */
 
     draw_bar() {
         this.$bar = createSVG('rect', {
@@ -461,9 +501,9 @@ class Bar {
         if (this.invalid) return;
         this.$bar_progress = createSVG('rect', {
             x: this.x,
-            y: this.y,
+            y: this.y  + ( ( 1 - ( this.gantt.options.bar_progress_height_percentage / 100 ) ) * this.height), /* [added] */
             width: this.progress_width,
-            height: this.height,
+            height: this.height * ( this.gantt.options.bar_progress_height_percentage / 100 ), /* [added] */
             rx: this.corner_radius,
             ry: this.corner_radius,
             class: 'bar-progress',
@@ -573,8 +613,6 @@ class Bar {
             subtitle: subtitle,
             task: this.task
         });
-        
-        
     }
 
     update_bar_position({ x = null, width = null }) {
@@ -1001,7 +1039,10 @@ class Gantt {
             view_mode: 'Day',
             date_format: 'YYYY-MM-DD',
             popup_trigger: 'click',
-            custom_popup_html: null
+            custom_popup_html: null,
+            
+            //[added] custom options
+            bar_progress_height_percentage: 100, 
         };
         this.options = Object.assign({}, default_options, options);
     }
@@ -1012,6 +1053,10 @@ class Gantt {
             // convert to Date objects
             task._start = date_utils.parse(task.start);
             task._end = date_utils.parse(task.end);
+
+            /* [added] */
+            task._overdue = date_utils.parse(task.overdue);
+            /* [added] end */
 
             // make task invalid if duration too large
             if (date_utils.diff(task._end, task._start, 'year') > 10) {
@@ -1042,6 +1087,12 @@ class Gantt {
             if (task_end_values.slice(3).every(d => d === 0)) {
                 task._end = date_utils.add(task._end, 24, 'hour');
             }
+            /* [added] */
+            const task_overdue_values = date_utils.get_date_values(task._overdue);
+            if (task_overdue_values.slice(3).every(d => d === 0)) {
+                task._overdue = date_utils.add(task._overdue, 24, 'hour');
+            }
+            /* [added] end */
 
             // invalid flag
             if (!task.start || !task.end) {
@@ -1638,7 +1689,7 @@ class Gantt {
         let is_resizing = null;
         let bar = null;
         let $bar_progress = null;
-        let $bar = null;
+        let $bar_overdue = null; /* [added]/[modified] */
 
         $.on(this.$svg, 'mousedown', '.handle.progress', (e, handle) => {
             is_resizing = true;
@@ -1650,12 +1701,12 @@ class Gantt {
             bar = this.get_bar(id);
 
             $bar_progress = bar.$bar_progress;
-            $bar = bar.$bar;
+            $bar_overdue = bar.$bar_overdue; /* [added]/[modified] */
 
             $bar_progress.finaldx = 0;
             $bar_progress.owidth = $bar_progress.getWidth();
             $bar_progress.min_dx = -$bar_progress.getWidth();
-            $bar_progress.max_dx = $bar.getWidth() - $bar_progress.getWidth();
+            $bar_progress.max_dx = $bar_overdue.getWidth() - $bar_progress.getWidth(); /* [added]/[modified] */
         });
 
         $.on(this.$svg, 'mousemove', e => {
