@@ -1,4 +1,23 @@
 @extends('layouts.master-engineer')
+@section('css')
+<style>
+    tr {
+            width: 100%;
+            display: inline-table;
+            table-layout: fixed;
+        }
+        table {
+            height: 300px;
+            display: -moz-groupbox;
+        }
+        tbody {
+            overflow-y: scroll;
+            height: 250px;
+            width: 100%;
+            position: absolute;
+        }
+</style>
+@endsection
 @section('body')
     <div class="loader-bg">
         <div class="loader-bar">
@@ -55,7 +74,7 @@
         <header class="main-header-top hidden-print">
 
             <a href="index" class="nav-brand">
-                <img class="img-fluid logo" src="/assets/images/.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="/assets/images/NYETA2.png" alt="Theme-logo">
             </a>
 
 
@@ -83,10 +102,10 @@
                     <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="/assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="/assets/images/erwin.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Juliamar</b>Soriano</span>
+                                <b>Erwin</b>Andres</span>
 
                         </a>
 
@@ -141,23 +160,23 @@
                         <div class="dummy-column">
                             <h2>Popular</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="PagePreloadingEffect" />
+                                <img src="../assets/images/erwin.jpg" alt="PagePreloadingEffect" />
                                 <h3>Page Preloading Effect</h3>
                             </a>
 
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow" />
+                                <img src="../assets/images/erwin.jpg" alt="DraggableDualViewSlideshow" />
                                 <h3>Draggable Dual-View Slideshow</h3>
                             </a>
                         </div>
                         <div class="dummy-column">
                             <h2>Recent</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="TooltipStylesInspiration" />
+                                <img src="../assets/images/erwin.jpg" alt="TooltipStylesInspiration" />
                                 <h3>Tooltip Styles Inspiration</h3>
                             </a>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="NotificationStyles" />
+                                <img src="../assets/images/erwin.jpg" alt="NotificationStyles" />
                                 <h3>Notification Styles Inspiration</h3>
                             </a>
                         </div>
@@ -183,13 +202,13 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="../assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                    <img src="../assets/images/erwin.jpg" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
                     <br>
                     <p>
-                        <b>Juliamar</b>
+                        <b>Erwin</b>
                     </p>
                     <p class="designation">
                         <span class="text-info">
@@ -429,7 +448,7 @@
                                                                                     <td>{{$projectRequirement->strDesc}}</td>
                                                                                     <td class="text-center " style="background-color: coral;  color: black !important">-</td>
                                                                                     <th class="text-center" style="background-color: coral;   !important">-</th>
-                                                                                    <td style="background-color: coral;  color: black !important">{{$projectRequirement->decEstimatedPrice}}</td>
+                                                                                    <td style="background-color: coral;  color: black !important">{{number_format($projectRequirement->decEstimatedPrice,2)}}</td>
                                                                                     <th class="text-center " style="background-color: lightgreen; color: black !important">
                                                                                         <b>-</b>
                                                                                     </th>
@@ -438,7 +457,7 @@
                                                                                     </th>
                                                                                     <td class="text-left" style="background-color: lightgreen; color: black !important">
                                                                                         @if($projectRequirement->decActualPrice != null)
-                                                                                            <b>{{$projectRequirement->decActualPrice}}</b>
+                                                                                            <b>{{number_format($projectRequirement->decActualPrice,2)}}</b>
                                                                                         @else
                                                                                             <b>-</b>
                                                                                         @endif
@@ -491,13 +510,13 @@
                                                                                 <th class="text-center" style="background-color: coral;   !important">-</th>
                                                                                 <td style="background-color: coral;  color: black !important">-</td>
                                                                                 <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{$costSummary->actual->materialActualsHistory[0]->decQty}}</b>
+                                                                                    <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decQty,2)}}</b>
                                                                                 </th>
                                                                                 <th style="background-color: lightgreen;color: black !important">
                                                                                     <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
                                                                                 </th>
                                                                                 <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{$costSummary->actual->materialActualsHistory[0]->decCost}}</b>
+                                                                                    <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decCost,2)}}</b>
                                                                                 </td>
                                                                             </tr>
                                                                         @elseif (
@@ -510,9 +529,9 @@
                                                                                 <td>{{$keyCostSummary+1}}</td>
 
                                                                                 <td>{{$costSummary->estimate->strMaterialName}}</td>
-                                                                                <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->decQty}}</td>
+                                                                                <td class="text-center " style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decQty,2)}}</td>
                                                                                 <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
-                                                                                <td style="background-color: coral;  color: black !important">{{$costSummary->estimate->decCost}}</td>
+                                                                                <td style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decCost,2)}}</td>
                                                                                 <th class="text-center " style="background-color: lightgreen; color: black !important">
                                                                                     <b>-</b>
                                                                                 </th>
@@ -534,17 +553,17 @@
                                                                             <td>{{$keyCostSummary+1}}</td>
 
                                                                             <td>{{$costSummary->estimate->strMaterialName}}</td>
-                                                                            <td class="text-center " style="background-color: coral;  color: black !important">{{$costSummary->estimate->decQty}}</td>
+                                                                            <td class="text-center " style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decQty,2)}}</td>
                                                                             <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
-                                                                            <td style="background-color: coral;  color: black !important">{{$costSummary->estimate->decCost}}</td>
+                                                                            <td style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decCost,2)}}</td>
                                                                             <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{$costSummary->actual->materialActualsHistory[0]->decQty}}</b>
+                                                                                <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decQty,2)}}</b>
                                                                             </th>
                                                                             <th style="background-color: lightgreen;color: black !important">
                                                                                 <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
                                                                             </th>
                                                                             <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{$costSummary->actual->materialActualsHistory[0]->decCost}}</b>
+                                                                                <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decCost,2)}}</b>
                                                                             </td>
                                                                         </tr>
                                                                         @endif

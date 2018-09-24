@@ -64,7 +64,7 @@
 <header class="main-header-top hidden-print">
 
     <a href="index" class="nav-brand">
-        <img class="img-fluid logo" src="/assets/images/.jpg" alt="Theme-logo">
+        <img class="img-fluid logo" src="/assets/images/NYETA2.png" alt="Theme-logo">
     </a>
 
 
@@ -92,10 +92,10 @@
             <li class="dropdown">
                 <a href="/Engineer/Accounts-Settings">
                     <span>
-                        <img class="img-circle " src="/assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                        <img class="img-circle " src="/assets/images/erwin.jpg" style="width:40px;" alt="User Image">
                     </span>
                     <span>
-                        <b>Juliamar</b>Soriano</span>
+                        <b>Erwin</b>Andres</span>
 
                 </a>
 
@@ -151,23 +151,23 @@
                 <div class="dummy-column">
                     <h2>Popular</h2>
                     <a class="dummy-media-object" href="#!">
-                        <img src="/assets/images/avatar-1.jpg" alt="PagePreloadingEffect" />
+                        <img src="/assets/images/erwin.jpg" alt="PagePreloadingEffect" />
                         <h3>Page Preloading Effect</h3>
                     </a>
 
                     <a class="dummy-media-object" href="#!">
-                        <img src="/assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow" />
+                        <img src="/assets/images/erwin.jpg" alt="DraggableDualViewSlideshow" />
                         <h3>Draggable Dual-View Slideshow</h3>
                     </a>
                 </div>
                 <div class="dummy-column">
                     <h2>Recent</h2>
                     <a class="dummy-media-object" href="#!">
-                        <img src="/assets/images/avatar-1.jpg" alt="TooltipStylesInspiration" />
+                        <img src="/assets/images/erwin.jpg" alt="TooltipStylesInspiration" />
                         <h3>Tooltip Styles Inspiration</h3>
                     </a>
                     <a class="dummy-media-object" href="#!">
-                        <img src="/assets/images/avatar-1.jpg" alt="NotificationStyles" />
+                        <img src="/assets/images/erwin.jpg" alt="NotificationStyles" />
                         <h3>Notification Styles Inspiration</h3>
                     </a>
                 </div>
@@ -192,13 +192,13 @@
             <br>
             <br>
             <div class="f-left image">
-                <img src="/assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                <img src="/assets/images/erwin.jpg" alt="User Image" class="img-circle">
             </div>
             <div class="f-left info">
                 <br>
                 <br>
                 <p>
-                    <b>Juliamar</b>
+                    <b>Erwin</b>
                 </p>
                 <p class="designation">
                     <span class="text-info">
@@ -1201,7 +1201,7 @@
                                     <option value="0.2"> 20% </option>
                                     
                                     </select> 
-                                    <input type="hidden" id="OverheadProfit" value="">
+                                    <input type="hidden" id="OverheadProfit" name="OverheadProfit" value="">
                                     &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
                                     <button type="button" class="btn btn-success" id="ComputeGeneralReq" >Compute</button>
                                     
@@ -4905,7 +4905,7 @@
     function computeAndDisplayOverallTotal(){
         var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
 
-        $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2));
+        $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         $("#OverallTotalCost1").val(parseFloat(overAllTotal));
     }
 
@@ -4996,6 +4996,9 @@
         totalGeneralReq  += parseFloat($("#ToolsEquipments").val()) ;
         totalGeneralReq  += parseFloat($("#Transportation").val()) ;
         totalGeneralReq  += parseFloat($("#Contigency").val()) ;
+
+        $("#OverheadProfit").val( totalGeneralReq * $("#overheadProfit").val()); //computation of overheadProfit
+
         totalGeneralReq  += parseFloat($("#OverheadProfit").val()) ;
         $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2));
         $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));
@@ -5245,8 +5248,7 @@ $("#computeBeam").click(function () {
         computeAndDisplayOverallTotal();
 });
 
-$("#OverallTotalCost1").val( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val()) );
-$("#OverallTotalCost").html( parseFloat($("#OverallTotalCost1").val()).toFixed(2) );
+computeAndDisplayOverallTotal();
 
 </script>
 

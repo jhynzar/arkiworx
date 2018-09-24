@@ -53,7 +53,11 @@ Route::get('Admin/Projects', 'ProjectsController@index');
 
 Route::post('Admin/Projects','ProjectsController@store');
 
-Route::patch('Admin/Projects/{id}','ProjectsController@update');
+Route::patch('Admin/Projects/{id}','ProjectsController@update'); //change from approval to finished
+
+Route::get('Admin/Projects/{id}','ProjectsController@show'); //show project details
+
+Route::post('Admin/Projects/{id}/Update','ProjectsController@updateDetails'); //update project details
 
 Route::get('Admin/Project-Details', function(){
     return view ('Admin/projectdetails');

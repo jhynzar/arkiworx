@@ -64,7 +64,7 @@
     <header class="main-header-top hidden-print">
 
         <a href="index" class="nav-brand">
-            <img class="img-fluid logo" src="" alt="Theme-logo">
+            <img class="img-fluid logo" src="../assets/images/NYETA2.png" alt="Theme-logo">
         </a>
 
 
@@ -92,10 +92,10 @@
                 <li class="dropdown">
                     <a href="/Engineer/Accounts-Settings">
                         <span>
-                            <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                            <img class="img-circle " src="../assets/images/erwin.jpg" style="width:40px;" alt="User Image">
                         </span>
                         <span>
-                            <b>Juliamar</b>Soriano</span>
+                            <b>Erwin</b>Andres</span>
 
                     </a>
 
@@ -151,23 +151,23 @@
                     <div class="dummy-column">
                         <h2>Popular</h2>
                         <a class="dummy-media-object" href="#!">
-                            <img src="/assets/images/avatar-1.jpg" alt="PagePreloadingEffect" />
+                            <img src="/assets/images/erwin.jpg" alt="PagePreloadingEffect" />
                             <h3>Page Preloading Effect</h3>
                         </a>
 
                         <a class="dummy-media-object" href="#!">
-                            <img src="/assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow" />
+                            <img src="/assets/images/erwin.jpg" alt="DraggableDualViewSlideshow" />
                             <h3>Draggable Dual-View Slideshow</h3>
                         </a>
                     </div>
                     <div class="dummy-column">
                         <h2>Recent</h2>
                         <a class="dummy-media-object" href="#!">
-                            <img src="/assets/images/avatar-1.jpg" alt="TooltipStylesInspiration" />
+                            <img src="/assets/images/erwin.jpg" alt="TooltipStylesInspiration" />
                             <h3>Tooltip Styles Inspiration</h3>
                         </a>
                         <a class="dummy-media-object" href="#!">
-                            <img src="/assets/images/avatar-1.jpg" alt="NotificationStyles" />
+                            <img src="/assets/images/erwin.jpg" alt="NotificationStyles" />
                             <h3>Notification Styles Inspiration</h3>
                         </a>
                     </div>
@@ -194,13 +194,13 @@
             <br>
             <br>
             <div class="f-left image">
-                <img src="/assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                <img src="/assets/images/erwin.jpg" alt="User Image" class="img-circle">
             </div>
             <div class="f-left info">
                 <br>
                 <br>
                 <p>
-                    <b>Juliamar</b>
+                    <b>Erwin</b>
                 </p>
                 <p class="designation">
                     <span class="text-info">
@@ -518,7 +518,7 @@
                                             <td>{{ $material->strMaterialName}}</td>
 
                                             <td>{{ $material->strUnit}}</td>
-                                            <td>{{ $material->latestPrice}}</td>
+                                            <td>{{ number_format($material->latestPrice,2)}}</td>
                                             <td>
                                                 <button data-toggle="modal" data-target="#update{{$key}}" class="btn btn-warning " style="color: white !important">Update Price</button>
                                             </td>
@@ -567,9 +567,9 @@
                                                           
                                                             <div class="form-group form-inline">
                                                                 <label for="updatePrice">Current Price:</label>
-                                                                <input type="text" class="form-control" id="" name="" value="{{ $material->latestPrice}}" tyle="width: 100px !important;" disabled> 
+                                                                <input type="text" class="form-control" id="" name="" value="{{ $material->latestPrice}}" style="width: 130px !important;" disabled> 
                                                                &nbsp; &nbsp;  <label for="updatePrice">New Price:</label> 
-                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" name=s tyle="width: 100px !important;">
+                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" style="width: 130px !important;">
                                                             </div>
 
 
@@ -578,7 +578,7 @@
 
                                                                 <button type="submit" class="btn btn-success">
                                                                     <i class="icon icon-check"> </i>Update Price</button>
-                                                                <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                                                <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 260px">
                                                                     <i class="icon icon-close"> </i>Cancel</button>
 
                                                             </div>

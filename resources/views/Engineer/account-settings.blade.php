@@ -44,7 +44,7 @@
         <header class="main-header-top hidden-print">
 
             <a href="index" class="nav-brand">
-                <img class="img-fluid logo" src="../assets/images/.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="../assets/images/NYETA2.png" alt="Theme-logo">
             </a>
 
 
@@ -72,10 +72,10 @@
                     <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="../assets/images/erwin.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Juliamar</b>Soriano</span>
+                                <b>Erwin</b>Andres</span>
 
                         </a>
 
@@ -130,23 +130,23 @@
                         <div class="dummy-column">
                             <h2>Popular</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="PagePreloadingEffect" />
+                                <img src="../assets/images/erwin.jpg" alt="PagePreloadingEffect" />
                                 <h3>Page Preloading Effect</h3>
                             </a>
 
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="DraggableDualViewSlideshow" />
+                                <img src="../assets/images/erwin.jpg" alt="DraggableDualViewSlideshow" />
                                 <h3>Draggable Dual-View Slideshow</h3>
                             </a>
                         </div>
                         <div class="dummy-column">
                             <h2>Recent</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="TooltipStylesInspiration" />
+                                <img src="../assets/images/erwin.jpg" alt="TooltipStylesInspiration" />
                                 <h3>Tooltip Styles Inspiration</h3>
                             </a>
                             <a class="dummy-media-object" href="#!">
-                                <img src="../assets/images/avatar-1.jpg" alt="NotificationStyles" />
+                                <img src="../assets/images/erwin.jpg" alt="NotificationStyles" />
                                 <h3>Notification Styles Inspiration</h3>
                             </a>
                         </div>
@@ -171,12 +171,12 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="../assets/images/avatar-1.jpg" alt="User Image" class="img-circle">
+                    <img src="../assets/images/erwin.jpg" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
                     <br>
-                    <p><b>Juliamar</b></p>
+                    <p><b>Erwin</b></p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>
@@ -292,6 +292,7 @@
 
 
 
+
     <div class="content-wrapper" style="margin-top: 30px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
@@ -300,7 +301,7 @@
                     <h4>Account Settings</h4>
                     <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
                         <li class="breadcrumb-item">
-                            <a href="index">
+                            <a href="Admin/home">
                                 <i class="icon-people"></i>
                             </a>
                         </li>
@@ -320,15 +321,15 @@
                 <div class="col-lg-3">
                     <div class="card faq-left">
                         <div class="social-profile">
-                            <img class="img-fluid" src="../assets/images/social/profile.jpg" alt="">
+                            <img class="img-fluid" src="../assets/images/erwin.png" alt="">
                             <div class="profile-hvr m-t-15">
                                 <i class="icofont icofont-ui-edit p-r-10 c-pointer"></i>
                                 <i class="icofont icofont-ui-delete c-pointer"></i>
                             </div>
                         </div>
                         <div class="card-block">
-                            <h4 class="f-18 f-normal m-b-10 txt-primary">Mark Rivera</h4>
-                            <h5 class="f-14">Engineer</h5>
+                            <h4 class="f-18 f-normal m-b-10 txt-primary">Erwin Andres</h4>
+                            <h5 class="f-14">Admin</h5>
                             <p class="m-b-15">Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt
                                 ut labore et.Lorem ipsum dolor sit amet, consecte</p>
                             <ul>
@@ -339,7 +340,7 @@
 
                                 <li class="faq-contact-card">
                                     <i class="icofont icofont-email"></i>
-                                    <a href="#">juju@gmail.com</a>
+                                    <a href="#">winwin@gmail.com</a>
                                 </li>
                             </ul>
 
@@ -473,7 +474,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <th scope="row" class="text text-primary">Full Name</th>
-                                                                        <td>Mark Rivera</td>
+                                                                        <td>Erwin Andres</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th scope="row" class="text text-primary">Sex</th>
@@ -481,7 +482,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <th scope="row" class="text text-primary">User Name</th>
-                                                                        <td>@chu</td>
+                                                                        <td>@winwin</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th scope="row" class="text text-primary">Address</th>
@@ -500,7 +501,7 @@
                                                                     <tr>
                                                                         <th scope="row" class="text text-primary">Email</th>
                                                                         <td>
-                                                                            <a href="#!">juju@gmail.com</a>
+                                                                            <a href="#!">winwin@gmail.com</a>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -509,7 +510,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <th scope="row" class="text text-primary">User Type</th>
-                                                                        <td>Engineer</td>
+                                                                        <td>Admin</td>
                                                                     </tr>
 
                                                                 </tbody>

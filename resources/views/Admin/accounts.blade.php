@@ -57,27 +57,7 @@
             background-image: url('/assets/images/ff.jpg') !important;
         }
 
-        .morphsearch-content {
-            background-color: #222d32 !important;
-            color: white !important;
-        }
-
-        .main-header-top>.navbar {
-            background: #222d32 !important;
-        }
-
-
-        .sidebar-menu>li.active>a {
-            background: #222d32 !important;
-        }
-
-        .main-header-top {
-            background-color: #222d32 !important;
-        }
-
-
-        }
-
+      
         .card-header {
             background-color: #778899 !important;
             color: white !important;
@@ -154,7 +134,7 @@
         <header class="main-header-top hidden-print">
 
             <a href="home" class="nav-brand">
-                <img class="img-fluid logo" src="../assets/images/GG.jpg" alt="Theme-logo">
+                <img class="img-fluid logo" src="../assets/images/NYETA.png" alt="Theme-logo">
             </a>
 
 
@@ -416,9 +396,9 @@
 
                         <div class="input-group stylish-input-group" style="position: absolute; margin-top: -60px; margin-left: 300px">
                             <form action='Search' method='GET'>
-                                <input type="text" name='search' class="form-control" placeholder="Search user" style="width: 400px">
-                                <button type="submit" class="btn btn-primary">
-                                    <span class="icon-magnifier"></span>
+                                <input type="text" name='search' class="form-control" placeholder="Search user" style="width: 250px">
+                                <button type="submit" class="btn " style="background-color: #222d32; color: white">
+                                  SEARCH
                                 </button>
                                 {{ csrf_field() }}
                             </form>

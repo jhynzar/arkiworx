@@ -71,28 +71,9 @@
             background-image: url('/assets/images/ff.jpg') !important;
         }
 
-        .morphsearch-content {
-            background-color: #222d32 !important;
-            color: white !important;
-        }
-
-        .main-header-top>.navbar {
-            background: #222d32 !important;
-        }
-
-
-        .sidebar-menu>li.active>a {
-            background: #222d32 !important;
-        }
-
-        
-        .card-header {
-            background-color: #222d32 !important;
+       .card-header {
+            background-color: #4CAF50 !important;
              color: white; 
-        }
-        
-        .main-header-top {
-            background-color: #222d32 !important;
         }
 
         .modal-header {
@@ -133,6 +114,14 @@
         <!-- notification -->
         <script src="/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
 
+        <!-- pie chart.js -->
+        <script type="text/javascript" src="/assets/plugins/bower-jquery-easyPieChart/dist/jquery.easypiechart.min.js"></script>
+        <script type="text/javascript" src="/assets/pages/counter.js"></script>
+
+        <!-- Date picker.js -->
+        <script type="text/javascript" src="/assets/plugins/moment/moment.js"></script>
+        <script type="text/javascript" src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
         <!-- Rickshaw Chart js -->
         <script src="/assets/plugins/d3/d3.js"></script>
         <script src="/assets/plugins/rickshaw/rickshaw.js"></script>
@@ -146,6 +135,9 @@
 
         <!-- custom js -->
         <script type="text/javascript" src="/assets/js/main.min.js"></script>
+        <script type="text/javascript" src="/assets/pages/profile.js"></script>
+        <script type="text/javascript" src="/assets/pages/elements.js"></script>
+        <script type="text/javascript" src="/assets/js/menu.min.js"></script>
         <!-- welcome admin able -->
         <script type="text/javascript" src="/assets/pages/dashboard.js"></script>
         <script type="text/javascript" src="/assets/pages/elements.js"></script>
