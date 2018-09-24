@@ -1,4 +1,5 @@
-@extends('layouts.master-engineer') @section('css')
+@extends('layouts.master-engineer') 
+@section('css')
 
 <style>
     tr {
@@ -21,7 +22,9 @@
 
 </style>
 
-@endsection @section ('body')
+@endsection 
+
+@section ('body')
 <div class="loader-bg">
     <div class="loader-bar">
     </div>

@@ -1089,7 +1089,7 @@
     <div class="row">
       <!-- Multiple Open Accordion start -->
       <div class="col-lg-12">
-        <div class="card" style="height: 3500px">
+        <div class="card" >
           <div class="card-header" style="background-color: #778899">
             <h5 class="card-header-text">1 - Storey Project</h5>
             
@@ -1105,10 +1105,9 @@
             
             
             
-          <div class="card-block accordion-block ">
+          <div class="card-block accordion-block scroll ">
             
-                    <div class="col-lg-12"> <div style="margin-left: 800px; margin-top: 20px"> <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addCustom" >Add Custom Category</button>
-                            </div>
+                    <div class="col-lg-12"> 
                         <div class="card" style="margin-top: 30px" >
                             
                             
@@ -1274,7 +1273,7 @@
                      <!-- Column-->
                       
                      <br> 
-                       <div class="card">
+                   
                         
         <div class="row ">
         
@@ -1304,11 +1303,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="ColumnThickness" style="width: 80px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="ColumnWidth" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="ColumnLength" style="width: 80px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -1320,14 +1319,14 @@
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" id="ColumnsBarLeng" style="width: 136px !important;">
+                                <select class="form-control" id="ColumnsBarLeng" style="width: 150px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" id="ColumnsBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="ColumnsBarSize" style="width: 150px !important;">
                                     <option value=6 selected>6 mm</option>
                                     <option value=10>10 mm </option>
                                     <option value=12>12 mm </option>
@@ -1483,8 +1482,7 @@
             
             
         </div>
-      
-    </div>
+   
                       
      <!-- Column ends -->
                   </div>
@@ -1503,7 +1501,7 @@
                     <!-- Column-->
                       
                       <br> 
-                       <div class="card">
+                   
                         
         <div class="row ">
         
@@ -1533,11 +1531,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="FootingThickness" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="FootingThickness" style="width: 80px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="FootingWidth" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="FootingWidth" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="FootingLength" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="FootingLength" style="width: 80px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -1546,14 +1544,14 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" id="footingBarLength" style="width: 136px !important;">
+                                <select class="form-control" id="footingBarLength" style="width: 150px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" id="footingBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="footingBarSize" style="width: 150px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -1704,7 +1702,7 @@
             
         </div>
       
-    </div>
+
                       
      <!-- Column ends -->
                   </div>
@@ -1723,7 +1721,7 @@
                     <!-- Column-->
                       
                       <br> 
-                       <div class="card">
+                     
                         
         <div class="row ">
         
@@ -1752,11 +1750,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="SlabThickness" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="SlabThickness" style="width: 80px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="SlabWidth" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="SlabWidth" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="SlabLength" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="SlabLength" style="width: 80px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -1933,7 +1931,7 @@
             
         </div>
       
-    </div>
+ 
                       
                            
                       
@@ -1957,7 +1955,7 @@
                     <!-- Column-->
                       
                       <br> 
-                       <div class="card">
+                     
                         
         <div class="row ">
         
@@ -1987,11 +1985,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="BeamThickness" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="BeamThickness" style="width: 80px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="BeamWidth" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="BeamWidth" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="BeamLength" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="BeamLength" style="width: 80px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -2003,14 +2001,14 @@
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" id="beamsBarLength" style="width: 136px !important;">
+                                <select class="form-control" id="beamsBarLength" style="width: 150px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" id="beamsBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="beamsBarSize" style="width: 150px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -2168,7 +2166,7 @@
             
         </div>
       
-    </div>
+
                       
      <!-- Column ends -->
                   </div>
@@ -2188,7 +2186,7 @@
                     <!-- Column-->
                       
                       <br> 
-                       <div class="card">
+                    
                         
         <div class="row ">
         
@@ -2218,11 +2216,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="" style="width: 80px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="" style="width: 80px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -2231,14 +2229,14 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" id="wallFootingBarLength" style="width: 136px !important;">
+                                <select class="form-control" id="wallFootingBarLength" style="width: 150px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" id="wallFootingBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="wallFootingBarSize" style="width: 150px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -2377,8 +2375,7 @@
             
             
         </div>
-      
-    </div>
+  
                       
      <!-- Column ends -->
                   </div>
@@ -2615,7 +2612,7 @@
                     <!-- Column-->
                       
                       <br> 
-                       <div class="card">
+                    
                         
         <div class="row ">
         
@@ -2645,11 +2642,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="" style="width: 80px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="" style="width: 80px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -2661,14 +2658,14 @@
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
-                                <select class="form-control" id="roofBeamsBarLength" style="width: 136px !important;">
+                                <select class="form-control" id="roofBeamsBarLength" style="width: 150px !important;">
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" id="roofBeamsBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="roofBeamsBarSize" style="width: 150px !important;">
                                     <option value="6" selected>6 mm</option>
                                     <option value="10" >10 mm </option>
                                     <option value="12" >12 mm </option>
@@ -2808,8 +2805,7 @@
             
         </div>
       
-    </div>
-                      
+         
      <!-- Column ends -->
                   </div>
                 </div>
@@ -2830,7 +2826,7 @@
                     <!-- Column-->
                       
                       <br> 
-                       <div class="card">
+                    
                         
         <div class="row ">
         
@@ -2852,11 +2848,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Area:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" placeholder="Optional" >
+                            <input type="" class="form-control" id="" style="width: 80px !important;" placeholder="Optional" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="" style="width: 80px !important;" >
                                  <br> <br>
                                  
                                  
@@ -3102,7 +3098,7 @@
 
                                                         </div>
 
-                                                    </div>
+                                                    
 
                                                     <!-- Column ends -->
                                                 </div>
@@ -3147,7 +3143,7 @@
                                                     <!-- Column-->
 
                                                     <br>
-                                                    <div class="card">
+                                              
 
                                                         <div class="row ">
 
@@ -3310,8 +3306,7 @@
 
                                                         </div>
 
-                                                    </div>
-
+                                                    
                                                     <!-- Column ends -->
                                                 </div>
                                             </div>
@@ -3331,7 +3326,7 @@
                                                     <!-- Column-->
 
                                                     <br>
-                                                    <div class="card">
+                                                   
 
                                                         <div class="row ">
 
@@ -3492,7 +3487,7 @@
 
                                                         </div>
 
-                                                    </div>
+                                                 
 
                                                     <!-- Column ends -->
                                                 </div>
@@ -3513,7 +3508,7 @@
                                                     <!-- Column-->
 
                                                     <br>
-                                                    <div class="card">
+                                                 
 
                                                         <div class="row ">
 
@@ -3695,7 +3690,7 @@
 
                                                         </div>
 
-                                                    </div>
+                                                   
 
                                                     <!-- Column ends -->
                                                 </div>
@@ -3893,7 +3888,7 @@
                                                     <!-- Column-->
 
                                                     <br>
-                                                    <div class="card">
+                                                   
 
                                                         <div class="row ">
 
@@ -4040,7 +4035,7 @@
 
                                                         </div>
 
-                                                    </div>
+                                                   
 
                                                     <!-- Column ends -->
                                                 </div>
@@ -4061,7 +4056,7 @@
                                                     <!-- Column-->
 
                                                     <br>
-                                                    <div class="card">
+                                                   
 
                                                         <div class="row ">
 
@@ -4209,7 +4204,7 @@
 
                                                         </div>
 
-                                                    </div>
+                                               
 
                                                     <!-- Column ends -->
                                                 </div>
@@ -4231,7 +4226,7 @@
                                                     <!-- Column-->
 
                                                     <br>
-                                                    <div class="card">
+                                                  
 
                                                         <div class="row ">
 
@@ -4415,7 +4410,7 @@
 
                                                         </div>
 
-                                                    </div>
+                                              
 
                                                     <!-- Column ends -->
                                                 </div>
@@ -4461,7 +4456,7 @@
                                                     <!-- Column-->
 
                                                     <br>
-                                                    <div class="card">
+                                                  
 
                                                         <div class="row ">
 
@@ -4531,6 +4526,8 @@
 
                                                                             <hr>
                                                                             <div class="form-group form-inline">
+                                                                                 
+                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
                                                                                 <button type="button" class="btn btn-primary" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -4626,7 +4623,7 @@
 
                                                         </div>
 
-                                                    </div>
+                                                  
 
                                                     <!-- Column ends -->
                                                 </div>
