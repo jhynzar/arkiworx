@@ -191,7 +191,25 @@ class ProjectProgressController extends Controller
                     ->where('tblschedules.intProjectId','=',$id)
                     ->get();
 
-        //dd($allProjectSchedules);
-        return view ('Engineer/project-progress-schedule',compact(['allProjectSchedules']));
+        $allProjectSchedulesWithPhases = array();
+        foreach($allProjectSchedules as $projectSchedule){
+            $projectPhases = DB::table('tblschedulesphases')
+                    ->join('tblworksubcategoryphases','tblworksubcategoryphases.intWorkSubCategoryPhasesId','=','tblschedulesphases.intWorkSubCategoryPhasesId')
+                    ->where('tblschedulesphases.intScheduleId','=',$projectSchedule->intScheduleId)
+                    ->get()
+                    ->toArray();
+
+            $projectScheduleWithPhases = (object) [
+                'scheduleDetails' => $projectSchedule,
+                'schedulePhases' => $projectPhases,
+            ];
+
+            array_push($allProjectSchedulesWithPhases, $projectScheduleWithPhases);
+            
+        }
+        
+
+        //dd($allProjectSchedulesWithPhases);
+        return view ('Engineer/project-progress-schedule',compact(['allProjectSchedulesWithPhases']));
     }
 }
