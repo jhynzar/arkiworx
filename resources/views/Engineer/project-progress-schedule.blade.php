@@ -767,32 +767,49 @@
     </script>
     <!-- FRAPPE START -->
     <script>
-        var allProjectSchedules = {!!json_encode($allProjectSchedules)!!};
+        var allProjectSchedules = {!!json_encode($allProjectSchedulesWithPhases)!!};
 
-        console.log(allProjectSchedules);
+        console.log(allProjectSchedules[0].scheduleDetails);
 
         var scheduledTasks = [];
 
         for(x = 0; x < allProjectSchedules.length ; x++){
+            //--Logic for computing progress of category
+            var projectProgress = 0;
+            for(i = 0; i < allProjectSchedules[x].schedulePhases.length; i++){
+                projectProgress += allProjectSchedules[x].schedulePhases[i].intProgress;
+            }
+            projectProgress = projectProgress / allProjectSchedules[x].schedulePhases.length;
 
-            if(allProjectSchedules[x]['intDependencyScheduleId'] == null){
+            //--Logic for adding classes
+            projectCustomClasses = 'bar-normal bar-overdue ';
+            //WIP OR COMPLETED
+            projectCustomClasses += (projectProgress == 100 ? 'progress-completed ' : 'progress-wip ');
+
+
+
+            //--For displaying
+            //If task is dependent to other tasks or not
+            if(allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] == null){
                 task = {
-                    start: allProjectSchedules[x]['dtmEstimatedStart'],
-                    end: allProjectSchedules[x]['dtmEstimatedEnd'],
-                    name: allProjectSchedules[x]['strWorkSubCategoryDesc'],
-                    id: allProjectSchedules[x]['intScheduleId'],
-                    custom_class: 'progress-wip bar-normal bar-overdue',
-                    overdue: allProjectSchedules[x]['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
+                    start: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
+                    name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
+                    id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
+                    custom_class: projectCustomClasses,
+                    progress: projectProgress,
+                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
                 };
             }else{
                 task = {
-                    start: allProjectSchedules[x]['dtmEstimatedStart'],
-                    end: allProjectSchedules[x]['dtmEstimatedEnd'],
-                    name: allProjectSchedules[x]['strWorkSubCategoryDesc'],
-                    id: allProjectSchedules[x]['intScheduleId'],
-                    custom_class: 'progress-wip bar-normal bar-overdue',
-                    overdue: allProjectSchedules[x]['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
-                    dependencies: [ allProjectSchedules[x]['intDependencyScheduleId'] ]
+                    start: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
+                    name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
+                    id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
+                    custom_class: projectCustomClasses,
+                    progress: projectProgress,
+                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
+                    dependencies: [ allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] ]
                 };
             }
 
@@ -1094,7 +1111,9 @@
 			on_view_change: function(mode) {
 				console.log(mode);
 			},
-            view_mode:'Day'
+            view_mode:'Day',
+            /* custom options */
+			bar_progress_height_percentage: 40,
 		});
 		console.log(gantt_chart);
 	</script>
