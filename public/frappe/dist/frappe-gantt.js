@@ -1700,7 +1700,7 @@ var Gantt = (function () {
             let is_resizing = null;
             let bar = null;
             let $bar_progress = null;
-            let $bar_overdue = null; /* [added]/[modified] */
+            let $bar = null;
 
             $.on(this.$svg, 'mousedown', '.handle.progress', (e, handle) => {
                 is_resizing = true;
