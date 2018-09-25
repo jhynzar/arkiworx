@@ -1292,11 +1292,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" value=1.16>
                             <label >Width:</label>
-                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;" value=1.16>
                             <label >Length:</label>
-                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;" >
+                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;" value=1.16>
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -1304,7 +1304,7 @@
                                  <br>
                                  <div class="form-group">
                                 <label> Number of bars per Column:</label>
-                                <input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" >
+                                <input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" value=4>
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
@@ -1312,17 +1312,13 @@
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
-                                    <option value="12" >12 meters </option>
+                                    <option value="12">12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
                                 <select class="form-control" id="ColumnsBarSize" style="width: 170px !important;">
-                                    <option value=6 selected>6 mm</option>
+                                    <option value=6 >6 mm</option>
                                     <option value=10>10 mm </option>
-                                    <option value=12>12 mm </option>
-                                    <option value=16>16 mm </option>
-                                    <option value=20>20 mm </option>
-                                    <option value=22>22 mm </option>
-                                    <option value=25>25 mm </option>
+                                    <option value=12 selected>12 mm </option>
                                 </select>
                             </div> <br> <br>
                                  
@@ -1330,13 +1326,9 @@
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
                                 <select class="form-control" id="ColumnsTieBarSize" style="width: 150px !important;">
-                                    <option value=6 selected>6 mm</option>
-                                    <option value=10>10 mm </option>
+                                    <option value=6 >6 mm</option>
+                                    <option value=10 selected>10 mm </option>
                                     <option value=12>12 mm </option>
-                                    <option value=16>16 mm </option>
-                                    <option value=20>20 mm </option>
-                                    <option value=22>22 mm </option>
-                                    <option value=25>25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
                                 <select class="form-control" id="ColumnsTieWire" style="width: 140px !important;">
@@ -1349,7 +1341,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;">
+                                <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;" value=1>
                                 <button type="button" id="computeColumn" class="btn" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
