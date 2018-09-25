@@ -366,25 +366,16 @@
 
 
 
-                <br>
+           
 
 
 
-                <!-- Show Report Button trigger-->
-                <div class="col-sm-3 pull-right">
-                    <br>
-                    <br>
-                    <button type="button" data-toggle="modal" data-target="#showReports" class="btn btn-success waves-effect waves-light" style="margin-left: -20px; margin-top: 20px">
-                        <i class="icon-list"> </i>Show Reports</button>
-                </div>
-
-                <br>
-                <br>
+             
             </div>
             <!-- Header end -->
 
             <!-- Tables start -->
-            <br>
+        
             <!-- Row start -->
             <div class="row">
                 <div class="col-sm-12">

@@ -471,6 +471,10 @@
                                                                                     data-toggle="tooltip" data-placement="top" title="Create">
                                                                                     <i class="icon-note"> </i>Create Project Schedule
                                                                                 </button>
+                                                                                    <!-- Button trigger modal -->
+                                                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                                                    New
+                                                                                    </button>
 
 
 
@@ -650,39 +654,161 @@
                             </div>
                         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <!-- Tables end -->
 
 
+            
+            
+            
+            
+            
+            <!-- New schedule modal -->
+            
+            
+            
+            
+            
+        
+
+                                                                                            <!-- Modal -->
+                                                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog modal-lg" role="document">
+                                                                                <div class="modal-content">
+                                                                                                        <div class="modal-header" style="background-color: #546d77  !important">
+                                                                                                            <h4 class="modal-title" id="exampleModalLabel">
+                                                                                                                <span  style="color: white" ><b>Estimated Project Schedule</b></span>
+                                                                                                            </h4>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                                                            </button>
+                                                                                                            </div>
+                                                                                          <div class="modal-body scroll" >
+                                                                                        <h6 class="text text-default" style="margin-left: 380px">ACTIVITIES:</h6> 
+                                                                                              
+                                                                                              
+                                                                                              <div class="panel panel-default">
+                                                                                                  <div class="panel-heading " style="background-color: #059CF9; color: white">
+                                                                                                <h3 class="panel-title panel-primary">General Requirements</h3>
+                                                                                                            <div  class="form-group form-inline" style="position: absolute; margin-top: -40px; margin-left: 600px">  <label style="color:white"><span class="label label-default">DEPENDENCIES</span> <i class="icon-organization text text-light"></i>&nbsp;: &nbsp;</label>
+                                                                                                                <select id="" name="" class="form-control" style="width: 100px"> 
+                                                                                                                  <option value="">None</option>
+                                                                                                                    <option value="">1</option>
+                                                                                                                    <option value="">2</option>
+                              
+                                                                                                                </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                            <div class="panel-body" style="background-color: #C7E9FE" >
+                                                                                               
+                                                                        
+                                                                                        <div class="form-group form-inline">
+                                                                                            
+                                                                                                    <br>
+                                                                                               &nbsp;&nbsp; <label class="text text-primary"> Phase 1</label> &nbsp;&nbsp;&nbsp;
+                                                                                            
+                                                                                            &nbsp;&nbsp;&nbsp; <input type="text" name="" class="form-control" style="width:300px" placeholder="Description" disabled>
+                                                                                          <!--  &nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <label class="text text-primary"> Progress</label> &nbsp;&nbsp;&nbsp; 
+                                                                                            
+                                                                                           <input type="text" name="" class="form-control text-center" style="width:200px" placeholder="20%" disabled> <br> <br> -->
+                                                                                               <br> <br>
+                                                                                               &nbsp;&nbsp;  <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:180px" >
+                                                                                                &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:180px" >
+                                                                                                
+                                                                                            <hr> 
+                                                                                           
+                                                                                               &nbsp;&nbsp; <label class="text text-primary"> Phase 2</label> &nbsp;&nbsp;&nbsp;
+                                                                                            
+                                                                                            &nbsp;&nbsp;&nbsp; <input type="text" name="" class="form-control" style="width:300px" placeholder="Description" disabled>
+                                                                                          <!--  &nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <label class="text text-primary"> Progress</label> &nbsp;&nbsp;&nbsp; 
+                                                                                            
+                                                                                           <input type="text" name="" class="form-control text-center" style="width:200px" placeholder="20%" disabled> <br> <br> -->
+                                                                                               <br> <br>
+                                                                                               &nbsp;&nbsp;  <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:180px" >
+                                                                                                &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:180px" >
+                                                                                                
+                                                                                    
+                                                                                            <br> <br>
+                                                                                        </div>
+                                                                                                   
+                                                                                                </div>
+                                                                                              </div>
+                                                                                        
+                                                                                              
+                                                                                               <div class="panel panel-default">
+                                                                                                  <div class="panel-heading " style="background-color: #05D85C; color: white">
+                                                                                                <h3 class="panel-title panel-primary">Column</h3>
+                                                                                                            <div  class="form-group form-inline" style="position: absolute; margin-top: -40px; margin-left: 600px">  <label style="color:white"><span class="label label-default">DEPENDENCIES</span> <i class="icon-organization text text-light"></i>&nbsp;: &nbsp;</label>
+                                                                                                                <select id="" name="" class="form-control" style="width: 100px"> 
+                                                                                                                  <option value="">None</option>
+                                                                                                                    <option value="">1</option>
+                                                                                                                    <option value="">2</option>
+                              
+                                                                                                                </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                            <div class="panel-body" style="background-color: #a7fdbc" >
+                                                                                               
+                                                                        
+                                                                                        <div class="form-group form-inline">
+                                                                                            
+                                                                                                    <br>
+                                                                                               &nbsp;&nbsp; <label class="text text-primary"> Phase 1</label> &nbsp;&nbsp;&nbsp;
+                                                                                            
+                                                                                            &nbsp;&nbsp;&nbsp; <input type="text" name="" class="form-control" style="width:300px" placeholder="Description" disabled>
+                                                                                          <!--  &nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <label class="text text-primary"> Progress</label> &nbsp;&nbsp;&nbsp; 
+                                                                                            
+                                                                                           <input type="text" name="" class="form-control text-center" style="width:200px" placeholder="20%" disabled> <br> <br> -->
+                                                                                               <br> <br>
+                                                                                               &nbsp;&nbsp;  <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label> 
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:180px" >
+                                                                                                &nbsp; &nbsp;  <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:180px" >
+                                                                                        
+                                                                                            <br> <br>
+                                                                                        </div>
+                                                                                                   
+                                                                                                </div>
+                                                                                              </div>
+                                                                                        <br> <br>
+
+                                                                                   
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                    </div>
+                                                                                    <div class="modal-footer" >
+                                                                                        <button type="submit" class="btn btn-success"  >Save</button>
+                                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                                                    
+                                                                                    </div>  
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
                         <!-- deactivate user modal -->
 

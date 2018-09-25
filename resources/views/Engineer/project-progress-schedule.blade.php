@@ -560,6 +560,106 @@
         </div>
         <!-- FRAPPE END -->
 
+        
+        
+        
+        
+        
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detailsModal" style="margin-left: 100px">
+  Trigger
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #4CAF50 !important">
+        <h5 class="modal-title" id="exampleModalLabel">General Requirements</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body scroll" style="height: 450px !important">
+        <br>
+        
+                                                                                    <div class="form-group form-inline">
+                                                                                            
+                                                                                                    
+                                                                                                <label class="label label-primary"> Phase 1</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                <input type="text" name="" class="form-control" style="width:160px" placeholder="Permits" disabled> 
+                                                                                                &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
+                                                                                                <input type="number" name="" class="form-control" style="width:165px" placeholder="20%" > <br> <br>
+                                                                                                <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label> 
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
+                                                                                                <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled >
+                                                                                            
+                                                                                                
+                                                                                        </div>
+                                                                                        <hr>
+                                                                                        <br> 
+                                                                                        <div class="form-group form-inline">
+                                                                                            
+                                                                                                    
+                                                                                                   
+                                                                                                <label class="label label-success"> Phase 2</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                <input type="text" name="" class="form-control" style="width:160px" placeholder="Permits" disabled> 
+                                                                                                &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
+                                                                                                <input type="number" name="" class="form-control" style="width:165px" placeholder="20%" > <br> <br>
+                                                                                                <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label> 
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
+                                                                                                <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled >
+                                                                                                
+                                                                                        </div> 
+                                                                                        <hr>
+                                                                                     <br> 
+                                                                                        <div class="form-group form-inline">
+                                                                                            
+                                                                                                    
+                                                                                                    
+                                                                                                <label class="label label-primary"> Phase 3</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                <input type="text" name="" class="form-control" style="width:160px" placeholder="Permits" disabled> 
+                                                                                                &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
+                                                                                                <input type="number" name="" class="form-control" style="width:165px" placeholder="20%" > <br> <br>
+                                                                                                <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label> 
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
+                                                                                                <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled >
+                                                                                                
+                                                                                        </div> <hr>
+          
+           <br> 
+                                                                                        <div class="form-group form-inline">
+                                                                                            
+                                                                                                    
+                                                                                                 
+                                                                                                <label class="label label-success"> Phase 4</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                <input type="text" name="" class="form-control" style="width:160px" placeholder="Permits" disabled> 
+                                                                                                &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
+                                                                                                <input type="number" name="" class="form-control" style="width:165px" placeholder="20%" > <br> <br>
+                                                                                                <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label> 
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
+                                                                                                <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled >
+                                                                                            
+                                                                                                
+                                                                                        </div> 
+          
+                                                                                         
+          
+      </div>
+      <div class="modal-footer" style="background-color: #E3FAD4">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-success">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
+        
 
     </div>
         </div>
