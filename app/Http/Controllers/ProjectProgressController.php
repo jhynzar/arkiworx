@@ -254,17 +254,91 @@ class ProjectProgressController extends Controller
 
         $req = request()->all();
 
-        for($i = 0; $i < $req['phasesCount']; $i++){
-            $schedulePhaseId = $req['schedulePhaseId'.$i];
-            $schedulePhaseProgress = $req['schedulePhaseProgress'.$i];
 
-            $scheduleId = DB::table('tblschedulesphases')
+        $scheduleId = $req['scheduleId'];
+        $maxProgress = $req['phasesCount'] * 100;
+        $currentProgress = 0;
+        
+        //get details of schedule
+        $scheduleDetails = DB::table('tblschedules')
+                        ->where('tblschedules.intScheduleId','=',$scheduleId)
+                        ->first();
+
+        for($i = 0; $i < $req['phasesCount']; $i++){
+            $schedulePhaseId = $req['schedulePhase'.$i.'id'];
+            $schedulePhaseProgress = $req['schedulePhase'.$i.'progress'];
+            $schedulePhaseEstimatedStartDate = $req['schedulePhase'.$i.'estimatedStartDate']; //not used
+            $schedulePhaseEstimatedEndDate = $req['schedulePhase'.$i.'estimatedEndDate']; //not used
+            $schedulePhaseActualStartDate = $req['schedulePhase'.$i.'actualStartDate'];
+            $schedulePhaseActualEndDate = $req['schedulePhase'.$i.'actualEndDate'];
+
+            //logic
+
+
+
+
+            //if there's no actualStartDate and the updated progress is greater than 0 (means it started)
+            //put actual startDate as of today
+            if(
+                $schedulePhaseActualStartDate == null &&
+                $schedulePhaseProgress > 0
+            ){
+                $schedulePhaseActualStartDate = date("Y-m-d"); //today's date
+
+
+                //if schedule still does not have actual start date (meaning not yet started in categ)
+                if($scheduleDetails->dtmActualStart == null){
+                    DB::table('tblschedules')
+                    ->where('tblschedules.intScheduleId','=',$scheduleId)
+                    ->update([
+                        'dtmActualStart' => date("Y-m-d"), //today's date
+                    ]);
+
+                    $scheduleDetails->dtmActualStart = date("Y-m-d"); //today's date //to avoid going inside this function again, assign value
+                }
+            }
+
+            //if there's no actualEndDate and the updated progress is 100 (means it's completed)
+            //put actual endDate as of today
+            if(
+                $schedulePhaseActualEndDate == null &&
+                $schedulePhaseProgress == 100
+            ){
+                $schedulePhaseActualEndDate = date("Y-m-d"); //today's date
+            }
+
+
+
+            //updating
+            $schedulePhasesId = DB::table('tblschedulesphases')
                         ->where('tblschedulesphases.intSchedulePhasesId','=',$schedulePhaseId)
                         ->update([
                             'intProgress' => $schedulePhaseProgress,
+                            'dtmActualStart' => $schedulePhaseActualStartDate,
+                            'dtmActualEnd' => $schedulePhaseActualEndDate,
                         ]);
 
-            //TODO
+
+            //for checking if progress is maxed out
+            $currentProgress += $schedulePhaseProgress;
         }
+
+        
+        //if progress is maxed out, set actualEndDate today
+        if($maxProgress == $currentProgress){
+            DB::table('tblschedules')
+                    ->where('tblschedules.intScheduleId','=',$scheduleId)
+                    ->update([
+                        'dtmActualEnd' => date("Y-m-d"), //today's date
+                    ]);
+        }
+
+
+
+
+
+        //always last
+        //refresh
+        header('Refresh:0;/Engineer/Project-Progress/'.$id.'/Schedule');
     }
 }
