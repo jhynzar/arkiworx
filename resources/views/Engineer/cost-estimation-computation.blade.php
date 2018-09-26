@@ -1194,8 +1194,14 @@
                                     <label class="text text-default"><b>Contingency</b> </label> 
                                 <input type="number" class="form-control" value="104453.28" id="Contigency" name="Contigency" style="width: 200px !important;" placeholder="">
                                  &nbsp; &nbsp; &nbsp; &nbsp; 
-                                   
-                                    &nbsp; &nbsp; &nbsp;
+                                    <label class="text text-default"><b>Overhead Profit</b> </label> 
+                                <select style="width: 200px" class="form-control" id="overheadProfit" > 
+                                    <option  value="0.1" selected> 10%</option>
+                                    <option value="0.2"> 20% </option>
+                                    
+                                    </select> 
+                                    <input type="hidden" id="OverheadProfit" name="OverheadProfit" value="">
+                                    &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
                                     <button type="button" class="btn btn-success" id="ComputeGeneralReq" >Compute</button>
                                     
                                     
@@ -3106,10 +3112,16 @@
                                                         Roofing
                                                     </a>
                                                 </h3>
-                                            </div>
-                                            <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
-                                                <div class="accordion-content accordion-desc">
-                                                              
+ </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="accordion-content accordion-desc">
+                      
+                      
+                     <!-- Column-->
+                      
+                     <br> 
+                   
+                        
         <div class="row ">
         
           <div class="col-sm-6 col-xs-12"> <br> 
@@ -3118,6 +3130,15 @@
                          <div class="card-block">
                              
                    
+                        <div class="form-group pull-center">
+                                <label for="">Cement Class Mixture:</label>
+                                <select class="form-control" id="ColumnCC" style="width: 160px !important;">
+                                    <option value="1" selected>Class AA </option>
+                                    <option value="2">Class A </option>
+                                    <option value="3">Class B </option>
+                                    <option value="4">Class C </option>
+                                </select>
+                            </div>
                              
                           <div >
                                 <label for="">Volume:</label> <br>
@@ -3308,7 +3329,12 @@
             
             
         </div>
-
+   
+                      
+     <!-- Column ends -->
+                  </div>
+                </div>
+              </div>
                                         <div class="accordion-panel">
                                             <div class=" accordion-heading" role="tab" id="headingEleven">
                                                 <h3 class="card-title accordion-title">
@@ -4597,35 +4623,12 @@
                                             </div>
                                         </div>
 
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingEighteen">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen" aria-expanded="false"
-                                                        aria-controls="collapseEighteen">
-                                                        Plumbing Works
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseEighteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEighteen">
-                                                <div class="accordion-content accordion-desc">
-                                                    <p>
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                                        text ever since the 1500s, when an unknown printer took a galley
-                                                        of type and scrambled it to make a type specimen book. It has survived
-                                                        not only five centuries, but also the leap into electronic typesetting,
-                                                        remaining essentially unchanged. It was popularised in the 1960s
-                                                        with the release of Letraset sheets containing Lorem Ipsum passages,
-                                                        and more recently with desktop publishing software like Aldus PageMaker
-                                                        including versions of Lorem Ipsum.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                     
 
                                         <div class="accordion-panel">
                                             <div class=" accordion-heading" role="tab" id="headingNineteen">
                                                 <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen" aria-expanded="false"
+                                                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen" aria-expanded="false"
                                                         aria-controls="collapseNineteen">
                                                         Tiles
                                                     </a>
@@ -4822,7 +4825,7 @@
           
           
            
-          <div class="card-block">
+           <div class="card-block">
                                             <div class="table-responsive">
                                             <input type=hidden id="OverallTotalCost1" name="OverallTotalCost" value="">
                                                 <table class="table m-b-0 photo-table">
@@ -4848,7 +4851,7 @@
                                                             
 
                                                         </tr>
-                                                        <hr>
+                                                        
                                                         <tr class="text-uppercase " style="background-color: #ffc551">
                                                             <th class="text-left text-secondary">Grand Total Cost:</th>
                                                          
@@ -4862,14 +4865,16 @@
                                             </div>
                                         </div>  
           
+         
+          
           
           
           
           
           
                         <div class="form-group form-inline">
-                            <a type="button" class="btn btn-outline-success" style="margin-left: 700px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
-                           &nbsp;
+                            <a type="button" class="btn btn-outline-success" style="margin-left: 800px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
+                           
                             <button type="submit" class="btn btn-primary ">Save Estimation</button>
                         </div>
 
