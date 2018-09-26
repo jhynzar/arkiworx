@@ -122,6 +122,7 @@ class CostEstimationsController extends Controller
                 a.decQty as decQty,
                 a.intWorkSubCategoryId as intWorkSubCategoryId,
                 a.intMaterialId as intMaterialId,
+                f.strMaterialName as strMaterialName
                 (a.decQty*b.Price) as decCost
         FROM tblmaterialestimationtemplate a INNER JOIN 
         (   
@@ -152,7 +153,8 @@ class CostEstimationsController extends Controller
                     'cost' => $fields2 -> decCost,
                     'qty' => $fields2 -> decQty,
                     'category' => $fields2 -> intWorkSubCategoryId,
-                    'material' => $fields2 -> intMaterialId
+                    'material' => $fields2 -> intMaterialId,
+                    'materialName' => $fields2 -> strMaterialName
                 ];
                 array_push($TemplateArray2,$TemplateArr2);
         }
