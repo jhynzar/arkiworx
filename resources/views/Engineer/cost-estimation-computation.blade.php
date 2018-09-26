@@ -1194,14 +1194,8 @@
                                     <label class="text text-default"><b>Contingency</b> </label> 
                                 <input type="number" class="form-control" value="104453.28" id="Contigency" name="Contigency" style="width: 200px !important;" placeholder="">
                                  &nbsp; &nbsp; &nbsp; &nbsp; 
-                                    <label class="text text-default"><b>Overhead Profit</b> </label> 
-                                <select style="width: 200px" class="form-control" id="overheadProfit" > 
-                                    <option  value="0.1" selected> 10%</option>
-                                    <option value="0.2"> 20% </option>
-                                    
-                                    </select> 
-                                    <input type="hidden" id="OverheadProfit" name="OverheadProfit" value="">
-                                    &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
+                                   
+                                    &nbsp; &nbsp; &nbsp;
                                     <button type="button" class="btn btn-success" id="ComputeGeneralReq" >Compute</button>
                                     
                                     
@@ -3115,19 +3109,205 @@
                                             </div>
                                             <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
                                                 <div class="accordion-content accordion-desc">
-                                                    <p>
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                                        text ever since the 1500s, when an unknown printer took a galley
-                                                        of type and scrambled it to make a type specimen book. It has survived
-                                                        not only five centuries, but also the leap into electronic typesetting,
-                                                        remaining essentially unchanged. It was popularised in the 1960s
-                                                        with the release of Letraset sheets containing Lorem Ipsum passages,
-                                                        and more recently with desktop publishing software like Aldus PageMaker
-                                                        including versions of Lorem Ipsum.
-                                                    </p>
-                                                </div>
+                                                              
+        <div class="row ">
+        
+          <div class="col-sm-6 col-xs-12"> <br> 
+                    <div class="card" style="background-color: #A7FDCB">
+                        
+                         <div class="card-block">
+                             
+                   
+                             
+                          <div >
+                                <label for="">Volume:</label> <br>
+                            
+                                <input type="number" id="ColumnVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                            
+                            </div>   
+                             <br> 
+                             <div class="form-group form-inline">
+                           
+                            <label >Thickness:</label>
+                            <input type="" class="form-control" id="ColumnThickness" style="width: 80px !important;" >
+                            <label >Width:</label>
+                            <input type="" class="form-control" id="ColumnWidth" style="width: 80px !important;" >
+                            <label >Length:</label>
+                            <input type="" class="form-control" id="ColumnLength" style="width: 80px !important;" >
+                                 <br> <br>
+                                      <div class="container" style="margin-left: -20px !important">
+                                        <H6 class="text text-primary">Metal Reinforcement</H6>
+                                    </div>
+                                 <br>
+                                 <div class="form-group">
+                                <label> Number of bars per Column:</label>
+                                <input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" >
+                            </div> <br> <br>
+                                 <div class="form-group form-inline pull-center">
+                                <label for="">Bar Length:</label>
+                                <select class="form-control" id="ColumnsBarLeng" style="width: 150px !important;">
+                                    <option value="6" selected>6 meters </option>
+                                    <option value="7.5" >7.5 meters </option>
+                                    <option value="9" >9 meters </option>
+                                    <option value="12" >12 meters </option>
+                                </select>
+                                     <label for="">Bar Size:</label>
+                                <select class="form-control" id="ColumnsBarSize" style="width: 150px !important;">
+                                    <option value=6 selected>6 mm</option>
+                                    <option value=10>10 mm </option>
+                                    <option value=12>12 mm </option>
+                                    <option value=16>16 mm </option>
+                                    <option value=20>20 mm </option>
+                                    <option value=22>22 mm </option>
+                                    <option value=25>25 mm </option>
+                                </select>
+                            </div> <br> <br>
+                                 
+                                 
+                                 <div class="form-group form-inline pull-center">
+                                <label for="">Tie Bar Size:</label>
+                                <select class="form-control" id="ColumnsTieBarSize" style="width: 150px !important;">
+                                    <option value=6 selected>6 mm</option>
+                                    <option value=10>10 mm </option>
+                                    <option value=12>12 mm </option>
+                                    <option value=16>16 mm </option>
+                                    <option value=20>20 mm </option>
+                                    <option value=22>22 mm </option>
+                                    <option value=25>25 mm </option>
+                                </select>
+                                     <label for="">Tie wire:</label>
+                                <select class="form-control" id="ColumnsTieWire" style="width: 140px !important;">
+                                    <option value=30 selected>30 cm </option>
+                                    <option value=40>40 cm </option>
+                                    
+                                </select>
+                            </div> 
+                   
+                                 <br> <br>
+                                 <hr>
+                                 <div class="form-group form-inline">
+                                <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;">
+                                <button type="button" id="computeColumn" class="btn" style="margin-left: 90px" >Compute</button>
+                                 </div>
+                        </div>
+                             
+                             
+                             
+                        </div>
+                    </div>
+          </div>
+            
+          <div class="col-sm-6 col-xs-12 "><br>
+                <div>
+              
+              <div class="card">
+                        
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>Material</th>
+                                            <th>Estimated Qty</th>
+                                            <th>Estimated Cost</th>
+                                           
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="table-success">
+                                            <td id="ColumnCement">cement 40kg</td>
+                                            <td id="ColumnCementBag">14</td>
+                                            <td id="ColumnCementCost">3290</td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td id="ColumnS">sand</td>
+                                            <td id="ColumnSand">.80</td>
+                                            <td id="ColumnSandCost">640</td>
+                                       
+                                        </tr>
+                                        <tr class="table-warning">
+                                            <td id="ColumnG">gravel</td>
+                                            <td id="ColumnGravel">1.50</td>
+                                            <td id="ColumnGravelCost">2250</td>
+                                           
+                                        </tr>
+                                            <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
+                                            <tr class="table-success">
+                                            <td id="ColumnSteelBar">Main bars-12mmØ</td>
+                                            <td id="ColumnSteelBarQty">36</td>
+                                            <td id="ColumnSteelBarCost">6552</td>
+                                           
+                                        </tr>
+                                            <tr>
+                                            <td id="ColumnTieBar">ties/stirrups bars-10mmØ</td>
+                                            <td id="ColumnTieBarQty">24</td>
+                                            <td id="ColumnTieBarCost">2928</td>
+                                       
+                                        </tr>
+                                        <tr class="table-warning">
+                                            <td id="ColumnTieWire">Tie wire</td>
+                                            <td id="ColumnTieWireKg">6</td>
+                                            <td id="ColumnTieWireCost">360</td>
+                                           
+                                        </tr>
+                                      
+                                        </tbody>
+                                    </table>
+                                    <input type="hidden" id="ColumnCement1"             name="ColumnCement" value='1'>
+                                    <input type="hidden" id="ColumnCementBag1"          name="ColumnCementBag" value='14.00'>
+                                    <input type="hidden" id="ColumnCementCost1"         name="ColumnCementCost" value='3290'>
+                                    <input type="hidden" id="ColumnS1"                  name="ColumnS" value='2'>
+                                    <input type="hidden" id="ColumnSand1"               name="ColumnSand" value='0.80'>
+                                    <input type="hidden" id="ColumnSandCost1"           name="ColumnSandCost" value='640'>
+                                    <input type="hidden" id="ColumnG1"                  name="ColumnG" value='3'>
+                                    <input type="hidden" id="ColumnGravel1"             name="ColumnGravel" value='1.50'>
+                                    <input type="hidden" id="ColumnGravelCost1"         name="ColumnGravelCost" value='2250'>
+                                    <input type="hidden" id="ColumnSteelBar1"           name="ColumnSteelBar" value='4'>
+                                    <input type="hidden" id="ColumnSteelBarQty1"        name="ColumnSteelBarQty" value='26'>
+                                    <input type="hidden" id="ColumnSteelBarCost1"       name="ColumnSteelBarCost" value='6652'>
+                                    <input type="hidden" id="ColumnTieBar1"             name="ColumnTieBar" value='5'>
+                                    <input type="hidden" id="ColumnTieBarQty1"          name="ColumnTieBarQty" value='24'>
+                                    <input type="hidden" id="ColumnTieBarCost1"         name="ColumnTieBarCost" value='2928'>
+                                    <input type="hidden" id="ColumnTieWire1"            name="ColumnTieWire" value='6'>
+                                    <input type="hidden" id="ColumnTieWireKg1"          name="ColumnTieWireKg" value='6'>
+                                    <input type="hidden" id="ColumnTieWireCost1"        name="ColumnTieWireCost" value='360'>
+                                    <input type="hidden" id="ColumnTotalCost1"          name="ColumnTotalCost" value='16020'>
+                                </div>
+                                
+                               
+                            </div>
+                             
+                        </div>
+                  
+                    </div>
+                                  <!-- TOTALS TABLE -->
+
+                                    <div class="card-block">
+                                            <div class="table-responsive">
+                                                <table class="table m-b-0 photo-table">
+                                                    <thead>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-primary">Total Cost:</th>
+                                                            <th class="text-center"></th>
+                                                            <th class="text-center text-primary" id="ColumnTotalCost"> 16020 </th>
+                                                            
+
+                                                        </tr>
+                                                    </thead>
+                                                  
+                                                </table>
                                             </div>
-                                        </div>
+                                        </div>       
+              </div>
+          </div>
+          
+          
+           
+            
+            
+        </div>
 
                                         <div class="accordion-panel">
                                             <div class=" accordion-heading" role="tab" id="headingEleven">
@@ -4648,9 +4828,31 @@
                                                 <table class="table m-b-0 photo-table">
                                                     <thead>
                                                         <tr class="text-uppercase">
-                                                            <th class="text-left text-primary">Overall Total Cost:</th>
+                                                            <th class="text-left text-secondary">Overall Total Cost:</th>
                                                          
                                                             <th class="text-center text-primary" id="OverallTotalCost">  </th>
+                                                            
+
+                                                        </tr>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-secondary">Overhead Profit %:</th>
+                                                         
+                                                            <th class="text-center text-primary" id=""> 10% </th>
+                                                            
+
+                                                        </tr>
+                                                        <tr class="text-uppercase">
+                                                            <th class="text-left text-secondary">Overhead Profit Amount:</th>
+                                                         
+                                                            <th class="text-center text-primary" id=""> 150,1000.00 </th>
+                                                            
+
+                                                        </tr>
+                                                        <hr>
+                                                        <tr class="text-uppercase " style="background-color: #ffc551">
+                                                            <th class="text-left text-secondary">Grand Total Cost:</th>
+                                                         
+                                                            <th class="text-center text-default" id=""> 123,456,789 </th>
                                                             
 
                                                         </tr>
@@ -4666,8 +4868,8 @@
           
           
                         <div class="form-group form-inline">
-                            <a type="button" class="btn btn-outline-success" style="margin-left: 800px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
-                           
+                            <a type="button" class="btn btn-outline-success" style="margin-left: 700px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
+                           &nbsp;
                             <button type="submit" class="btn btn-primary ">Save Estimation</button>
                         </div>
 
