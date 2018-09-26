@@ -1180,29 +1180,8 @@
                                     <label class="text text-default"><b>Contingency</b> </label> 
                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 12)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Contigency" name="Contigency" style="width: 200px !important;" placeholder="">@endif @endforeach
                                  &nbsp; &nbsp; &nbsp; &nbsp; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                    <label class="text text-default"><b>Overhead Profit</b> </label> 
-                                <select style="width: 200px" class="form-control" id="OverheadProfit" > 
-                                    <option  value="0.1" selected> 10%</option>
-                                    <option value="0.2"> 20% </option>
-
-                                    </select> 
-                                    &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
-=======
                                    
                                     &nbsp; &nbsp; &nbsp;
->>>>>>> ec2edd8de6e4e986455b0c3ef6603b4402701db2
-=======
-                                    <label class="text text-default"><b>Overhead Profit</b> </label> 
-                                <select style="width: 200px" class="form-control" id="overheadProfit" > 
-                                    <option  value="0.1" selected> 10%</option>
-                                    <option value="0.2"> 20% </option>
-                                    
-                                    </select> 
-                                    <input type="hidden" id="OverheadProfit" name="OverheadProfit" value="">
-                                    &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
->>>>>>> 76921174313eb614005c38277d068f5b2f3facf4
                                     <button type="button" class="btn btn-success" id="ComputeGeneralReq" >Compute</button>
                                     
                                     
@@ -1254,7 +1233,7 @@
                   </div>
                 </div>
               </div>
-                                
+              
               @foreach ( $TemplateArray2 as $key=>$record )
             <input type="hidden" id="CategoryId{{ $record -> id }}"             name="CategoryId{{ $record -> id }}"    value='{{ $record -> category }}'>
             <input type="hidden" id="MaterialId{{ $record -> id }}"             name="MaterialId{{ $record -> id }}"    value='{{ $record -> material }}'>
@@ -1385,46 +1364,53 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 1)    
                                         <tr class="table-success">
-                                            <td id="ColumnCement">cement 40kg</td>
-                                            <td id="ColumnCementBag">14</td>
-                                            <td id="ColumnCementCost">3290</td>
+                                            <td id="ColumnCement"> {{ $record -> materialName }} </td> 
+                                            <td id="ColumnCementBag"> {{ $record -> qty }} </td>
+                                            <td id="ColumnCementCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 2)    
                                         <tr>
-                                            <td id="ColumnS">sand</td>
-                                            <td id="ColumnSand">.80</td>
-                                            <td id="ColumnSandCost">640</td>
+                                            <td id="ColumnS"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnSand"> {{ $record -> qty }} </td>
+                                            <td id="ColumnSandCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 3)    
                                         <tr class="table-warning">
-                                            <td id="ColumnG">gravel</td>
-                                            <td id="ColumnGravel">1.50</td>
-                                            <td id="ColumnGravelCost">2250</td>
+                                            <td id="ColumnG"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnGravel"> {{ $record -> qty }} </td>
+                                            <td id="ColumnGravelCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 4)    
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id="ColumnSteelBar">Main bars-12mmØ</td>
-                                            <td id="ColumnSteelBarQty">36</td>
-                                            <td id="ColumnSteelBarCost">6552</td>
+                                            <td id="ColumnSteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnSteelBarQty"> {{ $record -> qty }} </td>
+                                            <td id="ColumnSteelBarCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 5)    
                                             <tr>
-                                            <td id="ColumnTieBar">ties/stirrups bars-10mmØ</td>
-                                            <td id="ColumnTieBarQty">24</td>
-                                            <td id="ColumnTieBarCost">2928</td>
+                                            <td id="ColumnTieBar"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnTieBarQty"> {{ $record -> qty }} </td>
+                                            <td id="ColumnTieBarCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 6)    
                                         <tr class="table-warning">
-                                            <td id="ColumnTieWire">Tie wire</td>
-                                            <td id="ColumnTieWireKg">6</td>
-                                            <td id="ColumnTieWireCost">360</td>
+                                            <td id="ColumnTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnTieWireKg"> {{ $record -> qty }} </td>
+                                            <td id="ColumnTieWireCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
                                       
                                         </tbody>
                                     </table>
+                                    <!---
                                     <input type="hidden" id="ColumnCement1"             name="ColumnCement" value='1'>
                                     <input type="hidden" id="ColumnCementBag1"          name="ColumnCementBag" value='14.00'>
                                     <input type="hidden" id="ColumnCementCost1"         name="ColumnCementCost" value='3290'>
@@ -1444,6 +1430,7 @@
                                     <input type="hidden" id="ColumnTieWireKg1"          name="ColumnTieWireKg" value='6'>
                                     <input type="hidden" id="ColumnTieWireCost1"        name="ColumnTieWireCost" value='360'>
                                     <input type="hidden" id="ColumnTotalCost1"          name="ColumnTotalCost" value='16020'>
+                                    --->
                                 </div>
                                 
                                
@@ -3108,16 +3095,10 @@
                                                         Roofing
                                                     </a>
                                                 </h3>
- </div>
-                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="accordion-content accordion-desc">
-                      
-                      
-                     <!-- Column-->
-                      
-                     <br> 
-                   
-                        
+                                            </div>
+                                            <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+                                                <div class="accordion-content accordion-desc">
+                                                              
         <div class="row ">
         
           <div class="col-sm-6 col-xs-12"> <br> 
@@ -3126,15 +3107,6 @@
                          <div class="card-block">
                              
                    
-                        <div class="form-group pull-center">
-                                <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="ColumnCC" style="width: 160px !important;">
-                                    <option value="1" selected>Class AA </option>
-                                    <option value="2">Class A </option>
-                                    <option value="3">Class B </option>
-                                    <option value="4">Class C </option>
-                                </select>
-                            </div>
                              
                           <div >
                                 <label for="">Volume:</label> <br>
@@ -3325,12 +3297,7 @@
             
             
         </div>
-   
-                      
-     <!-- Column ends -->
-                  </div>
-                </div>
-              </div>
+
                                         <div class="accordion-panel">
                                             <div class=" accordion-heading" role="tab" id="headingEleven">
                                                 <h3 class="card-title accordion-title">
@@ -4871,7 +4838,7 @@
           
           
            
-           <div class="card-block">
+          <div class="card-block">
                                             <div class="table-responsive">
                                             <input type=hidden id="OverallTotalCost1" name="OverallTotalCost" value="">
                                                 <table class="table m-b-0 photo-table">
@@ -4897,7 +4864,7 @@
                                                             
 
                                                         </tr>
-                                                        
+                                                        <hr>
                                                         <tr class="text-uppercase " style="background-color: #ffc551">
                                                             <th class="text-left text-secondary">Grand Total Cost:</th>
                                                          
@@ -4911,16 +4878,14 @@
                                             </div>
                                         </div>  
           
-         
-          
           
           
           
           
           
                         <div class="form-group form-inline">
-                            <a type="button" class="btn btn-outline-success" style="margin-left: 800px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
-                           
+                            <a type="button" class="btn btn-outline-success" style="margin-left: 700px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
+                           &nbsp;
                             <button type="submit" class="btn btn-primary ">Save Estimation</button>
                         </div>
 
@@ -5129,23 +5094,28 @@
 
 <script>
 
-    var TemplateArray1 = {!!json_encode($TemplateArray1)!!};
-    for ( var column in TemplateArray1 ) {
-            var values = TemplateArray1[column];
-            var tempcost = values['cost'];
-            var tempcategory1 = values['category'];
-    }
+computeAndDisplayOverallTotal();
 
-    var TemplateArray2 = {!!json_encode($TemplateArray2)!!};
-    for ( var column in TemplateArray2 ) {
-            var values = TemplateArray2[column];
-            var tempqty = values['cost'];
-            var tempcategory2 = values['category'];
-            var tempmaterial = values['material'];
-    }
+        $("#ColumnCementBag").html( parseFloat($("#ColumnCementBag").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnCementCost").html( parseFloat($("#ColumnCementCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnSand").html( parseFloat($("#ColumnSand").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnSandCost").html( parseFloat($("#ColumnSandCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnGravel").html( parseFloat($("#ColumnGravel").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnGravelCost").html( parseFloat($("#ColumnGravelCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnSteelBarQty").html( parseFloat($("#ColumnSteelBarQty").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnSteelBarCost").html( parseFloat($("#ColumnSteelBarCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnTieBarQty").html( parseFloat($("#ColumnTieBarQty").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnTieBarCost").html( parseFloat($("#ColumnTieBarCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnTieWireKg").html( parseFloat($("#ColumnTieWireKg").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnTieWireCost").html( parseFloat($("#ColumnTieWireCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
 
     function computeAndDisplayOverallTotal(){
-        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
+        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
 
         $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         $("#OverallTotalCost1").val(parseFloat(overAllTotal));
@@ -5247,7 +5217,7 @@
 
         computeAndDisplayOverallTotal();
     });
-
+/*
     $("#ComputeElectricalWorks").click(function(){
         if($("#ElectricalWorksMaterial").val()==43){
             var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
@@ -5489,8 +5459,7 @@ $("#computeBeam").click(function () {
     $("#BeamTotalCost").html( parseFloat($("#BeamTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
 });
-
-computeAndDisplayOverallTotal();
+*/
 
 </script>
 

@@ -122,11 +122,11 @@ class CostEstimationsController extends Controller
                 a.decQty as decQty,
                 a.intWorkSubCategoryId as intWorkSubCategoryId,
                 a.intMaterialId as intMaterialId,
-                f.strMaterialName as strMaterialName
+                b.strMaterialName as strMaterialName,
                 (a.decQty*b.Price) as decCost
         FROM tblmaterialestimationtemplate a INNER JOIN 
         (   
-            SELECT e.price as Price, e.material as Material
+            SELECT e.price as Price, e.material as Material, f.strMaterialName as strMaterialName
             FROM 
             (
                 SELECT t.decPrice as price, t.intMaterialId as material
