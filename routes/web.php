@@ -130,6 +130,8 @@ Route::get('Engineer/Project-Progress/{id}/Schedule', 'ProjectProgressController
 
 Route::post('Engineer/Project-Progress/{id}', 'ProjectProgressController@store');
 
+Route::post('Engineer/Project-Progress/{id}/Schedule/Save', 'ProjectProgressController@saveSchedule');
+
 Route::get('Engineer/Calendar', function(){
     return view ('Engineer/calendar');
 });

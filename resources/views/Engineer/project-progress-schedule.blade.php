@@ -199,6 +199,10 @@
 		.gantt .bar-overdue .bar-overdue {
 			fill: #df5c3b;
 		}
+        /* delay */
+        .gantt .bar-delay .bar-delay {
+			fill: blue;
+		}
 
 		/* -- color of progress bar -- */
 		/* work in progress */
@@ -560,6 +564,73 @@
         </div>
         <!-- FRAPPE END -->
 
+        
+        
+        
+        
+        
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detailsModal" style="margin-left: 100px">
+        Trigger
+        </button>
+
+        <!-- Task Details Modal -->
+        @foreach ($allProjectSchedulesWithPhases as $projectSchedule)
+            <div class="modal fade" id="scheduleDetailsModal{{$projectSchedule->scheduleDetails->intScheduleId}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form method="POST" action="/Engineer/Project-Progress/{{$projectSchedule->scheduleDetails->intProjectId}}/Schedule/Save">
+                            {{csrf_field()}}
+
+                            <input type="hidden" name="phasesCount" value="{{count($projectSchedule->schedulePhases)}}">
+                            <input type="hidden" name="scheduleId" value="{{$projectSchedule->scheduleDetails->intScheduleId}}">
+
+                            <div class="modal-header" style="background-color: #4CAF50 !important">
+                                <h5 class="modal-title" id="exampleModalLabel">{{$projectSchedule->scheduleDetails->strWorkSubCategoryDesc}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body scroll" style="height: 450px !important">
+                                @foreach ($projectSchedule->schedulePhases as $phaseKey=>$phase)
+                                    <br>
+                                    <div class="form-group form-inline">
+
+                                        <input type="hidden" name="schedulePhaseId{{$phaseKey}}" value="{{$phase->intSchedulePhasesId}}">
+                                        @if ($phaseKey % 2 != 0)
+                                            <label class="label label-primary"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                        @else
+                                            <label class="label label-success"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                        @endif
+                                        <input type="text" name="" class="form-control" style="width:160px" value="{{$phase->strName}}" disabled>
+                                        &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
+                                        <input type="number" name="schedulePhaseProgress{{$phaseKey}}" class="form-control" style="width:165px" value="{{$phase->intProgress}}"> <br> <br>
+                                        
+                                        <!-- Removed temporarily, are dates needed? -->
+                                        <!--
+                                        <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                        <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
+                                        <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                        <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
+                                        -->
+
+
+                                    </div>
+                                    <hr>
+                                @endforeach
+                            </div>
+                            <div class="modal-footer" style="background-color: #E3FAD4">
+                                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-outline-success">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+        
+        
+        
 
     </div>
         </div>
@@ -667,32 +738,51 @@
     </script>
     <!-- FRAPPE START -->
     <script>
-        var allProjectSchedules = {!!json_encode($allProjectSchedules)!!};
+        var allProjectSchedules = {!!json_encode($allProjectSchedulesWithPhases)!!};
 
-        console.log(allProjectSchedules);
+        console.log(allProjectSchedules[0].scheduleDetails);
 
         var scheduledTasks = [];
 
         for(x = 0; x < allProjectSchedules.length ; x++){
+            //--Logic for computing progress of category
+            var projectProgress = 0;
+            for(i = 0; i < allProjectSchedules[x].schedulePhases.length; i++){
+                projectProgress += allProjectSchedules[x].schedulePhases[i].intProgress;
+            }
+            projectProgress = projectProgress / allProjectSchedules[x].schedulePhases.length;
 
-            if(allProjectSchedules[x]['intDependencyScheduleId'] == null){
+            //--Logic for adding classes
+            projectCustomClasses = 'bar-normal bar-overdue bar-delay ';
+            //WIP OR COMPLETED
+            projectCustomClasses += (projectProgress == 100 ? 'progress-completed ' : 'progress-wip ');
+
+
+
+            //--For displaying
+            //If task is dependent to other tasks or not
+            if(allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] == null){
                 task = {
-                    start: allProjectSchedules[x]['dtmEstimatedStart'],
-                    end: allProjectSchedules[x]['dtmEstimatedEnd'],
-                    name: allProjectSchedules[x]['strWorkSubCategoryDesc'],
-                    id: allProjectSchedules[x]['intScheduleId'],
-                    custom_class: 'progress-wip bar-normal bar-overdue',
-                    overdue: allProjectSchedules[x]['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
+                    start: allProjectSchedules[x].scheduleDetails['dtmActualStart'], //Since wala kang dependency, di ka madedelay
+                    end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
+                    name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
+                    id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
+                    custom_class: projectCustomClasses,
+                    progress: projectProgress,
+                    delay: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if first is null/undefined, then assign second value
                 };
             }else{
                 task = {
-                    start: allProjectSchedules[x]['dtmEstimatedStart'],
-                    end: allProjectSchedules[x]['dtmEstimatedEnd'],
-                    name: allProjectSchedules[x]['strWorkSubCategoryDesc'],
-                    id: allProjectSchedules[x]['intScheduleId'],
-                    custom_class: 'progress-wip bar-normal bar-overdue',
-                    overdue: allProjectSchedules[x]['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
-                    dependencies: [ allProjectSchedules[x]['intDependencyScheduleId'] ]
+                    start: allProjectSchedules[x].scheduleDetails['dtmActualStart'] || allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'], //code: if first is null/undefined, then assign second value ; For Delay
+                    end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
+                    name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
+                    id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
+                    custom_class: projectCustomClasses,
+                    progress: projectProgress,
+                    delay: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if first is null/undefined, then assign second value
+                    dependencies: [ allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] ]
                 };
             }
 
@@ -983,7 +1073,8 @@
         
 		var gantt_chart = new Gantt(".gantt-target", tasks, {
 			on_click: function (task) {
-				console.log(task);
+				console.log(task.id);
+                $("#scheduleDetailsModal"+task.id).modal("show");
 			},
 			on_date_change: function(task, start, end) {
 				console.log(task, start, end);
@@ -994,7 +1085,9 @@
 			on_view_change: function(mode) {
 				console.log(mode);
 			},
-            view_mode:'Day'
+            view_mode:'Day',
+            /* custom options */
+			bar_progress_height_percentage: 40,
 		});
 		console.log(gantt_chart);
 	</script>
