@@ -4623,35 +4623,12 @@
                                             </div>
                                         </div>
 
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingEighteen">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen" aria-expanded="false"
-                                                        aria-controls="collapseEighteen">
-                                                        Plumbing Works
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseEighteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEighteen">
-                                                <div class="accordion-content accordion-desc">
-                                                    <p>
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                                        text ever since the 1500s, when an unknown printer took a galley
-                                                        of type and scrambled it to make a type specimen book. It has survived
-                                                        not only five centuries, but also the leap into electronic typesetting,
-                                                        remaining essentially unchanged. It was popularised in the 1960s
-                                                        with the release of Letraset sheets containing Lorem Ipsum passages,
-                                                        and more recently with desktop publishing software like Aldus PageMaker
-                                                        including versions of Lorem Ipsum.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                     
 
                                         <div class="accordion-panel">
                                             <div class=" accordion-heading" role="tab" id="headingNineteen">
                                                 <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen" aria-expanded="false"
+                                                    <a class="accordion-msg table-active" data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen" aria-expanded="false"
                                                         aria-controls="collapseNineteen">
                                                         Tiles
                                                     </a>
