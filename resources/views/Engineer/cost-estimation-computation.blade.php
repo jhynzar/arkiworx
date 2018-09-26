@@ -1181,6 +1181,7 @@
                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 12)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Contigency" name="Contigency" style="width: 200px !important;" placeholder="">@endif @endforeach
                                  &nbsp; &nbsp; &nbsp; &nbsp; 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <label class="text text-default"><b>Overhead Profit</b> </label> 
                                 <select style="width: 200px" class="form-control" id="OverheadProfit" > 
                                     <option  value="0.1" selected> 10%</option>
@@ -1192,6 +1193,16 @@
                                    
                                     &nbsp; &nbsp; &nbsp;
 >>>>>>> ec2edd8de6e4e986455b0c3ef6603b4402701db2
+=======
+                                    <label class="text text-default"><b>Overhead Profit</b> </label> 
+                                <select style="width: 200px" class="form-control" id="overheadProfit" > 
+                                    <option  value="0.1" selected> 10%</option>
+                                    <option value="0.2"> 20% </option>
+                                    
+                                    </select> 
+                                    <input type="hidden" id="OverheadProfit" name="OverheadProfit" value="">
+                                    &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
+>>>>>>> 76921174313eb614005c38277d068f5b2f3facf4
                                     <button type="button" class="btn btn-success" id="ComputeGeneralReq" >Compute</button>
                                     
                                     
@@ -3097,10 +3108,16 @@
                                                         Roofing
                                                     </a>
                                                 </h3>
-                                            </div>
-                                            <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
-                                                <div class="accordion-content accordion-desc">
-                                                              
+ </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="accordion-content accordion-desc">
+                      
+                      
+                     <!-- Column-->
+                      
+                     <br> 
+                   
+                        
         <div class="row ">
         
           <div class="col-sm-6 col-xs-12"> <br> 
@@ -3109,6 +3126,15 @@
                          <div class="card-block">
                              
                    
+                        <div class="form-group pull-center">
+                                <label for="">Cement Class Mixture:</label>
+                                <select class="form-control" id="ColumnCC" style="width: 160px !important;">
+                                    <option value="1" selected>Class AA </option>
+                                    <option value="2">Class A </option>
+                                    <option value="3">Class B </option>
+                                    <option value="4">Class C </option>
+                                </select>
+                            </div>
                              
                           <div >
                                 <label for="">Volume:</label> <br>
@@ -3299,7 +3325,12 @@
             
             
         </div>
-
+   
+                      
+     <!-- Column ends -->
+                  </div>
+                </div>
+              </div>
                                         <div class="accordion-panel">
                                             <div class=" accordion-heading" role="tab" id="headingEleven">
                                                 <h3 class="card-title accordion-title">
@@ -4840,7 +4871,7 @@
           
           
            
-          <div class="card-block">
+           <div class="card-block">
                                             <div class="table-responsive">
                                             <input type=hidden id="OverallTotalCost1" name="OverallTotalCost" value="">
                                                 <table class="table m-b-0 photo-table">
@@ -4866,7 +4897,7 @@
                                                             
 
                                                         </tr>
-                                                        <hr>
+                                                        
                                                         <tr class="text-uppercase " style="background-color: #ffc551">
                                                             <th class="text-left text-secondary">Grand Total Cost:</th>
                                                          
@@ -4880,14 +4911,16 @@
                                             </div>
                                         </div>  
           
+         
+          
           
           
           
           
           
                         <div class="form-group form-inline">
-                            <a type="button" class="btn btn-outline-success" style="margin-left: 700px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
-                           &nbsp;
+                            <a type="button" class="btn btn-outline-success" style="margin-left: 800px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
+                           
                             <button type="submit" class="btn btn-primary ">Save Estimation</button>
                         </div>
 
