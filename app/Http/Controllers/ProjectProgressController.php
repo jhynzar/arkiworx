@@ -53,7 +53,16 @@ class ProjectProgressController extends Controller
                 $workSubCategoryDetails = DB::table('tblworksubcategory')
                                         ->where('tblworksubcategory.intWorkSubCategoryId','=',$workSubCategoryId->intWorkSubCategoryId)
                                         ->first();
-                array_push($projectWorkSubCategories, $workSubCategoryDetails);
+                
+                $workSubCategoryPhases = DB::table('tblworksubcategoryphases')
+                                        ->where('tblworksubcategoryphases.intWorkSubCategoryId','=',$workSubCategoryId->intWorkSubCategoryId)
+                                        ->get()
+                                        ->toArray();
+
+                array_push($projectWorkSubCategories,(object) [
+                    'workSubCategoryDetails' => $workSubCategoryDetails,
+                    'workSubCategoryPhases' => $workSubCategoryPhases,
+                ]);
             }
 
             $project = (object) [
@@ -86,6 +95,8 @@ class ProjectProgressController extends Controller
             array_push($finishedProjectSchedules,$projectDetails);
         }
 
+        //dd($pendingProjectSchedules);
+
         //pass to view
         return view ('Engineer/project-progress',compact(
             'pendingProjectSchedules',
@@ -111,30 +122,55 @@ class ProjectProgressController extends Controller
      */
     public function store($id)
     {
+        //dd(request()->all());
         //
         $req = request()->all();
 
         //dd($req);
-        $activitiesIds = array();
-        for($x = 0; $x < $req['activitiesCount']; $x++){
-            $subCategoryId = $req['subCategoryId'.$x];
-            $startDate = $req['startDate'.$x];
-            $endDate = $req['endDate'.$x];
-            $dependency = $req['dependency'.$x] == -1 ? null : $activitiesIds[$req['dependency'.$x]];
+        $scheduleIds = array();
+        for($i = 0; $i < $req['subCategoriesCount']; $i++){
+            //schedule
+            $subCategoryId = $req['subCategory'.$i.'id'];
+            $startDate = $req['subCategory'.$i.'startDate'];
+            $endDate = $req['subCategory'.$i.'endDate'];
+            $dependency = $req['subCategory'.$i.'dependency'] == -1 ? null : $scheduleIds[$req['subCategory'.$i.'dependency']];
+            
 
-            $activityId = DB::table('tblschedules')
+            $scheduleId = DB::table('tblschedules')
                         ->insertGetId([
                             'dtmEstimatedStart' => $startDate,
                             'dtmEstimatedEnd' => $endDate,
-                            'dtmActualStart' => null,
+                            'dtmActualStart' => $dependency == null ? $startDate : null, //if not dependent, actualStart will be the same as estimated
                             'dtmActualEnd' => null,
                             'intProjectId' => $id,
                             'intWorkSubCategoryId' => $subCategoryId,
                             'intDependencyScheduleId' => $dependency
                         ]);
-            
-            array_push($activitiesIds,$activityId);
+
+            array_push($scheduleIds,$scheduleId);
+
+            //schedule phases
+            for($j = 0; $j < $req['subCategory'.$i.'phasesCount']; $j++){
+                $phaseId = $req['subCategory'.$i.'phase'.$j.'id'];
+                $phaseStartDate = $req['subCategory'.$i.'phase'.$j.'startDate'];
+                $phaseEndDate = $req['subCategory'.$i.'phase'.$j.'endDate'];
+
+                $schedulePhaseId = DB::table('tblschedulesphases')
+                                ->insertGetId([
+                                    'dtmEstimatedStart' => $phaseStartDate,
+                                    'dtmEstimatedEnd' => $phaseEndDate,
+                                    'dtmActualStart' => null,
+                                    'dtmActualEnd' => null,
+                                    'intProgress' => 0,
+                                    'intScheduleId' => $scheduleId,
+                                    'intWorkSubCategoryPhasesId' => $phaseId,
+                                ]);
+            }
+
+
         }
+
+        //dd(request()->all());
 
         //refresh
         header('Refresh:0;/Engineer/Project-Progress');
@@ -211,5 +247,24 @@ class ProjectProgressController extends Controller
 
         //dd($allProjectSchedulesWithPhases);
         return view ('Engineer/project-progress-schedule',compact(['allProjectSchedulesWithPhases']));
+    }
+
+    public function saveSchedule($id){
+        //dd(request()->all());
+
+        $req = request()->all();
+
+        for($i = 0; $i < $req['phasesCount']; $i++){
+            $schedulePhaseId = $req['schedulePhaseId'.$i];
+            $schedulePhaseProgress = $req['schedulePhaseProgress'.$i];
+
+            $scheduleId = DB::table('tblschedulesphases')
+                        ->where('tblschedulesphases.intSchedulePhasesId','=',$schedulePhaseId)
+                        ->update([
+                            'intProgress' => $schedulePhaseProgress,
+                        ]);
+
+            //TODO
+        }
     }
 }

@@ -199,6 +199,10 @@
 		.gantt .bar-overdue .bar-overdue {
 			fill: #df5c3b;
 		}
+        /* delay */
+        .gantt .bar-delay .bar-delay {
+			fill: blue;
+		}
 
 		/* -- color of progress bar -- */
 		/* work in progress */
@@ -566,97 +570,64 @@
         
         
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detailsModal" style="margin-left: 100px">
-  Trigger
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: #4CAF50 !important">
-        <h5 class="modal-title" id="exampleModalLabel">General Requirements</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detailsModal" style="margin-left: 100px">
+        Trigger
         </button>
-      </div>
-      <div class="modal-body scroll" style="height: 450px !important">
-        <br>
-        
-                                                                                    <div class="form-group form-inline">
-                                                                                            
-                                                                                                    
-                                                                                                <label class="label label-primary"> Phase 1</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                                <input type="text" name="" class="form-control" style="width:160px" placeholder="Permits" disabled> 
-                                                                                                &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
-                                                                                                <input type="number" name="" class="form-control" style="width:165px" placeholder="20%" > <br> <br>
-                                                                                                <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label> 
-                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
-                                                                                                <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
-                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled >
-                                                                                            
-                                                                                                
-                                                                                        </div>
-                                                                                        <hr>
-                                                                                        <br> 
-                                                                                        <div class="form-group form-inline">
-                                                                                            
-                                                                                                    
-                                                                                                   
-                                                                                                <label class="label label-success"> Phase 2</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                                <input type="text" name="" class="form-control" style="width:160px" placeholder="Permits" disabled> 
-                                                                                                &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
-                                                                                                <input type="number" name="" class="form-control" style="width:165px" placeholder="20%" > <br> <br>
-                                                                                                <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label> 
-                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
-                                                                                                <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
-                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled >
-                                                                                                
-                                                                                        </div> 
-                                                                                        <hr>
-                                                                                     <br> 
-                                                                                        <div class="form-group form-inline">
-                                                                                            
-                                                                                                    
-                                                                                                    
-                                                                                                <label class="label label-primary"> Phase 3</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                                <input type="text" name="" class="form-control" style="width:160px" placeholder="Permits" disabled> 
-                                                                                                &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
-                                                                                                <input type="number" name="" class="form-control" style="width:165px" placeholder="20%" > <br> <br>
-                                                                                                <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label> 
-                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
-                                                                                                <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
-                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled >
-                                                                                                
-                                                                                        </div> <hr>
-          
-           <br> 
-                                                                                        <div class="form-group form-inline">
-                                                                                            
-                                                                                                    
-                                                                                                 
-                                                                                                <label class="label label-success"> Phase 4</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                                <input type="text" name="" class="form-control" style="width:160px" placeholder="Permits" disabled> 
-                                                                                                &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
-                                                                                                <input type="number" name="" class="form-control" style="width:165px" placeholder="20%" > <br> <br>
-                                                                                                <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label> 
-                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
-                                                                                                <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
-                                                                                                <input type="date" id="" name="" class="form-control" style="width:160px" disabled >
-                                                                                            
-                                                                                                
-                                                                                        </div> 
-          
-                                                                                         
-          
-      </div>
-      <div class="modal-footer" style="background-color: #E3FAD4">
-        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-outline-success">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+        <!-- Task Details Modal -->
+        @foreach ($allProjectSchedulesWithPhases as $projectSchedule)
+            <div class="modal fade" id="scheduleDetailsModal{{$projectSchedule->scheduleDetails->intScheduleId}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form method="POST" action="/Engineer/Project-Progress/{{$projectSchedule->scheduleDetails->intProjectId}}/Schedule/Save">
+                            {{csrf_field()}}
+
+                            <input type="hidden" name="phasesCount" value="{{count($projectSchedule->schedulePhases)}}">
+                            <input type="hidden" name="scheduleId" value="{{$projectSchedule->scheduleDetails->intScheduleId}}">
+
+                            <div class="modal-header" style="background-color: #4CAF50 !important">
+                                <h5 class="modal-title" id="exampleModalLabel">{{$projectSchedule->scheduleDetails->strWorkSubCategoryDesc}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body scroll" style="height: 450px !important">
+                                @foreach ($projectSchedule->schedulePhases as $phaseKey=>$phase)
+                                    <br>
+                                    <div class="form-group form-inline">
+
+                                        <input type="hidden" name="schedulePhaseId{{$phaseKey}}" value="{{$phase->intSchedulePhasesId}}">
+                                        @if ($phaseKey % 2 != 0)
+                                            <label class="label label-primary"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                        @else
+                                            <label class="label label-success"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                        @endif
+                                        <input type="text" name="" class="form-control" style="width:160px" value="{{$phase->strName}}" disabled>
+                                        &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
+                                        <input type="number" name="schedulePhaseProgress{{$phaseKey}}" class="form-control" style="width:165px" value="{{$phase->intProgress}}"> <br> <br>
+                                        
+                                        <!-- Removed temporarily, are dates needed? -->
+                                        <!--
+                                        <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                        <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
+                                        <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                        <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
+                                        -->
+
+
+                                    </div>
+                                    <hr>
+                                @endforeach
+                            </div>
+                            <div class="modal-footer" style="background-color: #E3FAD4">
+                                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-outline-success">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        @endforeach
         
         
         
@@ -782,7 +753,7 @@
             projectProgress = projectProgress / allProjectSchedules[x].schedulePhases.length;
 
             //--Logic for adding classes
-            projectCustomClasses = 'bar-normal bar-overdue ';
+            projectCustomClasses = 'bar-normal bar-overdue bar-delay ';
             //WIP OR COMPLETED
             projectCustomClasses += (projectProgress == 100 ? 'progress-completed ' : 'progress-wip ');
 
@@ -792,23 +763,25 @@
             //If task is dependent to other tasks or not
             if(allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] == null){
                 task = {
-                    start: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    start: allProjectSchedules[x].scheduleDetails['dtmActualStart'], //Since wala kang dependency, di ka madedelay
                     end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
                     name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
                     id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
                     custom_class: projectCustomClasses,
                     progress: projectProgress,
-                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
+                    delay: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if first is null/undefined, then assign second value
                 };
             }else{
                 task = {
-                    start: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    start: allProjectSchedules[x].scheduleDetails['dtmActualStart'] || allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'], //code: if first is null/undefined, then assign second value ; For Delay
                     end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
                     name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
                     id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
                     custom_class: projectCustomClasses,
                     progress: projectProgress,
-                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
+                    delay: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if first is null/undefined, then assign second value
                     dependencies: [ allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] ]
                 };
             }
@@ -1100,7 +1073,8 @@
         
 		var gantt_chart = new Gantt(".gantt-target", tasks, {
 			on_click: function (task) {
-				console.log(task);
+				console.log(task.id);
+                $("#scheduleDetailsModal"+task.id).modal("show");
 			},
 			on_date_change: function(task, start, end) {
 				console.log(task, start, end);
