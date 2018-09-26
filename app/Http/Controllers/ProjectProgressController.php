@@ -212,4 +212,23 @@ class ProjectProgressController extends Controller
         //dd($allProjectSchedulesWithPhases);
         return view ('Engineer/project-progress-schedule',compact(['allProjectSchedulesWithPhases']));
     }
+
+    public function saveSchedule($id){
+        //dd(request()->all());
+
+        $req = request()->all();
+
+        for($x = 0; $x < $req['phasesCount']; $x++){
+            $schedulePhaseId = $req['schedulePhaseId'.$x];
+            $schedulePhaseProgress = $req['schedulePhaseProgress'.$x];
+
+            $activityId = DB::table('tblschedulesphases')
+                        ->where('tblschedulesphases.intSchedulePhasesId','=',$schedulePhaseId)
+                        ->update([
+                            'intProgress' => $schedulePhaseProgress,
+                        ]);
+
+            //TODO
+        }
+    }
 }
