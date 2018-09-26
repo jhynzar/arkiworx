@@ -199,6 +199,10 @@
 		.gantt .bar-overdue .bar-overdue {
 			fill: #df5c3b;
 		}
+        /* delay */
+        .gantt .bar-delay .bar-delay {
+			fill: blue;
+		}
 
 		/* -- color of progress bar -- */
 		/* work in progress */
@@ -782,7 +786,7 @@
             projectProgress = projectProgress / allProjectSchedules[x].schedulePhases.length;
 
             //--Logic for adding classes
-            projectCustomClasses = 'bar-normal bar-overdue ';
+            projectCustomClasses = 'bar-normal bar-overdue bar-delay ';
             //WIP OR COMPLETED
             projectCustomClasses += (projectProgress == 100 ? 'progress-completed ' : 'progress-wip ');
 
@@ -792,23 +796,25 @@
             //If task is dependent to other tasks or not
             if(allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] == null){
                 task = {
-                    start: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    start: allProjectSchedules[x].scheduleDetails['dtmActualStart'], //Since wala kang dependency, di ka madedelay
                     end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
                     name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
                     id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
                     custom_class: projectCustomClasses,
                     progress: projectProgress,
-                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
+                    delay: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if first is null/undefined, then assign second value
                 };
             }else{
                 task = {
-                    start: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    start: allProjectSchedules[x].scheduleDetails['dtmActualStart'] || allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'], //code: if first is null/undefined, then assign second value ; For Delay
                     end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
                     name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
                     id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
                     custom_class: projectCustomClasses,
                     progress: projectProgress,
-                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if null/undefined, then assign second value
+                    delay: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
+                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if first is null/undefined, then assign second value
                     dependencies: [ allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] ]
                 };
             }
