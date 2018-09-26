@@ -397,6 +397,7 @@ var Gantt = (function () {
             this.height = this.gantt.options.bar_height;
             this.x = this.compute_x();
             this.y = this.compute_y();
+            this.x_delay = this.compute_x_delay(); /* added */
             this.corner_radius = this.gantt.options.bar_corner_radius;
             this.duration =
                 date_utils.diff(this.task._end, this.task._start, 'hour') /
@@ -404,6 +405,11 @@ var Gantt = (function () {
             this.width = this.gantt.options.column_width * this.duration;
 
             /* [added] */
+            this.delay_duration = 
+                date_utils.diff(this.task._end, this.task._delay, 'hour') /
+                this.gantt.options.step;
+            this.delay_width = this.gantt.options.column_width * this.delay_duration;
+
             this.overdue_duration =
                 date_utils.diff(this.task._overdue, this.task._start, 'hour') /
                 this.gantt.options.step;
@@ -447,6 +453,7 @@ var Gantt = (function () {
 
         draw() {
             /* [added] */
+            this.draw_delay_bar();
             this.draw_overdue_bar();
             /* [added] end */
             this.draw_bar();
@@ -456,6 +463,24 @@ var Gantt = (function () {
         }
 
         /* [added] */
+        draw_delay_bar() {
+            this.$bar_delay = createSVG('rect', {
+                x: this.x_delay,
+                y: this.y,
+                width: this.delay_width,
+                height: this.height,
+                rx: this.corner_radius,
+                ry: this.corner_radius,
+                class: 'bar-delay',
+                append_to: this.bar_group
+            });
+    
+            animateSVG(this.$bar_delay, 'width', 0, this.delay_width);
+    
+            if (this.invalid) {
+                this.$bar_delay.classList.add('bar-invalid');
+            }
+        }
         draw_overdue_bar() {
             this.$bar_overdue = createSVG('rect', {
                 x: this.x,
@@ -725,6 +750,22 @@ var Gantt = (function () {
             }
             return x;
         }
+        /* added */
+        compute_x_delay() {
+            const { step, column_width } = this.gantt.options;
+            const task_delay = this.task._delay;
+            const gantt_start = this.gantt.gantt_start;
+    
+            const diff = date_utils.diff(task_delay, gantt_start, 'hour');
+            let x = diff / step * column_width;
+    
+            if (this.gantt.view_is('Month')) {
+                const diff = date_utils.diff(task_delay, gantt_start, 'day');
+                x = diff * column_width / 30;
+            }
+            return x;
+        }
+        /* added end */
 
         compute_y() {
             return (
@@ -1068,6 +1109,7 @@ var Gantt = (function () {
 
                 /* [added] */
                 task._overdue = date_utils.parse(task.overdue);
+                task._delay = date_utils.parse(task.delay);
                 /* [added] end */
 
                 // make task invalid if duration too large
@@ -1104,6 +1146,13 @@ var Gantt = (function () {
                 if (task_overdue_values.slice(3).every(d => d === 0)) {
                     task._overdue = date_utils.add(task._overdue, 24, 'hour');
                 }
+                /* never mind adding 24 hour value in delay */
+                /*
+                const task_delay_values = date_utils.get_date_values(task._delay);
+                if (task_delay_values.slice(3).every(d => d === 0)) {
+                    task._delay = date_utils.add(task._delay, 24, 'hour');
+                }
+                */
                 /* [added] end */
 
                 // invalid flag
