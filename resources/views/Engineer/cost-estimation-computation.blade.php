@@ -3113,7 +3113,7 @@
                                                     </a>
                                                 </h3>
  </div>
-                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
                   <div class="accordion-content accordion-desc">
                       
                       
@@ -3130,15 +3130,6 @@
                          <div class="card-block">
                              
                    
-                        <div class="form-group pull-center">
-                                <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="ColumnCC" style="width: 160px !important;">
-                                    <option value="1" selected>Class AA </option>
-                                    <option value="2">Class A </option>
-                                    <option value="3">Class B </option>
-                                    <option value="4">Class C </option>
-                                </select>
-                            </div>
                              
                           <div >
                                 <label for="">Volume:</label> <br>
