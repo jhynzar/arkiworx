@@ -582,7 +582,7 @@
                         <form method="POST" action="/Engineer/Project-Progress/{{$projectSchedule->scheduleDetails->intProjectId}}/Schedule/Save">
                             {{csrf_field()}}
 
-                            <input type="hidden" name="phasesCount" value="{{count($projectSchedule->schedulePhases)}}">
+                            <!-- input type hidden -->
                             <input type="hidden" name="scheduleId" value="{{$projectSchedule->scheduleDetails->intScheduleId}}">
 
                             <div class="modal-header" style="background-color: #4CAF50 !important">
@@ -592,27 +592,36 @@
                                 </button>
                             </div>
                             <div class="modal-body scroll" style="height: 450px !important">
+                                <!-- input type hidden -->
+                                <input type="hidden" name="phasesCount" value="{{count($projectSchedule->schedulePhases)}}">
                                 @foreach ($projectSchedule->schedulePhases as $phaseKey=>$phase)
+
+                                    <!-- input type hidden -->
+                                    <input type="hidden" name="schedulePhase{{$phaseKey}}id" value="{{$phase->intSchedulePhasesId}}">
+
                                     <br>
                                     <div class="form-group form-inline">
-
-                                        <input type="hidden" name="schedulePhaseId{{$phaseKey}}" value="{{$phase->intSchedulePhasesId}}">
+                                        
                                         @if ($phaseKey % 2 != 0)
                                             <label class="label label-primary"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
                                         @else
                                             <label class="label label-success"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
                                         @endif
-                                        <input type="text" name="" class="form-control" style="width:160px" value="{{$phase->strName}}" disabled>
+                                        <input type="text" name="" class="form-control" style="width:160px" value="{{$phase->strName}}" readonly>
                                         &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
-                                        <input type="number" name="schedulePhaseProgress{{$phaseKey}}" class="form-control" style="width:165px" value="{{$phase->intProgress}}"> <br> <br>
+                                        <input type="number" name="schedulePhase{{$phaseKey}}progress"  value="{{$phase->intProgress}}" min="{{$phase->intProgress}}" max="100" class="form-control" style="width:165px"> <br> <br>
                                         
-                                        <!-- Removed temporarily, are dates needed? -->
-                                        <!--
-                                        <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
-                                        <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
-                                        <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
-                                        <input type="date" id="" name="" class="form-control" style="width:160px" disabled>
-                                        -->
+                                        
+                                        <label for="sex">Estimated Dates <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                        <input type="date" name="schedulePhase{{$phaseKey}}estimatedStartDate" value="{{$phase->dtmEstimatedStart}}" class="form-control" style="width:160px" readonly>
+                                        <label for="sex">To</label>
+                                        <input type="date" name="schedulePhase{{$phaseKey}}estimatedEndDate" value="{{$phase->dtmEstimatedEnd}}" class="form-control" style="width:160px" readonly>
+
+                                        <label for="sex">Actual Dates <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                        <input type="date" name="schedulePhase{{$phaseKey}}actualStartDate" value="{{$phase->dtmActualStart}}" class="form-control" style="width:160px" readonly>
+                                        <label for="sex">To</label>
+                                        <input type="date" name="schedulePhase{{$phaseKey}}actualEndDate" value="{{$phase->dtmActualEnd}}" class="form-control" style="width:160px" readonly>
+                                        
 
 
                                     </div>
@@ -763,7 +772,7 @@
             //If task is dependent to other tasks or not
             if(allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] == null){
                 task = {
-                    start: allProjectSchedules[x].scheduleDetails['dtmActualStart'], //Since wala kang dependency, di ka madedelay
+                    start: allProjectSchedules[x].scheduleDetails['dtmActualStart'] || allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'], //code: if first is null/undefined, then assign second value ; For Delay
                     end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
                     name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
                     id: allProjectSchedules[x].scheduleDetails['intScheduleId'],

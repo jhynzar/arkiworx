@@ -4,7 +4,7 @@
 <style>
 
 .scroll {
-    max-height: 450px;
+    max-height: 400px;
     overflow-y: auto;
     
    
@@ -430,7 +430,7 @@
 
                                         </div>
                                         <!-- end of card-header  -->
-                                        <div class="row">
+                                        <div class="row scroll">
                                             <div class="col-lg-12">
                                                 <div class="project-table">
                                                     <div class="table-responsive">
@@ -467,13 +467,9 @@
 
 
 
-                                                                                <button type="button" data-toggle="modal" data-target="#createProjectScheduleOld{{$projectKey}}" class="btn btn-primary waves-effect waves-light"
-                                                                                    data-toggle="tooltip" data-placement="top" title="Create">
-                                                                                    <i class="icon-note"> </i>Create Project Schedule
-                                                                                </button>
                                                                                     <!-- Button trigger modal -->
                                                                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createProjectSchedule{{$projectKey}}">
-                                                                                    New
+                                                                                    <i class="icon-note"> </i>Create Project Schedule
                                                                                     </button>
 
 
@@ -519,9 +515,12 @@
                                                                                             <div class="panel panel-default">
                                                                                                 <div class="panel-heading " style="background-color: #059CF9; color: white">
                                                                                                     <h3 class="panel-title panel-primary">{{$subCategory->workSubCategoryDetails->strWorkSubCategoryDesc}}</h3>
-                                                                                                    <div class="form-group form-inline" style="position: absolute; margin-top: -40px; margin-left: 600px">
+                                                                                                    <div class="form-group form-inline" style="position: absolute; margin-top: -40px; margin-left: 150px">
+                                                                                                         <input type="date" id="subCategory{{$subCategoryKey}}startDate" name="subCategory{{$subCategoryKey}}startDate" class="form-control" style="width:160px" readonly>
+                                                                                                        <input type="date" id="subCategory{{$subCategoryKey}}endDate" name="subCategory{{$subCategoryKey}}endDate" class="form-control" style="width:160px" readonly>
+                                                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                                                         <label style="color:white"><span class="label label-default">DEPENDENCIES</span> <i class="icon-organization text text-light"></i>&nbsp;:&nbsp;</label>
-                                                                                                        <select onchange="{
+                                                                                                        <select style="width: 100px; " onchange="{
                                                                                                             if(this.value != -1){
                                                                                                                 fromDate = $('#createProjectSchedule'+{{$projectKey}}+' #subCategory'+this.value+'endDate');
                                                                                                                 thisDate = $('#createProjectSchedule'+{{$projectKey}}+' #subCategory'+{{$subCategoryKey}}+'startDate');
@@ -548,13 +547,16 @@
                                                                                                             @endif
             
                                                                                                         </select>
+                                                                                                    
+                                                                                                    
+                                                                                                   
+                                                                                                       
+                                                                                                    
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="panel-body" style="background-color: #C7E9FE">
                                                                                                     <div class="form-group form-inline">
 
-                                                                                                        <input type="date" id="subCategory{{$subCategoryKey}}startDate" name="subCategory{{$subCategoryKey}}startDate" class="form-control" style="width:180px" readonly>
-                                                                                                        <input type="date" id="subCategory{{$subCategoryKey}}endDate" name="subCategory{{$subCategoryKey}}endDate" class="form-control" style="width:180px" readonly>
                                                                                                         
                                                                                                         <!-- input type hidden -->
                                                                                                         <input type="hidden" name="subCategory{{$subCategoryKey}}phasesCount" value="{{count($subCategory->workSubCategoryPhases)}}">
@@ -721,8 +723,8 @@
                                         </div>
                                         <!-- end of card-header  -->
                                         <!-- Row start -->
-                                         <div class="row">
-                                            <div class="col-lg-12">
+                                         <div class="row scroll">
+                                            <div class="col-lg-12 ">
                                                 <div class="project-table">
                                                     <div class="table-responsive">
                                                         <table class="table">
