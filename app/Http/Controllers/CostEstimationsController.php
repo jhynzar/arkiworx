@@ -20,7 +20,7 @@ class CostEstimationsController extends Controller
             DB::table('tblproject')
             ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
             ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
-            ->where('tblproject.intEmployeeId','=','777')//EMPLOYEE ID
+            //->where('tblproject.intEmployeeId','=','666')//EMPLOYEE ID
             ->where('tblproject.strProjectStatus','=','pending')
             ->orderBy('tblproject.intProjectId','desc')
             ->get();

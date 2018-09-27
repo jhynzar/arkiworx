@@ -3095,10 +3095,16 @@
                                                         Roofing
                                                     </a>
                                                 </h3>
-                                            </div>
-                                            <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
-                                                <div class="accordion-content accordion-desc">
-                                                              
+ </div>
+                <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+                  <div class="accordion-content accordion-desc">
+                      
+                      
+                     <!-- Column-->
+                      
+                     <br> 
+                   
+                        
         <div class="row ">
         
           <div class="col-sm-6 col-xs-12"> <br> 

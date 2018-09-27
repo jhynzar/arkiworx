@@ -603,8 +603,8 @@
                                                     <th class="text-center"></th>
 
 
-                                                    <th class="text-center text-primary"> {{$totalEstimatedCost}}</th>
-                                                    <th class="text-center text-primary">{{$totalActualsCost}}</th>
+                                                    <th class="text-center text-primary"> {{number_format($totalEstimatedCost,2)}}</th>
+                                                    <th class="text-center text-primary">{{number_format($totalActualsCost,2)}}</th>
 
 
                                                 </tr>
