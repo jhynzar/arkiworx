@@ -813,14 +813,68 @@
                 var delay;
                 var overdue;
 
-                start = actualStart == null ? new Date() : new Date(actualStart);
+                /* ===[GETTING DETAILS]=== */
+
+                /* ===[GETTING DETAILS] END=== */
+
+
+                /* ===[DELAY]=== */
+                delay = new Date(estimatedStart); //fixed, don't change
+                /* ===[DELAY] END=== */
+
+                /* ===[START]=== */
+
+                //if there is no set actualStart where should I be?
+                if(actualStart == null){
+                    //IM FREE. actual Start is today!
+                    start = new Date();
+                    //today is actual start
+                }else{
+                    //if there is, set it.
+                    start = new Date(actualStart);
+                }
+
+                /* ===[START] END=== */
+
                 
-                end = addDate(new Date(start),dateDifference(new Date(estimatedEnd),new Date(estimatedStart)));
+                /* ===[END]=== */
 
-                overdue = actualEnd == null ? new Date() : new Date(actualEnd);
+                supposedEnd = addDate(new Date(start),dateDifference(new Date(estimatedEnd),new Date(estimatedStart)));
+                
+                //if actualEnd is alreadySet and is earlier than my supposedEnd, cut it
+                if(
+                    (actualEnd != null) &&
+                    ((new Date(actualEnd)).getTime() < supposedEnd.getTime())
+                ){
+                    end = new Date(actualEnd);
+                }else{
+                    end = supposedEnd
+                }
 
-                //delay is fixed
-                delay = new Date(estimatedStart);
+                /* ===[END] END=== */
+
+                /* ===[OVERDUE]=== */
+
+                //if overdue is null, where should I be?
+                if(actualEnd == null){
+                    //if today is less than start of task, overdue will be the start
+                    if((new Date()).getTime() < start.getTime()){
+                        overdue = new Date(start);
+                    }else{
+                        //else overdue is today
+                        overdue = new Date();
+                    }
+                }else{
+                    //else if there is an actual end, set it
+                    overdue = new Date(actualEnd);
+                }
+
+                /* ===[OVERDUE] END=== */
+
+
+                
+
+                //overdue = actualEnd == null ? new Date() : new Date(actualEnd);
 
                 //format date
                 start = formatDate(start);
@@ -856,51 +910,96 @@
                 var delay;
                 var overdue;
 
-                start = actualStart == null ? null : new Date(actualStart);
+                /* ===[GETTING DETAILS]=== */
 
-                //check the difference between start of this, and end of dependency
-                if(start == null){
-                    var dependencyId = allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'];
+                //is before me already done?
+                var dependencyId = allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'];
 
-
-                    var dependencyOverdueDateString;
-                    for(i = 0; i < scheduledTasks.length; i++){
-                        if(scheduledTasks[i].id == dependencyId){
-                            dependencyOverdueDateString = scheduledTasks[i].overdue;
-                            break;
-                        }
+                //get parentSchedule
+                var parentSchedule;
+                for(i = 0; i < allProjectSchedules.length ; i++){
+                    if(allProjectSchedules[i].scheduleDetails['intScheduleId'] == dependencyId){
+                        parentSchedule = allProjectSchedules[i];
+                        break;
                     }
-
-
-                    var dependencyEstimatedEndDateString;
-                    for(i = 0; i < allProjectSchedules.length ; i++){
-                        if(allProjectSchedules[i].scheduleDetails['intScheduleId'] == dependencyId){
-                            dependencyEstimatedEndDateString = allProjectSchedules[i].scheduleDetails['dtmEstimatedEnd'];
-                            break;
-                        }
-                    }
-
-                    start = addDate(new Date(dependencyOverdueDateString),dateDifference(new Date(dependencyEstimatedEndDateString),new Date(estimatedStart)));
                 }
 
-                
-                end = addDate(new Date(start),dateDifference(new Date(estimatedEnd),new Date(estimatedStart)));
+                //get parentTask
+                var parentTask;
+                for(i = 0; i < scheduledTasks.length; i++){
+                    if(scheduledTasks[i].id == dependencyId){
+                        parentTask = scheduledTasks[i];
+                        break;
+                    }
+                }
 
-                //overdue checker
-                if(actualEnd == null){
-                    if((new Date()).getTime() < end.getTime()){
-                        overdue = new Date(end);
+                /* ===[GETTING DETAILS] END=== */
+
+
+                /* ===[DELAY]=== */
+                delay = new Date(estimatedStart); //fixed, don't change
+                /* ===[DELAY] END=== */
+
+                /* ===[START]=== */
+
+                //if there is no set actualStart where should I be?
+                if(actualStart == null){
+
+                    //if not yet done, I'm locked to following it.
+                    if(parentSchedule.scheduleDetails['dtmActualEnd'] == null){
+                        //My temporary ActualStartDate is my dependency Overdue
+                        //set the start to the overdue of the parent
+                        start = addDate(new Date(parentTask.overdue),dateDifference(new Date(parentSchedule.scheduleDetails['dtmEstimatedEnd']),new Date(estimatedStart)));
                     }else{
+                        //if already done, IM FREE. actual Start is today!
+                        start = new Date();
+                    }
+                }else{
+                    //if there is, set it.
+                    start = new Date(actualStart);
+                }
+
+                /* ===[START] END=== */
+
+                
+                /* ===[END]=== */
+
+                supposedEnd = addDate(new Date(start),dateDifference(new Date(estimatedEnd),new Date(estimatedStart)));
+                
+                //if actualEnd is alreadySet and is earlier than my supposedEnd, cut it
+                if(
+                    (actualEnd != null) &&
+                    ((new Date(actualEnd)).getTime() < supposedEnd.getTime())
+                ){
+                    end = new Date(actualEnd);
+                }else{
+                    end = supposedEnd
+                }
+
+                /* ===[END] END=== */
+
+                /* ===[OVERDUE]=== */
+
+                //if overdue is null, where should I be?
+                if(actualEnd == null){
+                    //if today is less than start of task, overdue will be the start
+                    if((new Date()).getTime() < start.getTime()){
+                        overdue = new Date(start);
+                    }else{
+                        //else overdue is today
                         overdue = new Date();
                     }
                 }else{
+                    //else if there is an actual end, set it
                     overdue = new Date(actualEnd);
                 }
 
-                //overdue = actualEnd == null ? new Date() : new Date(actualEnd);
+                /* ===[OVERDUE] END=== */
 
-                //delay is fixed
-                delay = new Date(estimatedStart);
+
+                
+
+                //overdue = actualEnd == null ? new Date() : new Date(actualEnd);
 
                 //format date
                 start = formatDate(start);
