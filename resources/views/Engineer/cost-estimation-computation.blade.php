@@ -1095,17 +1095,7 @@
             
           </div>
             
-            
-            
-            
-            
-            
-           
-            
-            
-            
-            
-          <div class="card-block accordion-block scroll ">
+          <div class="card-block accordion-block ">
             
                     <div class="col-lg-12"> 
                         <div class="card" style="margin-top: 30px" >
@@ -1144,64 +1134,54 @@
                             <div class="row">
                                 <div class="form-group form-inline">
                            
-                            
-    
                                 <label class="text text-default"><b>Permit</b> </label>  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-                                <input type="number" class="form-control" value="50000" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input type="number" class="form-control" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
                                      &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> DENR <span class="text text-primary"><i>Optional</i></span></label>  &nbsp; 
-                                <input type="number" class="form-control" value="30000" id="DENR" name="WorkersBarracks" style="width: 100px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 2)<input type="number" class="form-control" value="{{ $record -> cost }}" id="DENR" name="DENR" style="width: 100px !important;" placeholder="">@endif @endforeach
                                  
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Temporary Facilities</label>
-                                <input type="number" class="form-control" value="10000" id="TemporaryFacilities" name="TemporaryFacilities" style="width: 100px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 3)<input type="number" class="form-control" value="{{ $record -> cost }}" id="TemporaryFacilities" name="TemporaryFacilities" style="width: 100px !important;" placeholder="">@endif @endforeach
                                      &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Workers' Barracks</label>
-                                <input type="number" class="form-control" value="10000" id="WorkersBarracks" name="WorkersBarracks" style="width: 100px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 4)<input type="number" class="form-control" value="{{ $record -> cost }}" id="WorkersBarracks" name="WorkersBarracks" style="width: 100px !important;" placeholder="">@endif @endforeach
  &nbsp; &nbsp; &nbsp; &nbsp; 
                                  <br> <br>
                                  
                                <label class="text text-default"><b>Earthworks</b> </label>  <br><br>
                                     <label> Excavation</label>
-                                <input type="number" class="form-control" value="225" id="Excavation" name="Excavation" style="width: 150px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 5)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Excavation" name="Excavation" style="width: 150px !important;" placeholder="">@endif @endforeach
                                     
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> Backfill</label>
-                                <input type="number" class="form-control" value="225" id="Backfill" name="Backfill" style="width: 150px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 6)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Backfill" name="Backfill" style="width: 150px !important;" placeholder="">@endif @endforeach
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                      <label> Lastillas</label>
-                                <input type="number" class="form-control" value="800" id="Lastillas" name="Lastillas" style="width: 150px !important;" placeholder="Optional">
+                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 7)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Lastillas" name="Lastillas" style="width: 150px !important;" placeholder="Optional">@endif @endforeach
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                      <label> Soil Poisoning</label>
-                                <input type="number" class="form-control" value="56000" id="SoilPoisoning" name="SoilPoisoning" style="width: 150px !important;" placeholder="Optional">
+                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 8)<input type="number" class="form-control" value="{{ $record -> cost }}" id="SoilPoisoning" name="SoilPoisoning" style="width: 150px !important;" placeholder="Optional">@endif @endforeach
                                  
                                     <br> <br> <br> <br>
-                         
-                                
                                  <label class="text text-default"><b>Labor Cost</b> </label>  
-                                <input type="number" class="form-control"  value="1122872.60"  id="LaborCost" name="LaborCost" style="width: 180px !important;" placeholder="">
+                                 @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 9)<input type="number" class="form-control"  value="{{ $record -> cost }}"  id="LaborCost" name="LaborCost" style="width: 180px !important;" placeholder="">@endif @endforeach
                                     
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Tools and Equipments</b> </label>  
-                                <input type="number" class="form-control" value="50000" id="ToolsEquipments" name="ToolsEquipments" style="width: 180px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 10)<input type="number" class="form-control" value="{{ $record -> cost }}" id="ToolsEquipments" name="ToolsEquipments" style="width: 180px !important;" placeholder="">@endif @endforeach
                                     &nbsp; &nbsp; &nbsp; &nbsp; 
                                      <label class="text text-default"><b>Transportation</b> </label>  
-                                <input type="number" class="form-control"  value="50000"  id="Transportation" name="Transportation" style="width: 180px !important;" placeholder="">
+                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 11)<input type="number" class="form-control"  value="{{ $record -> cost }}"  id="Transportation" name="Transportation" style="width: 180px !important;" placeholder="">@endif @endforeach
                                  
                                      <br> <br> <br> <br>
                                     <label class="text text-default"><b>Contingency</b> </label> 
-                                <input type="number" class="form-control" value="104453.28" id="Contigency" name="Contigency" style="width: 200px !important;" placeholder="">
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 12)<input type="number" class="form-control" value="{{ $record -> cost }}" id="Contigency" name="Contigency" style="width: 200px !important;" placeholder="">@endif @endforeach
                                  &nbsp; &nbsp; &nbsp; &nbsp; 
-                                    <label class="text text-default"><b>Overhead Profit</b> </label> 
-                                <select style="width: 200px" class="form-control" id="overheadProfit" > 
-                                    <option  value="0.1" selected> 10%</option>
-                                    <option value="0.2"> 20% </option>
-                                    
-                                    </select> 
-                                    <input type="hidden" id="OverheadProfit" name="OverheadProfit" value="">
-                                    &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
+                                   
+                                    &nbsp; &nbsp; &nbsp;
                                     <button type="button" class="btn btn-success" id="ComputeGeneralReq" >Compute</button>
                                     
                                     
@@ -1223,13 +1203,13 @@
 
                                     <div class="card-block">
                                             <div class="table-responsive">
-                                            <input type=hidden id="totalGeneralReq1" name="totalGeneralReq" value="1715709.06">
+                                            <input type=hidden id="totalGeneralReq1" name="totalGeneralReq" value="0">
                                                 <table class="table m-b-0 photo-table">
                                                     <thead>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-primary">Total Cost:</th>
                                                          
-                                                            <th class="text-center text-primary" id="totalGeneralReq"> 1715709.06 </th>
+                                                            <th class="text-center text-primary" id="totalGeneralReq">  </th>
                                                             
 
                                                         </tr>
@@ -1253,10 +1233,13 @@
                   </div>
                 </div>
               </div>
-                                
-                                
-                                
-                                
+              
+              @foreach ( $TemplateArray2 as $key=>$record )
+            <input type="hidden" id="CategoryId{{ $record -> id }}"             name="CategoryId{{ $record -> id }}"    value='{{ $record -> category }}'>
+            <input type="hidden" id="MaterialId{{ $record -> id }}"             name="MaterialId{{ $record -> id }}"    value='{{ $record -> material }}'>
+            <input type="hidden" id="Quantity{{ $record -> id }}"               name="Quantity{{ $record -> id }}"      value='{{ $record -> qty }}'>
+            <input type="hidden" id="Cost{{ $record -> id }}"                   name="Cost{{ $record -> id }}"          value='{{ $record -> cost }}'>
+            @endforeach
                                 
               <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingOne">
@@ -1303,11 +1286,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="ColumnThickness" style="width: 80px !important;" >
+                            <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" value=1.16>
                             <label >Width:</label>
-                            <input type="" class="form-control" id="ColumnWidth" style="width: 80px !important;" >
+                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;" value=1.16>
                             <label >Length:</label>
-                            <input type="" class="form-control" id="ColumnLength" style="width: 80px !important;" >
+                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;" value=1.16>
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -1315,7 +1298,7 @@
                                  <br>
                                  <div class="form-group">
                                 <label> Number of bars per Column:</label>
-                                <input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" >
+                                <input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" value=4>
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
@@ -1323,17 +1306,13 @@
                                     <option value="6" selected>6 meters </option>
                                     <option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
-                                    <option value="12" >12 meters </option>
+                                    <option value="12">12 meters </option>
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" id="ColumnsBarSize" style="width: 150px !important;">
-                                    <option value=6 selected>6 mm</option>
+                                <select class="form-control" id="ColumnsBarSize" style="width: 170px !important;">
+                                    <option value=6 >6 mm</option>
                                     <option value=10>10 mm </option>
-                                    <option value=12>12 mm </option>
-                                    <option value=16>16 mm </option>
-                                    <option value=20>20 mm </option>
-                                    <option value=22>22 mm </option>
-                                    <option value=25>25 mm </option>
+                                    <option value=12 selected>12 mm </option>
                                 </select>
                             </div> <br> <br>
                                  
@@ -1341,13 +1320,9 @@
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
                                 <select class="form-control" id="ColumnsTieBarSize" style="width: 150px !important;">
-                                    <option value=6 selected>6 mm</option>
-                                    <option value=10>10 mm </option>
+                                    <option value=6 >6 mm</option>
+                                    <option value=10 selected>10 mm </option>
                                     <option value=12>12 mm </option>
-                                    <option value=16>16 mm </option>
-                                    <option value=20>20 mm </option>
-                                    <option value=22>22 mm </option>
-                                    <option value=25>25 mm </option>
                                 </select>
                                      <label for="">Tie wire:</label>
                                 <select class="form-control" id="ColumnsTieWire" style="width: 140px !important;">
@@ -1360,7 +1335,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;">
+                                <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;" value=1>
                                 <button type="button" id="computeColumn" class="btn" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -1389,46 +1364,53 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 1)    
                                         <tr class="table-success">
-                                            <td id="ColumnCement">cement 40kg</td>
-                                            <td id="ColumnCementBag">14</td>
-                                            <td id="ColumnCementCost">3290</td>
+                                            <td id="ColumnCement"> {{ $record -> materialName }} </td> 
+                                            <td id="ColumnCementBag"> {{ $record -> qty }} </td>
+                                            <td id="ColumnCementCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 2)    
                                         <tr>
-                                            <td id="ColumnS">sand</td>
-                                            <td id="ColumnSand">.80</td>
-                                            <td id="ColumnSandCost">640</td>
+                                            <td id="ColumnS"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnSand"> {{ $record -> qty }} </td>
+                                            <td id="ColumnSandCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 3)    
                                         <tr class="table-warning">
-                                            <td id="ColumnG">gravel</td>
-                                            <td id="ColumnGravel">1.50</td>
-                                            <td id="ColumnGravelCost">2250</td>
+                                            <td id="ColumnG"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnGravel"> {{ $record -> qty }} </td>
+                                            <td id="ColumnGravelCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 4)    
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id="ColumnSteelBar">Main bars-12mmØ</td>
-                                            <td id="ColumnSteelBarQty">36</td>
-                                            <td id="ColumnSteelBarCost">6552</td>
+                                            <td id="ColumnSteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnSteelBarQty"> {{ $record -> qty }} </td>
+                                            <td id="ColumnSteelBarCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 5)    
                                             <tr>
-                                            <td id="ColumnTieBar">ties/stirrups bars-10mmØ</td>
-                                            <td id="ColumnTieBarQty">24</td>
-                                            <td id="ColumnTieBarCost">2928</td>
+                                            <td id="ColumnTieBar"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnTieBarQty"> {{ $record -> qty }} </td>
+                                            <td id="ColumnTieBarCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 6)    
                                         <tr class="table-warning">
-                                            <td id="ColumnTieWire">Tie wire</td>
-                                            <td id="ColumnTieWireKg">6</td>
-                                            <td id="ColumnTieWireCost">360</td>
+                                            <td id="ColumnTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="ColumnTieWireKg"> {{ $record -> qty }} </td>
+                                            <td id="ColumnTieWireCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
                                       
                                         </tbody>
                                     </table>
+                                    <!---
                                     <input type="hidden" id="ColumnCement1"             name="ColumnCement" value='1'>
                                     <input type="hidden" id="ColumnCementBag1"          name="ColumnCementBag" value='14.00'>
                                     <input type="hidden" id="ColumnCementCost1"         name="ColumnCementCost" value='3290'>
@@ -1448,6 +1430,7 @@
                                     <input type="hidden" id="ColumnTieWireKg1"          name="ColumnTieWireKg" value='6'>
                                     <input type="hidden" id="ColumnTieWireCost1"        name="ColumnTieWireCost" value='360'>
                                     <input type="hidden" id="ColumnTotalCost1"          name="ColumnTotalCost" value='16020'>
+                                    --->
                                 </div>
                                 
                                
@@ -1614,40 +1597,46 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 7)    
                                         <tr class="table-success">
-                                            <td id="FootingCement">cement 40kg</td>
-                                            <td id="FootingCementBag">6.50</td>
-                                            <td id="FootingCementCost">1527.5</td>
+                                            <td id="FootingCement"> {{ $record -> materialName }} </td> 
+                                            <td id="FootingCementBag"> {{ $record -> qty }} </td>
+                                            <td id="FootingCementCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 8)    
                                         <tr>
-                                            <td id="FootingS">sand</td>
-                                            <td id="FootingSand">0.50</td>
-                                            <td id="FootingSandCost">400</td>
+                                            <td id="FootingS"> {{ $record -> materialName }} </td>
+                                            <td id="FootingSand"> {{ $record -> qty }} </td>
+                                            <td id="FootingSandCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 9)    
                                         <tr class="table-warning">
-                                            <td id="FootingG">gravel</td>
-                                            <td id="FootingGravel">0.80</td>
-                                            <td id="FootingGravelCost">1200</td>
+                                            <td id="FootingG"> {{ $record -> materialName }} </td>
+                                            <td id="FootingGravel"> {{ $record -> qty }} </td>
+                                            <td id="FootingGravelCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 10)    
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id="FootingSteelBar">Main bars-12mmØ</td>
-                                            <td id="FootingSteelBarQty">13</td>
-                                            <td id="FootingSteelBarCost">2366</td>
+                                            <td id="FootingSteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="FootingSteelBarQty"> {{ $record -> qty }} </td>
+                                            <td id="FootingSteelBarCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 11)    
                                         <tr class="table-warning">
-                                            <td id="FootingTieWire">Tie wire</td>
-                                            <td id="FootingTieWireKg">2.50</td>
-                                            <td id="FootingTieWireCost">150</td>
+                                            <td id="FootingTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="FootingTieWireKg"> {{ $record -> qty }} </td>
+                                            <td id="FootingTieWireCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
                                       
                                         </tbody>
                                     </table>
+                                    <!---
                                     <input type="hidden" id="FootingCement1"             name="FootingCement" value='1'>
                                     <input type="hidden" id="FootingCementBag1"          name="FootingCementBag" value='6.50'>
                                     <input type="hidden" id="FootingCementCost1"         name="FootingCementCost" value='1527.5'>
@@ -1665,6 +1654,7 @@
                                     <input type="hidden" id="FootingTieWireKg1"          name="FootingTieWireKg" value='2.50'>
                                     <input type="hidden" id="FootingTieWireCost1"        name="FootingTieWireCost" value='150'>
                                     <input type="hidden" id="FootingTotalCost1"        name="FootingTotalCost" value='5643.50'>
+                                    --->
                                 </div>
                                 
                                
@@ -1845,40 +1835,46 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 12)    
                                         <tr class="table-success">
-                                            <td id="SlabCement">cement 40kg</td>
-                                            <td id="SlabCementBag">25</td>
-                                            <td id="SlabCementCost">5875</td>
+                                            <td id="SlabCement"> {{ $record -> materialName }} </td> 
+                                            <td id="SlabCementBag"> {{ $record -> qty }} </td>
+                                            <td id="SlabCementCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 13)    
                                         <tr>
-                                            <td id="SlabS">sand</td>
-                                            <td id="SlabSand">3</td>
-                                            <td id="SlabSandCost">2400</td>
+                                            <td id="SlabS"> {{ $record -> materialName }} </td>
+                                            <td id="SlabSand"> {{ $record -> qty }} </td>
+                                            <td id="SlabSandCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 14)    
                                         <tr class="table-warning">
-                                            <td id="SlabG">gravel</td>
-                                            <td id="SlabGravel">6</td>
-                                            <td id="SlabGravelCost">9000</td>
+                                            <td id="SlabG"> {{ $record -> materialName }} </td>
+                                            <td id="SlabGravel"> {{ $record -> qty }} </td>
+                                            <td id="SlabGravelCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 15)    
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id="SlabSteelBar">Main bars-12mmØ</td>
-                                            <td id="SlabSteelBarQty">40</td>
-                                            <td id="SlabSteelBarCost">7280</td>
+                                            <td id="SlabSteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="SlabSteelBarQty"> {{ $record -> qty }} </td>
+                                            <td id="SlabSteelBarCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 16)    
                                         <tr class="table-warning">
-                                            <td id="SlabTieWire">Tie wire</td>
-                                            <td id="SlabTieWireKg">2</td>
-                                            <td id="SlabTieWireCost">120</td>
+                                            <td id="SlabTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="SlabTieWireKg"> {{ $record -> qty }} </td>
+                                            <td id="SlabTieWireCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
                                       
                                         </tbody>
                                     </table>
+                                    <!--
                                     <input type="hidden" id="SlabCement1"             name="SlabCement" value='1'>
                                     <input type="hidden" id="SlabCementBag1"          name="SlabCementBag" value='25'>
                                     <input type="hidden" id="SlabCementCost1"         name="SlabCementCost" value='5875'>
@@ -1895,6 +1891,7 @@
                                     <input type="hidden" id="SlabTieWireKg1"          name="SlabTieWireKg" value='2'>
                                     <input type="hidden" id="SlabTieWireCost1"        name="SlabTieWireCost" value='120'>
                                     <input type="hidden" id="SlabTotalCost1"          name="SlabTotalCost" value='24675'>
+                                    -->
                                 </div>
                                 
                                
@@ -2071,46 +2068,55 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 23)    
                                         <tr class="table-success">
-                                            <td id="BeamCement">cement 40kg</td>
-                                            <td id="BeamCementBag">13</td>
-                                            <td id="BeamCementCost">3055</td>
+                                            <td id="BeamCement"> {{ $record -> materialName }} </td> 
+                                            <td id="BeamCementBag"> {{ $record -> qty }} </td>
+                                            <td id="BeamCementCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 24)    
                                         <tr>
-                                            <td id="BeamS">sand</td>
-                                            <td id="BeamSand">.80</td>
-                                            <td id="BeamSandCost">640</td>
+                                            <td id="BeamS"> {{ $record -> materialName }} </td>
+                                            <td id="BeamSand"> {{ $record -> qty }} </td>
+                                            <td id="BeamSandCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 25)    
                                         <tr class="table-warning">
-                                            <td id="BeamG">gravel</td>
-                                            <td id="BeamGravel">1.60</td>
-                                            <td id="BeamGravelCost">2400</td>
+                                            <td id="BeamG"> {{ $record -> materialName }} </td>
+                                            <td id="BeamGravel"> {{ $record -> qty }} </td>
+                                            <td id="BeamGravelCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 26)    
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id="BeamSteelBar">Main bars-12mmØ</td>
-                                            <td id="BeamSteelBarQty">37</td>
-                                            <td id="BeamSteelBarCost">6734</td>
+                                            <td id="BeamSteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="BeamSteelBarQty"> {{ $record -> qty }} </td>
+                                            <td id="BeamSteelBarCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 27)    
                                             <tr>
-                                            <td id="BeamTieBar">ties/stirrups bars-10mmØ</td>
-                                            <td id="BeamTieBarQty">36</td>
-                                            <td id="BeamTieBarCost">4392</td>
+                                            <td id="BeamTieBar"> {{ $record -> materialName }} </td>
+                                            <td id="BeamTieBarQty"> {{ $record -> qty }} </td>
+                                            <td id="BeamTieBarCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 28)    
                                         <tr class="table-warning">
-                                            <td id="BeamTieWire">Tie wire</td>
-                                            <td id="BeamTieWireKg">7</td>
-                                            <td id="BeamTieWireCost">420</td>
+                                            <td id="BeamTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="BeamTieWireKg"> {{ $record -> qty }} </td>
+                                            <td id="BeamTieWireCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                      
+                                        </tbody>
                                       
                                         </tbody>
                                     </table>
+                                    <!--
                                     <input type="hidden" id="BeamCement1"             name="BeamCement" value='1'>
                                     <input type="hidden" id="BeamCementBag1"          name="BeamCementBag" value='13.00'>
                                     <input type="hidden" id="BeamCementCost1"         name="BeamCementCost" value='3055'>
@@ -2130,6 +2136,7 @@
                                     <input type="hidden" id="BeamTieWireKg1"          name="BeamTieWireKg" value='7'>
                                     <input type="hidden" id="BeamTieWireCost1"        name="BeamTieWireCost" value='420'>
                                     <input type="hidden" id="BeamTotalCost1"          name="BeamTotalCost" value='17641'>
+                                    -->
                                 </div>
                                 
                                
@@ -2299,43 +2306,42 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 35)    
                                         <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="WallFootingCement"> {{ $record -> materialName }} </td> 
+                                            <td id="WallFootingCementBag"> {{ $record -> qty }} </td>
+                                            <td id="WallFootingCementCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 36)    
                                         <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="WallFootingS"> {{ $record -> materialName }} </td>
+                                            <td id="WallFootingSand"> {{ $record -> qty }} </td>
+                                            <td id="WallFootingSandCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 37)    
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="WallFootingG"> {{ $record -> materialName }} </td>
+                                            <td id="WallFootingGravel"> {{ $record -> qty }} </td>
+                                            <td id="WallFootingGravelCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 38)    
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="WallFootingSteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="WallFootingSteelBarQty"> {{ $record -> qty }} </td>
+                                            <td id="WallFootingSteelBarCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 39)    
                                             <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="WallFootingTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="WallFootingTieWireKg"> {{ $record -> qty }} </td>
+                                            <td id="WallFootingTieWireCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
-                                        <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
-                                           
-                                        </tr>
+                                        </tr>@endif @endforeach
                                       
                                         </tbody>
                                     </table>
@@ -2728,43 +2734,49 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 17)    
                                         <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="RoofBeamCement"> {{ $record -> materialName }} </td> 
+                                            <td id="RoofBeamCementBag"> {{ $record -> qty }} </td>
+                                            <td id="RoofBeamCementCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 18)    
                                         <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="RoofBeamS"> {{ $record -> materialName }} </td>
+                                            <td id="RoofBeamSand"> {{ $record -> qty }} </td>
+                                            <td id="RoofBeamSandCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 19)    
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="RoofBeamG"> {{ $record -> materialName }} </td>
+                                            <td id="RoofBeamGravel"> {{ $record -> qty }} </td>
+                                            <td id="RoofBeamGravelCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 20)    
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="RoofBeamSteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="RoofBeamSteelBarQty"> {{ $record -> qty }} </td>
+                                            <td id="RoofBeamSteelBarCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 21)    
                                             <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="RoofBeamTieBar"> {{ $record -> materialName }} </td>
+                                            <td id="RoofBeamTieBarQty"> {{ $record -> qty }} </td>
+                                            <td id="RoofBeamTieBarCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 22)    
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="RoofBeamTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="RoofBeamTieWireKg"> {{ $record -> qty }} </td>
+                                            <td id="RoofBeamTieWireCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
                                       
                                         </tbody>
                                     </table>
@@ -3018,43 +3030,51 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 40)    
                                         <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="MasonryCement"> {{ $record -> materialName }} </td> 
+                                            <td id="MasonryCementBag"> {{ $record -> qty }} </td>
+                                            <td id="MasonryCementCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 41)    
                                         <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="MasonryS"> {{ $record -> materialName }} </td>
+                                            <td id="MasonrySand"> {{ $record -> qty }} </td>
+                                            <td id="MasonrySandCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 43)    
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="MasonryCHB2"> {{ $record -> materialName }} </td>
+                                            <td id="MasonryCHB2Qty"> {{ $record -> qty }} </td>
+                                            <td id="MasonryCHB2Cost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 44)    
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="MasonryCHB2"> {{ $record -> materialName }} </td>
+                                            <td id="MasonryCHB2Qty"> {{ $record -> qty }} </td>
+                                            <td id="MasonryCHB2Cost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 42)    
                                             <tr>
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="MasonrySteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="MasonrySteelBarQty"> {{ $record -> qty }} </td>
+                                            <td id="MasonrySteelBarCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 45)    
                                         <tr class="table-warning">
-                                            <td id=""></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td id="MasonryTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="MasonryTieWireKg"> {{ $record -> qty }} </td>
+                                            <td id="MasonryTieWireCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                      
+                                        </tbody>
                                       
                                         </tbody>
                                     </table>
@@ -3227,46 +3247,53 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 29)    
                                         <tr class="table-success">
-                                            <td id="ColumnCement">cement 40kg</td>
-                                            <td id="ColumnCementBag">14</td>
-                                            <td id="ColumnCementCost">3290</td>
+                                            <td id="RoofingCement"> {{ $record -> materialName }} </td> 
+                                            <td id="RoofingCementBag"> {{ $record -> qty }} </td>
+                                            <td id="RoofingCementCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 30)    
                                         <tr>
-                                            <td id="ColumnS">sand</td>
-                                            <td id="ColumnSand">.80</td>
-                                            <td id="ColumnSandCost">640</td>
+                                            <td id="RoofingS"> {{ $record -> materialName }} </td>
+                                            <td id="RoofingSand"> {{ $record -> qty }} </td>
+                                            <td id="RoofingSandCost"> {{ $record -> cost }} </td>
                                        
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 31)    
                                         <tr class="table-warning">
-                                            <td id="ColumnG">gravel</td>
-                                            <td id="ColumnGravel">1.50</td>
-                                            <td id="ColumnGravelCost">2250</td>
+                                            <td id="RoofingG"> {{ $record -> materialName }} </td>
+                                            <td id="RoofingGravel"> {{ $record -> qty }} </td>
+                                            <td id="RoofingGravelCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 32)    
+                                            <tr>
+                                            <td id="RoofingTieBar"> {{ $record -> materialName }} </td>
+                                            <td id="RoofingTieBarQty"> {{ $record -> qty }} </td>
+                                            <td id="RoofingTieBarCost"> {{ $record -> cost }} </td>
+                                       
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 33)    
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
-                                            <td id="ColumnSteelBar">Main bars-12mmØ</td>
-                                            <td id="ColumnSteelBarQty">36</td>
-                                            <td id="ColumnSteelBarCost">6552</td>
+                                            <td id="RoofingSteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="RoofingSteelBarQty"> {{ $record -> qty }} </td>
+                                            <td id="RoofingSteelBarCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
-                                            <tr>
-                                            <td id="ColumnTieBar">ties/stirrups bars-10mmØ</td>
-                                            <td id="ColumnTieBarQty">24</td>
-                                            <td id="ColumnTieBarCost">2928</td>
-                                       
-                                        </tr>
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 34)    
                                         <tr class="table-warning">
-                                            <td id="ColumnTieWire">Tie wire</td>
-                                            <td id="ColumnTieWireKg">6</td>
-                                            <td id="ColumnTieWireCost">360</td>
+                                            <td id="RoofingTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="RoofingTieWireKg"> {{ $record -> qty }} </td>
+                                            <td id="RoofingTieWireCost"> {{ $record -> cost }} </td>
                                            
-                                        </tr>
-                                      
+                                        </tr>@endif @endforeach
+                                        
                                         </tbody>
                                     </table>
+                                    <!--
                                     <input type="hidden" id="ColumnCement1"             name="ColumnCement" value='1'>
                                     <input type="hidden" id="ColumnCementBag1"          name="ColumnCementBag" value='14.00'>
                                     <input type="hidden" id="ColumnCementCost1"         name="ColumnCementCost" value='3290'>
@@ -3286,6 +3313,7 @@
                                     <input type="hidden" id="ColumnTieWireKg1"          name="ColumnTieWireKg" value='6'>
                                     <input type="hidden" id="ColumnTieWireCost1"        name="ColumnTieWireCost" value='360'>
                                     <input type="hidden" id="ColumnTotalCost1"          name="ColumnTotalCost" value='16020'>
+                                    -->
                                 </div>
                                 
                                
@@ -3320,12 +3348,7 @@
             
             
         </div>
-   
-                      
-     <!-- Column ends -->
-                  </div>
-                </div>
-              </div>
+
                                         <div class="accordion-panel">
                                             <div class=" accordion-heading" role="tab" id="headingEleven">
                                                 <h3 class="card-title accordion-title">
@@ -4443,32 +4466,34 @@
                                                                         <div class="form-group form-inline">
 
 
-                                                                            <select class="form-control" id="" style="width: 350px !important;">
-                                                                                <option selected> #14 THHN</option>
-                                                                                <option> #12 THHN </option>
-                                                                                <option> #10 THHN</option>
-                                                                                <option> #8 THHN</option>
-                                                                                <option> Circuit Breaker 15a</option>
-                                                                                <option> Circuit Breaker 20a </option>
-                                                                                <option> Circuit Breaker 30a</option>
-                                                                                <option> Circuit Breaker 60a</option>
-                                                                                  <option> PVC Clips</option>
-                                                                                <option> Lights </option>
-                                                                                  <option> Light Switch </option>
-                                                                                <option> Junction Box</option>
-                                                                                <option> Utility Box</option>
-                                                                                  <option> Sqaure Box</option>
-                                                                                  <option> Motor Pump</option>
-                                                                                  <option> Doorbell Buzzer</option>
-                                                                                  <option> Smoke Alarm</option>
-                                                                                
+                                                                            <select class="form-control" id="ElectricalWorksMaterials" style="width: 350px !important;">
+                                                                                <option value=43 selected> #14 THHN </option>
+                                                                                <option value=44> #12 THHN </option>
+                                                                                <option value=45> #10 THHN </option>
+                                                                                <option value=46> 3/4" Electrical Pipe PVC Conduit </option>
+                                                                                <option value=47> PVC Clips</option>
+                                                                                <option value=48> Bushing </option>
+                                                                                <option value=49> Lights </option>
+                                                                                <option value=50> Junction Box</option>
+                                                                                <option value=51> Light Switch + Utility Box</option>
+                                                                                <option value=52> Current Outlets + Cover + Utility box</option>
+                                                                                <option value=> Light Switch </option>
+                                                                                <option value=> Utility Box</option>
+                                                                                <option value=> Sqaure Box</option>
+                                                                                <option value=> Motor Pump</option>
+                                                                                <option value=> Doorbell Buzzer</option>
+                                                                                <option value=> Smoke Alarm   </option>
+                                                                                <option value=> Circuit Breaker 15a</option>
+                                                                                <option value=> Circuit Breaker 20a </option>
+                                                                                <option value=> Circuit Breaker 30a</option>
+                                                                                <option value=> Circuit Breaker 60a</option>
                                                                             </select>
 
                                                                          
                                                                       
                                                                            
 
-                                                                         <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                         <input type="number" class="form-control" id="ElectricalWorksMaterialQ" style="width: 60px !important;" placeholder="+">
 
                                                                            
 
@@ -4477,7 +4502,7 @@
                                                                             <hr>
                                                                             <div class="form-group form-inline">
 
-                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px">Compute</button>
+                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px" id="ComputeElectricalWorks">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -4506,70 +4531,102 @@
                                                                                         </tr>
                                                                                     </thead>
                                                                                     <tbody>
+                                                                                    @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 58)
                                                                                         <tr class="table-success">
-                                                                                            <td>Panel Board:</td>
-                                                                                            <td>1 pc</td>
-                                                                                            <td>400.0</td>
+                                                                                            <td id="thhn14"> {{ $record -> materialName }} </td>
+                                                                                            <td id="thhn14Q"> {{ $record -> qty }} </td>
+                                                                                            <td id="thhn14P"> {{ $record -> cost }} </td>
 
-                                                                                        </tr>
+                                                                                        </tr>@endif @endforeach
+                                                                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 59)
                                                                                         <tr>
-                                                                                            <td>PVC Clips:</td>
-                                                                                            <td>128 pcs</td>
-                                                                                            <td>1200.0</td>
+                                                                                            <td id="thhn12"> {{ $record -> materialName }} </td>
+                                                                                            <td id="thhn12Q"> {{ $record -> qty }} </td>
+                                                                                            <td id="thhn12P"> {{ $record -> cost }} </td>
 
-                                                                                        </tr>
+                                                                                        </tr>@endif @endforeach
+                                                                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 60)
                                                                                         <tr class="table-warning">
-                                                                                            <td>Lights:</td>
-                                                                                            <td>5 pcs</td>
-                                                                                            <td>1500.0</td>
-
-                                                                                        </tr>
-
-                                                                                        <tr class="table-success">
-                                                                                            <td>Junction Box:</td>
-                                                                                            <td>2 pcs</td>
-                                                                                            <td>500.0</td>
-
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>Light Switch:</td>
-                                                                                            <td>8 pcs</td>
-                                                                                            <td>1300.0</td>
-
-                                                                                        </tr>
+                                                                                            <td id="thhn10"> {{ $record -> materialName }} </td>
+                                                                                            <td id="thhn10Q"> {{ $record -> qty }} </td>
+                                                                                            <td id="thhn10P"> {{ $record -> cost }} </td>
+                                                                                        </tr>@endif @endforeach
+                                                                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 61)
 
                                                                                         <tr class="table-success">
-                                                                                            <td>Utility Box:</td>
-                                                                                            <td>3 pc</td>
-                                                                                            <td>300.0</td>
+                                                                                            <td id="pvcconduit"> {{ $record -> materialName }} </td>
+                                                                                            <td id="pvcconduitQ"> {{ $record -> qty }} </td>
+                                                                                            <td id="pvcconduitP"> {{ $record -> cost }} </td>
 
-                                                                                        </tr>
+                                                                                        </tr>@endif @endforeach
+                                                                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 62)
                                                                                         <tr>
-                                                                                            <td>Square Box:</td>
-                                                                                            <td>2 pcs</td>
-                                                                                            <td>600.0</td>
+                                                                                            <td id="pvcclip"> {{ $record -> materialName }} </td>
+                                                                                            <td id="pvcclipQ"> {{ $record -> qty }} </td>
+                                                                                            <td id="pvcclipP"> {{ $record -> cost }} </td>
 
-                                                                                        </tr>
+                                                                                        </tr>@endif @endforeach
+                                                                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 63)
+
+                                                                                        <tr class="table-success">
+                                                                                            <td id="bushing"> {{ $record -> materialName }} </td>
+                                                                                            <td id="bushingQ"> {{ $record -> qty }} </td>
+                                                                                            <td id="bushingP"> {{ $record -> cost }} </td>
+
+                                                                                        </tr>@endif @endforeach
+                                                                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 64)
+                                                                                        <tr>
+                                                                                            <td id="lights"> {{ $record -> materialName }} </td>
+                                                                                            <td id="lightsQ"> {{ $record -> qty }} </td>
+                                                                                            <td id="lightsP"> {{ $record -> cost }} </td>
+
+                                                                                        </tr>@endif @endforeach
+                                                                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 65)
                                                                                         <tr class="table-warning">
-                                                                                            <td>Doorbell Buzzer:</td>
-                                                                                            <td>1 lot</td>
-                                                                                            <td>1300.0</td>
+                                                                                            <td id="junctionbox"> {{ $record -> materialName }} </td>
+                                                                                            <td id="junctionboxQ"> {{ $record -> qty }} </td>
+                                                                                            <td id="junctionboxP"> {{ $record -> cost }} </td>
 
-                                                                                        </tr>
+                                                                                        </tr>@endif @endforeach
+                                                                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 66)
 
                                                                                         <tr class="table-success">
-                                                                                            <td>Smoke Alarm:</td>
-                                                                                            <td>1 lot</td>
-                                                                                            <td>4000.0</td>
+                                                                                            <td id="switchnbox"> {{ $record -> materialName }} </td>
+                                                                                            <td id="switchnboxQ"> {{ $record -> qty }} </td>
+                                                                                            <td id="witchnboxP"> {{ $record -> cost }} </td>
 
-                                                                                        </tr>
+                                                                                        </tr>@endif @endforeach
+                                                                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 67)
+                                                                                        <tr>
+                                                                                            <td id="outletsncovernbox"> {{ $record -> materialName }} </td>
+                                                                                            <td id="outletsncovernboxQ"> {{ $record -> qty }} </td>
+                                                                                            <td id="outletsncovernboxP"> {{ $record -> cost }} </td>
 
-
-
-
+                                                                                        </tr>@endif @endforeach
 
                                                                                     </tbody>
                                                                                 </table>
+                                                                                <input type="hidden" id="Electrical14thhn1"                                    name="Electrical14thhn" value='1050'>
+                                                                                <input type="hidden" id="Electrical14thhnQ1"                                    name="Electrical14thhnQ" value='0.5'>
+                                                                                <input type="hidden" id="Electrical12thhn1"                                    name="Electrical12thhn" value='1550'>
+                                                                                <input type="hidden" id="Electrical12thhnQ1"                                    name="Electrical12thhnQ" value='0.5'>
+                                                                                <input type="hidden" id="Electrical10thhn1"                                    name="Electrical10thhn" value='1410'>
+                                                                                <input type="hidden" id="Electrical10thhnQ1"                                    name="Electrical10thhnQ" value='0.3'>
+                                                                                <input type="hidden" id="Electricalconduit1"                                   name="Electricalconduit" value='1600'>
+                                                                                <input type="hidden" id="ElectricalconduitQ1"                                   name="ElectricalconduitQ" value='16'>
+                                                                                <input type="hidden" id="Electricalpvcclips1"                                  name="Electricalpvcclips" value='75'>
+                                                                                <input type="hidden" id="ElectricalpvcclipsQ1"                                  name="ElectricalpvcclipsQ" value='25'>
+                                                                                <input type="hidden" id="Electricalbushing1"                                   name="Electricalbushing" value='180'>
+                                                                                <input type="hidden" id="ElectricalbushingQ1"                                   name="ElectricalbushingQ" value='18'>
+                                                                                <input type="hidden" id="Electricallights1"                                    name="Electricallights" value='500'>
+                                                                                <input type="hidden" id="ElectricallightsQ1"                                    name="ElectricallightsQ" value='8'>
+                                                                                <input type="hidden" id="Electricaljunctionbox1"                               name="Electricaljunctionbox" value='200'>
+                                                                                <input type="hidden" id="ElectricaljunctionboxQ1"                               name="ElectricaljunctionboxQ" value='8'>
+                                                                                <input type="hidden" id="Electricallightswitchnutilitybox1"                    name="Electricallightswitchnutilitybox" value='800'>
+                                                                                <input type="hidden" id="ElectricallightswitchnutilityboxQ1"                    name="ElectricallightswitchnutilityboxQ" value='4'>
+                                                                                <input type="hidden" id="Electricalcurrentoutletsncovernutilitybox1"           name="Electricalcurrentoutletsncovernutilitybox" value='1800'>
+                                                                                <input type="hidden" id="ElectricalcurrentoutletsncovernutilityboxQ1"           name="ElectricalcurrentoutletsncovernutilityboxQ" value='9'>
+                                                                                <input type="hidden" id="ElectricalTotalCost1"                                 name="ElectricalTotalCost" value='9165'>
                                                                             </div>
 
 
@@ -4588,7 +4645,7 @@
                                                                                 <tr class="text-uppercase">
                                                                                     <th class="text-left text-primary">Total Cost:</th>
                                                                                     <th class="text-center"></th>
-                                                                                    <th class="text-center text-primary"> 22345.0</th>
+                                                                                    <th class="text-center text-primary"  id="ElectricalTotalCost2"> 9165.00</th>
 
 
                                                                                 </tr>
@@ -4731,35 +4788,34 @@
                                                                                             </tr>
                                                                                         </thead>
                                                                                         <tbody>
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 85)
                                                                                             <tr class="table-success">
-                                                                                                <td>60x60 Tiles</td>
-                                                                                                <td>600 pcs</td>
-                                                                                                <td>5300.0</td>
+                                                                                                <td> {{ $record -> materialName }} </td>
+                                                                                                <td> {{ $record -> qty }} </td>
+                                                                                                <td> {{ $record -> cost }} </td>
 
-                                                                                            </tr>
+                                                                                            </tr>@endif @endforeach
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 86)
                                                                                             <tr>
-                                                                                                <td>Tile Grout Cement:</td>
-                                                                                                <td>2 bags</td>
-                                                                                                <td>350.0</td>
+                                                                                                <td> {{ $record -> materialName }} </td>
+                                                                                                <td> {{ $record -> qty }} </td>
+                                                                                                <td> {{ $record -> cost }} </td>
 
-                                                                                            </tr>
+                                                                                            </tr>@endif @endforeach
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 87)
                                                                                             <tr class="table-warning">
-                                                                                                <td>Tile Grout Sand:</td>
-                                                                                                <td>2 cubic meters</td>
-                                                                                                <td>400.0</td>
+                                                                                                <td> {{ $record -> materialName }} </td>
+                                                                                                <td> {{ $record -> qty }} </td>
+                                                                                                <td> {{ $record -> cost }} </td>
 
-                                                                                            </tr>
-
-                                                                                            <tr class="table-success">
-                                                                                                <td>Tile Adhesive:</td>
-                                                                                                <td>2 cans</td>
-                                                                                                <td>600.0</td>
-
-                                                                                            </tr>
+                                                                                            </tr>@endif @endforeach
 
 
                                                                                         </tbody>
                                                                                     </table>
+
+                                                                                    <input type="hidden" id="SlabTotalCost1"          name="SlabTotalCost" value='24675'>
+
                                                                                 </div>
 
 
@@ -4816,15 +4872,16 @@
           
           
            
-           <div class="card-block">
+          <div class="card-block">
                                             <div class="table-responsive">
                                             <input type=hidden id="OverallTotalCost1" name="OverallTotalCost" value="">
                                                 <table class="table m-b-0 photo-table">
+                                                    @foreach ( $TemplateArray4 as $key=>$record ) @if($record -> id == 1)  
                                                     <thead>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overall Total Cost:</th>
                                                          
-                                                            <th class="text-center text-primary" id="OverallTotalCost">  </th>
+                                                            <th class="text-center text-primary" id="OverallTotalCost"> {{ $record -> OverallTotal }} </th>
                                                             
 
                                                         </tr>
@@ -4838,25 +4895,24 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overhead Profit Amount:</th>
                                                          
-                                                            <th class="text-center text-primary" id=""> 150,1000.00 </th>
+                                                            <th class="text-center text-primary" id=""> {{ $record -> OverheadTotal }} </th>
                                                             
 
                                                         </tr>
-                                                        
+                                                        <hr>
                                                         <tr class="text-uppercase " style="background-color: #ffc551">
                                                             <th class="text-left text-secondary">Grand Total Cost:</th>
                                                          
-                                                            <th class="text-center text-default" id=""> 123,456,789 </th>
+                                                            <th class="text-center text-default"     id="OverallTotalCost"> {{ $record -> GrandTotal }} </th>
                                                             
 
                                                         </tr>
-                                                    </thead>
+                                                    </thead> @endif @endforeach
                                                   
                                                 </table>
+                                                <input type=hidden id=OverallTotalCost1 value=>
                                             </div>
                                         </div>  
-          
-         
           
           
           
@@ -4864,8 +4920,8 @@
           
           
                         <div class="form-group form-inline">
-                            <a type="button" class="btn btn-outline-success" style="margin-left: 800px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
-                           
+                            <a type="button" class="btn btn-outline-success" style="margin-left: 700px" href="#" onclick="HTMLtoPDF()">Save as pdf</a>
+                           &nbsp;
                             <button type="submit" class="btn btn-primary ">Save Estimation</button>
                         </div>
 
@@ -5074,8 +5130,28 @@
 
 <script>
 
+computeAndDisplayOverallTotal();
+
+        $("#ColumnCementBag").html( parseFloat($("#ColumnCementBag").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnCementCost").html( parseFloat($("#ColumnCementCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnSand").html( parseFloat($("#ColumnSand").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnSandCost").html( parseFloat($("#ColumnSandCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnGravel").html( parseFloat($("#ColumnGravel").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnGravelCost").html( parseFloat($("#ColumnGravelCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnSteelBarQty").html( parseFloat($("#ColumnSteelBarQty").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnSteelBarCost").html( parseFloat($("#ColumnSteelBarCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnTieBarQty").html( parseFloat($("#ColumnTieBarQty").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnTieBarCost").html( parseFloat($("#ColumnTieBarCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        
+        $("#ColumnTieWireKg").html( parseFloat($("#ColumnTieWireKg").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnTieWireCost").html( parseFloat($("#ColumnTieWireCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+
     function computeAndDisplayOverallTotal(){
-        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
+        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
 
         $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         $("#OverallTotalCost1").val(parseFloat(overAllTotal));
@@ -5147,10 +5223,18 @@
             gravelcost: GravelCost
         };
     }
-
+    var DirectCountingEsti = function(Q,mId){
+        var search = searchPrice(mId);
+        var price = search.materialprice;
+        var total = parseFloat(Q)*parseFloat(mId);
+        return{
+            totals: total
+        };
+    }
     $("#ComputeGeneralReq").click(function() {
         var totalGeneralReq = 0;
         totalGeneralReq  += parseFloat($("#BuildingPermit").val()) ;
+        totalGeneralReq  += parseFloat($("#DENR").val()) ;
         totalGeneralReq  += parseFloat($("#TemporaryFacilities").val()) ;
         totalGeneralReq  += parseFloat($("#WorkersBarracks").val()) ;
         totalGeneralReq  += parseFloat($("#Excavation").val()) ;
@@ -5162,11 +5246,70 @@
         totalGeneralReq  += parseFloat($("#Transportation").val()) ;
         totalGeneralReq  += parseFloat($("#Contigency").val()) ;
 
-        $("#OverheadProfit").val( totalGeneralReq * $("#overheadProfit").val()); //computation of overheadProfit
+        //$("#OverheadProfit").val( totalGeneralReq * $("#OverheadProfit").val()); //computation of overheadProfit
 
-        totalGeneralReq  += parseFloat($("#OverheadProfit").val()) ;
-        $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2));
+        $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         $("#totalGeneralReq1").val(parseFloat(totalGeneralReq));
+
+        computeAndDisplayOverallTotal();
+    });
+/*
+    $("#ComputeElectricalWorks").click(function(){
+        if($("#ElectricalWorksMaterial").val()==43){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            $("Electrical14thhn1").val( parseFloat($("Electrical14thhn1").val()) + parseFloat(total) );
+            $("Electrical14thhnQ1").val( parseFloat($("Electrical14thhnQ1").val()) + parseFloat($("#ElectricalWorksMaterialQ").val()) );
+            $("ElectricalTotalCost1").val( parseFloat($("ElectricalTotalCost1").val()) + parseFloat(total) );
+            $("thhn10P").val( parseFloat($("Electrical14thhn1").val()) + parseFloat(total) );
+            $("thhn10Q").val( parseFloat($("Electrical14thhnQ1").val()) + parseFloat($("#ElectricalWorksMaterialQ").val()) );
+            $("ElectricalTotalCost2").val( parseFloat($("ElectricalTotalCost1").val()) + parseFloat(total) );
+        }
+        if($("#ElectricalWorksMaterial").val()==44){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==45){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==46){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==47){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==48){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==49){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==50){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==51){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
+        if($("#ElectricalWorksMaterial").val()==52){
+            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
+            var total = product.totals;
+            
+        }
 
         computeAndDisplayOverallTotal();
     });
@@ -5352,8 +5495,7 @@ $("#computeBeam").click(function () {
     $("#BeamTotalCost").html( parseFloat($("#BeamTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
 });
-
-computeAndDisplayOverallTotal();
+*/
 
 </script>
 

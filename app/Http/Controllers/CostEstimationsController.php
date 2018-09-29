@@ -96,7 +96,7 @@ class CostEstimationsController extends Controller
 
     public function createEstimation($id){
         //request id of project and template
-/*        $templateid = $_POST['projectTemplate'];
+        $templateid = $_POST['projectTemplate'];
         $templateid = array($templateid);
 
         $template1 = DB::select("
@@ -109,6 +109,7 @@ class CostEstimationsController extends Controller
         $TemplateArray1 = array();
         foreach($template1 as $fields1){
             $TemplateArr1 = (object)[
+                'id' => $fields1 -> intProjectRequirementsTemplateId,
                 'cost' => $fields1 -> decCost,
                 'category' => $fields1 -> intWorkSubCategoryId
             ];
@@ -117,24 +118,124 @@ class CostEstimationsController extends Controller
         //dd($TemplateArray1);
 
         $template2 = DB::select("
-        select *
-        from tblmaterialestimationtemplate  
-        WHERE intProjectTemplateId = ?
-        ",$templateid);
+        SELECT  a.intMaterialEstimationTemplateId as intMaterialEstimationTemplateId,
+                a.decQty as decQty,
+                a.intWorkSubCategoryId as intWorkSubCategoryId,
+                a.intMaterialId as intMaterialId,
+                b.strMaterialName as strMaterialName,
+                (a.decQty*b.Price) as decCost
+        FROM tblmaterialestimationtemplate a 
+        INNER JOIN 
+        (   
+            SELECT e.price as Price, e.material as Material, f.strMaterialName as strMaterialName
+            FROM 
+            (
+                SELECT t.decPrice as price, t.intMaterialId as material
+                FROM 
+                (
+                    SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
+                    FROM tblprice
+                    GROUP BY intMaterialId
+                ) as r 
+                INNER JOIN tblprice t
+                ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
+            ) as e
+            INNER JOIN tblmaterials f
+            ON (e.material = f.intMaterialId)
+            WHERE f.intActive = 1
+        ) as b
+        ON b.Material = a.intMaterialId
+        WHERE intProjectTemplateId = ?",$templateid);
 
         $TemplateArray2 = array();
-        $c = 5;
-        $m = 0;
         foreach($template2 as $fields2){
                 $TemplateArr2 = (object)[
+                    'id' => $fields2 -> intMaterialEstimationTemplateId,
+                    'cost' => $fields2 -> decCost,
                     'qty' => $fields2 -> decQty,
                     'category' => $fields2 -> intWorkSubCategoryId,
-                    'material' => $fields2 -> intMaterialId
+                    'material' => $fields2 -> intMaterialId,
+                    'materialName' => $fields2 -> strMaterialName
                 ];
                 array_push($TemplateArray2,$TemplateArr2);
         }
         //dd($TemplateArray2);
-*/
+
+        /*$template3 = DB::select("
+        SELECT (SUM(a.decQty*b.Price)) as intOverallTotal
+        FROM tblmaterialestimationtemplate a INNER JOIN 
+        (   
+            SELECT e.price as Price, e.material as Material, f.strMaterialName as strMaterialName
+            FROM 
+            (
+                SELECT t.decPrice as price, t.intMaterialId as material
+                FROM 
+                (
+                    SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
+                    FROM tblprice
+                    GROUP BY intMaterialId
+                ) as r 
+                INNER JOIN tblprice t
+                ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
+            ) as e
+            INNER JOIN tblmaterials f
+            ON (e.material = f.intMaterialId)
+            WHERE f.intActive = 1
+        ) as b
+        ON b.Material = a.intMaterialId
+        WHERE intProjectTemplateId = ?",$templateid);
+
+        $TemplateArray3 = array();
+        foreach($template3 as $fields3){
+                $TemplateArr3 = (object)[
+                    'OverallTotal' => $fields3 -> intOverallTotal
+                ];
+                array_push($TemplateArray3,$TemplateArr3);
+        }
+        //dd($TemplateArray3);*/
+
+        $template4 = DB::select("
+        SELECT 
+        intProjectTemplateId,
+        ( SUM(a.decQty * b.Price) ) as intOverallTotal, 
+        ( (SUM(a.decQty * b.Price)) * 0.10 ) as intOverheadTotal, 
+        ( (SUM(a.decQty * b.Price)) + ((SUM(a.decQty * b.Price)) * 0.10) )  as intGrandTotal
+        FROM tblmaterialestimationtemplate a 
+        INNER JOIN 
+        (   
+            SELECT e.price as Price, e.material as Material, f.strMaterialName as strMaterialName
+            FROM 
+            (
+                SELECT t.decPrice as price, t.intMaterialId as material
+                FROM 
+                (
+                    SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
+                    FROM tblprice
+                    GROUP BY intMaterialId
+                ) as r 
+                INNER JOIN tblprice t
+                ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
+            ) as e
+            INNER JOIN tblmaterials f
+            ON (e.material = f.intMaterialId)
+            WHERE f.intActive = 1
+        ) as b
+        ON b.Material = a.intMaterialId
+        WHERE intProjectTemplateId = ?
+        GROUP BY intProjectTemplateId",$templateid);
+
+        $TemplateArray4 = array();
+        foreach($template4 as $fields4){
+                $TemplateArr4 = (object)[
+                    'id' => $fields4 -> intProjectTemplateId,
+                    'OverallTotal' => $fields4 -> intOverallTotal,
+                    'OverheadTotal' => $fields4 -> intOverheadTotal,
+                    'GrandTotal' => $fields4 -> intGrandTotal
+                ];
+                array_push($TemplateArray4,$TemplateArr4);
+        }
+        //dd($TemplateArray4);
+
         $formulas = DB::select("
         select X.h as Horizontal, X.v as Vertical, X.f as Value, X.Work as Work
         from 
@@ -209,7 +310,7 @@ class CostEstimationsController extends Controller
                     ->where('intProjectId','=',$id)
                     ->first();
 
-        return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray','TemplateArray1','TemplateArray2'));
+        return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray','TemplateArray1','TemplateArray2','TemplateArray4'));
     }
 
     public function saveEstimation($id){
