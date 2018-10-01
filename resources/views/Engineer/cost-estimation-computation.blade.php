@@ -5132,7 +5132,7 @@
 
 computeAndDisplayOverallTotal();
 
-        $("#ColumnCementBag").html( parseFloat($("#ColumnCementBag").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        /*$("#ColumnCementBag").html( parseFloat($("#ColumnCementBag").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
         $("#ColumnCementCost").html( parseFloat($("#ColumnCementCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
         
         $("#ColumnSand").html( parseFloat($("#ColumnSand").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
@@ -5148,7 +5148,7 @@ computeAndDisplayOverallTotal();
         $("#ColumnTieBarCost").html( parseFloat($("#ColumnTieBarCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
         
         $("#ColumnTieWireKg").html( parseFloat($("#ColumnTieWireKg").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnTieWireCost").html( parseFloat($("#ColumnTieWireCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnTieWireCost").html( parseFloat($("#ColumnTieWireCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) ); */
 
     function computeAndDisplayOverallTotal(){
         var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
