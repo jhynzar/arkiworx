@@ -1332,7 +1332,7 @@ var Gantt = (function () {
             });
 
             $.attr(this.$svg, {
-                height: grid_height + this.options.padding + 100,
+                height: grid_height + this.options.padding - 30,
                 width: '100%'
             });
         }

@@ -1137,7 +1137,7 @@
                                 <label class="text text-default"><b>Permit</b> </label>  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input type="number" class="form-control" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input class="form-control currencyInput" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
                                      &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> DENR <span class="text text-primary"><i>Optional</i></span></label>  &nbsp; 
                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 2)<input type="number" class="form-control" value="{{ $record -> cost }}" id="DENR" name="DENR" style="width: 100px !important;" placeholder="">@endif @endforeach
@@ -3343,7 +3343,8 @@
               </div>
           </div>
           
-          
+                      </div>
+                    </div>
            
             
             
@@ -5132,14 +5133,47 @@
 
 @endsection @section('script')
 
+<script>
+
+    var currencyInputs = $('.currencyInput');
+
+    //parse set values to currency
+    currencyInputs.each(function(){
+        this.value = parseFloat(this.value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    });
+
+    //set on blur
+    currencyInputs.blur(function(){
+        if(parseFloat(this.value) || 0){
+            this.value = parseFloat(this.value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        }else{
+            this.value = parseFloat('0.00').toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'); //default to 0 if error
+        }
+    });
+
+    //set on focus
+    currencyInputs.focus(function(){
+        this.value = this.value.replace(/,/g, '');
+    });
+
+    //helper function for getting the value
+    function currencyInputToFloat(value){
+        return parseFloat(value.replace(/,/g, ''));
+    }
+
+    //checker if it code ran
+    console.log('----------CURRENCY INPUT - RUN END-----------');
+
+</script>
+
 
 <script>
 
-computeAndDisplayOverallTotal();
+ //computeAndDisplayOverallTotal(); //compute at the beginning removed because total cost is already set in html
 
 
     function computeAndDisplayOverallTotal(){
-        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
+        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
 
         $("#OverallTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
         $("#OverheadProfitTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
