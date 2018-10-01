@@ -161,29 +161,12 @@ class CostEstimationsController extends Controller
         }
         //dd($TemplateArray2);
 
-        /*$template3 = DB::select("
-        SELECT (SUM(a.decQty*b.Price)) as intOverallTotal
-        FROM tblmaterialestimationtemplate a INNER JOIN 
-        (   
-            SELECT e.price as Price, e.material as Material, f.strMaterialName as strMaterialName
-            FROM 
-            (
-                SELECT t.decPrice as price, t.intMaterialId as material
-                FROM 
-                (
-                    SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
-                    FROM tblprice
-                    GROUP BY intMaterialId
-                ) as r 
-                INNER JOIN tblprice t
-                ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
-            ) as e
-            INNER JOIN tblmaterials f
-            ON (e.material = f.intMaterialId)
-            WHERE f.intActive = 1
-        ) as b
-        ON b.Material = a.intMaterialId
-        WHERE intProjectTemplateId = ?",$templateid);
+        $template3 = DB::select("
+        select *
+        from tblprojectrequirementstemplate
+        WHERE intProjectTemplateId = ?
+        order by intWorksubcategoryid asc
+        ",$templateid);
 
         $TemplateArray3 = array();
         foreach($template3 as $fields3){
@@ -192,14 +175,14 @@ class CostEstimationsController extends Controller
                 ];
                 array_push($TemplateArray3,$TemplateArr3);
         }
-        //dd($TemplateArray3);*/
+        //dd($TemplateArray3);
 
         $template4 = DB::select("
         SELECT 
         intProjectTemplateId,
         ( SUM(a.decQty * b.Price) ) as intOverallTotal, 
-        ( (SUM(a.decQty * b.Price)) * 0.10 ) as intOverheadTotal, 
-        ( (SUM(a.decQty * b.Price)) + ((SUM(a.decQty * b.Price)) * 0.10) )  as intGrandTotal
+        ( (SUM(a.decQty * b.Price)) * 0.20 ) as intOverheadTotal, 
+        ( (SUM(a.decQty * b.Price)) + ((SUM(a.decQty * b.Price)) * 0.20) )  as intGrandTotal
         FROM tblmaterialestimationtemplate a 
         INNER JOIN 
         (   

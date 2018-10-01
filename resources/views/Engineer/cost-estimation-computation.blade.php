@@ -4874,7 +4874,12 @@
            
           <div class="card-block">
                                             <div class="table-responsive">
-                                            <input type=hidden id="OverallTotalCost1" name="OverallTotalCost" value="">
+                                            @foreach ( $TemplateArray4 as $key=>$record ) @if($record -> id == 1)  
+                                            <input type=hidden id="OverallTotalCost1" name="OverallTotalCost1" value=" {{ $record -> OverallTotal }} ">
+                                            <input type=hidden id="OverallTotalCost1" name="OverheadProfit" value="0.2">
+                                            <input type=hidden id="OverallTotalCost1" name="OverheadTotalCost1" value=" {{ $record -> OverheadTotal }} ">
+                                            <input type=hidden id="OverallTotalCost1" name="GrandTotalCost1" value=" {{ $record -> GrandTotal }} ">
+                                            @endif @endforeach
                                                 <table class="table m-b-0 photo-table">
                                                     @foreach ( $TemplateArray4 as $key=>$record ) @if($record -> id == 1)  
                                                     <thead>
@@ -4888,14 +4893,14 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overhead Profit %:</th>
                                                          
-                                                            <th class="text-center text-primary" id=""> 10% </th>
+                                                            <th class="text-center text-primary" id="OverheadProfit"> 20% </th>
                                                             
 
                                                         </tr>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overhead Profit Amount:</th>
                                                          
-                                                            <th class="text-center text-primary" id=""> {{ $record -> OverheadTotal }} </th>
+                                                            <th class="text-center text-primary" id="OverheadTotalCost"> {{ $record -> OverheadTotal }} </th>
                                                             
 
                                                         </tr>
@@ -4903,7 +4908,7 @@
                                                         <tr class="text-uppercase " style="background-color: #ffc551">
                                                             <th class="text-left text-secondary">Grand Total Cost:</th>
                                                          
-                                                            <th class="text-center text-default"     id="OverallTotalCost"> {{ $record -> GrandTotal }} </th>
+                                                            <th class="text-center text-default"     id="GrandTotalCost"> {{ $record -> GrandTotal }} </th>
                                                             
 
                                                         </tr>
@@ -5132,29 +5137,20 @@
 
 computeAndDisplayOverallTotal();
 
-        /*$("#ColumnCementBag").html( parseFloat($("#ColumnCementBag").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnCementCost").html( parseFloat($("#ColumnCementCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        
-        $("#ColumnSand").html( parseFloat($("#ColumnSand").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnSandCost").html( parseFloat($("#ColumnSandCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        
-        $("#ColumnGravel").html( parseFloat($("#ColumnGravel").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnGravelCost").html( parseFloat($("#ColumnGravelCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        
-        $("#ColumnSteelBarQty").html( parseFloat($("#ColumnSteelBarQty").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnSteelBarCost").html( parseFloat($("#ColumnSteelBarCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        
-        $("#ColumnTieBarQty").html( parseFloat($("#ColumnTieBarQty").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnTieBarCost").html( parseFloat($("#ColumnTieBarCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        
-        $("#ColumnTieWireKg").html( parseFloat($("#ColumnTieWireKg").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnTieWireCost").html( parseFloat($("#ColumnTieWireCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) ); */
 
     function computeAndDisplayOverallTotal(){
         var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
 
-        $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-        $("#OverallTotalCost1").val(parseFloat(overAllTotal));
+        $("#OverallTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
+        $("#OverheadProfitTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
+        $("#OverheadTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
+        $("#GrandTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
+        
+        $("#OverallTotalCost1").val(  );
+        $("#OverheadProfit").val(  );
+        $("#OverheadTotalCost1").val(  );
+        $("#GrandTotalCost1").val(  );
+        //parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
     }
 
     var searchValues = function (X1,Y1,Work1){
