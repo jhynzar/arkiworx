@@ -5130,28 +5130,28 @@
 
 <script>
 
-computeAndDisplayOverallTotal();
+ //computeAndDisplayOverallTotal(); //compute at the beginning removed because total cost is already set in html
 
-        $("#ColumnCementBag").html( parseFloat($("#ColumnCementBag").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnCementCost").html( parseFloat($("#ColumnCementCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnCementBag").html( parseFloat($("#ColumnCementBag").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        $("#ColumnCementCost").html( parseFloat($("#ColumnCementCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
         
-        $("#ColumnSand").html( parseFloat($("#ColumnSand").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnSandCost").html( parseFloat($("#ColumnSandCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnSand").html( parseFloat($("#ColumnSand").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        $("#ColumnSandCost").html( parseFloat($("#ColumnSandCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
         
-        $("#ColumnGravel").html( parseFloat($("#ColumnGravel").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnGravelCost").html( parseFloat($("#ColumnGravelCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnGravel").html( parseFloat($("#ColumnGravel").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        $("#ColumnGravelCost").html( parseFloat($("#ColumnGravelCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
         
-        $("#ColumnSteelBarQty").html( parseFloat($("#ColumnSteelBarQty").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnSteelBarCost").html( parseFloat($("#ColumnSteelBarCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnSteelBarQty").html( parseFloat($("#ColumnSteelBarQty").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        $("#ColumnSteelBarCost").html( parseFloat($("#ColumnSteelBarCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
         
-        $("#ColumnTieBarQty").html( parseFloat($("#ColumnTieBarQty").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnTieBarCost").html( parseFloat($("#ColumnTieBarCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnTieBarQty").html( parseFloat($("#ColumnTieBarQty").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        $("#ColumnTieBarCost").html( parseFloat($("#ColumnTieBarCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
         
-        $("#ColumnTieWireKg").html( parseFloat($("#ColumnTieWireKg").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
-        $("#ColumnTieWireCost").html( parseFloat($("#ColumnTieWireCost").toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')) );
+        $("#ColumnTieWireKg").html( parseFloat($("#ColumnTieWireKg").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        $("#ColumnTieWireCost").html( parseFloat($("#ColumnTieWireCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
 
     function computeAndDisplayOverallTotal(){
-        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
+        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
 
         $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         $("#OverallTotalCost1").val(parseFloat(overAllTotal));
