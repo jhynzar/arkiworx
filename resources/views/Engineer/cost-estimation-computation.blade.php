@@ -2979,44 +2979,44 @@
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 40)    
                                         <tr class="table-success">
                                             <td id="MasonryCement"> {{ $record -> materialName }} </td> 
-                                            <td id="MasonryCementBag"> {{ $record -> qty }} </td>
-                                            <td id="MasonryCementCost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 41)    
                                         <tr>
                                             <td id="MasonryS"> {{ $record -> materialName }} </td>
-                                            <td id="MasonrySand"> {{ $record -> qty }} </td>
-                                            <td id="MasonrySandCost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                        
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 43)    
                                         <tr class="table-warning">
                                             <td id="MasonryCHB1"> {{ $record -> materialName }} </td>
-                                            <td id="MasonryCHB1Qty"> {{ $record -> qty }} </td>
-                                            <td id="MasonryCHB1Cost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 44)    
                                             <tr class="table-success">
                                             <td id="MasonryCHB2"> {{ $record -> materialName }} </td>
-                                            <td id="MasonryCHB2Qty"> {{ $record -> qty }} </td>
-                                            <td id="MasonryCHB2Cost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
                                             <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 42)    
                                             <tr>
                                             <td id="MasonrySteelBar"> {{ $record -> materialName }} </td>
-                                            <td id="MasonrySteelBarQty"> {{ $record -> qty }} </td>
-                                            <td id="MasonrySteelBarCost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                        
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 45)    
                                         <tr class="table-warning">
                                             <td id="MasonryTieWire"> {{ $record -> materialName }} </td>
-                                            <td id="MasonryTieWireKg"> {{ $record -> qty }} </td>
-                                            <td id="MasonryTieWireCost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
                                       
@@ -5115,6 +5115,270 @@
 
 <script>
     //from template????
+
+    $("#TQty1").html( parseFloat( $("#Quantity1").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost1").html( parseFloat( $("#Cost1").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty2").html( parseFloat( $("#Quantity2").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost2").html( parseFloat( $("#Cost2").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty3").html( parseFloat( $("#Quantity3").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost3").html( parseFloat( $("#Cost3").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty4").html( parseFloat( $("#Quantity4").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost4").html( parseFloat( $("#Cost4").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty5").html( parseFloat( $("#Quantity5").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost5").html( parseFloat( $("#Cost5").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty6").html( parseFloat( $("#Quantity6").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost6").html( parseFloat( $("#Cost6").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty7").html( parseFloat( $("#Quantity7").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost7").html( parseFloat( $("#Cost7").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty8").html( parseFloat( $("#Quantity8").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost8").html( parseFloat( $("#Cost8").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty9").html( parseFloat( $("#Quantity9").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost9").html( parseFloat( $("#Cost9").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty10").html( parseFloat( $("#Quantity10").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost10").html( parseFloat( $("#Cost10").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty11").html( parseFloat( $("#Quantity11").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost11").html( parseFloat( $("#Cost11").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty12").html( parseFloat( $("#Quantity12").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost12").html( parseFloat( $("#Cost12").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty13").html( parseFloat( $("#Quantity13").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost13").html( parseFloat( $("#Cost13").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty14").html( parseFloat( $("#Quantity14").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost14").html( parseFloat( $("#Cost14").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty15").html( parseFloat( $("#Quantity15").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost15").html( parseFloat( $("#Cost15").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty16").html( parseFloat( $("#Quantity16").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost16").html( parseFloat( $("#Cost16").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty17").html( parseFloat( $("#Quantity17").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost17").html( parseFloat( $("#Cost17").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty18").html( parseFloat( $("#Quantity18").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost18").html( parseFloat( $("#Cost18").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty19").html( parseFloat( $("#Quantity19").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost19").html( parseFloat( $("#Cost19").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty20").html( parseFloat( $("#Quantity20").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost20").html( parseFloat( $("#Cost20").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty21").html( parseFloat( $("#Quantity21").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost21").html( parseFloat( $("#Cost21").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty22").html( parseFloat( $("#Quantity22").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost22").html( parseFloat( $("#Cost22").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty23").html( parseFloat( $("#Quantity23").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost23").html( parseFloat( $("#Cost23").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty24").html( parseFloat( $("#Quantity24").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost24").html( parseFloat( $("#Cost24").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty25").html( parseFloat( $("#Quantity25").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost25").html( parseFloat( $("#Cost25").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty26").html( parseFloat( $("#Quantity26").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost26").html( parseFloat( $("#Cost26").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty27").html( parseFloat( $("#Quantity27").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost27").html( parseFloat( $("#Cost27").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty28").html( parseFloat( $("#Quantity28").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost28").html( parseFloat( $("#Cost28").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty29").html( parseFloat( $("#Quantity29").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost29").html( parseFloat( $("#Cost29").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty30").html( parseFloat( $("#Quantity30").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost30").html( parseFloat( $("#Cost30").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty31").html( parseFloat( $("#Quantity31").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost31").html( parseFloat( $("#Cost31").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty32").html( parseFloat( $("#Quantity32").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost32").html( parseFloat( $("#Cost32").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty33").html( parseFloat( $("#Quantity33").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost33").html( parseFloat( $("#Cost33").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty34").html( parseFloat( $("#Quantity34").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost34").html( parseFloat( $("#Cost34").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty35").html( parseFloat( $("#Quantity35").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost35").html( parseFloat( $("#Cost35").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty36").html( parseFloat( $("#Quantity36").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost36").html( parseFloat( $("#Cost36").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty37").html( parseFloat( $("#Quantity37").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost37").html( parseFloat( $("#Cost37").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty38").html( parseFloat( $("#Quantity38").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost38").html( parseFloat( $("#Cost38").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty39").html( parseFloat( $("#Quantity39").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost39").html( parseFloat( $("#Cost39").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty40").html( parseFloat( $("#Quantity40").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost40").html( parseFloat( $("#Cost40").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty41").html( parseFloat( $("#Quantity41").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost41").html( parseFloat( $("#Cost41").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty42").html( parseFloat( $("#Quantity42").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost42").html( parseFloat( $("#Cost42").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty43").html( parseFloat( $("#Quantity43").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost43").html( parseFloat( $("#Cost43").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty44").html( parseFloat( $("#Quantity44").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost44").html( parseFloat( $("#Cost44").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty45").html( parseFloat( $("#Quantity45").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost45").html( parseFloat( $("#Cost45").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty46").html( parseFloat( $("#Quantity46").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost46").html( parseFloat( $("#Cost46").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty47").html( parseFloat( $("#Quantity47").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost47").html( parseFloat( $("#Cost47").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty48").html( parseFloat( $("#Quantity48").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost48").html( parseFloat( $("#Cost48").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty49").html( parseFloat( $("#Quantity49").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost49").html( parseFloat( $("#Cost49").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty50").html( parseFloat( $("#Quantity50").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost50").html( parseFloat( $("#Cost50").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty51").html( parseFloat( $("#Quantity51").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost51").html( parseFloat( $("#Cost51").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty52").html( parseFloat( $("#Quantity52").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost52").html( parseFloat( $("#Cost52").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty53").html( parseFloat( $("#Quantity53").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost53").html( parseFloat( $("#Cost53").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty54").html( parseFloat( $("#Quantity54").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost54").html( parseFloat( $("#Cost54").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty55").html( parseFloat( $("#Quantity55").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost55").html( parseFloat( $("#Cost55").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty56").html( parseFloat( $("#Quantity56").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost56").html( parseFloat( $("#Cost56").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty57").html( parseFloat( $("#Quantity57").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost57").html( parseFloat( $("#Cost57").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty58").html( parseFloat( $("#Quantity58").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost58").html( parseFloat( $("#Cost58").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty59").html( parseFloat( $("#Quantity59").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost59").html( parseFloat( $("#Cost59").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty60").html( parseFloat( $("#Quantity60").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost60").html( parseFloat( $("#Cost60").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty61").html( parseFloat( $("#Quantity61").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost61").html( parseFloat( $("#Cost61").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty62").html( parseFloat( $("#Quantity62").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost62").html( parseFloat( $("#Cost62").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty63").html( parseFloat( $("#Quantity63").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost63").html( parseFloat( $("#Cost63").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty64").html( parseFloat( $("#Quantity64").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost64").html( parseFloat( $("#Cost64").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty65").html( parseFloat( $("#Quantity65").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost65").html( parseFloat( $("#Cost65").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty66").html( parseFloat( $("#Quantity66").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost66").html( parseFloat( $("#Cost66").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty67").html( parseFloat( $("#Quantity67").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost67").html( parseFloat( $("#Cost67").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty68").html( parseFloat( $("#Quantity68").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost68").html( parseFloat( $("#Cost68").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty69").html( parseFloat( $("#Quantity69").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost69").html( parseFloat( $("#Cost69").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty70").html( parseFloat( $("#Quantity70").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost70").html( parseFloat( $("#Cost70").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty71").html( parseFloat( $("#Quantity71").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost71").html( parseFloat( $("#Cost71").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty72").html( parseFloat( $("#Quantity72").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost72").html( parseFloat( $("#Cost72").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty73").html( parseFloat( $("#Quantity73").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost73").html( parseFloat( $("#Cost73").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty74").html( parseFloat( $("#Quantity74").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost74").html( parseFloat( $("#Cost74").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty75").html( parseFloat( $("#Quantity75").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost75").html( parseFloat( $("#Cost75").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty76").html( parseFloat( $("#Quantity76").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost76").html( parseFloat( $("#Cost76").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty77").html( parseFloat( $("#Quantity77").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost77").html( parseFloat( $("#Cost77").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty78").html( parseFloat( $("#Quantity78").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost78").html( parseFloat( $("#Cost78").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty79").html( parseFloat( $("#Quantity79").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost79").html( parseFloat( $("#Cost79").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty80").html( parseFloat( $("#Quantity80").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost80").html( parseFloat( $("#Cost80").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty81").html( parseFloat( $("#Quantity81").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost81").html( parseFloat( $("#Cost81").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty82").html( parseFloat( $("#Quantity82").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost82").html( parseFloat( $("#Cost82").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty83").html( parseFloat( $("#Quantity83").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost83").html( parseFloat( $("#Cost83").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty84").html( parseFloat( $("#Quantity84").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost84").html( parseFloat( $("#Cost84").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty85").html( parseFloat( $("#Quantity85").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost85").html( parseFloat( $("#Cost85").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty86").html( parseFloat( $("#Quantity86").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost86").html( parseFloat( $("#Cost86").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty87").html( parseFloat( $("#Quantity87").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost87").html( parseFloat( $("#Cost87").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+
+
     var OverallTotalCost = parseFloat($("#OverallTotalCost1").val()) + parseFloat($("#OverallTotalCost2").val());
     $("#OverallTotalCost").html(parseFloat( OverallTotalCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
     if( OverallTotalCost < 1000000){
@@ -5266,16 +5530,16 @@
             totalCost5 += total;
             $("#CHBMortarWidth").val(0.15);
             $("#CHBMortarVolume").val( parseFloat($("#CHBArea").val()) * 0.15 );
-            $("#MasonryCHB1Qty").html( parseFloat(totalPcs5) ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-            $("#MasonryCHB1Cost").html( parseFloat(total5) ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+            $("#MasonryCHB1Qty").html( parseFloat(totalPcs5).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+            $("#MasonryCHB1Cost").html( parseFloat(total5).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         }
         else if($("#CHBSize").val() == 16){
             totalPcs4 += CHBPcs;
             total4 += total;
             $("#CHBMortarWidth").val(0.10);
             $("#CHBMortarVolume").val( parseFloat($("#CHBArea").val()) * 0.10 );
-            $("#MasonryCHB2Qty").html( parseFloat(totalPcs4) ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-            $("#MasonryCHB2Cost").html( parseFloat(total4) ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+            $("#MasonryCHB2Qty").html( parseFloat(totalPcs4) .toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+            $("#MasonryCHB2Cost").html( parseFloat(total4) .toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         }
         $("#CHBPlasterVolume").val( parseFloat($("#CHBPlasterThickness").val()) * parseFloat($("#CHBArea").val()) );
             
