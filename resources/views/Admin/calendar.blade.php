@@ -71,18 +71,10 @@
             color: white !important;
         }
 
-        .main-header-top>.navbar {
-            background: #222d32 !important;
-        }
 
 
-        .sidebar-menu>li.active>a {
-            background: #222d32 !important;
-        }
+        
 
-        .main-header-top {
-            background-color: #222d32 !important;
-        }
 
 
         .col-sm-3 {
