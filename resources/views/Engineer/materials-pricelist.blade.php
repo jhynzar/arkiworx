@@ -462,13 +462,17 @@
 
 
             <!-- Add User Modal Button trigger-->
+               <div >
+               
+                <button type="button" data-toggle="modal" data-target="#" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: -610px; margin-top: 110px">
+                    <i class="icon-eye"> </i>Show Reports</button>
+            </div>
             <div class="col-sm-3 pull-right">
-                <br>
-                <br>
-                <button type="button" data-toggle="modal" data-target="#addMaterial" class="btn btn-success waves-effect waves-light" style="margin-left: 10px; margin-top: 50px">
+               <br> <br> <br>
+                <button type="button" data-toggle="modal" data-target="#addMaterial" class="btn btn-success waves-effect waves-light" style="margin-left: 10px; margin-top: 40px">
                     <i class="icon-plus"> </i>Add Material</button>
             </div>
-
+<br>
 
 
 

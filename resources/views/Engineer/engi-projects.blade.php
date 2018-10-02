@@ -317,7 +317,7 @@
                         </div>
             </div>
 
-<div class="content-wrapper" style="margin-top: 0px">
+<div class="content-wrapper" style="margin-top: 10px">
     <!-- Container-fluid starts -->
    
     <div class="container-fluid">
@@ -375,7 +375,11 @@
 
 
 
-
+            <div >
+               
+                <button type="button" data-toggle="modal" data-target="#" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: 10px; margin-top: 50px">
+                    <i class="icon-eye"> </i>Show Reports</button>
+            </div>
 
 
 
@@ -409,7 +413,7 @@
                             <div class="card-header">
                                 <h5 class="card-header-text">Engineer Project List</h5>
 
-                            </div>
+                            </div> <br> <br>
                             <!-- end of card-header  -->
                             <div class="row">
                                 <div class="col-lg-12">

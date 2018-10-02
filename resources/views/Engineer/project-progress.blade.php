@@ -761,12 +761,9 @@
 
                                                                                 <a href="/Engineer/Project-Progress/{{$project->intProjectId}}/Schedule"  type="button"  class="btn btn-primary waves-effect waves-light"
                                                                                     data-toggle="tooltip" data-placement="top" title="View">
-                                                                                    <i class="icon-map"> </i>Project Schedule
+                                                                                    <i class="icon-eye"> </i>Project Schedule
                                                                                 </a>
-                                                                                <a href="/Engineer/Project-Progress/Materials-Usage"  type="button"  class="btn btn-warning waves-effect waves-light"
-                                                                                    data-toggle="tooltip" data-placement="top" title="View">
-                                                                                    <i class="icon-graph"> </i>Material Usage
-                                                                                </a>
+                                                                               
 
 
 
