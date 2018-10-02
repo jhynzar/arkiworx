@@ -1137,7 +1137,7 @@
                                 <label class="text text-default"><b>Permit</b> </label>  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input class="form-control currencyInput" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input type="number" class="form-control" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
                                      &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> DENR <span class="text text-primary"><i>Optional</i></span></label>  &nbsp; 
                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 2)<input type="number" class="form-control" value="{{ $record -> cost }}" id="DENR" name="DENR" style="width: 100px !important;" placeholder="">@endif @endforeach
@@ -1269,8 +1269,8 @@
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
                                 <select class="form-control" id="ColumnCC" style="width: 160px !important;">
-                                    <option value="1" selected>Class AA </option>
-                                    <option value="2">Class A </option>
+                                    <option value="1">Class AA </option>
+                                    <option value="2" selected>Class A </option>
                                     <option value="3">Class B </option>
                                     <option value="4">Class C </option>
                                 </select>
@@ -1286,11 +1286,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" value=1.16>
+                            <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" value=>
                             <label >Width:</label>
-                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;" value=1.16>
+                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;" value=>
                             <label >Length:</label>
-                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;" value=1.16>
+                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;" value=>
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -1304,14 +1304,14 @@
                                 <label for="">Bar Length:</label>
                                 <select class="form-control" id="ColumnsBarLeng" style="width: 150px !important;">
                                     <option value="6" selected>6 meters </option>
-                                    <option value="7.5" >7.5 meters </option>
+                                    <!--<option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
-                                    <option value="12">12 meters </option>
+                                    <option value="12">12 meters </option>-->
                                 </select>
                                      <label for="">Bar Size:</label>
                                 <select class="form-control" id="ColumnsBarSize" style="width: 170px !important;">
-                                    <option value=6 >6 mm</option>
-                                    <option value=10>10 mm </option>
+                                    <!--<option value=6 >6 mm</option>
+                                    <option value=10>10 mm </option>-->
                                     <option value=12 selected>12 mm </option>
                                 </select>
                             </div> <br> <br>
@@ -1320,9 +1320,9 @@
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
                                 <select class="form-control" id="ColumnsTieBarSize" style="width: 150px !important;">
-                                    <option value=6 >6 mm</option>
+                                    <!--<option value=6 >6 mm</option>-->
                                     <option value=10 selected>10 mm </option>
-                                    <option value=12>12 mm </option>
+                                    <!--<option value=12>12 mm </option>-->
                                 </select>
                                      <label for="">Tie wire:</label>
                                 <select class="form-control" id="ColumnsTieWire" style="width: 140px !important;">
@@ -2858,13 +2858,19 @@
                              
                     
                              <div class="form-group form-inline">
-                           
+                             <label for="">CHB Size:</label>
+                                <select class="form-control" id="CHBSize" style="width: 140px !important;">
+                                    <option value=16>4"</option>
+                                    <option value=15 selected>5"</option>
+                                    
+                                </select>
+                           <br><br>
                             <label >Area:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" placeholder="Optional" >
+                            <input type="number" class="form-control" id="CHBArea" style="width: 80px !important;" placeholder="Optional" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="number" class="form-control" id="CHBWidth" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="number" class="form-control" id="CHBLength" style="width: 80px !important;" >
                                  <br> <br>
                                  
                                  
@@ -2878,66 +2884,17 @@
                                  
                                  <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="masonryCementClassMixture" style="width: 160px !important;">
-                                    <option value="AA" selected>Class AA </option>
-                                    <option value="A" >Class A </option>
-                                    <option value="B" >Class B </option>
-                                    <option value="B" >Class C </option>
+                                <select class="form-control" id="CHBMortarMixture" style="width: 160px !important;">
+                                    <option value="1">Class AA </option>
+                                    <option value="2" >Class A </option>
+                                    <option value="3" selected>Class B </option>
+                                    <option value="4" >Class C </option>
                                 </select>
                             </div><br><br>
-                                 
-                             <div class="form-group form-inline">
-                                <label for="">Volume:</label>
-                                <input type="number" class="form-control" style="width: 140px" id="" placeholder="Optional">
                                   <label for="">Thickness:</label>
-                                <input type="number" style="width: 140px" class="form-control" id="" >
-                            </div>  
-                                 <br> <br>
-                                 <div class="form-group">
-                                <label for="">Area:</label>
-                                <input type="number" class="form-control" style="width: 160px" id="" placeholder="Optional">
-                            </div> 
-                                 
-                                 <br> <br>
-                                 <div class="form-group form-inline">
-                                <label for="">Width:</label>
-                                <input type="number" style="width: 150px" class="form-control" id="" >
-                                     <label for="">Length:</label>
-                                <input type="number" style="width: 160px" class="form-control" id="" >
-                            </div> 
-                                 
-                                 
-                                 
+                                <input type="number" style="width: 140px" class="form-control" id="CHBMortarThickness" >
+                            </div>
                                  <br><br>
-                                 
-                                   <div class="form-group pull-center">
-                                <label for=""><b>Hollow Cores:</b></label>
-                               
-                            </div><br><br>
-                                 
-                                 
-                             <div class="form-group form-inline">
-                                <label for="">Volume:</label>
-                                <input type="number" class="form-control" style="width: 140px" id="" placeholder="Optional">
-                                  <label for="">Thickness:</label>
-                                <input type="number" style="width: 140px" class="form-control" id="" >
-                            </div>  
-                                 <br> <br>
-                                 <div class="form-group">
-                                <label for="">Area:</label>
-                                <input type="number" class="form-control" style="width: 160px" id="" placeholder="Optional">
-                            </div> 
-                                 
-                                 <br> <br>
-                                 <div class="form-group form-inline">
-                                <label for="">Width:</label>
-                                <input type="number" style="width: 150px" class="form-control" id="" >
-                                     <label for="">Length:</label>
-                                <input type="number" style="width: 160px" class="form-control" id="" >
-                            </div> 
-                                 
-                                  <br><br>
-                                 
                                    <div class="form-group pull-center">
                                 <label for=""><b>Plaster:</b></label>
                                
@@ -2945,35 +2902,16 @@
                                  
                                  <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="masonryCementClassMixture" style="width: 160px !important;">
-                                    <option value="AA" selected>Class AA </option>
-                                    <option value="A" >Class A </option>
-                                    <option value="B" >Class B </option>
-                                    <option value="C" >Class C </option>
+                                <select class="form-control" id="CHBPlasterMixture" style="width: 160px !important;">
+                                    <option value="1">Class AA </option>
+                                    <option value="2" >Class A </option>
+                                    <option value="3" selected>Class B </option>
+                                    <option value="4" >Class C </option>
                                 </select>
                             </div><br><br>
-                                 
-                             <div class="form-group form-inline">
-                                <label for="">Volume:</label>
-                                <input type="number" class="form-control" style="width: 140px" id="" placeholder="Optional">
                                   <label for="">Thickness:</label>
-                                <input type="number" style="width: 140px" class="form-control" id="" >
+                                <input type="number" style="width: 140px" class="form-control" id="CHBPlasterThickness" >
                             </div>  
-                                 <br> <br>
-                                 <div class="form-group">
-                                <label for="">Area:</label>
-                                <input type="number" class="form-control" style="width: 160px" id="" placeholder="Optional">
-                            </div> 
-                                 
-                                 <br> <br>
-                                 <div class="form-group form-inline">
-                                <label for="">Width:</label>
-                                <input type="number" style="width: 150px" class="form-control" id="" >
-                                     <label for="">Length:</label>
-                                <input type="number" style="width: 160px" class="form-control" id="" >
-                            </div> 
-                                 
-                                 
                                  <br> <br>
                                  
                                       <div class="container" style="margin-left: -20px !important">
@@ -2982,13 +2920,14 @@
                                  <br>
                                  
                                  <div class="form-group form-inline pull-center">
-                                <label for="">Bar Size:</label>
+                                <label for="">Bar Spacing:</label>
                                 <select class="form-control" id="masonryBarSize" style="width: 136px !important;">
                                     <option value="40" selected>40 cm</option>
                                     <option value="60" >60 cm</option>
                                     <option value="80" >80 cm</option>
                                 
                                 </select>
+                                <br><br>
                                      <label for="">Bar Layer:</label>
                                 <select class="form-control" id="masonryBarLayer" style="width: 150px !important;">
                                     <option value="2" selected>2</option>
@@ -2996,13 +2935,20 @@
                                     <option value="4" >4</option>
                                    
                                 </select>
+                                <br><br>
+                                <label for="">Tie wire:</label>
+                                <select class="form-control" id="masonryTieWire" style="width: 140px !important;">
+                                    <option value=30 selected>30 cm </option>
+                                    <option value=40>40 cm </option>
+                                    
+                                </select>
                             </div> 
                    
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
-                                <button type="button" class="btn btn-primary" style="margin-left: 50px" >Compute</button>
+                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="CHBWallNo" style="width: 100px !important;">
+                                <button type="button" id="CHBCompute" class="btn btn-primary" style="margin-left: 50px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -3046,19 +2992,19 @@
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 43)    
                                         <tr class="table-warning">
-                                            <td id="MasonryCHB2"> {{ $record -> materialName }} </td>
-                                            <td id="MasonryCHB2Qty"> {{ $record -> qty }} </td>
-                                            <td id="MasonryCHB2Cost"> {{ $record -> cost }} </td>
+                                            <td id="MasonryCHB1"> {{ $record -> materialName }} </td>
+                                            <td id="MasonryCHB1Qty"> {{ $record -> qty }} </td>
+                                            <td id="MasonryCHB1Cost"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 44)    
-                                            <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
                                             <td id="MasonryCHB2"> {{ $record -> materialName }} </td>
                                             <td id="MasonryCHB2Qty"> {{ $record -> qty }} </td>
                                             <td id="MasonryCHB2Cost"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
+                                            <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 42)    
                                             <tr>
                                             <td id="MasonrySteelBar"> {{ $record -> materialName }} </td>
@@ -4746,7 +4692,7 @@
                                                                                 </label> &nbsp; &nbsp;
                                                                                 <label for="">Length:</label>
                                                                                 <select class="form-control" id="" style="width: 130px !important;">
-                                                                                    <option selected> 60 </option>
+                                                                                    <option selected> 30 </option>
                                                                                     <option> 60 </option>
                                                                                     <option>90</option>
                                                                                     <option>120 </option>
@@ -4876,32 +4822,32 @@
           <div class="card-block">
                                             <div class="table-responsive">
                                             @foreach ( $TemplateArray4 as $key=>$record ) @if($record -> id == 1)  
-                                            <input type=hidden id="OverallTotalCost1" name="OverallTotalCost1" value=" {{ $record -> OverallTotal }} ">
-                                            <input type=hidden id="OverallTotalCost1" name="OverheadProfit" value="0.2">
-                                            <input type=hidden id="OverallTotalCost1" name="OverheadTotalCost1" value=" {{ $record -> OverheadTotal }} ">
-                                            <input type=hidden id="OverallTotalCost1" name="GrandTotalCost1" value=" {{ $record -> GrandTotal }} ">
+                                                <input type=hidden id="OverallTotalCost1" name="OverallTotalCost1" value=" {{ $record -> OverallTotal }} ">
+                                            @endif @endforeach
+                                            @foreach ( $TemplateArray3 as $key1=>$record1 ) @if($record1 -> Id == 1)
+                                                <input type=hidden id="OverallTotalCost2" name="OverallTotalCost2" value=" {{ $record1 -> Cost }} ">
                                             @endif @endforeach
                                                 <table class="table m-b-0 photo-table">
-                                                    @foreach ( $TemplateArray4 as $key=>$record ) @if($record -> id == 1)  
+                                                    
                                                     <thead>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overall Total Cost:</th>
                                                          
-                                                            <th class="text-center text-primary" id="OverallTotalCost"> {{ $record -> OverallTotal }} </th>
+                                                            <th class="text-center text-primary" id="OverallTotalCost"></th>
                                                             
 
                                                         </tr>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overhead Profit %:</th>
                                                          
-                                                            <th class="text-center text-primary" id="OverheadProfit"> 20% </th>
+                                                            <th class="text-center text-primary" id="OverheadProfit"></th>
                                                             
 
                                                         </tr>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overhead Profit Amount:</th>
                                                          
-                                                            <th class="text-center text-primary" id="OverheadTotalCost"> {{ $record -> OverheadTotal }} </th>
+                                                            <th class="text-center text-primary" id="OverheadTotalCost"></th>
                                                             
 
                                                         </tr>
@@ -4909,11 +4855,11 @@
                                                         <tr class="text-uppercase " style="background-color: #ffc551">
                                                             <th class="text-left text-secondary">Grand Total Cost:</th>
                                                          
-                                                            <th class="text-center text-default"     id="GrandTotalCost"> {{ $record -> GrandTotal }} </th>
+                                                            <th class="text-center text-default"     id="GrandTotalCost"></th>
                                                             
 
                                                         </tr>
-                                                    </thead> @endif @endforeach
+                                                    </thead>
                                                   
                                                 </table>
                                                 <input type=hidden id=OverallTotalCost1 value=>
@@ -5168,22 +5114,42 @@
 
 
 <script>
-
- //computeAndDisplayOverallTotal(); //compute at the beginning removed because total cost is already set in html
+    //from template????
+    var OverallTotalCost = parseFloat($("#OverallTotalCost1").val()) + parseFloat($("#OverallTotalCost2").val());
+    $("#OverallTotalCost").html(parseFloat( OverallTotalCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+    if( OverallTotalCost < 1000000){
+        OverheadCost = OverallTotalCost * 0.20;
+        $("#OverheadProfit").html('20%');
+    }
+    else{
+        OverheadCost = OverallTotalCost * 0.10;
+        $("#OverheadProfit").html('10%');
+    }
+    $("#OverheadTotalCost").html(parseFloat( OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+    $("#GrandTotalCost").html(parseFloat( OverallTotalCost + OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
 
 
     function computeAndDisplayOverallTotal(){
-        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
+        var overAllTotal = parseFloat($("#totalGeneralReq1").val()) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
+        var OverheadProfit;
+        if(overAllTotal < 1000000){
+            OverheadProfit = 0.20;
+            var OverheadCost = overAllTotal * OverheadProfit;
+            $("#OverheadProfit").html('20%');
+        }
+        else{
+            OverheadProfit = 0.10;
+            var OverheadCost = overAllTotal * OverheadProfit;
+            $("#OverheadProfit").html('10%');
+        }
 
-        $("#OverallTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
-        $("#OverheadProfitTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
-        $("#OverheadTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
-        $("#GrandTotalCost").html(parseFloat(  ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
+        $("#OverallTotalCost").html(parseFloat( overAllTotal ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        $("#OverheadTotalCost").html(parseFloat( OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        $("#GrandTotalCost").html(parseFloat( overAllTotal + OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         
-        $("#OverallTotalCost1").val(  );
-        $("#OverheadProfit").val(  );
-        $("#OverheadTotalCost1").val(  );
-        $("#GrandTotalCost1").val(  );
+        $("#OverallTotalCost1").val( overAllTotal );
+        $("#OverheadTotalCost1").val( OverheadCost );
+        $("#GrandTotalCost1").val( overAllTotal + OverheadCost );
         //parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
     }
 
@@ -5283,6 +5249,43 @@
 
         computeAndDisplayOverallTotal();
     });
+
+    $("#CHBCompute").click(function() {
+        var totalPcs4;
+        var total4;
+        var totalPcs5;
+        var total5;
+        $("#CHBArea").val( parseFloat($("#CHBWidth").val()) + parseFloat($("#CHBLength").val()) );
+        var CHBLayers = parseFloat($("#CHBWidth").val()) / 0.20;
+        var CHBLength = parseFloat($("#CHBLength").val()) / 0.40;
+        var CHBPcs = CHBLayers * CHBLength;
+        var EstiCHB = DirectCountingEsti( CHBPcs , $("#CHBSize").val() );
+        var total = EstiCHB.totals;
+        if($("#CHBSize").val() == 15){
+            totalPcs5 += CHBPcs;
+            totalCost5 += total;
+            $("#CHBMortarWidth").val(0.15);
+            $("#CHBMortarVolume").val( parseFloat($("#CHBArea").val()) * 0.15 );
+            $("#MasonryCHB1Qty").html( parseFloat(totalPcs5) ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+            $("#MasonryCHB1Cost").html( parseFloat(total5) ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        }
+        else if($("#CHBSize").val() == 16){
+            totalPcs4 += CHBPcs;
+            total4 += total;
+            $("#CHBMortarWidth").val(0.10);
+            $("#CHBMortarVolume").val( parseFloat($("#CHBArea").val()) * 0.10 );
+            $("#MasonryCHB2Qty").html( parseFloat(totalPcs4) ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+            $("#MasonryCHB2Cost").html( parseFloat(total4) ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        }
+        $("#CHBPlasterVolume").val( parseFloat($("#CHBPlasterThickness").val()) * parseFloat($("#CHBArea").val()) );
+            
+        var EstiConcretes1 = ConcreteEsti($("#CHBWallNo").val(),$("#CHBMortarVolume").val(),1,$("#CHBMortarMixture").val(),1);
+        var EstiConcretes2 = ConcreteEsti($("#CHBWallNo").val(),0.003,1,$("#CHBMortarMixture").val(),1);
+        var EstiConcretes3 = ConcreteEsti($("#CHBWallNo").val(),$("#CHBPlasterVolume").val(),1,$("#CHBPlasterMixture").val(),1);
+        
+        
+    });
+
 /*
     $("#ComputeElectricalWorks").click(function(){
         if($("#ElectricalWorksMaterial").val()==43){
