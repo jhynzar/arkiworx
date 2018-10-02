@@ -1095,7 +1095,7 @@
             
           </div>
             
-          <div class="card-block accordion-block ">
+          <div class="card-block accordion-block scroll">
             
                     <div class="col-lg-12"> 
                         <div class="card" style="margin-top: 30px" >
@@ -1287,9 +1287,9 @@
                             <label >Thickness:</label>
                             <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" value=>
                             <label >Width:</label>
-                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;" value=>
+                            <input type="" class="form-control" id="ColumnWidth" style="width: 80px !important;" value=>
                             <label >Length:</label>
-                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;" value=>
+                            <input type="" class="form-control" id="ColumnLength" style="width: 80px !important;" value=>
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -1308,7 +1308,7 @@
                                     <option value="12">12 meters </option>-->
                                 </select>
                                      <label for="">Bar Size:</label>
-                                <select class="form-control" id="ColumnsBarSize" style="width: 170px !important;">
+                                <select class="form-control" id="ColumnsBarSize" style="width: 150px !important;">
                                     <!--<option value=6 >6 mm</option>
                                     <option value=10>10 mm </option>-->
                                     <option value=12 selected>12 mm </option>
@@ -3569,209 +3569,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--
-                                        <div class="accordion-panel">
-                                            <div class=" accordion-heading" role="tab" id="headingThirteen">
-                                                <h3 class="card-title accordion-title">
-                                                    <a class="accordion-msg bg-success" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen" aria-expanded="false"
-                                                        aria-controls="collapseThirteen">
-                                                        Ceiling
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
-                                                <div class="accordion-content accordion-desc">
-                                                    
-
-                                                    <br>
-                                                 
-
-                                                        <div class="row ">
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <div class="card" style="background-color: #A7FDCB">
-
-                                                                    <div class="card-block">
-
-
-
-
-
-
-
-
-                                                                        <div class="form-group form-inline">
-
-
-
-                                                                            <label class="text text-default">
-                                                                                <span>
-                                                                                    <b>Joist</b>
-                                                                                </span>
-                                                                            </label>
-                                                                            <br>
-                                                                            <br>
-                                                                            <label>Lumber: </label>
-                                                                            <select class="form-control" id="" style="width: 130px !important;">
-                                                                                <option selected> 1 x 2 </option>
-                                                                                <option>2 x 2 </option>
-                                                                                <option>2 x 3 </option>
-                                                                                <option>2 x 4 </option>
-
-                                                                            </select>
-
-
-
-                                                                            <label>Spacing: </label>
-                                                                            <select class="form-control" id="" style="width: 130px !important;">
-                                                                                <option selected> 30 x 30 </option>
-                                                                                <option>30 x 60 </option>
-                                                                                <option>40 x 40 </option>
-                                                                                <option>40 x 60 </option>
-                                                                                <option>60 x 60 </option>
-
-                                                                            </select>
-                                                                            <br>
-                                                                            <br>
-
-                                                                            <label class="text text-default">
-                                                                                <span>
-                                                                                    <b>Area</b>
-                                                                                </span>
-                                                                            </label>
-                                                                            <br>
-                                                                            <br>
-                                                                            <label>Width: </label>
-                                                                            <input type="number" class="form-control" id="" style="width: 140px !important;" placeholder="">
-
-
-
-                                                                            <label>Length: </label>
-                                                                            <input type="number" class="form-control" id="" style="width: 140px !important;" placeholder="">
-
-
-                                                                            <br>
-                                                                            <br>
-                                                                            <label>Board Size: </label>
-                                                                            <select class="form-control" id="" style="width: 310px !important;">
-                                                                                <option selected> 30 x 30 </option>
-                                                                                <option>40 x 40 </option>
-                                                                                <option>40 x 60 </option>
-                                                                                <option>60 x 60 </option>
-                                                                                <option>60 x 120 </option>
-                                                                                <option>90 x 180 </option>
-                                                                                <option>120 x 240 </option>
-
-                                                                            </select>
-
-
-                                                                            <br>
-                                                                            <br>
-
-
-                                                                            <hr>
-                                                                            <div class="form-group form-inline">
-                                                                                <label class="text text-default">
-                                                                                    <b>Celing(s): </b>
-                                                                                </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    id="" style="width: 100px !important;"
-                                                                                    placeholder="1">
-                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px">Compute</button>
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6 col-xs-12 ">
-                                                                <br>
-                                                                <div>
-
-                                                                    <div class="card">
-
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <th>Estimated Cost</th>
-
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <tr class="table-success">
-                                                                                                <td>Ceiling Board:</td>
-                                                                                                <td>5 pcsbags</td>
-                                                                                                <td>1200.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>Ceiling Joist:</td>
-                                                                                                <td>5 pcs</td>
-                                                                                                <td>1350.0</td>
-
-                                                                                            </tr>
-                                                                                            <tr class="table-warning">
-                                                                                                <td>Nails and Accessories:</td>
-                                                                                                <td>1 lot</td>
-                                                                                                <td>700.0</td>
-
-                                                                                            </tr>
-
-
-
-                                                                                        </tbody>
-                                                                                    </table>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    
-
-                                                                    <div class="card-block">
-                                                                        <div class="table-responsive">
-                                                                            <table class="table m-b-0 photo-table">
-                                                                                <thead>
-                                                                                    <tr class="text-uppercase">
-                                                                                        <th class="text-left text-primary">Total Cost:</th>
-                                                                                        <th class="text-center"></th>
-                                                                                        <th class="text-center text-primary"> 22345.0</th>
-
-
-                                                                                    </tr>
-                                                                                </thead>
-
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                        </div>
-
-                                                   
-
-                                                    
-                                                </div>
-                                            </div>
-                                        </div> -->
+                                   
                                         <!--  
                  <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingFourteen">
@@ -4480,7 +4278,7 @@
 
                                                                                         </tr>@endif @endforeach
 
-                                                                                    </tbody>
+                                                                                  
                                                                                 </table>
                                                                             </div>
 
