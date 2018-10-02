@@ -848,7 +848,7 @@
                 ){
                     end = new Date(actualEnd);
                 }else{
-                    end = supposedEnd
+                    end = supposedEnd;
                 }
 
                 /* ===[END] END=== */
@@ -973,7 +973,7 @@
                 ){
                     end = new Date(actualEnd);
                 }else{
-                    end = supposedEnd
+                    end = supposedEnd;
                 }
 
                 /* ===[END] END=== */
