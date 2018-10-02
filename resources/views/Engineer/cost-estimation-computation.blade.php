@@ -4408,7 +4408,7 @@
                                                                                         </tr>
                                                                                     </thead>
                                                                                     <tbody>
-                                                                                    @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id )
+                                                                                    @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 58)
                                                                                                 <td>{{ $record -> materialName }}</td>
                                                                                                 <td id="TQty{{$record -> id}}">{{ $record -> qty }}</td>
                                                                                                 <td id="TCost{{$record -> id}}">{{ $record -> cost }}</td>
@@ -4877,7 +4877,7 @@
 <!-- Add user Modal -->
 
 <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document">cxzc
         <div class="modal-content pull-center">
             <div class="modal-header color color-info">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
