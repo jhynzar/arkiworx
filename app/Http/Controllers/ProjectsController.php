@@ -39,6 +39,19 @@ class ProjectsController extends Controller
         
         ");
 
+        $finishedProjects = DB::select("
+        
+        SELECT *
+        FROM tblproject
+        INNER JOIN tblclient
+        ON (tblproject.intClientId = tblclient.intClientId)
+        INNER JOIN tblemployee
+        ON (tblproject.intEmployeeId = tblemployee.intEmployeeId)
+        WHERE (tblproject.intActive = 1) AND
+        (tblproject.strProjectStatus = 'finished')
+        
+        ");
+
         //getting the totalEstimatedCost of a pending project
 
         $pendingProjectsWithTotalEstimatedCost = array();
@@ -82,7 +95,7 @@ class ProjectsController extends Controller
                     ->get();
 
 
-        return view('Admin/projects',compact('pendingProjectsWithTotalEstimatedCost','ongoingProjects','clients','engineers'));
+        return view('Admin/projects',compact('pendingProjectsWithTotalEstimatedCost','ongoingProjects','finishedProjects','clients','engineers'));
     }
 
     /**
