@@ -619,38 +619,50 @@
 
 
 
-                        <form class="form-inline" action="Add-User">
+                        <form class="form-inline" method="POST" action="/Admin/Add-User">
+                            
+                            {{ csrf_field() }}
                             <!--add user-->
                             <div class="form-group">
                                 <label for="fname">First Name: </label>
-                                <input type="text" name="fname" class="form-control" id="fname" placeholder="First name">
+                                <input required type="text" name="fname" class="form-control" placeholder="First name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mname">Middle Name:</label>
+                                <input required type="text" name="mname" class="form-control" placeholder="Middle name">
                             </div>
 
                             <div class="form-group">
                                 <label for="lname">Last Name:</label>
-                                <input type="text" name="lname" class="form-control" id="lname" placeholder="Last name">
+                                <input required type="text" name="lname" class="form-control" placeholder="Last name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dateofbirth">Birth Date:</label>
+                                <input required type="date" name="dateofbirth" class="form-control">
                             </div>
                             <br>
                             <br>
                             <div class="form-group">
                                 <label for="user">User Name:</label>
-                                <input type="text" name="uname" class="form-control" id="lname" placeholder="User name">
+                                <input required type="text" name="username" class="form-control" placeholder="User name">
                             </div>
 
                             <div class="form-group">
                                 <label for="pwd">Password:</label>
-                                <input type="password" name="password" class="form-control" id="pwd" placeholder="Password">
+                                <input required type="password" name="password" class="form-control" placeholder="Password">
                             </div>
                             <br>
                             <br>
                             <div class="form-group">
                                 <label for="contact">Contact Number:</label>
-                                <input type="number" name="contact" class="form-control" id="contact" style="width: 230px !important;" placeholder="09..">
+                                <input required type="number" name="contact" class="form-control" style="width: 230px !important;" placeholder="09..">
                             </div>
 
                             <div class="form-group pull-center">
                                 <label for="sex">Sex:</label>
-                                <select class="form-control" name="sex" id="userType" style="width: 160px !important;">
+                                <select required class="form-control" name="gender" style="width: 160px !important;">
                                     <option>Female </option>
                                     <option selected>Male </option>
                                 </select>
@@ -660,39 +672,38 @@
                             <br>
                             <div class="form-group form-inline">
                                 <label for="email">Email Address:</label>
-                                <input type="email" name="email" class="form-control" id="email" style="width: 300px !important;" placeholder="Email Address">
+                                <input required type="email" name="email" class="form-control" style="width: 300px !important;" placeholder="Email Address">
                             </div>
 
                             <hr>
                             <p class="text text-muted">Address</p>
                             <div class="form-group form-inline">
                                 <label for="houseNo">House No.</label>
-                                <input type="text" name="houseno" class="form-control" id="houseNo" style="width: 230px !important;" placeholder="House Number">
+                                <input required type="text" name="houseno" class="form-control" style="width: 230px !important;" placeholder="House Number">
                             </div>
 
                             <div class="form-group form-inline">
                                 <label for="streetNo">St. Name</label>
-                                <input type="text" name="streetna" class="form-control" id="streetNo" style="width: 160px !important;" placeholder="Street Name">
+                                <input required type="text" name="street" class="form-control" style="width: 160px !important;" placeholder="Street Name">
                             </div>
 
                             <br>
                             <br>
                             <div class="form-group form-inline">
                                 <label for="brgy">Brgy/ Subdivision</label>
-                                <input type="text" name="brgy" class="form-control" id="brgy" style="width: 230px !important;" placeholder="Brgy/ Subdivision">
+                                <input required type="text" name="brgy" class="form-control" style="width: 230px !important;" placeholder="Brgy/ Subdivision">
                             </div>
 
                             <div class="form-group form-inline">
                                 <label for="city">City</label>
-                                <input type="text" name="city" class="form-control" id="city" style="width: 150px !important;" placeholder="City">
+                                <input required type="text" name="city" class="form-control" style="width: 150px !important;" placeholder="City">
                             </div>
                             <br>
                             <br>
                             <div class="form-group pull-center">
                                 <label for="usertype">User Type:</label>
-                                <select class="form-control" name="usertype" id="userType" style="width: 150px !important;">
-                                    <option value="Admin">Admin </option>
-                                    <option value="Client" selected>Client </option>
+                                <select required class="form-control" name="usertype" style="width: 150px !important;">
+                                    <option value="Admin" selected>Admin </option>
                                     <option value="Engineer">Engineer </option>
                                 </select>
                             </div>
@@ -700,13 +711,12 @@
 
                             <div class="modal-footer">
                                 <hr>
-                                <button type="submit" class="btn btn-success" data-dismiss="modal">
+                                <button type="submit" class="btn btn-success">
                                     <i class="icon icon-check"> </i>Add User</button>
                                 <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 290px">
                                     <i class="icon icon-close"> </i>Cancel</button>
 
                             </div>
-                            {{ csrf_field() }}
                         </form>
 
                     </div>

@@ -20,22 +20,34 @@ class AccountsController extends Controller
 
     public function addusers()
     {
-        $fn = Input::post('fname');
-        $ln = Input::post('lname');
-        $un = Input::post('uname');
-        $pw = Input::post('password');
-        $cno = Input::post('contact');
-        $sex = Input::post('sex');
-        $email = Input::post('email');
-        $hno = Input::post('houseno');
-        $sna = Input::post('streetna');
-        $brgy = Input::post('brgy');
-        $city = Input::post('city');
-        $utype = Input::post('usertype');
-        $insert1 = array($un,$pw,$utype);
-        $insert2 = array($fn,$ln,$cno,$sex,$email,$hno,$sna,$brgy,$city);
-        DB::insert("",$insert1);
-        return view('Admin/accounts');
+
+        //dd(request()->all());
+
+        $accountId = DB::table('tblaccounts')
+                    ->insertGetId([
+                        'varUserName' => request()->username,
+                        'varPassword' => request()->password,
+                        'strUserType' => request()->usertype,
+                        'intActive' => 1,
+                    ]);
+
+        $employeeId = DB::table('tblemployee')
+                    ->insertGetId([
+                        'strEmployeeFName' => request()->fname,
+                        'strEmployeeMName' => request()->mname,
+                        'strEmployeeLName' => request()->lname,
+                        'strEmployeeSex' => request()->gender,
+                        'dtmEmployeeBDay' => request()->dateofbirth,
+                        'varEmployeeEMail' => request()->email,
+                        'varEmployeeContactNo' => request()->contact,
+                        'intEmployeeHouseNo' => request()->houseno,
+                        'strEmployeeStreet' => request()->street,
+                        'strEmployeeBrgy' => request()->brgy,
+                        'strEmployeeCity' => request()->city,
+                        'intAccountId' => $accountId,
+                    ]);
+
+        header('Refresh:0;/Admin/Accounts');
     }
 
 }

@@ -27,7 +27,7 @@ Route::get('Admin/Home', 'PagesController@home1');
 
 Route::get('Admin/Accounts', 'AccountsController@accounts');
 
-Route::get('Admin/Add-User', 'AccountsController@addusers');
+Route::post('Admin/Add-User', 'AccountsController@addusers');
 
 Route::get('Admin/Profile', function(){ 
     return view('Admin/profile');
