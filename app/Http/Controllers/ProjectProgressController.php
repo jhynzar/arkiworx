@@ -250,6 +250,8 @@ class ProjectProgressController extends Controller
     }
 
     public function saveSchedule($id){
+
+        date_default_timezone_set('Asia/Manila');
         //dd(request()->all());
 
         $req = request()->all();
@@ -335,7 +337,7 @@ class ProjectProgressController extends Controller
 
 
 
-
+        //TODO check dependencies
 
         //always last
         //refresh
