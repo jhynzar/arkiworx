@@ -1335,7 +1335,7 @@
                                  <hr>
                                  <div class="form-group form-inline">
                                 <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;" value=1>
-                                <button type="button" id="computeColumn" class="btn" style="margin-left: 90px" >Compute</button>
+                                <button type="button" id="Column" class="btn" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -1547,7 +1547,7 @@
                                  <hr>
                                  <div class="form-group form-inline">
                                 <label class="text text-default"><b>Footing(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyFootings" style="width: 100px !important;">
-                                <button type="button" id="computeFooting" class="btn btn-primary" style="margin-left: 90px" >Compute</button>
+                                <button type="button" id="Footing" class="btn btn-primary" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -1770,7 +1770,7 @@
                                  <hr>
                                  <div class="form-group form-inline">
                                 <label class="text text-default"><b>Slab(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManySlabs" style="width: 100px !important;">
-                                <button type="button" class="btn btn-success" id="computeSlab" style="margin-left: 90px" >Compute</button>
+                                <button type="button" class="btn btn-success" id="Slab" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -1985,7 +1985,7 @@
                                  <hr>
                                  <div class="form-group form-inline">
                                 <label class="text text-default"><b>Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyBeams" style="width: 100px !important;">
-                                <button type="button" class="btn" id="computeBeam" style="margin-left: 90px" >Compute</button>
+                                <button type="button" class="btn" id="Beam" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -2202,7 +2202,7 @@
                                  <hr>
                                  <div class="form-group form-inline">
                                 <label class="text text-default"><b>Wall Footing(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
-                                <button type="button" class="btn btn-primary" style="margin-left: 90px" >Compute</button>
+                                <button type="button" id="WallFooting" class="btn btn-primary" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -2630,7 +2630,7 @@
                                  <hr>
                                  <div class="form-group form-inline">
                                 <label class="text text-default"><b>Roof Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
-                                <button type="button" class="btn" style="margin-left: 90px" >Compute</button>
+                                <button type="button" class="btn" id="RoofBeam" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -2876,7 +2876,7 @@
                                  <hr>
                                  <div class="form-group form-inline">
                                 <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="CHBWallNo" style="width: 100px !important;">
-                                <button type="button" id="CHBCompute" class="btn btn-primary" style="margin-left: 50px" >Compute</button>
+                                <button type="button" id="Masonry" class="btn btn-primary" style="margin-left: 50px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -3092,8 +3092,8 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;">
-                                <button type="button" id="computeColumn" class="btn" style="margin-left: 90px" >Compute</button>
+                                <label class="text text-default"><b>How many of these?: </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;">
+                                <button type="button" id="Roofing" class="btn" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -3273,11 +3273,11 @@
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-default">
-                                                                                    <b>Window(s): </b>
+                                                                                    <b>How many of these? </b>
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
                                                                                     id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn " style="margin-left: 300px">Compute</button>
+                                                                                <button type="button" class="btn " id="Windows" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -3445,7 +3445,7 @@
                                                                             <hr>
                                                                             <div class="form-group form-inline">
 
-                                                                                <button type="button" class="btn btn-primary" style="margin-left: 300px">Compute</button>
+                                                                                <button type="button" class="btn btn-primary" id="Doors" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -3510,6 +3510,7 @@
                                                                                             </tr>@endif @endforeach
                                                                                             @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 96)
                                                                                             <tr class="table-warning">
+                                                                                                <td>{{ $record -> materialName }}</td>
                                                                                                 <td id="TQty{{$record -> id}}">{{ $record -> qty }}</td>
                                                                                                 <td id="TCost{{$record -> id}}">{{ $record -> cost }}</td>
 
@@ -3827,7 +3828,7 @@
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
                                                                                     id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn" style="margin-left: 90px">Compute</button>
+                                                                                <button type="button" class="btn" id="PaintCeiling" style="margin-left: 90px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -4004,7 +4005,7 @@
                                                                                 </label>&nbsp;
                                                                                 <input type="number" class="form-control"
                                                                                     id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn btn-primary" style="margin-left: 90px">Compute</button>
+                                                                                <button type="button" class="btn btn-primary" id="PaintWalls" style="margin-left: 90px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -4152,7 +4153,7 @@
                                                                                 <option value=50> Junction Box</option>
                                                                                 <option value=51> Light Switch + Utility Box</option>
                                                                                 <option value=52> Current Outlets + Cover + Utility box</option>
-                                                                                <option value=> Light Switch </option>
+                                                                                <!--<option value=> Light Switch </option>
                                                                                 <option value=> Utility Box</option>
                                                                                 <option value=> Sqaure Box</option>
                                                                                 <option value=> Motor Pump</option>
@@ -4161,7 +4162,7 @@
                                                                                 <option value=> Circuit Breaker 15a</option>
                                                                                 <option value=> Circuit Breaker 20a </option>
                                                                                 <option value=> Circuit Breaker 30a</option>
-                                                                                <option value=> Circuit Breaker 60a</option>
+                                                                                <option value=> Circuit Breaker 60a</option>-->
                                                                             </select>
 
                                                                          
@@ -4177,7 +4178,7 @@
                                                                             <hr>
                                                                             <div class="form-group form-inline">
 
-                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px" id="ComputeElectricalWorks">Compute</button>
+                                                                                <button type="button" class="btn btn-success" style="margin-left: 300px" id="ElectricalWorks">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -4385,23 +4386,20 @@
 
 
                                                                             <div class="form-group form-inline">
-                                                                                <label for="">Width:</label>
-                                                                                <select class="form-control" id="" style="width: 130px !important;">
-                                                                                    <option selected> 30 </option>
-                                                                                    <option> 60 </option>
-                                                                                    <option>45 </option>
-                                                                                    <option>60 </option>
-                                                                                </select>
-                                                                                &nbsp;
-                                                                                <label>
-                                                                                    <b>x</b>
-                                                                                </label> &nbsp; &nbsp;
-                                                                                <label for="">Length:</label>
-                                                                                <select class="form-control" id="" style="width: 130px !important;">
-                                                                                    <option selected> 30 </option>
-                                                                                    <option> 60 </option>
-                                                                                    <option>90</option>
-                                                                                    <option>120 </option>
+                                                                                <label for=""></label>
+                                                                                <select class="form-control" id="" style="width: 250px !important;">
+                                                                                    <option> 12X12 – Floor Tile </option>
+                                                                                    <option> 12X24 – Digital Tile </option>
+                                                                                    <option> 12X24 – Floor Tile </option>
+                                                                                    <option> 16x16 – Digital Tile </option>
+                                                                                    <option> 16X16 – Floor Tile </option>
+                                                                                    <option selected> 24x24 - Floor Tile </option>
+                                                                                    <option> 24x24 – Digital Tile </option>
+                                                                                    <option> 50cmx50cm – Carpet Tile </option>
+                                                                                    <option> 8x12 – Kitchen and Bathroom Wall Tile </option>
+                                                                                    <option> 8x24 – Digital Tile </option>
+                                                                                    <option> 8X8 – Floor Tile </option>
+                                                                                    <option> 8x8 – Kitchen and Bathroom Floor Tile </option>
                                                                                 </select>
                                                                             </div>
                                                                             <br>
@@ -4412,7 +4410,7 @@
                                                                             <div class="form-group form-inline">
                                                                                  
                                 <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
-                                                                                <button type="button" class="btn btn-primary" style="margin-left: 300px">Compute</button>
+                                                                                <button type="button" class="btn btn-primary" id="Tiles" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
 
@@ -4441,7 +4439,7 @@
                                                                                             </tr>
                                                                                         </thead>
                                                                                         <tbody>
-                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 85)
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 87)
                                                                                             <tr class="table-success">
                                                                                                 <td>{{ $record -> materialName }}</td>
                                                                                                 <td id="TQty{{$record -> id}}">{{ $record -> qty }}</td>
@@ -4455,7 +4453,7 @@
                                                                                                 <td id="TCost{{$record -> id}}">{{ $record -> cost }}</td>
 
                                                                                             </tr>@endif @endforeach
-                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 87)
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 85)
                                                                                             <tr class="table-warning">
                                                                                                 <td>{{ $record -> materialName }}</td>
                                                                                                 <td id="TQty{{$record -> id}}">{{ $record -> qty }}</td>
@@ -4568,12 +4566,12 @@
                                                     </thead>
                                                   
                                                 </table>
-                                                <input type=hidden id=OverallTotalCost1 value=>
                                             </div>
                                         </div>  
           
           
           
+                                        <input type=hidden id="OverheadProfit" name="OverheadProfit" value="0">
           
           
           
@@ -5141,6 +5139,7 @@
     var totals = totalCost5 + totalCost6 + totalCost7 + totalCost8 + totalCost9 + totalCost11 + totalCost12 + totalCost13 + totalCost14 + totalCost15 + totalCost17 + totalCost18 + totalCost19 + totalCost21  ;
     $("#OverallTotalCost1").val( totals );
 
+     var OverheadCost;
     var OverallTotalCost = parseFloat($("#OverallTotalCost1").val()) + parseFloat($("#OverallTotalCost2").val());
     $("#OverallTotalCost").html(parseFloat( OverallTotalCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
     if( OverallTotalCost < 1000000){
@@ -5152,6 +5151,7 @@
         $("#OverheadProfit").html('10%');
     }
     $("#OverheadTotalCost").html(parseFloat( OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+    $("#OverheadProfit").val(OverheadCost);
     $("#GrandTotalCost").html(parseFloat( OverallTotalCost + OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
 
     }
@@ -5234,285 +5234,79 @@
         computeAndDisplayOverallTotal();
     });
 
-    $("#CHBCompute").click(function() {
-        var totalPcs4;
-        var total4;
-        var totalPcs5;
-        var total5;
-        $("#CHBArea").val( parseFloat($("#CHBWidth").val()) + parseFloat($("#CHBLength").val()) );
-        var CHBLayers = parseFloat($("#CHBWidth").val()) / 0.20;
-        var CHBLength = parseFloat($("#CHBLength").val()) / 0.40;
-        var CHBPcs = CHBLayers * CHBLength;
-        var EstiCHB = DirectCountingEsti( CHBPcs , $("#CHBSize").val() );
-        var total = EstiCHB.totals;
-        if($("#CHBSize").val() == 15){
-            totalPcs5 += CHBPcs;
-            totalCost5 += total;
-            $("#CHBMortarWidth").val(0.15);
-            $("#CHBMortarVolume").val( parseFloat($("#CHBArea").val()) * 0.15 );
-            $("#MasonryCHB1Qty").html( parseFloat(totalPcs5).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-            $("#MasonryCHB1Cost").html( parseFloat(total5).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-        }
-        else if($("#CHBSize").val() == 16){
-            totalPcs4 += CHBPcs;
-            total4 += total;
-            $("#CHBMortarWidth").val(0.10);
-            $("#CHBMortarVolume").val( parseFloat($("#CHBArea").val()) * 0.10 );
-            $("#MasonryCHB2Qty").html( parseFloat(totalPcs4) .toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-            $("#MasonryCHB2Cost").html( parseFloat(total4) .toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-        }
-        $("#CHBPlasterVolume").val( parseFloat($("#CHBPlasterThickness").val()) * parseFloat($("#CHBArea").val()) );
-            
-        var EstiConcretes1 = ConcreteEsti($("#CHBWallNo").val(),$("#CHBMortarVolume").val(),1,$("#CHBMortarMixture").val(),1);
-        var EstiConcretes2 = ConcreteEsti($("#CHBWallNo").val(),0.003,1,$("#CHBMortarMixture").val(),1);
-        var EstiConcretes3 = ConcreteEsti($("#CHBWallNo").val(),$("#CHBPlasterVolume").val(),1,$("#CHBPlasterMixture").val(),1);
-        
-        
-    });
-
-/*
-    $("#ComputeElectricalWorks").click(function(){
-        if($("#ElectricalWorksMaterial").val()==43){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            $("Electrical14thhn1").val( parseFloat($("Electrical14thhn1").val()) + parseFloat(total) );
-            $("Electrical14thhnQ1").val( parseFloat($("Electrical14thhnQ1").val()) + parseFloat($("#ElectricalWorksMaterialQ").val()) );
-            $("ElectricalTotalCost1").val( parseFloat($("ElectricalTotalCost1").val()) + parseFloat(total) );
-            $("thhn10P").val( parseFloat($("Electrical14thhn1").val()) + parseFloat(total) );
-            $("thhn10Q").val( parseFloat($("Electrical14thhnQ1").val()) + parseFloat($("#ElectricalWorksMaterialQ").val()) );
-            $("ElectricalTotalCost2").val( parseFloat($("ElectricalTotalCost1").val()) + parseFloat(total) );
-        }
-        if($("#ElectricalWorksMaterial").val()==44){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            
-        }
-        if($("#ElectricalWorksMaterial").val()==45){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            
-        }
-        if($("#ElectricalWorksMaterial").val()==46){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            
-        }
-        if($("#ElectricalWorksMaterial").val()==47){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            
-        }
-        if($("#ElectricalWorksMaterial").val()==48){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            
-        }
-        if($("#ElectricalWorksMaterial").val()==49){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            
-        }
-        if($("#ElectricalWorksMaterial").val()==50){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            
-        }
-        if($("#ElectricalWorksMaterial").val()==51){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            
-        }
-        if($("#ElectricalWorksMaterial").val()==52){
-            var product = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterial").val());
-            var total = product.totals;
-            
-        }
+    $("#Column").click(function(){
 
         computeAndDisplayOverallTotal();
     });
 
-   $("#computeColumn").click(function () {
-        var X1 = 1; //horizontal
-        var Work1 = 1; //work
-        $("#ColumnsBarLeng").val();
-        $("#ColumnsBarSize").val();
-
-        var A = $("#ColumnWidth").val() * $("#ColumnLength").val();
-        var V = $("#ColumnThickness").val() * A;
-        $("#ColumnVolume").val(V);
-
-            var EstiConcretes = ConcreteEsti($("#HowManyColumns").val(),V,X1,$("#ColumnCC").val(),Work1);
-
-        $("#ColumnCement").html(EstiConcretes.cement);
-        $("#ColumnCementBag").html(parseFloat(EstiConcretes.cementqty) + parseFloat($("#ColumnCementBag1").val()));
-        $("#ColumnCementCost").html(parseFloat(EstiConcretes.cementcost) + parseFloat($("#ColumnCementCost1").val()));
-        $("#ColumnCement1").val(1);
-        $("#ColumnCementBag1").val(parseFloat(EstiConcretes.cementqty) + parseFloat($("#ColumnCementBag1").val()));
-        $("#ColumnCementCost1").val(parseFloat(EstiConcretes.cementcost) + parseFloat($("#ColumnCementCost1").val()));
-
-        $("#ColumnS").html(EstiConcretes.sand);
-        $("#ColumnSand").html(parseFloat(EstiConcretes.sandqty) + parseFloat($("#ColumnSand1").val()));
-        $("#ColumnSandCost").html(parseFloat(EstiConcretes.sandcost) + parseFloat($("#ColumnSandCost1").val()));
-        $("#ColumnS1").val(2);
-        $("#ColumnSand1").val(parseFloat(EstiConcretes.sandqty) + parseFloat($("#ColumnSand1").val()));
-        $("#ColumnSandCost1").val(parseFloat(EstiConcretes.sandcost) + parseFloat($("#ColumnSandCost1").val()));
-
-        $("#ColumnG").html(EstiConcretes.gravel);
-        $("#ColumnGravel").html(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#ColumnGravel1").val()));
-        $("#ColumnGravelCost").html(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#ColumnGravelCost1").val()));
-        $("#ColumnG1").val(3);
-        $("#ColumnGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#ColumnGravel1").val()));
-        $("#ColumnGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#ColumnGravelCost1").val()));
-
-        //metals
-            var search = searchPrice(4);
-            var price = search.materialprice;
-            var BarPcs = (parseFloat($("#ColumnNoOfBars").val()) * parseFloat($("#HowManyColumns").val())) + parseFloat($("#ColumnSteelBarQty1").val());
-            var price = BarPcs * price;
-        $("#ColumnSteelBar").html(search.materialname);
-        $("#ColumnSteelBarQty").html(BarPcs);
-        $("#ColumnSteelBarCost").html(price);
-        $("#ColumnSteelBar1").val(4);
-        $("#ColumnSteelBarQty1").val(BarPcs);
-        $("#ColumnSteelBarCost1").val(price);
-
-            var search = searchPrice(5);
-            var price = search.materialprice;
-            var TieBarPcs = (Math.ceil(parseFloat($("#ColumnLength").val()) / (parseFloat($("#ColumnsBarSize").val()) * 16))) + parseFloat($("#ColumnTieBarQty1").val());
-            var price = TieBarPcs * price;
-        $("#ColumnTieBar").html(search.materialname);
-        $("#ColumnTieBarQty").html(TieBarPcs);
-        $("#ColumnTieBarCost").html(price);
-        $("#ColumnTieBar1").val(5);
-        $("#ColumnTieBarQty1").val(TieBarPcs);
-        $("#ColumnTieBarCost1").val(price);
-        
-            var search = searchPrice(6);
-            var price = search.materialprice;
-            var TieWires = (((parseFloat($("#ColumnNoOfBars").val()) * TieBarPcs) * parseFloat($("#ColumnsTieWire").val())) / 53) + parseFloat($("#ColumnTieWireKg1").val());
-            var price = TieWires * price;
-        $("#ColumnTieWire").html(search.materialname);
-        $("#ColumnTieWireKg").html(parseFloat(TieWires).toFixed(2));
-        $("#ColumnTieWireCost").html(parseFloat(price).toFixed(2));
-        $("#ColumnTieWire1").val(6);
-        $("#ColumnTieWireKg1").val(TieWires);
-        $("#ColumnTieWireCost1").val(price);
-
-    $("#ColumnTotalCost1").val( parseFloat($("#ColumnCementCost1").val()) + parseFloat($("#ColumnSandCost1").val()) + parseFloat($("#ColumnGravelCost1").val()) + parseFloat($("#ColumnSteelBarCost1").val()) + parseFloat($("#ColumnTieBarCost1").val()) + parseFloat($("#ColumnTieWireCost1").val()) );
-    $("#ColumnTotalCost").html( parseFloat($("#ColumnTotalCost1").val()).toFixed(2) );
+    $("#Footing").click(function(){
 
         computeAndDisplayOverallTotal();
     });
 
-//#########################################################################################################################################################################################
-$("#computeFooting").click(function () {
-    
-        var X1 = 1; //horizontal
-        var Work1 = 1; //work
-        var A = $("#FootingWidth").val() * $("#FootingLength").val();
-        var V = $("#FootingThickness").val() * A;
-        $("#FootingVolume").val(V);
+    $("#Slab").click(function(){
 
-            var EstiConcretes = ConcreteEsti($("#HowManyFootings").val(),V,X1,$("#FootingCC").val(),Work1);
-
-        $("#FootingCement").html(EstiConcretes.cement);
-        $("#FootingCementBag").html(parseFloat(EstiConcretes.cementqty) + parseFloat($("#FootingCementBag1").val()));
-        $("#FootingCementCost").html(parseFloat(EstiConcretes.cementcost) + parseFloat($("#FootingCementCost1").val()));
-        $("#FootingCement1").val(1);
-        $("#FootingCementBag1").val(parseFloat(EstiConcretes.cementqty) + parseFloat($("#FootingCementBag1").val()));
-        $("#FootingCementCost1").val(parseFloat(EstiConcretes.cementcost) + parseFloat($("#FootingCementCost1").val()));
-
-        $("#FootingS").html(EstiConcretes.sand);
-        $("#FootingSand").html(parseFloat(EstiConcretes.sandqty) + parseFloat($("#FootingSand1").val()));
-        $("#FootingSandCost").html(parseFloat(EstiConcretes.sandcost) + parseFloat($("#FootingSandCost1").val()));
-        $("#FootingS1").val(2);
-        $("#FootingSand1").val(parseFloat(EstiConcretes.sandqty) + parseFloat($("#FootingSand1").val()));
-        $("#FootingSandCost1").val(parseFloat(EstiConcretes.sandcost) + parseFloat($("#FootingSandCost1").val()));
-
-        $("#FootingG").html(EstiConcretes.gravel);
-        $("#FootingGravel").html(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#FootingGravel1").val()));
-        $("#FootingGravelCost").html(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#FootingGravelCost1").val()));
-        $("#FootingG1").val(3);
-        $("#FootingGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#FootingGravel1").val()));
-        $("#FootingGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#FootingGravelCost1").val()));
-
-    $("#FootingTotalCost1").val( parseFloat($("#FootingCementCost1").val()) + parseFloat($("#FootingSandCost1").val()) + parseFloat($("#FootingGravelCost1").val()) + parseFloat($("#FootingSteelBarCost1").val()) + parseFloat($("#FootingTieWireCost1").val()) );
-    $("#FootingTotalCost").html( parseFloat($("#FootingTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
-});
+    });
 
-$("#computeSlab").click(function () {
-    
-    var X1 = 1; //horizontal
-    var Work1 = 1; //work
-    var A = $("#SlabWidth").val() * $("#SlabLength").val();
-    var V = $("#SlabThickness").val() * A;
-    $("#SlabVolume").val(V);
+    $("#Beam").click(function(){
 
-        var EstiConcretes = ConcreteEsti($("#HowManySlabs").val(),V,X1,$("#SlabCC").val(),Work1);
-
-    $("#SlabCement").html(EstiConcretes.cement);
-    $("#SlabCementBag").html(parseFloat(EstiConcretes.cementqty) + parseFloat($("#SlabCementBag1").val()));
-    $("#SlabCementCost").html(parseFloat(EstiConcretes.cementcost) + parseFloat($("#SlabCementCost1").val()));
-    $("#SlabCement1").val(1);
-    $("#SlabCementBag1").val(parseFloat(EstiConcretes.cementqty) + parseFloat($("#SlabCementBag1").val()));
-    $("#SlabCementCost1").val(parseFloat(EstiConcretes.cementcost) + parseFloat($("#SlabCementCost1").val()));
-
-    $("#SlabS").html(EstiConcretes.sand);
-    $("#SlabSand").html(parseFloat(EstiConcretes.sandqty) + parseFloat($("#SlabSand1").val()));
-    $("#SlabSandCost").html(parseFloat(EstiConcretes.sandcost) + parseFloat($("#SlabSandCost1").val()));
-    $("#SlabS1").val(2);
-    $("#SlabSand1").val(parseFloat(EstiConcretes.sandqty) + parseFloat($("#SlabSand1").val()));
-    $("#SlabSandCost1").val(parseFloat(EstiConcretes.sandcost) + parseFloat($("#SlabSandCost1").val()));
-
-    $("#SlabG").html(EstiConcretes.gravel);
-    $("#SlabGravel").html(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#SlabGravel1").val()));
-    $("#SlabGravelCost").html(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#SlabGravelCost1").val()));
-    $("#SlabG1").val(3);
-    $("#SlabGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#SlabGravel1").val()));
-    $("#SlabGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#SlabGravelCost1").val()));
-
-    $("#SlabTotalCost1").val( parseFloat($("#SlabCementCost1").val()) + parseFloat($("#SlabSandCost1").val()) + parseFloat($("#SlabGravelCost1").val()) + parseFloat($("#SlabSteelBarCost1").val()) + parseFloat($("#SlabTieWireCost1").val()) );
-    $("#SlabTotalCost").html( parseFloat($("#SlabTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
-});
+    });
 
-$("#computeBeam").click(function () {
-    
-    var X1 = 1; //horizontal
-    var Work1 = 1; //work
-    var A = $("#BeamWidth").val() * $("#BeamLength").val();
-    var V = $("#BeamThickness").val() * A;
-    $("#BeamVolume").val(V);
+    $("#WallFooting").click(function(){
 
-        var EstiConcretes = ConcreteEsti($("#HowManyBeams").val(),V,X1,$("#BeamCC").val(),Work1);
-
-    $("#BeamCement").html(EstiConcretes.cement);
-    $("#BeamCementBag").html(parseFloat(EstiConcretes.cementqty) + parseFloat($("#BeamCementBag1").val()));
-    $("#BeamCementCost").html(parseFloat(EstiConcretes.cementcost) + parseFloat($("#BeamCementCost1").val()));
-    $("#BeamCement1").val(1);
-    $("#BeamCementBag1").val(parseFloat(EstiConcretes.cementqty) + parseFloat($("#BeamCementBag1").val()));
-    $("#BeamCementCost1").val(parseFloat(EstiConcretes.cementcost) + parseFloat($("#BeamCementCost1").val()));
-
-    $("#BeamS").html(EstiConcretes.sand);
-    $("#BeamSand").html(parseFloat(EstiConcretes.sandqty) + parseFloat($("#BeamSand1").val()));
-    $("#BeamSandCost").html(parseFloat(EstiConcretes.sandcost) + parseFloat($("#BeamSandCost1").val()));
-    $("#BeamS1").val(2);
-    $("#BeamSand1").val(parseFloat(EstiConcretes.sandqty) + parseFloat($("#BeamSand1").val()));
-    $("#BeamSandCost1").val(parseFloat(EstiConcretes.sandcost) + parseFloat($("#BeamSandCost1").val()));
-
-    $("#BeamG").html(EstiConcretes.gravel);
-    $("#BeamGravel").html(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#BeamGravel1").val()));
-    $("#BeamGravelCost").html(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#BeamGravelCost1").val()));
-    $("#BeamG1").val(3);
-    $("#BeamGravel1").val(parseFloat(EstiConcretes.gravelqty) + parseFloat($("#BeamGravel1").val()));
-    $("#BeamGravelCost1").val(parseFloat(EstiConcretes.gravelcost) + parseFloat($("#BeamGravelCost1").val()));
-
-    $("#BeamTotalCost1").val( parseFloat($("#BeamCementCost1").val()) + parseFloat($("#BeamSandCost1").val()) + parseFloat($("#BeamGravelCost1").val()) + parseFloat($("#BeamSteelBarCost1").val()) + parseFloat($("#BeamTieBarCost1").val()) + parseFloat($("#BeamTieWireCost1").val()) );
-    $("#BeamTotalCost").html( parseFloat($("#BeamTotalCost1").val()).toFixed(2) );
         computeAndDisplayOverallTotal();
-});
-*/
+    });
+
+    $("#RoofBeam").click(function(){
+
+        computeAndDisplayOverallTotal();
+    });
+
+    $("#Masonry").click(function() {
+        
+        computeAndDisplayOverallTotal();
+    });
+
+    $("#Roofing").click(function() {
+        
+        computeAndDisplayOverallTotal();
+    });
+
+    $("#Windows").click(function() {
+        
+        computeAndDisplayOverallTotal();
+    });
+
+    $("#Doors").click(function() {
+        
+        computeAndDisplayOverallTotal();
+    });
+
+    $("#PaintCeiling").click(function() {
+        
+        computeAndDisplayOverallTotal();
+    });
+
+    $("#PaintWalls").click(function() {
+        
+        computeAndDisplayOverallTotal();
+    });
+
+    $("#ElectricalWorks").click(function() {
+        
+        computeAndDisplayOverallTotal();
+    });
+
+    $("#Tiles").click(function() {
+        
+        //
+
+        computeAndDisplayOverallTotal();
+    });
+
+
 
 </script>
 

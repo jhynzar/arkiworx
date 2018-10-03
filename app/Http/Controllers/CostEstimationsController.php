@@ -1225,7 +1225,7 @@ class CostEstimationsController extends Controller
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $_POST['MaterialI91'],
+                'intMaterialId' => $_POST['MaterialId91'],
                 'decQty' => $_POST['Quantity91'],
                 'decCost' => $_POST['Cost91'],
                 'intProjectId' => $id ,
