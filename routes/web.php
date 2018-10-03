@@ -59,13 +59,15 @@ Route::get('Admin/Projects/{id}','ProjectsController@show'); //show project deta
 
 Route::post('Admin/Projects/{id}/Update','ProjectsController@updateDetails'); //update project details
 
+Route::get('Admin/Projects/{id}/Cost-Summary','ProjectsController@viewCostSummary'); //view cost summary
+
+Route::get('Admin/Projects/{id}/Progress-Schedule','ProjectsController@viewProgressSchedule'); //view progress
+
 Route::get('Admin/Project-Details', function(){
     return view ('Admin/projectdetails');
 });
 
-Route::get('Admin/Project-Progress', function(){
-    return view ('Admin/projectprogress');
-});
+Route::get('Admin/Project-Progress', 'AdminProjectProgressController@index');
 
 //Engineer di pa maayos ung controllers at methods
 

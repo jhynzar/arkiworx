@@ -17,7 +17,6 @@ class CostSummaryController extends Controller
         //
         //getting project details
         $project = DB::table('tblproject')
-                ->where('strProjectStatus','=','on going')
                 ->where('intProjectId','=',$id)
                 ->first();
             
