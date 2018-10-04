@@ -573,20 +573,20 @@
                                                                                                         <!-- checker if phase is first or last (for category start and end)-->
                                                                                                         @if ($phaseKey == 0)
                                                                                                             &nbsp;&nbsp; <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input onchange="onFirstPhaseStartDateChange(this,{{$projectKey}},{{$subCategoryKey}})" 
+                                                                                                            <input min="{{date('Y-m-d')}}" onchange="onPhaseStartDateChangeSetEndDateMinValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}}); onFirstPhaseStartDateChange(this,{{$projectKey}},{{$subCategoryKey}});" 
                                                                                                             type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
                                                                                                             &nbsp; &nbsp; <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
+                                                                                                            <input readonly min="{{date('Y-m-d')}}" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
                                                                                                         @elseif ($phaseKey == sizeOf($subCategory->workSubCategoryPhases) - 1)
                                                                                                             &nbsp;&nbsp; <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
+                                                                                                            <input min="{{date('Y-m-d')}}" onchange="onPhaseStartDateChangeSetEndDateMinValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}});" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
                                                                                                             &nbsp; &nbsp; <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input onchange="onLastPhaseEndDateChange(this,{{$projectKey}},{{$subCategoryKey}})" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
+                                                                                                            <input readonly min="{{date('Y-m-d')}}" onchange="onLastPhaseEndDateChange(this,{{$projectKey}},{{$subCategoryKey}})" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
                                                                                                         @else
                                                                                                             &nbsp;&nbsp; <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
+                                                                                                            <input min="{{date('Y-m-d')}}" onchange="onPhaseStartDateChangeSetEndDateMinValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}});" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
                                                                                                             &nbsp; &nbsp; <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
+                                                                                                            <input readonly min="{{date('Y-m-d')}}" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
                                                                                                         @endif
                                                                                                         
             
@@ -964,6 +964,15 @@
             fromDate = $(input);
             toDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'endDate');
             toDate.val(fromDate.val());
+        }
+
+        function onPhaseStartDateChangeSetEndDateMinValue(input,projectKey,subCategoryKey,phaseKey){
+            startDate = $(input);
+            endDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'phase'+phaseKey+'endDate');
+
+            endDate.prop('min',startDate.val());
+
+            endDate.prop('readonly',false);
         }
 
         function onDependencyChangeOld(selectTag,projectKey,subCategoryKey){
