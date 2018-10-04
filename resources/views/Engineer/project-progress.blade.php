@@ -576,17 +576,17 @@
                                                                                                             <input min="{{date('Y-m-d')}}" onchange="onPhaseStartDateChangeSetEndDateMinValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}}); onFirstPhaseStartDateChange(this,{{$projectKey}},{{$subCategoryKey}});" 
                                                                                                             type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
                                                                                                             &nbsp; &nbsp; <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input readonly min="{{date('Y-m-d')}}" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
+                                                                                                            <input readonly min="{{date('Y-m-d')}}" onchange="onPhaseEndDateChangeSetNextStartDateValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}})" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
                                                                                                         @elseif ($phaseKey == sizeOf($subCategory->workSubCategoryPhases) - 1)
                                                                                                             &nbsp;&nbsp; <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input min="{{date('Y-m-d')}}" onchange="onPhaseStartDateChangeSetEndDateMinValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}});" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
+                                                                                                            <input readonly min="{{date('Y-m-d')}}" onchange="onPhaseStartDateChangeSetEndDateMinValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}});" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
                                                                                                             &nbsp; &nbsp; <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
                                                                                                             <input readonly min="{{date('Y-m-d')}}" onchange="onLastPhaseEndDateChange(this,{{$projectKey}},{{$subCategoryKey}})" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
                                                                                                         @else
                                                                                                             &nbsp;&nbsp; <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input min="{{date('Y-m-d')}}" onchange="onPhaseStartDateChangeSetEndDateMinValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}});" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
+                                                                                                            <input readonly min="{{date('Y-m-d')}}" onchange="onPhaseStartDateChangeSetEndDateMinValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}});" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
                                                                                                             &nbsp; &nbsp; <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input readonly min="{{date('Y-m-d')}}" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
+                                                                                                            <input readonly min="{{date('Y-m-d')}}" onchange="onPhaseEndDateChangeSetNextStartDateValue(this,{{$projectKey}},{{$subCategoryKey}},{{$phaseKey}})" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
                                                                                                         @endif
                                                                                                         
             
@@ -930,57 +930,81 @@
     <script>
 
         function onDependencyChange(selectTag,projectKey,subCategoryKey){
+
+            var fromDate = $('#createProjectSchedule'+projectKey+' #subCategory'+selectTag.value+'endDate');
+            var thisDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'startDate');
+            var firstPhaseDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'phase'+'0'+'startDate'); //first phase startdate
             
             if(selectTag.value != -1){
-                fromDate = $('#createProjectSchedule'+projectKey+' #subCategory'+selectTag.value+'endDate');
-                thisDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'startDate');
-                firstPhaseDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'phase'+'0'+'startDate'); //first phase startdate
-
-
                 var nextDate = new Date(fromDate.val());
                 nextDate.setDate(nextDate.getDate() + 1);
 
                 thisDate[0].valueAsDate = nextDate;
                 firstPhaseDate[0].valueAsDate = nextDate;
+
+                firstPhaseDate.trigger("change"); // manual trigger of on change, since programmatically changing does not trigger onchange
+
                 thisDate.prop('readonly',true);
                 firstPhaseDate.prop('readonly',true);
             }else{
                 thisDate.val('');
                 firstPhaseDate.val('');
-                //thisDate.prop('readonly',false); //don't remove readonly
+
+                firstPhaseDate.trigger("change"); //manual trigger of on change
+
+                //thisDate.prop('readonly',false); //don't remove readonly, since programmatically changing does not trigger onchange
                 firstPhaseDate.prop('readonly',false);
             }
             
         }
 
         function onFirstPhaseStartDateChange(input,projectKey,subCategoryKey){
-            fromDate = $(input);
-            toDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'startDate');
+            var fromDate = $(input);
+            var toDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'startDate');
             toDate.val(fromDate.val());
 
         }
 
         function onLastPhaseEndDateChange(input,projectKey,subCategoryKey){
-            fromDate = $(input);
-            toDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'endDate');
+            var fromDate = $(input);
+            var toDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'endDate');
             toDate.val(fromDate.val());
         }
 
         function onPhaseStartDateChangeSetEndDateMinValue(input,projectKey,subCategoryKey,phaseKey){
-            startDate = $(input);
-            endDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'phase'+phaseKey+'endDate');
+            var startDate = $(input);
+            var endDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'phase'+phaseKey+'endDate');
 
-            endDate.prop('min',startDate.val());
+            if(startDate.val() != ""){
+                endDate.prop('min',startDate.val());
+                endDate.prop('readonly',false);
+            }else{
+                endDate.val("");
+                endDate.prop('readonly',true);
+            }
+        }
 
-            endDate.prop('readonly',false);
+        function onPhaseEndDateChangeSetNextStartDateValue(input,projectKey,subCategoryKey,phaseKey){
+            var endDate = $(input);
+            var nextStartDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'phase'+(phaseKey+1)+'startDate');
+
+            if(endDate.val() != ""){
+                var nextDay = new Date(endDate.val());
+                nextDay.setDate(nextDay.getDate() + 1);
+
+                nextStartDate[0].valueAsDate = nextDay;
+                nextStartDate.trigger("change");
+            }else{
+                nextStartDate.val("");
+                nextStartDate.trigger("change");
+            }
         }
 
         function onDependencyChangeOld(selectTag,projectKey,subCategoryKey){
+            var fromDate = $('#createProjectScheduleOld'+projectKey+' #endDate'+selectTag.value);
+            var thisDate = $('#createProjectScheduleOld'+projectKey+' #startDate'+subCategoryKey);
 
             if(selectTag.value != -1){
-                fromDate = $('#createProjectScheduleOld'+projectKey+' #endDate'+selectTag.value);
-                thisDate = $('#createProjectScheduleOld'+projectKey+' #startDate'+subCategoryKey);
-
                 thisDate.val(fromDate.val());
                 thisDate.prop("readonly",true);
             }else{
