@@ -530,23 +530,7 @@
                                                                                                         <input type="date" id="subCategory{{$subCategoryKey}}endDate" name="subCategory{{$subCategoryKey}}endDate" class="form-control" style="width:160px" readonly>
                                                                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                                                         <label style="color:white"><span class="label label-default">DEPENDENCIES</span> <i class="icon-organization text text-light"></i>&nbsp;:&nbsp;</label>
-                                                                                                        <select style="width: 100px; " onchange="{
-                                                                                                            if(this.value != -1){
-                                                                                                                fromDate = $('#createProjectSchedule'+{{$projectKey}}+' #subCategory'+this.value+'endDate');
-                                                                                                                thisDate = $('#createProjectSchedule'+{{$projectKey}}+' #subCategory'+{{$subCategoryKey}}+'startDate');
-                                                                                                                firstPhaseDate = $('#createProjectSchedule'+{{$projectKey}}+' #subCategory'+{{$subCategoryKey}}+'phase'+'0'+'startDate'); //first phase startdate
-
-                                                                                                                thisDate.val(fromDate.val());
-                                                                                                                firstPhaseDate.val(fromDate.val());
-                                                                                                                thisDate.prop('readonly',true);
-                                                                                                                firstPhaseDate.prop('readonly',true);
-                                                                                                            }else{
-                                                                                                                thisDate.val('');
-                                                                                                                firstPhaseDate.val('');
-                                                                                                                //thisDate.prop('readonly',false); //don't remove readonly
-                                                                                                                firstPhaseDate.prop('readonly',false);
-                                                                                                            }
-                                                                                                        }" id="subCategory{{$subCategoryKey}}dependency" name="subCategory{{$subCategoryKey}}dependency" class="form-control" style="width: 80px">
+                                                                                                        <select style="width: 100px; " onchange="onDependencyChange(this,{{$projectKey}},{{$subCategoryKey}})" id="subCategory{{$subCategoryKey}}dependency" name="subCategory{{$subCategoryKey}}dependency" class="form-control" style="width: 80px">
                                                                                                             <option value="-1">None</option>
                                                                                                             @if ($subCategoryKey != 0)
                                                                                                                 @foreach ($project->projectWorkSubCategories as $optionsSubCategoryKey=>$optionsSubCategory)
@@ -952,6 +936,30 @@
 
 @section('script')
     <script>
+
+        function onDependencyChange(selectTag,projectKey,subCategoryKey){
+            
+            if(selectTag.value != -1){
+                fromDate = $('#createProjectSchedule'+projectKey+' #subCategory'+selectTag.value+'endDate');
+                thisDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'startDate');
+                firstPhaseDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'phase'+'0'+'startDate'); //first phase startdate
+
+
+                var nextDate = new Date(fromDate.val());
+                nextDate.setDate(nextDate.getDate() + 1);
+                
+                thisDate[0].valueAsDate = nextDate;
+                firstPhaseDate[0].valueAsDate = nextDate;
+                thisDate.prop('readonly',true);
+                firstPhaseDate.prop('readonly',true);
+            }else{
+                thisDate.val('');
+                firstPhaseDate.val('');
+                //thisDate.prop('readonly',false); //don't remove readonly
+                firstPhaseDate.prop('readonly',false);
+            }
+            
+        }
 
         function onDependencyChangeOld(selectTag,projectKey,subCategoryKey){
 
