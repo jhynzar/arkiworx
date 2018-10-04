@@ -5227,6 +5227,17 @@
     totalCost21 += parseFloat($("#Cost85").val());
     totalCost21 += parseFloat($("#Cost86").val());
     totalCost21 += parseFloat($("#Cost87").val());
+    totalCost21 += parseFloat($("#CostA").val());
+    totalCost21 += parseFloat($("#CostB").val());
+    totalCost21 += parseFloat($("#CostC").val());
+    totalCost21 += parseFloat($("#CostD").val());
+    totalCost21 += parseFloat($("#CostE").val());
+    totalCost21 += parseFloat($("#CostF").val());
+    totalCost21 += parseFloat($("#CostG").val());
+    totalCost21 += parseFloat($("#CostH").val());
+    totalCost21 += parseFloat($("#CostI").val());
+    totalCost21 += parseFloat($("#CostJ").val());
+    totalCost21 += parseFloat($("#CostK").val());
     $("#totalCost21").html(  parseFloat(totalCost21).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')  );
 
 
@@ -5424,18 +5435,22 @@
             totalTiles = TileArea / 0.16;
         }
         
+        totalTiles = totalTiles * $("#TileCount").val();
         var tilecost = DirectCountingEsti(totalTiles,tileClass);
         var cost = tilecost.total;
         var name = tilecost.materialname;
         addmaterial(tileClass,totalTiles,cost,name));
 
-        $("#TileCount").val();
+        //
 
         var addmaterial = function(tileClass,totalTiles,cost,name){
             var tileqty;
             var tilecost;
 
-            if($("#MaterialIdA").val() == tileClass ){
+            if(tileClass == 71){
+                //
+            }
+            else if($("#MaterialIdA").val() == tileClass ){
                 tileqty = $("#QuantityA").val();
                 tilecost = $("#CostA").val();
                 tileqty += totalTiles;

@@ -1298,6 +1298,138 @@ class CostEstimationsController extends Controller
                 'intWorkSubCategoryId' => $_POST['CategoryId97']
             ]
         );
+    if(!empty($_POST['MaterialIdA'])||$_POST['MaterialIdA']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdA'],
+                'decQty' => $_POST['QuantityA'],
+                'decCost' => $_POST['CostA'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if(!empty($_POST['MaterialIdB'])||$_POST['MaterialIdB']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdB'],
+                'decQty' => $_POST['QuantityB'],
+                'decCost' => $_POST['CostB'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if(!empty($_POST['MaterialIdC'])||$_POST['MaterialIdC']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdC'],
+                'decQty' => $_POST['QuantityC'],
+                'decCost' => $_POST['CostC'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if(!empty($_POST['MaterialIdD'])||$_POST['MaterialIdD']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdD'],
+                'decQty' => $_POST['QuantityD'],
+                'decCost' => $_POST['CostD'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if(!empty($_POST['MaterialIdE'])||$_POST['MaterialIdE']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdE'],
+                'decQty' => $_POST['QuantityE'],
+                'decCost' => $_POST['CostE'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if(!empty($_POST['MaterialIdF'])||$_POST['MaterialIdF']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdF'],
+                'decQty' => $_POST['QuantityF'],
+                'decCost' => $_POST['CostF'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if(!empty($_POST['MaterialIdG'])||$_POST['MaterialIdG']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdG'],
+                'decQty' => $_POST['QuantityG'],
+                'decCost' => $_POST['CostG'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if(!empty($_POST['MaterialIdH'])||$_POST['MaterialIdH']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialH'],
+                'decQty' => $_POST['QuantityH'],
+                'decCost' => $_POST['CostH'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if(!empty($_POST['MaterialIdI'])||$_POST['MaterialIdI']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdI'],
+                'decQty' => $_POST['QuantityI'],
+                'decCost' => $_POST['CostI'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if($_POST['MaterialIdJ']!=0||!empty($_POST['MaterialIdJ'])){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdJ'],
+                'decQty' => $_POST['QuantityJ'],
+                'decCost' => $_POST['CostJ'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
+    if(!empty($_POST['MaterialIdK'])||$_POST['MaterialIdK']!=0){
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialIdK'],
+                'decQty' => $_POST['QuantityK'],
+                'decCost' => $_POST['CostK'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId97']
+            ]
+        );
+    }
         //trabahong tamad HAHAHA
 
         // ALWAYS MAKE THIS LAST
