@@ -4365,9 +4365,9 @@
                                                                             </label>
                                                                             <br>
                                                                             <label>Width:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 130px !important;">
+                                                                            <input type="number" class="form-control" id="TileWidth" style="width: 130px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 130px !important;">
+                                                                            <input type="number" class="form-control" id="TileLength" style="width: 130px !important;">
                                                                             <br>
                                                                             <br>
 
@@ -4387,19 +4387,19 @@
 
                                                                             <div class="form-group form-inline">
                                                                                 <label for=""></label>
-                                                                                <select class="form-control" id="" style="width: 250px !important;">
-                                                                                    <option> 12X12 – Floor Tile </option>
-                                                                                    <option> 12X24 – Digital Tile </option>
-                                                                                    <option> 12X24 – Floor Tile </option>
-                                                                                    <option> 16x16 – Digital Tile </option>
-                                                                                    <option> 16X16 – Floor Tile </option>
-                                                                                    <option selected> 24x24 - Floor Tile </option>
-                                                                                    <option> 24x24 – Digital Tile </option>
-                                                                                    <option> 50cmx50cm – Carpet Tile </option>
-                                                                                    <option> 8x12 – Kitchen and Bathroom Wall Tile </option>
-                                                                                    <option> 8x24 – Digital Tile </option>
-                                                                                    <option> 8X8 – Floor Tile </option>
-                                                                                    <option> 8x8 – Kitchen and Bathroom Floor Tile </option>
+                                                                                <select class="form-control" id="TileClass" style="width: 250px !important;">
+                                                                                    <option value="74"> 12X12 – Floor Tile </option>
+                                                                                    <option value="79"> 12X24 – Digital Tile </option>
+                                                                                    <option value="75"> 12X24 – Floor Tile </option>
+                                                                                    <option value="80"> 16x16 – Digital Tile </option>
+                                                                                    <option value="76"> 16X16 – Floor Tile </option>
+                                                                                    <option selected value="71"> 24x24 - Floor Tile </option>
+                                                                                    <option value="81"> 24x24 – Digital Tile </option>
+                                                                                    <option value="83"> 50cmx50cm – Carpet Tile </option>
+                                                                                    <option value="85"> 8x12 – Kitchen and Bathroom Wall Tile </option>
+                                                                                    <option value="82"> 8x24 – Digital Tile </option>
+                                                                                    <option value="78"> 8X8 – Floor Tile </option>
+                                                                                    <option value="84"> 8x8 – Kitchen and Bathroom Floor Tile </option>
                                                                                 </select>
                                                                             </div>
                                                                             <br>
@@ -4409,7 +4409,7 @@
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                  
-                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
+                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="TileCount" style="width: 100px !important;">
                                                                                 <button type="button" class="btn btn-primary" id="Tiles" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -4444,28 +4444,122 @@
                                                                                                 <td>{{ $record -> materialName }}</td>
                                                                                                 <td id="TQty{{$record -> id}}">{{ $record -> qty }}</td>
                                                                                                 <td id="TCost{{$record -> id}}">{{ $record -> cost }}</td>
-
                                                                                             </tr>@endif @endforeach
                                                                                             @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 86)
                                                                                             <tr>
                                                                                                 <td>{{ $record -> materialName }}</td>
                                                                                                 <td id="TQty{{$record -> id}}">{{ $record -> qty }}</td>
                                                                                                 <td id="TCost{{$record -> id}}">{{ $record -> cost }}</td>
-
                                                                                             </tr>@endif @endforeach
                                                                                             @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 85)
                                                                                             <tr class="table-warning">
                                                                                                 <td>{{ $record -> materialName }}</td>
                                                                                                 <td id="TQty{{$record -> id}}">{{ $record -> qty }}</td>
                                                                                                 <td id="TCost{{$record -> id}}">{{ $record -> cost }}</td>
-
                                                                                             </tr>@endif @endforeach
+                                                                                            <tr class="table-success">
+                                                                                                <td id="MaterialA"></td>
+                                                                                                <td id="TQtyA "></td>
+                                                                                                <td id="TCostA"></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td id="MaterialB"></td>
+                                                                                                <td id="TQtyB "></td>
+                                                                                                <td id="TCostB "></td>
+                                                                                            </tr>
+                                                                                            <tr class="table-warning">
+                                                                                                <td id="MaterialC"></td>
+                                                                                                <td id="TQtyC "></td>
+                                                                                                <td id="TCostC "></td>
+                                                                                            </tr>
+                                                                                            <tr class="table-success">
+                                                                                                <td id="MaterialD"></td>
+                                                                                                <td id="TQtyD "></td>
+                                                                                                <td id="TCostD "></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td id="MaterialE"></td>
+                                                                                                <td id="TQtyE "></td>
+                                                                                                <td id="TCostE "></td>
+                                                                                            </tr>
+                                                                                            <tr class="table-warning">
+                                                                                                <td id="MaterialF"></td>
+                                                                                                <td id="TQtyF "></td>
+                                                                                                <td id="TCostF "></td>
+                                                                                            </tr>
+                                                                                            <tr class="table-success">
+                                                                                                <td id="MaterialG"></td>
+                                                                                                <td id="TQtyG "></td>
+                                                                                                <td id="TCostG "></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td id="MaterialH"></td>
+                                                                                                <td id="TQtyH "></td>
+                                                                                                <td id="TCostH "></td>
+                                                                                            </tr>
+                                                                                            <tr class="table-warning">
+                                                                                                <td id="MaterialI"></td>
+                                                                                                <td id="TQtyI "></td>
+                                                                                                <td id="TCostI "></td>
+                                                                                            </tr>
+                                                                                            <tr class="table-success">
+                                                                                                <td id="MaterialJ"></td>
+                                                                                                <td id="TQtyJ "></td>
+                                                                                                <td id="TCostJ "></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td id="MaterialK"></td>
+                                                                                                <td id="TQtyK "></td>
+                                                                                                <td id="TCostK "></td>
+                                                                                            </tr>
 
 
                                                                                         </tbody>
                                                                                     </table>
 
-                                                                                    <input type="hidden" id="SlabTotalCost1"          name="SlabTotalCost" value='24675'>
+                                                                                            <input type="hidden" id="MaterialIdA"             name="MaterialIdA"    value='0'>
+                                                                                            <input type="hidden" id="QuantityA"               name="QuantityA"      value='0'>
+                                                                                            <input type="hidden" id="CostA"                   name="CostA"          value='0'>
+                                                                                            
+                                                                                            <input type="hidden" id="MaterialIdB"             name="MaterialIdB"    value='0'>
+                                                                                            <input type="hidden" id="QuantityB"               name="QuantityB"      value='0'>
+                                                                                            <input type="hidden" id="CostB"                   name="CostB"          value='0'>
+                                                                                            
+                                                                                            <input type="hidden" id="MaterialIdC"             name="MaterialIdC"    value='0'>
+                                                                                            <input type="hidden" id="QuantityC"               name="QuantityC"      value='0'>
+                                                                                            <input type="hidden" id="CostC"                   name="CostC"          value='0'>
+                                                                                            
+                                                                                            <input type="hidden" id="MaterialIdD"             name="MaterialIdD"    value='0'>
+                                                                                            <input type="hidden" id="QuantityD"               name="QuantityD"      value='0'>
+                                                                                            <input type="hidden" id="CostD"                   name="CostD"          value='0'>
+                                                                                            
+                                                                                            <input type="hidden" id="MaterialIdE"             name="MaterialIdE"    value='0'>
+                                                                                            <input type="hidden" id="QuantityE"               name="QuantityE"      value='0'>
+                                                                                            <input type="hidden" id="CostE"                   name="CostE"          value='0'>
+                                                                                            '
+                                                                                            <input type="hidden" id="MaterialIdF"             name="MaterialIdF"    value='0'>
+                                                                                            <input type="hidden" id="QuantityF"               name="QuantityF"      value='0'>
+                                                                                            <input type="hidden" id="CostF"                   name="CostF"          value='0'>
+                                                                                            
+                                                                                            <input type="hidden" id="MaterialIdG"             name="MaterialIdG"    value='0'>
+                                                                                            <input type="hidden" id="QuantityG"               name="QuantityG"      value='0'>
+                                                                                            <input type="hidden" id="CostG"                   name="CostG"          value='0'>
+                                                                                            
+                                                                                            <input type="hidden" id="MaterialIdH"             name="MaterialIdH"    value='0'>
+                                                                                            <input type="hidden" id="QuantityH"               name="QuantityH"      value='0'>
+                                                                                            <input type="hidden" id="CostH"                   name="CostH"          value='0'>
+                                                                                            
+                                                                                            <input type="hidden" id="MaterialIdI"             name="MaterialIdI"    value='0'>
+                                                                                            <input type="hidden" id="QuantityI"               name="QuantityI"      value='0'>
+                                                                                            <input type="hidden" id="CostI"                   name="CostI"          value='0'>
+                                                                                            
+                                                                                            <input type="hidden" id="MaterialIdJ"             name="MaterialIdJ"    value='0'>
+                                                                                            <input type="hidden" id="QuantityJ"               name="QuantityJ"      value='0'>
+                                                                                            <input type="hidden" id="CostJ"                   name="CostJ"          value='0'>
+                                                                                            
+                                                                                            <input type="hidden" id="MaterialIdK"             name="MaterialIdK"    value='0'>
+                                                                                            <input type="hidden" id="QuantityK"               name="QuantityK"      value='0'>
+                                                                                            <input type="hidden" id="CostK"                   name="CostK"          value='0'>
 
                                                                                 </div>
 
@@ -5197,18 +5291,17 @@
         var SandQty = volume * 0.5 * Q;
         var GravelQty = volume * 1.0 * Q;
 
-        var prices1 = searchPrice(1);
-        var price1 = prices1.materialprice;
+        var prices1 = DirectCountingEsti(1);
+        var CementCost = prices1.total;
         var Cement = prices1.materialname;
-        var CementCost = CementQty * price1;
-        var prices2 = searchPrice(2);
-        var price2 = prices2.materialprice;
+        
+        var prices2 = DirectCountingEsti(2);
+        var SandCost = prices2.total;
         var Sand = prices2.materialname;
-        var SandCost = SandQty * price2;
-        var prices3 = searchPrice(3);
-        var price3 = prices3.materialprice;
+        
+        var prices3 = DirectCountingEsti(3);
+        var GravelCost = prices3.total;
         var Gravel = prices3.materialname;
-        var GravelCost = GravelQty * price3;
 
         return {
             cement: Cement,
@@ -5225,9 +5318,11 @@
     var DirectCountingEsti = function(Q,mId){
         var search = searchPrice(mId);
         var price = search.materialprice;
+        var name = search.materialname;
         var total = parseFloat(Q)*parseFloat(mId);
         return{
-            totals: total
+            totals: total,
+            materialname: name
         };
     }
     $("#ComputeGeneralReq").click(function() {
@@ -5301,7 +5396,211 @@
 
     $("#Tiles").click(function() {
         
-        //
+        var TileArea = $("#TileWidth").val() * $("#TileLength").val();
+        var tileClass = $("#TileClass").val();
+        var totalTiles;
+        if(tileClass == 74){
+            totalTiles = TileArea / 0.0144;
+        }
+        else if(tileClass == 79 || tileClass == 75){
+            totalTiles = TileArea / 0.0288;
+        }
+        else if(tileClass == 80 || tileClass == 76){
+            totalTiles = TileArea / 0.0256;
+        }
+        else if(tileClass == 71 || tileClass == 81){
+            totalTiles = TileArea / 0.0576;
+        }
+        else if(tileClass == 83){
+            totalTiles = TileArea / 0.25;
+        }
+        else if(tileClass == 85){
+            totalTiles = TileArea / 0.096;
+        }
+        else if(tileClass == 82){
+            totalTiles = TileArea / 0.192;
+        }
+        else if(tileClass == 78 || tileClass == 84){
+            totalTiles = TileArea / 0.16;
+        }
+        
+        var tilecost = DirectCountingEsti(totalTiles,tileClass);
+        var cost = tilecost.total;
+        var name = tilecost.materialname;
+        addmaterial(tileClass,totalTiles,cost,name));
+
+        $("#TileCount").val();
+
+        var addmaterial = function(tileClass,totalTiles,cost,name){
+            var tileqty;
+            var tilecost;
+
+            if($("#MaterialIdA").val() == tileClass ){
+                tileqty = $("#QuantityA").val();
+                tilecost = $("#CostA").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityA").val(tileqty);
+                $("#CostA").val(tilecost);
+                $("#MaterialA").html( name );
+                $("#TQtyA").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostA").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdB").val() == tileClass ){
+                tileqty = $("#QuantityB").val();
+                tilecost = $("#CostB").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityB").val(tileqty);
+                $("#CostB").val(tilecost);
+                $("#MaterialB").html( name );
+                $("#TQtyB").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostB").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdC").val() == tileClass ){
+                tileqty = $("#QuantityC").val();
+                tilecost = $("#CostC").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityC").val(tileqty);
+                $("#CostC").val(tilecost);
+                $("#MaterialC").html( name );
+                $("#TQtyC").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostC").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdD").val() == tileDlass ){
+                tileqty = $("#QuantityD").val();
+                tilecost = $("#CostD").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityD").val(tileqty);
+                $("#CostD").val(tilecost);
+                $("#MaterialD").html( name );
+                $("#TQtyD").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostD").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdE").val() == tileElass ){
+                tileqty = $("#QuantityE").val();
+                tilecost = $("#CostE").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityE").val(tileqty);
+                $("#CostE").val(tilecost);
+                $("#MaterialE").html( name );
+                $("#TQtyE").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostE").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdF").val() == tileFlass ){
+                tileqty = $("#QuantityF").val();
+                tilecost = $("#CostF").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityF").val(tileqty);
+                $("#CostF").val(tilecost);
+                $("#MaterialF").html( name );
+                $("#TQtyF").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostF").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdG").val() == tileGlass ){
+                tileqty = $("#QuantityG").val();
+                tilecost = $("#CostG").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityG").val(tileqty);
+                $("#CostG").val(tilecost);
+                $("#MaterialG").html( name );
+                $("#TQtyG").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostG").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdH").val() == tileHlass ){
+                tileqty = $("#QuantityH").val();
+                tilecost = $("#CostH").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityH").val(tileqty);
+                $("#CostH").val(tilecost);
+                $("#MaterialH").html( name );
+                $("#TQtyH").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostH").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdI").val() == tileIlass ){
+                tileqty = $("#QuantityI").val();
+                tilecost = $("#CostI").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityI").val(tileqty);
+                $("#CostI").val(tilecost);
+                $("#MaterialI").html( name );
+                $("#TQtyI").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostI").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdJ").val() == tileJlass ){
+                tileqty = $("#QuantityJ").val();
+                tilecost = $("#CostJ").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityJ").val(tileqty);
+                $("#CostJ").val(tilecost);
+                $("#MaterialJ").html( name );
+                $("#TQtyJ").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostJ").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if($("#MaterialIdK").val() == tileKlass ){
+                tileqty = $("#QuantityK").val();
+                tilecost = $("#CostK").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#QuantityK").val(tileqty);
+                $("#CostK").val(tilecost);
+                $("#MaterialK").html( name );
+                $("#TQtyK").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+                $("#TCostK").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+            }
+            else if(tileClass != 71 && $("#QuantityA").val() == 0 && $("#CostA").val() == 0){
+                $("#MaterialIdA").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityB").val() == 0 && $("#CostB").val() == 0){
+                $("#MaterialIdB").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityC").val() == 0 && $("#CostC").val() == 0){
+                $("#MaterialIdC").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityD").val() == 0 && $("#CostD").val() == 0){
+                $("#MaterialIdD").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityE").val() == 0 && $("#CostE").val() == 0){
+                $("#MaterialIdE").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityF").val() == 0 && $("#CostF").val() == 0){
+                $("#MaterialIdF").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityG").val() == 0 && $("#CostG").val() == 0){
+                $("#MaterialIdG").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityH").val() == 0 && $("#CostH").val() == 0){
+                $("#MaterialIdH").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityI").val() == 0 && $("#CostI").val() == 0){
+                $("#MaterialIdI").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityJ").val() == 0 && $("#CostJ").val() == 0){
+                $("#MaterialIdJ").val( tileClass );
+
+            }
+            else if(tileClass != 71 && $("#QuantityK").val() == 0 && $("#CostK").val() == 0){
+                $("#MaterialIdK").val( tileClass );
+
+            }
+        }
 
         computeAndDisplayOverallTotal();
     });
