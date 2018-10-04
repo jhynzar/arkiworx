@@ -573,11 +573,7 @@
                                                                                                         <!-- checker if phase is first or last (for category start and end)-->
                                                                                                         @if ($phaseKey == 0)
                                                                                                             &nbsp;&nbsp; <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input onchange="{
-                                                                                                                fromDate = $(this);
-                                                                                                                toDate = $('#createProjectSchedule'+{{$projectKey}}+' #subCategory'+{{$subCategoryKey}}+'startDate');
-                                                                                                                toDate.val(fromDate.val());
-                                                                                                            }" 
+                                                                                                            <input onchange="onFirstPhaseStartDateChange(this,{{$projectKey}},{{$subCategoryKey}})" 
                                                                                                             type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
                                                                                                             &nbsp; &nbsp; <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
                                                                                                             <input type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
@@ -585,11 +581,7 @@
                                                                                                             &nbsp;&nbsp; <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
                                                                                                             <input type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
                                                                                                             &nbsp; &nbsp; <label for="sex">End Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
-                                                                                                            <input onchange="{
-                                                                                                                fromDate = $(this);
-                                                                                                                toDate = $('#createProjectSchedule'+{{$projectKey}}+' #subCategory'+{{$subCategoryKey}}+'endDate');
-                                                                                                                toDate.val(fromDate.val());
-                                                                                                            }" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
+                                                                                                            <input onchange="onLastPhaseEndDateChange(this,{{$projectKey}},{{$subCategoryKey}})" type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}endDate" class="form-control" style="width:180px">
                                                                                                         @else
                                                                                                             &nbsp;&nbsp; <label for="sex">Start Date <i class="icon-calendar text text-primary"></i>&nbsp;:&nbsp;</label>
                                                                                                             <input type="date" id="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" name="subCategory{{$subCategoryKey}}phase{{$phaseKey}}startDate" class="form-control" style="width:180px">
@@ -947,7 +939,7 @@
 
                 var nextDate = new Date(fromDate.val());
                 nextDate.setDate(nextDate.getDate() + 1);
-                
+
                 thisDate[0].valueAsDate = nextDate;
                 firstPhaseDate[0].valueAsDate = nextDate;
                 thisDate.prop('readonly',true);
@@ -959,6 +951,19 @@
                 firstPhaseDate.prop('readonly',false);
             }
             
+        }
+
+        function onFirstPhaseStartDateChange(input,projectKey,subCategoryKey){
+            fromDate = $(input);
+            toDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'startDate');
+            toDate.val(fromDate.val());
+
+        }
+
+        function onLastPhaseEndDateChange(input,projectKey,subCategoryKey){
+            fromDate = $(input);
+            toDate = $('#createProjectSchedule'+projectKey+' #subCategory'+subCategoryKey+'endDate');
+            toDate.val(fromDate.val());
         }
 
         function onDependencyChangeOld(selectTag,projectKey,subCategoryKey){
