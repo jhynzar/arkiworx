@@ -731,9 +731,9 @@
 
                 //if overdue is null, where should I be?
                 if(actualEnd == null){
-                    //if today is less than start of task, overdue will be the start
-                    if((new Date()).getTime() < start.getTime()){
-                        overdue = new Date(start);
+                    //if today is less than end of task, overdue will be at the end
+                    if((new Date()).getTime() < end.getTime()){
+                        overdue = new Date(end);
                     }else{
                         //else overdue is today
                         overdue = new Date();
@@ -856,9 +856,9 @@
 
                 //if overdue is null, where should I be?
                 if(actualEnd == null){
-                    //if today is less than start of task, overdue will be the start
-                    if((new Date()).getTime() < start.getTime()){
-                        overdue = new Date(start);
+                    //if today is less than end of task, overdue will be at the end
+                    if((new Date()).getTime() < end.getTime()){
+                        overdue = new Date(end);
                     }else{
                         //else overdue is today
                         overdue = new Date();
