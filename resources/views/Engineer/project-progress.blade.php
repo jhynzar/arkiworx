@@ -504,7 +504,7 @@
 
                                                                                 <div class="modal-header" style="background-color: #546d77  !important">
                                                                                     <h4 class="modal-title" id="exampleModalLabel">
-                                                                                        <span style="color: white"><b>Estimated Project Schedule 2</b></span>
+                                                                                        <span style="color: white"><b>Estimated Project Schedule </b></span>
                                                                                     </h4>
                                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                                         <span aria-hidden="true">&times;</span>
@@ -728,7 +728,7 @@
                                 <div class="tab-pane" id="project" role="tabpanel">
                                     <div class="card">
                                         <div class="card-header" style="background-color: #4CAF50 !important">
-                                            <h5 class="card-header-text">Project List</h5>
+                                            <h5 class="card-header-text">On-going Project List</h5>
 
                                         </div>
                                         <!-- end of card-header  -->

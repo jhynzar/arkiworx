@@ -409,7 +409,7 @@
 
                                     <div class="card">
                                         <div class="card-header" style="background-color: #4CAF50 !important">
-                                            <h5 class="card-header-text">Project List</h5>
+                                            <h5 class="card-header-text">On-going Project List</h5>
 
                                         </div>
                                         <!-- end of card-header  -->
