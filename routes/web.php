@@ -112,7 +112,7 @@ Route::get('Engineer/Cost-Estimation/{id}/Cost-Estimation-Computation/{projectTe
 Route::get('Engineer/Cost-Estimation/{id}/Cost-Estimation-Computation2', function(){
     return view ('Engineer/cost-estimation-computation2');
 });
-Route::post('Engineer/Cost-Estimation/{id}/Cost-Estimation-Save', 'CostEstimationsController@saveEstimation');
+Route::post('Engineer/Cost-Estimation/{id}/Cost-Estimation-Computation/Cost-Estimation-Save', 'CostEstimationsController@saveEstimation');
 
 Route::get('Engineer/Cost-Summary', function(){
     return view('Engineer/cost-summary');
