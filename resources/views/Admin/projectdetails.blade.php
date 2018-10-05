@@ -356,7 +356,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row" class="text text-primary">Client</th>
-                                                                <td>{{$projectDetails->strClientFName}}&nbsp;{{$projectDetails->strClientLName}}</td>
+                                                                <td>{{$projectDetails->strClientName}}</td>
                                                             </tr>
 
                                                             <tr>
@@ -437,7 +437,7 @@
                                                                             </span>
                                                                             <div class="md-input-wrapper">
                                                                                 <input disabled type="text" class="md-form-control"
-                                                                                    value="{{$projectDetails->strClientFName}} {{$projectDetails->strClientLName}}">
+                                                                                    value="{{$projectDetails->strClientName}}">
                                                                             </div>
                                                                         </div>
                                                                     </td>
