@@ -17,7 +17,6 @@ class EngineerProjectsController extends Controller
         //temporary employee id
 
         $onGoingProjects = DB::table('tblproject')
-        ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
         ->where('strProjectStatus','=','on going')
         //->where('intEmployeeId','=','666') //EmployeeId
         ->where('intActive','=',1)
