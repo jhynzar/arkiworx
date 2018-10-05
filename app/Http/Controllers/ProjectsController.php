@@ -18,8 +18,6 @@ class ProjectsController extends Controller
         $pendingProjects = DB::select("
         SELECT *
         FROM tblproject
-        INNER JOIN tblclient
-        ON (tblproject.intClientId = tblclient.intClientId)
         INNER JOIN tblemployee
         ON (tblproject.intEmployeeId = tblemployee.intEmployeeId)
         WHERE (tblproject.intActive = 1) AND
@@ -30,8 +28,6 @@ class ProjectsController extends Controller
             
         SELECT *
         FROM tblproject
-        INNER JOIN tblclient
-        ON (tblproject.intClientId = tblclient.intClientId)
         INNER JOIN tblemployee
         ON (tblproject.intEmployeeId = tblemployee.intEmployeeId)
         WHERE (tblproject.intActive = 1) AND
@@ -43,8 +39,6 @@ class ProjectsController extends Controller
         
         SELECT *
         FROM tblproject
-        INNER JOIN tblclient
-        ON (tblproject.intClientId = tblclient.intClientId)
         INNER JOIN tblemployee
         ON (tblproject.intEmployeeId = tblemployee.intEmployeeId)
         WHERE (tblproject.intActive = 1) AND
@@ -87,15 +81,13 @@ class ProjectsController extends Controller
 
         //For Add New Project
 
-        $clients = DB::table('tblclient')->get();
-
         $engineers = DB::table('tblaccounts')
                     ->join('tblemployee','tblaccounts.intAccountId','=','tblemployee.intAccountId')
                     ->where('tblaccounts.strUserType','=','engineer')
                     ->get();
 
 
-        return view('Admin/projects',compact('pendingProjectsWithTotalEstimatedCost','ongoingProjects','finishedProjects','clients','engineers'));
+        return view('Admin/projects',compact('pendingProjectsWithTotalEstimatedCost','ongoingProjects','finishedProjects','engineers'));
     }
 
     /**
@@ -127,7 +119,7 @@ class ProjectsController extends Controller
                     'txtProjectDesc' => $req['projectDesc'],
                     'strProjectStatus' => 'pending',
                     'strProjectLocation' => $req['projectLocation'],
-                    'intClientId' => $req['projectClient'],
+                    'strClientName' => $req['projectClient'],
                     'intEmployeeId' => $req['projectEngineer'],
                     'intActive' => 1
                 ]
@@ -146,7 +138,6 @@ class ProjectsController extends Controller
     {
         //
         $projectDetails = DB::table('tblproject')
-                ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
                 ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
                 ->where('tblproject.intProjectId','=',$id)
                 ->first();
