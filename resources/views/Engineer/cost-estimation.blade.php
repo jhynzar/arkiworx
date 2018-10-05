@@ -1080,7 +1080,7 @@
                                                             <td>{{$key+1}}</td>
                                                             <td>
                                                                 <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                &nbsp; &nbsp; {{$pendingProjectCostEstimation->strClientFName}}&nbsp;{{$pendingProjectCostEstimation->strClientLName}}
+                                                                &nbsp; &nbsp; {{$pendingProjectCostEstimation->strClientName}}
                                                             </td>
                                                             <td>{{ $pendingProjectCostEstimation->strProjectName }}</td>
 

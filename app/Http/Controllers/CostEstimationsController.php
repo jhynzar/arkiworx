@@ -18,7 +18,6 @@ class CostEstimationsController extends Controller
 
         $pendingProjectCostEstimations = 
             DB::table('tblproject')
-            ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
             ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
             //->where('tblproject.intEmployeeId','=','666')//EMPLOYEE ID
             ->where('tblproject.strProjectStatus','=','pending')
