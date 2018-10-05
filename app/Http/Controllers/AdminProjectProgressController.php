@@ -20,7 +20,6 @@ class AdminProjectProgressController extends Controller
         $projectsWithSchedulesIds = DB::select("
             SELECT DISTINCT tblproject.intProjectId
             FROM tblproject
-            INNER JOIN tblclient ON tblclient.intClientId = tblproject.intClientId
             LEFT JOIN tblschedules ON tblproject.intProjectId = tblschedules.intProjectId
             WHERE tblschedules.intProjectId IS NOT NULL AND tblproject.strProjectStatus = 'on going' AND tblproject.intActive = 1
         ");
@@ -28,7 +27,6 @@ class AdminProjectProgressController extends Controller
         $finishedProjectSchedules = array();
         foreach($projectsWithSchedulesIds as $projectId){
             $projectDetails = DB::table('tblproject')
-                            ->join('tblclient','tblproject.intClientId','=','tblclient.intClientId')
                             ->where('tblproject.intProjectId','=',$projectId->intProjectId)
                             ->where('tblproject.intActive','=',1)
                             ->first();
