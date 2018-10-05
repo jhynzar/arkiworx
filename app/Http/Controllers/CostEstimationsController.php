@@ -93,9 +93,10 @@ class CostEstimationsController extends Controller
         //
     }
 
-    public function createEstimation($id){
+    public function createEstimation($id,$projectTemplateId){
         //request id of project and template
-        $templateid = $_POST['projectTemplate'];
+        //$templateid = $_POST['projectTemplate'];
+        $templateid = $projectTemplateId;
         $templateid = array($templateid);
 
         $template1 = DB::select("

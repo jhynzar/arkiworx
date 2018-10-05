@@ -1088,7 +1088,7 @@
 
                                                             <td class="faq-table-btn">
 
-                                                                <a href="#" data-toggle="modal" data-target="#chooseTemplate{{$key}}" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
+                                                                <a href="/Engineer/Cost-Estimation/{{$pendingProjectCostEstimation->intProjectId}}/Cost-Estimation-Computation/{{$pendingProjectCostEstimation->intProjectTemplateId}}" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
                                                                   data-placement="top" title="Create">
                                                                     <i class="icofont icofont-ui-edit"></i> Create Estimation </a>
 
