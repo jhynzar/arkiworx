@@ -81,13 +81,16 @@ class ProjectsController extends Controller
 
         //For Add New Project
 
+        $projectTemplates = DB::table('tblprojecttemplate')
+                            ->get();
+
         $engineers = DB::table('tblaccounts')
                     ->join('tblemployee','tblaccounts.intAccountId','=','tblemployee.intAccountId')
                     ->where('tblaccounts.strUserType','=','engineer')
                     ->get();
 
 
-        return view('Admin/projects',compact('pendingProjectsWithTotalEstimatedCost','ongoingProjects','finishedProjects','engineers'));
+        return view('Admin/projects',compact('pendingProjectsWithTotalEstimatedCost','ongoingProjects','finishedProjects','projectTemplates','engineers'));
     }
 
     /**
@@ -121,7 +124,8 @@ class ProjectsController extends Controller
                     'strProjectLocation' => $req['projectLocation'],
                     'strClientName' => $req['projectClient'],
                     'intEmployeeId' => $req['projectEngineer'],
-                    'intActive' => 1
+                    'intActive' => 1,
+                    'intProjectTemplateId' => $req['projectTemplate'],
                 ]
             );
 
