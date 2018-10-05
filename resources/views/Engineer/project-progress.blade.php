@@ -462,7 +462,7 @@
                                                                         <td>{{$projectKey+1}}</td>
                                                                         <td>
                                                                             <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                            &nbsp; &nbsp; {{$project->projectDetails->strClientFName}}&nbsp;{{$project->projectDetails->strClientLName}}
+                                                                            &nbsp; &nbsp; {{$project->projectDetails->strClientName}}
                                                                         </td>
                                                                         <td>{{$project->projectDetails->strProjectName}}</td>
                                                                     
@@ -731,7 +731,7 @@
                                                                         <td>{{$projectKey + 1}}</td>
                                                                         <td>
                                                                             <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                            &nbsp; &nbsp; {{$project->strClientFName}}&nbsp;{{$project->strClientLName}}
+                                                                            &nbsp; &nbsp; {{$project->strClientName}}
                                                                         </td>
                                                                         <td>{{$project->strProjectName}}</td>
                                                                 
