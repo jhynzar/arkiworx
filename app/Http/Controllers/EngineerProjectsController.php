@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class EngineerProjectsController extends Controller
 {
@@ -18,7 +19,7 @@ class EngineerProjectsController extends Controller
 
         $onGoingProjects = DB::table('tblproject')
         ->where('strProjectStatus','=','on going')
-        //->where('intEmployeeId','=','666') //EmployeeId
+        ->where('intEmployeeId','=',Auth::user()->id) //EmployeeId
         ->where('intActive','=',1)
         ->get();
 
