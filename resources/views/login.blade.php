@@ -103,8 +103,9 @@
                             </div>
                             <!-- <div class="card-footer"> -->
                             <div class="col-sm-12 col-xs-12 text-center">
-
-
+                            @if($errors->any())
+                                <h4 class="text-danger">{{$errors->first()}}</h4>
+                            @endif
 
                             </div>
                             {{ csrf_field() }}

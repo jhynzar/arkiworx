@@ -11,13 +11,19 @@
 |
 */
 
-Route::get('/', 'LoginController@login1');
+Route::get('/', 'LoginController@index');
 
-Route::post('Login', 'LoginController@login2');
-
-//Route::get('Login', 'LoginController@login2');
+Route::post('Login', 'LoginController@login');
 
 Route::get('Forgot-Password', 'LoginController@forgotPass');
+
+Route::get('Check-Login',function(){
+    dd(Auth::user());
+});
+
+Route::get('Logout',function(){
+    Auth::logout();
+});
 
 //Route::get('404-Error', 'PagesController@home1');
 
