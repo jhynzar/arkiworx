@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CostEstimationsController extends Controller
 {
@@ -19,7 +20,7 @@ class CostEstimationsController extends Controller
         $pendingProjectCostEstimations = 
             DB::table('tblproject')
             ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
-            //->where('tblproject.intEmployeeId','=','666')//EMPLOYEE ID
+            ->where('tblproject.intEmployeeId','=',Auth::user()->id)//EMPLOYEE ID
             ->where('tblproject.strProjectStatus','=','pending')
             ->orderBy('tblproject.intProjectId','desc')
             ->get();
