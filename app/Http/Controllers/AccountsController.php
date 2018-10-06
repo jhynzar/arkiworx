@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AccountsController extends Controller
 {
     public function accounts()
     {
-        $results = DB::select("select a.intaccountid as intaccountid, a.varusername as varusername, a.strusertype as strusertype, e.stremployeefname as stremployeefname, e.stremployeelname as stremployeelname from tblaccounts a, tblemployee e where e.intaccountid = a.intaccountid");
+        $results = DB::select("select a.id as intaccountid, a.username as varusername, a.strusertype as strusertype, e.stremployeefname as stremployeefname, e.stremployeelname as stremployeelname from tblaccounts a, tblemployee e where e.intaccountid = a.id");
         return view('Admin/accounts',compact('results'));
     }
 
@@ -25,10 +26,11 @@ class AccountsController extends Controller
 
         $accountId = DB::table('tblaccounts')
                     ->insertGetId([
-                        'varUserName' => request()->username,
-                        'varPassword' => request()->password,
+                        'username' => request()->username,
+                        'password' => Hash::make(request()->password),
                         'strUserType' => request()->usertype,
                         'intActive' => 1,
+                        'remember_token' => null,
                     ]);
 
         $employeeId = DB::table('tblemployee')

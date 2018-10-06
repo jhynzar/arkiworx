@@ -85,8 +85,8 @@ class ProjectsController extends Controller
                             ->get();
 
         $engineers = DB::table('tblaccounts')
-                    ->join('tblemployee','tblaccounts.intAccountId','=','tblemployee.intAccountId')
-                    ->where('tblaccounts.strUserType','=','engineer')
+                    ->join('tblemployee','tblaccounts.id','=','tblemployee.intAccountId')
+                    ->where('tblaccounts.strUserType','=','Engineer')
                     ->get();
 
 
