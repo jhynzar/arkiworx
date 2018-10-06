@@ -26,6 +26,7 @@ class LoginController extends Controller
         $credentials = [
             'username' => request()->UserN,
             'password' => request()->PassW,
+            'intActive' => 1,
         ];
 
         if(Auth::attempt($credentials)){
