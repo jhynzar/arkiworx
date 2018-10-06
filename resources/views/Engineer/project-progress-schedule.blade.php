@@ -780,6 +780,7 @@
         for(x = 0; x < allProjectSchedules.length ; x++){
             //--Logic for computing progress of category
             var projectProgress = 0;
+
             for(i = 0; i < allProjectSchedules[x].schedulePhases.length; i++){
                 projectProgress += allProjectSchedules[x].schedulePhases[i].intProgress;
             }
@@ -792,6 +793,8 @@
             
             //--For displaying
             //If task is dependent to other tasks or not
+
+            //========IF INDEPENDENT
             if(allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] == null){
 
                 //logic
@@ -802,7 +805,6 @@
 
                 //the actual start
                 var actualStart = allProjectSchedules[x].scheduleDetails['dtmActualStart'];
-
                 //the actual end
                 var actualEnd = allProjectSchedules[x].scheduleDetails['dtmActualEnd'];
 
@@ -811,30 +813,11 @@
                 var delay;
                 var overdue;
 
-                //for gantt
-                /*
-                var start = actualStart == null ? new Date() : new Date(allProjectSchedules[x].scheduleDetails['dtmActualStart']);
-
-                var end = addDate(new Date(actualStart),dateDifference(new Date(estimatedEnd),new Date(estimatedStart)));
-
-                var delay = new Date(estimatedStart);
-
-                var overdue = actualEnd == null? new Date() : new Date(allProjectSchedules[x].scheduleDetails['dtmActualEnd']);
-                */
-
                 start = actualStart == null ? new Date() : new Date(actualStart);
                 
-
                 end = addDate(new Date(start),dateDifference(new Date(estimatedEnd),new Date(estimatedStart)));
-                console.log(start);
 
                 overdue = actualEnd == null ? new Date() : new Date(actualEnd);
-
-
-                
-
-
-
 
                 //delay is fixed
                 delay = new Date(estimatedStart);
@@ -844,22 +827,6 @@
                 end = formatDate(end);
                 delay = formatDate(delay);
                 overdue = formatDate(overdue);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 task = {
                     start: start,
@@ -871,16 +838,85 @@
                     delay: delay,
                     overdue: overdue, //code: if first is null/undefined, then assign second value
                 };
-            }else{
+            }//========IF DEPENDENT
+            else{
+                //logic
+                //estimated start
+                var estimatedStart = allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'];
+                //estimated end
+                var estimatedEnd = allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'];
+
+                //the actual start
+                var actualStart = allProjectSchedules[x].scheduleDetails['dtmActualStart'];
+                //the actual end
+                var actualEnd = allProjectSchedules[x].scheduleDetails['dtmActualEnd'];
+
+                var start;
+                var end;
+                var delay;
+                var overdue;
+
+                start = actualStart == null ? null : new Date(actualStart);
+
+                //check the difference between start of this, and end of dependency
+                if(start == null){
+                    var dependencyId = allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'];
+
+
+                    var dependencyOverdueDateString;
+                    for(i = 0; i < scheduledTasks.length; i++){
+                        if(scheduledTasks[i].id == dependencyId){
+                            dependencyOverdueDateString = scheduledTasks[i].overdue;
+                            break;
+                        }
+                    }
+
+
+                    var dependencyEstimatedEndDateString;
+                    for(i = 0; i < allProjectSchedules.length ; i++){
+                        if(allProjectSchedules[i].scheduleDetails['intScheduleId'] == dependencyId){
+                            dependencyEstimatedEndDateString = allProjectSchedules[i].scheduleDetails['dtmEstimatedEnd'];
+                            break;
+                        }
+                    }
+
+                    start = addDate(new Date(dependencyOverdueDateString),dateDifference(new Date(dependencyEstimatedEndDateString),new Date(estimatedStart)));
+                }
+
+                
+                end = addDate(new Date(start),dateDifference(new Date(estimatedEnd),new Date(estimatedStart)));
+
+                //overdue checker
+                if(actualEnd == null){
+                    if((new Date()).getTime() < end.getTime()){
+                        overdue = new Date(end);
+                    }else{
+                        overdue = new Date();
+                    }
+                }else{
+                    overdue = new Date(actualEnd);
+                }
+
+                //overdue = actualEnd == null ? new Date() : new Date(actualEnd);
+
+                //delay is fixed
+                delay = new Date(estimatedStart);
+
+                //format date
+                start = formatDate(start);
+                end = formatDate(end);
+                delay = formatDate(delay);
+                overdue = formatDate(overdue);
+
                 task = {
-                    start: allProjectSchedules[x].scheduleDetails['dtmActualStart'] || allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'], //code: if first is null/undefined, then assign second value ; For Delay
-                    end: allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'],
+                    start: start, //code: if first is null/undefined, then assign second value ; For Delay
+                    end: end,
                     name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
                     id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
                     custom_class: projectCustomClasses,
                     progress: projectProgress,
-                    delay: allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'],
-                    overdue: allProjectSchedules[x].scheduleDetails['dtmActualEnd'] || new Date(), //code: if first is null/undefined, then assign second value
+                    delay: delay,
+                    overdue: overdue, //code: if first is null/undefined, then assign second value
                     dependencies: [ allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] ]
                 };
             }
@@ -1132,7 +1168,6 @@
             
         ]*/
 
-        console.log(tasks);
         
         
         
