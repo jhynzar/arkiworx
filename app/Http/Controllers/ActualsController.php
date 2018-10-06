@@ -347,6 +347,7 @@ class ActualsController extends Controller
         return 'createMaterialActualFrom';
     }
 
+    //this code is used in "Adding" and "Updating" projectRequirement since the logic is the same
     public function updateProjectRequirementActual($id){
 
         $req = request()->all();

@@ -806,67 +806,16 @@
 
 
 
-<!-- Update Custom Modal -->
-
-<div class="modal fade" id="updateCustomActuals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content pull-center">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    <span class="label label-info">Update Actual Entry</span>
-                </h4>
-            </div>
-            <div class="modal-body" style="background: #e5e5f2 !important; ">
-
-
-
-
-                <form action="/action_page.php">
-
-                    <label class="text text-muted" style="margin-left: 450px">
-                        <i>07 August 2018</i>
-                    </label>
-                    <!-- current date -->
-                    <br>
-
-
-                    <div class="form-group">
-
-                        <label for="ActualPrice">Price:</label>
-                        <input type="text" class="form-control" id="" style="width: 550px !important;" placeholder="₱" required>
-                    </div>
-
-
-
-                    <hr>
-                    <div class="modal-footer">
-
-                        <button type="submit" class="btn btn-success" data-dismiss="modal">
-                            <i class="icon icon-check"> </i>Add Entry</button>
-                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
-                            <i class="icon icon-close"> </i>Cancel</button>
-
-                    </div>
-                </form>
-
-
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 
 
 
 
-<!-- Update Actuals Modal -->
 
-<div class="modal fade" id="updateActuals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- Update Material Actual-->
+
+<div class="modal fade" id="updateMaterialActual" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content pull-center">
             <div class="modal-header">
@@ -1527,7 +1476,7 @@
                                                                     <td class="text-center">-</td>
                                                                     <td class="text-center">{{number_format($projectRequirement->decActualPrice,2)}}</td>
                                                                     <td>
-                                                                        <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+                                                                        <button data-toggle="modal" data-target="#updateCustomActual{{$projectRequirement->intRequirementId}}" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
 
                                                                     </td>
 
@@ -1550,6 +1499,62 @@
 
                                                                     </td>
                                                                 </tr>
+
+
+                                                                <!-- Update Custom Actual -->
+
+                                                                <div class="modal fade" id="updateCustomActual{{$projectRequirement->intRequirementId}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content pull-center">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                                <h4 class="modal-title" id="myModalLabel">
+                                                                                    <span class="label label-info">Update Custom Actual</span>
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                                                                                <form action="Actuals/updateProjectRequirementActual" method="POST">
+                                                                                    {{csrf_field()}}
+                                                                                    <input type="hidden" name="projectRequirementId" value={{$projectRequirement->intRequirementId}}>
+
+                                                                                    <label class="text text-muted" style="margin-left: 450px">
+                                                                                        <i>07 August 2018</i>
+                                                                                    </label>
+                                                                                    <!-- current date -->
+                                                                                    <br>
+
+
+                                                                                    <div class="form-group">
+
+                                                                                        <label for="ActualPrice">New Price:</label>
+                                                                                        <input name="actualPrice" type="text" class="form-control" style="width: 550px !important;" placeholder="₱" required>
+                                                                                    </div>
+
+
+
+                                                                                    <hr>
+                                                                                    <div class="modal-footer">
+
+                                                                                        <button type="submit" class="btn btn-success">
+                                                                                            <i class="icon icon-check"> </i>Update</button>
+                                                                                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                                                                            <i class="icon icon-close"> </i>Cancel</button>
+
+                                                                                    </div>
+                                                                                </form>
+
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             @endif
 
                                                     @endforeach
@@ -1592,7 +1597,7 @@
                                                                     <td class="text-center">{{number_format($materialActual->materialActualsDetails->latestPrice->decPrice,2)}}</td>
                                                                     <td class="text-center">{{number_format($materialActual->materialActualsHistory[0]->decCost,2)}}</td>
                                                                     <td>
-                                                                        <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+                                                                        <button data-toggle="modal" data-target="#updateMaterialActual" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
 
                                                                     </td>
 
