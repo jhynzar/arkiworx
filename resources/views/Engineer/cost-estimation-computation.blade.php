@@ -1278,13 +1278,13 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" id="ColumnVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" disabled id="ColumnVolume" style="width: 160px !important;" value='1.6'> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
                              <div class="form-group form-inline">
                            
-                            <label >Thickness:</label>
+                            <label >Height:</label>
                             <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" value=>
                             <label >Width:</label>
                             <input type="" class="form-control" id="ColumnWidth" style="width: 80px !important;" value=>
@@ -1297,7 +1297,13 @@
                                  <br>
                                  <div class="form-group">
                                 <label> Number of bars per Column:</label>
-                                <input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" value=4>
+                                <!--<input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" value=4 min=4>-->
+                                <select class="form-control" id="ColumnNoOfBars" style="width: 100px !important;">
+                                    <option value="4" selected> 4 </option>
+                                    <option value="6" > 6 </option>
+                                    <option value="8" > 8 </option>
+                                    <option value="9"> 9 </option>
+                                </select>
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
@@ -1326,7 +1332,7 @@
                                      <label for="">Tie wire:</label>
                                 <select class="form-control" id="ColumnsTieWire" style="width: 140px !important;">
                                     <option value=30 selected>30 cm </option>
-                                    <option value=40>40 cm </option>
+                                    <!--<option value=40>40 cm </option>-->
                                     
                                 </select>
                             </div> 
@@ -1334,7 +1340,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Column(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;" value=1>
+                                <label class="text text-default"><b>No. of Column(s): </b> </label>&nbsp; <input disabled type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;" value=4>
                                 <button type="button" id="Column" class="btn" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -4916,6 +4922,7 @@
     computeAndDisplayOverallTotal();
 
     function computeAndDisplayOverallTotal(){
+    
     $("#TQty1").html( parseFloat( $("#Quantity1").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
     $("#TCost1").html( parseFloat( $("#Cost1").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
     $("#TQty2").html( parseFloat( $("#Quantity2").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
@@ -5105,7 +5112,7 @@
     totalGeneralReq  += parseFloat($("#Transportation").val()) ;
     totalGeneralReq  += parseFloat($("#Contigency").val()) ;
     $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-    $("#OverallTotalCost2").val(parseFloat(totalGeneralReq));
+    $("#OverallTotalCost2").val(totalGeneralReq);
     
     var totalCost5 = 0;
     totalCost5 += parseFloat($("#Cost1").val());
@@ -5337,12 +5344,101 @@
         };
     }
     $("#ComputeGeneralReq").click(function() {
-        computeAndDisplayOverallTotal();
+        //DENR, lastillas, soil poisoning
+        if($("#DENR").val() == null){
+            $("#DENR").val(0);
+        }
+        if($("#Lastillas").val() == null){
+            $("#Lastillas").val(0);
+        }
+        if($("#SoilPoisoning").val() == null){
+            $("#SoilPoisoning").val(0);
+        }
+        if($("#BuildingPermit").val()==null || $("#TemporaryFacilities").val()==null || $("#WorkersBarracks").val()==null || $("#Excavation").val()==null || $("#Backfill").val()==null || $("#LaborCost").val()==null || $("#ToolsEquipments").val()==null || $("#Transportation").val()==null || $("#Contigency").val()==null){
+            alert("Please fill up the required fields");
+        }
+        else($("#SoilPoisoning").val()<0 || $("#Lastillas").val()<0 || $("#DENR").val()<0 || $("#BuildingPermit").val()<=0 || $("#TemporaryFacilities").val()<=0 || $("#WorkersBarracks").val()<=0 || $("#Excavation").val()<=0 || $("#Backfill").val()<=0 || $("#LaborCost").val()<=0 || $("#ToolsEquipments").val()<=0 || $("#Transportation").val()<=0 || $("#Contigency").val()<=0){
+            alert("Invalid Input.");
+        }
+        else{
+            computeAndDisplayOverallTotal();
+        }
     });
 
     $("#Column").click(function(){
-
-        computeAndDisplayOverallTotal();
+        if($("#ColumnThickness").val()<=0||$("#ColumnWidth").val()<=0||$("#ColumnLength").val()<=0||$("#ColumnVolume").val()<=0){
+            alert("Invalid Input.");
+        }
+        else if($("#ColumnThickness").val()==null&&$("#ColumnWidth").val()==null&&$("#ColumnLength").val()==null){
+            var concrete = ConcreteEsti( 1,1.6,1,$("#ColumnCC").val(),1 );
+            metalica(4,0.5);
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost);
+        }
+        else if($("#ColumnThickness").val()!=null&&$("#ColumnWidth").val()!=null&&$("#ColumnLength").val()!=null){
+            $("#ColumnVolume").val( $("#ColumnThickness").val() * $("#ColumnWidth").val() * $("#ColumnLength").val() );
+            var concrete = ConcreteEsti( 1,$("#ColumnVolume").val(),1,$("#ColumnCC").val(),1 );
+            metalica($("#ColumnNoOfBars").val(),0.192);
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost);
+        
+        }
+        else {
+            alert("Please fill up the required fields");
+        }
+        var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,noofbars,tiebar,tiewire,costa,costb,costc){
+            //
+            var qty1 = $("#Quantity1").val();
+            qty1 += cementqty;
+            $("#Quantity1").val(qty1);
+            var cost1 = $("#Cost1").val();
+            cost1 += cementcost;
+            $("#Cost1").val(cost1);
+            var qty2 = $("#Quantity2").val();
+            qty2 += sandqty;
+            $("#Quantity2").val(qty2);
+            var cost2 = $("#Cost2").val();
+            cost2 += sandcost;
+            $("#Cost2").val(cost2);
+            var qty3 = $("#Quantity3").val();
+            qty3 += gravelqty;
+            $("#Quantity3").val(qty3);
+            var cost3 = $("#Cost3").val();
+            cost3 += gravelcost;
+            $("#Cost3").val(cost3);
+            var qty4 = $("#Quantity4").val();
+            qty4 += noofbars;
+            $("#Quantity4").val(qty4);
+            var cost4 = $("#Cost4").val();
+            cost4 += costa;
+            $("#Cost4").val(cost4);
+            var qty5 = $("#Quantity5").val();
+            qty5 += tiebar;
+            $("#Quantity5").val(qty5);
+            var cost5 = $("#Cost5").val();
+            cost5 += costb;
+            $("#Cost5").val(cost5);
+            var qty6 = $("#Quantity6").val();
+            qty6 += tiewire;
+            $("#Quantity6").val(qty6);
+            var cost6 = $("#Cost6").val();
+            cost6 += costb;
+            $("#Cost6").val(cost6);
+            var no = $("#HowManyColumns").val(  );
+            $("#HowManyColumns").val( no + 1 );
+            alert("Nagdagdag ka ng Column");
+            computeAndDisplayOverallTotal();
+        }
+        
+        var metalica = function(noofbars,spacing){
+            //
+            var tiebar = (Math.ceil($("#ColumnThickness").val() / spacing) + 1) * (( $("#ColumnWidth").val() * 2 ) + ( $("#ColumnLength").val() * 2 ));
+            var tiewire = (Math.ceil($("#ColumnThickness").val() / spacing) + 1))*noofbars;
+            var metals1 = DirectCountingEsti(noofbars,4);
+            var cost1 = metals1.total;
+            var metals2 = DirectCountingEsti(tiebar,5);
+            var cost2 = metals2.total;
+            var metals3 = DirectCountingEsti(tiewire,6);
+            var cost3 = metals3.total;
+        }
     });
 
     $("#Footing").click(function(){
@@ -5401,7 +5497,89 @@
     });
 
     $("#ElectricalWorks").click(function() {
-        
+        var count = DirectCountingEsti( $("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterials").val() );
+        var cost = count.total;
+
+        if($("#ElectricalWorksMaterials").val()==43){
+            var qty = $("#Quantity58").val();
+            cost += $("#Cost58").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity58").val(qty);
+            $("#Cost58").val(total);
+        }
+
+        else if($("#ElectricalWorksMaterials").val()==44){
+            var qty = $("#Quantity59").val();
+            cost += $("#Cost59").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity59").val(qty);
+            $("#Cost59").val(total);
+        }
+
+        else if($("#ElectricalWorksMaterials").val()==45){
+            var qty = $("#Quantity60").val();
+            cost += $("#Cost60").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity60").val(qty);
+            $("#Cost60").val(total);
+        }
+
+        else if($("#ElectricalWorksMaterials").val()==46){
+            var qty = $("#Quantity61").val();
+            cost += $("#Cost61").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity61").val(qty);
+            $("#Cost61").val(total);
+        }
+
+        else if($("#ElectricalWorksMaterials").val()==47){
+            var qty = $("#Quantity62").val();
+            cost += $("#Cost62").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity62").val(qty);
+            $("#Cost62").val(total);
+        }
+
+        else if($("#ElectricalWorksMaterials").val()==48){
+            var qty = $("#Quantity63").val();
+            cost += $("#Cost63").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity63").val(qty);
+            $("#Cost63").val(total);
+        }
+
+        else if($("#ElectricalWorksMaterials").val()==49){
+            var qty = $("#Quantity64").val();
+            cost += $("#Cost64").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity64").val(qty);
+            $("#Cost64").val(total);
+        }
+
+        else if($("#ElectricalWorksMaterials").val()==50){
+            var qty = $("#Quantity65").val();
+            cost += $("#Cost65").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity65").val(qty);
+            $("#Cost65").val(total);
+        }
+
+        else if($("#ElectricalWorksMaterials").val()==51){
+            var qty = $("#Quantity66").val();
+            cost += $("#Cost66").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity66").val(qty);
+            $("#Cost66").val(total);
+        }
+
+        else if($("#ElectricalWorksMaterials").val()==52){
+            var qty = $("#Quantity67").val();
+            cost += $("#Cost67").val();
+            qty += $("#ElectricalWorksMaterialQ").val();
+            $("#Quantity67").val(qty);
+            $("#Cost67").val(total);
+        }
+
         computeAndDisplayOverallTotal();
     });
 
@@ -5441,14 +5619,27 @@
         var name = tilecost.materialname;
         addmaterial(tileClass,totalTiles,cost,name));
 
-        //
+        $("#Quantity86").val((TileArea / 3)*20);
+        var tileAd = DirectCountingEsti( $("#Quantity86").val(),$("#MaterialId86").val() );
+        var cost = tileAd.total;
+        $("#Cost86").val(cost);
+
+        $("#Quantity87").val((TileArea / 11)*5);
+        var tileGrout = DirectCountingEsti( $("#Quantity87").val(),$("#MaterialId87").val() );
+        var cost = tileGrout.total;
+        $("#Cost87").val(cost);
 
         var addmaterial = function(tileClass,totalTiles,cost,name){
             var tileqty;
             var tilecost;
 
             if(tileClass == 71){
-                //
+                tileqty = $("#Quantity85").val();
+                tilecost = $("#Cost85").val();
+                tileqty += totalTiles;
+                tilecost += cost;
+                $("#Quantity85").val(tileqty);
+                $("#Cost85").val(tilecost);
             }
             else if($("#MaterialIdA").val() == tileClass ){
                 tileqty = $("#QuantityA").val();
