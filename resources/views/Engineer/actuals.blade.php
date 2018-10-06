@@ -748,10 +748,10 @@
 
                     <div>
                         <label>Category: </label>
-                        <select onchange="addNewMaterialActualOnChange(this)" class="form-control" name="category" id="category" placeholder="Category" style="width: 300px !important;">
+                        <select onchange="addNewMaterialActualCategoryOnChange(this)" class="form-control" name="category" id="category" placeholder="Category" style="width: 300px !important;">
                             <option disabled selected>Pick a Category</option>
                             @foreach ($allCategoriesWithSub as $key=>$category)
-                                <option value="{{$key}}">{{$category->strWorkCategoryDesc}}</option>
+                                <option value="{{$category->intWorkCategoryId}}">{{$category->strWorkCategoryDesc}}</option>
 
                             @endforeach
 
@@ -759,8 +759,8 @@
                     </div>
                     <div>
                         <label>Sub Category: </label>
-                        <select class="form-control" name="newMaterialActualSubCategory" id="newMaterialActualSubCategory" placeholder="Category" style="width: 300px !important;">
-                            <option disabled selected>Pick a Category</option>
+                        <select onchange="addNewMaterialActualSubCategoryOnChange(this)" class="form-control" name="newMaterialActualSubCategory" id="newMaterialActualSubCategory" placeholder="Category" style="width: 300px !important;">
+                            <option disabled selected>Pick a Category first</option>
                         </select>
                     </div>
                     <br>
@@ -769,9 +769,7 @@
                         <!-- Selects materials that are not from estimated -->
 
                         <select class="form-control" name="newMaterialActualMaterialId" id="newMaterialActualMaterialId" placeholder="Material/s" style="width: 300px !important;">
-                            @foreach ($allMaterials as $material)
-                                <option value="{{$material->intMaterialId}}">{{$material->strMaterialName}}</option>
-                            @endforeach
+                            <option disabled selected>Pick a Sub Category first</option>
                         </select>
                     </div>
 
@@ -1817,17 +1815,28 @@
 
 @endsection @section('script')
 <script>
-    function addNewMaterialActualOnChange(e){
+    function addNewMaterialActualCategoryOnChange(e){
 
         var allCategoriesWithSub = {!! json_encode($allCategoriesWithSub) !!};
-        console.log(allCategoriesWithSub[e.value].subCategories[0].strWorkSubCategoryDesc);
 
-        var subCategories = allCategoriesWithSub[e.value].subCategories;
+        //selected Category finder
 
-         $('#newMaterialActualSubCategory').empty();
+        var subCategories;
+        for(var i = 0; i < allCategoriesWithSub.length; i++){
+            if(allCategoriesWithSub[i].intWorkCategoryId == e.value){
+                subCategories = allCategoriesWithSub[i].subCategories;
+                break; 
+            }
+        }
+
+        //selected Category finder end
+
+        $('#newMaterialActualSubCategory').empty();
         
         
         var htmlString = "";
+        //first option
+        htmlString += "<option value='-1' selected disabled>Pick a Sub Category</option>"
         for(var key in subCategories){
             console.log(subCategories[key].strWorkSubCategoryDesc);
 
@@ -1849,6 +1858,37 @@
                 .inject($('#addNewMaterialActualSubCategory'));
         }
         */
+    }
+    function addNewMaterialActualSubCategoryOnChange(e){
+        var projectMaterialActuals = {!! json_encode($projectWithDetails->materialActuals) !!};
+        var allMaterials = {!! json_encode($allMaterials) !!};
+
+        $('#newMaterialActualMaterialId').empty();
+
+        var htmlString = "";
+        for(var keyMaterial in allMaterials){
+            
+            //checker if material already exists in actuals with the same subcategory
+            var doesExist = false;
+            for(var keyProjectActual in projectMaterialActuals){
+                if(
+                    projectMaterialActuals[keyProjectActual].materialActualsDetails.intMaterialId == allMaterials[keyMaterial].intMaterialId &&
+                    projectMaterialActuals[keyProjectActual].materialActualsDetails.intWorkSubCategoryId == e.value
+                ){
+                    doesExist = true;    
+                    break;
+                }
+            }
+
+            if(!doesExist){
+                htmlString += "<option value=' " +allMaterials[keyMaterial].intMaterialId+ " ' >"
+                htmlString += allMaterials[keyMaterial].strMaterialName
+                htmlString += "</option>"
+            }
+
+        }
+        $('#newMaterialActualMaterialId').html(htmlString);
+
     }
 </script>
 @endsection
