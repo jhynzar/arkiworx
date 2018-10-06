@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectProgressController extends Controller
 {
@@ -22,6 +23,7 @@ class ProjectProgressController extends Controller
                                 ->leftJoin('tblschedules','tblproject.intProjectId','=','tblschedules.intProjectId')
                                 ->where('tblschedules.intProjectId','=',null)
                                 ->where('tblproject.strProjectStatus','=','on going')
+                                ->where('tblproject.intEmployeeId','=',Auth::user()->id)//EMPLOYEE ID
                                 ->get();
 
         $pendingProjectSchedules = array();
@@ -29,6 +31,7 @@ class ProjectProgressController extends Controller
             $projectDetails = DB::table('tblproject')
                             ->where('tblproject.intProjectId','=',$projectId->intProjectId)
                             ->where('tblproject.intActive','=',1)
+                            ->where('tblproject.intEmployeeId','=',Auth::user()->id)//EMPLOYEE ID
                             ->first();
 
             $projectRequirementsWorkSubCategoryIds = DB::select("
@@ -80,7 +83,8 @@ class ProjectProgressController extends Controller
             FROM tblproject
             LEFT JOIN tblschedules ON tblproject.intProjectId = tblschedules.intProjectId
             WHERE tblschedules.intProjectId IS NOT NULL AND tblproject.strProjectStatus = 'on going' AND tblproject.intActive = 1
-        ");
+            AND tblproject.intEmployeeId = :id
+        ",[Auth::user()->id]);
 
         $finishedProjectSchedules = array();
         foreach($projectsWithSchedulesIds as $projectId){
