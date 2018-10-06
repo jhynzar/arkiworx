@@ -294,6 +294,12 @@ class CostEstimationsController extends Controller
         return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray','TemplateArray1','TemplateArray2','TemplateArray3','TemplateArray4'));
     }
 
+    public function createEstimation2($id,$projectTemplateId){
+        //INSERT CODE HERE
+
+        return view('Engineer/cost-estimation-computation-2');
+    }
+
     public function saveEstimation($id){
         //general construction ;
         $BuildingPermit = $_POST['BuildingPermit'];

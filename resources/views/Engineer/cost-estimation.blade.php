@@ -1088,9 +1088,21 @@
 
                                                             <td class="faq-table-btn">
 
-                                                                <a href="/Engineer/Cost-Estimation/{{$pendingProjectCostEstimation->intProjectId}}/Cost-Estimation-Computation/{{$pendingProjectCostEstimation->intProjectTemplateId}}" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
+                                                                @if($pendingProjectCostEstimation->intProjectTemplateId == 1) <!-- 1 Storey -->
+
+                                                                    <a href="/Engineer/Cost-Estimation/{{$pendingProjectCostEstimation->intProjectId}}/Cost-Estimation-Computation/{{$pendingProjectCostEstimation->intProjectTemplateId}}" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
                                                                   data-placement="top" title="Create">
-                                                                    <i class="icofont icofont-ui-edit"></i> Create Estimation </a>
+                                                                        <i class="icofont icofont-ui-edit"></i> Create Estimation 
+                                                                    </a>
+
+                                                                @elseif($pendingProjectCostEstimation->intProjectTemplateId == 2) <!-- 2 Storey -->
+                                                                    <a href="/Engineer/Cost-Estimation/{{$pendingProjectCostEstimation->intProjectId}}/Cost-Estimation-Computation-2/{{$pendingProjectCostEstimation->intProjectTemplateId}}" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
+                                                                    data-placement="top" title="Create">
+                                                                        <i class="icofont icofont-ui-edit"></i> Create Estimation 
+                                                                    </a>
+                                                                @endif
+
+                                                                
 
 
                                                             </td>

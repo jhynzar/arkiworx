@@ -128,9 +128,7 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('Engineer/Cost-Estimation', 'CostEstimationsController@index');
         Route::get('Engineer/Cost-Estimation/{id}/Cost-Estimation-Computation/{projectTemplateId}', 'CostEstimationsController@createEstimation');
-        Route::get('Engineer/Cost-Estimation/{id}/Cost-Estimation-Computation2', function(){
-            return view ('Engineer/cost-estimation-computation2');
-        });
+        Route::get('Engineer/Cost-Estimation/{id}/Cost-Estimation-Computation-2/{projectTemplateId}', 'CostEstimationsController@createEstimation2');
         Route::post('Engineer/Cost-Estimation/{id}/Cost-Estimation-Computation/Cost-Estimation-Save', 'CostEstimationsController@saveEstimation');
 
         Route::get('Engineer/Cost-Summary', function(){
