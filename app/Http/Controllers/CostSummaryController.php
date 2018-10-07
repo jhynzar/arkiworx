@@ -43,12 +43,20 @@ class CostSummaryController extends Controller
                                     ->get()
                                     ->toArray();
 
-            $latestPrice = DB::table('tblprice')
-                        ->where('tblprice.intMaterialId','=',$materialActual->intMaterialId)
-                        ->orderBy('dtmPriceAsOf','desc')
-                        ->first();
+            //computing to totals of material actual
+            $materialActualTotalQty = 0;
+            $materialActualTotalCost = 0;
+            foreach($materialActualHistory as $history){
+                $materialActualTotalQty += $history->decQty;
+                $materialActualTotalCost += $history->decCost;
+            }
 
-            //adding latest price
+            //TODO IF NATAPOS NA
+            $materialActualTotals = (object) [
+                'totalQty' => $materialActualTotalQty,
+                'totalCost' => $materialActualTotalCost,
+            ];
+
             
             $materialActualsDetails = (object) [
                 'intMaterialActualsId' => $materialActual->intMaterialActualsId,
@@ -61,12 +69,12 @@ class CostSummaryController extends Controller
                 'strWorkSubCategoryDesc' => $materialActual->strWorkSubCategoryDesc,
                 'intWorkCategoryId' => $materialActual->intWorkCategoryId,
                 'strWorkCategoryDesc' => $materialActual->strWorkCategoryDesc,
-                'latestPrice' => $latestPrice
             ];
 
             $materialActualWithHistory = (object) [
                 'materialActualsDetails' => $materialActualsDetails,
-                'materialActualsHistory' => $materialActualHistory
+                'materialActualsHistory' => $materialActualHistory,
+                'materialActualsTotals' => $materialActualTotals,
             ];
 
             array_push($materialActualsWithHistory,$materialActualWithHistory);
@@ -366,6 +374,15 @@ class CostSummaryController extends Controller
 
         //dd($projectWorkSubCategories);
         //dd($projectWithDetails);
+        //checker
+        /*
+        foreach($projectCostSummary as $project){
+            if($project->actual == null){
+                continue;
+            }else{
+                dd($project);
+            }
+        }*/
         //dd($projectCostSummary);
         return view('Engineer/cost-summary',compact(
             'projectCostSummary',

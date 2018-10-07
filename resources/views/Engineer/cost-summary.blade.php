@@ -502,13 +502,13 @@
                                                                                 <th class="text-center" style="background-color: coral;   !important">-</th>
                                                                                 <td style="background-color: coral;  color: black !important">-</td>
                                                                                 <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decQty,2)}}</b>
+                                                                                    <b>{{number_format($costSummary->actual->materialActualsTotals->totalQty,2)}}</b>
                                                                                 </th>
                                                                                 <th style="background-color: lightgreen;color: black !important">
                                                                                     <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
                                                                                 </th>
                                                                                 <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decCost,2)}}</b>
+                                                                                    <b>{{number_format($costSummary->actual->materialActualsTotals->totalCost,2)}}</b>
                                                                                 </td>
                                                                             </tr>
                                                                         @elseif (
@@ -549,13 +549,13 @@
                                                                             <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
                                                                             <td style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decCost,2)}}</td>
                                                                             <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decQty,2)}}</b>
+                                                                                <b>{{number_format($costSummary->actual->materialActualsTotals->totalQty,2)}}</b>
                                                                             </th>
                                                                             <th style="background-color: lightgreen;color: black !important">
                                                                                 <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
                                                                             </th>
                                                                             <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decCost,2)}}</b>
+                                                                                <b>{{number_format($costSummary->actual->materialActualsTotals->totalCost,2)}}</b>
                                                                             </td>
                                                                         </tr>
                                                                         @endif

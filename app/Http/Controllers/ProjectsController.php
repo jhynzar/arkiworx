@@ -207,8 +207,9 @@ class ProjectsController extends Controller
     }
 
     public function viewCostSummary($id){
-         //getting project details
-         $project = DB::table('tblproject')
+         //
+        //getting project details
+        $project = DB::table('tblproject')
                 ->where('intProjectId','=',$id)
                 ->first();
             
@@ -235,12 +236,20 @@ class ProjectsController extends Controller
                                     ->get()
                                     ->toArray();
 
-            $latestPrice = DB::table('tblprice')
-                        ->where('tblprice.intMaterialId','=',$materialActual->intMaterialId)
-                        ->orderBy('dtmPriceAsOf','desc')
-                        ->first();
+            //computing to totals of material actual
+            $materialActualTotalQty = 0;
+            $materialActualTotalCost = 0;
+            foreach($materialActualHistory as $history){
+                $materialActualTotalQty += $history->decQty;
+                $materialActualTotalCost += $history->decCost;
+            }
 
-            //adding latest price
+            //TODO IF NATAPOS NA
+            $materialActualTotals = (object) [
+                'totalQty' => $materialActualTotalQty,
+                'totalCost' => $materialActualTotalCost,
+            ];
+
             
             $materialActualsDetails = (object) [
                 'intMaterialActualsId' => $materialActual->intMaterialActualsId,
@@ -253,12 +262,12 @@ class ProjectsController extends Controller
                 'strWorkSubCategoryDesc' => $materialActual->strWorkSubCategoryDesc,
                 'intWorkCategoryId' => $materialActual->intWorkCategoryId,
                 'strWorkCategoryDesc' => $materialActual->strWorkCategoryDesc,
-                'latestPrice' => $latestPrice
             ];
 
             $materialActualWithHistory = (object) [
                 'materialActualsDetails' => $materialActualsDetails,
-                'materialActualsHistory' => $materialActualHistory
+                'materialActualsHistory' => $materialActualHistory,
+                'materialActualsTotals' => $materialActualTotals,
             ];
 
             array_push($materialActualsWithHistory,$materialActualWithHistory);
@@ -270,7 +279,7 @@ class ProjectsController extends Controller
                             ->where('intProjectId','=',$project->intProjectId)
                             ->get()
                             ->toArray();
-        
+
 
         $projectWithDetails = (object) [
             'projectDetails' => $project,
@@ -346,7 +355,7 @@ class ProjectsController extends Controller
 
         //---------WORK CATEGORIES
         //for category and sub category
-        
+
 
         //actuals categories and sub categories
         $projectActualsAllWorkCategoriesIds = DB::select("
@@ -383,7 +392,7 @@ class ProjectsController extends Controller
             GROUP BY tblworkcategory.intWorkCategoryId      
         ",['id'=>$id]);
 
-        
+
 
         $projectEstimatesAllWorkSubCategoriesIds = DB::select("
             SELECT tblworksubcategory.intWorkSubCategoryId
@@ -396,9 +405,9 @@ class ProjectsController extends Controller
             GROUP BY tblworksubcategory.intWorkSubCategoryId
         ",['id'=>$id]);
 
-        
 
-        
+
+
 
         // ACTUALS WORK CATEGORIES data to pass to view
         $projectWorkCategories = array(); 
@@ -409,7 +418,7 @@ class ProjectsController extends Controller
 
             array_push($projectWorkCategories,$workCategoryDetails);
         }
-        
+
         // ESTIMATES WORK CATEGORIES
         foreach($projectEstimatesAllWorkCategoriesIds as $workCategory){
 
@@ -433,7 +442,7 @@ class ProjectsController extends Controller
             array_push($projectWorkCategories,$workCategoryDetails);
         }
 
-        
+
 
         //dd($projectWorkCategories);
 
@@ -474,7 +483,7 @@ class ProjectsController extends Controller
 
         //================PROJECT REQUIREMENTS
 
-        
+
         //----Extracting project requirements
         $allProjectRequirements = $projectWithDetails->projectRequirements;
 
@@ -523,15 +532,15 @@ class ProjectsController extends Controller
 
             array_push($projectRequirementsWorkSubCategories,$workSubCategoryDetails);
         }
-        
-        
+
+
 
         //dd($projectRequirementsWorkSubCategories);
 
         //dd($projectWithDetails);
-        
 
-        
+
+
         //-----For Computation of totals
         $totalEstimatedCost = 0;
         $totalActualsCost = 0;
@@ -558,8 +567,17 @@ class ProjectsController extends Controller
 
         //dd($projectWorkSubCategories);
         //dd($projectWithDetails);
+        //checker
+        /*
+        foreach($projectCostSummary as $project){
+            if($project->actual == null){
+                continue;
+            }else{
+                dd($project);
+            }
+        }*/
         //dd($projectCostSummary);
-        return view('Admin/cost-summary',compact(
+        return view('Engineer/cost-summary',compact(
             'projectCostSummary',
             'projectWorkCategories',
             'projectWorkSubCategories',
