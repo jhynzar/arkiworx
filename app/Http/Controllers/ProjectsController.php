@@ -186,9 +186,18 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
         //
+
+        //dd(request()->all());
+        DB::table('tblproject')
+            ->where('tblproject.intProjectId','=',$id)
+            ->update([
+                'intActive' => 0,
+            ]);
+        
+        header('Refresh:0;/Admin/Projects');
     }
 
 
