@@ -1423,7 +1423,6 @@
                                             <th style="color: black">Description</th>
                                             <th style="color: black">Quantity</th>
                                             <th style="color: black">Unit</th>
-                                            <th style="color: black">Unit Cost</th>
                                             <th class="text-center pull-center" style="color: black">Total
                                                 <br>Unit Cost</th>
                                             <th>
@@ -1471,7 +1470,6 @@
                                                                     <td class="text-center">{{$projectRequirement->strDesc}}
 
                                                                     </td>
-                                                                    <td class="text-center">-</td>
                                                                     <td class="text-center">-</td>
                                                                     <td class="text-center">-</td>
                                                                     <td class="text-center">{{number_format($projectRequirement->decActualPrice,2)}}</td>
@@ -1592,10 +1590,9 @@
                                                                     <td class="text-center">{{$materialActual->materialActualsDetails->strMaterialName}}
 
                                                                     </td>
-                                                                    <td class="text-center">{{number_format($materialActual->materialActualsHistory[0]->decQty,2)}}</td>
+                                                                    <td class="text-center">{{number_format($materialActual->materialActualsTotals->totalQty,2)}}</td>
                                                                     <td class="text-center">{{$materialActual->materialActualsDetails->strUnit}}</td>
-                                                                    <td class="text-center">{{number_format($materialActual->materialActualsDetails->latestPrice->decPrice,2)}}</td>
-                                                                    <td class="text-center">{{number_format($materialActual->materialActualsHistory[0]->decCost,2)}}</td>
+                                                                    <td class="text-center">{{number_format($materialActual->materialActualsTotals->totalCost,2)}}</td>
                                                                     <td>
                                                                         <button data-toggle="modal" data-target="#updateMaterialActual" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
 

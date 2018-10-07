@@ -46,12 +46,20 @@ class ActualsController extends Controller
                                     ->get()
                                     ->toArray();
 
-            $latestPrice = DB::table('tblprice')
-                        ->where('tblprice.intMaterialId','=',$materialActual->intMaterialId)
-                        ->orderBy('dtmPriceAsOf','desc')
-                        ->first();
+            //computing to totals of material actual
+            $materialActualTotalQty = 0;
+            $materialActualTotalCost = 0;
+            foreach($materialActualHistory as $history){
+                $materialActualTotalQty += $history->decQty;
+                $materialActualTotalCost += $history->decCost;
+            }
 
-            //adding latest price
+            //TODO IF NATAPOS NA NI ERWIN, ILAGAY YUNG UNIT COST
+            $materialActualTotals = (object) [
+                'totalQty' => $materialActualTotalQty,
+                'totalCost' => $materialActualTotalCost,
+            ];
+
             
             $materialActualsDetails = (object) [
                 'intMaterialActualsId' => $materialActual->intMaterialActualsId,
@@ -64,12 +72,12 @@ class ActualsController extends Controller
                 'strWorkSubCategoryDesc' => $materialActual->strWorkSubCategoryDesc,
                 'intWorkCategoryId' => $materialActual->intWorkCategoryId,
                 'strWorkCategoryDesc' => $materialActual->strWorkCategoryDesc,
-                'latestPrice' => $latestPrice
             ];
 
             $materialActualWithHistory = (object) [
                 'materialActualsDetails' => $materialActualsDetails,
-                'materialActualsHistory' => $materialActualHistory
+                'materialActualsHistory' => $materialActualHistory,
+                'materialActualsTotals' => $materialActualTotals,
             ];
 
             array_push($materialActualsWithHistory,$materialActualWithHistory);
