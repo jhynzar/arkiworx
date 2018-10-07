@@ -34,6 +34,7 @@ class LoginController extends Controller
             $userDetails = DB::table('tblaccounts')
                         ->join('tblemployee','tblemployee.intAccountId','=','tblaccounts.id')
                         ->where('tblaccounts.id','=',Auth::user()->id)
+                        //->where('tblaccounts.intActive','=',1) //intActive already checked before authentication
                         ->first();
 
             //dd($userDetails);

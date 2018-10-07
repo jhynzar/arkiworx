@@ -87,6 +87,7 @@ class ProjectsController extends Controller
         $engineers = DB::table('tblaccounts')
                     ->join('tblemployee','tblaccounts.id','=','tblemployee.intAccountId')
                     ->where('tblaccounts.strUserType','=','Engineer')
+                    ->where('tblaccounts.intActive','=',1)
                     ->get();
 
 

@@ -10,7 +10,7 @@ class AccountsController extends Controller
 {
     public function accounts()
     {
-        $results = DB::select("select a.id as intaccountid, a.username as varusername, a.strusertype as strusertype, e.stremployeefname as stremployeefname, e.stremployeelname as stremployeelname from tblaccounts a, tblemployee e where e.intaccountid = a.id");
+        $results = DB::select("select a.id as intaccountid, a.username as varusername, a.strusertype as strusertype, e.stremployeefname as stremployeefname, e.stremployeelname as stremployeelname from tblaccounts a, tblemployee e where e.intaccountid = a.id and a.intActive = 1");
         return view('Admin/accounts',compact('results'));
     }
 
