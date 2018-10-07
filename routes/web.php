@@ -35,7 +35,7 @@ Route::middleware(['auth'])->group(function(){
     //===========Admin
 
     Route::middleware(['check.if.admin'])->group(function(){
-        Route::get('Admin/Home', 'PagesController@home1');
+        Route::get('Admin/Home', 'AdminHomeController@index');
 
         Route::get('Admin/Accounts', 'AccountsController@accounts');
 
