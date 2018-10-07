@@ -813,75 +813,6 @@
 
 
 
-<!-- Update Material Actual-->
-
-<div class="modal fade" id="updateMaterialActual" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content pull-center">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    <span class="label label-info">Update Actual Entry</span>
-                </h4>
-            </div>
-            <div class="modal-body" style="background: #e5e5f2 !important; ">
-
-
-
-
-                <form action="/action_page.php">
-
-                    <label class="text text-muted" style="margin-left: 450px">
-                        <i>07 August 2018</i>
-                    </label>
-                    <!-- current date -->
-                    <br>
-
-
-
-                    <div class="form-group form-inline">
-                        <label>Qty:</label>
-                        <input type="number" class="form-control" id="" style="width: 90px !important;">
-
-                        <label>Unit:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;">
-
-
-
-                        <label for="ActualPrice">Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱">
-
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="ActualPrice">Total Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 500px !important;" placeholder="₱">
-                    </div>
-
-
-
-                    <hr>
-                    <div class="modal-footer">
-
-                        <button type="submit" class="btn btn-success" data-dismiss="modal">
-                            <i class="icon icon-check"> </i>Add Entry</button>
-                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
-                            <i class="icon icon-close"> </i>Cancel</button>
-
-                    </div>
-                </form>
-
-
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 
@@ -1594,7 +1525,7 @@
                                                                     <td class="text-center">{{$materialActual->materialActualsDetails->strUnit}}</td>
                                                                     <td class="text-center">{{number_format($materialActual->materialActualsTotals->totalCost,2)}}</td>
                                                                     <td>
-                                                                        <button data-toggle="modal" data-target="#updateMaterialActual" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+                                                                        <button data-toggle="modal" data-target="#updateMaterialActual{{$materialActual->materialActualsDetails->intMaterialActualsId}}" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
 
                                                                     </td>
 
@@ -1617,6 +1548,86 @@
 
                                                                     </td>
                                                                 </tr>
+
+                                                                
+                                                                <!-- Update Material Actual-->
+
+                                                                <div class="modal fade" id="updateMaterialActual{{$materialActual->materialActualsDetails->intMaterialActualsId}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content pull-center">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                                <h4 class="modal-title" id="myModalLabel">
+                                                                                    <span class="label label-info">Add {{$materialActual->materialActualsDetails->strMaterialName}}</span>
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                                                                                <form action="Actuals/updateMaterialActual" method="POST">
+                                                                                    {{csrf_field()}}
+                                                                                    <input type="hidden" name="materialActualsId" value="{{$materialActual->materialActualsDetails->intMaterialActualsId}}">
+                                                                                    <input type="hidden" name="materialActualLatestPrice" value="{{$materialActual->materialActualsDetails->latestPrice->decPrice}}">
+
+                                                                                    <label class="text text-muted" style="margin-left: 450px">
+                                                                                        <i>07 August 2018</i>
+                                                                                    </label>
+                                                                                    <!-- current date -->
+                                                                                    <br>
+
+
+
+                                                                                    <div class="form-group form-inline">
+                                                                                        <label>Qty:</label>
+                                                                                        <input 
+                                                                                        onkeyup="updateMaterialActualQtyOnChange(this,{{$materialActual->materialActualsDetails->intMaterialActualsId}},{{$materialActual->materialActualsDetails->latestPrice->decPrice}})"
+                                                                                        onchange="updateMaterialActualQtyOnChange(this,{{$materialActual->materialActualsDetails->intMaterialActualsId}},{{$materialActual->materialActualsDetails->latestPrice->decPrice}})"
+                                                                                        type="number" min="1" name="materialActualQty" class="form-control" style="width: 90px !important;">
+
+                                                                                        <label>Unit:</label>
+                                                                                        <input readonly type="text" value="{{$materialActual->materialActualsDetails->strUnit}}"class="form-control" id="" style="width: 130px !important;">
+
+
+
+                                                                                        <label for="ActualPrice">Unit Cost:</label>
+                                                                                        <input readonly type="text" value="{{number_format($materialActual->materialActualsDetails->latestPrice->decPrice,2)}}" class="form-control" id="" style="width: 130px !important;" placeholder="₱">
+
+
+                                                                                    </div>
+
+
+                                                                                    <div class="form-group">
+
+                                                                                        <label for="ActualPrice">Total Cost:</label>
+                                                                                        <input readonly type="text" id="updateMaterialActualTotalCost{{$materialActual->materialActualsDetails->intMaterialActualsId}}" class="form-control" style="width: 500px !important;" placeholder="₱">
+                                                                                    </div>
+
+
+
+                                                                                    <hr>
+                                                                                    <div class="modal-footer">
+
+                                                                                        <button type="submit" class="btn btn-success">
+                                                                                            <i class="icon icon-check"> </i>Add Entry</button>
+                                                                                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                                                                            <i class="icon icon-close"> </i>Cancel</button>
+
+                                                                                    </div>
+                                                                                </form>
+
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
                                                             @endif
                                                         @endforeach
                                                     @endif
@@ -1817,6 +1828,10 @@
 
 @endsection @section('script')
 <script>
+    function updateMaterialActualQtyOnChange(input,materialActualsId,price){
+        $('#updateMaterialActualTotalCost'+materialActualsId).val(parseFloat(input.value * price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+    }
+
     function addNewMaterialActualCategoryOnChange(e){
 
         var allCategoriesWithSub = {!! json_encode($allCategoriesWithSub) !!};

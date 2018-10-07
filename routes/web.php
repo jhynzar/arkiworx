@@ -103,6 +103,7 @@ Route::middleware(['auth'])->group(function(){
         Route::post('/Engineer/Engineer-Projects/{id}/Actuals/createMaterialActualNew','ActualsController@createMaterialActualNew');
         Route::post('/Engineer/Engineer-Projects/{id}/Actuals/createMaterialActualFrom','ActualsController@createMaterialActualFrom');
         Route::post('/Engineer/Engineer-Projects/{id}/Actuals/updateProjectRequirementActual','ActualsController@updateProjectRequirementActual');
+        Route::post('/Engineer/Engineer-Projects/{id}/Actuals/updateMaterialActual','ActualsController@updateMaterialActual');
 
         Route::get('Engineer/Accounts', function(){
             return view ('Engineer/accounts');
