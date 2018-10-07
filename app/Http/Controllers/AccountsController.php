@@ -52,6 +52,19 @@ class AccountsController extends Controller
         header('Refresh:0;/Admin/Accounts');
     }
 
+    public function delete($id){
+        //dd(request()->all());
+
+        DB::table('tblaccounts')
+            ->where('tblaccounts.id','=',$id)
+            ->where('tblaccounts.intActive','=',1)
+            ->update([
+                'intActive' => 0,
+            ]);
+
+        header('Refresh:0;/Admin/Accounts');
+    }
+
 }
 //INSERT INTO `tblemployee`
 //(`intEmployeeId`, `strEmployeeFName`, `strEmployeeMName`, `strEmployeeLName`, `strEmployeeSex`, `dtmEmployeeBDay`, `varEmployeeEMail`, `varEmployeeContactNo`, `intEmployeeHouseNo`, `strEmployeeStreet`, `strEmployeeBrgy`, `strEmployeeCity`, `strEmployeeZip`, `intAccountId`) 

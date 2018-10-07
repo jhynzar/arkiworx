@@ -485,7 +485,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($results as $result)
+                                            @foreach($results as $key=>$result)
 
                                             <tr class="table-warning">
                                                 <td>{{ $result->intaccountid }}</td>
@@ -500,9 +500,39 @@
                                                     View </a>
                                                 </td>
                                                 <td>
-                                                    <button data-toggle="modal" data-target="#deactivateUser" class="btn label label-danger">Deactivate</button>
+                                                    <button data-toggle="modal" data-target="#deactivateUser{{$key}}" class="btn label label-danger">Deactivate</button>
                                                 </td>
                                             </tr>
+
+                                                                                
+                                            <!-- deactivate user modal -->
+
+                                            <div class="modal fade" id="deactivateUser{{$key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header" style="background-color: indianred !important">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <span style="color: white">Deactivate User</span>
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Are you sure you want to deactivate this user's account?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form method="POST" action="/Admin/Accounts/{{$result->intaccountid}}/Delete">
+                                                                {{csrf_field()}}
+                                                                <button type="submit" class="btn btn-danger">Deactivate</button>
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- deactivate user modal end -->
 
                                             @endforeach
                                         </tbody>
@@ -521,29 +551,6 @@
         </div>
 
 
-        <!-- deactivate user modal -->
-
-        <div class="modal fade" id="deactivateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: indianred !important">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                            <span style="color: white">Deactivate User</span>
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to deactivate this user's account?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger">Deactivate</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
 
