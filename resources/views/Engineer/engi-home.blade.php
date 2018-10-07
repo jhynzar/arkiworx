@@ -367,7 +367,7 @@
                     <div class="col-sm-12 card dashboard-product">
                         <span>Unestimated Projects</span>
                         <h2 class="dashboard-total-products">
-                            <span class="counter">{{$counts->pendingCostEstimationsCount}}</span>
+                            <span class="counter">{{number_format($counts->pendingCostEstimationsCount)}}</span>
                         </h2>
                         <span class="label label-danger">Assignment</span>This week
                         <div class="side-box bg-danger">
@@ -380,7 +380,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="col-sm-12 card dashboard-product">
                         <span>On-going Projects</span>
-                        <h2 class="dashboard-total-products counter">{{$counts->ongoingProjectsCount}}</h2>
+                        <h2 class="dashboard-total-products counter">{{number_format($counts->ongoingProjectsCount)}}</h2>
                         <span class="label label-primary">Updates</span>
                         <div class="side-box bg-primary">
                             <i class="icon-map"></i>
@@ -393,7 +393,7 @@
                     <div class="col-sm-12 card dashboard-product">
                         <span>Projects Completed</span>
                         <h2 class="dashboard-total-products">
-                            <span class="counter">{{$counts->finishedProjectsCount}}</span>
+                            <span class="counter">{{number_format($counts->finishedProjectsCount)}}</span>
                         </h2>
                         <span class="label label-success">Completed</span>
                         <div class="side-box bg-success">
@@ -409,7 +409,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="col-sm-12 card dashboard-product">
                         <span>Materials Price Update</span>
-                        <h2 class="dashboard-total-products counter">{{$counts->updatedMaterialPricesCount}}</h2>
+                        <h2 class="dashboard-total-products counter">{{number_format($counts->updatedMaterialPricesCount)}}</h2>
                         <span class="label label-warning">Updates</span>This week
                         <div class="side-box bg-warning">
                             <i class="icon-note"></i>
