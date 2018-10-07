@@ -68,6 +68,8 @@
             background-color: #222d32 !important;
             color: white !important;
         }
+        
+      
 
         .main-header-top>.navbar {
             background: #222d32 !important;
@@ -296,10 +298,10 @@
                     <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="/assets/images/erwin.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="/assets/images/avatar-2.png" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Erwin</b>Andres</span>
+                                <b> {{session("fname")}}</b> {{session("lname")}}</span>
 
                         </a>
 
@@ -398,12 +400,12 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="/assets/images/erwin.jpg" alt="User Image" class="img-circle">
+                    <img src="/assets/images/avatar-2.png" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
                     <br>
-                    <p>Erwin Andres</p>
+                    <p> {{session("fname")}}</p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>
@@ -523,34 +525,45 @@
 
     <!-- end of sidebar-->
     <div class="content-wrapper" style="background-color: white; ">
+        
+       
       
 
-    <div class="" style="margin-top: 45px; margin-left: -80px">
+    <div class="" style="margin-top: 60px; margin-left: -80px">
         <!-- FRAPPE START -->
         <div class="container " style="background-color: white; ">
+            
+           
            
             <div class="container form-group form-inline" style="background-color: white; margin-top: -80px; margin-left: 180px"> <br><br> <br>
              
                
                     <div style="margin-left: -200px; margin-top: -3px">
                         <h4>
-                            <i class="icon-graph"></i> Gantt </h4>
+                            <i class="icon-graph"></i> Gantt</h4>
                         <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
                             <li class="breadcrumb-item">
                                 <a href="/Engineer/Project-Progress"></a>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="/Engineer/Project-Progress" data-toggle="tooltip" data-placement="right" title="back" >Projects List</a>
+                           
                             </li>
 
                         </ol>
-
+                        <div style="margin-left: 200px; margin-top: -20px">
+                                      <label class="text text-primary"> <span  class="label label-primary form-control"> &nbsp;</span> <b>- Delayed</b></label> &nbsp;&nbsp;
+                <label class="text text-danger"> <span  class="label label-danger form-control"> &nbsp;</span> <b>- Overdue</b></label> &nbsp;&nbsp;
+                <label class="text text-info" > <span  class="label label-info form-control"> &nbsp;</span> <b>- In progress</b></label> &nbsp;&nbsp;
+                <label class="text text-success"> <span  class="label label-success form-control"> &nbsp;</span> <b>- Complete</b></label> &nbsp;&nbsp;
+</div>
                     </div>
+                
 
 
 
 
-
+<br> 
                  
 
                
@@ -559,7 +572,7 @@
             <button type="button" class="form-control btn btn-outline-warning" name="" id="" onclick="gantt_chart.change_view_mode('Day')" >Day</button> &nbsp;
             <button type="button" class="form-control btn btn-outline-success" name="" id="" onclick="gantt_chart.change_view_mode('Week')" >Week</button> &nbsp;
             <button type="button" class="form-control btn btn-outline-primary" name="" id="" onclick="gantt_chart.change_view_mode('Month')" >Month</button> &nbsp;
-        </div>
+        </div> <br>
             <div class="gantt-target scroll" style="width: 1100px; height 900px !important"></div>
         </div>
         <!-- FRAPPE END -->
@@ -567,12 +580,7 @@
         
         
         
-        
-        
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detailsModal" style="margin-left: 100px">
-        Trigger
-        </button>
+   
 
         <!-- Task Details Modal -->
         @foreach ($allProjectSchedulesWithPhases as $projectSchedule)
@@ -857,9 +865,9 @@
 
                 //if overdue is null, where should I be?
                 if(actualEnd == null){
-                    //if today is less than start of task, overdue will be the start
-                    if((new Date()).getTime() < start.getTime()){
-                        overdue = new Date(start);
+                    //if today is less than end of task, overdue will be at the end
+                    if((new Date()).getTime() < end.getTime()){
+                        overdue = new Date(end);
                     }else{
                         //else overdue is today
                         overdue = new Date();
@@ -982,9 +990,9 @@
 
                 //if overdue is null, where should I be?
                 if(actualEnd == null){
-                    //if today is less than start of task, overdue will be the start
-                    if((new Date()).getTime() < start.getTime()){
-                        overdue = new Date(start);
+                    //if today is less than end of task, overdue will be at the end
+                    if((new Date()).getTime() < end.getTime()){
+                        overdue = new Date(end);
                     }else{
                         //else overdue is today
                         overdue = new Date();

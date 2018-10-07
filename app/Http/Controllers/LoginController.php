@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input; //for forms
 use Illuminate\Support\Facades\DB;     //for db
 //use App\Accounts; //for db models
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
-    public function login1()
+    public function index()
     {
-        return view('login1');
+        return view('login');
     }
 
     public function forgotPass()
@@ -19,8 +21,44 @@ class LoginController extends Controller
         return view('forgot-password');
     }
 
-    public function login2()
+    public function login()
     {
+        $credentials = [
+            'username' => request()->UserN,
+            'password' => request()->PassW,
+            'intActive' => 1,
+        ];
+
+        if(Auth::attempt($credentials,true)){
+            //get user details
+            $userDetails = DB::table('tblaccounts')
+                        ->join('tblemployee','tblemployee.intAccountId','=','tblaccounts.id')
+                        ->where('tblaccounts.id','=',Auth::user()->id)
+                        //->where('tblaccounts.intActive','=',1) //intActive already checked before authentication
+                        ->first();
+
+            //dd($userDetails);
+
+            $sessionStore = [
+                'fname' => $userDetails->strEmployeeFName,
+                'mname' => $userDetails->strEmployeeMName,
+                'lname' => $userDetails->strEmployeeLName,
+            ];
+            session($sessionStore);
+
+            if(Auth::user()->strUserType == 'Admin'){
+                return redirect('Admin/Home');
+            }else if(Auth::user()->strUserType == 'Engineer'){
+                return redirect('Engineer/Home');
+            }else{
+                return Redirect::back()->withErrors(['Unknown User Type']);
+            }
+        }else{
+            return Redirect::back()->withErrors(['Login Failed. Check Username and/or Password.']);
+        }
+
+
+        /*
         $usern = Input::post('UserN');
         $passw = Input::post('PassW');
         $userno=strlen($usern);
@@ -76,6 +114,7 @@ class LoginController extends Controller
                 return "error:1";
             }
         }
+        */
     }
 
     /*public function ()

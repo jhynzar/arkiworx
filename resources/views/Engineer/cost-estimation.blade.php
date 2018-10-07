@@ -76,10 +76,10 @@
                     <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="../assets/images/erwin.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="../assets/images/avatar-2.png" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Erwin</b>Andres</span>
+                                <b> {{session("fname")}}</b> {{session("lname")}}</span>
 
                         </a>
 
@@ -176,13 +176,13 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="../assets/images/erwin.jpg" alt="User Image" class="img-circle">
+                    <img src="../assets/images/avatar-2.png" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
                     <br>
                     <p>
-                        <b>Erwin</b>
+                        <b> {{session("fname")}}</b>
                     </p>
                     <p class="designation">
                         <span class="text-info">
@@ -1080,7 +1080,7 @@
                                                             <td>{{$key+1}}</td>
                                                             <td>
                                                                 <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                                                                &nbsp; &nbsp; {{$pendingProjectCostEstimation->strClientFName}}&nbsp;{{$pendingProjectCostEstimation->strClientLName}}
+                                                                &nbsp; &nbsp; {{$pendingProjectCostEstimation->strClientName}}
                                                             </td>
                                                             <td>{{ $pendingProjectCostEstimation->strProjectName }}</td>
 
@@ -1088,9 +1088,21 @@
 
                                                             <td class="faq-table-btn">
 
-                                                                <a href="#" data-toggle="modal" data-target="#chooseTemplate{{$key}}" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
+                                                                @if($pendingProjectCostEstimation->intProjectTemplateId == 1) <!-- 1 Storey -->
+
+                                                                    <a href="/Engineer/Cost-Estimation/{{$pendingProjectCostEstimation->intProjectId}}/Cost-Estimation-Computation/{{$pendingProjectCostEstimation->intProjectTemplateId}}" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
                                                                   data-placement="top" title="Create">
-                                                                    <i class="icofont icofont-ui-edit"></i> Create Estimation </a>
+                                                                        <i class="icofont icofont-ui-edit"></i> Create Estimation 
+                                                                    </a>
+
+                                                                @elseif($pendingProjectCostEstimation->intProjectTemplateId == 2) <!-- 2 Storey -->
+                                                                    <a href="/Engineer/Cost-Estimation/{{$pendingProjectCostEstimation->intProjectId}}/Cost-Estimation-Computation-2/{{$pendingProjectCostEstimation->intProjectTemplateId}}" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip"
+                                                                    data-placement="top" title="Create">
+                                                                        <i class="icofont icofont-ui-edit"></i> Create Estimation 
+                                                                    </a>
+                                                                @endif
+
+                                                                
 
 
                                                             </td>

@@ -17,6 +17,12 @@
 
         position: absolute;
     }
+    
+    .modal-dialog {
+ 
+          height: 300px;
+ 
+        }
 
 </style>
 @endsection @section('body')
@@ -101,10 +107,10 @@
                 <li class="dropdown">
                     <a href="/Engineer/Accounts-Settings">
                         <span>
-                            <img class="img-circle " src="/assets/images/erwin.jpg" style="width:40px;" alt="User Image">
+                            <img class="img-circle " src="/assets/images/avatar-2.png" style="width:40px;" alt="User Image">
                         </span>
                         <span>
-                            <b>Erwin</b>Andres</span>
+                            <b> {{session("fname")}}</b> {{session("lname")}}</span>
 
                     </a>
 
@@ -200,13 +206,13 @@
             <br>
             <br>
             <div class="f-left image">
-                <img src="/assets/images/erwin.jpg" alt="User Image" class="img-circle">
+                <img src="/assets/images/avatar-2.png" alt="User Image" class="img-circle">
             </div>
             <div class="f-left info">
                 <br>
                 <br>
                 <p>
-                    <b>Erwin</b>
+                    <b> {{session("fname")}}</b>
                 </p>
                 <p class="designation">
                     <span class="text-info">
@@ -748,10 +754,10 @@
 
                     <div>
                         <label>Category: </label>
-                        <select onchange="addNewMaterialActualOnChange(this)" class="form-control" name="category" id="category" placeholder="Category" style="width: 300px !important;">
+                        <select onchange="addNewMaterialActualCategoryOnChange(this)" class="form-control" name="category" id="category" placeholder="Category" style="width: 300px !important;">
                             <option disabled selected>Pick a Category</option>
                             @foreach ($allCategoriesWithSub as $key=>$category)
-                                <option value="{{$key}}">{{$category->strWorkCategoryDesc}}</option>
+                                <option value="{{$category->intWorkCategoryId}}">{{$category->strWorkCategoryDesc}}</option>
 
                             @endforeach
 
@@ -759,8 +765,8 @@
                     </div>
                     <div>
                         <label>Sub Category: </label>
-                        <select class="form-control" name="newMaterialActualSubCategory" id="newMaterialActualSubCategory" placeholder="Category" style="width: 300px !important;">
-                            <option disabled selected>Pick a Category</option>
+                        <select onchange="addNewMaterialActualSubCategoryOnChange(this)" class="form-control" name="newMaterialActualSubCategory" id="newMaterialActualSubCategory" placeholder="Category" style="width: 300px !important;">
+                            <option disabled selected>Pick a Category first</option>
                         </select>
                     </div>
                     <br>
@@ -769,9 +775,7 @@
                         <!-- Selects materials that are not from estimated -->
 
                         <select class="form-control" name="newMaterialActualMaterialId" id="newMaterialActualMaterialId" placeholder="Material/s" style="width: 300px !important;">
-                            @foreach ($allMaterials as $material)
-                                <option value="{{$material->intMaterialId}}">{{$material->strMaterialName}}</option>
-                            @endforeach
+                            <option disabled selected>Pick a Sub Category first</option>
                         </select>
                     </div>
 
@@ -808,133 +812,13 @@
 
 
 
-<!-- Update Custom Modal -->
-
-<div class="modal fade" id="updateCustomActuals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content pull-center">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    <span class="label label-info">Update Actual Entry</span>
-                </h4>
-            </div>
-            <div class="modal-body" style="background: #e5e5f2 !important; ">
-
-
-
-
-                <form action="/action_page.php">
-
-                    <label class="text text-muted" style="margin-left: 450px">
-                        <i>07 August 2018</i>
-                    </label>
-                    <!-- current date -->
-                    <br>
-
-
-                    <div class="form-group">
-
-                        <label for="ActualPrice">Price:</label>
-                        <input type="text" class="form-control" id="" style="width: 550px !important;" placeholder="₱" required>
-                    </div>
-
-
-
-                    <hr>
-                    <div class="modal-footer">
-
-                        <button type="submit" class="btn btn-success" data-dismiss="modal">
-                            <i class="icon icon-check"> </i>Add Entry</button>
-                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
-                            <i class="icon icon-close"> </i>Cancel</button>
-
-                    </div>
-                </form>
-
-
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 
 
 
 
-<!-- Update Actuals Modal -->
 
-<div class="modal fade" id="updateActuals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content pull-center">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    <span class="label label-info">Update Actual Entry</span>
-                </h4>
-            </div>
-            <div class="modal-body" style="background: #e5e5f2 !important; ">
-
-
-
-
-                <form action="/action_page.php">
-
-                    <label class="text text-muted" style="margin-left: 450px">
-                        <i>07 August 2018</i>
-                    </label>
-                    <!-- current date -->
-                    <br>
-
-
-
-                    <div class="form-group form-inline">
-                        <label>Qty:</label>
-                        <input type="number" class="form-control" id="" style="width: 90px !important;">
-
-                        <label>Unit:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;">
-
-
-
-                        <label for="ActualPrice">Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱">
-
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="ActualPrice">Total Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 500px !important;" placeholder="₱">
-                    </div>
-
-
-
-                    <hr>
-                    <div class="modal-footer">
-
-                        <button type="submit" class="btn btn-success" data-dismiss="modal">
-                            <i class="icon icon-check"> </i>Add Entry</button>
-                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
-                            <i class="icon icon-close"> </i>Cancel</button>
-
-                    </div>
-                </form>
-
-
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 
@@ -1081,7 +965,7 @@
 <!-- View Audit Trail Modal -->
 
 <div class="modal fade" id="viewAudit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" >
         <div class="modal-content pull-center">
             <div class="modal-header bg-primary">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1101,68 +985,43 @@
                 <form action="/action_page.php">
 
 
-                    <br>
-                    <div class="form-group">
-                        <label for="materialDesc">Description:</label>
-                        <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;" value="Cement" disabled>
+                
+        <div class="card">            
+                    
+                    
+                    <table class="table" style="height: 300px !important">
+  <thead style="background-color: #354444A">
+    <tr>
+      <th scope="col" style="background-color: #354444A">Date</th>
+      <th scope="col" style="background-color: #354444A">Qty</th>
+      <th scope="col" style="background-color: #354444A">Unit Cost</th>
+      <th scope="col" style="background-color: #354444A">Total Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">12/8/28</th>
+      <td>5</td>
+      <td>100.00</td>
+      <td>500.00</td>
+    </tr>
+  
+    
+  </tbody>
+</table>
 
-                    </div>
+</div>
+                    
+                    
+                    
+                    
+                    
 
-                    <div class="form-group form-inline">
-
-
-
-
-
-                        <label for="usertype">
-                            <i>As of</i>:</label>
-                        <br>
-                        <select class="form-control pull-center text-center" name="month" id="month" style="width: 500px !important;">
-                            <option>January-07-2018 </option>
-                            <option>January-20-2018</option>
-                            <option>February-26-2018 </option>
-                            <option>March-23-2018 </option>
-                            <option>April-4-2018 </option>
-                            <option>April-27-2018 </option>
-                            <option>May-14-2018</option>
-                            <option>June-8-2018 </option>
-                            <option>July-22-2018 </option>
-                            <option selected>Aug-7-2018 </option>
-
-                        </select>
-
-
-                        &nbsp; &nbsp;
-
-
-                    </div>
-
-                    <div class="form-group form-inline">
-                        <label>Qty:</label>
-                        <input type="number" class="form-control" id="" style="width: 90px !important;" placeholder="2" disabled>
-
-                        <label>Unit:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="Bags" disabled>
-
-
-
-                        <label for="ActualPrice">Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱250.0" disabled>
-
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="ActualPrice">Total Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 500px !important;" placeholder="₱500.0" disabled>
-                    </div>
 
                     <div class="modal-footer">
-                        <hr>
+              
 
-                        <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 280px">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-left: 280px">
                             <i class="icon icon-close"> </i>Close</button>
 
                     </div>
@@ -1476,7 +1335,6 @@
                                             <th style="color: black">Description</th>
                                             <th style="color: black">Quantity</th>
                                             <th style="color: black">Unit</th>
-                                            <th style="color: black">Unit Cost</th>
                                             <th class="text-center pull-center" style="color: black">Total
                                                 <br>Unit Cost</th>
                                             <th>
@@ -1526,10 +1384,9 @@
                                                                     </td>
                                                                     <td class="text-center">-</td>
                                                                     <td class="text-center">-</td>
-                                                                    <td class="text-center">-</td>
                                                                     <td class="text-center">{{number_format($projectRequirement->decActualPrice,2)}}</td>
                                                                     <td>
-                                                                        <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+                                                                        <button data-toggle="modal" data-target="#updateCustomActual{{$projectRequirement->intRequirementId}}" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
 
                                                                     </td>
 
@@ -1552,6 +1409,62 @@
 
                                                                     </td>
                                                                 </tr>
+
+
+                                                                <!-- Update Custom Actual -->
+
+                                                                <div class="modal fade" id="updateCustomActual{{$projectRequirement->intRequirementId}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content pull-center">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                                <h4 class="modal-title" id="myModalLabel">
+                                                                                    <span class="label label-info">Update Custom Actual</span>
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                                                                                <form action="Actuals/updateProjectRequirementActual" method="POST">
+                                                                                    {{csrf_field()}}
+                                                                                    <input type="hidden" name="projectRequirementId" value={{$projectRequirement->intRequirementId}}>
+
+                                                                                    <label class="text text-muted" style="margin-left: 450px">
+                                                                                        <i>07 August 2018</i>
+                                                                                    </label>
+                                                                                    <!-- current date -->
+                                                                                    <br>
+
+
+                                                                                    <div class="form-group">
+
+                                                                                        <label for="ActualPrice">New Price:</label>
+                                                                                        <input name="actualPrice" type="text" class="form-control" style="width: 550px !important;" placeholder="₱" required>
+                                                                                    </div>
+
+
+
+                                                                                    <hr>
+                                                                                    <div class="modal-footer">
+
+                                                                                        <button type="submit" class="btn btn-success">
+                                                                                            <i class="icon icon-check"> </i>Update</button>
+                                                                                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                                                                            <i class="icon icon-close"> </i>Cancel</button>
+
+                                                                                    </div>
+                                                                                </form>
+
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             @endif
 
                                                     @endforeach
@@ -1589,12 +1502,11 @@
                                                                     <td class="text-center">{{$materialActual->materialActualsDetails->strMaterialName}}
 
                                                                     </td>
-                                                                    <td class="text-center">{{number_format($materialActual->materialActualsHistory[0]->decQty,2)}}</td>
+                                                                    <td class="text-center">{{number_format($materialActual->materialActualsTotals->totalQty,2)}}</td>
                                                                     <td class="text-center">{{$materialActual->materialActualsDetails->strUnit}}</td>
-                                                                    <td class="text-center">{{number_format($materialActual->materialActualsDetails->latestPrice->decPrice,2)}}</td>
-                                                                    <td class="text-center">{{number_format($materialActual->materialActualsHistory[0]->decCost,2)}}</td>
+                                                                    <td class="text-center">{{number_format($materialActual->materialActualsTotals->totalCost,2)}}</td>
                                                                     <td>
-                                                                        <button data-toggle="modal" data-target="#updateActuals" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
+                                                                        <button data-toggle="modal" data-target="#updateMaterialActual{{$materialActual->materialActualsDetails->intMaterialActualsId}}" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
 
                                                                     </td>
 
@@ -1617,6 +1529,86 @@
 
                                                                     </td>
                                                                 </tr>
+
+                                                                
+                                                                <!-- Update Material Actual-->
+
+                                                                <div class="modal fade" id="updateMaterialActual{{$materialActual->materialActualsDetails->intMaterialActualsId}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content pull-center">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                                <h4 class="modal-title" id="myModalLabel">
+                                                                                    <span class="label label-info">Add {{$materialActual->materialActualsDetails->strMaterialName}}</span>
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+                                                                                <form action="Actuals/updateMaterialActual" method="POST">
+                                                                                    {{csrf_field()}}
+                                                                                    <input type="hidden" name="materialActualsId" value="{{$materialActual->materialActualsDetails->intMaterialActualsId}}">
+                                                                                    <input type="hidden" name="materialActualLatestPrice" value="{{$materialActual->materialActualsDetails->latestPrice->decPrice}}">
+
+                                                                                    <label class="text text-muted" style="margin-left: 450px">
+                                                                                        <i>07 August 2018</i>
+                                                                                    </label>
+                                                                                    <!-- current date -->
+                                                                                    <br>
+
+
+
+                                                                                    <div class="form-group form-inline">
+                                                                                        <label>Qty:</label>
+                                                                                        <input 
+                                                                                        onkeyup="updateMaterialActualQtyOnChange(this,{{$materialActual->materialActualsDetails->intMaterialActualsId}},{{$materialActual->materialActualsDetails->latestPrice->decPrice}})"
+                                                                                        onchange="updateMaterialActualQtyOnChange(this,{{$materialActual->materialActualsDetails->intMaterialActualsId}},{{$materialActual->materialActualsDetails->latestPrice->decPrice}})"
+                                                                                        type="number" min="1" name="materialActualQty" class="form-control" style="width: 90px !important;">
+
+                                                                                        <label>Unit:</label>
+                                                                                        <input readonly type="text" value="{{$materialActual->materialActualsDetails->strUnit}}"class="form-control" id="" style="width: 130px !important;">
+
+
+
+                                                                                        <label for="ActualPrice">Unit Cost:</label>
+                                                                                        <input readonly type="text" value="{{number_format($materialActual->materialActualsDetails->latestPrice->decPrice,2)}}" class="form-control" id="" style="width: 130px !important;" placeholder="₱">
+
+
+                                                                                    </div>
+
+
+                                                                                    <div class="form-group">
+
+                                                                                        <label for="ActualPrice">Total Cost:</label>
+                                                                                        <input readonly type="text" id="updateMaterialActualTotalCost{{$materialActual->materialActualsDetails->intMaterialActualsId}}" class="form-control" style="width: 500px !important;" placeholder="₱">
+                                                                                    </div>
+
+
+
+                                                                                    <hr>
+                                                                                    <div class="modal-footer">
+
+                                                                                        <button type="submit" class="btn btn-success">
+                                                                                            <i class="icon icon-check"> </i>Add Entry</button>
+                                                                                        <button type="button" class="btn btn-warning" data-dismiss="modal" style="margin-left: 280px">
+                                                                                            <i class="icon icon-close"> </i>Cancel</button>
+
+                                                                                    </div>
+                                                                                </form>
+
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
                                                             @endif
                                                         @endforeach
                                                     @endif
@@ -1817,17 +1809,32 @@
 
 @endsection @section('script')
 <script>
-    function addNewMaterialActualOnChange(e){
+    function updateMaterialActualQtyOnChange(input,materialActualsId,price){
+        $('#updateMaterialActualTotalCost'+materialActualsId).val(parseFloat(input.value * price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+    }
+
+    function addNewMaterialActualCategoryOnChange(e){
 
         var allCategoriesWithSub = {!! json_encode($allCategoriesWithSub) !!};
-        console.log(allCategoriesWithSub[e.value].subCategories[0].strWorkSubCategoryDesc);
 
-        var subCategories = allCategoriesWithSub[e.value].subCategories;
+        //selected Category finder
 
-         $('#newMaterialActualSubCategory').empty();
+        var subCategories;
+        for(var i = 0; i < allCategoriesWithSub.length; i++){
+            if(allCategoriesWithSub[i].intWorkCategoryId == e.value){
+                subCategories = allCategoriesWithSub[i].subCategories;
+                break; 
+            }
+        }
+
+        //selected Category finder end
+
+        $('#newMaterialActualSubCategory').empty();
         
         
         var htmlString = "";
+        //first option
+        htmlString += "<option value='-1' selected disabled>Pick a Sub Category</option>"
         for(var key in subCategories){
             console.log(subCategories[key].strWorkSubCategoryDesc);
 
@@ -1849,6 +1856,37 @@
                 .inject($('#addNewMaterialActualSubCategory'));
         }
         */
+    }
+    function addNewMaterialActualSubCategoryOnChange(e){
+        var projectMaterialActuals = {!! json_encode($projectWithDetails->materialActuals) !!};
+        var allMaterials = {!! json_encode($allMaterials) !!};
+
+        $('#newMaterialActualMaterialId').empty();
+
+        var htmlString = "";
+        for(var keyMaterial in allMaterials){
+            
+            //checker if material already exists in actuals with the same subcategory
+            var doesExist = false;
+            for(var keyProjectActual in projectMaterialActuals){
+                if(
+                    projectMaterialActuals[keyProjectActual].materialActualsDetails.intMaterialId == allMaterials[keyMaterial].intMaterialId &&
+                    projectMaterialActuals[keyProjectActual].materialActualsDetails.intWorkSubCategoryId == e.value
+                ){
+                    doesExist = true;    
+                    break;
+                }
+            }
+
+            if(!doesExist){
+                htmlString += "<option value=' " +allMaterials[keyMaterial].intMaterialId+ " ' >"
+                htmlString += allMaterials[keyMaterial].strMaterialName
+                htmlString += "</option>"
+            }
+
+        }
+        $('#newMaterialActualMaterialId').html(htmlString);
+
     }
 </script>
 @endsection

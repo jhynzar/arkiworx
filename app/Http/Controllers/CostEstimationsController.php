@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CostEstimationsController extends Controller
 {
@@ -18,10 +19,10 @@ class CostEstimationsController extends Controller
 
         $pendingProjectCostEstimations = 
             DB::table('tblproject')
-            ->join('tblclient','tblclient.intClientId','=','tblproject.intClientId')
             ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
-            //->where('tblproject.intEmployeeId','=','666')//EMPLOYEE ID
+            ->where('tblproject.intEmployeeId','=',Auth::user()->id)//EMPLOYEE ID
             ->where('tblproject.strProjectStatus','=','pending')
+            ->where('tblproject.intActive','=',1)
             ->orderBy('tblproject.intProjectId','desc')
             ->get();
 
@@ -94,9 +95,10 @@ class CostEstimationsController extends Controller
         //
     }
 
-    public function createEstimation($id){
+    public function createEstimation($id,$projectTemplateId){
         //request id of project and template
-        $templateid = $_POST['projectTemplate'];
+        //$templateid = $_POST['projectTemplate'];
+        $templateid = $projectTemplateId;
         $templateid = array($templateid);
 
         $template1 = DB::select("
@@ -288,9 +290,213 @@ class CostEstimationsController extends Controller
 
         $project =  DB::table('tblproject')
                     ->where('intProjectId','=',$id)
+                    ->where('tblproject.intActive','=',1)
                     ->first();
 
         return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray','TemplateArray1','TemplateArray2','TemplateArray3','TemplateArray4'));
+    }
+
+    public function createEstimation2($id,$projectTemplateId){
+        //INSERT CODE HERE
+        //request id of project and template
+        //$templateid = $_POST['projectTemplate'];
+        $templateid = $projectTemplateId;
+        $templateid = array($templateid);
+
+        $template1 = DB::select("
+        select *
+        from tblprojectrequirementstemplate
+        WHERE intProjectTemplateId = ?
+        order by intWorksubcategoryid asc
+        ",$templateid);
+
+        $TemplateArray1 = array();
+        foreach($template1 as $fields1){
+            $TemplateArr1 = (object)[
+                'id' => $fields1 -> intProjectRequirementsTemplateId,
+                'cost' => $fields1 -> decCost,
+                'category' => $fields1 -> intWorkSubCategoryId
+            ];
+            array_push($TemplateArray1,$TemplateArr1);
+        }
+        //dd($TemplateArray1);
+
+        $template2 = DB::select("
+        SELECT  a.intMaterialEstimationTemplateId as intMaterialEstimationTemplateId,
+                a.decQty as decQty,
+                a.intWorkSubCategoryId as intWorkSubCategoryId,
+                a.intMaterialId as intMaterialId,
+                b.strMaterialName as strMaterialName,
+                (a.decQty*b.Price) as decCost
+        FROM tblmaterialestimationtemplate a 
+        INNER JOIN 
+        (   
+            SELECT e.price as Price, e.material as Material, f.strMaterialName as strMaterialName
+            FROM 
+            (
+                SELECT t.decPrice as price, t.intMaterialId as material
+                FROM 
+                (
+                    SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
+                    FROM tblprice
+                    GROUP BY intMaterialId
+                ) as r 
+                INNER JOIN tblprice t
+                ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
+            ) as e
+            INNER JOIN tblmaterials f
+            ON (e.material = f.intMaterialId)
+            WHERE f.intActive = 1
+        ) as b
+        ON b.Material = a.intMaterialId
+        WHERE intProjectTemplateId = ?",$templateid);
+
+        $TemplateArray2 = array();
+        foreach($template2 as $fields2){
+                $TemplateArr2 = (object)[
+                    'id' => $fields2 -> intMaterialEstimationTemplateId,
+                    'cost' => $fields2 -> decCost,
+                    'qty' => $fields2 -> decQty,
+                    'category' => $fields2 -> intWorkSubCategoryId,
+                    'material' => $fields2 -> intMaterialId,
+                    'materialName' => $fields2 -> strMaterialName
+                ];
+                array_push($TemplateArray2,$TemplateArr2);
+        }
+        //dd($TemplateArray2);
+
+        $template3 = DB::select("
+        select SUM(decCost) as decCost, intProjectTemplateId
+        from tblprojectrequirementstemplate 
+        WHERE intProjectTemplateId = ?
+        group by intProjectTemplateId
+        ",$templateid);
+
+        $TemplateArray3 = array();
+        foreach($template3 as $fields3){
+                $TemplateArr3 = (object)[
+                    'Cost' => $fields3 -> decCost,
+                    'Id' => $fields3 -> intProjectTemplateId
+                ];
+                array_push($TemplateArray3,$TemplateArr3);
+        }
+        //dd($TemplateArray3);
+
+        $template4 = DB::select("
+        SELECT 
+        intProjectTemplateId,
+        ( SUM(a.decQty * b.Price) ) as intOverallTotal
+        FROM tblmaterialestimationtemplate a 
+        INNER JOIN 
+        (   
+            SELECT e.price as Price, e.material as Material, f.strMaterialName as strMaterialName
+            FROM 
+            (
+                SELECT t.decPrice as price, t.intMaterialId as material
+                FROM 
+                (
+                    SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
+                    FROM tblprice
+                    GROUP BY intMaterialId
+                ) as r 
+                INNER JOIN tblprice t
+                ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
+            ) as e
+            INNER JOIN tblmaterials f
+            ON (e.material = f.intMaterialId)
+            WHERE f.intActive = 1
+        ) as b
+        ON b.Material = a.intMaterialId
+        WHERE intProjectTemplateId = 1
+        GROUP BY intProjectTemplateId",$templateid);
+
+        $TemplateArray4 = array();
+        foreach($template4 as $fields4){
+                $TemplateArr4 = (object)[
+                    'id' => $fields4 -> intProjectTemplateId,
+                    'OverallTotal' => $fields4 -> intOverallTotal
+                ];
+                array_push($TemplateArray4,$TemplateArr4);
+        }
+        //dd($TemplateArray4);
+
+        $formulas = DB::select("
+        select X.h as Horizontal, X.v as Vertical, X.f as Value, X.Work as Work
+        from 
+        (
+            select tblhorizontaloptions.intHorizontalOptionsId as h, tblhorizontaloptions.intWorksFormulaId as Work, tblformulavalues.decValue as f, tblformulavalues.intVerticalOptionsId as v
+            from tblformulavalues inner join tblhorizontaloptions
+            on tblformulavalues.inthorizontaloptionsid = tblhorizontaloptions.inthorizontaloptionsid
+            
+        ) X 
+        inner JOIN
+        (
+            select tblverticaloptions.intVerticalOptionsId as v, tblverticaloptions.intWorksFormulaId as Work, tblformulavalues.decValue as f, tblformulavalues.intHorizontalOptionsId as h
+            from tblformulavalues inner join tblverticaloptions
+            on tblformulavalues.intVerticalOptionsId = tblverticaloptions.intVerticalOptionsId
+            
+        ) Y
+        on X.Work = Y.Work and X.v = Y.v and X.h = Y.h
+        ");
+
+        
+        $AnswersArray = array();
+        foreach($formulas as $formula){
+            $Answers = (object)[
+                'X' => $formula -> Horizontal,
+                'Y' => $formula -> Vertical,
+                'Values' => $formula -> Value,
+                'Work' => $formula -> Work
+            ];
+            array_push($AnswersArray,$Answers);
+        }
+        //$Work = array_search(1, array_column($AnswersArray, 'Work'));
+        /*$X = 1;   //horizontal
+        $Y = 2; //vertical
+        $Z = 1; //work category
+        foreach($AnswersArray as $workArr){
+            if($X === $workArr->X && $Y === $workArr->Y && $Z === $workArr->Work){
+                dd($workArr->Values);
+            }
+        }*/
+
+        $materials = DB::select("
+        SELECT tblprice.dtmPriceAsOf as Date, tblprice.decPrice as Price, tblmaterials.strMaterialName as Material, tblprice.intMaterialId as Id
+        FROM tblprice INNER JOIN tblmaterials 
+        ON tblprice.intMaterialId = tblmaterials.intMaterialId 
+        WHERE tblmaterials.intActive = 1 
+        ORDER by tblprice.intMaterialId, tblprice.dtmPriceAsOf
+        ");
+        $MaterialArray = array();
+        foreach($materials as $material){
+            $MaterialArr = (object)[
+                'date' => $material -> Date,
+                'price' => $material -> Price,
+                'materialName' => $material -> Material,
+                'MaterialId' => $material -> Id
+            ];
+            array_push($MaterialArray,$MaterialArr);
+        }
+
+        /*$materialid = 1; //material Id
+        $date1 = '';
+        foreach($MaterialArray as $materialindex){
+            $date2 = $materialindex->date;
+            $materialid2 = $materialindex->MaterialId;
+            if($date1 < $date2 && $materialid === $materialid2){
+                $date1 = $date2;
+                $presyo = $materialindex -> price;
+            }
+        }
+        dd($presyo);*/
+
+        $project =  DB::table('tblproject')
+                    ->where('intProjectId','=',$id)
+                    ->where('tblproject.intActive','=',1)
+                    ->first();
+        
+
+       return view('Engineer/cost-estimation-computation-2',compact('AnswersArray','project','MaterialArray','TemplateArray1','TemplateArray2','TemplateArray3','TemplateArray4'));
     }
 
     public function saveEstimation($id){
@@ -1437,6 +1643,7 @@ class CostEstimationsController extends Controller
         // update project status
         DB::table('tblproject')
         ->where('tblproject.intProjectId','=',$id)
+        ->where('tblproject.intActive','=',1)
         ->update(['strProjectStatus' => 'for approval']);
 
         //refresh

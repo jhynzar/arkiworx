@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectProgressController extends Controller
 {
@@ -22,14 +23,16 @@ class ProjectProgressController extends Controller
                                 ->leftJoin('tblschedules','tblproject.intProjectId','=','tblschedules.intProjectId')
                                 ->where('tblschedules.intProjectId','=',null)
                                 ->where('tblproject.strProjectStatus','=','on going')
+                                ->where('tblproject.intEmployeeId','=',Auth::user()->id)//EMPLOYEE ID
+                                ->where('tblproject.intActive','=',1)
                                 ->get();
 
         $pendingProjectSchedules = array();
         foreach($projectsWithoutSchedulesIds as $projectId){
             $projectDetails = DB::table('tblproject')
-                            ->join('tblclient','tblproject.intClientId','=','tblclient.intClientId')
                             ->where('tblproject.intProjectId','=',$projectId->intProjectId)
                             ->where('tblproject.intActive','=',1)
+                            ->where('tblproject.intEmployeeId','=',Auth::user()->id)//EMPLOYEE ID
                             ->first();
 
             $projectRequirementsWorkSubCategoryIds = DB::select("
@@ -79,15 +82,14 @@ class ProjectProgressController extends Controller
         $projectsWithSchedulesIds = DB::select("
             SELECT DISTINCT tblproject.intProjectId
             FROM tblproject
-            INNER JOIN tblclient ON tblclient.intClientId = tblproject.intClientId
             LEFT JOIN tblschedules ON tblproject.intProjectId = tblschedules.intProjectId
             WHERE tblschedules.intProjectId IS NOT NULL AND tblproject.strProjectStatus = 'on going' AND tblproject.intActive = 1
-        ");
+            AND tblproject.intEmployeeId = :id
+        ",[Auth::user()->id]);
 
         $finishedProjectSchedules = array();
         foreach($projectsWithSchedulesIds as $projectId){
             $projectDetails = DB::table('tblproject')
-                            ->join('tblclient','tblproject.intClientId','=','tblclient.intClientId')
                             ->where('tblproject.intProjectId','=',$projectId->intProjectId)
                             ->where('tblproject.intActive','=',1)
                             ->first();
@@ -250,8 +252,6 @@ class ProjectProgressController extends Controller
     }
 
     public function saveSchedule($id){
-
-        date_default_timezone_set('Asia/Manila');
         //dd(request()->all());
 
         $req = request()->all();
@@ -353,8 +353,10 @@ class ProjectProgressController extends Controller
             if($isFinished){
                 DB::table('tblproject')
                 ->where('tblproject.intProjectId','=',$id)
+                ->where('tblproject.intActive','=',1)
                 ->update([
                     'strProjectStatus' => 'finished',
+                    'dtmDateFinished' => date("Y-m-d"),
                 ]);
             }
         }

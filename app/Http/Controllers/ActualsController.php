@@ -20,6 +20,7 @@ class ActualsController extends Controller
         //getting project details
         $project = DB::table('tblproject')
                 ->where('strProjectStatus','=','on going')
+                ->where('tblproject.intActive','=',1)
                 ->where('intProjectId','=',$id)
                 ->first();
             
@@ -46,12 +47,26 @@ class ActualsController extends Controller
                                     ->get()
                                     ->toArray();
 
+            //latest price of material
             $latestPrice = DB::table('tblprice')
                         ->where('tblprice.intMaterialId','=',$materialActual->intMaterialId)
                         ->orderBy('dtmPriceAsOf','desc')
                         ->first();
 
-            //adding latest price
+            //computing to totals of material actual
+            $materialActualTotalQty = 0;
+            $materialActualTotalCost = 0;
+            foreach($materialActualHistory as $history){
+                $materialActualTotalQty += $history->decQty;
+                $materialActualTotalCost += $history->decCost;
+            }
+
+            //TODO IF NATAPOS NA NI ERWIN, ILAGAY YUNG UNIT COST
+            $materialActualTotals = (object) [
+                'totalQty' => $materialActualTotalQty,
+                'totalCost' => $materialActualTotalCost,
+            ];
+
             
             $materialActualsDetails = (object) [
                 'intMaterialActualsId' => $materialActual->intMaterialActualsId,
@@ -64,12 +79,13 @@ class ActualsController extends Controller
                 'strWorkSubCategoryDesc' => $materialActual->strWorkSubCategoryDesc,
                 'intWorkCategoryId' => $materialActual->intWorkCategoryId,
                 'strWorkCategoryDesc' => $materialActual->strWorkCategoryDesc,
-                'latestPrice' => $latestPrice
+                'latestPrice' => $latestPrice,
             ];
 
             $materialActualWithHistory = (object) [
                 'materialActualsDetails' => $materialActualsDetails,
-                'materialActualsHistory' => $materialActualHistory
+                'materialActualsHistory' => $materialActualHistory,
+                'materialActualsTotals' => $materialActualTotals,
             ];
 
             array_push($materialActualsWithHistory,$materialActualWithHistory);
@@ -347,6 +363,7 @@ class ActualsController extends Controller
         return 'createMaterialActualFrom';
     }
 
+    //this code is used in "Adding" and "Updating" projectRequirement since the logic is the same
     public function updateProjectRequirementActual($id){
 
         $req = request()->all();
@@ -357,5 +374,18 @@ class ActualsController extends Controller
 
 
         header('Refresh:0;/Engineer/Engineer-Projects/'.$id.'/Actuals');
+    }
+
+    public function updateMaterialActual($id){
+        DB::table('tblmaterialactualshistory')
+                    ->insertGetId(
+                        [
+                            'decQty' => request()->materialActualQty,
+                            'decCost' => request()->materialActualQty * request()->materialActualLatestPrice,
+                            'intMaterialActualsId' => request()->materialActualsId
+                        ]
+                    );
+
+        header('Refresh:0;/Engineer/Engineer-Projects/'.$id.'/Actuals');            
     }
 }

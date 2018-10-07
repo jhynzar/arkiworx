@@ -102,10 +102,10 @@
                     <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="/assets/images/erwin.png" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="/assets/images/avatar-2.png" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Erwin</b>Andres</span>
+                                <b> {{session("fname")}}</b> {{session("lname")}}</span>
 
                         </a>
 
@@ -202,13 +202,13 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="/assets/images/erwin.png" alt="User Image" class="img-circle">
+                    <img src="/assets/images/avatar-2.png" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
                     <br>
                     <p>
-                        <b>Erwin</b>
+                        <b> {{session("fname")}}</b>
                     </p>
                     <p class="designation">
                         <span class="text-info">
@@ -397,7 +397,7 @@
                                                 <table class="table m-b-0 photo-table">
                                                     <thead>
                                                         <tr>
-                                                            <th>Line Item</th>
+                                                            <th></th>
                                                             <th>Description</th>
                                                             <th class="text-center" style="background-color: coral;  color: black !important">Qty</th>
                                                             <th class=" text-center" style="background-color: coral;  color: black !important">Unit</th>
@@ -405,7 +405,7 @@
                                                             <th class=" text-center" style="background-color: lightgreen; color: black !important">Qty</th>
                                                             <th style="background-color: lightgreen; color: black !important">Unit</th>
                                                             <th class=" text-center" style="background-color: lightgreen; color: black !important">Actuals</th>
-
+                                                           
 
                                                         </tr>
                                                     </thead>
@@ -434,7 +434,11 @@
                                                                                 ($projectRequirement->intWorkCategoryId == $workCategory->intWorkCategoryId)
                                                                             )
                                                                                 <tr>
-                                                                                    <td>{{$keyProjectRequirement+1}}</td>
+                                                                                    <td>
+                                                                                        @if($projectRequirement->decActualPrice > $projectRequirement->decEstimatedPrice)
+                                                                                            <h1><i class="icon icon-flag text-danger m-20"></i></h1>
+                                                                                        @endif
+                                                                                    </td>
 
                                                                                     <td>{{$projectRequirement->strDesc}}</td>
                                                                                     <td class="text-center " style="background-color: coral;  color: black !important">-</td>
@@ -462,6 +466,7 @@
                                                                 @endif 
                                                             @endforeach
                                                         @endforeach
+                                                        
 
 
 
@@ -494,20 +499,20 @@
                                                                             ($costSummary->actual->materialActualsDetails->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId)
                                                                         )
                                                                             <tr>
-                                                                                <td>{{$keyCostSummary+1}}</td>
+                                                                                <td><h1><i class="icon icon-flag text-danger m-20"></i></h1></td>
 
                                                                                 <td>{{$costSummary->actual->materialActualsDetails->strMaterialName}}</td>
                                                                                 <td class="text-center " style="background-color: coral;  color: black !important">-</td>
                                                                                 <th class="text-center" style="background-color: coral;   !important">-</th>
                                                                                 <td style="background-color: coral;  color: black !important">-</td>
                                                                                 <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decQty,2)}}</b>
+                                                                                    <b>{{number_format($costSummary->actual->materialActualsTotals->totalQty,2)}}</b>
                                                                                 </th>
                                                                                 <th style="background-color: lightgreen;color: black !important">
                                                                                     <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
                                                                                 </th>
                                                                                 <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                    <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decCost,2)}}</b>
+                                                                                    <b>{{number_format($costSummary->actual->materialActualsTotals->totalCost,2)}}</b>
                                                                                 </td>
                                                                             </tr>
                                                                         @elseif (
@@ -517,7 +522,7 @@
                                                                         )
                                                                             <tr>
 
-                                                                                <td>{{$keyCostSummary+1}}</td>
+                                                                                <td></td>
 
                                                                                 <td>{{$costSummary->estimate->strMaterialName}}</td>
                                                                                 <td class="text-center " style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decQty,2)}}</td>
@@ -541,20 +546,24 @@
                                                                         )
                                                                         <tr>
 
-                                                                            <td>{{$keyCostSummary+1}}</td>
+                                                                            <td>
+                                                                                @if( $costSummary->actual->materialActualsTotals->totalCost > $costSummary->estimate->decCost )
+                                                                                    <h1><i class="icon icon-flag text-danger m-20"></i></h1>
+                                                                                @endif
+                                                                            </td>
 
                                                                             <td>{{$costSummary->estimate->strMaterialName}}</td>
                                                                             <td class="text-center " style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decQty,2)}}</td>
                                                                             <th class="text-center" style="background-color: coral;   !important">{{$costSummary->estimate->strUnit}}</th>
                                                                             <td style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decCost,2)}}</td>
                                                                             <th class="text-center " style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decQty,2)}}</b>
+                                                                                <b>{{number_format($costSummary->actual->materialActualsTotals->totalQty,2)}}</b>
                                                                             </th>
                                                                             <th style="background-color: lightgreen;color: black !important">
                                                                                 <b>{{$costSummary->actual->materialActualsDetails->strUnit}}</b>
                                                                             </th>
                                                                             <td class="text-left" style="background-color: lightgreen; color: black !important">
-                                                                                <b>{{number_format($costSummary->actual->materialActualsHistory[0]->decCost,2)}}</b>
+                                                                                <b>{{number_format($costSummary->actual->materialActualsTotals->totalCost,2)}}</b>
                                                                             </td>
                                                                         </tr>
                                                                         @endif
@@ -599,7 +608,11 @@
                                         <table class="table m-b-0 photo-table">
                                             <thead>
                                                 <tr class="text-uppercase">
-                                                    <th class="text-left text-primary">TOTALS:</th>
+                                                    <th class="text-left text-primary">TOTALS:
+                                                        @if($totalActualsCost > $totalEstimatedCost)
+                                                            <i class="icon icon-flag text-danger m-20"></i>
+                                                        @endif
+                                                    </th>
                                                     <th class="text-center"></th>
 
 

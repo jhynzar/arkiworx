@@ -72,10 +72,10 @@
                     <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="../assets/images/erwin.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="../assets/images/avatar-2.png" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Erwin</b>Andres</span>
+                                <b> {{session("fname")}}</b> {{session("lname")}}</span>
 
                         </a>
 
@@ -171,12 +171,12 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="../assets/images/erwin.jpg" alt="User Image" class="img-circle">
+                    <img src="../assets/images/avatar-2.png" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
                     <br>
-                    <p><b>Erwin</b></p>
+                    <p><b> {{session("fname")}}</b></p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>
@@ -321,14 +321,14 @@
                 <div class="col-lg-3">
                     <div class="card faq-left">
                         <div class="social-profile">
-                            <img class="img-fluid" src="../assets/images/erwin.png" alt="">
+                            <img class="img-fluid" src="../assets/images/avatar-2.png" alt="">
                             <div class="profile-hvr m-t-15">
                                 <i class="icofont icofont-ui-edit p-r-10 c-pointer"></i>
                                 <i class="icofont icofont-ui-delete c-pointer"></i>
                             </div>
                         </div>
                         <div class="card-block">
-                            <h4 class="f-18 f-normal m-b-10 txt-primary">Erwin Andres</h4>
+                            <h4 class="f-18 f-normal m-b-10 txt-primary"> {{session("fname")}}&nbsp; {{session("lname")}}</h4>
                             <h5 class="f-14">Admin</h5>
                             <p class="m-b-15">Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt
                                 ut labore et.Lorem ipsum dolor sit amet, consecte</p>

@@ -75,10 +75,10 @@
                      <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="../assets/images/erwin.jpg" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="../assets/images/avatar-2.png" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Erwin</b>Andres</span>
+                                <b>{{session("fname")}}</b>&nbsp;{{session("lname")}}</span>
 
                         </a>
 
@@ -177,13 +177,13 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="/assets/images/erwin.jpg" alt="User Image" class="img-circle">
+                    <img src="/assets/images/avatar-2.png" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
                     <br>
                     <p>
-                        <b>Erwin</b> </p>
+                        <b>{{session("fname")}}&nbsp;{{session("lname")}}</b> </p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>
@@ -367,7 +367,7 @@
                     <div class="col-sm-12 card dashboard-product">
                         <span>Unestimated Projects</span>
                         <h2 class="dashboard-total-products">
-                            <span class="counter">1</span>
+                            <span class="counter">{{number_format($counts->pendingCostEstimationsCount)}}</span>
                         </h2>
                         <span class="label label-danger">Assignment</span>This week
                         <div class="side-box bg-danger">
@@ -377,15 +377,23 @@
                 </div>
 
 
-
-
+                <div class="col-lg-3 col-sm-6">
+                    <div class="col-sm-12 card dashboard-product">
+                        <span>On-going Projects</span>
+                        <h2 class="dashboard-total-products counter">{{number_format($counts->ongoingProjectsCount)}}</h2>
+                        <span class="label label-primary">Updates</span>
+                        <div class="side-box bg-primary">
+                            <i class="icon-map"></i>
+                        </div>
+                    </div>
+                </div>
 
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="col-sm-12 card dashboard-product">
                         <span>Projects Completed</span>
                         <h2 class="dashboard-total-products">
-                            <span class="counter">58</span>
+                            <span class="counter">{{number_format($counts->finishedProjectsCount)}}</span>
                         </h2>
                         <span class="label label-success">Completed</span>
                         <div class="side-box bg-success">
@@ -397,23 +405,11 @@
 
 
 
-                <div class="col-lg-3 col-sm-6">
-                    <div class="col-sm-12 card dashboard-product">
-                        <span>On-going Projects</span>
-                        <h2 class="dashboard-total-products counter">3</h2>
-                        <span class="label label-primary">Updates</span>
-                        <div class="side-box bg-primary">
-                            <i class="icon-map"></i>
-                        </div>
-                    </div>
-                </div>
-
-
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="col-sm-12 card dashboard-product">
                         <span>Materials Price Update</span>
-                        <h2 class="dashboard-total-products counter">38</h2>
+                        <h2 class="dashboard-total-products counter">{{number_format($counts->updatedMaterialPricesCount)}}</h2>
                         <span class="label label-warning">Updates</span>This week
                         <div class="side-box bg-warning">
                             <i class="icon-note"></i>
@@ -434,8 +430,8 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="card">
                         <div class="user-block-2">
-                            <img class="img-fluid" src="../assets/images/erwin.png" alt="user-header">
-                            <h5>Erwin Andres</h5>
+                            <img class="img-fluid" src="../assets/images/avatar-2.png" alt="user-header">
+                            <h5>{{session("fname")}}&nbsp;{{session("lname")}}</h5>
                             <h6>Engineer</h6>
                         </div>
                         <div class="card-block">

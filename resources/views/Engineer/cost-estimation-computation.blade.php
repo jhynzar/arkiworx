@@ -92,10 +92,10 @@
             <li class="dropdown">
                 <a href="/Engineer/Accounts-Settings">
                     <span>
-                        <img class="img-circle " src="/assets/images/erwin.jpg" style="width:40px;" alt="User Image">
+                        <img class="img-circle " src="/assets/images/avatar-2.png" style="width:40px;" alt="User Image">
                     </span>
                     <span>
-                        <b>Erwin</b>Andres</span>
+                        <b> {{session("fname")}}</b> {{session("lname")}}</span>
 
                 </a>
 
@@ -192,13 +192,13 @@
             <br>
             <br>
             <div class="f-left image">
-                <img src="/assets/images/erwin.jpg" alt="User Image" class="img-circle">
+                <img src="/assets/images/avatar-2.png" alt="User Image" class="img-circle">
             </div>
             <div class="f-left info">
                 <br>
                 <br>
                 <p>
-                    <b>Erwin</b>
+                    <b> {{session("fname")}}</b>
                 </p>
                 <p class="designation">
                     <span class="text-info">
@@ -1137,7 +1137,7 @@
                                 <label class="text text-default"><b>Permit</b> </label>  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input  class="form-control currencyInput" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input type="number"  class="form-control" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
                                      &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> DENR <span class="text text-primary"><i>Optional</i></span></label>  &nbsp; 
                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 2)<input type="number" class="form-control" value="{{ $record -> cost }}" id="DENR" name="DENR" style="width: 100px !important;" placeholder="">@endif @endforeach

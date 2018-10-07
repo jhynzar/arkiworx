@@ -1,72 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>ArkiWorx | Cost Management and Progress Monitoring System</title>
-    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-     <![endif]-->
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <!-- Favicon icon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
-
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
-    <!-- iconfont -->
-    <link rel="stylesheet" type="text/css" href="../assets/icon/icofont/css/icofont.css">
-
-    <!-- simple line icon -->
-    <link rel="stylesheet" type="text/css" href="../assets/icon/simple-line-icons/css/simple-line-icons.css">
-
-    <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
-
-    <!-- Weather css -->
-    <link href="../assets/css/svg-weather.css" rel="stylesheet">
-
-    <!-- Echart js -->
-    <script src="../assets/plugins/charts/echarts/js/echarts-all.js"></script>
-
-    <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
-
-    <!-- Responsive.css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
-
-    <!--color css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/color/color-1.min.css" id="color" />
-    <!-- fullCalendar -->
-
-    <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.min.css" media="print">
-    <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
-
-    <style>
-        .sidebar .user-panel {
-            background-image: url('/assets/images/ff.jpg') !important;
-        }
-
-       
-
-    </style>
-
-
-
-</head>
-
-<body class="sidebar-mini fixed">
+@extends('layouts.master-admin')
+@section('body')
     <div class="loader-bg">
         <div class="loader-bar">
         </div>
@@ -174,7 +107,7 @@
                                 <img class="img-circle " src="../assets/images/avatar-1.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Juliamar</b>Soriano</span>
+                                <b>{{session("fname")}}</b>&nbsp;{{session("lname")}}</span>
 
                         </a>
 
@@ -280,7 +213,7 @@
                 <div class="f-left info">
                     <br>
                     <br>
-                    <p>Juliamar Soriano</p>
+                    <p>{{session("fname")}}&nbsp;{{session("lname")}}</p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>
@@ -436,7 +369,7 @@
 
 
 
-
+                <!--
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="col-sm-12 card dashboard-product">
@@ -452,32 +385,7 @@
                 </div>
 
 
-
-
-
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="col-sm-12 card dashboard-product">
-                        <span>Profit</span>
-                        <h2 class="dashboard-total-products">₱
-                            <span class="counter">1,864,284.0</span>
-                        </h2>
-                        <i class="icon-arrow-up-circle"></i> This year
-                        <div class="side-box bg-danger">
-                            <i class="icon-briefcase"></i>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
+                
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="col-sm-12 card dashboard-product">
@@ -501,6 +409,61 @@
                             <i class="icon-note"></i>
                         </div>
                     </div>
+                </div> 
+
+                -->
+
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="col-sm-12 card dashboard-product">
+                        <span>Unestimated Projects</span>
+                        <h2 class="dashboard-total-products">
+                            <span class="counter">{{number_format($display->pendingCostEstimationsCount)}}</span>
+                        </h2>
+                        <span class="label label-danger">Assignment</span>This week
+                        <div class="side-box bg-danger">
+                            <i class="icon-calculator"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="col-sm-12 card dashboard-product">
+                        <span>On-going Projects</span>
+                        <h2 class="dashboard-total-products counter">{{number_format($display->ongoingProjectsCount)}}</h2>
+                        <span class="label label-primary">Updates</span>
+                        <div class="side-box bg-primary">
+                            <i class="icon-map"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="col-sm-12 card dashboard-product">
+                        <span>Projects Completed</span>
+                        <h2 class="dashboard-total-products">
+                            <span class="counter">{{number_format($display->finishedProjectsCount)}}</span>
+                        </h2>
+                        <span class="label label-success">Completed</span>
+                        <div class="side-box bg-success">
+                            <i class="icon-layers"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-sm-6">
+                    <div class="col-sm-12 card dashboard-product">
+                        <span>Profit</span>
+                        <h2 class="dashboard-total-products">₱
+                            <span class="counter">{{number_format($display->profitsThisYear,2)}}</span>
+                        </h2>
+                        <i class="icon-arrow-up-circle"></i> This year
+                        <div class="side-box bg-danger">
+                            <i class="icon-briefcase"></i>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -517,7 +480,7 @@
                     <div class="card">
                         <div class="user-block-2">
                             <img class="img-fluid" src="../assets/images/avatar-1.png" alt="user-header">
-                            <h5>Juliamar Soriano</h5>
+                            <h5>{{session("fname")}}&nbsp;{{session("lname")}}</h5>
                             <h6>My Profile</h6>
                         </div>
                         <div class="card-block">
@@ -1303,103 +1266,4 @@
     </div>
     </div>
 
-
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-      <div class="ie-warning">
-          <h1>Warning!!</h1>
-          <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-          <div class="iew-container">
-              <ul class="iew-download">
-                  <li>
-                      <a href="http://www.google.com/chrome/">
-                          <img src="../assets/images/browser/chrome.png" alt="Chrome">
-                          <div>Chrome</div>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://www.mozilla.org/en-US/firefox/new/">
-                          <img src="../assets/images/browser/firefox.png" alt="Firefox">
-                          <div>Firefox</div>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="http://www.opera.com">
-                          <img src="../assets/images/browser/opera.png" alt="Opera">
-                          <div>Opera</div>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="https://www.apple.com/safari/">
-                          <img src="../assets/images/browser/safari.png" alt="Safari">
-                          <div>Safari</div>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                          <img src="../assets/images/browser/ie.png" alt="">
-                          <div>IE (9 & above)</div>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-          <p>Sorry for the inconvenience!</p>
-      </div>
-      <![endif]-->
-    <!-- Warning Section Ends -->
-
-    <!-- Required Jqurey -->
-    <script src="../assets/plugins/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="../assets/plugins/tether/dist/js/tether.min.js"></script>
-
-    <!-- Required Fremwork -->
-    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- waves effects.js -->
-    <script src="../assets/plugins/Waves/waves.min.js"></script>
-
-    <!-- Scrollbar JS-->
-    <script src="../assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-    <script src="../assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
-
-    <!--classic JS-->
-    <script src="../assets/plugins/classie/classie.js"></script>
-
-    <!-- notification -->
-    <script src="../assets/plugins/notification/js/bootstrap-growl.min.js"></script>
-
-    <!-- Rickshaw Chart js -->
-    <script src="../assets/plugins/d3/d3.js"></script>
-    <script src="../assets/plugins/rickshaw/rickshaw.js"></script>
-
-    <!-- Sparkline charts -->
-    <script src="../assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
-
-    <!-- Counter js  -->
-    <script src="../assets/plugins/waypoints/jquery.waypoints.min.js"></script>
-    <script src="../assets/plugins/countdown/js/jquery.counterup.js"></script>
-
-    <!-- custom js -->
-    <script type="text/javascript" src="../assets/js/main.min.js"></script>
-    <!-- welcome admin able -->
-    <script type="text/javascript" src="../assets/pages/dashboard.js"></script>
-    <script type="text/javascript" src="../assets/pages/elements.js"></script>
-    <script src="../assets/js/menu.min.js"></script>
-
-    <script>
-        var $window = $(window);
-        var nav = $('.fixed-button');
-        $window.scroll(function () {
-            if ($window.scrollTop() >= 200) {
-                nav.addClass('active');
-            } else {
-                nav.removeClass('active');
-            }
-        });
-
-    </script>
-</body>
-
-</html>
+@endsection

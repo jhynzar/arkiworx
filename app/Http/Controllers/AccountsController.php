@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AccountsController extends Controller
 {
     public function accounts()
     {
-        $results = DB::select("select a.intaccountid as intaccountid, a.varusername as varusername, a.strusertype as strusertype, e.stremployeefname as stremployeefname, e.stremployeelname as stremployeelname from tblaccounts a, tblemployee e where e.intaccountid = a.intaccountid");
+        $results = DB::select("select a.id as intaccountid, a.username as varusername, a.strusertype as strusertype, e.stremployeefname as stremployeefname, e.stremployeelname as stremployeelname from tblaccounts a, tblemployee e where e.intaccountid = a.id and a.intActive = 1");
         return view('Admin/accounts',compact('results'));
     }
 
@@ -20,22 +21,48 @@ class AccountsController extends Controller
 
     public function addusers()
     {
-        $fn = Input::post('fname');
-        $ln = Input::post('lname');
-        $un = Input::post('uname');
-        $pw = Input::post('password');
-        $cno = Input::post('contact');
-        $sex = Input::post('sex');
-        $email = Input::post('email');
-        $hno = Input::post('houseno');
-        $sna = Input::post('streetna');
-        $brgy = Input::post('brgy');
-        $city = Input::post('city');
-        $utype = Input::post('usertype');
-        $insert1 = array($un,$pw,$utype);
-        $insert2 = array($fn,$ln,$cno,$sex,$email,$hno,$sna,$brgy,$city);
-        DB::insert("",$insert1);
-        return view('Admin/accounts');
+
+        //dd(request()->all());
+
+        $accountId = DB::table('tblaccounts')
+                    ->insertGetId([
+                        'username' => request()->username,
+                        'password' => Hash::make(request()->password),
+                        'strUserType' => request()->usertype,
+                        'intActive' => 1,
+                        'remember_token' => null,
+                    ]);
+
+        $employeeId = DB::table('tblemployee')
+                    ->insertGetId([
+                        'strEmployeeFName' => request()->fname,
+                        'strEmployeeMName' => request()->mname,
+                        'strEmployeeLName' => request()->lname,
+                        'strEmployeeSex' => request()->gender,
+                        'dtmEmployeeBDay' => request()->dateofbirth,
+                        'varEmployeeEMail' => request()->email,
+                        'varEmployeeContactNo' => request()->contact,
+                        'intEmployeeHouseNo' => request()->houseno,
+                        'strEmployeeStreet' => request()->street,
+                        'strEmployeeBrgy' => request()->brgy,
+                        'strEmployeeCity' => request()->city,
+                        'intAccountId' => $accountId,
+                    ]);
+
+        header('Refresh:0;/Admin/Accounts');
+    }
+
+    public function delete($id){
+        //dd(request()->all());
+
+        DB::table('tblaccounts')
+            ->where('tblaccounts.id','=',$id)
+            ->where('tblaccounts.intActive','=',1)
+            ->update([
+                'intActive' => 0,
+            ]);
+
+        header('Refresh:0;/Admin/Accounts');
     }
 
 }
