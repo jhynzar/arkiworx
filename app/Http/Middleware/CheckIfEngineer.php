@@ -18,7 +18,9 @@ class CheckIfEngineer
     public function handle($request, Closure $next)
     {
         if(Auth::user()->strUserType != 'Engineer'){
-            Auth::logout();
+            Auth::logout();//logout user
+            session()->flush();//delete session data
+            
             return redirect('/')->withErrors(["You don't have the privileges to access that page. You have been logged out."]);
         }
 

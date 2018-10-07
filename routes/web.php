@@ -22,7 +22,10 @@ Route::get('Check-Login',function(){
 });
 
 Route::get('Logout',function(){
-    Auth::logout();
+
+    Auth::logout();//logout user
+    session()->flush();//delete session data
+    
     return redirect('/')->withErrors(['You have been logged out.']);
 });
 

@@ -30,6 +30,21 @@ class LoginController extends Controller
         ];
 
         if(Auth::attempt($credentials,true)){
+            //get user details
+            $userDetails = DB::table('tblaccounts')
+                        ->join('tblemployee','tblemployee.intAccountId','=','tblaccounts.id')
+                        ->where('tblaccounts.id','=',Auth::user()->id)
+                        ->first();
+
+            //dd($userDetails);
+
+            $sessionStore = [
+                'fname' => $userDetails->strEmployeeFName,
+                'mname' => $userDetails->strEmployeeMName,
+                'lname' => $userDetails->strEmployeeLName,
+            ];
+            session($sessionStore);
+
             if(Auth::user()->strUserType == 'Admin'){
                 return redirect('Admin/Home');
             }else if(Auth::user()->strUserType == 'Engineer'){

@@ -78,7 +78,7 @@
                                 <img class="img-circle " src="../assets/images/erwin.jpg" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Erwin</b>Andres</span>
+                                <b>{{session("fname")}}</b>&nbsp;{{session("lname")}}</span>
 
                         </a>
 
@@ -183,7 +183,7 @@
                     <br>
                     <br>
                     <p>
-                        <b>Erwin</b> </p>
+                        <b>{{session("fname")}}&nbsp;{{session("lname")}}</b> </p>
                     <p class="designation">
                         <span class="text-info">
                             <span style="color: white">More</span>
@@ -431,7 +431,7 @@
                     <div class="card">
                         <div class="user-block-2">
                             <img class="img-fluid" src="../assets/images/erwin.png" alt="user-header">
-                            <h5>Erwin Andres</h5>
+                            <h5>{{session("fname")}}&nbsp;{{session("lname")}}</h5>
                             <h6>Engineer</h6>
                         </div>
                         <div class="card-block">
