@@ -17,6 +17,12 @@
 
         position: absolute;
     }
+    
+    .modal-dialog {
+ 
+          height: 300px;
+ 
+        }
 
 </style>
 @endsection @section('body')
@@ -959,7 +965,7 @@
 <!-- View Audit Trail Modal -->
 
 <div class="modal fade" id="viewAudit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" >
         <div class="modal-content pull-center">
             <div class="modal-header bg-primary">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -979,68 +985,43 @@
                 <form action="/action_page.php">
 
 
-                    <br>
-                    <div class="form-group">
-                        <label for="materialDesc">Description:</label>
-                        <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;" value="Cement" disabled>
+                
+        <div class="card">            
+                    
+                    
+                    <table class="table" style="height: 300px !important">
+  <thead style="background-color: #354444A">
+    <tr>
+      <th scope="col" style="background-color: #354444A">Date</th>
+      <th scope="col" style="background-color: #354444A">Qty</th>
+      <th scope="col" style="background-color: #354444A">Unit Cost</th>
+      <th scope="col" style="background-color: #354444A">Total Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">12/8/28</th>
+      <td>5</td>
+      <td>100.00</td>
+      <td>500.00</td>
+    </tr>
+  
+    
+  </tbody>
+</table>
 
-                    </div>
+</div>
+                    
+                    
+                    
+                    
+                    
 
-                    <div class="form-group form-inline">
-
-
-
-
-
-                        <label for="usertype">
-                            <i>As of</i>:</label>
-                        <br>
-                        <select class="form-control pull-center text-center" name="month" id="month" style="width: 500px !important;">
-                            <option>January-07-2018 </option>
-                            <option>January-20-2018</option>
-                            <option>February-26-2018 </option>
-                            <option>March-23-2018 </option>
-                            <option>April-4-2018 </option>
-                            <option>April-27-2018 </option>
-                            <option>May-14-2018</option>
-                            <option>June-8-2018 </option>
-                            <option>July-22-2018 </option>
-                            <option selected>Aug-7-2018 </option>
-
-                        </select>
-
-
-                        &nbsp; &nbsp;
-
-
-                    </div>
-
-                    <div class="form-group form-inline">
-                        <label>Qty:</label>
-                        <input type="number" class="form-control" id="" style="width: 90px !important;" placeholder="2" disabled>
-
-                        <label>Unit:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="Bags" disabled>
-
-
-
-                        <label for="ActualPrice">Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 130px !important;" placeholder="₱250.0" disabled>
-
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="ActualPrice">Total Unit Cost:</label>
-                        <input type="text" class="form-control" id="" style="width: 500px !important;" placeholder="₱500.0" disabled>
-                    </div>
 
                     <div class="modal-footer">
-                        <hr>
+              
 
-                        <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 280px">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-left: 280px">
                             <i class="icon icon-close"> </i>Close</button>
 
                     </div>
