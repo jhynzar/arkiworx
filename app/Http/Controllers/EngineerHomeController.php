@@ -30,7 +30,7 @@ class EngineerHomeController extends Controller
                         ->count();
 
                         
-
+        //don't check if active, because regardless, it is still a finished project
         $finishedProjectsCount = DB::table('tblproject')
                         ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
                         ->where('tblproject.intEmployeeId','=',Auth::user()->id)//EMPLOYEE ID
