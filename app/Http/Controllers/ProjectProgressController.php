@@ -354,6 +354,7 @@ class ProjectProgressController extends Controller
                 ->where('tblproject.intProjectId','=',$id)
                 ->update([
                     'strProjectStatus' => 'finished',
+                    'dtmDateFinished' => date("Y-m-d"),
                 ]);
             }
         }
