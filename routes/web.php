@@ -90,9 +90,7 @@ Route::middleware(['auth'])->group(function(){
 
          //Engineer di pa maayos ung controllers at methods
 
-        Route::get('Engineer/Home', function(){
-            return view('Engineer/engi-home');
-        });
+        Route::get('Engineer/Home', 'EngineerHomeController@index');
 
         Route::get('Engineer/Engineer-Projects','EngineerProjectsController@index');
 
