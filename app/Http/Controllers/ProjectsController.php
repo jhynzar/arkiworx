@@ -592,7 +592,7 @@ class ProjectsController extends Controller
             }
         }*/
         //dd($projectCostSummary);
-        return view('Engineer/cost-summary',compact(
+        return view('Admin/cost-summary',compact(
             'projectCostSummary',
             'projectWorkCategories',
             'projectWorkSubCategories',
