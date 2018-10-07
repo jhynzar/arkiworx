@@ -24,6 +24,7 @@ class ProjectProgressController extends Controller
                                 ->where('tblschedules.intProjectId','=',null)
                                 ->where('tblproject.strProjectStatus','=','on going')
                                 ->where('tblproject.intEmployeeId','=',Auth::user()->id)//EMPLOYEE ID
+                                ->where('tblproject.intActive','=',1)
                                 ->get();
 
         $pendingProjectSchedules = array();
@@ -352,6 +353,7 @@ class ProjectProgressController extends Controller
             if($isFinished){
                 DB::table('tblproject')
                 ->where('tblproject.intProjectId','=',$id)
+                ->where('tblproject.intActive','=',1)
                 ->update([
                     'strProjectStatus' => 'finished',
                     'dtmDateFinished' => date("Y-m-d"),

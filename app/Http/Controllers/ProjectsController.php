@@ -143,6 +143,7 @@ class ProjectsController extends Controller
         //
         $projectDetails = DB::table('tblproject')
                 ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                ->where('tblproject.intActive','=',1)
                 ->where('tblproject.intProjectId','=',$id)
                 ->first();
 
@@ -175,6 +176,7 @@ class ProjectsController extends Controller
         //change from for approval to finished
         DB::table('tblproject')
             ->where('intProjectId','=',$id)
+            ->where('tblproject.intActive','=',1)
             ->update(['strProjectStatus'=> 'on going']);
 
             header('Refresh:0;/Admin/Projects');
@@ -193,6 +195,7 @@ class ProjectsController extends Controller
         //dd(request()->all());
         DB::table('tblproject')
             ->where('tblproject.intProjectId','=',$id)
+            ->where('tblproject.intActive','=',1)
             ->update([
                 'intActive' => 0,
             ]);
@@ -207,6 +210,7 @@ class ProjectsController extends Controller
 
         DB::table('tblproject')
             ->where('tblproject.intProjectId','=',$id)
+            ->where('tblproject.intActive','=',1)
             ->update([
                 'strProjectName' => request()->projectName,
                 'txtProjectDesc' => request()->projectDesc
@@ -220,6 +224,7 @@ class ProjectsController extends Controller
         //getting project details
         $project = DB::table('tblproject')
                 ->where('intProjectId','=',$id)
+                ->where('tblproject.intActive','=',1)
                 ->first();
             
         $materialEstimates = DB::table('tblmaterialestimates')
