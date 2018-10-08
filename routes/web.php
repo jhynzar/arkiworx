@@ -103,6 +103,8 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('Engineer/Engineer-Projects','EngineerProjectsController@index');
 
+        Route::get('Engineer/Engineer-Projects/Reports','EngineerProjectsController@reports');
+
         Route::get('/Engineer/Engineer-Projects/{id}/Cost-Summary','CostSummaryController@index');
 
         Route::get('/Engineer/Engineer-Projects/{id}/Actuals','ActualsController@index');
