@@ -4,7 +4,7 @@
 @endsection
 
 @section ('body')
-    <h1>Welcome!</h1>
+    <h1>Material Pricelist Reports</h1>
 @endsection
 
 @section('script')
