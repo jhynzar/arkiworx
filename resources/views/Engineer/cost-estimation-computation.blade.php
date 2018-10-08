@@ -1297,7 +1297,10 @@
                                  <br>
                                  <div class="form-group">
                                 <label> Bar Spacing:</label>
-                                <input type="number" id="FootingNoOfBars" class="form-control"style="width: 100px !important;" value=4 min=4>
+                                <input type="number" id="ColumnSpacing" class="form-control"style="width: 100px !important;" value=>
+                            </div> <br> <br>
+                                 <div class="form-group">
+                                <label> No of Bars per Column:</label>
                                 <select class="form-control" id="ColumnNoOfBars" style="width: 100px !important;">
                                     <option value="4" selected> 4 </option>
                                     <option value="6" > 6 </option>
@@ -1511,7 +1514,7 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label> Number of bars per Column:</label>
-                                <!--<input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" value=4 min=4>-->
+                                <input type="number" id="FootingNoOfBars" class="form-control"style="width: 100px !important;" value=4 min=4>
                                 <label for="">Bar Length:</label>
                                 <select class="form-control" id="footingBarLength" style="width: 150px !important;">
                                     <option value="6" selected>6 meters </option>
@@ -1544,7 +1547,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>No Of Footing(s): </b> </label>&nbsp; <input type="number" disabled class="form-control" id="HowManyFootings" style="width: 100px !important;">
+                                <label class="text text-default"><b>No Of Footing(s): </b> </label>&nbsp; <input type="number" value=4 disabled class="form-control" id="HowManyFootings" style="width: 100px !important;">
                                 <button type="button" id="Footing" class="btn btn-primary" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -1680,17 +1683,17 @@
                          <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
                                 <select class="form-control" id="SlabCC" style="width: 160px !important;">
-                                    <option value="1" selected>Class AA </option>
+                                    <option value="1">Class AA </option>
                                     <option value="2">Class A </option>
                                     <option value="3">Class B </option>
-                                    <option value="4">Class C </option>
+                                    <option value="4" selected>Class C </option>
                                 </select>
                             </div>
                              
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" id="SlabVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="SlabVolume" disabled style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
@@ -1710,17 +1713,17 @@
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Spacing:</label>
                                 <select class="form-control" id="slabBarSpacing" style="width: 130px !important;">
-                                    <option value="10.0" selected>10.0 cm </option>
-                                    <option value="12.5" >12.5 cm </option>
-                                    <option value="15.0" >15.0 cm </option>
-                                    <option value="17.5" >17.5 cm </option>
-                                    <option value="20.0" >20.0 cm </option>
-                                    <option value="22.5" >22.5 cm </option>
-                                    <option value="25.0" >25.0 cm </option>
+                                    <option value="5" selected>10.0 cm </option>
+                                    <option value="6" >12.5 cm </option>
+                                    <option value="7" >15.0 cm </option>
+                                    <option value="8" >17.5 cm </option>
+                                    <option value="9" >20.0 cm </option>
+                                    <option value="10" >22.5 cm </option>
+                                    <option value="11" >25.0 cm </option>
                                 </select>
                                      <label for="">Bar Length:</label>
                                 <select class="form-control" id="slabBarLength" style="width: 130px !important;">
-                                    <option value="6" selected>6 meters </option>
+                                    <option value="2" selected>6 meters </option>
                                     <!--<option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>-->
@@ -1729,20 +1732,20 @@
                                  
                                  
                                  <div class="form-group form-inline pull-center">
-                                <label for="">Bar Size:</label>
+                                <!--<label for="">Bar Size:</label>
                                 <select class="form-control" id="slabBarSize" style="width: 155px !important;">
-                                    <!--<option value="6">6 mm</option>
-                                    <option value="10" >10 mm </option>-->
+                                    <option value="6">6 mm</option>
+                                    <option value="10" >10 mm </option>
                                     <option value="12" selected>12 mm </option>
-                                    <!--<option value="16" >16 mm </option>
+                                    <option value="16" >16 mm </option>
                                     <option value="20" >20 mm </option>
                                     <option value="22" >22 mm </option>
-                                    <option value="25" >25 mm </option>-->
-                                </select>
+                                    <option value="25" >25 mm </option>
+                                </select>-->
                                      <label for="">Tie wire:</label>
                                 <select class="form-control" id="slabTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
-                                    <option value="40" >40 cm </option>
+                                    <!--<option value="40" >40 cm </option>-->
                                     
                                 </select>
                             </div> 
@@ -1767,7 +1770,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Slab(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManySlabs" style="width: 100px !important;">
+                                <label class="text text-default"><b>No of Slab(s): </b> </label>&nbsp; <input type="number" disabled value=1 class="form-control" id="HowManySlabs" style="width: 100px !important;">
                                 <button type="button" class="btn btn-success" id="Slab" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -1908,8 +1911,8 @@
                          <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
                                 <select class="form-control" id="BeamCC" style="width: 160px !important;">
-                                    <option value="1" selected>Class AA </option>
-                                    <option value="2">Class A </option>
+                                    <option value="1">Class AA </option>
+                                    <option value="2" selected>Class A </option>
                                     <option value="3">Class B </option>
                                     <option value="4">Class C </option>
                                 </select>
@@ -1918,7 +1921,7 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" id="BeamVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="BeamVolume" disabled style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
@@ -1927,7 +1930,7 @@
                             <label >Thickness:</label>
                             <input type="" class="form-control" id="BeamThickness" style="width: 80px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="BeamWidth" style="width: 80px !important;" >
+                            <input type="" class="form-control" disabled id="BeamWidth" style="width: 80px !important;" >
                             <label >Length:</label>
                             <input type="" class="form-control" id="BeamLength" style="width: 80px !important;" >
                                  <br> <br>
@@ -1936,8 +1939,17 @@
                                     </div>
                                  <br>
                                  <div class="form-group">
-                                <label> Direct Counting:</label>
-                                <input type="number" class="form-control" id="" style="width: 100px !important;" >
+                                <label> Bar Spacing:</label>
+                                <input type="number" id="BeamSpacing" class="form-control"style="width: 100px !important;" value=>
+                            </div> <br> <br>
+                                 <div class="form-group">
+                                <label> No of Bars per Beam:</label>
+                                <select class="form-control" id="BeamNoOfBars" style="width: 100px !important;">
+                                    <option value="4" selected> 4 </option>
+                                    <option value="6" > 6 </option>
+                                    <option value="8" > 8 </option>
+                                    <option value="9"> 9 </option>
+                                </select>
                             </div> <br> <br>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
@@ -1974,7 +1986,7 @@
                                      <label for="">Tie wire:</label>
                                 <select class="form-control" id="beamsTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
-                                    <option value="40" >40 cm </option>
+                                    <!--<option value="40" >40 cm </option>-->
                                     
                                 </select>
                             </div> 
@@ -1982,7 +1994,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyBeams" style="width: 100px !important;">
+                                <label class="text text-default"><b>No of Beam(s): </b> </label>&nbsp; <input type="number" disabled class="form-control" id="HowManyBeams" style="width: 100px !important;">
                                 <button type="button" class="btn" id="Beam" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -2128,9 +2140,9 @@
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
                                 <select class="form-control" id="wallFootingCementClassMixture" style="width: 160px !important;">
-                                    <option value="AA" selected>Class AA </option>
+                                    <option value="AA">Class AA </option>
                                      <option value="A" >Class A </option>
-                                    <option value="B" >Class B </option>
+                                    <option value="B" selected>Class B </option>
                                     <option value="C" >Class C </option>
                                 </select>
                             </div>
@@ -2138,18 +2150,18 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" disabled id="WallFootingVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="" class="form-control" id="WallFootingThickness" style="width: 80px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="" class="form-control" id="WallFootingWidth" style="width: 80px !important;" disabled>
                             <label >Length:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="" class="form-control" id="WallFootingLength" style="width: 80px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -2178,20 +2190,10 @@
                                  
                                  
                                  <div class="form-group form-inline pull-center">
-                                <label for="">Tie Bar Size:</label>
-                                <select class="form-control" id="wallFootingTieBarSize" style="width: 150px !important;">
-                                    <option value="6" selected>6 mm</option>
-                                    <option value="10" >10 mm </option>
-                                    <!--<option value="12" >12 mm </option>
-                                    <option value="16" >16 mm </option>
-                                    <option value="20" >20 mm </option>
-                                    <option value="22" >22 mm </option>
-                                    <option value="25" >25 mm </option>-->
-                                </select>
                                      <label for="">Tie wire:</label>
                                 <select class="form-control" id="wallFootigTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
-                                    <option value="40" >40 cm </option>
+                                    <!--<option value="40" >40 cm </option>-->
                                     
                                 </select>
                             </div> 
@@ -2199,7 +2201,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Wall Footing(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
+                                <label class="text text-default"><b>No of Wall Footing(s): </b> </label>&nbsp; <input type="number" disabled class="form-control" id="" style="width: 100px !important;">
                                 <button type="button" id="WallFooting" class="btn btn-primary" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -2552,9 +2554,9 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="roofBeamsCementClassMixture" style="width: 160px !important;">
-                                    <option value="AA" selected>Class A </option>
-                                    <option value="A" >Class A </option>
+                                <select class="form-control" id="RoofBeamCementCC" style="width: 160px !important;">
+                                    <option value="AA">Class A </option>
+                                    <option value="A" selected>Class A </option>
                                     <option value="B" >Class B </option>
                                     <option value="C" >Class C </option>
                                 </select>
@@ -2563,27 +2565,35 @@
                           <div >
                                 <label for="">Volume:</label> <br>
                             
-                                <input type="number" id="" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
+                                <input type="number" id="RoofBeamVolume" disabled style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
                             
                             </div>   
                              <br> 
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="" class="form-control" id="RoofBeamThickness" style="width: 80px !important;" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="" class="form-control" disabled id="RoofBeamWidth" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="" class="form-control" id="RoofBeamLength" style="width: 80px !important;" >
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
                                     </div>
                                  <br>
                                  <div class="form-group">
-                                <label> Direct Counting:</label>
-                                <input type="number" class="form-control" id="" style="width: 100px !important;" >
+                                <label> Bar Spacing:</label>
+                                <input type="number" class="form-control" id="RoofBeamSpacing" style="width: 100px !important;" >
                             </div> <br> <br>
+                                 <div class="form-group">
+                                <label> No of Bars per Beam:</label>
+                                <select class="form-control" id="RoofBeamNoOfBars" style="width: 100px !important;">
+                                    <option value="4" selected> 4 </option>
+                                    <option value="6" > 6 </option>
+                                    <option value="8" > 8 </option>
+                                    <option value="9"> 9 </option>
+                                </select>
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Length:</label>
                                 <select class="form-control" id="roofBeamsBarLength" style="width: 150px !important;">
@@ -2619,7 +2629,7 @@
                                      <label for="">Tie wire:</label>
                                 <select class="form-control" id="roofBeamsTiewire" style="width: 140px !important;">
                                     <option value="30" selected>30 cm </option>
-                                    <option value="40" >40 cm </option>
+                                    <!--<option value="40" >40 cm </option>-->
                                     
                                 </select>
                             </div> 
@@ -2627,7 +2637,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-default"><b>Roof Beam(s): </b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
+                                <label class="text text-default"><b>No of Roof Beam(s): </b> </label>&nbsp; <input type="number" disabled class="form-control" id="" style="width: 100px !important;">
                                 <button type="button" class="btn" id="RoofBeam" style="margin-left: 90px" >Compute</button>
                                  </div>
                         </div>
@@ -2791,7 +2801,7 @@
                            <br>
                              <div class="form-group form-inline">
                             <label >Area:</label>
-                            <input type="number" class="form-control" id="CHBArea" style="width: 100px !important;" placeholder="Optional" >
+                            <input type="number" class="form-control" disabled id="CHBArea" style="width: 100px !important;" placeholder="Optional" >
                             <label >Width:</label>
                             <input type="number" class="form-control" id="CHBWidth" style="width: 80px !important;" >
                             <label >Length:</label>
@@ -2846,7 +2856,7 @@
                                  <br>
                                  
                                  <div class="form-group form-inline pull-center">
-                                <label for="">Bar Spacing:</label>
+                                <label for="">Bar Spacing (Vertical):</label>
                                 <select class="form-control" id="masonryBarSize" style="width: 200px !important;">
                                     <option value="40" selected>40 cm</option>
                                     <option value="60" >60 cm</option>
@@ -2854,7 +2864,7 @@
                                 
                                 </select>
                                 <br><br>
-                                     <label for="">Bar Layer:</label>
+                                     <label for="">Bar Spacing (Horizontal):</label>
                                 <select class="form-control" id="masonryBarLayer" style="width: 210px !important;">
                                     <option value="2" selected>2</option>
                                     <option value="3" >3 </option>
@@ -5448,7 +5458,7 @@
             alert("Invalid Input.");
         }
         else if($("#FootingThickness").val()==null&&$("#FootingWidth").val()==null&&$("#FootingLength").val()==null||$("#FootingNoOfBars").val()==null){
-            var concrete = ConcreteEsti( 1,1.6,1,$("#FootingCC").val(),1 );
+            var concrete = ConcreteEsti( 1,0.8,1,$("#FootingCC").val(),1 );
             var metal = metalica(  );
             panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost);
         }
@@ -5518,10 +5528,226 @@
     });
 
     $("#Slab").click(function(){
+        if($("#SlabThickness").val()<=0||$("#SlabWidth").val()<=0||$("#SlabLength").val()<=0||$("#SlabVolume").val()<=0){
+            alert("Invalid Input.");
+        }
+        else if($("#SlabThickness").val()==null&&$("#SlabWidth").val()==null&&$("#SlabLength").val()==null){
+            var concrete = ConcreteEsti( 1,6,1,$("#SlabCC").val(),1 );
+            var metal = metalica(  );
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metal.qtya,metal.costa,metal.tiewire,metal.costb);
+        }
+        else if($("#SlabThickness").val()!=null&&$("#SlabWidth").val()!=null&&$("#SlabLength").val()!=null){
+            $("#SlabVolume").val( $("#SlabThickness").val() * $("#SlabWidth").val() * $("#SlabLength").val() );
+            var concrete = ConcreteEsti( 1,$("#SlabVolume").val(),1,$("#SlabCC").val(),1 );
+            var mmetal = metalica(  );
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metal.qtya,metal.costa,metal.tiewire,metal.costb);
+        
+        }
+        else {
+            alert("Please fill up the required fields");
+        }
+        var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,qtya,costa,tiewire,costb){
+            //
+            var qty12 = $("#Quantity12").val();
+            qty12 += cementqty;
+            $("#Quantity12").val(qty12);
+            var cost12 = $("#Cost12").val();
+            cost12 += cementcost;
+            $("#Cost12").val(cost12);
+            var qty13 = $("#Quantity13").val();
+            qty13 += sandqty;
+            $("#Quantity13").val(qty13);
+            var cost13 = $("#Cost13").val();
+            cost13 += sandcost;
+            $("#Cost13").val(cost13);
+            var qty14 = $("#Quantity14").val();
+            qty14 += gravelqty;
+            $("#Quantity14").val(qty14);
+            var cost14 = $("#Cost14").val();
+            cost14 += gravelcost;
+            $("#Cost14").val(cost14);
+            var qty15 = $("#Quantity15").val();
+            qty15 += noofbars;
+            $("#Quantity15").val(qty15);
+            var cost15 = $("#Cost15").val();
+            cost15 += costa;
+            $("#Cost15").val(cost15);
+            var qty16 = $("#Quantity16").val();
+            qty16 += tiewire;
+            $("#Quantity16").val(qty16);
+            var cost16 = $("#Cost16").val();
+            cost16 += costb;
+            $("#Cost16").val(cost16);
+            var no = $("#HowManySlabs").val(  );
+            $("#HowManySlabs").val( no + 1 );
+            alert("Nagdagdag ka ng Slab");
+            computeAndDisplayOverallTotal();
+        }
+        var metalica = function(){
+            var formula = searchValue(2,$("#slabBarSpacing").val(),2);
+            var mainbar = ($("#slabWidth").val()*$("#slabLength").val())*formula.Answer ;
+            var formula1 = searchValue(6,$("#slabBarSpacing").val()+7,3);
+            var tiewire = Math.ceil(($("#slabWidth").val()*$("#slabLength").val())*formula1.Answer);
+            var metals1 = DirectCountingEsti(mainbar,7);
+            var cost1 = metals1.total;
+            var metals2 = DirectCountingEsti(tiewire,6);
+            var cost2 = metals2.total;
+            return{
+                qtya : mainbar,
+                tiewire : tiewire,
+                costa : cost1,
+                costb : cost2
+            };
+        }
+        computeAndDisplayOverallTotal();
+    });
+
+    $("#BeamWidth").val($("#BeamLength").val());
+    $("#Beam").click(function(){
+        if($("#BeamThickness").val()<=0||$("#BeamWidth").val()<=0||$("#BeamLength").val()<=0||$("#BeamVolume").val()<=0||$("#ColumnSpacing").val()<=0){
+            alert("Invalid Input.");
+        }
+        else if($("#BeamThickness").val()==null&&$("#BeamWidth").val()==null&&$("#BeamLength").val()==null||$("#ColumnSpacing").val()== ull){
+            var concrete = ConcreteEsti( 1,1.6,1,$("#BeamCC").val(),1 );
+            var metal = metalica(4,0.5);
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,4,metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
+        }
+        else if($("#BeamThickness").val()!=null&&$("#BeamWidth").val()!=null&&$("#BeamLength").val()!=null&&$("#ColumnSpacing").val()!=null){
+            $("#BeamVolume").val( $("#BeamThickness").val() * $("#BeamWidth").val() * $("#BeamLength").val() );
+            var concrete = ConcreteEsti( 1,$("#BeamVolume").val(),1,$("#BeamCC").val(),1 );
+            var metal = metalica($("#BeamNoOfBars").val(),$("#BeamSpacing").val());
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,$("#BeamNoOfBars").val(),metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
+        
+        }
+        else {
+            alert("Please fill up the required fields");
+        }
+        var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,noofbars,tiebar,tiewire,costa,costb,costc){
+            //
+            var qty23 = $("#Quantity23").val();
+            qty23 += cementqty;
+            $("#Quantity23").val(qty23);
+            var cost23 = $("#Cost23").val();
+            cost23 += cementcost;
+            $("#Cost23").val(cost23);
+            var qty24 = $("#Quantity24").val();
+            qty24 += sandqty;
+            $("#Quantity24").val(qty24);
+            var cost24 = $("#Cost24").val();
+            cost24 += sandcost;
+            $("#Cost24").val(cost24);
+            var qty25 = $("#Quantity25").val();
+            qty25 += gravelqty;
+            $("#Quantity25").val(qty25);
+            var cost25 = $("#Cost25").val();
+            cost25 += gravelcost;
+            $("#Cost25").val(cost25);
+            var qty26 = $("#Quantity26").val();
+            qty26 += noofbars;
+            $("#Quantity26").val(qty26);
+            var cost26 = $("#Cost26").val();
+            cost26 += costa;
+            $("#Cost26").val(cost26);
+            var qty27 = $("#Quantity27").val();
+            qty27 += tiebar;
+            $("#Quantity5").val(qty27);
+            var cost27 = $("#Cost27").val();
+            cost27 += costb;
+            $("#Cost5").val(cost5);
+            var qty28 = $("#Quantity28").val();
+            qty28 += tiewire;
+            $("#Quantity28").val(qty28);
+            var cost28 = $("#Cost28").val();
+            cost28 += costb;
+            $("#Cost28").val(cost28);
+            var no = $("#HowManyBeams").val(  );
+            $("#HowManyBeams").val( no + 1 );
+            alert("Nagdagdag ka ng Beam");
+            computeAndDisplayOverallTotal();
+        }
+        
+        var metalica = function(noofbars,spacing){
+            //
+            var tiebar = Math.ceil( ( (Math.ceil($("#BeamThickness").val() / spacing) + 1) * (( $("#BeamWidth").val() * 2 ) + ( $("#BeamLength").val() * 2  )) ) / 6);
+            var tiewire = (((Math.ceil($("#BeamThickness").val() / spacing) + 1)*noofbars) * 0.4)/53 ;
+            var metals1 = DirectCountingEsti(noofbars,4);
+            var cost1 = metals1.total;
+            var metals2 = DirectCountingEsti(tiebar,5);
+            var cost2 = metals2.total;
+            var metals3 = DirectCountingEsti(tiewire,6);
+            var cost3 = metals3.total;
+            return{
+                tiebar: tiebar,
+                costb: cost2,
+                tiewire: tiewire,
+                costc: cost3,
+                costa: cost1
+            };
+        }
+    });
+
+    $("#WallFootingWidth").val($("#WallFootingLength").val());
+    $("#WallFooting").click(function(){
+
+        if($("#WallFootingThickness").val()<=0||$("#WallFootingWidth").val()<=0||$("#WallFootingLength").val()<=0||$("#WallFootingVolume").val()<=0||$("#WallFootingNoOfBars").val()<=0){
+            alert("Invalid Input.");
+        }
+        else if($("#WallFootingThickness").val()==null&&$("#WallFootingWidth").val()==null&&$("#WallFootingLength").val()==null||$("#WallFootingNoOfBars").val()==null){
+            var concrete = ConcreteEsti( 1,0.8,1,$("#WallFootingCC").val(),1 );
+            var metal = metalica(  );
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost);
+        }
+        else if($("#WallFootingThickness").val()!=null&&$("#WallFootingWidth").val()!=null&&$("#WallFootingLength").val()!=null||$("#WallFootingNoOfBars").val()!=null){
+            $("#WallFootingVolume").val( $("#WallFootingThickness").val() * $("#WallFootingWidth").val() * $("#WallFootingLength").val() );
+            var concrete = ConcreteEsti( 1,$("#WallFootingVolume").val(),1,$("#WallFootingCC").val(),1 );
+            var metal = metalica(  );
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metalica.qtya,metalica.tiewire,metalica.costb);
+        
+        }
+        else {
+            alert("Please fill up the required fields");
+        }
+        var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,qtya,costa,tiewire,costb){
+            //
+            var qty35 = $("#Quantity35").val();
+            qty35 += cementqty;
+            $("#Quantity35").val(qty35);
+            var cost35 = $("#Cost35").val();
+            cost35 += cementcost;
+            $("#Cost35").val(cost35);
+            var qty36 = $("#Quantity36").val();
+            qty36 += sandqty;
+            $("#Quantity36").val(qty36);
+            var cost36 = $("#Cost36").val();
+            cost36 += sandcost;
+            $("#Cost36").val(cost36);
+            var qty37 = $("#Quantity37").val();
+            qty37 += gravelqty;
+            $("#Quantity37").val(qty37);
+            var cost37 = $("#Cost37").val();
+            cost37 += gravelcost;
+            $("#Cost37").val(cost37);
+            var qty38 = $("#Quantity38").val();
+            qty38 += qtya;
+            $("#Quantity38").val(qty38);
+            var cost38 = $("#Cost38").val();
+            cost38 += costa;
+            $("#Cost38").val(cost38);
+            var qty39 = $("#Quantity39").val();
+            qty39 += tiewire;
+            $("#Quantity39").val(qty39);
+            var cost39 = $("#Cost39").val();
+            cost39 += costb;
+            $("#Cost39").val(cost39);
+            var no = $("#HowManyWallFootings").val(  );
+            $("#HowManyWallFootings").val( no + 1 );
+            alert("Nagdagdag ka ng WallFooting");
+            computeAndDisplayOverallTotal();
+        }
         
         var metalica = function(){
-            var mainbar = Math.ceil(($("#FootingWidth").val() - 0.15) * ($("#FootingNoOfBars").val()*2)/6) ;
-            var tiewire = (($("#FootingNoOfBars").val() * $("#FootingNoOfBars").val())*0.4)/53;
+            var mainbar = Math.ceil(($("#WallFootingWidth").val() - 0.15) * ($("#WallFootingNoOfBars").val()*2)/6) ;
+            var tiewire = (($("#WallFootingNoOfBars").val() * $("#WallFootingNoOfBars").val())*0.4)/53;
             var metals1 = DirectCountingEsti(mainbar,4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiewire,6);
@@ -5536,24 +5762,164 @@
         computeAndDisplayOverallTotal();
     });
 
-    $("#Beam").click(function(){
-
-        computeAndDisplayOverallTotal();
-    });
-
-    $("#WallFooting").click(function(){
-
-        computeAndDisplayOverallTotal();
-    });
-
+    
+    $("#RoofBeamWidth").val($("#RoofBeamLength").val());
     $("#RoofBeam").click(function(){
-
-        computeAndDisplayOverallTotal();
+        if($("#RoofBeamThickness").val()<=0||$("#RoofBeamWidth").val()<=0||$("#RoofBeamLength").val()<=0||$("#RoofBeamVolume").val()<=0||$("#ColumnSpacing").val()<=0){
+            alert("Invalid Input.");
+        }
+        else if($("#RoofBeamThickness").val()==null&&$("#RoofBeamWidth").val()==null&&$("#RoofBeamLength").val()==null||$("#ColumnSpacing").val()== ull){
+            var concrete = ConcreteEsti( 1,1.6,1,$("#RoofBeamCC").val(),1 );
+            var metal = metalica(4,0.5);
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,4,metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
+        }
+        else if($("#RoofBeamThickness").val()!=null&&$("#RoofBeamWidth").val()!=null&&$("#RoofBeamLength").val()!=null&&$("#ColumnSpacing").val()!=null){
+            $("#RoofBeamVolume").val( $("#RoofBeamThickness").val() * $("#RoofBeamWidth").val() * $("#RoofBeamLength").val() );
+            var concrete = ConcreteEsti( 1,$("#RoofBeamVolume").val(),1,$("#RoofBeamCC").val(),1 );
+            var metal = metalica($("#RoofBeamNoOfBars").val(),$("#RoofBeamSpacing").val());
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,$("#RoofBeamNoOfBars").val(),metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
+        
+        }
+        else {
+            alert("Please fill up the required fields");
+        }
+        var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,noofbars,tiebar,tiewire,costa,costb,costc){
+            //
+            var qty17 = $("#Quantity17").val();
+            qty17 += cementqty;
+            $("#Quantity17").val(qty17);
+            var cost17 = $("#Cost17").val();
+            cost17 += cementcost;
+            $("#Cost17").val(cost17);
+            var qty18 = $("#Quantity18").val();
+            qty18 += sandqty;
+            $("#Quantity18").val(qty18);
+            var cost18 = $("#Cost18").val();
+            cost18 += sandcost;
+            $("#Cost18").val(cost18);
+            var qty19 = $("#Quantity19").val();
+            qty19 += gravelqty;
+            $("#Quantity19").val(qty19);
+            var cost19 = $("#Cost19").val();
+            cost19 += gravelcost;
+            $("#Cost19").val(cost19);
+            var qty20 = $("#Quantity20").val();
+            qty20 += noofbars;
+            $("#Quantity20").val(qty20);
+            var cost20 = $("#Cost20").val();
+            cost20 += costa;
+            $("#Cost20").val(cost20);
+            var qty21 = $("#Quantity21").val();
+            qty21 += tiebar;
+            $("#Quantity5").val(qty21);
+            var cost21 = $("#Cost21").val();
+            cost21 += costb;
+            $("#Cost5").val(cost5);
+            var qty22 = $("#Quantity22").val();
+            qty22 += tiewire;
+            $("#Quantity22").val(qty22);
+            var cost22 = $("#Cost22").val();
+            cost22 += costb;
+            $("#Cost22").val(cost22);
+            var no = $("#HowManyRoofBeams").val(  );
+            $("#HowManyRoofBeams").val( no + 1 );
+            alert("Nagdagdag ka ng RoofBeam");
+            computeAndDisplayOverallTotal();
+        }
+        
+        var metalica = function(noofbars,spacing){
+            //
+            var tiebar = Math.ceil( ( (Math.ceil($("#RoofBeamThickness").val() / spacing) + 1) * (( $("#RoofBeamWidth").val() * 2 ) + ( $("#RoofBeamLength").val() * 2  )) ) / 6);
+            var tiewire = (((Math.ceil($("#RoofBeamThickness").val() / spacing) + 1)*noofbars) * 0.4)/53 ;
+            var metals1 = DirectCountingEsti(noofbars,4);
+            var cost1 = metals1.total;
+            var metals2 = DirectCountingEsti(tiebar,5);
+            var cost2 = metals2.total;
+            var metals3 = DirectCountingEsti(tiewire,6);
+            var cost3 = metals3.total;
+            return{
+                tiebar: tiebar,
+                costb: cost2,
+                tiewire: tiewire,
+                costc: cost3,
+                costa: cost1
+            };
+        }
     });
+
 
     $("#Masonry").click(function() {
-        
-        computeAndDisplayOverallTotal();
+        if( $("#CHBWidth").val(  )<=0 || $("#CHBLength").val(  )<=0 || $("#CHBMortarThickness").val(  )<=0 || $("#CHBPlasterThickness").val(  )<=0 ){
+            
+            alert("Invalid Inputs");
+        }
+        else if( $("#CHBWidth").val(  )==null || $("#CHBLength").val(  )==null || $("#CHBMortarThickness").val(  )==null || $("#CHBPlasterThickness").val(  )==null ){
+            //
+        }
+        else if( $("#CHBWidth").val(  )!=null || $("#CHBLength").val(  )!=null || $("#CHBMortarThickness").val(  )!=null || $("#CHBPlasterThickness").val(  )!=null ){
+            $("#CHBArea").val( $("#CHBWidth").val(  )*$("#CHBLength").val(  ) );
+            var chbqty = Math.ceil(($("#CHBWidth").val(  )*$("#CHBLength").val(  ))*12.5);
+            if( $("#CHBSize").val()==16 ){
+                var chbcost = DirectCountingEsti(chbqty,16);
+            } 
+            else{
+                var chbcost = DirectCountingEsti(chbqty,15);
+            }
+            var concrete1 = ConcreteEsti( 1,$("#CHBArea").val()*$("#CHBMortarThickness").val(),1,$("#CHBMortarMixture").val(),1 );
+            var concrete2 = ConcreteEsti( 1,$("#CHBArea").val()*$("#CHBPlasterThickness").val(),1,$("#CHBPlasterMixture").val(),1 );
+            var cementqty = concrete1.cementqty + concrete2.cementqty;
+            var cementcost = concrete1.cementcost + concrete2.cementcost;
+            var sandqty = concrete1.sandqty + concrete2.sandqty;
+            var sandcost = concrete1.sandcost + concrete2.sandcost;
+            panapos(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost);
+            //
+        }
+        else {
+            alert("Please fill up the required fields");
+        }
+        var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,noofbars,tiebar,tiewire,costa,costb,costc){
+            //
+            var qty40 = $("#Quantity40").val();
+            qty40 += cementqty;
+            $("#Quantity40").val(qty40);
+            var cost40 = $("#Cost40").val();
+            cost40 += cementcost;
+            $("#Cost40").val(cost40);
+            var qty41 = $("#Quantity41").val();
+            qty41 += sandqty;
+            $("#Quantity41").val(qty41);
+            var cost41 = $("#Cost41").val();
+            cost41 += sandcost;
+            $("#Cost41").val(cost41);
+            var qty42 = $("#Quantity42").val();
+            qty42 += gravelqty;
+            $("#Quantity42").val(qty42);
+            var cost42 = $("#Cost42").val();
+            cost42 += gravelcost;
+            $("#Cost42").val(cost42);
+            var qty43 = $("#Quantity43").val();
+            qty43 += noofbars;
+            $("#Quantity43").val(qty43);
+            var cost43 = $("#Cost43").val();
+            cost43 += costa;
+            $("#Cost43").val(cost43);
+            var qty44 = $("#Quantity44").val();
+            qty44 += tiebar;
+            $("#Quantity44").val(qty44);
+            var cost44 = $("#Cost44").val();
+            cost44 += costb;
+            $("#Cost44").val(cost44);
+            var qty45 = $("#Quantity45").val();
+            qty45 += tiewire;
+            $("#Quantity45").val(qty45);
+            var cost45 = $("#Cost45").val();
+            cost45 += costb;
+            $("#Cost45").val(cost45);
+            var no = $("#HowManyRoofBeams").val(  );
+            $("#HowManyRoofBeams").val( no + 1 );
+            alert("Nagdagdag ka ng RoofBeam");
+            computeAndDisplayOverallTotal();
+        }
     });
 
     $("#Roofing").click(function() {
