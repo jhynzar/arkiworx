@@ -84,7 +84,12 @@
       var selector = 'printPage' + pluginOptions.id;
 
       frames.printPage.focus();
-      frames.printPage.print();
+      if (document.queryCommandSupported("print")) {
+        frames[0].document.execCommand("print", false, null);
+      }
+      else {
+        frames.printPage.print();
+      }
       if(pluginOptions.showMessage){
         unloadMessage();
       }
