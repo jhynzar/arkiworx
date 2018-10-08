@@ -2802,7 +2802,7 @@
                              <div class="form-group form-inline">
                             <label >Area:</label>
                             <input type="number" class="form-control" disabled id="CHBArea" style="width: 100px !important;" placeholder="Optional" >
-                            <label >Width:</label>
+                            <label >Height:</label>
                             <input type="number" class="form-control" id="CHBWidth" style="width: 80px !important;" >
                             <label >Length:</label>
                             <input type="number" class="form-control" id="CHBLength" style="width: 80px !important;" >
@@ -2875,7 +2875,7 @@
                                 <label for="">Tie wire:</label>
                                 <select class="form-control" id="masonryTieWire" style="width: 220px !important;">
                                     <option value=30 selected>30 cm </option>
-                                    <option value=40>40 cm </option>
+                                    <!--<option value=40>40 cm </option>-->
                                     
                                 </select>
                             </div> 
@@ -2883,7 +2883,7 @@
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="CHBWallNo" style="width: 100px !important;">
+                                <label class="text text-danger"><b>No of Wall(s):</b> </label>&nbsp; <input type="number" disabled class="form-control" id="CHBWallNo" style="width: 100px !important;" value=9>
                                 <button type="button" id="Masonry" class="btn btn-primary" style="margin-left: 50px" >Compute</button>
                                  </div>
                         </div>
@@ -3031,78 +3031,17 @@
                         
                          <div class="card-block">
                              
-                   
-                             
-                          <div >
-                                <label for="">Volume:</label> <br>
-                            
-                                <input type="number" id="ColumnVolume" style="width: 160px !important;"> <label class="text text-default"> cu.m </label>
-                            
-                            </div>   
-                             <br> 
-                             <div class="form-group form-inline">
-                           
-                            <label >Thickness:</label>
-                            <input type="" class="form-control" id="ColumnThickness" style="width: 80px !important;" >
-                            <label >Width:</label>
-                            <input type="" class="form-control" id="ColumnWidth" style="width: 80px !important;" >
-                            <label >Length:</label>
-                            <input type="" class="form-control" id="ColumnLength" style="width: 80px !important;" >
-                                 <br> <br>
-                                      <div class="container" style="margin-left: -20px !important">
-                                        <H6 class="text text-primary">Metal Reinforcement</H6>
-                                    </div>
-                                 <br>
-                                 <div class="form-group">
-                                <label> Number of bars per Column:</label>
-                                <input type="number" id="ColumnNoOfBars" class="form-control"style="width: 100px !important;" >
-                            </div> <br> <br>
-                                 <div class="form-group form-inline pull-center">
-                                <label for="">Bar Length:</label>
-                                <select class="form-control" id="ColumnsBarLeng" style="width: 150px !important;">
-                                    <option value="6" selected>6 meters </option>
-                                    <!--<option value="7.5" >7.5 meters </option>
-                                    <option value="9" >9 meters </option>
-                                    <option value="12" >12 meters </option>-->
-                                </select>
-                                     <label for="">Bar Size:</label>
-                                <select class="form-control" id="ColumnsBarSize" style="width: 150px !important;">
-                                    <!--<option value=6>6 mm</option>
-                                    <option value=10>10 mm </option>-->
-                                    <option value=12 selected>12 mm </option>
-                                    <!--<option value=16>16 mm </option>
-                                    <option value=20>20 mm </option>
-                                    <option value=22>22 mm </option>
-                                    <option value=25>25 mm </option>-->
-                                </select>
-                            </div> <br> <br>
-                                 
-                                 
-                                 <div class="form-group form-inline pull-center">
-                                <label for="">Tie Bar Size:</label>
-                                <select class="form-control" id="ColumnsTieBarSize" style="width: 150px !important;">
-                                    <!--<option value=6>6 mm</option>-->
-                                    <option value=10 selected>10 mm </option>
-                                    <!--<option value=12>12 mm </option>
-                                    <option value=16>16 mm </option>
-                                    <option value=20>20 mm </option>
-                                    <option value=22>22 mm </option>
-                                    <option value=25>25 mm </option>-->
-                                </select>
-                                     <label for="">Tie wire:</label>
-                                <select class="form-control" id="ColumnsTieWire" style="width: 140px !important;">
-                                    <option value=30 selected>30 cm </option>
-                                    <option value=40>40 cm </option>
-                                    
-                                </select>
-                            </div> 
-                   
-                                 <br> <br>
-                                 <hr>
-                                 <div class="form-group form-inline">
-                                <label class="text text-default"><b>How many of these?: </b> </label>&nbsp; <input type="number" class="form-control" id="HowManyColumns" style="width: 100px !important;">
-                                <button type="button" id="Roofing" class="btn" style="margin-left: 90px" >Compute</button>
-                                 </div>
+                         <label for="">Roof Materials:</label>
+                        <select class="form-control" id="RoofMaterials" style="width: 350px !important;">
+                        <option value=17 selected> roof sheet w/ insullation </option>
+                        <option value=18> gutter </option>
+                        <option value=19> end flashing </option>
+                        <option value=20> flashing on firewall </option>
+                        <option value=21> fascia bd 1x10 </option>
+                        </select>
+                        <label for="">How many of this:</label>
+                        <input type="number" class="form-control" id="RoofMaterialQ" style="width: 60px !important;" placeholder="+">
+
                         </div>
                              
                              
@@ -3129,7 +3068,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 29)    
+                                        <!-- @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 29)    
                                         <tr class="table-success">
                                             <td id="RoofingCement"> {{ $record -> materialName }} </td> 
                                             <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
@@ -3168,6 +3107,43 @@
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 34)    
                                         <tr class="table-warning">
                                             <td id="RoofingTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                           
+                                        </tr>@endif @endforeach-->
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 45)    
+                                            <tr>
+                                            <td id="RoofingTieBar"> {{ $record -> materialName }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                       
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 46)    
+                                            <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
+                                            <tr class="table-success">
+                                            <td id="RoofingSteelBar"> {{ $record -> materialName }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                           
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 47)    
+                                        <tr class="table-warning">
+                                            <td id="RoofingTieWire"> {{ $record -> materialName }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                           
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 48)    
+                                            <tr>
+                                            <td id="RoofingTieBar"> {{ $record -> materialName }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                       
+                                        </tr>@endif @endforeach
+                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 49)    
+                                            <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
+                                            <tr class="table-success">
+                                            <td id="RoofingSteelBar"> {{ $record -> materialName }} </td>
                                             <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
                                             <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                            
@@ -3245,46 +3221,22 @@
                                                                         <div class="form-group form-inline">
 
 
-                                                                            <label>Analoc: </label>
+                                                                            <label>Add Window: </label>
                                                                             <br>
                                                                             <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> 1.2 x 1.2 </option>
-                                                                                <option> 1.6 x 1.2 </option>
-                                                                                <option> 0.6 x 1.2</option>
+                                                                                <option value=22 selected> 1.2 x 1.2 </option>
+                                                                                <option value=23> 1.6 x 1.2 </option>
+                                                                                <option value=24> 0.6 x 1.2</option>
 
                                                                             </select>
-
-                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
-
-
-                                                                            <br>
-                                                                            <br>
-
-                                                                            <label>Steel casement: </label>
-                                                                            <br>
-                                                                            <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> 0.8 x 1.2 </option>
-                                                                                <option> 0.7 x 1 </option>
-                                                                                <option> 0.6 x 2.1</option>
-                                                                            </select>
-                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
-
-
-
-
-
-
-
-
                                                                             <br>
                                                                             <br>
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-default">
-                                                                                    <b>How many of these? </b>
+                                                                                    <b>How many of this? </b>
                                                                                 </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    id="" style="width: 100px !important;">
+                                                                                <input type="number" class="form-control" id="" style="width: 100px !important;">
                                                                                 <button type="button" class="btn " id="Windows" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -3417,39 +3369,18 @@
 
                                                                             <label>Door Type: </label>
                                                                             <br>
-                                                                            <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> Panel Door </option>
-                                                                                <option> Analoc </option>
-                                                                                <option> Flush Door</option>
-                                                                                <option> Poly Door</option>
+                                                                            <select class="form-control" id="DoorMaterials" style="width: 300px !important;">
+                                                                                <option value=25 selected> Panel Door </option>
+                                                                                <option value=26 > Analoc </option>
+                                                                                <option value=27 > Flush Door</option>
+                                                                                <option value=28 > Door Stopper</option>
+                                                                                <option value=29 > Service Door Knob </option>
+                                                                                <option value=30 > Door Knob </option>
+                                                                                <option value=36 > Door Jamb </option>
                                                                             </select>
 
-                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
+                                                                            <input type="number" class="form-control" id="DoorMaterialQ" style="width: 60px !important;" placeholder="+">
 
-
-                                                                            <br>
-                                                                            <br>
-
-                                                                          
-                                                                          
-                                                                            
-                                                                            
-                                                                            <label>Door Accessories: </label>
-                                                                            <br>
-                                                                            <select class="form-control" id="" style="width: 300px !important;">
-                                                                                <option selected> Door Knob </option>
-                                                                                <option> Door Stopper </option>
-                                                                                <option> Lock Set</option>
-                                                                                <option> Door Closer</option>
-                                                                            </select>
-
-                                                                            <input type="number" class="form-control" id="" style="width: 60px !important;" placeholder="+">
-
-
-                                                                            <br>
-                                                                            <br>
-                                                                            
-                                                                           
                                                                             <hr>
                                                                             <div class="form-group form-inline">
 
@@ -4150,6 +4081,7 @@
                                                                         <div class="form-group form-inline">
 
 
+                             <label for="">Electrical Materials:</label>
                                                                             <select class="form-control" id="ElectricalWorksMaterials" style="width: 350px !important;">
                                                                                 <option value=43 selected> #14 THHN </option>
                                                                                 <option value=44> #12 THHN </option>
@@ -4176,6 +4108,7 @@
                                                                          
                                                                       
                                                                            
+                             <label for="">How many of this:</label>
 
                                                                          <input type="number" class="form-control" id="ElectricalWorksMaterialQ" style="width: 60px !important;" placeholder="+">
 
@@ -5858,12 +5791,26 @@
         }
         else if( $("#CHBWidth").val(  )!=null || $("#CHBLength").val(  )!=null || $("#CHBMortarThickness").val(  )!=null || $("#CHBPlasterThickness").val(  )!=null ){
             $("#CHBArea").val( $("#CHBWidth").val(  )*$("#CHBLength").val(  ) );
+            var chbcost1 = 0;
+            var chbcost2 = 0;
             var chbqty = Math.ceil(($("#CHBWidth").val(  )*$("#CHBLength").val(  ))*12.5);
             if( $("#CHBSize").val()==16 ){
-                var chbcost = DirectCountingEsti(chbqty,16);
+                chbcost1 = DirectCountingEsti(chbqty,16);
+                var qty43 = $("#Quantity43").val();
+                qty43 += chbqty;
+                $("#Quantity43").val(qty43);
+                var cost43 = $("#Cost43").val();
+                cost43 += chbcost1.total;
+                $("#Cost43").val(cost43);
             } 
             else{
-                var chbcost = DirectCountingEsti(chbqty,15);
+                chbcost2 = DirectCountingEsti(chbqty,15);
+                var qty44 = $("#Quantity44").val();
+                qty44 += chbqty;
+                $("#Quantity44").val(qty44);
+                var cost44 = $("#Cost44").val();
+                cost44 += chbcost2.total;
+                $("#Cost44").val(cost44);
             }
             var concrete1 = ConcreteEsti( 1,$("#CHBArea").val()*$("#CHBMortarThickness").val(),1,$("#CHBMortarMixture").val(),1 );
             var concrete2 = ConcreteEsti( 1,$("#CHBArea").val()*$("#CHBPlasterThickness").val(),1,$("#CHBPlasterMixture").val(),1 );
@@ -5871,13 +5818,14 @@
             var cementcost = concrete1.cementcost + concrete2.cementcost;
             var sandqty = concrete1.sandqty + concrete2.sandqty;
             var sandcost = concrete1.sandcost + concrete2.sandcost;
-            panapos(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost);
+            var metals = metalica();
+            panapos(cementqty,cementcost,sandqty,sandcost,metals.mainbar,metals.cost1,metals.tiebar,metals.cost2 );
             //
         }
         else {
             alert("Please fill up the required fields");
         }
-        var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,noofbars,tiebar,tiewire,costa,costb,costc){
+        var panapos = function(cementqty,cementcost,sandqty,sandcost,noofbars,costa,tiewire,costb){
             //
             var qty40 = $("#Quantity40").val();
             qty40 += cementqty;
@@ -5892,49 +5840,308 @@
             cost41 += sandcost;
             $("#Cost41").val(cost41);
             var qty42 = $("#Quantity42").val();
-            qty42 += gravelqty;
+            qty42 += noofbars;
             $("#Quantity42").val(qty42);
             var cost42 = $("#Cost42").val();
-            cost42 += gravelcost;
+            cost42 += costa;
             $("#Cost42").val(cost42);
-            var qty43 = $("#Quantity43").val();
-            qty43 += noofbars;
-            $("#Quantity43").val(qty43);
-            var cost43 = $("#Cost43").val();
-            cost43 += costa;
-            $("#Cost43").val(cost43);
-            var qty44 = $("#Quantity44").val();
-            qty44 += tiebar;
-            $("#Quantity44").val(qty44);
-            var cost44 = $("#Cost44").val();
-            cost44 += costb;
-            $("#Cost44").val(cost44);
             var qty45 = $("#Quantity45").val();
             qty45 += tiewire;
             $("#Quantity45").val(qty45);
             var cost45 = $("#Cost45").val();
             cost45 += costb;
             $("#Cost45").val(cost45);
-            var no = $("#HowManyRoofBeams").val(  );
-            $("#HowManyRoofBeams").val( no + 1 );
-            alert("Nagdagdag ka ng RoofBeam");
+            var no = $("#CHBWallNo").val(  );
+            $("#CHBWallNo").val( no + 1 );
+            alert("Nagdagdag ka ng Wall");
             computeAndDisplayOverallTotal();
+        }
+        var metalica = function(){
+            var qtybars = (($("#masonryBarSize").val()/$("#CHBLength").val())+1)*(($("#masonryBarLayer").val()/$("#CHBWidth").val())+1);
+            var metals1 = DirectCountingEsti(qtybars,14);
+            var cost1 = metals1.total;
+            var tie;
+            if( $("#masonryBarSize").val()==40 ){
+                if($("#masonryBarLayer").val()==2){
+                    tie = 17;
+                }
+                else if($("#masonryBarLayer").val()==3){
+                    tie = 18;
+                }
+                else if($("#masonryBarLayer").val()==4){
+                    tie = 19;
+                }
+            }
+            else if( $("#masonryBarSize").val()==60 ){
+                if($("#masonryBarLayer").val()==2){
+                    tie = 20;
+                }
+                else if($("#masonryBarLayer").val()==3){
+                    tie = 21;
+                }
+                else if($("#masonryBarLayer").val()==4){
+                    tie = 22;
+                }
+            }
+            else if( $("#masonryBarSize").val()==80 ){
+                if($("#masonryBarLayer").val()==2){
+                    tie = 23;
+                }
+                else if($("#masonryBarLayer").val()==3){
+                    tie = 24;
+                }
+                else if($("#masonryBarLayer").val()==4){
+                    tie = 25;
+                }
+            }
+            var formulas = searchValues(tie,20,W);
+            var tiebar = $("#CHBArea").val( )*formulas.Answer;
+            var metals2 = DirectCountingEsti(tiebar,6);
+            var cost2 = metals2.total;
+            return {
+                mainbar : qtybars,
+                cost1 : cost1,
+                tiebar : tiebar,
+                cost2 : cost2
+            };
         }
     });
 
-    $("#Roofing").click(function() {
+    $("#Roofing").click(function(){
+        if($("#RoofMaterialQ").val()==null||$("#RoofMaterialQ").val()<=0){
+            //
+        }
+        else{
+        var count = DirectCountingEsti( $("#RoofMaterialQ").val(),$("#RoofMaterials").val() );
+        var cost = count.total;
+
+        if($("#RoofMaterials").val()==17){
+            var qty = $("#Quantity45").val();
+            cost += $("#Cost45").val();
+            qty += $("#RoofMaterialQ").val();
+            $("#Quantity45").val(qty);
+            $("#Cost45").val(total);
+        }
+
+        else if($("#RoofMaterials").val()==18){
+            var qty = $("#Quantity46").val();
+            cost += $("#Cost46").val();
+            qty += $("#RoofMaterialQ").val();
+            $("#Quantity46").val(qty);
+            $("#Cost46").val(total);
+        }
+
+        else if($("#RoofMaterials").val()==19){
+            var qty = $("#Quantity47").val();
+            cost += $("#Cost47").val();
+            qty += $("#RoofMaterialQ").val();
+            $("#Quantity47").val(qty);
+            $("#Cost47").val(total);
+        }
+
+        else if($("#RoofMaterials").val()==20){
+            var qty = $("#Quantity48").val();
+            cost += $("#Cost48").val();
+            qty += $("#RoofMaterialQ").val();
+            $("#Quantity48").val(qty);
+            $("#Cost48").val(total);
+        }
+
+        else if($("#RoofMaterials").val()==21){
+            var qty = $("#Quantity49").val();
+            cost += $("#Cost49").val();
+            qty += $("#RoofMaterialQ").val();
+            $("#Quantity49").val(qty);
+            $("#Cost49").val(total);
+        }
+            alert("Nagdagdag ka ng Material sa Roofing");
+            computeAndDisplayOverallTotal();
+}
+        /*if($("#RoofingThickness").val()<=0||$("#RoofingWidth").val()<=0||$("#RoofingLength").val()<=0||$("#RoofingVolume").val()<=0){
+            alert("Invalid Input.");
+        }
+        else if($("#RoofingThickness").val()==null&&$("#RoofingWidth").val()==null&&$("#RoofingLength").val()==null){
+            var concrete = ConcreteEsti( 1,1.6,1,$("#RoofingCC").val(),1 );
+            var metal = metalica(4,0.5);
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,4,metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
+        }
+        else if($("#RoofingThickness").val()!=null&&$("#RoofingWidth").val()!=null&&$("#RoofingLength").val()!=null){
+            $("#RoofingVolume").val( $("#RoofingThickness").val() * $("#RoofingWidth").val() * $("#RoofingLength").val() );
+            var concrete = ConcreteEsti( 1,$("#RoofingVolume").val(),1,$("#RoofingCC").val(),1 );
+            var mmetal = metalica($("#RoofingNoOfBars").val(),0.192);
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,$("#RoofingNoOfBars").val(),metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
         
-        computeAndDisplayOverallTotal();
+        }
+        else {
+            alert("Please fill up the required fields");
+        }
+        var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,noofbars,tiebar,tiewire,costa,costb,costc){
+            //
+            var qty29 = $("#Quantity29").val();
+            qty29 += cementqty;
+            $("#Quantity29").val(qty29);
+            var cost29 = $("#Cost29").val();
+            cost29 += cementcost;
+            $("#Cost29").val(cost29);
+            var qty30 = $("#Quantity30").val();
+            qty30 += sandqty;
+            $("#Quantity30").val(qty30);
+            var cost30 = $("#Cost30").val();
+            cost30 += sandcost;
+            $("#Cost30").val(cost30);
+            var qty31 = $("#Quantity31").val();
+            qty31 += gravelqty;
+            $("#Quantity31").val(qty31);
+            var cost31 = $("#Cost31").val();
+            cost31 += gravelcost;
+            $("#Cost31").val(cost31);
+            var qty32 = $("#Quantity32").val();
+            qty32 += noofbars;
+            $("#Quantity32").val(qty32);
+            var cost32 = $("#Cost32").val();
+            cost32 += costa;
+            $("#Cost32").val(cost32);
+            var qty33 = $("#Quantity33").val();
+            qty33 += tiebar;
+            $("#Quantity33").val(qty33);
+            var cost33 = $("#Cost33").val();
+            cost33 += costb;
+            $("#Cost33").val(cost33);
+            var qty34 = $("#Quantity34").val();
+            qty34 += tiewire;
+            $("#Quantity34").val(qty34);
+            var cost34 = $("#Cost34").val();
+            cost34 += costb;
+            $("#Cost34").val(cost34);
+            var no = $("#HowManyRoofings").val(  );
+            $("#HowManyRoofings").val( no + 1 );
+            alert("Nagdagdag ka ng Roofing");
+            computeAndDisplayOverallTotal();
+        }
+        
+        var metalica = function(noofbars,spacing){
+            //
+            var tiebar = Math.ceil( ( (Math.ceil($("#RoofingThickness").val() / spacing) + 1) * (( $("#RoofingWidth").val() * 2 ) + ( $("#RoofingLength").val() * 2  )) ) / 6);
+            var tiewire = (((Math.ceil($("#RoofingThickness").val() / spacing) + 1)*noofbars) * 0.4)/53 ;
+            var metals1 = DirectCountingEsti(noofbars,4);
+            var cost1 = metals1.total;
+            var metals2 = DirectCountingEsti(tiebar,5);
+            var cost2 = metals2.total;
+            var metals3 = DirectCountingEsti(tiewire,6);
+            var cost3 = metals3.total;
+            return{
+                tiebar: tiebar,
+                costb: cost2,
+                tiewire: tiewire,
+                costc: cost3,
+                costa: cost1
+            };
+        }*/
     });
 
     $("#Windows").click(function() {
-        
-        computeAndDisplayOverallTotal();
+        if($("#WindowMaterialQ").val()==null||$("#WindowMaterialQ").val()<=0){
+            //
+        }
+        else{
+        var count = DirectCountingEsti( $("#WindowMaterialQ").val(),$("#WindowMaterials").val() );
+        var cost = count.total;
+
+        if($("#WindowMaterials").val()==22){
+            var qty = $("#Quantity88").val();
+            cost += $("#Cost88").val();
+            qty += $("#WindowMaterialQ").val();
+            $("#Quantity88").val(qty);
+            $("#Cost88").val(total);
+        }
+
+        else if($("#WindowMaterials").val()==23){
+            var qty = $("#Quantity89").val();
+            cost += $("#Cost89").val();
+            qty += $("#WindowMaterialQ").val();
+            $("#Quantity89").val(qty);
+            $("#Cost89").val(total);
+        }
+
+        else if($("#WindowMaterials").val()==24){
+            var qty = $("#Quantity90").val();
+            cost += $("#Cost90").val();
+            qty += $("#WindowMaterialQ").val();
+            $("#Quantity90").val(qty);
+            $("#Cost90").val(total);
+        }
+            alert("Nagdagdag ka ng Material sa Window");
+            computeAndDisplayOverallTotal();
+    }
     });
 
     $("#Doors").click(function() {
-        
-        computeAndDisplayOverallTotal();
+        if($("#DoorMaterialQ").val()==null||$("#DoorMaterialQ").val()<=0){
+            
+            alert("Invalid Input");
+        }
+        else{
+        var count = DirectCountingEsti( $("#DoorMaterialQ").val(),$("#DoorMaterials").val() );
+        var cost = count.total;
+
+        if($("#DoorMaterials").val()==25){
+            var qty = $("#Quantity91").val();
+            cost += $("#Cost91").val();
+            qty += $("#DoorMaterialQ").val();
+            $("#Quantity91").val(qty);
+            $("#Cost91").val(total);
+        }
+
+        else if($("#DoorMaterials").val()==26){
+            var qty = $("#Quantity92").val();
+            cost += $("#Cost92").val();
+            qty += $("#DoorMaterialQ").val();
+            $("#Quantity92").val(qty);
+            $("#Cost92").val(total);
+        }
+
+        else if($("#DoorMaterials").val()==27){
+            var qty = $("#Quantity93").val();
+            cost += $("#Cost93").val();
+            qty += $("#DoorMaterialQ").val();
+            $("#Quantity93").val(qty);
+            $("#Cost93").val(total);
+        }
+
+        else if($("#DoorMaterials").val()==28){
+            var qty = $("#Quantity94").val();
+            cost += $("#Cost94").val();
+            qty += $("#DoorMaterialQ").val();
+            $("#Quantity94").val(qty);
+            $("#Cost94").val(total);
+        }
+
+        else if($("#DoorMaterials").val()==29){
+            var qty = $("#Quantity95").val();
+            cost += $("#Cost95").val();
+            qty += $("#DoorMaterialQ").val();
+            $("#Quantity95").val(qty);
+            $("#Cost95").val(total);
+        }
+
+        else if($("#DoorMaterials").val()==30){
+            var qty = $("#Quantity96").val();
+            cost += $("#Cost96").val();
+            qty += $("#DoorMaterialQ").val();
+            $("#Quantity96").val(qty);
+            $("#Cost96").val(total);
+        }
+
+        else if($("#DoorMaterials").val()==36){
+            var qty = $("#Quantity97").val();
+            cost += $("#Cost97").val();
+            qty += $("#DoorMaterialQ").val();
+            $("#Quantity97").val(qty);
+            $("#Cost97").val(total);
+        }
+            alert("Nagdagdag ka ng Material sa Door");
+            computeAndDisplayOverallTotal();
+        }
     });
 
     $("#PaintCeiling").click(function() {
@@ -5948,6 +6155,11 @@
     });
 
     $("#ElectricalWorks").click(function() {
+        if($("#ElectricalWorksMaterialQ").val()<=0||$("#ElectricalWorksMaterialQ").val()==null){
+            
+            alert("Invalid Input");
+        }
+        else{
         var count = DirectCountingEsti( $("#ElectricalWorksMaterialQ").val(),$("#ElectricalWorksMaterials").val() );
         var cost = count.total;
 
@@ -6032,10 +6244,15 @@
         }
 
         computeAndDisplayOverallTotal();
+    }
     });
 
     $("#Tiles").click(function() {
-        
+        if($("#TileWidth").val()<=0||$("#TileLength").val()<=0||$("#TileWidth").val()==null||$("#TileLength").val()==null){
+            
+            alert("Invalid Input");
+        }
+        else{
         var TileArea = $("#TileWidth").val() * $("#TileLength").val();
         var tileClass = $("#TileClass").val();
         var totalTiles;
@@ -6260,6 +6477,7 @@
         }
 
         computeAndDisplayOverallTotal();
+    }
     });
 
 
