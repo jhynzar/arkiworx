@@ -375,11 +375,6 @@
 
 
 
-            <div >
-               
-                <button type="button" id="reports" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: 10px; margin-top: 50px">
-                    <i class="icon-eye"> </i>Show Reports</button>
-            </div>
 
 
 

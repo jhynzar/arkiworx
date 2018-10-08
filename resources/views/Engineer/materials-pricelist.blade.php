@@ -502,6 +502,7 @@
                                 <table class="table table-hover ">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th style="color: black">#</th>
                                             <th style="color: black">Description</th>
 
@@ -511,7 +512,7 @@
 
                                             </th>
                                             <th>
-                                                <span class="text text-info">&nbsp; &nbsp; Action</span>
+                                             
                                             </th>
                                             <th></th>
 
@@ -525,6 +526,7 @@
 
                                         @foreach ($materials as $key=>$material)
                                         <tr class=@if (($key+1)%2==0) "table-active" @endif>
+                                           <td></td>
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $material->strMaterialName}}</td>
 
@@ -540,9 +542,7 @@
 
                                             <td>
 
-                                                <button data-toggle="modal" data-target="#deleteMaterial" class="btn btn-danger pull-right text-right " title="Delete">
-                                                    <i class="icofont icofont-ui-delete"> </i>
-                                                </button>
+                                                
 
 
                                             </td>
