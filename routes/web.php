@@ -70,6 +70,8 @@ Route::middleware(['auth'])->group(function(){
 
         Route::post('Admin/Projects','ProjectsController@store');
 
+        Route::get('Admin/Projects/Reports','ProjectsController@reports');
+
         Route::patch('Admin/Projects/{id}','ProjectsController@update'); //change from approval to finished
 
         Route::post('Admin/Projects/{id}/Delete','ProjectsController@delete'); //change from approval to finished
