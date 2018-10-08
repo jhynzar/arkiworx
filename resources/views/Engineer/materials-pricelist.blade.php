@@ -1083,7 +1083,7 @@
     $("#reports").printPage({
         url: "/Engineer/Materials-Pricelist/Reports",
         attr: "href",
-        message:"Your document is being created"
+        message: "Your document is being created"
     })
 </script>
 @endsection
