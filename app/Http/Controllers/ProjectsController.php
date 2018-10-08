@@ -631,4 +631,8 @@ class ProjectsController extends Controller
         //dd($allProjectSchedulesWithPhases);
         return view ('Admin/project-progress-schedule',compact(['allProjectSchedulesWithPhases']));
     }
+
+    public function reports(){
+        return view('Admin/reports-projects');
+    }
 }

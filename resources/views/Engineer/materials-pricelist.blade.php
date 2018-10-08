@@ -345,7 +345,7 @@
                     <br>
                     <div class="form-group">
                         <label for="materialDesc">Description:</label>
-                        <input type="text" class="form-control" id="materialDesc" name="materialDesc" required/>
+                        <input type="text" class="form-control" name="materialDesc" required/>
                     </div>
                     <br>
                     <div class="form-group form-inline">
@@ -464,10 +464,13 @@
 
 
             <!-- Add User Modal Button trigger-->
-               <div >
+            <div >
                
-                <button type="button" data-toggle="modal" data-target="#" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: -610px; margin-top: 110px">
+                <button type="button" id="reports" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: -610px; margin-top: 110px">
                     <i class="icon-eye"> </i>Show Reports</button>
+                 <button type="button" data-toggle="modal" data-target="#reportDateModal" class="btn btn-primary waves-effect waves-light" >
+                    <i class="icon-plus"> </i>modal</button>
+                
             </div>
             <div class="col-sm-3 pull-right">
                <br> <br> <br>
@@ -570,14 +573,14 @@
                                                         <form action="Materials-Pricelist/{{$material->intMaterialId}}" method="POST">
                                                             <input type="hidden" name="_method" value="PATCH"> {{ csrf_field() }}
                                                             <!-- key for updating -->
-                                                            <input id="materialIdToUpdateInput" name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
+                                                            <input name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
                                                             
                                                           
                                                             <div class="form-group form-inline">
                                                                 <label for="updatePrice">Current Price:</label>
-                                                                <input type="text" class="form-control" id="" name="" value="{{ $material->latestPrice}}" style="width: 130px !important;" disabled> 
+                                                                <input type="text" class="form-control" name="" value="{{ $material->latestPrice}}" style="width: 130px !important;" disabled> 
                                                                &nbsp; &nbsp;  <label for="updatePrice">New Price:</label> 
-                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" style="width: 130px !important;">
+                                                                <input type="text" class="form-control" name="materialPriceUpdate" style="width: 130px !important;">
                                                             </div>
 
 
@@ -627,7 +630,7 @@
                                                             <br>
                                                             <div class="form-group">
                                                                 <label for="materialDesc">Description:</label>
-                                                                <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;" value="{{$material->strMaterialName}}" disabled>
+                                                                <input type="text" class="form-control" style="width: 300px !important;" value="{{$material->strMaterialName}}" disabled>
 
                                                             </div>
 
@@ -661,7 +664,7 @@
 
                                                             <div class="form-group form-inline">
                                                                 <label for="materialPrice">Unit:</label>
-                                                                <input type="text" class="form-control" id="" style="width: 120px !important;" value="{{$material->strUnit}}" disabled>
+                                                                <input type="text" class="form-control" style="width: 120px !important;" value="{{$material->strUnit}}" disabled>
                                                                 <label for="materialPrice">Price:</label>
                                                                 <input type="text" class="form-control" id="priceHistoryPriceInput{{$key}}" style="width: 120px !important;" value="" placeholder="₱" disabled>
                                                             </div>
@@ -724,6 +727,83 @@
             </div>
         </div>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="modal fade" id="reportDateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content pull-center">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        <h4 class="modal-title" id="myModalLabel">
+                                                            <span class="label label-info">Materials Report Date</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+
+
+
+                                                        <form action="" method="POST">
+                                                            
+                                                          
+                                                            <input name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
+                                                            
+                                                          
+                                                            <div class="form-group form-inline pull-center text-center">
+                                                                <label for="">Date as of:</label> &nbsp;
+                                                               <select class="form-control" style="width: 200px">
+                                                                   <option selected> 12/8/18 </option>
+                                                                   <option> 12/7/18</option>
+                                                                </select>
+                                                            </div>
+
+
+                                                            <div class="modal-footer">
+
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 260px">
+                                                                    <i class="icon icon-close"> </i>Cancel</button>
+
+                                                            </div>
+                                                        </form>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     <!-- delete material modal -->
@@ -956,7 +1036,7 @@
                     <br>
                     <div class="form-group">
                         <label for="user">User Name:</label>
-                        <input type="text" class="form-control" id="lname" placeholder="User name">
+                        <input type="text" class="form-control" id="uname" placeholder="User name">
                     </div>
 
                     <div class="form-group">
@@ -1055,14 +1135,6 @@
 
 @endsection @section('script')
 <script>
-    $('#updatePrice').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var idToUpdate = button.data('idToUpdate') // Extract info from data-* attributes
-        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-        var modal = $(this)
-        modal.find('.modal-body #materialIdToUpdate').val(idToUpdate)
-    })
 
 /*  //pricehistoryDatetimeSelect onChange Listener
     $('#priceHistoryDatetimeSelect').on('change',function(){
@@ -1075,5 +1147,15 @@
     }
 
 
+</script>
+
+<script src="/js/jQuery-printPage/jquery.printPage.js"></script>
+
+<script>
+    $("#reports").printPage({
+        url: "/Engineer/Materials-Pricelist/Reports",
+        attr: "href",
+        message: "Your document is being created"
+    })
 </script>
 @endsection

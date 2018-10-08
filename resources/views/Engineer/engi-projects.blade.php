@@ -377,7 +377,7 @@
 
             <div >
                
-                <button type="button" data-toggle="modal" data-target="#" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: 10px; margin-top: 50px">
+                <button type="button" id="reports" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: 10px; margin-top: 50px">
                     <i class="icon-eye"> </i>Show Reports</button>
             </div>
 
@@ -534,4 +534,15 @@
 <!-- Container-fluid ends -->
 </div>
 </div>
-@endsection @section('script') @endsection
+@endsection 
+@section('script') 
+    <script src="/js/jQuery-printPage/jquery.printPage.js"></script>
+
+    <script>
+        $("#reports").printPage({
+            url: "/Engineer/Engineer-Projects/Reports",
+            attr: "href",
+            message: "Your document is being created"
+        })
+    </script>
+@endsection

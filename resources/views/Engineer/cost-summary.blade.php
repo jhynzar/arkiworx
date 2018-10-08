@@ -356,21 +356,13 @@
 
                 </div>
 
-
-
-
-
-
-
-
-
-
-
-           
-
-
-
              
+            </div>
+            
+             <div >
+               
+                <button type="button" id="reports" class="btn btn-primary waves-effect waves-light" style="margin-left: 900px; margin-top: -50px">
+                    <i class="icon-eye"> </i>Show Reports</button>        
             </div>
             <!-- Header end -->
 

@@ -70,6 +70,8 @@ Route::middleware(['auth'])->group(function(){
 
         Route::post('Admin/Projects','ProjectsController@store');
 
+        Route::get('Admin/Projects/Reports','ProjectsController@reports');
+
         Route::patch('Admin/Projects/{id}','ProjectsController@update'); //change from approval to finished
 
         Route::post('Admin/Projects/{id}/Delete','ProjectsController@delete'); //change from approval to finished
@@ -100,6 +102,8 @@ Route::middleware(['auth'])->group(function(){
         Route::get('Engineer/Home', 'EngineerHomeController@index');
 
         Route::get('Engineer/Engineer-Projects','EngineerProjectsController@index');
+
+        Route::get('Engineer/Engineer-Projects/Reports','EngineerProjectsController@reports');
 
         Route::get('/Engineer/Engineer-Projects/{id}/Cost-Summary','CostSummaryController@index');
 
@@ -148,6 +152,8 @@ Route::middleware(['auth'])->group(function(){
         Route::post('Engineer/Materials-Pricelist/Create', 'MaterialsController@store');
 
         Route::patch('Engineer/Materials-Pricelist/{id}','MaterialsController@update');
+
+        Route::get('Engineer/Materials-Pricelist/Reports','MaterialsController@reports');
 
         Route::get('Engineer/Project-Progress', 'ProjectProgressController@index');
 
