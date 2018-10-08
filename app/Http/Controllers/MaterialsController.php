@@ -185,4 +185,8 @@ class MaterialsController extends Controller
     {
         //
     }
+
+    public function reports(){
+        return view('Engineer/reports-materials-pricelist');
+    }
 }

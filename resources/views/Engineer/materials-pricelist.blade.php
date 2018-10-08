@@ -464,9 +464,9 @@
 
 
             <!-- Add User Modal Button trigger-->
-               <div >
+            <div >
                
-                <button type="button" data-toggle="modal" data-target="#" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: -610px; margin-top: 110px">
+                <button type="button" id="reports" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: -610px; margin-top: 110px">
                     <i class="icon-eye"> </i>Show Reports</button>
             </div>
             <div class="col-sm-3 pull-right">
@@ -1075,5 +1075,15 @@
     }
 
 
+</script>
+
+<script src="/js/jQuery-printPage/jquery.printPage.js"></script>
+
+<script>
+    $("#reports").printPage({
+        url: "/Engineer/Materials-Pricelist/Reports",
+        attr: "href",
+        message:"Your document is being created"
+    })
 </script>
 @endsection
