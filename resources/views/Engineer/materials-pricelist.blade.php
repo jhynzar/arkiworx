@@ -345,7 +345,7 @@
                     <br>
                     <div class="form-group">
                         <label for="materialDesc">Description:</label>
-                        <input type="text" class="form-control" id="materialDesc" name="materialDesc" required/>
+                        <input type="text" class="form-control" name="materialDesc" required/>
                     </div>
                     <br>
                     <div class="form-group form-inline">
@@ -570,14 +570,14 @@
                                                         <form action="Materials-Pricelist/{{$material->intMaterialId}}" method="POST">
                                                             <input type="hidden" name="_method" value="PATCH"> {{ csrf_field() }}
                                                             <!-- key for updating -->
-                                                            <input id="materialIdToUpdateInput" name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
+                                                            <input name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
                                                             
                                                           
                                                             <div class="form-group form-inline">
                                                                 <label for="updatePrice">Current Price:</label>
-                                                                <input type="text" class="form-control" id="" name="" value="{{ $material->latestPrice}}" style="width: 130px !important;" disabled> 
+                                                                <input type="text" class="form-control" name="" value="{{ $material->latestPrice}}" style="width: 130px !important;" disabled> 
                                                                &nbsp; &nbsp;  <label for="updatePrice">New Price:</label> 
-                                                                <input type="text" class="form-control" id="materialPriceUpdate" name="materialPriceUpdate" style="width: 130px !important;">
+                                                                <input type="text" class="form-control" name="materialPriceUpdate" style="width: 130px !important;">
                                                             </div>
 
 
@@ -627,7 +627,7 @@
                                                             <br>
                                                             <div class="form-group">
                                                                 <label for="materialDesc">Description:</label>
-                                                                <input type="text" class="form-control" id="materialDesc" style="width: 300px !important;" value="{{$material->strMaterialName}}" disabled>
+                                                                <input type="text" class="form-control" style="width: 300px !important;" value="{{$material->strMaterialName}}" disabled>
 
                                                             </div>
 
@@ -661,7 +661,7 @@
 
                                                             <div class="form-group form-inline">
                                                                 <label for="materialPrice">Unit:</label>
-                                                                <input type="text" class="form-control" id="" style="width: 120px !important;" value="{{$material->strUnit}}" disabled>
+                                                                <input type="text" class="form-control" style="width: 120px !important;" value="{{$material->strUnit}}" disabled>
                                                                 <label for="materialPrice">Price:</label>
                                                                 <input type="text" class="form-control" id="priceHistoryPriceInput{{$key}}" style="width: 120px !important;" value="" placeholder="₱" disabled>
                                                             </div>
@@ -956,7 +956,7 @@
                     <br>
                     <div class="form-group">
                         <label for="user">User Name:</label>
-                        <input type="text" class="form-control" id="lname" placeholder="User name">
+                        <input type="text" class="form-control" id="uname" placeholder="User name">
                     </div>
 
                     <div class="form-group">
@@ -1055,14 +1055,6 @@
 
 @endsection @section('script')
 <script>
-    $('#updatePrice').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var idToUpdate = button.data('idToUpdate') // Extract info from data-* attributes
-        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-        var modal = $(this)
-        modal.find('.modal-body #materialIdToUpdate').val(idToUpdate)
-    })
 
 /*  //pricehistoryDatetimeSelect onChange Listener
     $('#priceHistoryDatetimeSelect').on('change',function(){
