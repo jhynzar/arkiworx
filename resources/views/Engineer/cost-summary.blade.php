@@ -102,10 +102,10 @@
                     <li class="dropdown">
                         <a href="/Engineer/Accounts-Settings">
                             <span>
-                                <img class="img-circle " src="/assets/images/erwin.png" style="width:40px;" alt="User Image">
+                                <img class="img-circle " src="/assets/images/avatar-2.png" style="width:40px;" alt="User Image">
                             </span>
                             <span>
-                                <b>Erwin</b>Andres</span>
+                                <b> {{session("fname")}}</b> {{session("lname")}}</span>
 
                         </a>
 
@@ -202,13 +202,13 @@
                 <br>
                 <br>
                 <div class="f-left image">
-                    <img src="/assets/images/erwin.png" alt="User Image" class="img-circle">
+                    <img src="/assets/images/avatar-2.png" alt="User Image" class="img-circle">
                 </div>
                 <div class="f-left info">
                     <br>
                     <br>
                     <p>
-                        <b>Erwin</b>
+                        <b> {{session("fname")}}</b>
                     </p>
                     <p class="designation">
                         <span class="text-info">
