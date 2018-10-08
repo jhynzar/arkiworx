@@ -187,6 +187,30 @@ class MaterialsController extends Controller
     }
 
     public function reports(){
-        return view('Engineer/reports-materials-pricelist');
+        $materials = DB::select(
+            '
+            SELECT *
+            FROM (
+                SELECT t.intPriceId , t.decPrice, t.intMaterialId , t.dtmPriceAsOf
+                FROM (
+                    SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
+                    FROM tblprice
+                    GROUP BY intMaterialId
+                ) as r 
+                INNER JOIN tblprice t
+                ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
+            ) as e
+            INNER JOIN tblmaterials f
+            ON (e.intMaterialId = f.intMaterialId)
+            WHERE f.intActive = 1
+            ORDER BY f.strMaterialName ASC
+            '
+        );
+
+        //dd($materials);
+
+        return view('Engineer/reports-materials-pricelist',compact(
+            'materials'
+        ));
     }
 }
