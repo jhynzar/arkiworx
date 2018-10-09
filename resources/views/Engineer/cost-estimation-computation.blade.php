@@ -2139,11 +2139,11 @@
                    
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="wallFootingCementClassMixture" style="width: 160px !important;">
-                                    <option value="AA">Class AA </option>
-                                     <option value="A" >Class A </option>
-                                    <option value="B" selected>Class B </option>
-                                    <option value="C" >Class C </option>
+                                <select class="form-control" id="WallFootingCC" style="width: 160px !important;">
+                                    <option value="1">Class AA </option>
+                                     <option value="2" >Class A </option>
+                                    <option value="3" selected>Class B </option>
+                                    <option value="4" >Class C </option>
                                 </select>
                             </div>
                              
@@ -5631,68 +5631,51 @@
         
     });
 
-    $("#WallFootingWidth").val($("#WallFootingLength").val());
+    
     $("#WallFooting").click(function(){
+        $("#WallFootingWidth").val($("#WallFootingLength").val());
 
-        if($("#WallFootingThickness").val()<=0||$("#WallFootingWidth").val()<=0||$("#WallFootingLength").val()<=0||$("#WallFootingVolume").val()<=0||$("#WallFootingNoOfBars").val()<=0){
-            alert("Invalid Input.");
-        }
-        else if($("#WallFootingThickness").val()==null&&$("#WallFootingWidth").val()==null&&$("#WallFootingLength").val()==null||$("#WallFootingNoOfBars").val()==null){
-            var concrete = ConcreteEsti( 1,0.8,1,$("#WallFootingCC").val(),1 );
-            var metal = metalica(  );
-            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost);
-        }
-        else if($("#WallFootingThickness").val()!=null&&$("#WallFootingWidth").val()!=null&&$("#WallFootingLength").val()!=null||$("#WallFootingNoOfBars").val()!=null){
-            $("#WallFootingVolume").val( $("#WallFootingThickness").val() * $("#WallFootingWidth").val() * $("#WallFootingLength").val() );
-            var concrete = ConcreteEsti( 1,$("#WallFootingVolume").val(),1,$("#WallFootingCC").val(),1 );
-            var metal = metalica(  );
-            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metalica.qtya,metalica.tiewire,metalica.costb);
-        
-        }
-        else {
-            alert("Please fill up the required fields");
-        }
         var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,qtya,costa,tiewire,costb){
             //
-            var qty35 = $("#Quantity35").val();
+            var qty35 = parseFloat($("#Quantity35").val());
             qty35 += cementqty;
             $("#Quantity35").val(qty35);
-            var cost35 = $("#Cost35").val();
+            var cost35 = parseFloat($("#Cost35").val());
             cost35 += cementcost;
             $("#Cost35").val(cost35);
-            var qty36 = $("#Quantity36").val();
+            var qty36 = parseFloat($("#Quantity36").val());
             qty36 += sandqty;
             $("#Quantity36").val(qty36);
-            var cost36 = $("#Cost36").val();
+            var cost36 = parseFloat($("#Cost36").val());
             cost36 += sandcost;
             $("#Cost36").val(cost36);
-            var qty37 = $("#Quantity37").val();
+            var qty37 = parseFloat($("#Quantity37").val());
             qty37 += gravelqty;
             $("#Quantity37").val(qty37);
-            var cost37 = $("#Cost37").val();
+            var cost37 = parseFloat($("#Cost37").val());
             cost37 += gravelcost;
             $("#Cost37").val(cost37);
-            var qty38 = $("#Quantity38").val();
+            var qty38 = parseFloat($("#Quantity38").val());
             qty38 += qtya;
             $("#Quantity38").val(qty38);
-            var cost38 = $("#Cost38").val();
+            var cost38 = parseFloat($("#Cost38").val());
             cost38 += costa;
             $("#Cost38").val(cost38);
-            var qty39 = $("#Quantity39").val();
+            var qty39 = parseFloat($("#Quantity39").val());
             qty39 += tiewire;
             $("#Quantity39").val(qty39);
-            var cost39 = $("#Cost39").val();
+            var cost39 = parseFloat($("#Cost39").val());
             cost39 += costb;
             $("#Cost39").val(cost39);
-            var no = $("#HowManyWallFootings").val(  );
+            var no = parseFloat($("#HowManyWallFootings").val());
             $("#HowManyWallFootings").val( no + 1 );
             alert("Nagdagdag ka ng WallFooting");
             computeAndDisplayOverallTotal();
         }
         
         var metalica = function(){
-            var mainbar = Math.ceil(($("#WallFootingWidth").val() - 0.15) * ($("#WallFootingNoOfBars").val()*2)/6) ;
-            var tiewire = (($("#WallFootingNoOfBars").val() * $("#WallFootingNoOfBars").val())*0.4)/53;
+            var mainbar = Math.ceil((parseFloat($("#WallFootingWidth").val()) - 0.15) * (parseFloat($("#WallFootingNoOfBars").val())*2)/6) ;
+            var tiewire = ((parseFloat($("#WallFootingNoOfBars").val()) * parseFloat($("#WallFootingNoOfBars").val()))*0.4)/53;
             var metals1 = DirectCountingEsti(mainbar,4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiewire,6);
@@ -5704,7 +5687,27 @@
                 costb : cost2
             };
         }
-        computeAndDisplayOverallTotal();
+
+        if(parseFloat($("#WallFootingThickness").val())<=0||parseFloat($("#WallFootingWidth").val())<=0||parseFloat($("#WallFootingLength").val())<=0||parseFloat($("#WallFootingNoOfBars").val())<=0){
+            alert("Invalid Input.");
+        }
+        else if(parseFloat($("#WallFootingThickness").val())==null&&parseFloat($("#WallFootingWidth").val())==null&&parseFloat($("#WallFootingLength").val())==null||parseFloat($("#WallFootingNoOfBars").val())==null){
+            var concrete = ConcreteEsti( 1,0.8,1,parseFloat($("#WallFootingCC").val()),1 );
+            var metal = metalica(  );
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost);
+        }
+        else if(parseFloat($("#WallFootingThickness").val())!=null&&parseFloat($("#WallFootingWidth").val())!=null&&parseFloat($("#WallFootingLength").val())!=null||parseFloat($("#WallFootingNoOfBars").val())!=null){
+            $("#WallFootingVolume").val( parseFloat($("#WallFootingThickness").val()) * parseFloat($("#WallFootingWidth").val()) * parseFloat($("#WallFootingLength").val()) );
+            var concrete = ConcreteEsti( 1,parseFloat($("#WallFootingVolume").val()),1,parseFloat($("#WallFootingCC").val()),1 );
+            var metal = metalica(  );
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metalica.qtya,metalica.tiewire,metalica.costb);
+        
+        }
+        else {
+            alert("Please fill up the required fields");
+        }
+        
+        //computeAndDisplayOverallTotal();
     });
 
     
