@@ -7016,51 +7016,7 @@
 
 
     $("#Masonry").click(function () {
-        if ($("#CHBWidth").val() < 0 || $("#CHBLength").val() < 0 || $("#CHBMortarThickness").val() < 0 || $(
-                "#CHBPlasterThickness").val() < 0) {
 
-            alert("Invalid Inputs");
-        } else if ($("#CHBWidth").val() == 0 || $("#CHBLength").val() == 0 || $("#CHBMortarThickness").val() ==
-            0 || $("#CHBPlasterThickness").val() == 0) {
-            //
-        } else if ($("#CHBWidth").val() != 0 || $("#CHBLength").val() != 0 || $("#CHBMortarThickness").val() !=
-            0 || $("#CHBPlasterThickness").val() != 0) {
-            $("#CHBArea").val($("#CHBWidth").val() * $("#CHBLength").val());
-            var chbcost1 = 0;
-            var chbcost2 = 0;
-            var chbqty = Math.ceil(($("#CHBWidth").val() * $("#CHBLength").val()) * 12.5);
-            if ($("#CHBSize").val() == 16) {
-                chbcost1 = DirectCountingEsti(chbqty, 16);
-                var qty43 = $("#Quantity43").val();
-                qty43 += chbqty;
-                $("#Quantity43").val(qty43);
-                var cost43 = $("#Cost43").val();
-                cost43 += chbcost1.total;
-                $("#Cost43").val(cost43);
-            } else {
-                chbcost2 = DirectCountingEsti(chbqty, 15);
-                var qty44 = $("#Quantity44").val();
-                qty44 += chbqty;
-                $("#Quantity44").val(qty44);
-                var cost44 = $("#Cost44").val();
-                cost44 += chbcost2.total;
-                $("#Cost44").val(cost44);
-            }
-            var concrete1 = ConcreteEsti(1, $("#CHBArea").val() * $("#CHBMortarThickness").val(), 1, $(
-                "#CHBMortarMixture").val(), 1);
-            var concrete2 = ConcreteEsti(1, $("#CHBArea").val() * $("#CHBPlasterThickness").val(), 1, $(
-                "#CHBPlasterMixture").val(), 1);
-            var cementqty = concrete1.cementqty + concrete2.cementqty;
-            var cementcost = concrete1.cementcost + concrete2.cementcost;
-            var sandqty = concrete1.sandqty + concrete2.sandqty;
-            var sandcost = concrete1.sandcost + concrete2.sandcost;
-            var metals = metalica();
-            panapos(cementqty, cementcost, sandqty, sandcost, metals.mainbar, metals.cost1, metals.tiebar,
-                metals.cost2);
-            //
-        } else {
-            alert("Please fill up the required fields");
-        }
         var panapos = function (cementqty, cementcost, sandqty, sandcost, noofbars, costa, tiewire, costb) {
             //
             var qty40 = $("#Quantity40").val();
@@ -7134,6 +7090,53 @@
                 cost2: cost2
             };
         }
+
+        if ($("#CHBWidth").val() < 0 || $("#CHBLength").val() < 0 || $("#CHBMortarThickness").val() < 0 || $(
+                "#CHBPlasterThickness").val() < 0) {
+
+            alert("Invalid Inputs");
+        } else if ($("#CHBWidth").val() == 0 || $("#CHBLength").val() == 0 || $("#CHBMortarThickness").val() ==
+            0 || $("#CHBPlasterThickness").val() == 0) {
+            //
+        } else if ($("#CHBWidth").val() != 0 || $("#CHBLength").val() != 0 || $("#CHBMortarThickness").val() !=
+            0 || $("#CHBPlasterThickness").val() != 0) {
+            $("#CHBArea").val($("#CHBWidth").val() * $("#CHBLength").val());
+            var chbcost1 = 0;
+            var chbcost2 = 0;
+            var chbqty = Math.ceil(($("#CHBWidth").val() * $("#CHBLength").val()) * 12.5);
+            if ($("#CHBSize").val() == 16) {
+                chbcost1 = DirectCountingEsti(chbqty, 16);
+                var qty43 = $("#Quantity43").val();
+                qty43 += chbqty;
+                $("#Quantity43").val(qty43);
+                var cost43 = $("#Cost43").val();
+                cost43 += chbcost1.total;
+                $("#Cost43").val(cost43);
+            } else {
+                chbcost2 = DirectCountingEsti(chbqty, 15);
+                var qty44 = $("#Quantity44").val();
+                qty44 += chbqty;
+                $("#Quantity44").val(qty44);
+                var cost44 = $("#Cost44").val();
+                cost44 += chbcost2.total;
+                $("#Cost44").val(cost44);
+            }
+            var concrete1 = ConcreteEsti(1, $("#CHBArea").val() * $("#CHBMortarThickness").val(), 1, $(
+                "#CHBMortarMixture").val(), 1);
+            var concrete2 = ConcreteEsti(1, $("#CHBArea").val() * $("#CHBPlasterThickness").val(), 1, $(
+                "#CHBPlasterMixture").val(), 1);
+            var cementqty = concrete1.cementqty + concrete2.cementqty;
+            var cementcost = concrete1.cementcost + concrete2.cementcost;
+            var sandqty = concrete1.sandqty + concrete2.sandqty;
+            var sandcost = concrete1.sandcost + concrete2.sandcost;
+            var metals = metalica();
+            panapos(cementqty, cementcost, sandqty, sandcost, metals.mainbar, metals.cost1, metals.tiebar,
+                metals.cost2);
+            //
+        } else {
+            alert("Please fill up the required fields");
+        }
+        
     });
 
     $("#Roofing").click(function () {
