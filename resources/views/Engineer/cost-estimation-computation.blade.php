@@ -3726,47 +3726,17 @@
                                                                             </label>
                                                                             <br>
                                                                             <label>Width:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 130px !important;">
+                                                                            <input type="" class="form-control" id="PaintWidth1" style="width: 130px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="" class="form-control" id="" style="width: 130px !important;">
+                                                                            <input type="" class="form-control" id="PaintLength1" style="width: 130px !important;">
                                                                             <br>
                                                                             <br>
-
-
-
-
-
-                                                                            <div class="form-group pull-center">
-                                                                                <label class="text text-default">
-                                                                                    <b>Paint Type</b>
-                                                                                </label>
-
-                                                                            </div>
-                                                                            <br>
-
-
-
-                                                                            <div class="form-group form-inline">
-
-                                                                                <select class="form-control" id="" style="width: 450px !important;">
-                                                                                    <option selected> Primer </option>
-                                                                                    <option> Enamel </option>
-                                                                                    <option>Roof </option>
-                                                                                    <option>Varnishing </option>
-                                                                                </select>
-
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-
-
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-danger">
                                                                                     <b>How Many of these?</b>
                                                                                 </label>&nbsp;
-                                                                                <input type="number" class="form-control"
-                                                                                    id="" style="width: 100px !important;">
+                                                                                <input type="number" class="form-control" disabled id="PaintCeilingNo" style="width: 100px !important;" value=1>
                                                                                 <button type="button" class="btn" id="PaintCeiling" style="margin-left: 90px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -4328,7 +4298,7 @@
 
                                                                             <div class="form-group form-inline">
                                                                                 <label for=""></label>
-                                                                                <select class="form-control" id="TileClass" style="width: 250px !important;">
+                                                                                <select class="form-control" id="tileClass" style="width: 250px !important;">
                                                                                     <option value="74"> 12X12 – Floor Tile </option>
                                                                                     <option value="79"> 12X24 – Digital Tile </option>
                                                                                     <option value="75"> 12X24 – Floor Tile </option>
@@ -4350,7 +4320,7 @@
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                  
-                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="TileCount" style="width: 100px !important;">
+                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" value=1 class="form-control" id="TileCount" style="width: 100px !important;">
                                                                                 <button type="button" class="btn btn-primary" id="Tiles" style="margin-left: 300px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -5280,19 +5250,19 @@
     }
     $("#ComputeGeneralReq").click(function() {
         //DENR, lastillas, soil poisoning
-        if($("#DENR").val() == null){
+        if($("#DENR").val() == 0){
             $("#DENR").val(0);
         }
-        if($("#Lastillas").val() == null){
+        if($("#Lastillas").val() == 0){
             $("#Lastillas").val(0);
         }
-        if($("#SoilPoisoning").val() == null){
+        if($("#SoilPoisoning").val() == 0){
             $("#SoilPoisoning").val(0);
         }
-        if($("#BuildingPermit").val()==null || $("#TemporaryFacilities").val()==null || $("#WorkersBarracks").val()==null || $("#Excavation").val()==null || $("#Backfill").val()==null || $("#LaborCost").val()==null || $("#ToolsEquipments").val()==null || $("#Transportation").val()==null || $("#Contigency").val()==null){
+        if($("#BuildingPermit").val()==0 || $("#TemporaryFacilities").val()==0 || $("#WorkersBarracks").val()==0 || $("#Excavation").val()==0 || $("#Backfill").val()==0 || $("#LaborCost").val()==0 || $("#ToolsEquipments").val()==0 || $("#Transportation").val()==0 || $("#Contigency").val()==0){
             alert("Please fill up the required fields");
         }
-        else($("#SoilPoisoning").val()<0 || $("#Lastillas").val()<0 || $("#DENR").val()<0 || $("#BuildingPermit").val()<=0 || $("#TemporaryFacilities").val()<=0 || $("#WorkersBarracks").val()<=0 || $("#Excavation").val()<=0 || $("#Backfill").val()<=0 || $("#LaborCost").val()<=0 || $("#ToolsEquipments").val()<=0 || $("#Transportation").val()<=0 || $("#Contigency").val()<=0){
+        else if($("#SoilPoisoning").val()<0 || $("#Lastillas").val()<0 || $("#DENR").val()<0 || $("#BuildingPermit").val()<0 || $("#TemporaryFacilities").val()<0 || $("#WorkersBarracks").val()<0 || $("#Excavation").val()<0 || $("#Backfill").val()<0 || $("#LaborCost").val()<0 || $("#ToolsEquipments").val()<0 || $("#Transportation").val()<0 || $("#Contigency").val()<0){
             alert("Invalid Input.");
         }
         else{
@@ -5300,17 +5270,18 @@
         }
     });
 
-    $("#ColumnWidth").val($("#ColumnLength").val());
     $("#Column").click(function(){
-        if($("#ColumnThickness").val()<=0||$("#ColumnWidth").val()<=0||$("#ColumnLength").val()<=0||$("#ColumnVolume").val()<=0){
+        if($("#ColumnThickness").val()<0||$("#ColumnWidth").val()<0||$("#ColumnLength").val()<0||$("#ColumnVolume").val()<0||$("#ColumnNoOfBars").val()<0){
             alert("Invalid Input.");
         }
-        else if($("#ColumnThickness").val()==null&&$("#ColumnWidth").val()==null&&$("#ColumnLength").val()==null){
+        else if($("#ColumnThickness").val()==0&&$("#ColumnWidth").val()==0&&$("#ColumnLength").val()==0||$("#ColumnNoOfBars").val()==0){
+    $("#ColumnWidth").val($("#ColumnLength").val());
             var concrete = ConcreteEsti( 1,1.6,1,$("#ColumnCC").val(),1 );
             var metal = metalica(4,0.5);
             panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,4,metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
         }
-        else if($("#ColumnThickness").val()!=null&&$("#ColumnWidth").val()!=null&&$("#ColumnLength").val()!=null){
+        else if($("#ColumnThickness").val()>0&&$("#ColumnWidth").val()>0&&$("#ColumnLength").val()>0||$("#ColumnNoOfBars").val()>0){
+    $("#ColumnWidth").val($("#ColumnLength").val());
             $("#ColumnVolume").val( $("#ColumnThickness").val() * $("#ColumnWidth").val() * $("#ColumnLength").val() );
             var concrete = ConcreteEsti( 1,$("#ColumnVolume").val(),1,$("#ColumnCC").val(),1 );
             var mmetal = metalica($("#ColumnNoOfBars").val(),0.192);
@@ -5387,15 +5358,15 @@
     $("#FootingWidth").val($("#FootingLength").val());
     $("#Footing").click(function(){
 
-        if($("#FootingThickness").val()<=0||$("#FootingWidth").val()<=0||$("#FootingLength").val()<=0||$("#FootingVolume").val()<=0||$("#FootingNoOfBars").val()<=0){
+        if($("#FootingThickness").val()<0||$("#FootingWidth").val()<0||$("#FootingLength").val()<0||$("#FootingVolume").val()<0||$("#FootingNoOfBars").val()<0){
             alert("Invalid Input.");
         }
-        else if($("#FootingThickness").val()==null&&$("#FootingWidth").val()==null&&$("#FootingLength").val()==null||$("#FootingNoOfBars").val()==null){
+        else if($("#FootingThickness").val()==0&&$("#FootingWidth").val()==0&&$("#FootingLength").val()==0||$("#FootingNoOfBars").val()==0){
             var concrete = ConcreteEsti( 1,0.8,1,$("#FootingCC").val(),1 );
             var metal = metalica(  );
             panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost);
         }
-        else if($("#FootingThickness").val()!=null&&$("#FootingWidth").val()!=null&&$("#FootingLength").val()!=null||$("#FootingNoOfBars").val()!=null){
+        else if($("#FootingThickness").val()!=0&&$("#FootingWidth").val()!=0&&$("#FootingLength").val()!=0||$("#FootingNoOfBars").val()!=0){
             $("#FootingVolume").val( $("#FootingThickness").val() * $("#FootingWidth").val() * $("#FootingLength").val() );
             var concrete = ConcreteEsti( 1,$("#FootingVolume").val(),1,$("#FootingCC").val(),1 );
             var metal = metalica(  );
@@ -5461,15 +5432,15 @@
     });
 
     $("#Slab").click(function(){
-        if($("#SlabThickness").val()<=0||$("#SlabWidth").val()<=0||$("#SlabLength").val()<=0||$("#SlabVolume").val()<=0){
+        if($("#SlabThickness").val()<0||$("#SlabWidth").val()<0||$("#SlabLength").val()<0||$("#SlabVolume").val()<0){
             alert("Invalid Input.");
         }
-        else if($("#SlabThickness").val()==null&&$("#SlabWidth").val()==null&&$("#SlabLength").val()==null){
+        else if($("#SlabThickness").val()==0&&$("#SlabWidth").val()==0&&$("#SlabLength").val()==0){
             var concrete = ConcreteEsti( 1,6,1,$("#SlabCC").val(),1 );
             var metal = metalica(  );
             panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metal.qtya,metal.costa,metal.tiewire,metal.costb);
         }
-        else if($("#SlabThickness").val()!=null&&$("#SlabWidth").val()!=null&&$("#SlabLength").val()!=null){
+        else if($("#SlabThickness").val()!=0&&$("#SlabWidth").val()!=0&&$("#SlabLength").val()!=0){
             $("#SlabVolume").val( $("#SlabThickness").val() * $("#SlabWidth").val() * $("#SlabLength").val() );
             var concrete = ConcreteEsti( 1,$("#SlabVolume").val(),1,$("#SlabCC").val(),1 );
             var mmetal = metalica(  );
@@ -5537,15 +5508,15 @@
 
     $("#BeamWidth").val($("#BeamLength").val());
     $("#Beam").click(function(){
-        if($("#BeamThickness").val()<=0||$("#BeamWidth").val()<=0||$("#BeamLength").val()<=0||$("#BeamVolume").val()<=0||$("#ColumnSpacing").val()<=0){
+        if($("#BeamThickness").val()<0||$("#BeamWidth").val()<0||$("#BeamLength").val()<0||$("#BeamVolume").val()<0||$("#ColumnSpacing").val()<0){
             alert("Invalid Input.");
         }
-        else if($("#BeamThickness").val()==null&&$("#BeamWidth").val()==null&&$("#BeamLength").val()==null||$("#ColumnSpacing").val()== ull){
+        else if($("#BeamThickness").val()==0&&$("#BeamWidth").val()==0&&$("#BeamLength").val()==0||$("#ColumnSpacing").val()== ull){
             var concrete = ConcreteEsti( 1,1.6,1,$("#BeamCC").val(),1 );
             var metal = metalica(4,0.5);
             panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,4,metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
         }
-        else if($("#BeamThickness").val()!=null&&$("#BeamWidth").val()!=null&&$("#BeamLength").val()!=null&&$("#ColumnSpacing").val()!=null){
+        else if($("#BeamThickness").val()!=0&&$("#BeamWidth").val()!=0&&$("#BeamLength").val()!=0&&$("#ColumnSpacing").val()!=0){
             $("#BeamVolume").val( $("#BeamThickness").val() * $("#BeamWidth").val() * $("#BeamLength").val() );
             var concrete = ConcreteEsti( 1,$("#BeamVolume").val(),1,$("#BeamCC").val(),1 );
             var metal = metalica($("#BeamNoOfBars").val(),$("#BeamSpacing").val());
@@ -5622,15 +5593,15 @@
     $("#WallFootingWidth").val($("#WallFootingLength").val());
     $("#WallFooting").click(function(){
 
-        if($("#WallFootingThickness").val()<=0||$("#WallFootingWidth").val()<=0||$("#WallFootingLength").val()<=0||$("#WallFootingVolume").val()<=0||$("#WallFootingNoOfBars").val()<=0){
+        if($("#WallFootingThickness").val()<0||$("#WallFootingWidth").val()<0||$("#WallFootingLength").val()<0||$("#WallFootingVolume").val()<0||$("#WallFootingNoOfBars").val()<0){
             alert("Invalid Input.");
         }
-        else if($("#WallFootingThickness").val()==null&&$("#WallFootingWidth").val()==null&&$("#WallFootingLength").val()==null||$("#WallFootingNoOfBars").val()==null){
+        else if($("#WallFootingThickness").val()==0&&$("#WallFootingWidth").val()==0&&$("#WallFootingLength").val()==0||$("#WallFootingNoOfBars").val()==0){
             var concrete = ConcreteEsti( 1,0.8,1,$("#WallFootingCC").val(),1 );
             var metal = metalica(  );
             panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost);
         }
-        else if($("#WallFootingThickness").val()!=null&&$("#WallFootingWidth").val()!=null&&$("#WallFootingLength").val()!=null||$("#WallFootingNoOfBars").val()!=null){
+        else if($("#WallFootingThickness").val()!=0&&$("#WallFootingWidth").val()!=0&&$("#WallFootingLength").val()!=0||$("#WallFootingNoOfBars").val()!=0){
             $("#WallFootingVolume").val( $("#WallFootingThickness").val() * $("#WallFootingWidth").val() * $("#WallFootingLength").val() );
             var concrete = ConcreteEsti( 1,$("#WallFootingVolume").val(),1,$("#WallFootingCC").val(),1 );
             var metal = metalica(  );
@@ -5698,15 +5669,15 @@
     
     $("#RoofBeamWidth").val($("#RoofBeamLength").val());
     $("#RoofBeam").click(function(){
-        if($("#RoofBeamThickness").val()<=0||$("#RoofBeamWidth").val()<=0||$("#RoofBeamLength").val()<=0||$("#RoofBeamVolume").val()<=0||$("#ColumnSpacing").val()<=0){
+        if($("#RoofBeamThickness").val()<0||$("#RoofBeamWidth").val()<0||$("#RoofBeamLength").val()<0||$("#RoofBeamVolume").val()<0||$("#ColumnSpacing").val()<0){
             alert("Invalid Input.");
         }
-        else if($("#RoofBeamThickness").val()==null&&$("#RoofBeamWidth").val()==null&&$("#RoofBeamLength").val()==null||$("#ColumnSpacing").val()== ull){
+        else if($("#RoofBeamThickness").val()==0&&$("#RoofBeamWidth").val()==0&&$("#RoofBeamLength").val()==0||$("#ColumnSpacing").val()== ull){
             var concrete = ConcreteEsti( 1,1.6,1,$("#RoofBeamCC").val(),1 );
             var metal = metalica(4,0.5);
             panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,4,metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
         }
-        else if($("#RoofBeamThickness").val()!=null&&$("#RoofBeamWidth").val()!=null&&$("#RoofBeamLength").val()!=null&&$("#ColumnSpacing").val()!=null){
+        else if($("#RoofBeamThickness").val()!=0&&$("#RoofBeamWidth").val()!=0&&$("#RoofBeamLength").val()!=0&&$("#ColumnSpacing").val()!=0){
             $("#RoofBeamVolume").val( $("#RoofBeamThickness").val() * $("#RoofBeamWidth").val() * $("#RoofBeamLength").val() );
             var concrete = ConcreteEsti( 1,$("#RoofBeamVolume").val(),1,$("#RoofBeamCC").val(),1 );
             var metal = metalica($("#RoofBeamNoOfBars").val(),$("#RoofBeamSpacing").val());
@@ -5782,14 +5753,14 @@
 
 
     $("#Masonry").click(function() {
-        if( $("#CHBWidth").val(  )<=0 || $("#CHBLength").val(  )<=0 || $("#CHBMortarThickness").val(  )<=0 || $("#CHBPlasterThickness").val(  )<=0 ){
+        if( $("#CHBWidth").val(  )<0 || $("#CHBLength").val(  )<0 || $("#CHBMortarThickness").val(  )<0 || $("#CHBPlasterThickness").val(  )<0 ){
             
             alert("Invalid Inputs");
         }
-        else if( $("#CHBWidth").val(  )==null || $("#CHBLength").val(  )==null || $("#CHBMortarThickness").val(  )==null || $("#CHBPlasterThickness").val(  )==null ){
+        else if( $("#CHBWidth").val(  )==0 || $("#CHBLength").val(  )==0 || $("#CHBMortarThickness").val(  )==0 || $("#CHBPlasterThickness").val(  )==0 ){
             //
         }
-        else if( $("#CHBWidth").val(  )!=null || $("#CHBLength").val(  )!=null || $("#CHBMortarThickness").val(  )!=null || $("#CHBPlasterThickness").val(  )!=null ){
+        else if( $("#CHBWidth").val(  )!=0 || $("#CHBLength").val(  )!=0 || $("#CHBMortarThickness").val(  )!=0 || $("#CHBPlasterThickness").val(  )!=0 ){
             $("#CHBArea").val( $("#CHBWidth").val(  )*$("#CHBLength").val(  ) );
             var chbcost1 = 0;
             var chbcost2 = 0;
@@ -5908,7 +5879,7 @@
     });
 
     $("#Roofing").click(function(){
-        if($("#RoofMaterialQ").val()==null||$("#RoofMaterialQ").val()<=0){
+        if($("#RoofMaterialQ").val()==0||$("#RoofMaterialQ").val()<0){
             //
         }
         else{
@@ -5957,15 +5928,15 @@
             alert("Nagdagdag ka ng Material sa Roofing");
             computeAndDisplayOverallTotal();
 }
-        /*if($("#RoofingThickness").val()<=0||$("#RoofingWidth").val()<=0||$("#RoofingLength").val()<=0||$("#RoofingVolume").val()<=0){
+        /*if($("#RoofingThickness").val()<0||$("#RoofingWidth").val()<0||$("#RoofingLength").val()<0||$("#RoofingVolume").val()<0){
             alert("Invalid Input.");
         }
-        else if($("#RoofingThickness").val()==null&&$("#RoofingWidth").val()==null&&$("#RoofingLength").val()==null){
+        else if($("#RoofingThickness").val()==0&&$("#RoofingWidth").val()==0&&$("#RoofingLength").val()==0){
             var concrete = ConcreteEsti( 1,1.6,1,$("#RoofingCC").val(),1 );
             var metal = metalica(4,0.5);
             panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,4,metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
         }
-        else if($("#RoofingThickness").val()!=null&&$("#RoofingWidth").val()!=null&&$("#RoofingLength").val()!=null){
+        else if($("#RoofingThickness").val()!=0&&$("#RoofingWidth").val()!=0&&$("#RoofingLength").val()!=0){
             $("#RoofingVolume").val( $("#RoofingThickness").val() * $("#RoofingWidth").val() * $("#RoofingLength").val() );
             var concrete = ConcreteEsti( 1,$("#RoofingVolume").val(),1,$("#RoofingCC").val(),1 );
             var mmetal = metalica($("#RoofingNoOfBars").val(),0.192);
@@ -6040,7 +6011,7 @@
     });
 
     $("#Windows").click(function() {
-        if($("#WindowMaterialQ").val()==null||$("#WindowMaterialQ").val()<=0){
+        if($("#WindowMaterialQ").val()==0||$("#WindowMaterialQ").val()<0){
             //
         }
         else{
@@ -6076,7 +6047,7 @@
     });
 
     $("#Doors").click(function() {
-        if($("#DoorMaterialQ").val()==null||$("#DoorMaterialQ").val()<=0){
+        if($("#DoorMaterialQ").val()==0||$("#DoorMaterialQ").val()<0){
             
             alert("Invalid Input");
         }
@@ -6145,17 +6116,29 @@
     });
 
     $("#PaintCeiling").click(function() {
-        
+        if($("#PaintWidth1").val()==0||$("#PaintWidth1").val()<0||$("#PaintLength1").val()==0||$("#PaintLength1").val()<0){
+            //
+            alert("Invalid Input");
+        }
+        else{
+        var Area = $("#PaintWidth1").val()*$("#PaintLength1").val();
         computeAndDisplayOverallTotal();
+    }
     });
 
     $("#PaintWalls").click(function() {
-        
-        computeAndDisplayOverallTotal();
+        if($("#PaintWidth2").val()==0||$("#PaintWidth2").val()<0||$("#PaintLength2").val()==0||$("#PaintLength2").val()<0){
+            //
+            alert("Invalid Input");
+        }
+        else{
+        var Area = $("#PaintWidth2").val()*$("#PaintLength2").val();
+            computeAndDisplayOverallTotal();
+        }
     });
 
     $("#ElectricalWorks").click(function() {
-        if($("#ElectricalWorksMaterialQ").val()<=0||$("#ElectricalWorksMaterialQ").val()==null){
+        if($("#ElectricalWorksMaterialQ").val()<0||$("#ElectricalWorksMaterialQ").val()==0){
             
             alert("Invalid Input");
         }
@@ -6248,16 +6231,32 @@
     });
 
     $("#Tiles").click(function() {
-        if($("#TileWidth").val()<=0||$("#TileLength").val()<=0||$("#TileWidth").val()==null||$("#TileLength").val()==null){
+        if($("#TileWidth").val()<0||$("#TileLength").val()<0||$("#TileWidth").val()==0||$("#TileLength").val()==0||$("#TileCount").val()<0){
             
             alert("Invalid Input");
         }
         else{
-        var TileArea = $("#TileWidth").val() * $("#TileLength").val();
-        var tileClass = $("#TileClass").val();
+        var TileArea = parseFloat($("#TileWidth").val()) * parseFloat($("#TileLength").val());
+            
+        var qty1 = parseFloat($("#Quantity86").val())+((TileArea / 3)*20);
+        $("#Quantity86").val(qty1);
+        var tileAd = DirectCountingEsti( $("#Quantity86").val(),$("#MaterialId86").val() );
+        var cost1 = $("#Cost86").val();
+        cost1 = cost1 + tileAd.total;
+        $("#Cost86").val(cost1);
+
+        var qty2 = parseFloat($("#Quantity87").val())+((TileArea / 11)*5);
+        $("#Quantity87").val(qty2);
+        var tileGrout = DirectCountingEsti( $("#Quantity87").val(),$("#MaterialId87").val() );
+        var cost2 = $("#Cost87").val();
+        cost2 = cost2 + tileGrout.total;
+        $("#Cost87").val(cost2);
+
+        var tileClass = $("#tileClass").val();
         var totalTiles;
         if(tileClass == 74){
             totalTiles = TileArea / 0.0144;
+            alert("You added Tiles");
         }
         else if(tileClass == 79 || tileClass == 75){
             totalTiles = TileArea / 0.0288;
@@ -6281,21 +6280,68 @@
             totalTiles = TileArea / 0.16;
         }
         
-        totalTiles = totalTiles * $("#TileCount").val();
+        totalTiles = totalTiles * parseFloat($("#TileCount").val());
         var tilecost = DirectCountingEsti(totalTiles,tileClass);
         var cost = tilecost.total;
         var name = tilecost.materialname;
-        addmaterial(tileClass,totalTiles,cost,name));
 
-        $("#Quantity86").val((TileArea / 3)*20);
-        var tileAd = DirectCountingEsti( $("#Quantity86").val(),$("#MaterialId86").val() );
-        var cost = tileAd.total;
-        $("#Cost86").val(cost);
+        if(tileClass == 71){
+        addmaterial(tileClass,totalTiles,cost,name);
+        }
+        else if((tileClass != 71 && $("#QuantityA").val() == 0 && $("#CostA").val() == 0)||$("#MaterialIdA").val() == tileClass){
+                $("#MaterialIdA").val( tileClass );
 
-        $("#Quantity87").val((TileArea / 11)*5);
-        var tileGrout = DirectCountingEsti( $("#Quantity87").val(),$("#MaterialId87").val() );
-        var cost = tileGrout.total;
-        $("#Cost87").val(cost);
+            }
+            else if((tileClass != 71 && $("#QuantityB").val() == 0 && $("#CostB").val() == 0)||$("#MaterialIdB").val() == tileClass){
+                $("#MaterialIdB").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
+            else if((tileClass != 71 && $("#QuantityC").val() == 0 && $("#CostC").val() == 0)||$("#MaterialIdC").val() == tileClass){
+                $("#MaterialIdC").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
+            else if((tileClass != 71 && $("#QuantityD").val() == 0 && $("#CostD").val() == 0)||$("#MaterialIdD").val() == tileClass){
+                $("#MaterialIdD").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
+            else if((tileClass != 71 && $("#QuantityE").val() == 0 && $("#CostE").val() == 0)||$("#MaterialIdE").val() == tileClass){
+                $("#MaterialIdE").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
+            else if((tileClass != 71 && $("#QuantityF").val() == 0 && $("#CostF").val() == 0)||$("#MaterialIdF").val() == tileClass){
+                $("#MaterialIdF").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
+            else if((tileClass != 71 && $("#QuantityG").val() == 0 && $("#CostG").val() == 0)||$("#MaterialIdG").val() == tileClass){
+                $("#MaterialIdG").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
+            else if((tileClass != 71 && $("#QuantityH").val() == 0 && $("#CostH").val() == 0)||$("#MaterialIdH").val() == tileClass){
+                $("#MaterialIdH").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
+            else if((tileClass != 71 && $("#QuantityI").val() == 0 && $("#CostI").val() == 0)||$("#MaterialIdI").val() == tileClass){
+                $("#MaterialIdI").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
+            else if((tileClass != 71 && $("#QuantityJ").val() == 0 && $("#CostJ").val() == 0)||$("#MaterialIdJ").val() == tileClass){
+                $("#MaterialIdJ").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
+            else if((tileClass != 71 && $("#QuantityK").val() == 0 && $("#CostK").val() == 0)||$("#MaterialIdK").val() == tileClass){
+                $("#MaterialIdK").val( tileClass );
+        addmaterial(tileClass,totalTiles,cost,name);
+
+            }
 
         var addmaterial = function(tileClass,totalTiles,cost,name){
             var tileqty;
@@ -6308,6 +6354,7 @@
                 tilecost += cost;
                 $("#Quantity85").val(tileqty);
                 $("#Cost85").val(tilecost);
+        computeAndDisplayOverallTotal();
             }
             else if($("#MaterialIdA").val() == tileClass ){
                 tileqty = $("#QuantityA").val();
@@ -6319,6 +6366,7 @@
                 $("#MaterialA").html( name );
                 $("#TQtyA").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostA").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
             else if($("#MaterialIdB").val() == tileClass ){
                 tileqty = $("#QuantityB").val();
@@ -6330,6 +6378,7 @@
                 $("#MaterialB").html( name );
                 $("#TQtyB").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostB").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
             else if($("#MaterialIdC").val() == tileClass ){
                 tileqty = $("#QuantityC").val();
@@ -6341,8 +6390,9 @@
                 $("#MaterialC").html( name );
                 $("#TQtyC").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostC").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
-            else if($("#MaterialIdD").val() == tileDlass ){
+            else if($("#MaterialIdD").val() == tileClass ){
                 tileqty = $("#QuantityD").val();
                 tilecost = $("#CostD").val();
                 tileqty += totalTiles;
@@ -6352,8 +6402,9 @@
                 $("#MaterialD").html( name );
                 $("#TQtyD").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostD").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
-            else if($("#MaterialIdE").val() == tileElass ){
+            else if($("#MaterialIdE").val() == tileClass ){
                 tileqty = $("#QuantityE").val();
                 tilecost = $("#CostE").val();
                 tileqty += totalTiles;
@@ -6363,8 +6414,9 @@
                 $("#MaterialE").html( name );
                 $("#TQtyE").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostE").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
-            else if($("#MaterialIdF").val() == tileFlass ){
+            else if($("#MaterialIdF").val() == tileClass ){
                 tileqty = $("#QuantityF").val();
                 tilecost = $("#CostF").val();
                 tileqty += totalTiles;
@@ -6374,8 +6426,9 @@
                 $("#MaterialF").html( name );
                 $("#TQtyF").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostF").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
-            else if($("#MaterialIdG").val() == tileGlass ){
+            else if($("#MaterialIdG").val() == tileClass ){
                 tileqty = $("#QuantityG").val();
                 tilecost = $("#CostG").val();
                 tileqty += totalTiles;
@@ -6385,8 +6438,9 @@
                 $("#MaterialG").html( name );
                 $("#TQtyG").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostG").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
-            else if($("#MaterialIdH").val() == tileHlass ){
+            else if($("#MaterialIdH").val() == tileClass ){
                 tileqty = $("#QuantityH").val();
                 tilecost = $("#CostH").val();
                 tileqty += totalTiles;
@@ -6396,8 +6450,9 @@
                 $("#MaterialH").html( name );
                 $("#TQtyH").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostH").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
-            else if($("#MaterialIdI").val() == tileIlass ){
+            else if($("#MaterialIdI").val() == tileClass ){
                 tileqty = $("#QuantityI").val();
                 tilecost = $("#CostI").val();
                 tileqty += totalTiles;
@@ -6407,8 +6462,9 @@
                 $("#MaterialI").html( name );
                 $("#TQtyI").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostI").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
-            else if($("#MaterialIdJ").val() == tileJlass ){
+            else if($("#MaterialIdJ").val() == tileClass ){
                 tileqty = $("#QuantityJ").val();
                 tilecost = $("#CostJ").val();
                 tileqty += totalTiles;
@@ -6418,8 +6474,9 @@
                 $("#MaterialJ").html( name );
                 $("#TQtyJ").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostJ").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+        computeAndDisplayOverallTotal();
             }
-            else if($("#MaterialIdK").val() == tileKlass ){
+            else if($("#MaterialIdK").val() == tileClass ){
                 tileqty = $("#QuantityK").val();
                 tilecost = $("#CostK").val();
                 tileqty += totalTiles;
@@ -6429,54 +6486,10 @@
                 $("#MaterialK").html( name );
                 $("#TQtyK").html( parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
                 $("#TCostK").html( parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-            }
-            else if(tileClass != 71 && $("#QuantityA").val() == 0 && $("#CostA").val() == 0){
-                $("#MaterialIdA").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityB").val() == 0 && $("#CostB").val() == 0){
-                $("#MaterialIdB").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityC").val() == 0 && $("#CostC").val() == 0){
-                $("#MaterialIdC").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityD").val() == 0 && $("#CostD").val() == 0){
-                $("#MaterialIdD").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityE").val() == 0 && $("#CostE").val() == 0){
-                $("#MaterialIdE").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityF").val() == 0 && $("#CostF").val() == 0){
-                $("#MaterialIdF").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityG").val() == 0 && $("#CostG").val() == 0){
-                $("#MaterialIdG").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityH").val() == 0 && $("#CostH").val() == 0){
-                $("#MaterialIdH").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityI").val() == 0 && $("#CostI").val() == 0){
-                $("#MaterialIdI").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityJ").val() == 0 && $("#CostJ").val() == 0){
-                $("#MaterialIdJ").val( tileClass );
-
-            }
-            else if(tileClass != 71 && $("#QuantityK").val() == 0 && $("#CostK").val() == 0){
-                $("#MaterialIdK").val( tileClass );
-
+            computeAndDisplayOverallTotal();
             }
         }
 
-        computeAndDisplayOverallTotal();
     }
     });
 
