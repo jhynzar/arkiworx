@@ -5292,7 +5292,7 @@
         if($("#BuildingPermit").val()==null || $("#TemporaryFacilities").val()==null || $("#WorkersBarracks").val()==null || $("#Excavation").val()==null || $("#Backfill").val()==null || $("#LaborCost").val()==null || $("#ToolsEquipments").val()==null || $("#Transportation").val()==null || $("#Contigency").val()==null){
             alert("Please fill up the required fields");
         }
-        else($("#SoilPoisoning").val()<0 || $("#Lastillas").val()<0 || $("#DENR").val()<0 || $("#BuildingPermit").val()<=0 || $("#TemporaryFacilities").val()<=0 || $("#WorkersBarracks").val()<=0 || $("#Excavation").val()<=0 || $("#Backfill").val()<=0 || $("#LaborCost").val()<=0 || $("#ToolsEquipments").val()<=0 || $("#Transportation").val()<=0 || $("#Contigency").val()<=0){
+        if($("#SoilPoisoning").val()<0 || $("#Lastillas").val()<0 || $("#DENR").val()<0 || $("#BuildingPermit").val()<=0 || $("#TemporaryFacilities").val()<=0 || $("#WorkersBarracks").val()<=0 || $("#Excavation").val()<=0 || $("#Backfill").val()<=0 || $("#LaborCost").val()<=0 || $("#ToolsEquipments").val()<=0 || $("#Transportation").val()<=0 || $("#Contigency").val()<=0){
             alert("Invalid Input.");
         }
         else{
@@ -6285,7 +6285,7 @@
         var tilecost = DirectCountingEsti(totalTiles,tileClass);
         var cost = tilecost.total;
         var name = tilecost.materialname;
-        addmaterial(tileClass,totalTiles,cost,name));
+        addmaterial(tileClass,totalTiles,cost,name);
 
         $("#Quantity86").val((TileArea / 3)*20);
         var tileAd = DirectCountingEsti( $("#Quantity86").val(),$("#MaterialId86").val() );
