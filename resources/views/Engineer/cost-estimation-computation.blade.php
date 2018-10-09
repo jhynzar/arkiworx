@@ -5466,66 +5466,48 @@
     });
 
     $("#Slab").click(function(){
-        if($("#SlabThickness").val()<=0||$("#SlabWidth").val()<=0||$("#SlabLength").val()<=0||$("#SlabVolume").val()<=0){
-            alert("Invalid Input.");
-        }
-        else if($("#SlabThickness").val()==null&&$("#SlabWidth").val()==null&&$("#SlabLength").val()==null){
-            var concrete = ConcreteEsti( 1,6,1,$("#SlabCC").val(),1 );
-            var metal = metalica(  );
-            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metal.qtya,metal.costa,metal.tiewire,metal.costb);
-        }
-        else if($("#SlabThickness").val()!=null&&$("#SlabWidth").val()!=null&&$("#SlabLength").val()!=null){
-            $("#SlabVolume").val( $("#SlabThickness").val() * $("#SlabWidth").val() * $("#SlabLength").val() );
-            var concrete = ConcreteEsti( 1,$("#SlabVolume").val(),1,$("#SlabCC").val(),1 );
-            var mmetal = metalica(  );
-            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metal.qtya,metal.costa,metal.tiewire,metal.costb);
-        
-        }
-        else {
-            alert("Please fill up the required fields");
-        }
         var panapos = function(cementqty,cementcost,gravelqty,gravelcost,sandqty,sandcost,qtya,costa,tiewire,costb){
             //
-            var qty12 = $("#Quantity12").val();
+            var qty12 = parseFloat($("#Quantity12").val());
             qty12 += cementqty;
             $("#Quantity12").val(qty12);
-            var cost12 = $("#Cost12").val();
+            var cost12 = parseFloat($("#Cost12").val());
             cost12 += cementcost;
             $("#Cost12").val(cost12);
-            var qty13 = $("#Quantity13").val();
+            var qty13 = parseFloat($("#Quantity13").val());
             qty13 += sandqty;
             $("#Quantity13").val(qty13);
-            var cost13 = $("#Cost13").val();
+            var cost13 = parseFloat($("#Cost13").val());
             cost13 += sandcost;
             $("#Cost13").val(cost13);
-            var qty14 = $("#Quantity14").val();
+            var qty14 = parseFloat($("#Quantity14").val());
             qty14 += gravelqty;
             $("#Quantity14").val(qty14);
-            var cost14 = $("#Cost14").val();
+            var cost14 = parseFloat($("#Cost14").val());
             cost14 += gravelcost;
             $("#Cost14").val(cost14);
-            var qty15 = $("#Quantity15").val();
-            qty15 += noofbars;
+            var qty15 = parseFloat($("#Quantity15").val());
+            qty15 += qtya;
             $("#Quantity15").val(qty15);
-            var cost15 = $("#Cost15").val();
+            var cost15 = parseFloat($("#Cost15").val());
             cost15 += costa;
             $("#Cost15").val(cost15);
-            var qty16 = $("#Quantity16").val();
+            var qty16 = parseFloat($("#Quantity16").val());
             qty16 += tiewire;
             $("#Quantity16").val(qty16);
-            var cost16 = $("#Cost16").val();
+            var cost16 = parseFloat($("#Cost16").val());
             cost16 += costb;
             $("#Cost16").val(cost16);
-            var no = $("#HowManySlabs").val(  );
+            var no = parseFloat($("#HowManySlabs").val());
             $("#HowManySlabs").val( no + 1 );
             alert("Nagdagdag ka ng Slab");
             computeAndDisplayOverallTotal();
         }
         var metalica = function(){
-            var formula = searchValue(2,$("#slabBarSpacing").val(),2);
-            var mainbar = ($("#slabWidth").val()*$("#slabLength").val())*formula.Answer ;
-            var formula1 = searchValue(6,$("#slabBarSpacing").val()+7,3);
-            var tiewire = Math.ceil(($("#slabWidth").val()*$("#slabLength").val())*formula1.Answer);
+            var formula = searchValues(2,parseFloat($("#slabBarSpacing").val()),2);
+            var mainbar = (parseFloat($("#SlabWidth").val())*parseFloat($("#SlabLength").val()))*formula.Answer ;
+            var formula1 = searchValues(6,parseFloat($("#slabBarSpacing").val())+7,3);
+            var tiewire = Math.ceil((parseFloat($("#SlabWidth").val())*parseFloat($("#SlabLength").val()))*formula1.Answer);
             var metals1 = DirectCountingEsti(mainbar,7);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiewire,6);
@@ -5537,7 +5519,29 @@
                 costb : cost2
             };
         }
-        computeAndDisplayOverallTotal();
+
+
+
+        if(parseFloat($("#SlabThickness").val())<=0||parseFloat($("#SlabWidth").val())<=0||parseFloat($("#SlabLength").val())<=0){
+            alert("Invalid Input.");
+        }
+        else if(parseFloat($("#SlabThickness").val())==null&&parseFloat($("#SlabWidth").val())==null&&parseFloat($("#SlabLength").val())==null){
+            var concrete = ConcreteEsti( 1,6,1,parseFloat($("#SlabCC").val()),1 );
+            var metal = metalica(  );
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metal.qtya,metal.costa,metal.tiewire,metal.costb);
+        }
+        else if(parseFloat($("#SlabThickness").val())!=null&&parseFloat($("#SlabWidth").val())!=null&&parseFloat($("#SlabLength").val())!=null){
+            $("#SlabVolume").val( parseFloat($("#SlabThickness").val()) * parseFloat($("#SlabWidth").val()) * parseFloat($("#SlabLength").val()) );
+            var concrete = ConcreteEsti( 1,parseFloat($("#SlabVolume").val()),1,parseFloat($("#SlabCC").val()),1 );
+            var metal = metalica(  );
+            panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,metal.qtya,metal.costa,metal.tiewire,metal.costb);
+        
+        }
+        else {
+            alert("Please fill up the required fields");
+        }
+        
+        //computeAndDisplayOverallTotal();
     });
 
     $("#BeamWidth").val($("#BeamLength").val());
