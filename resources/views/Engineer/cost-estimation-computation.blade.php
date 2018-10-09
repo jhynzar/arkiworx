@@ -2634,6 +2634,12 @@
                                                                             </div>
                                                                             <br>
 
+                                                                            <div class="form-group">
+                                                                                <label> No of Bars per Footing:</label>
+                                                                                <input class="form-control" id="WallFootingNoOfBars"
+                                                                                    style="width: 100px !important;">
+                                                                            </div> <br> <br>
+
                                                                             <div class="form-group form-inline pull-center">
                                                                                 <label for="">Bar Length:</label>
                                                                                 <select class="form-control" id="wallFootingBarLength"
@@ -6903,7 +6909,7 @@
                 "#WallFootingCC").val()), 1);
             var metal = metalica();
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost, metalica.qtya, metalica.tiewire, metalica.costb);
+                concrete.sandcost, metal.qtya,metal.costa, metal.tiewire, metal.costb);
 
         } else {
             alert("Please fill up the required fields");
