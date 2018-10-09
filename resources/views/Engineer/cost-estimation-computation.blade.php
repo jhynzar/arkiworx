@@ -3781,7 +3781,8 @@
                                                                             <input type="number" class="form-control"
                                                                                 id="RoofMaterialQ" style="width: 60px !important;"
                                                                                 placeholder="+">
-
+                                                                            <button type="button" id="Roofing"
+                                                                                class="btn btn-primary">Compute</button>
                                                                         </div>
 
 
@@ -7140,42 +7141,42 @@
     });
 
     $("#Roofing").click(function () {
-        if ($("#RoofMaterialQ").val() == 0 || $("#RoofMaterialQ").val() < 0) {
+        if (parseFloat($("#RoofMaterialQ").val()) == 0 || parseFloat($("#RoofMaterialQ").val()) < 0) {
             //
         } else {
-            var count = DirectCountingEsti($("#RoofMaterialQ").val(), $("#RoofMaterials").val());
+            var count = DirectCountingEsti(parseFloat($("#RoofMaterialQ").val()), parseFloat($("#RoofMaterials").val()));
             var cost = count.total;
 
-            if ($("#RoofMaterials").val() == 17) {
-                var qty = $("#Quantity45").val();
-                cost += $("#Cost45").val();
-                qty += $("#RoofMaterialQ").val();
+            if (parseFloat($("#RoofMaterials").val()) == 17) {
+                var qty = parseFloat($("#Quantity45").val());
+                cost += parseFloat($("#Cost45").val());
+                qty += parseFloat($("#RoofMaterialQ").val());
                 $("#Quantity45").val(qty);
-                $("#Cost45").val(total);
-            } else if ($("#RoofMaterials").val() == 18) {
-                var qty = $("#Quantity46").val();
-                cost += $("#Cost46").val();
-                qty += $("#RoofMaterialQ").val();
+                $("#Cost45").val(cost);
+            } else if (parseFloat($("#RoofMaterials").val()) == 18) {
+                var qty = parseFloat($("#Quantity46").val());
+                cost += parseFloat($("#Cost46").val());
+                qty += parseFloat($("#RoofMaterialQ").val());
                 $("#Quantity46").val(qty);
-                $("#Cost46").val(total);
-            } else if ($("#RoofMaterials").val() == 19) {
-                var qty = $("#Quantity47").val();
-                cost += $("#Cost47").val();
-                qty += $("#RoofMaterialQ").val();
+                $("#Cost46").val(cost);
+            } else if (parseFloat($("#RoofMaterials").val()) == 19) {
+                var qty = parseFloat($("#Quantity47").val());
+                cost += parseFloat($("#Cost47").val());
+                qty += parseFloat($("#RoofMaterialQ").val());
                 $("#Quantity47").val(qty);
-                $("#Cost47").val(total);
-            } else if ($("#RoofMaterials").val() == 20) {
-                var qty = $("#Quantity48").val();
-                cost += $("#Cost48").val();
-                qty += $("#RoofMaterialQ").val();
-                $("#Quantity48").val(qty);
+                $("#Cost47").val(cost);
+            } else if (parseFloat($("#RoofMaterials").val()) == 20) {
+                var qty = parseFloat($("#Quantity48").val());
+                cost += parseFloat($("#Cost48").val());
+                qty += parseFloat($("#RoofMaterialQ").val());
+                $("#Quantity48").val(cost);
                 $("#Cost48").val(total);
-            } else if ($("#RoofMaterials").val() == 21) {
-                var qty = $("#Quantity49").val();
-                cost += $("#Cost49").val();
-                qty += $("#RoofMaterialQ").val();
+            } else if (parseFloat($("#RoofMaterials").val()) == 21) {
+                var qty = parseFloat($("#Quantity49").val());
+                cost += parseFloat($("#Cost49").val());
+                qty += parseFloat($("#RoofMaterialQ").val());
                 $("#Quantity49").val(qty);
-                $("#Cost49").val(total);
+                $("#Cost49").val(cost);
             }
             alert("Nagdagdag ka ng Material sa Roofing");
             computeAndDisplayOverallTotal();
