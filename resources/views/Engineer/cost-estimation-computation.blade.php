@@ -6528,17 +6528,17 @@
                 costa: cost1
             };
         }
-        if (parseFloat($("#ColumnThickness").val()) <= 0 || parseFloat($("#ColumnWidth").val()) <= 0 ||
-            parseFloat($("#ColumnLength").val()) <= 0 || parseFloat($("#ColumnVolume").val()) <= 0) {
+        if (parseFloat($("#ColumnThickness").val()) < 0 || parseFloat($("#ColumnWidth").val()) < 0 ||
+            parseFloat($("#ColumnLength").val()) < 0 || parseFloat($("#ColumnVolume").val()) < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#ColumnThickness").val()) == null && parseFloat($("#ColumnWidth").val()) ==
-            null && parseFloat($("#ColumnLength").val()) == null) {
+        } else if (parseFloat($("#ColumnThickness").val()) == 0 && parseFloat($("#ColumnWidth").val()) ==
+            0 && parseFloat($("#ColumnLength").val()) == 0) {
             var concrete = ConcreteEsti(1, 1.6, 1, parseFloat($("#ColumnCC").val()), 1);
             var metal = metalica(4, 0.5);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if (parseFloat($("#ColumnThickness").val()) != null && parseFloat($("#ColumnWidth").val()) !=
-            null && parseFloat($("#ColumnLength").val()) != null) {
+        } else if (parseFloat($("#ColumnThickness").val()) != 0 && parseFloat($("#ColumnWidth").val()) !=
+            0 && parseFloat($("#ColumnLength").val()) != 0) {
             $("#ColumnVolume").val(parseFloat($("#ColumnThickness").val()) * parseFloat($("#ColumnWidth").val()) *
                 parseFloat($("#ColumnLength").val()));
             var concrete = ConcreteEsti(1, parseFloat($("#ColumnVolume").val()), 1, parseFloat($("#ColumnCC").val()),
@@ -6614,20 +6614,20 @@
             };
         }
 
-        if (parseFloat($("#FootingThickness").val()) <= 0 || parseFloat($("#FootingWidth").val()) <= 0 ||
-            parseFloat($("#FootingLength").val()) <= 0 || parseFloat($("#FootingVolume").val()) <= 0 ||
-            parseFloat($("#FootingNoOfBars").val()) <= 0) {
+        if (parseFloat($("#FootingThickness").val()) < 0 || parseFloat($("#FootingWidth").val()) < 0 ||
+            parseFloat($("#FootingLength").val()) < 0 || parseFloat($("#FootingVolume").val()) < 0 ||
+            parseFloat($("#FootingNoOfBars").val()) < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#FootingThickness").val()) == null && parseFloat($("#FootingWidth").val()) ==
-            null && parseFloat($("#FootingLength").val()) == null || parseFloat($("#FootingNoOfBars").val()) ==
-            null) {
+        } else if (parseFloat($("#FootingThickness").val()) == 0 && parseFloat($("#FootingWidth").val()) ==
+            0 && parseFloat($("#FootingLength").val()) == 0 || parseFloat($("#FootingNoOfBars").val()) ==
+            0) {
             var concrete = ConcreteEsti(1, 0.8, 1, parseFloat($("#FootingCC").val()), 1);
             var metal = metalica();
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost);
-        } else if (parseFloat($("#FootingThickness").val()) != null && parseFloat($("#FootingWidth").val()) !=
-            null && parseFloat($("#FootingLength").val()) != null || parseFloat($("#FootingNoOfBars").val()) !=
-            null) {
+        } else if (parseFloat($("#FootingThickness").val()) != 0 && parseFloat($("#FootingWidth").val()) !=
+            0 && parseFloat($("#FootingLength").val()) != 0 || parseFloat($("#FootingNoOfBars").val()) !=
+            0) {
             $("#FootingVolume").val(parseFloat($("#FootingThickness").val()) * parseFloat($("#FootingWidth").val()) *
                 parseFloat($("#FootingLength").val()));
             var concrete = ConcreteEsti(1, parseFloat($("#FootingVolume").val()), 1, parseFloat($("#FootingCC")
@@ -6703,17 +6703,17 @@
 
 
 
-        if (parseFloat($("#SlabThickness").val()) <= 0 || parseFloat($("#SlabWidth").val()) <= 0 || parseFloat(
-                $("#SlabLength").val()) <= 0) {
+        if (parseFloat($("#SlabThickness").val()) < 0 || parseFloat($("#SlabWidth").val()) < 0 || parseFloat(
+                $("#SlabLength").val()) < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#SlabThickness").val()) == null && parseFloat($("#SlabWidth").val()) == null &&
-            parseFloat($("#SlabLength").val()) == null) {
+        } else if (parseFloat($("#SlabThickness").val()) == 0 && parseFloat($("#SlabWidth").val()) == 0 &&
+            parseFloat($("#SlabLength").val()) == 0) {
             var concrete = ConcreteEsti(1, 6, 1, parseFloat($("#SlabCC").val()), 1);
             var metal = metalica();
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
-        } else if (parseFloat($("#SlabThickness").val()) != null && parseFloat($("#SlabWidth").val()) != null &&
-            parseFloat($("#SlabLength").val()) != null) {
+        } else if (parseFloat($("#SlabThickness").val()) != 0 && parseFloat($("#SlabWidth").val()) != 0 &&
+            parseFloat($("#SlabLength").val()) != 0) {
             $("#SlabVolume").val(parseFloat($("#SlabThickness").val()) * parseFloat($("#SlabWidth").val()) *
                 parseFloat($("#SlabLength").val()));
             var concrete = ConcreteEsti(1, parseFloat($("#SlabVolume").val()), 1, parseFloat($("#SlabCC").val()),
@@ -6799,17 +6799,17 @@
             };
         }
 
-        if (parseFloat($("#BeamThickness").val()) <= 0 || parseFloat($("#BeamWidth").val()) <= 0 || parseFloat(
-                $("#BeamLength").val()) <= 0 || parseFloat($("#ColumnSpacing").val()) <= 0) {
+        if (parseFloat($("#BeamThickness").val()) < 0 || parseFloat($("#BeamWidth").val()) < 0 || parseFloat(
+                $("#BeamLength").val()) < 0 || parseFloat($("#ColumnSpacing").val()) < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#BeamThickness").val()) == null && parseFloat($("#BeamWidth").val()) == null &&
-            parseFloat($("#BeamLength").val()) == null || parseFloat($("#ColumnSpacing").val()) == null) {
+        } else if (parseFloat($("#BeamThickness").val()) == 0 && parseFloat($("#BeamWidth").val()) == 0 &&
+            parseFloat($("#BeamLength").val()) == 0 || parseFloat($("#ColumnSpacing").val()) == 0) {
             var concrete = ConcreteEsti(1, 1.6, 1, parseFloat($("#BeamCC").val()), 1);
             var metal = metalica(4, 0.5);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if (parseFloat($("#BeamThickness").val()) != null && parseFloat($("#BeamWidth").val()) != null &&
-            parseFloat($("#BeamLength").val()) != null && parseFloat($("#ColumnSpacing").val()) != null) {
+        } else if (parseFloat($("#BeamThickness").val()) != 0 && parseFloat($("#BeamWidth").val()) != 0 &&
+            parseFloat($("#BeamLength").val()) != 0 && parseFloat($("#ColumnSpacing").val()) != 0) {
             $("#BeamVolume").val(parseFloat($("#BeamThickness").val()) * parseFloat($("#BeamWidth").val()) *
                 parseFloat($("#BeamLength").val()));
             var concrete = ConcreteEsti(1, parseFloat($("#BeamVolume").val()), 1, parseFloat($("#BeamCC").val()),
@@ -6885,19 +6885,19 @@
             };
         }
 
-        if (parseFloat($("#WallFootingThickness").val()) <= 0 || parseFloat($("#WallFootingWidth").val()) <= 0 ||
-            parseFloat($("#WallFootingLength").val()) <= 0 || parseFloat($("#WallFootingNoOfBars").val()) <= 0) {
+        if (parseFloat($("#WallFootingThickness").val()) < 0 || parseFloat($("#WallFootingWidth").val()) < 0 ||
+            parseFloat($("#WallFootingLength").val()) < 0 || parseFloat($("#WallFootingNoOfBars").val()) < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#WallFootingThickness").val()) == null && parseFloat($("#WallFootingWidth").val()) ==
-            null && parseFloat($("#WallFootingLength").val()) == null || parseFloat($("#WallFootingNoOfBars").val()) ==
-            null) {
+        } else if (parseFloat($("#WallFootingThickness").val()) == 0 && parseFloat($("#WallFootingWidth").val()) ==
+            0 && parseFloat($("#WallFootingLength").val()) == 0 || parseFloat($("#WallFootingNoOfBars").val()) ==
+            0) {
             var concrete = ConcreteEsti(1, 0.8, 1, parseFloat($("#WallFootingCC").val()), 1);
             var metal = metalica();
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost);
-        } else if (parseFloat($("#WallFootingThickness").val()) != null && parseFloat($("#WallFootingWidth").val()) !=
-            null && parseFloat($("#WallFootingLength").val()) != null || parseFloat($("#WallFootingNoOfBars").val()) !=
-            null) {
+        } else if (parseFloat($("#WallFootingThickness").val()) != 0 && parseFloat($("#WallFootingWidth").val()) !=
+            0 && parseFloat($("#WallFootingLength").val()) != 0 || parseFloat($("#WallFootingNoOfBars").val()) !=
+            0) {
             $("#WallFootingVolume").val(parseFloat($("#WallFootingThickness").val()) * parseFloat($(
                 "#WallFootingWidth").val()) * parseFloat($("#WallFootingLength").val()));
             var concrete = ConcreteEsti(1, parseFloat($("#WallFootingVolume").val()), 1, parseFloat($(
@@ -6916,17 +6916,17 @@
 
     $("#RoofBeamWidth").val($("#RoofBeamLength").val());
     $("#RoofBeam").click(function () {
-        if ($("#RoofBeamThickness").val() <= 0 || $("#RoofBeamWidth").val() <= 0 || $("#RoofBeamLength").val() <=
-            0 || $("#RoofBeamVolume").val() <= 0 || $("#ColumnSpacing").val() <= 0) {
+        if ($("#RoofBeamThickness").val() < 0 || $("#RoofBeamWidth").val() < 0 || $("#RoofBeamLength").val() <
+            0 || $("#RoofBeamVolume").val() < 0 || $("#ColumnSpacing").val() < 0) {
             alert("Invalid Input.");
-        } else if ($("#RoofBeamThickness").val() == null && $("#RoofBeamWidth").val() == null && $(
-                "#RoofBeamLength").val() == null || $("#ColumnSpacing").val() == ull) {
+        } else if ($("#RoofBeamThickness").val() == 0 && $("#RoofBeamWidth").val() == 0 && $(
+                "#RoofBeamLength").val() == 0 || $("#ColumnSpacing").val() == ull) {
             var concrete = ConcreteEsti(1, 1.6, 1, $("#RoofBeamCC").val(), 1);
             var metal = metalica(4, 0.5);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if ($("#RoofBeamThickness").val() != null && $("#RoofBeamWidth").val() != null && $(
-                "#RoofBeamLength").val() != null && $("#ColumnSpacing").val() != null) {
+        } else if ($("#RoofBeamThickness").val() != 0 && $("#RoofBeamWidth").val() != 0 && $(
+                "#RoofBeamLength").val() != 0 && $("#ColumnSpacing").val() != 0) {
             $("#RoofBeamVolume").val($("#RoofBeamThickness").val() * $("#RoofBeamWidth").val() * $(
                 "#RoofBeamLength").val());
             var concrete = ConcreteEsti(1, $("#RoofBeamVolume").val(), 1, $("#RoofBeamCC").val(), 1);
@@ -7007,15 +7007,15 @@
 
 
     $("#Masonry").click(function () {
-        if ($("#CHBWidth").val() <= 0 || $("#CHBLength").val() <= 0 || $("#CHBMortarThickness").val() <= 0 || $(
-                "#CHBPlasterThickness").val() <= 0) {
+        if ($("#CHBWidth").val() < 0 || $("#CHBLength").val() < 0 || $("#CHBMortarThickness").val() < 0 || $(
+                "#CHBPlasterThickness").val() < 0) {
 
             alert("Invalid Inputs");
-        } else if ($("#CHBWidth").val() == null || $("#CHBLength").val() == null || $("#CHBMortarThickness").val() ==
-            null || $("#CHBPlasterThickness").val() == null) {
+        } else if ($("#CHBWidth").val() == 0 || $("#CHBLength").val() == 0 || $("#CHBMortarThickness").val() ==
+            0 || $("#CHBPlasterThickness").val() == 0) {
             //
-        } else if ($("#CHBWidth").val() != null || $("#CHBLength").val() != null || $("#CHBMortarThickness").val() !=
-            null || $("#CHBPlasterThickness").val() != null) {
+        } else if ($("#CHBWidth").val() != 0 || $("#CHBLength").val() != 0 || $("#CHBMortarThickness").val() !=
+            0 || $("#CHBPlasterThickness").val() != 0) {
             $("#CHBArea").val($("#CHBWidth").val() * $("#CHBLength").val());
             var chbcost1 = 0;
             var chbcost2 = 0;
@@ -7128,7 +7128,7 @@
     });
 
     $("#Roofing").click(function () {
-        if ($("#RoofMaterialQ").val() == null || $("#RoofMaterialQ").val() <= 0) {
+        if ($("#RoofMaterialQ").val() == 0 || $("#RoofMaterialQ").val() < 0) {
             //
         } else {
             var count = DirectCountingEsti($("#RoofMaterialQ").val(), $("#RoofMaterials").val());
@@ -7168,7 +7168,7 @@
             alert("Nagdagdag ka ng Material sa Roofing");
             computeAndDisplayOverallTotal();
         }
-        /*if($("#RoofingThickness").val()<=0||$("#RoofingWidth").val()<=0||$("#RoofingLength").val()<=0||$("#RoofingVolume").val()<=0){
+        /*if($("#RoofingThickness").val()<0||$("#RoofingWidth").val()<0||$("#RoofingLength").val()<0||$("#RoofingVolume").val()<0){
             alert("Invalid Input.");
         }
         else if($("#RoofingThickness").val()==0&&$("#RoofingWidth").val()==0&&$("#RoofingLength").val()==0){
@@ -7251,7 +7251,7 @@
     });
 
     $("#Windows").click(function () {
-        if ($("#WindowMaterialQ").val() == null || $("#WindowMaterialQ").val() <= 0) {
+        if ($("#WindowMaterialQ").val() == 0 || $("#WindowMaterialQ").val() < 0) {
             //
         } else {
             var count = DirectCountingEsti($("#WindowMaterialQ").val(), $("#WindowMaterials").val());
@@ -7282,7 +7282,7 @@
     });
 
     $("#Doors").click(function () {
-        if ($("#DoorMaterialQ").val() == null || $("#DoorMaterialQ").val() <= 0) {
+        if ($("#DoorMaterialQ").val() == 0 || $("#DoorMaterialQ").val() < 0) {
 
             alert("Invalid Input");
         } else {
@@ -7348,7 +7348,7 @@
     });
 
     $("#ElectricalWorks").click(function () {
-        if ($("#ElectricalWorksMaterialQ").val() <= 0 || $("#ElectricalWorksMaterialQ").val() == null) {
+        if ($("#ElectricalWorksMaterialQ").val() < 0 || $("#ElectricalWorksMaterialQ").val() == 0) {
 
             alert("Invalid Input");
         } else {
@@ -7423,8 +7423,8 @@
     });
 
     $("#Tiles").click(function () {
-        if ($("#TileWidth").val() <= 0 || $("#TileLength").val() <= 0 || $("#TileWidth").val() == null || $(
-                "#TileLength").val() == null) {
+        if ($("#TileWidth").val() < 0 || $("#TileLength").val() < 0 || $("#TileWidth").val() == 0 || $(
+                "#TileLength").val() == 0) {
 
             alert("Invalid Input");
         } else {
