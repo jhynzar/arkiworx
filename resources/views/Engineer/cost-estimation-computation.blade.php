@@ -3211,172 +3211,172 @@
 
                                                             </div>
 
-                                                            
+
                                                             <div class="col-sm-6 col-xs-12 "><br>
-                                                                    <div>
+                                                                <div>
 
-                                                                        <div class="card">
-
-                                                                            <div class="card-block">
-                                                                                <div class="row">
-                                                                                    <div class="table-responsive">
-                                                                                        <table class="table">
-                                                                                            <thead>
-                                                                                                <tr>
-                                                                                                    <th>Material</th>
-                                                                                                    <th>Estimated Qty</th>
-                                                                                                    <th>Estimated Cost</th>
-
-                                                                                                </tr>
-                                                                                            </thead>
-                                                                                            <tbody>
-                                                                                                @foreach (
-                                                                                                $TemplateArray2 as
-                                                                                                $key=>$record )
-                                                                                                @if($record -> id ==
-                                                                                                17)
-                                                                                                <tr class="table-success">
-                                                                                                    <td id="RoofBeamCement">
-                                                                                                        {{ $record ->
-                                                                                                        materialName }}
-                                                                                                    </td>
-                                                                                                    <td id="TQty{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        qty }} </td>
-                                                                                                    <td id="TCost{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        cost }} </td>
-
-                                                                                                </tr>@endif @endforeach
-                                                                                                @foreach (
-                                                                                                $TemplateArray2 as
-                                                                                                $key=>$record )
-                                                                                                @if($record -> id ==
-                                                                                                18)
-                                                                                                <tr>
-                                                                                                    <td id="RoofBeamS">
-                                                                                                        {{ $record ->
-                                                                                                        materialName }}
-                                                                                                    </td>
-                                                                                                    <td id="TQty{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        qty }} </td>
-                                                                                                    <td id="TCost{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        cost }} </td>
-
-                                                                                                </tr>@endif @endforeach
-                                                                                                @foreach (
-                                                                                                $TemplateArray2 as
-                                                                                                $key=>$record )
-                                                                                                @if($record -> id ==
-                                                                                                19)
-                                                                                                <tr class="table-warning">
-                                                                                                    <td id="RoofBeamG">
-                                                                                                        {{ $record ->
-                                                                                                        materialName }}
-                                                                                                    </td>
-                                                                                                    <td id="TQty{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        qty }} </td>
-                                                                                                    <td id="TCost{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        cost }} </td>
-
-                                                                                                </tr>@endif @endforeach
-                                                                                                @foreach (
-                                                                                                $TemplateArray2 as
-                                                                                                $key=>$record )
-                                                                                                @if($record -> id ==
-                                                                                                20)
-                                                                                                <tr class="text text-primary">
-                                                                                                    <td><b>Metal
-                                                                                                            Reinforcement</b></td>
-                                                                                                </tr>
-                                                                                                <tr class="table-success">
-                                                                                                    <td id="RoofBeamSteelBar">
-                                                                                                        {{ $record ->
-                                                                                                        materialName }}
-                                                                                                    </td>
-                                                                                                    <td id="TQty{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        qty }} </td>
-                                                                                                    <td id="TCost{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        cost }} </td>
-
-                                                                                                </tr>@endif @endforeach
-                                                                                                @foreach (
-                                                                                                $TemplateArray2 as
-                                                                                                $key=>$record )
-                                                                                                @if($record -> id ==
-                                                                                                21)
-                                                                                                <tr>
-                                                                                                    <td id="RoofBeamTieBar">
-                                                                                                        {{ $record ->
-                                                                                                        materialName }}
-                                                                                                    </td>
-                                                                                                    <td id="TQty{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        qty }} </td>
-                                                                                                    <td id="TCost{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        cost }} </td>
-
-                                                                                                </tr>@endif @endforeach
-                                                                                                @foreach (
-                                                                                                $TemplateArray2 as
-                                                                                                $key=>$record )
-                                                                                                @if($record -> id ==
-                                                                                                22)
-                                                                                                <tr class="table-warning">
-                                                                                                    <td id="RoofBeamTieWire">
-                                                                                                        {{ $record ->
-                                                                                                        materialName }}
-                                                                                                    </td>
-                                                                                                    <td id="TQty{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        qty }} </td>
-                                                                                                    <td id="TCost{{$record -> id}}">
-                                                                                                        {{ $record ->
-                                                                                                        cost }} </td>
-
-                                                                                                </tr>@endif @endforeach
-
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </div>
-
-
-                                                                                </div>
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                        <!-- TOTALS TABLE -->
+                                                                    <div class="card">
 
                                                                         <div class="card-block">
-                                                                            <div class="table-responsive">
-                                                                                <table class="table m-b-0 photo-table">
-                                                                                    <thead>
-                                                                                        <tr class="text-uppercase">
-                                                                                            <th class="text-left text-primary">Total
-                                                                                                Cost:</th>
-                                                                                            <th class="text-center"></th>
-                                                                                            <th class="text-center text-primary"
-                                                                                                id="totalCost11"> </th>
+                                                                            <div class="row">
+                                                                                <div class="table-responsive">
+                                                                                    <table class="table">
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <th>Material</th>
+                                                                                                <th>Estimated Qty</th>
+                                                                                                <th>Estimated Cost</th>
+
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            @foreach (
+                                                                                            $TemplateArray2 as
+                                                                                            $key=>$record )
+                                                                                            @if($record -> id ==
+                                                                                            17)
+                                                                                            <tr class="table-success">
+                                                                                                <td id="RoofBeamCement">
+                                                                                                    {{ $record ->
+                                                                                                    materialName }}
+                                                                                                </td>
+                                                                                                <td id="TQty{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    cost }} </td>
+
+                                                                                            </tr>@endif @endforeach
+                                                                                            @foreach (
+                                                                                            $TemplateArray2 as
+                                                                                            $key=>$record )
+                                                                                            @if($record -> id ==
+                                                                                            18)
+                                                                                            <tr>
+                                                                                                <td id="RoofBeamS">
+                                                                                                    {{ $record ->
+                                                                                                    materialName }}
+                                                                                                </td>
+                                                                                                <td id="TQty{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    cost }} </td>
+
+                                                                                            </tr>@endif @endforeach
+                                                                                            @foreach (
+                                                                                            $TemplateArray2 as
+                                                                                            $key=>$record )
+                                                                                            @if($record -> id ==
+                                                                                            19)
+                                                                                            <tr class="table-warning">
+                                                                                                <td id="RoofBeamG">
+                                                                                                    {{ $record ->
+                                                                                                    materialName }}
+                                                                                                </td>
+                                                                                                <td id="TQty{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    cost }} </td>
+
+                                                                                            </tr>@endif @endforeach
+                                                                                            @foreach (
+                                                                                            $TemplateArray2 as
+                                                                                            $key=>$record )
+                                                                                            @if($record -> id ==
+                                                                                            20)
+                                                                                            <tr class="text text-primary">
+                                                                                                <td><b>Metal
+                                                                                                        Reinforcement</b></td>
+                                                                                            </tr>
+                                                                                            <tr class="table-success">
+                                                                                                <td id="RoofBeamSteelBar">
+                                                                                                    {{ $record ->
+                                                                                                    materialName }}
+                                                                                                </td>
+                                                                                                <td id="TQty{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    cost }} </td>
+
+                                                                                            </tr>@endif @endforeach
+                                                                                            @foreach (
+                                                                                            $TemplateArray2 as
+                                                                                            $key=>$record )
+                                                                                            @if($record -> id ==
+                                                                                            21)
+                                                                                            <tr>
+                                                                                                <td id="RoofBeamTieBar">
+                                                                                                    {{ $record ->
+                                                                                                    materialName }}
+                                                                                                </td>
+                                                                                                <td id="TQty{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    cost }} </td>
+
+                                                                                            </tr>@endif @endforeach
+                                                                                            @foreach (
+                                                                                            $TemplateArray2 as
+                                                                                            $key=>$record )
+                                                                                            @if($record -> id ==
+                                                                                            22)
+                                                                                            <tr class="table-warning">
+                                                                                                <td id="RoofBeamTieWire">
+                                                                                                    {{ $record ->
+                                                                                                    materialName }}
+                                                                                                </td>
+                                                                                                <td id="TQty{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}">
+                                                                                                    {{ $record ->
+                                                                                                    cost }} </td>
+
+                                                                                            </tr>@endif @endforeach
+
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
 
 
-                                                                                        </tr>
-                                                                                    </thead>
-
-                                                                                </table>
                                                                             </div>
+
                                                                         </div>
 
                                                                     </div>
+
+                                                                    <!-- TOTALS TABLE -->
+
+                                                                    <div class="card-block">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table m-b-0 photo-table">
+                                                                                <thead>
+                                                                                    <tr class="text-uppercase">
+                                                                                        <th class="text-left text-primary">Total
+                                                                                            Cost:</th>
+                                                                                        <th class="text-center"></th>
+                                                                                        <th class="text-center text-primary"
+                                                                                            id="totalCost11"> </th>
+
+
+                                                                                    </tr>
+                                                                                </thead>
+
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+
                                                                 </div>
+                                                            </div>
 
 
                                                             <!-- Column ends -->
@@ -3782,190 +3782,212 @@
 
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="col-sm-6 col-xs-12 "><br>
-                                                                <div>
+                                                                <div class="col-sm-6 col-xs-12 "><br>
+                                                                    <div>
 
-                                                                    <div class="card">
+                                                                        <div class="card">
 
-                                                                        <div class="card-block">
-                                                                            <div class="row">
-                                                                                <div class="table-responsive">
-                                                                                    <table class="table">
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <th>Material</th>
-                                                                                                <th>Estimated Qty</th>
-                                                                                                <th>Estimated Cost</th>
+                                                                            <div class="card-block">
+                                                                                <div class="row">
+                                                                                    <div class="table-responsive">
+                                                                                        <table class="table">
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th>Material</th>
+                                                                                                    <th>Estimated Qty</th>
+                                                                                                    <th>Estimated Cost</th>
 
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-                                                                                            <!-- @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 29)    
-                                        <tr class="table-success">
-                                            <td id="RoofingCement"> {{ $record -> materialName }} </td> 
-                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
-                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
-                                           
-                                        </tr>@endif @endforeach
-                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 30)    
-                                        <tr>
-                                            <td id="RoofingS"> {{ $record -> materialName }} </td>
-                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
-                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
-                                       
-                                        </tr>@endif @endforeach
-                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 31)    
-                                        <tr class="table-warning">
-                                            <td id="RoofingG"> {{ $record -> materialName }} </td>
-                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
-                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
-                                           
-                                        </tr>@endif @endforeach
-                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 32)    
-                                            <tr>
-                                            <td id="RoofingTieBar"> {{ $record -> materialName }} </td>
-                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
-                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
-                                       
-                                        </tr>@endif @endforeach
-                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 33)    
-                                            <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
-                                            <tr class="table-success">
-                                            <td id="RoofingSteelBar"> {{ $record -> materialName }} </td>
-                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
-                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
-                                           
-                                        </tr>@endif @endforeach
-                                        @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 34)    
-                                        <tr class="table-warning">
-                                            <td id="RoofingTieWire"> {{ $record -> materialName }} </td>
-                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
-                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
-                                           
-                                        </tr>@endif @endforeach-->
-                                                                                            @foreach ( $TemplateArray2
-                                                                                            as $key=>$record )
-                                                                                            @if($record -> id == 45)
-                                                                                            <tr>
-                                                                                                <td id="RoofingTieBar">
-                                                                                                    {{ $record ->
-                                                                                                    materialName }}
-                                                                                                </td>
-                                                                                                <td id="TQty{{$record -> id}}">
-                                                                                                    {{ $record -> qty
-                                                                                                    }} </td>
-                                                                                                <td id="TCost{{$record -> id}}">
-                                                                                                    {{ $record -> cost
-                                                                                                    }} </td>
-
-                                                                                            </tr>@endif @endforeach
-                                                                                            @foreach ( $TemplateArray2
-                                                                                            as $key=>$record )
-                                                                                            @if($record -> id == 46)
-                                                                                            <tr class="text text-primary">
-                                                                                                <td><b>Metal
-                                                                                                        Reinforcement</b></td>
-                                                                                            </tr>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <!-- @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 29)    
                                                                                             <tr class="table-success">
-                                                                                                <td id="RoofingSteelBar">
-                                                                                                    {{ $record ->
-                                                                                                    materialName }}
-                                                                                                </td>
-                                                                                                <td id="TQty{{$record -> id}}">
-                                                                                                    {{ $record -> qty
-                                                                                                    }} </td>
-                                                                                                <td id="TCost{{$record -> id}}">
-                                                                                                    {{ $record -> cost
-                                                                                                    }} </td>
-
+                                                                                                <td id="RoofingCement"> {{ $record -> materialName }} </td> 
+                                                                                                <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                                                                            
                                                                                             </tr>@endif @endforeach
-                                                                                            @foreach ( $TemplateArray2
-                                                                                            as $key=>$record )
-                                                                                            @if($record -> id == 47)
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 30)    
+                                                                                            <tr>
+                                                                                                <td id="RoofingS"> {{ $record -> materialName }} </td>
+                                                                                                <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                                                                        
+                                                                                            </tr>@endif @endforeach
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 31)    
                                                                                             <tr class="table-warning">
-                                                                                                <td id="RoofingTieWire">
-                                                                                                    {{ $record ->
-                                                                                                    materialName }}
-                                                                                                </td>
-                                                                                                <td id="TQty{{$record -> id}}">
-                                                                                                    {{ $record -> qty
-                                                                                                    }} </td>
-                                                                                                <td id="TCost{{$record -> id}}">
-                                                                                                    {{ $record -> cost
-                                                                                                    }} </td>
-
+                                                                                                <td id="RoofingG"> {{ $record -> materialName }} </td>
+                                                                                                <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                                                                            
                                                                                             </tr>@endif @endforeach
-                                                                                            @foreach ( $TemplateArray2
-                                                                                            as $key=>$record )
-                                                                                            @if($record -> id == 48)
-                                                                                            <tr>
-                                                                                                <td id="RoofingTieBar">
-                                                                                                    {{ $record ->
-                                                                                                    materialName }}
-                                                                                                </td>
-                                                                                                <td id="TQty{{$record -> id}}">
-                                                                                                    {{ $record -> qty
-                                                                                                    }} </td>
-                                                                                                <td id="TCost{{$record -> id}}">
-                                                                                                    {{ $record -> cost
-                                                                                                    }} </td>
-
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 32)    
+                                                                                                <tr>
+                                                                                                <td id="RoofingTieBar"> {{ $record -> materialName }} </td>
+                                                                                                <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                                                                        
                                                                                             </tr>@endif @endforeach
-                                                                                            @foreach ( $TemplateArray2
-                                                                                            as $key=>$record )
-                                                                                            @if($record -> id == 49)
-                                                                                            <tr class="text text-primary">
-                                                                                                <td><b>Metal
-                                                                                                        Reinforcement</b></td>
-                                                                                            </tr>
-                                                                                            <tr class="table-success">
-                                                                                                <td id="RoofingSteelBar">
-                                                                                                    {{ $record ->
-                                                                                                    materialName }}
-                                                                                                </td>
-                                                                                                <td id="TQty{{$record -> id}}">
-                                                                                                    {{ $record -> qty
-                                                                                                    }} </td>
-                                                                                                <td id="TCost{{$record -> id}}">
-                                                                                                    {{ $record -> cost
-                                                                                                    }} </td>
-
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 33)    
+                                                                                                <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
+                                                                                                <tr class="table-success">
+                                                                                                <td id="RoofingSteelBar"> {{ $record -> materialName }} </td>
+                                                                                                <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                                                                            
                                                                                             </tr>@endif @endforeach
+                                                                                            @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 34)    
+                                                                                            <tr class="table-warning">
+                                                                                                <td id="RoofingTieWire"> {{ $record -> materialName }} </td>
+                                                                                                <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                                                                                <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
+                                                                                            
+                                                                                            </tr>@endif @endforeach-->
+                                                                                                @foreach (
+                                                                                                $TemplateArray2
+                                                                                                as $key=>$record )
+                                                                                                @if($record -> id ==
+                                                                                                45)
+                                                                                                <tr>
+                                                                                                    <td id="RoofingTieBar">
+                                                                                                        {{ $record ->
+                                                                                                        materialName }}
+                                                                                                    </td>
+                                                                                                    <td id="TQty{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        qty
+                                                                                                        }} </td>
+                                                                                                    <td id="TCost{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        cost
+                                                                                                        }} </td>
 
-                                                                                        </tbody>
-                                                                                    </table>
+                                                                                                </tr>@endif @endforeach
+                                                                                                @foreach (
+                                                                                                $TemplateArray2
+                                                                                                as $key=>$record )
+                                                                                                @if($record -> id ==
+                                                                                                46)
+                                                                                                <tr class="text text-primary">
+                                                                                                    <td><b>Metal
+                                                                                                            Reinforcement</b></td>
+                                                                                                </tr>
+                                                                                                <tr class="table-success">
+                                                                                                    <td id="RoofingSteelBar">
+                                                                                                        {{ $record ->
+                                                                                                        materialName }}
+                                                                                                    </td>
+                                                                                                    <td id="TQty{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        qty
+                                                                                                        }} </td>
+                                                                                                    <td id="TCost{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        cost
+                                                                                                        }} </td>
+
+                                                                                                </tr>@endif @endforeach
+                                                                                                @foreach (
+                                                                                                $TemplateArray2
+                                                                                                as $key=>$record )
+                                                                                                @if($record -> id ==
+                                                                                                47)
+                                                                                                <tr class="table-warning">
+                                                                                                    <td id="RoofingTieWire">
+                                                                                                        {{ $record ->
+                                                                                                        materialName }}
+                                                                                                    </td>
+                                                                                                    <td id="TQty{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        qty
+                                                                                                        }} </td>
+                                                                                                    <td id="TCost{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        cost
+                                                                                                        }} </td>
+
+                                                                                                </tr>@endif @endforeach
+                                                                                                @foreach (
+                                                                                                $TemplateArray2
+                                                                                                as $key=>$record )
+                                                                                                @if($record -> id ==
+                                                                                                48)
+                                                                                                <tr>
+                                                                                                    <td id="RoofingTieBar">
+                                                                                                        {{ $record ->
+                                                                                                        materialName }}
+                                                                                                    </td>
+                                                                                                    <td id="TQty{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        qty
+                                                                                                        }} </td>
+                                                                                                    <td id="TCost{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        cost
+                                                                                                        }} </td>
+
+                                                                                                </tr>@endif @endforeach
+                                                                                                @foreach (
+                                                                                                $TemplateArray2
+                                                                                                as $key=>$record )
+                                                                                                @if($record -> id ==
+                                                                                                49)
+                                                                                                <tr class="text text-primary">
+                                                                                                    <td><b>Metal
+                                                                                                            Reinforcement</b></td>
+                                                                                                </tr>
+                                                                                                <tr class="table-success">
+                                                                                                    <td id="RoofingSteelBar">
+                                                                                                        {{ $record ->
+                                                                                                        materialName }}
+                                                                                                    </td>
+                                                                                                    <td id="TQty{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        qty
+                                                                                                        }} </td>
+                                                                                                    <td id="TCost{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        cost
+                                                                                                        }} </td>
+
+                                                                                                </tr>@endif @endforeach
+
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+
+
                                                                                 </div>
-
 
                                                                             </div>
 
                                                                         </div>
+                                                                        <!-- TOTALS TABLE -->
 
-                                                                    </div>
-                                                                    <!-- TOTALS TABLE -->
-
-                                                                    <div class="card-block">
-                                                                        <div class="table-responsive">
-                                                                            <table class="table m-b-0 photo-table">
-                                                                                <thead>
-                                                                                    <tr class="text-uppercase">
-                                                                                        <th class="text-left text-primary">Total
-                                                                                            Cost:</th>
-                                                                                        <th class="text-center"></th>
-                                                                                        <th class="text-center text-primary"
-                                                                                            id="totalCost13"> </th>
+                                                                        <div class="card-block">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0 photo-table">
+                                                                                    <thead>
+                                                                                        <tr class="text-uppercase">
+                                                                                            <th class="text-left text-primary">Total
+                                                                                                Cost:</th>
+                                                                                            <th class="text-center"></th>
+                                                                                            <th class="text-center text-primary"
+                                                                                                id="totalCost13"> </th>
 
 
-                                                                                    </tr>
-                                                                                </thead>
+                                                                                        </tr>
+                                                                                    </thead>
 
-                                                                            </table>
+                                                                                </table>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+
 
                                                         </div>
                                                     </div>
