@@ -6354,8 +6354,7 @@
     }
 
     var searchValues = function (X1, Y1, Work1) {
-        var AnswersArray = {!!json_encode($AnswersArray) !!
-        };
+        var AnswersArray = {!!json_encode($AnswersArray) !!};
         for (var column in AnswersArray) {
             var values = AnswersArray[column];
             var X2 = values['X'];
@@ -6371,8 +6370,7 @@
     }
 
     var searchPrice = function (materialid) {
-        var MaterialArray = {!!json_encode($MaterialArray) !!
-        };
+        var MaterialArray = {!!json_encode($MaterialArray) !!};
         var date1 = '';
         for (var column in MaterialArray) {
             var materialindex = MaterialArray[column];
