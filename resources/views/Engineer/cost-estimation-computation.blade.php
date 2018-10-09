@@ -3090,13 +3090,13 @@
 
                                                                         <div class="form-group pull-center">
                                                                             <label for="">Cement Class Mixture:</label>
-                                                                            <select class="form-control" id="RoofBeamCementCC"
+                                                                            <select class="form-control" id="RoofBeamCC"
                                                                                 style="width: 160px !important;">
-                                                                                <option value="AA">Class A </option>
-                                                                                <option value="A" selected>Class A
+                                                                                <option value="1">Class AA </option>
+                                                                                <option value="2" selected>Class A
                                                                                 </option>
-                                                                                <option value="B">Class B </option>
-                                                                                <option value="C">Class C </option>
+                                                                                <option value="3">Class B </option>
+                                                                                <option value="4">Class C </option>
                                                                             </select>
                                                                         </div>
 
@@ -6920,70 +6920,49 @@
     });
 
 
-    $("#RoofBeamWidth").val($("#RoofBeamLength").val());
+   
     $("#RoofBeam").click(function () {
-        if ($("#RoofBeamThickness").val() < 0 || $("#RoofBeamWidth").val() < 0 || $("#RoofBeamLength").val() <
-            0 || $("#RoofBeamVolume").val() < 0 || $("#ColumnSpacing").val() < 0) {
-            alert("Invalid Input.");
-        } else if ($("#RoofBeamThickness").val() == 0 && $("#RoofBeamWidth").val() == 0 && $(
-                "#RoofBeamLength").val() == 0 || $("#ColumnSpacing").val() == ull) {
-            var concrete = ConcreteEsti(1, 1.6, 1, $("#RoofBeamCC").val(), 1);
-            var metal = metalica(4, 0.5);
-            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if ($("#RoofBeamThickness").val() != 0 && $("#RoofBeamWidth").val() != 0 && $(
-                "#RoofBeamLength").val() != 0 && $("#ColumnSpacing").val() != 0) {
-            $("#RoofBeamVolume").val($("#RoofBeamThickness").val() * $("#RoofBeamWidth").val() * $(
-                "#RoofBeamLength").val());
-            var concrete = ConcreteEsti(1, $("#RoofBeamVolume").val(), 1, $("#RoofBeamCC").val(), 1);
-            var metal = metalica($("#RoofBeamNoOfBars").val(), $("#RoofBeamSpacing").val());
-            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost, $("#RoofBeamNoOfBars").val(), metal.tiebar, metal.tiewire, metal.costa,
-                metal.costb, metal.costc);
+        $("#RoofBeamWidth").val($("#RoofBeamLength").val());
 
-        } else {
-            alert("Please fill up the required fields");
-        }
         var panapos = function (cementqty, cementcost, gravelqty, gravelcost, sandqty, sandcost, noofbars,
             tiebar, tiewire, costa, costb, costc) {
             //
-            var qty17 = $("#Quantity17").val();
+            var qty17 = parseFloat($("#Quantity17").val());
             qty17 += cementqty;
             $("#Quantity17").val(qty17);
-            var cost17 = $("#Cost17").val();
+            var cost17 = parseFloat($("#Cost17").val());
             cost17 += cementcost;
             $("#Cost17").val(cost17);
-            var qty18 = $("#Quantity18").val();
+            var qty18 = parseFloat($("#Quantity18").val());
             qty18 += sandqty;
             $("#Quantity18").val(qty18);
-            var cost18 = $("#Cost18").val();
+            var cost18 = parseFloat($("#Cost18").val());
             cost18 += sandcost;
             $("#Cost18").val(cost18);
-            var qty19 = $("#Quantity19").val();
+            var qty19 = parseFloat($("#Quantity19").val());
             qty19 += gravelqty;
             $("#Quantity19").val(qty19);
-            var cost19 = $("#Cost19").val();
+            var cost19 = parseFloat($("#Cost19").val());
             cost19 += gravelcost;
             $("#Cost19").val(cost19);
-            var qty20 = $("#Quantity20").val();
+            var qty20 = parseFloat($("#Quantity20").val());
             qty20 += noofbars;
             $("#Quantity20").val(qty20);
-            var cost20 = $("#Cost20").val();
+            var cost20 = parseFloat($("#Cost20").val());
             cost20 += costa;
             $("#Cost20").val(cost20);
-            var qty21 = $("#Quantity21").val();
+            var qty21 = parseFloat($("#Quantity21").val());
             qty21 += tiebar;
             $("#Quantity5").val(qty21);
-            var cost21 = $("#Cost21").val();
+            var cost21 = parseFloat($("#Cost21").val());
             cost21 += costb;
-            $("#Cost5").val(cost5);
-            var qty22 = $("#Quantity22").val();
+            var qty22 = parseFloat($("#Quantity22").val());
             qty22 += tiewire;
             $("#Quantity22").val(qty22);
-            var cost22 = $("#Cost22").val();
+            var cost22 = parseFloat($("#Cost22").val());
             cost22 += costb;
             $("#Cost22").val(cost22);
-            var no = $("#HowManyRoofBeams").val();
+            var no = parseFloat($("#HowManyRoofBeams").val());
             $("#HowManyRoofBeams").val(no + 1);
             alert("Nagdagdag ka ng RoofBeam");
             computeAndDisplayOverallTotal();
@@ -6991,9 +6970,9 @@
 
         var metalica = function (noofbars, spacing) {
             //
-            var tiebar = Math.ceil(((Math.ceil($("#RoofBeamThickness").val() / spacing) + 1) * (($(
-                "#RoofBeamWidth").val() * 2) + ($("#RoofBeamLength").val() * 2))) / 6);
-            var tiewire = (((Math.ceil($("#RoofBeamThickness").val() / spacing) + 1) * noofbars) * 0.4) /
+            var tiebar = Math.ceil(((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * (($(
+                "#RoofBeamWidth").val() * 2) + (parseFloat($("#RoofBeamLength").val()) * 2))) / 6);
+            var tiewire = (((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * noofbars) * 0.4) /
                 53;
             var metals1 = DirectCountingEsti(noofbars, 4);
             var cost1 = metals1.total;
@@ -7009,6 +6988,30 @@
                 costa: cost1
             };
         }
+
+        if (parseFloat($("#RoofBeamThickness").val()) < 0 || parseFloat($("#RoofBeamWidth").val()) < 0 || parseFloat($("#RoofBeamLength").val()) <
+            0 || parseFloat($("#RoofBeamVolume").val()) < 0 || parseFloat($("#ColumnSpacing").val()) < 0) {
+            alert("Invalid Input.");
+        } else if (parseFloat($("#RoofBeamThickness").val()) == 0 && parseFloat($("#RoofBeamWidth").val()) == 0 && $(
+                "#RoofBeamLength").val() == 0 || parseFloat($("#ColumnSpacing").val()) == 0) {
+            var concrete = ConcreteEsti(1, 1.6, 1, parseFloat($("#RoofBeamCC").val()), 1);
+            var metal = metalica(4, 0.5);
+            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
+                concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
+        } else if (parseFloat($("#RoofBeamThickness").val()) != 0 && parseFloat($("#RoofBeamWidth").val()) != 0 && $(
+                "#RoofBeamLength").val() != 0 && parseFloat($("#ColumnSpacing").val()) != 0) {
+            $("#RoofBeamVolume").val(parseFloat($("#RoofBeamThickness").val()) * parseFloat($("#RoofBeamWidth").val()) * $(
+                "#RoofBeamLength").val());
+            var concrete = ConcreteEsti(1, parseFloat($("#RoofBeamVolume").val()), 1, parseFloat($("#RoofBeamCC").val()), 1);
+            var metal = metalica(parseFloat($("#RoofBeamNoOfBars").val()), parseFloat($("#RoofBeamSpacing").val()));
+            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
+                concrete.sandcost, parseFloat($("#RoofBeamNoOfBars").val()), metal.tiebar, metal.tiewire, metal.costa,
+                metal.costb, metal.costc);
+
+        } else {
+            alert("Please fill up the required fields");
+        }
+        
     });
 
 
