@@ -5376,9 +5376,7 @@
         else if(parseFloat($("#ColumnThickness").val())!=null&&parseFloat($("#ColumnWidth").val())!=null&&parseFloat($("#ColumnLength").val())!=null){
             $("#ColumnVolume").val( parseFloat($("#ColumnThickness").val()) * parseFloat($("#ColumnWidth").val()) * parseFloat($("#ColumnLength").val()) );
             var concrete = ConcreteEsti( 1,parseFloat($("#ColumnVolume").val()),1,parseFloat($("#ColumnCC").val()),1 );
-            console.log(concrete);
             var metal = metalica(parseFloat($("#ColumnNoOfBars").val()),0.192);
-            console.log(metal);
             panapos(concrete.cementqty,concrete.cementcost,concrete.gravelqty,concrete.gravelcost,concrete.sandqty,concrete.sandcost,parseFloat($("#ColumnNoOfBars").val()),metal.tiebar,metal.tiewire,metal.costa,metal.costb,metal.costc);
         
         }
