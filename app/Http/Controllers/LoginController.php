@@ -29,7 +29,7 @@ class LoginController extends Controller
             'intActive' => 1,
         ];
 
-        if(Auth::attempt($credentials)){
+        if(Auth::attempt($credentials,true)){
             if(Auth::user()->strUserType == 'Admin'){
                 return redirect('Admin/Home');
             }else if(Auth::user()->strUserType == 'Engineer'){
