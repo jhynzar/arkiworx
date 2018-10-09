@@ -4579,7 +4579,7 @@
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overhead Profit %:</th>
                                                          
-                                                            <th class="text-center text-primary" id="OverheadProfit"></th>
+                                                            <th class="text-center text-primary" id="OverheadProfitPercentage"></th>
                                                             
 
                                                         </tr>
@@ -5191,11 +5191,11 @@
     $("#OverallTotalCost").html(parseFloat( OverallTotalCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
     if( OverallTotalCost < 1000000){
         OverheadCost = OverallTotalCost * 0.20;
-        $("#OverheadProfit").html('20%');
+        $("#OverheadProfitPercentage").html('20%');
     }
     else{
         OverheadCost = OverallTotalCost * 0.10;
-        $("#OverheadProfit").html('10%');
+        $("#OverheadProfitPercentage").html('10%');
     }
     $("#OverheadTotalCost").html(parseFloat( OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
     $("#OverheadProfit").val(OverheadCost);
