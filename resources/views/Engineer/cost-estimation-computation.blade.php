@@ -5422,7 +5422,7 @@
             var cost11 = parseFloat($("#Cost11").val());
             cost11 += costb;
             $("#Cost11").val(cost11);
-            var no = $("#HowManyFootings").val(  );
+            var no = parseFloat($("#HowManyFootings").val());
             $("#HowManyFootings").val( no + 1 );
             alert("Nagdagdag ka ng Footing");
             computeAndDisplayOverallTotal();
