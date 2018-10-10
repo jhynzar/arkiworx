@@ -7333,17 +7333,17 @@
             var cost53 = parseFloat($("#Cost53").val());
             cost53 += costc;
             $("#Cost53").val(cost53);
-            var no = $("#PaintCeilingNo").val();
+            var no = parseFloat($("#PaintCeilingNo").val());
             $("#PaintCeilingNo").val(no + 1);
             alert("Nagdagdag ka Paint");
             computeAndDisplayOverallTotal();
         }
-        if( $("#PaintWidth1").val()<=0 || $("#PaintLength1").val()<=0 ){
+        if( parseFloat($("#PaintWidth1").val())<=0 || parseFloat($("#PaintLength1").val())<=0 ){
             alert("Invalid Input!");
         }
-        else if($("#PaintWidth1").val()!=0&&$("#PaintLength1").val()!=0){
+        else if(parseFloat($("#PaintWidth1").val())!=0&&parseFloat($("#PaintLength1").val())!=0){
             //
-            var area = $("#PaintWidth1").val() * $("#PaintLength1").val();
+            var area = parseFloat($("#PaintWidth1").val()) * parseFloat($("#PaintLength1").val());
             var paint = area / 35;
             var sandpaper = Math.ceil((paint / 8) * 30);
             var patch = Math.ceil(paint / 8);
@@ -7387,17 +7387,17 @@
             var cost57 = parseFloat($("#Cost57").val());
             cost57 += costd;
             $("#Cost57").val(cost57);
-            var no = $("#PaintWallNo").val();
+            var no = parseFloat($("#PaintWallNo").val());
             $("#PaintWallNo").val(no + 1);
             alert("Nagdagdag ka Paint");
             computeAndDisplayOverallTotal();
         }
-        if( $("#PaintWidth2").val()<=0 || $("#PaintLength2").val()<=0 ){
+        if( parseFloat($("#PaintWidth2").val())<=0 || parseFloat($("#PaintLength2").val())<=0 ){
             alert("Invalid Input!");
         }
-        else if($("#PaintWidth2").val()!=0&&$("#PaintLength2").val()!=0){
+        else if(parseFloat($("#PaintWidth2").val())!=0&&parseFloat($("#PaintLength2").val())!=0){
             //
-            var area = $("#PaintWidth2").val() * $("#PaintLength2").val();
+            var area = parseFloat($("#PaintWidth2").val()) * parseFloat($("#PaintLength2").val());
             var paint1 = (area / 35) * 0.61;
             var sandpaper = Math.ceil((paint1 / 8) * 30);
             var paint2 = paint1 * 0.39;
