@@ -5139,34 +5139,8 @@
                                                                                 <input type="number" class="form-control"
                                                                                     id="ElectricalWorksMaterialQ" style="width: 60px !important;"
                                                                                     placeholder="+">
+                                                                                <button type="button" class="btn btn-primary" id="ElectricalWorks" style="margin-left: 300px">Compute</button>    
                                                                             </div>
-
-                                                                            <div class="form-group form-inline">
-                                                                                <label for=""></label>
-                                                                                <select class="form-control" id="tileClass" style="width: 250px !important;">
-                                                                                    <option value="74"> 12X12 – Floor Tile </option>
-                                                                                    <option value="79"> 12X24 – Digital Tile </option>
-                                                                                    <option value="75"> 12X24 – Floor Tile </option>
-                                                                                    <option value="80"> 16x16 – Digital Tile </option>
-                                                                                    <option value="76"> 16X16 – Floor Tile </option>
-                                                                                    <option selected value="71"> 24x24 - Floor Tile </option>
-                                                                                    <option value="81"> 24x24 – Digital Tile </option>
-                                                                                    <option value="83"> 50cmx50cm – Carpet Tile </option>
-                                                                                    <option value="85"> 8x12 – Kitchen and Bathroom Wall Tile </option>
-                                                                                    <option value="82"> 8x24 – Digital Tile </option>
-                                                                                    <option value="78"> 8X8 – Floor Tile </option>
-                                                                                    <option value="84"> 8x8 – Kitchen and Bathroom Floor Tile </option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <br>
-                                                                            <br>
-                                                                            <div class="form-group form-inline">
-                                                                                 
-                                                                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; 
-                                                                                <input type="number" value=1 class="form-control" id="TileCount" style="width: 100px !important;">
-                                                                                <button type="button" class="btn btn-primary" id="Tiles" style="margin-left: 300px">Compute</button>
-                                                                            </div>
-
 
 
                                                                         </div>
@@ -7389,76 +7363,75 @@
     });
 
     $("#ElectricalWorks").click(function () {
-        if ($("#ElectricalWorksMaterialQ").val() < 0 || $("#ElectricalWorksMaterialQ").val() == 0) {
+        if (parseFloat($("#ElectricalWorksMaterialQ").val()) < 0 || parseFloat($("#ElectricalWorksMaterialQ").val()) == 0) {
 
             alert("Invalid Input");
         } else {
-            var count = DirectCountingEsti($("#ElectricalWorksMaterialQ").val(), $("#ElectricalWorksMaterials")
-                .val());
+            var count = DirectCountingEsti(parseFloat($("#ElectricalWorksMaterialQ").val()), parseFloat($("#ElectricalWorksMaterials").val()));
             var cost = count.total;
 
-            if ($("#ElectricalWorksMaterials").val() == 43) {
-                var qty = $("#Quantity58").val();
-                cost += $("#Cost58").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+            if (parseFloat($("#ElectricalWorksMaterials").val()) == 43) {
+                var qty = parseFloat($("#Quantity58").val());
+                cost += parseFloat($("#Cost58").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity58").val(qty);
-                $("#Cost58").val(total);
-            } else if ($("#ElectricalWorksMaterials").val() == 44) {
-                var qty = $("#Quantity59").val();
-                cost += $("#Cost59").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+                $("#Cost58").val(cost);
+            } else if (parseFloat($("#ElectricalWorksMaterials").val()) == 44) {
+                var qty = parseFloat($("#Quantity59").val());
+                cost += parseFloat($("#Cost59").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity59").val(qty);
-                $("#Cost59").val(total);
-            } else if ($("#ElectricalWorksMaterials").val() == 45) {
-                var qty = $("#Quantity60").val();
-                cost += $("#Cost60").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+                $("#Cost59").val(cost);
+            } else if (parseFloat($("#ElectricalWorksMaterials").val()) == 45) {
+                var qty = parseFloat($("#Quantity60").val());
+                cost += parseFloat($("#Cost60").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity60").val(qty);
-                $("#Cost60").val(total);
-            } else if ($("#ElectricalWorksMaterials").val() == 46) {
-                var qty = $("#Quantity61").val();
-                cost += $("#Cost61").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+                $("#Cost60").val(cost);
+            } else if (parseFloat($("#ElectricalWorksMaterials").val()) == 46) {
+                var qty = parseFloat($("#Quantity61").val());
+                cost += parseFloat($("#Cost61").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity61").val(qty);
-                $("#Cost61").val(total);
-            } else if ($("#ElectricalWorksMaterials").val() == 47) {
-                var qty = $("#Quantity62").val();
-                cost += $("#Cost62").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+                $("#Cost61").val(cost);
+            } else if (parseFloat($("#ElectricalWorksMaterials").val()) == 47) {
+                var qty = parseFloat($("#Quantity62").val());
+                cost += parseFloat($("#Cost62").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity62").val(qty);
-                $("#Cost62").val(total);
-            } else if ($("#ElectricalWorksMaterials").val() == 48) {
-                var qty = $("#Quantity63").val();
-                cost += $("#Cost63").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+                $("#Cost62").val(cost);
+            } else if (parseFloat($("#ElectricalWorksMaterials").val()) == 48) {
+                var qty = parseFloat($("#Quantity63").val());
+                cost += parseFloat($("#Cost63").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity63").val(qty);
-                $("#Cost63").val(total);
-            } else if ($("#ElectricalWorksMaterials").val() == 49) {
-                var qty = $("#Quantity64").val();
-                cost += $("#Cost64").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+                $("#Cost63").val(cost);
+            } else if (parseFloat($("#ElectricalWorksMaterials").val()) == 49) {
+                var qty = parseFloat($("#Quantity64").val());
+                cost += parseFloat($("#Cost64").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity64").val(qty);
-                $("#Cost64").val(total);
-            } else if ($("#ElectricalWorksMaterials").val() == 50) {
-                var qty = $("#Quantity65").val();
-                cost += $("#Cost65").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+                $("#Cost64").val(cost);
+            } else if (parseFloat($("#ElectricalWorksMaterials").val()) == 50) {
+                var qty = parseFloat($("#Quantity65").val());
+                cost += parseFloat($("#Cost65").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity65").val(qty);
-                $("#Cost65").val(total);
-            } else if ($("#ElectricalWorksMaterials").val() == 51) {
-                var qty = $("#Quantity66").val();
-                cost += $("#Cost66").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+                $("#Cost65").val(cost);
+            } else if (parseFloat($("#ElectricalWorksMaterials").val()) == 51) {
+                var qty = parseFloat($("#Quantity66").val());
+                cost += parseFloat($("#Cost66").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity66").val(qty);
-                $("#Cost66").val(total);
-            } else if ($("#ElectricalWorksMaterials").val() == 52) {
-                var qty = $("#Quantity67").val();
-                cost += $("#Cost67").val();
-                qty += $("#ElectricalWorksMaterialQ").val();
+                $("#Cost66").val(cost);
+            } else if (parseFloat($("#ElectricalWorksMaterials").val()) == 52) {
+                var qty = parseFloat($("#Quantity67").val());
+                cost += parseFloat($("#Cost67").val());
+                qty += parseFloat($("#ElectricalWorksMaterialQ").val());
                 $("#Quantity67").val(qty);
-                $("#Cost67").val(total);
+                $("#Cost67").val(cost);
             }
-
+            alert('Nagdagdag ka ng Electrical Works');
             computeAndDisplayOverallTotal();
         }
     });
