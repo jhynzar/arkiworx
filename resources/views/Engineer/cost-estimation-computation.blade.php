@@ -7006,38 +7006,37 @@
             computeAndDisplayOverallTotal();
         }
         var metalica = function () {
-            var qtybars = ((parseFloat($("#masonryBarSize").val()) / parseFloat($("#CHBLength").val())) + 1) * (($(
-                "#masonryBarLayer").val() / parseFloat($("#CHBWidth").val())) + 1);
+            var qtybars = (($("#masonryBarSize").val() / $("#CHBLength").val()) + 1) * (($("#masonryBarLayer").val() / $("#CHBWidth").val()) + 1);
             var metals1 = DirectCountingEsti(qtybars, 14);
             var cost1 = metals1.total;
             var tie;
-            if (parseFloat($("#masonryBarSize").val()) == 40) {
-                if (parseFloat($("#masonryBarLayer").val()) == 2) {
+            if ($("#masonryBarSize").val() == 40) {
+                if ($("#masonryBarLayer").val() == 2) {
                     tie = 17;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 3) {
+                } else if ($("#masonryBarLayer").val() == 3) {
                     tie = 18;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 4) {
+                } else if ($("#masonryBarLayer").val() == 4) {
                     tie = 19;
                 }
-            } else if (parseFloat($("#masonryBarSize").val()) == 60) {
-                if (parseFloat($("#masonryBarLayer").val()) == 2) {
+            } else if ($("#masonryBarSize").val() == 60) {
+                if ($("#masonryBarLayer").val() == 2) {
                     tie = 20;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 3) {
+                } else if ($("#masonryBarLayer").val() == 3) {
                     tie = 21;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 4) {
+                } else if ($("#masonryBarLayer").val() == 4) {
                     tie = 22;
                 }
-            } else if (parseFloat($("#masonryBarSize").val()) == 80) {
-                if (parseFloat($("#masonryBarLayer").val()) == 2) {
+            } else if ($("#masonryBarSize").val() == 80) {
+                if ($("#masonryBarLayer").val() == 2) {
                     tie = 23;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 3) {
+                } else if ($("#masonryBarLayer").val() == 3) {
                     tie = 24;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 4) {
+                } else if ($("#masonryBarLayer").val() == 4) {
                     tie = 25;
                 }
             }
             var formulas = searchValues(tie, 20, 5);
-            var tiebar = parseFloat($("#CHBArea").val()) * formulas.Answer;
+            var tiebar = $("#CHBArea").val() * formulas.Answer;
             var metals2 = DirectCountingEsti(tiebar, 6);
             var cost2 = metals2.total;
             return {
@@ -7048,40 +7047,37 @@
             };
         }
 
-        if (parseFloat($("#CHBWidth").val()) < 0 || parseFloat($("#CHBLength").val()) < 0 || parseFloat($("#CHBMortarThickness").val()) < 0 || $(
-                "#CHBPlasterThickness").val() < 0) {
+        if ($("#CHBWidth").val() < 0 || $("#CHBLength").val() < 0 || $("#CHBMortarThickness").val() < 0 || $("#CHBPlasterThickness").val() < 0) {
 
             alert("Invalid Inputs");
-        } else if (parseFloat($("#CHBWidth").val()) == 0 || parseFloat($("#CHBLength").val()) == 0 || parseFloat($("#CHBMortarThickness").val()) ==
-            0 || parseFloat($("#CHBPlasterThickness").val()) == 0) {
+        } else if ($("#CHBWidth").val() == "" || $("#CHBLength").val() == "" || $("#CHBMortarThickness").val() == "" || $("#CHBPlasterThickness").val() =="") {
             //
-            alert('pangalawa');
-        } else if (parseFloat($("#CHBWidth").val()) != 0 || parseFloat($("#CHBLength").val()) != 0 || parseFloat($("#CHBMortarThickness").val()) !=
-            0 || parseFloat($("#CHBPlasterThickness").val()) != 0) {
-            $("#CHBArea").val(parseFloat($("#CHBWidth").val()) * parseFloat($("#CHBLength").val()));
+            alert("Please fill up the required fields");
+        } else if ($("#CHBWidth").val() != 0 || $("#CHBLength").val() != 0 || $("#CHBMortarThickness").val() !=0 || $("#CHBPlasterThickness").val() != 0) {
+            $("#CHBArea").val($("#CHBWidth").val() * $("#CHBLength").val());
             var chbcost1 = 0;
             var chbcost2 = 0;
-            var chbqty = Math.ceil((parseFloat($("#CHBWidth").val()) * parseFloat($("#CHBLength").val())) * 12.5);
-            if (parseFloat($("#CHBSize").val()) == 16) {
+            var chbqty = Math.ceil(($("#CHBWidth").val() * $("#CHBLength").val()) * 12.5);
+            if ($("#CHBSize").val() == 16) {
                 chbcost1 = DirectCountingEsti(chbqty, 16);
-                var qty43 = parseFloat($("#Quantity43").val());
+                var qty43 = $("#Quantity43").val();
                 qty43 += chbqty;
                 $("#Quantity43").val(qty43);
-                var cost43 = parseFloat($("#Cost43").val());
+                var cost43 = $("#Cost43").val();
                 cost43 += chbcost1.total;
                 $("#Cost43").val(cost43);
             } else {
                 chbcost2 = DirectCountingEsti(chbqty, 15);
-                var qty44 = parseFloat($("#Quantity44").val());
+                var qty44 = $("#Quantity44").val();
                 qty44 += chbqty;
                 $("#Quantity44").val(qty44);
-                var cost44 = parseFloat($("#Cost44").val());
+                var cost44 = $("#Cost44").val();
                 cost44 += chbcost2.total;
                 $("#Cost44").val(cost44);
             }
-            var concrete1 = ConcreteEsti(1, parseFloat($("#CHBArea").val()) * parseFloat($("#CHBMortarThickness").val()), 1, $(
+            var concrete1 = ConcreteEsti(1, $("#CHBArea").val() * $("#CHBMortarThickness").val(), 1, $(
                 "#CHBMortarMixture").val(), 1);
-            var concrete2 = ConcreteEsti(1, parseFloat($("#CHBArea").val()) * parseFloat($("#CHBPlasterThickness").val()), 1, $(
+            var concrete2 = ConcreteEsti(1, $("#CHBArea").val() * $("#CHBPlasterThickness").val(), 1, $(
                 "#CHBPlasterMixture").val(), 1);
             var cementqty = concrete1.cementqty + concrete2.cementqty;
             var cementcost = concrete1.cementcost + concrete2.cementcost;
