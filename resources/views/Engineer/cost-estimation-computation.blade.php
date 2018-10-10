@@ -1038,7 +1038,7 @@
 
 
 
-<div class="content-wrapper" style="margin-top: 10px">
+<div class="content-wrapper" style="margin-top: 30px">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
 
@@ -1067,7 +1067,7 @@
                                                                
                                                             </div>  -->
 
-                <div style=" position: absolute; margin-top: -50; margin-left: 300px">
+                <div style=" position: absolute; margin-top: -50px; margin-left: 300px">
                     <label class="text text-muted">Project:</label>
                     <select class="form-control text text-primary" name="project" id="project" style="width: 400px; height: 40px !important;"
                         disabled>
@@ -1167,7 +1167,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 1)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="BuildingPermit" name="BuildingPermit"
                                                                                             style="width: 100px !important;"
                                                                                             placeholder="">@endif
@@ -1178,7 +1178,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 2)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" min=0 value="{{ $record -> cost }}"
                                                                                             id="DENR" name="DENR" style="width: 100px !important;"
                                                                                             placeholder="">
                                                                                             <input type="checkbox" checked onchange="{
@@ -1197,7 +1197,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 3)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="TemporaryFacilities"
                                                                                             name="TemporaryFacilities"
                                                                                             style="width: 100px !important;"
@@ -1208,7 +1208,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 4)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="WorkersBarracks" name="WorkersBarracks"
                                                                                             style="width: 100px !important;"
                                                                                             placeholder="">@endif
@@ -1222,7 +1222,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 5)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="Excavation" name="Excavation"
                                                                                             style="width: 150px !important;"
                                                                                             placeholder="">@endif
@@ -1233,7 +1233,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 6)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="Backfill" name="Backfill"
                                                                                             style="width: 150px !important;"
                                                                                             placeholder="">@endif
@@ -1243,7 +1243,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 7)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" min=0 value="{{ $record -> cost }}"
                                                                                             id="Lastillas" name="Lastillas"
                                                                                             style="width: 150px !important;"
                                                                                             placeholder="Optional">@endif
@@ -1253,7 +1253,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 8)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" min=0 value="{{ $record -> cost }}"
                                                                                             id="SoilPoisoning" name="SoilPoisoning"
                                                                                             style="width: 150px !important;"
                                                                                             placeholder="Optional">@endif
@@ -1265,7 +1265,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 9)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="LaborCost" name="LaborCost"
                                                                                             style="width: 180px !important;"
                                                                                             placeholder="">@endif
@@ -1278,7 +1278,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 10)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="ToolsEquipments" name="ToolsEquipments"
                                                                                             style="width: 180px !important;"
                                                                                             placeholder="">@endif
@@ -1289,7 +1289,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 11)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="Transportation" name="Transportation"
                                                                                             style="width: 180px !important;"
                                                                                             placeholder="">@endif
@@ -1301,7 +1301,7 @@
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
                                                                                         id == 12)<input type="number"
-                                                                                            class="form-control" value="{{ $record -> cost }}"
+                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="Contigency" name="Contigency"
                                                                                             style="width: 200px !important;"
                                                                                             placeholder="">@endif
@@ -1418,7 +1418,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" disabled id="ColumnVolume"
+                                                                            <input type="number" required min=0 disabled id="ColumnVolume"
                                                                                 style="width: 160px !important;" value='1.6'>
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -1428,13 +1428,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Height:</label>
-                                                                            <input type="" class="form-control" id="ColumnThickness"
+                                                                            <input type="number" required min=0 class="form-control" id="ColumnThickness"
                                                                                 style="width: 90px !important;" value=>
                                                                             <label>Length:</label>
-                                                                            <input type="" class="form-control" id="ColumnLength"
+                                                                            <input type="number" required min=0 class="form-control" id="ColumnLength"
                                                                                 style="width: 80px !important;" value=>
                                                                             <label>Width:</label>
-                                                                            <input type="" class="form-control"
+                                                                            <input type="number" required min=0 class="form-control"
                                                                                 disabled id="ColumnWidth" style="width: 80px !important;"
                                                                                 value=>
                                                                             <br> <br>
@@ -1445,7 +1445,7 @@
                                                                             <br>
                                                                             <div class="form-group">
                                                                                 <label> Bar Spacing:</label>
-                                                                                <input type="number" id="ColumnSpacing"
+                                                                                <input type="number" required min=0 id="ColumnSpacing"
                                                                                     class="form-control" style="width: 100px !important;"
                                                                                     value=>
                                                                             </div> <br> <br>
@@ -1723,7 +1723,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" id="FootingVolume"
+                                                                            <input type="number" required min=0 id="FootingVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -1733,13 +1733,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="FootingThickness"
+                                                                            <input type="number" required min=0 class="form-control" id="FootingThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="" class="form-control" id="FootingLength"
+                                                                            <input type="number" required min=0 class="form-control" id="FootingLength"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="" class="form-control" id="FootingWidth"
+                                                                            <input type="number" required min=0 class="form-control" id="FootingWidth"
                                                                                 style="width: 80px !important;"
                                                                                 disabled>
                                                                             <br> <br>
@@ -1750,10 +1750,10 @@
                                                                             <br>
 
                                                                             <div class="form-group form-inline pull-center">
-                                                                                <label> Number of bars per Column:</label>
-                                                                                <input type="number" id="FootingNoOfBars"
+                                                                                <label> Number of bars per Footing:</label>
+                                                                                <input type="number" required min=0 id="FootingNoOfBars"
                                                                                     class="form-control" style="width: 100px !important;"
-                                                                                    value=4 min=4>
+                                                                                    value=4 min=4> <br> <br>
                                                                                 <label for="">Bar Length:</label>
                                                                                 <select class="form-control" id="footingBarLength"
                                                                                     style="width: 150px !important;">
@@ -1781,7 +1781,7 @@
                                                                             <div class="form-group form-inline pull-center">
                                                                                 <label for="">Tie wire:</label>
                                                                                 <select class="form-control" id="footingTiewire"
-                                                                                    style="width: 140px !important;">
+                                                                                    style="width: 170px !important;">
                                                                                     <option value="30" selected>30 cm
                                                                                     </option>
                                                                                     <!--<option value="40" >40 cm </option>-->
@@ -2008,13 +2008,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="SlabThickness"
+                                                                            <input type="number" required min=0 class="form-control" id="SlabThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="" class="form-control" id="SlabWidth"
+                                                                            <input type="number" required min=0 class="form-control" id="SlabWidth"
                                                                                 style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="" class="form-control" id="SlabLength"
+                                                                            <input type="number" required min=0 class="form-control" id="SlabLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -2044,10 +2044,7 @@
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>-->
                                                                                 </select>
-                                                                            </div> <br> <br>
-
-
-                                                                            <div class="form-group form-inline pull-center">
+                                                                           
                                                                                 <!--<label for="">Bar Size:</label>
                                 <select class="form-control" id="slabBarSize" style="width: 155px !important;">
                                     <option value="6">6 mm</option>
@@ -2057,23 +2054,23 @@
                                     <option value="20" >20 mm </option>
                                     <option value="22" >22 mm </option>
                                     <option value="25" >25 mm </option>
-                                </select>-->
+                                </select>-->    
+                                                                                <br> <br> 
                                                                                 <label for="">Tie wire:</label>
                                                                                 <select class="form-control" id="slabTiewire"
-                                                                                    style="width: 140px !important;">
+                                                                                    style="width: 150px !important;">
                                                                                     <option value="30" selected>30 cm
                                                                                     </option>
                                                                                     <!--<option value="40" >40 cm </option>-->
 
                                                                                 </select>
-                                                                            </div>
+                                                                        
 
 
-                                                                            <br> <br>
-                                                                            <div class="form-group">
+                                                                            
                                                                                 <label for="">Tie Bar Size:</label>
                                                                                 <select class="form-control" id="slabTireBarSize"
-                                                                                    style="width: 120px !important;">
+                                                                                    style="width: 130px !important;">
                                                                                     <!--<option value="6">6 mm</option>-->
                                                                                     <option value="10" selected>10 mm
                                                                                     </option>
@@ -2301,7 +2298,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" id="BeamVolume"
+                                                                            <input type="number" required min=0 id="BeamVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -2311,13 +2308,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="BeamThickness"
+                                                                            <input type="number" required min=0 class="form-control" id="BeamThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="" class="form-control"
+                                                                            <input type="number" required min=0 class="form-control"
                                                                                 disabled id="BeamWidth" style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="" class="form-control" id="BeamLength"
+                                                                            <input type="number" required min=0 class="form-control" id="BeamLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -2327,7 +2324,7 @@
                                                                             <br>
                                                                             <div class="form-group">
                                                                                 <label> Bar Spacing:</label>
-                                                                                <input type="number" id="BeamSpacing"
+                                                                                <input type="number" required min=0 id="BeamSpacing"
                                                                                     class="form-control" style="width: 100px !important;"
                                                                                     value=>
                                                                             </div> <br> <br>
@@ -2617,7 +2614,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" disabled id="WallFootingVolume"
+                                                                            <input type="number" required min=0 disabled id="WallFootingVolume"
                                                                                 style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -2627,14 +2624,14 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="WallFootingThickness"
+                                                                            <input type="number" required min=0 class="form-control" id="WallFootingThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="" class="form-control" id="WallFootingWidth"
+                                                                            <input type="number" required min=0 class="form-control" id="WallFootingWidth"
                                                                                 style="width: 80px !important;"
                                                                                 disabled>
                                                                             <label>Length:</label>
-                                                                            <input type="" class="form-control" id="WallFootingLength"
+                                                                            <input type="number" required min=0 class="form-control" id="WallFootingLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -2645,7 +2642,7 @@
 
                                                                             <div class="form-group">
                                                                                 <label> No of Bars per Footing:</label>
-                                                                                <input class="form-control" id="WallFootingNoOfBars"
+                                                                                <input type=number required min=0 class="form-control" id="WallFootingNoOfBars"
                                                                                     style="width: 100px !important;">
                                                                             </div> <br> <br>
 
@@ -3112,7 +3109,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" id="RoofBeamVolume"
+                                                                            <input type="number" required min=0 id="RoofBeamVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -3122,13 +3119,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="" class="form-control" id="RoofBeamThickness"
+                                                                            <input type="number" required min=0 class="form-control" id="RoofBeamThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="" class="form-control"
+                                                                            <input type="number" required min=0 class="form-control"
                                                                                 disabled id="RoofBeamWidth" style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="" class="form-control" id="RoofBeamLength"
+                                                                            <input type="number" required min=0 class="form-control" id="RoofBeamLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -3138,7 +3135,7 @@
                                                                             <br>
                                                                             <div class="form-group">
                                                                                 <label> Bar Spacing:</label>
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" required min=0 class="form-control"
                                                                                     id="RoofBeamSpacing" style="width: 100px !important;">
                                                                             </div> <br> <br>
                                                                             <div class="form-group">
@@ -3448,14 +3445,14 @@
                                                                             <br>
                                                                             <div class="form-group form-inline">
                                                                                 <label>Area:</label>
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" required min=0 class="form-control"
                                                                                     disabled id="CHBArea" style="width: 100px !important;"
                                                                                     >
                                                                                 <label>Height:</label>
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" required min=0 class="form-control"
                                                                                     id="CHBWidth" style="width: 80px !important;">
                                                                                 <label>Length:</label>
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" required min=0 class="form-control"
                                                                                     id="CHBLength" style="width: 80px !important;">
                                                                             </div>
                                                                             <br>
@@ -3484,7 +3481,7 @@
                                                                                     </select>
                                                                                 </div><br><br>
                                                                                 <label for="">Thickness:</label>
-                                                                                <input type="number" style="width: 140px"
+                                                                                <input type="number" required min=0 style="width: 140px"
                                                                                     class="form-control" id="CHBMortarThickness">
                                                                             </div>
 
@@ -3505,7 +3502,7 @@
                                                                                 </select>
                                                                                 <br><br>
                                                                                 <label for="">Thickness:</label>
-                                                                                <input type="number" style="width: 140px"
+                                                                                <input type="number" required min=0 style="width: 140px"
                                                                                     class="form-control" id="CHBPlasterThickness">
                                                                             </div>
                                                                             <br> <br>
@@ -3787,7 +3784,7 @@
                                                                                 </option>
                                                                             </select>
                                                                             <label for="">How many of this:</label>
-                                                                            <input type="number" class="form-control"
+                                                                            <input type="number" required min=1 value=1 class="form-control"
                                                                                 id="RoofMaterialQ" style="width: 60px !important;"
                                                                                 placeholder="+">
                                                                             <button type="button" id="Roofing"
@@ -4090,7 +4087,7 @@
                                                                                     <label class="text text-default">
                                                                                         <b>How many of this? </b>
                                                                                     </label>&nbsp;
-                                                                                    <input type="number" class="form-control"
+                                                                                    <input type="number" required min=1 value=1 class="form-control"
                                                                                         id="WindowMaterialQ" style="width: 100px !important;">
                                                                                     <button type="button" class="btn "
                                                                                         id="Windows" style="margin-left: 300px">Compute</button>
@@ -4271,7 +4268,7 @@
                                                                                     </option>
                                                                                 </select>
 
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" required min=1  value=1 class="form-control"
                                                                                     id="DoorMaterialQ" style="width: 60px !important;"
                                                                                     placeholder="+">
 
@@ -4682,9 +4679,9 @@
                                                                             </label>
                                                                             <br>
                                                                             <label>Width:</label>
-                                                                            <input type="" class="form-control" id="PaintWidth1" style="width: 130px !important;">
+                                                                            <input type="number" required min=0 class="form-control" id="PaintWidth1" style="width: 130px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="" class="form-control" id="PaintLength1" style="width: 130px !important;">
+                                                                            <input type="number" required min=0 class="form-control" id="PaintLength1" style="width: 130px !important;">
                                                                             <br>
                                                                             <br>
                                                                             <hr>
@@ -4692,7 +4689,7 @@
                                                                                 <label class="text text-danger">
                                                                                     <b>How Many of these?</b>
                                                                                 </label>&nbsp;
-                                                                                <input type="number" class="form-control" disabled id="PaintCeilingNo" style="width: 100px !important;" value=1>
+                                                                                <input type="number" required min=1 class="form-control" disabled id="PaintCeilingNo" style="width: 100px !important;" value=1>
                                                                                 <button type="button" class="btn" id="PaintCeiling" style="margin-left: 90px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -4888,10 +4885,10 @@
                                                                                 </label>
                                                                                 <br>
                                                                                 <label>Width:</label>
-                                                                                <input type="" class="form-control" id=""
+                                                                                <input type="number" required min=0 class="form-control" id=""
                                                                                     style="width: 130px !important;">
                                                                                 <label>Length:</label>
-                                                                                <input type="" class="form-control" id=""
+                                                                                <input type="number" required min=0 class="form-control" id=""
                                                                                     style="width: 130px !important;">
                                                                                 <br>
                                                                                 <br>
@@ -4931,7 +4928,7 @@
                                                                                     <label class="text text-danger">
                                                                                         <b>How Many of these?</b>
                                                                                     </label>&nbsp;
-                                                                                    <input type="number" class="form-control"
+                                                                                    <input type="number" required min=1 class="form-control"
                                                                                         id="" style="width: 100px !important;">
                                                                                     <button type="button" class="btn btn-primary"
                                                                                         id="PaintWalls" style="margin-left: 90px">Compute</button>
@@ -5145,7 +5142,7 @@
 
                                                                                 <label for="">How many of this:</label>
 
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" required min=1 value=1 class="form-control"
                                                                                     id="ElectricalWorksMaterialQ" style="width: 60px !important;"
                                                                                     placeholder="+">
                                                                                 <button type="button" class="btn btn-primary" id="ElectricalWorks" style="margin-left: 300px">Compute</button>    
@@ -5387,10 +5384,10 @@
                                                                                 </label>
                                                                                 <br>
                                                                                 <label>Width:</label>
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" required min=0 class="form-control"
                                                                                     id="TileWidth" style="width: 130px !important;">
                                                                                 <label>Length:</label>
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" required min=0 class="form-control"
                                                                                     id="TileLength" style="width: 130px !important;">
                                                                                 <br>
                                                                                 <br>
@@ -5450,7 +5447,7 @@
 
                                                                                     <label class="text text-danger"><b>How
                                                                                             Many of these?</b> </label>&nbsp;
-                                                                                    <input type="number" class="form-control"
+                                                                                    <input type="number" required min=1 class="form-control"
                                                                                         id="TileCount" style="width: 100px !important;">
                                                                                     <button type="button" class="btn btn-primary"
                                                                                         id="Tiles" style="margin-left: 300px">Compute</button>
