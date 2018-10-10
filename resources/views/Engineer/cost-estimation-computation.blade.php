@@ -2688,8 +2688,8 @@
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-default"><b>No
                                                                                         of Wall Footing(s): </b>
-                                                                                </label>&nbsp; <input type="number"
-                                                                                    disabled class="form-control" id=""
+                                                                                </label>&nbsp; <input type="number" value=4
+                                                                                    disabled class="form-control" id="HowManyWallFootings"
                                                                                     style="width: 100px !important;">
                                                                                 <button type="button" id="WallFooting"
                                                                                     class="btn btn-primary" style="margin-left: 30px">Compute</button>
@@ -3110,7 +3110,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 id="RoofBeamVolume"
+                                                                            <input type="number" value=1.6 min=0 id="RoofBeamVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -3120,13 +3120,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="RoofBeamThickness"
+                                                                            <input type="number"min=0 class="form-control" id="RoofBeamThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control"
+                                                                            <input type="number" min=0 class="form-control"
                                                                                 disabled id="RoofBeamWidth" style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="RoofBeamLength"
+                                                                            <input type="number" min=0 class="form-control" id="RoofBeamLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -3136,7 +3136,7 @@
                                                                             <br>
                                                                             <div class="form-group">
                                                                                 <label> Bar Spacing:</label>
-                                                                                <input type="number" required min=0 class="form-control"
+                                                                                <input type="number" min=0 class="form-control"
                                                                                     id="RoofBeamSpacing" style="width: 100px !important;">
                                                                             </div> <br> <br>
                                                                             <div class="form-group">
@@ -3203,8 +3203,8 @@
                                                                                     <label class="text text-default"><b>No
                                                                                             of Roof Beam(s): </b>
                                                                                     </label>&nbsp; <input type="number"
-                                                                                        disabled class="form-control"
-                                                                                        id="" style="width: 100px !important;">
+                                                                                        disabled value=8 class="form-control"
+                                                                                        id="HowManyRoofBeams" style="width: 100px !important;">
                                                                                     <button type="button" class="btn"
                                                                                         id="RoofBeam" style="margin-left: 90px">Compute</button>
                                                                                 </div>
@@ -6756,10 +6756,10 @@
             computeAndDisplayOverallTotal();
         }
 
-        var metalica = function (noofbars, spacing) {
+        var metalica = function (Thickness,Width,Length,noofbars, spacing) {
             //
-            var tiebar = Math.ceil( ( ( Math.ceil( $("#BeamThickness").val() / spacing) + 1 ) * ( ($("#BeamWidth").val() * 2 ) + ( $("#BeamLength").val() * 2 ) ) ) / 6  );
-            var tiewire = ( ( ( Math.ceil( $("#BeamThickness").val() / spacing ) + 1 ) * noofbars ) * 0.4 ) / 53;
+            var tiebar = Math.ceil( ( ( Math.ceil( Thickness / spacing) + 1 ) * ( (Width * 2 ) + ( Length * 2 ) ) ) / 6  );
+            var tiewire = ( ( ( Math.ceil( Thickness / spacing ) + 1 ) * noofbars ) * 0.4 ) / 53;
             var metals1 = DirectCountingEsti(noofbars, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiebar, 5);
@@ -6778,8 +6778,8 @@
         if ($("#BeamThickness").val() < 0 || $("#BeamLength").val() < 0 || $("#BeamSpacing").val() < 0) {
             alert("Invalid Input.");
         } else if ($("#BeamThickness").val() == "" && $("#BeamLength").val() == "" || $("#BeamSpacing").val() == "") {
-            var concrete = ConcreteEsti(1, 1.6, 1, $("#BeamCC").val(), 1);
-            var metal = metalica(4, 0.5);
+            var concrete = ConcreteEsti(1, 1.8, 1, $("#BeamCC").val(), 1);
+            var metal = metalica(1.21,1.21,1.21,4,0.5);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
         } else if ($("#BeamThickness").val() != 0 && $("#BeamLength").val() != 0 && $("#BeamSpacing").val() != 0) {
@@ -6787,7 +6787,7 @@
                 $("#BeamLength").val());
             var concrete = ConcreteEsti(1, $("#BeamVolume").val(), 1, $("#BeamCC").val(),
                 1);
-            var metal = metalica($("#BeamNoOfBars").val(), $("#BeamSpacing").val());
+            var metal = metalica($("#BeamThickness").val(),$("#BeamWidth").val(),$("#BeamLength").val(),$("#BeamNoOfBars").val(), $("#BeamSpacing").val());
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, $("#BeamNoOfBars").val(), metal.tiebar, metal.tiewire, metal
                 .costa, metal.costb, metal.costc);
@@ -6934,10 +6934,10 @@
             computeAndDisplayOverallTotal();
         }
 
-        var metalica = function (noofbars, spacing) {
+        var metalica = function (Thickness,Width,Length,noofbars, spacing) {
             //
-            var tiebar = Math.ceil(((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * (($("#RoofBeamWidth").val() * 2) + (parseFloat($("#RoofBeamLength").val()) * 2))) / 6);
-            var tiewire = (((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * noofbars) * 0.4) / 53;
+            var tiebar = Math.ceil(((Math.ceil(Thickness / spacing) + 1) * ((Width * 2) + (Length * 2))) / 6);
+            var tiewire = (((Math.ceil(Thickness / spacing) + 1) * noofbars) * 0.4) / 53;
             var metals1 = DirectCountingEsti(noofbars, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiebar, 5);
@@ -6953,24 +6953,17 @@
             };
         }
 
-        if (parseFloat($("#RoofBeamThickness").val()) < 0 || parseFloat($("#RoofBeamWidth").val()) < 0 || parseFloat($("#RoofBeamLength").val()) <
-            0 || parseFloat($("#RoofBeamVolume").val()) < 0 || parseFloat($("#ColumnSpacing").val()) < 0) {
+        if ($("#RoofBeamThickness").val() < 0 || $("#RoofBeamLength").val() < 0 || $("#RoofBeamSpacing").val() < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#RoofBeamThickness").val()) == 0 && parseFloat($("#RoofBeamWidth").val()) == 0 && $(
-                "#RoofBeamLength").val() == 0 || parseFloat($("#ColumnSpacing").val()) == 0) {
-            var concrete = ConcreteEsti(1, 1.6, 1, parseFloat($("#RoofBeamCC").val()), 1);
-            var metal = metalica(4, 0.5);
-            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if (parseFloat($("#RoofBeamThickness").val()) != 0 && parseFloat($("#RoofBeamWidth").val()) != 0 && $(
-                "#RoofBeamLength").val() != 0 && parseFloat($("#ColumnSpacing").val()) != 0) {
-            $("#RoofBeamVolume").val(parseFloat($("#RoofBeamThickness").val()) * parseFloat($("#RoofBeamWidth").val()) * $(
-                "#RoofBeamLength").val());
-            var concrete = ConcreteEsti(1, parseFloat($("#RoofBeamVolume").val()), 1, parseFloat($("#RoofBeamCC").val()), 1);
-            var metal = metalica(parseFloat($("#RoofBeamNoOfBars").val()), parseFloat($("#RoofBeamSpacing").val()));
-            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost, parseFloat($("#RoofBeamNoOfBars").val()), metal.tiebar, metal.tiewire, metal.costa,
-                metal.costb, metal.costc);
+        } else if ($("#RoofBeamThickness").val() == "" && $("#RoofBeamLength").val() == "" && $("#RoofBeamSpacing").val() == "") {
+            var concrete = ConcreteEsti(1, 1.6, 1, $("#RoofBeamCC").val(), 1);
+            var metal = metalica(1.7,1.7,1.7,4,0.5);
+            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
+        } else if ($("#RoofBeamThickness").val() != 0 && $("#RoofBeamLength").val() != 0 && $("#RoofBeamSpacing").val() != 0) {
+            $("#RoofBeamVolume").val($("#RoofBeamThickness").val() * $("#RoofBeamWidth").val() * $("#RoofBeamLength").val());
+            var concrete = ConcreteEsti(1, $("#RoofBeamVolume").val(), 1, $("#RoofBeamCC").val(), 1);
+            var metal = metalica($("#RoofBeamThickness").val(),$("#RoofBeamWidth").val(),$("#RoofBeamLength").val(),$("#RoofBeamNoOfBars").val(), $("#RoofBeamSpacing").val());
+            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,concrete.sandcost, $("#RoofBeamNoOfBars").val(), metal.tiebar, metal.tiewire, metal.costa,metal.costb, metal.costc);
 
         } else {
             alert("Please fill up the required fields");
