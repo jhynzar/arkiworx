@@ -98,8 +98,8 @@
                         </span>
                         <span>
                             <b>{{session("fname")}}</b>{{session("lname")}}</span>
-                      
-                       
+
+
 
                     </a>
 
@@ -141,14 +141,12 @@
                     <div class="dummy-column">
                         <h2>People</h2>
                         <a class="dummy-media-object" href="#!">
-                            <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan"
-                            />
+                            <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan" />
                             <h3>Sara Soueidan</h3>
                         </a>
 
                         <a class="dummy-media-object" href="#!">
-                            <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona"
-                            />
+                            <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona" />
                             <h3>Shaun Dona</h3>
                         </a>
                     </div>
@@ -236,10 +234,10 @@
         <!-- Sidebar Menu-->
         <ul class="sidebar-menu">
             <li class="nav-level">
-                <span >
-                        <h6 class="text-center" ><b><span style="color:  #222d32" >Hello</span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
-                    </span>
-                    <hr> 
+                <span>
+                    <h6 class="text-center"><b><span style="color:  #222d32">Hello</span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
+                </span>
+                <hr>
             </li>
             <li class=" treeview">
                 <a class="waves-effect waves-dark" href="/Engineer/Home">
@@ -247,34 +245,34 @@
                     <span> Dashboard</span>
                 </a>
             </li>
-            
+
             <li class="active treeview">
                 <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
                     <i class="icon-notebook"></i>
                     <span> Materials PriceList</span>
                 </a>
             </li>
-            
-             <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
-                        <i class="icon-calculator"></i>
-                        <span> Estimation</span>
-                    </a>
-                </li>
+
+            <li class="treeview">
+                <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
+                    <i class="icon-calculator"></i>
+                    <span> Estimation</span>
+                </a>
+            </li>
 
 
 
-                <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
-                        <i class="icon-briefcase"></i>
-                        <span> Projects</span>
-                    </a>
-                </li>
-                
+            <li class="treeview">
+                <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
+                    <i class="icon-briefcase"></i>
+                    <span> Projects</span>
+                </a>
+            </li>
 
 
 
-            
+
+
 
 
 
@@ -345,16 +343,14 @@
                     <br>
                     <div class="form-group">
                         <label for="materialDesc">Description:</label>
-                        <input type="text" class="form-control" name="materialDesc" required/>
+                        <input type="text" class="form-control" name="materialDesc" required />
                     </div>
                     <br>
                     <div class="form-group form-inline">
                         <label for="materialUnit" placeholder="Enter Unit">Unit:</label>
-                        <input type="type" class="form-control" id="materialUnit" name="materialUnit" style="width: 130px !important;" placeholder="Enter Unit"
-                            required/>
+                        <input type="type" class="form-control" id="materialUnit" name="materialUnit" style="width: 130px !important;" placeholder="Enter Unit" required />
                         <label for="materialPrice">Price:</label>
-                        <input type="type" class="form-control" id="materialPrice" name="materialPrice" style="width: 130px !important;" placeholder="Enter Price"
-                            required/>
+                        <input type="type" class="form-control" id="materialPrice" name="materialPrice" style="width: 130px !important;" placeholder="Enter Price" required />
                     </div>
 
 
@@ -418,7 +414,7 @@
                     <div class="input-group stylish-input-group" style="position: absolute; margin-top: -40px; margin-left: 200px">
                         <input type="text" class="form-control" placeholder="Search material" style="width: 300px">
                         <button type="submit" class="btn btn-info" style=" color: WHITE ">
-                            <span >Search</span>
+                            <span>Search</span>
                         </button>
 
                     </div>
@@ -464,20 +460,18 @@
 
 
             <!-- Add User Modal Button trigger-->
-            <div >
-               
-                <button type="button" id="reports" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: -610px; margin-top: 110px">
+            <div>
+
+                <button type="button" data-toggle="modal" data-target="#reportDateModal" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: -610px; margin-top: 110px">
                     <i class="icon-eye"> </i>Show Reports</button>
-                 <button type="button" data-toggle="modal" data-target="#reportDateModal" class="btn btn-primary waves-effect waves-light" >
-                    <i class="icon-plus"> </i>modal</button>
-                
+
             </div>
             <div class="col-sm-3 pull-right">
-               <br> <br> <br>
+                <br> <br> <br>
                 <button type="button" data-toggle="modal" data-target="#addMaterial" class="btn btn-success waves-effect waves-light" style="margin-left: 10px; margin-top: 40px">
                     <i class="icon-plus"> </i>Add Material</button>
             </div>
-<br>
+            <br>
 
 
 
@@ -512,7 +506,7 @@
 
                                             </th>
                                             <th>
-                                             
+
                                             </th>
                                             <th></th>
 
@@ -526,7 +520,7 @@
 
                                         @foreach ($materials as $key=>$material)
                                         <tr class=@if (($key+1)%2==0) "table-active" @endif>
-                                           <td></td>
+                                            <td></td>
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $material->strMaterialName}}</td>
 
@@ -542,7 +536,7 @@
 
                                             <td>
 
-                                                
+
 
 
                                             </td>
@@ -574,12 +568,12 @@
                                                             <input type="hidden" name="_method" value="PATCH"> {{ csrf_field() }}
                                                             <!-- key for updating -->
                                                             <input name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
-                                                            
-                                                          
+
+
                                                             <div class="form-group form-inline">
                                                                 <label for="updatePrice">Current Price:</label>
-                                                                <input type="text" class="form-control" name="" value="{{ $material->latestPrice}}" style="width: 130px !important;" disabled> 
-                                                               &nbsp; &nbsp;  <label for="updatePrice">New Price:</label> 
+                                                                <input type="text" class="form-control" name="" value="{{ $material->latestPrice}}" style="width: 130px !important;" disabled>
+                                                                &nbsp; &nbsp; <label for="updatePrice">New Price:</label>
                                                                 <input type="text" class="form-control" name="materialPriceUpdate" style="width: 130px !important;">
                                                             </div>
 
@@ -643,11 +637,10 @@
                                                                 <label for="usertype">
                                                                     <i>As of</i>:</label>
                                                                 <br>
-                                                                <select onchange="changePriceHistoryPriceInputValue(this,{{$key}})"class="form-control pull-center text-center" name="priceHistoryDatetimeSelect{{$key}}" style="width: 500px !important;">
+                                                                <select onchange="changePriceHistoryPriceInputValue(this,{{$key}})" class="form-control pull-center text-center" name="priceHistoryDatetimeSelect{{$key}}" style="width: 500px !important;">
                                                                     <option selected>Pick date</option>
                                                                     @foreach ($material->priceHistory as $priceHistoryKey=>$priceHistory)
-                                                                        <option value={{$priceHistory->decPrice}}
-                                                                        >{{$priceHistory->formattedDate}}</option>
+                                                                    <option value={{$priceHistory->decPrice}}>{{$priceHistory->formattedDate}}</option>
                                                                     @endforeach
 
                                                                 </select>
@@ -727,25 +720,60 @@
             </div>
         </div>
     </div>
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <div class="modal fade" id="reportDateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content pull-center">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                        <h4 class="modal-title" id="myModalLabel">
-                                                            <span class="label label-info">Materials Report Date</span>
-                                                        </h4>
-                                                    </div>
-                                                    <div class="modal-body" style="background: #e5e5f2 !important; ">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content pull-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <span class="label label-info">Materials Report Date</span>
+                    </h4>
+                </div>
+                <div class="modal-body" style="background: #e5e5f2 !important; ">
+                    <form>
+                        <!--  -->
+
+
+                        <div class="form-group form-inline pull-center text-center">
+                            <label for="">Date as of:</label> &nbsp;
+                            <input onchange="{
+                                //console.log(this.value);
+                                var link = '/Engineer/Materials-Pricelist/Reports/'+this.value;
+                                //$('#reports').prop('href',link);
+                                $('#reports').printPage({
+                                    url: link,
+                                    attr: 'href',
+                                    message: 'Your document is being created'
+                                });
+                            }" type="date" name="date" class="form-control" style="width: 200px">
+                        </div>
+
+
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" href="" id="reports"> Print </button>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 260px">
+                                <i class="icon icon-close"> </i>Cancel</button>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 
@@ -753,57 +781,21 @@
 
 
 
-                                                        <form action="" method="POST">
-                                                            
-                                                          
-                                                            <input name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
-                                                            
-                                                          
-                                                            <div class="form-group form-inline pull-center text-center">
-                                                                <label for="">Date as of:</label> &nbsp;
-                                                               <select class="form-control" style="width: 200px">
-                                                                   <option selected> 12/8/18 </option>
-                                                                   <option> 12/7/18</option>
-                                                                </select>
-                                                            </div>
 
 
-                                                            <div class="modal-footer">
-
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 260px">
-                                                                    <i class="icon icon-close"> </i>Cancel</button>
-
-                                                            </div>
-                                                        </form>
 
 
-                                                    </div>
 
-                                                </div>
-                                            </div>
-                                        </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- delete material modal -->
@@ -1135,27 +1127,21 @@
 
 @endsection @section('script')
 <script>
-
-/*  //pricehistoryDatetimeSelect onChange Listener
+    /*  //pricehistoryDatetimeSelect onChange Listener
     $('#priceHistoryDatetimeSelect').on('change',function(){
         alert(this.value);
     })
 */
-    function changePriceHistoryPriceInputValue(sel,key){
+    function changePriceHistoryPriceInputValue(sel, key) {
         console.log(key);
-        $('#priceHistoryPriceInput'+key).val(sel.value);
+        $('#priceHistoryPriceInput' + key).val(sel.value);
     }
-
 
 </script>
 
 <script src="/js/jQuery-printPage/jquery.printPage.js"></script>
 
 <script>
-    $("#reports").printPage({
-        url: "/Engineer/Materials-Pricelist/Reports",
-        attr: "href",
-        message: "Your document is being created"
-    })
+
 </script>
 @endsection

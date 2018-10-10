@@ -186,7 +186,11 @@ class MaterialsController extends Controller
         //
     }
 
-    public function reports(){
+    public function reports($date){
+
+        $dt = new \DateTime($date);
+        $dt->modify('+1 day');
+
         $materials = DB::select(
             '
             SELECT *
@@ -195,6 +199,7 @@ class MaterialsController extends Controller
                 FROM (
                     SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
                     FROM tblprice
+                    WHERE dtmPriceAsOf <= :date
                     GROUP BY intMaterialId
                 ) as r 
                 INNER JOIN tblprice t
@@ -205,12 +210,13 @@ class MaterialsController extends Controller
             WHERE f.intActive = 1
             ORDER BY f.strMaterialName ASC
             '
-        );
+        ,[$dt]);
 
         //dd($materials);
 
         return view('Engineer/reports-materials-pricelist',compact(
-            'materials'
+            'materials',
+            'date'
         ));
     }
 }
