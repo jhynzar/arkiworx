@@ -502,6 +502,9 @@ class CostEstimationsController extends Controller
     public function saveEstimation($id){
         //general construction ;
         $BuildingPermit = $_POST['BuildingPermit'];
+        if(isset($_POST['DENR'])){
+            $DENR = $_POST['DENR'];
+        }
         $TemporaryFacilities = $_POST['TemporaryFacilities'];
         $WorkersBarracks = $_POST['WorkersBarracks'];
         $Excavation = $_POST['Excavation'];
@@ -522,6 +525,18 @@ class CostEstimationsController extends Controller
             'decActualPrice' => null, 
             'intProjectId' => $id,
         ]);
+
+        if(isset($_POST['DENR'])){
+            DB::table('tblprojectrequirements')
+            ->insertGetId([
+                'intWorkSubCategoryId' => 1,
+                'strDesc' => 'DENR',
+                'decEstimatedPrice' => $DENR,
+                'decActualPrice' => null, 
+                'intProjectId' => $id,
+            ]);
+        }
+        
 
         DB::table('tblprojectrequirements')
         ->insertGetId([

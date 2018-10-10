@@ -1172,7 +1172,7 @@
                                                                                             style="width: 100px !important;"
                                                                                             placeholder="">@endif
                                                                                         @endforeach
-                                                                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                                                                        &nbsp; &nbsp;
                                                                                         <label> DENR <span class="text text-primary"><i>Optional</i></span></label>
                                                                                         &nbsp;
                                                                                         @foreach ( $TemplateArray1 as
@@ -1180,7 +1180,16 @@
                                                                                         id == 2)<input type="number"
                                                                                             class="form-control" value="{{ $record -> cost }}"
                                                                                             id="DENR" name="DENR" style="width: 100px !important;"
-                                                                                            placeholder="">@endif
+                                                                                            placeholder="">
+                                                                                            <input type="checkbox" checked onchange="{
+                                                                                                if(this.checked){
+                                                                                                    $('#DENR').prop('disabled',false);
+                                                                                                }else{
+                                                                                                    $('#DENR').prop('disabled',true);
+                                                                                                }
+                                                                                                console.log($('#DENR').prop('disabled'));
+                                                                                            }">
+                                                                                            @endif
                                                                                         @endforeach
 
                                                                                         &nbsp; &nbsp; &nbsp; &nbsp;
@@ -6203,7 +6212,6 @@
         totalGeneralReq += parseFloat($("#Transportation").val());
         totalGeneralReq += parseFloat($("#Contigency").val());
         $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-        $("#OverallTotalCost2").val(totalGeneralReq);
 
         var totalCost5 = 0;
         totalCost5 += parseFloat($("#Cost1").val());
