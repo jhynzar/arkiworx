@@ -5160,13 +5160,6 @@
                                                                             </div>
                                                                             <br>
                                                                             <br>
-
-                                                                                <br>
-                                                                                <br>
-                                                                                <hr>
-                                                                                <div class="form-group form-inline">
-
-                                                                            <hr>
                                                                             <div class="form-group form-inline">
                                                                                  
                                                                                 <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; 
