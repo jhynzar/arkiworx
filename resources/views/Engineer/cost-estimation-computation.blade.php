@@ -1998,7 +1998,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" id="SlabVolume"
+                                                                            <input type="number" value=6 id="SlabVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -2008,13 +2008,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="SlabThickness"
+                                                                            <input type="number" min=0 class="form-control" id="SlabThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="SlabWidth"
+                                                                            <input type="number" min=0 class="form-control" id="SlabWidth"
                                                                                 style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="SlabLength"
+                                                                            <input type="number" min=0 class="form-control" id="SlabLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -6675,13 +6675,12 @@
             alert("Nagdagdag ka ng Slab");
             computeAndDisplayOverallTotal();
         }
-        var metalica = function () {
-            var formula = searchValues(2, parseFloat($("#slabBarSpacing").val()), 2);
-            var mainbar = (parseFloat($("#SlabWidth").val()) * parseFloat($("#SlabLength").val())) *
-                formula.Answer;
-            var formula1 = searchValues(6, parseFloat($("#slabBarSpacing").val()) + 7, 3);
-            var tiewire = Math.ceil((parseFloat($("#SlabWidth").val()) * parseFloat($("#SlabLength").val())) *
-                formula1.Answer);
+        var metalica = function (Width,Length) {
+            var formula = searchValues(2, $("#slabBarSpacing").val(), 2);
+            var mainbar = Math.ceil(Width * Length * formula.Answer);
+            var y = parseFloat($("#slabBarSpacing").val()) + 7;
+            var formula1 = searchValues(6, y, 3);
+            var tiewire = Math.ceil(Width * Length * formula1.Answer);
             var metals1 = DirectCountingEsti(mainbar, 7);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiewire, 6);
@@ -6696,22 +6695,22 @@
 
 
 
-        if (parseFloat($("#SlabThickness").val()) < 0 || parseFloat($("#SlabWidth").val()) < 0 || parseFloat(
-                $("#SlabLength").val()) < 0) {
+        if ($("#SlabThickness").val() < 0 || $("#SlabWidth").val() < 0 || 
+                $("#SlabLength").val() < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#SlabThickness").val()) == 0 && parseFloat($("#SlabWidth").val()) == 0 &&
-            parseFloat($("#SlabLength").val()) == 0) {
-            var concrete = ConcreteEsti(1, 6, 1, parseFloat($("#SlabCC").val()), 1);
-            var metal = metalica();
+        } else if ($("#SlabThickness").val() == "" && $("#SlabWidth").val() == "" &&
+            $("#SlabLength").val() == "") {
+            var concrete = ConcreteEsti(1, 6, 1, $("#SlabCC").val(), 1);
+            var metal = metalica( 1.81 , 1.81);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
-        } else if (parseFloat($("#SlabThickness").val()) != 0 && parseFloat($("#SlabWidth").val()) != 0 &&
-            parseFloat($("#SlabLength").val()) != 0) {
-            $("#SlabVolume").val(parseFloat($("#SlabThickness").val()) * parseFloat($("#SlabWidth").val()) *
-                parseFloat($("#SlabLength").val()));
-            var concrete = ConcreteEsti(1, parseFloat($("#SlabVolume").val()), 1, parseFloat($("#SlabCC").val()),
+        } else if ($("#SlabThickness").val() != 0 && $("#SlabWidth").val() != 0 &&
+            $("#SlabLength").val() != 0) {
+            $("#SlabVolume").val($("#SlabThickness").val() * $("#SlabWidth").val() *
+                $("#SlabLength").val() );
+            var concrete = ConcreteEsti(1, $("#SlabVolume").val(), 1, $("#SlabCC").val(),
                 1);
-            var metal = metalica();
+            var metal = metalica( $("#SlabWidth").val() , $("#SlabLength").val() );
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
 
