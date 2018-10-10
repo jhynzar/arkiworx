@@ -2035,10 +2035,7 @@
                                     <option value="9" >9 meters </option>
                                     <option value="12" >12 meters </option>-->
                                                                                 </select>
-                                                                            </div> <br> <br>
-
-
-                                                                            <div class="form-group form-inline pull-center">
+                                                                           
                                                                                 <!--<label for="">Bar Size:</label>
                                 <select class="form-control" id="slabBarSize" style="width: 155px !important;">
                                     <option value="6">6 mm</option>
@@ -2048,23 +2045,23 @@
                                     <option value="20" >20 mm </option>
                                     <option value="22" >22 mm </option>
                                     <option value="25" >25 mm </option>
-                                </select>-->
+                                </select>-->    
+                                                                                <br> <br> 
                                                                                 <label for="">Tie wire:</label>
                                                                                 <select class="form-control" id="slabTiewire"
-                                                                                    style="width: 140px !important;">
+                                                                                    style="width: 150px !important;">
                                                                                     <option value="30" selected>30 cm
                                                                                     </option>
                                                                                     <!--<option value="40" >40 cm </option>-->
 
                                                                                 </select>
-                                                                            </div>
+                                                                        
 
 
-                                                                            <br> <br>
-                                                                            <div class="form-group">
+                                                                            
                                                                                 <label for="">Tie Bar Size:</label>
                                                                                 <select class="form-control" id="slabTireBarSize"
-                                                                                    style="width: 120px !important;">
+                                                                                    style="width: 130px !important;">
                                                                                     <!--<option value="6">6 mm</option>-->
                                                                                     <option value="10" selected>10 mm
                                                                                     </option>
