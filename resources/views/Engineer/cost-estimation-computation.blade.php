@@ -4678,12 +4678,22 @@
                                                                                 <b>Area</b>
                                                                             </label>
                                                                             <br>
+                                                                            <div class="form-group form-inline"> 
                                                                             <label>Width:</label>
                                                                             <input type="number" required min=0 class="form-control" id="PaintWidth1" style="width: 130px !important;">
                                                                             <label>Length:</label>
                                                                             <input type="number" required min=0 class="form-control" id="PaintLength1" style="width: 130px !important;">
                                                                             <br>
                                                                             <br>
+                                                                                <select class="form-control" id=""
+                                                                                        style="width: 230px !important;">
+                                                                                        <option selected> Primer
+                                                                                        </option>
+                                                                                        <option> Enamel </option>
+                                                                                        <option>Roof </option>
+                                                                                        <option>Varnishing </option>
+                                                                                    </select>
+                                                                                </div>
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-danger">
@@ -4694,32 +4704,13 @@
                                                                             </div>
                                                                         </div>
 
-                                                                                <div class="form-group form-inline">
+                                                                               
 
-                                                                                    <select class="form-control" id=""
-                                                                                        style="width: 450px !important;">
-                                                                                        <option selected> Primer
-                                                                                        </option>
-                                                                                        <option> Enamel </option>
-                                                                                        <option>Roof </option>
-                                                                                        <option>Varnishing </option>
-                                                                                    </select>
+                                                                                
 
-                                                                                </div>
+                                                                             
                                                                                 <br>
-                                                                                <br>
-
-
-                                                                                <hr>
-                                                                                <div class="form-group form-inline">
-                                                                                    <label class="text text-danger">
-                                                                                        <b>How Many of these?</b>
-                                                                                    </label>&nbsp;
-                                                                                    <input type="number" class="form-control"
-                                                                                        id="" style="width: 100px !important;">
-                                                                                    <button type="button" class="btn"
-                                                                                        id="PaintCeiling" style="margin-left: 90px">Compute</button>
-                                                                                </div>
+                                                                                
                                                                             </div>
 
 
@@ -5140,13 +5131,15 @@
 
 
 
-                                                                                <label for="">How many of this:</label>
 
                                                                                 <input type="number" required min=1 value=1 class="form-control"
                                                                                     id="ElectricalWorksMaterialQ" style="width: 60px !important;"
                                                                                     placeholder="+">
+                                                                                
+                                                                                </div>
+                                                                            <hr> 
                                                                                 <button type="button" class="btn btn-primary" id="ElectricalWorks" style="margin-left: 300px">Compute</button>    
-                                                                            </div>
+                                                                            
 
 
                                                                         </div>
