@@ -3772,6 +3772,7 @@
                                                                         <div class="card-block">
 
                                                                             <label for="">Roof Materials:</label>
+                                                                            <div class="form-group form-inline"> 
                                                                             <select class="form-control" id="RoofMaterials"
                                                                                 style="width: 350px !important;">
                                                                                 <option value=17 selected> roof sheet
@@ -3783,12 +3784,13 @@
                                                                                 <option value=21> fascia bd 1x10
                                                                                 </option>
                                                                             </select>
-                                                                            <label for="">How many of this:</label>
+                                                                            
                                                                             <input type="number" required min=1 value=1 class="form-control"
                                                                                 id="RoofMaterialQ" style="width: 60px !important;"
                                                                                 placeholder="+">
+                                                                            </div>
                                                                             <button type="button" id="Roofing"
-                                                                                class="btn btn-primary">Compute</button>
+                                                                                class="btn btn-primary" style="margin-left: 300px" >Compute</button>
                                                                         </div>
 
 
@@ -3801,7 +3803,7 @@
 
                                                                         <div class="card">
 
-                                                                            <div class="card-block">
+                                                                            <div class="card-block scroll">
                                                                                 <div class="row">
                                                                                     <div class="table-responsive">
                                                                                         <table class="table">
@@ -4071,6 +4073,7 @@
 
                                                                                 <label>Add Window: </label>
                                                                                 <br>
+                                                                                <div class="form-group form-inline">
                                                                                 <select class="form-control" id="WindowMaterials"
                                                                                     style="width: 300px !important;">
                                                                                     <option value=22 selected> 1.2 x
@@ -4080,18 +4083,15 @@
                                                                                     <option value=24> 0.6 x 1.2</option>
 
                                                                                 </select>
-                                                                                <br>
-                                                                                <br>
-                                                                                <hr>
-                                                                                <div class="form-group form-inline">
-                                                                                    <label class="text text-default">
-                                                                                        <b>How many of this? </b>
-                                                                                    </label>&nbsp;
+                                                                                
+                                                                                    
                                                                                     <input type="number" required min=1 value=1 class="form-control"
-                                                                                        id="WindowMaterialQ" style="width: 100px !important;">
+                                                                                        id="WindowMaterialQ" style="width: 60px !important;">
+                                                                                </div>
+                                                                                <hr>
                                                                                     <button type="button" class="btn "
                                                                                         id="Windows" style="margin-left: 300px">Compute</button>
-                                                                                </div>
+                                                                                
                                                                             </div>
 
 
@@ -4678,12 +4678,22 @@
                                                                                 <b>Area</b>
                                                                             </label>
                                                                             <br>
+                                                                            <div class="form-group form-inline"> 
                                                                             <label>Width:</label>
                                                                             <input type="number" required min=0 class="form-control" id="PaintWidth1" style="width: 130px !important;">
                                                                             <label>Length:</label>
                                                                             <input type="number" required min=0 class="form-control" id="PaintLength1" style="width: 130px !important;">
                                                                             <br>
                                                                             <br>
+                                                                                <select class="form-control" id=""
+                                                                                        style="width: 230px !important;">
+                                                                                        <option selected> Primer
+                                                                                        </option>
+                                                                                        <option> Enamel </option>
+                                                                                        <option>Roof </option>
+                                                                                        <option>Varnishing </option>
+                                                                                    </select>
+                                                                                </div>
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-danger">
@@ -4694,32 +4704,13 @@
                                                                             </div>
                                                                         </div>
 
-                                                                                <div class="form-group form-inline">
+                                                                               
 
-                                                                                    <select class="form-control" id=""
-                                                                                        style="width: 450px !important;">
-                                                                                        <option selected> Primer
-                                                                                        </option>
-                                                                                        <option> Enamel </option>
-                                                                                        <option>Roof </option>
-                                                                                        <option>Varnishing </option>
-                                                                                    </select>
+                                                                                
 
-                                                                                </div>
+                                                                             
                                                                                 <br>
-                                                                                <br>
-
-
-                                                                                <hr>
-                                                                                <div class="form-group form-inline">
-                                                                                    <label class="text text-danger">
-                                                                                        <b>How Many of these?</b>
-                                                                                    </label>&nbsp;
-                                                                                    <input type="number" class="form-control"
-                                                                                        id="" style="width: 100px !important;">
-                                                                                    <button type="button" class="btn"
-                                                                                        id="PaintCeiling" style="margin-left: 90px">Compute</button>
-                                                                                </div>
+                                                                                
                                                                             </div>
 
 
@@ -5140,13 +5131,15 @@
 
 
 
-                                                                                <label for="">How many of this:</label>
 
                                                                                 <input type="number" required min=1 value=1 class="form-control"
                                                                                     id="ElectricalWorksMaterialQ" style="width: 60px !important;"
                                                                                     placeholder="+">
+                                                                                
+                                                                                </div>
+                                                                            <hr> 
                                                                                 <button type="button" class="btn btn-primary" id="ElectricalWorks" style="margin-left: 300px">Compute</button>    
-                                                                            </div>
+                                                                            
 
 
                                                                         </div>
