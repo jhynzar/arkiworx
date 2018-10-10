@@ -4686,14 +4686,14 @@
                                                                                 <input type="number" min=0 class="form-control" id="PaintLength1" style="width: 130px !important;">
                                                                                 <br>
                                                                                 <br>
-                                                                                <select class="form-control" id=""
+                                                                                <!--<select class="form-control" id=""
                                                                                     style="width: 230px !important;">
                                                                                     <option selected> Primer
                                                                                     </option>
                                                                                     <option> Enamel </option>
                                                                                     <option>Roof </option>
                                                                                     <option>Varnishing </option>
-                                                                                </select>
+                                                                                </select>-->
                                                                             </div>
                                                                             <hr>
                                                                             <div class="form-group form-inline">
@@ -4866,10 +4866,10 @@
                                                                                 </label>
                                                                                 <br>
                                                                                 <label>Width:</label>
-                                                                                <input type="number" min=0 class="form-control" id=""
+                                                                                <input type="number" min=0 class="form-control" id="PaintWidth2"
                                                                                     style="width: 130px !important;">
                                                                                 <label>Length:</label>
-                                                                                <input type="number" min=0 class="form-control" id=""
+                                                                                <input type="number" min=0 class="form-control" id="PaintLength2"
                                                                                     style="width: 130px !important;">
                                                                                 <br>
                                                                                 <br>
@@ -4877,7 +4877,7 @@
 
 
 
-
+<!--
                                                                                 <div class="form-group pull-center">
                                                                                     <label class="text text-default">
                                                                                         <b>Paint Type</b>
@@ -4899,7 +4899,7 @@
                                                                                         <option>Varnishing </option>
                                                                                     </select>
 
-                                                                                </div>
+                                                                                </div>-->
                                                                                 <br>
                                                                                 <br>
 
@@ -4909,8 +4909,8 @@
                                                                                     <label class="text text-danger">
                                                                                         <b>How Many of these?</b>
                                                                                     </label>&nbsp;
-                                                                                    <input type="number" min=1 class="form-control"
-                                                                                        id="" style="width: 100px !important;">
+                                                                                    <input type="number" value=4 disabled min=1 class="form-control"
+                                                                                        id="PaintWallNo" style="width: 100px !important;">
                                                                                     <button type="button" class="btn btn-primary"
                                                                                         id="PaintWalls" style="margin-left: 90px">Compute</button>
                                                                                 </div>
@@ -7314,13 +7314,107 @@
     });
 
     $("#PaintCeiling").click(function () {
-
-        computeAndDisplayOverallTotal();
+        var panapos = function(qtya,costa,qtyb,costb,qtyc,costc){
+            var qty51 = parseFloat($("#Quantity51").val());
+            qty51 += qtya;
+            $("#Quantity51").val(qty51);
+            var cost51 = parseFloat($("#Cost51").val());
+            cost51 += costa;
+            $("#Cost51").val(cost51);
+            var qty52 = parseFloat($("#Quantity52").val());
+            qty52 += qtyb;
+            $("#Quantity52").val(qty52);
+            var cost52 = parseFloat($("#Cost52").val());
+            cost52 += costb;
+            $("#Cost52").val(cost52);
+            var qty53 = parseFloat($("#Quantity53").val());
+            qty53 += qtyc;
+            $("#Quantity53").val(qty53);
+            var cost53 = parseFloat($("#Cost53").val());
+            cost53 += costc;
+            $("#Cost53").val(cost53);
+            var no = $("#PaintCeilingNo").val();
+            $("#PaintCeilingNo").val(no + 1);
+            alert("Nagdagdag ka Paint");
+            computeAndDisplayOverallTotal();
+        }
+        if( $("#PaintWidth1").val()<=0 || $("#PaintLength1").val()<=0 ){
+            alert("Invalid Input!");
+        }
+        else if($("#PaintWidth1").val()!=0&&$("#PaintLength1").val()!=0){
+            //
+            var area = $("#PaintWidth1").val() * $("#PaintLength1").val();
+            var paint = area / 35;
+            var sandpaper = Math.ceil((paint / 8) * 30);
+            var patch = Math.ceil(paint / 8);
+            var count1 = DirectCountingEsti(sandpaper, 37);
+            var costa = count1.total;
+            var count2 = DirectCountingEsti(paint, 38);
+            var costb = count2.total;
+            var count3 = DirectCountingEsti(patch, 39);
+            var costc = count3.total;
+            panapos(sandpaper,costa,paint,costb,patch,costc);
+        }
+        else{
+            alert("Please fill up the required fields");
+        }
     });
 
     $("#PaintWalls").click(function () {
-
-        computeAndDisplayOverallTotal();
+        var panapos = function(qtya,costa,qtyb,costb,qtyc,costc,qtyd,costd){
+            //
+            var qty54 = parseFloat($("#Quantity54").val());
+            qty54 += qtya;
+            $("#Quantity51").val(qty51);
+            var cost54 = parseFloat($("#Cost54").val());
+            cost54 += costa;
+            $("#Cost54").val(cost54);
+            var qty55 = parseFloat($("#Quantity55").val());
+            qty55 += qtyb;
+            $("#Quantity55").val(qty55);
+            var cost55 = parseFloat($("#Cost55").val());
+            cost55 += costb;
+            $("#Cost55").val(cost55);
+            var qty56 = parseFloat($("#Quantity56").val());
+            qty56 += qtyc;
+            $("#Quantity56").val(qty56);
+            var cost56 = parseFloat($("#Cost56").val());
+            cost56 += costc;
+            $("#Cost56").val(cost56);
+            var qty57 = parseFloat($("#Quantity57").val());
+            qty57 += qtyd;
+            $("#Quantity56").val(qty56);
+            var cost57 = parseFloat($("#Cost57").val());
+            cost57 += costd;
+            $("#Cost57").val(cost57);
+            var no = $("#PaintWallNo").val();
+            $("#PaintWallNo").val(no + 1);
+            alert("Nagdagdag ka Paint");
+            computeAndDisplayOverallTotal();
+        }
+        if( $("#PaintWidth2").val()<=0 || $("#PaintLength2").val()<=0 ){
+            alert("Invalid Input!");
+        }
+        else if($("#PaintWidth2").val()!=0&&$("#PaintLength2").val()!=0){
+            //
+            var area = $("#PaintWidth2").val() * $("#PaintLength2").val();
+            var paint1 = (area / 35) * 0.61;
+            var sandpaper = Math.ceil((paint1 / 8) * 30);
+            var paint2 = paint1 * 0.39;
+            var skim = (paint1 + paint2)*0.72;
+            var count1 = DirectCountingEsti(sandpaper, 37);
+            var costa = count1.total;
+            var count2 = DirectCountingEsti(paint1, 40);
+            var costb = count2.total;
+            var count3 = DirectCountingEsti(paint2, 41);
+            var costc = count3.total;
+            var count4 = DirectCountingEsti(skim, 42);
+            var costd = count4.total;
+            panapos(sandpaper,costa,paint1,costb,paint2,costc,skim,costd);
+        }
+        else{
+            alert("Please fill up the required fields");
+        }
     });
 
     $("#ElectricalWorks").click(function () {
