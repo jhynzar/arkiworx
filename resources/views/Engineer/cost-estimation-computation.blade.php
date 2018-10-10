@@ -5139,7 +5139,7 @@
                                                                                 <input type="number" class="form-control"
                                                                                     id="ElectricalWorksMaterialQ" style="width: 60px !important;"
                                                                                     placeholder="+">
-
+                                                                            </div>
 
                                                                             <div class="form-group form-inline">
                                                                                 <label for=""></label>
@@ -5169,7 +5169,8 @@
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                  
-                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" value=1 class="form-control" id="TileCount" style="width: 100px !important;">
+                                                                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; 
+                                                                                <input type="number" value=1 class="form-control" id="TileCount" style="width: 100px !important;">
                                                                                 <button type="button" class="btn btn-primary" id="Tiles" style="margin-left: 300px">Compute</button>
                                                                             </div>
 
