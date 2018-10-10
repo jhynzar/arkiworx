@@ -153,7 +153,7 @@ Route::middleware(['auth'])->group(function(){
 
         Route::patch('Engineer/Materials-Pricelist/{id}','MaterialsController@update');
 
-        Route::get('Engineer/Materials-Pricelist/Reports','MaterialsController@reports');
+        Route::get('Engineer/Materials-Pricelist/Reports/{date}','MaterialsController@reports');
 
         Route::get('Engineer/Project-Progress', 'ProjectProgressController@index');
 

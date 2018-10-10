@@ -12,7 +12,7 @@
     <div class="container">
         <div class="card-body">
             <h2 class="text-center my-5">Materials Pricelist Report</h2>
-            <h6>Price as of: {{date("Y-m-d")}}</h6>
+            <h6>Price as of: {{$date}}</h6>
             <table class="table">
                 <thead>
                     <tr>
