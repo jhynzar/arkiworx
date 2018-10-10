@@ -1418,7 +1418,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 disabled id="ColumnVolume"
+                                                                            <input type="number" min=0 disabled id="ColumnVolume"
                                                                                 style="width: 160px !important;" value='1.6'>
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -1428,13 +1428,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Height:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="ColumnThickness"
+                                                                            <input type="number" min=0 class="form-control" id="ColumnThickness"
                                                                                 style="width: 90px !important;" value=>
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="ColumnLength"
+                                                                            <input type="number" min=0 class="form-control" id="ColumnLength"
                                                                                 style="width: 80px !important;" value=>
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control"
+                                                                            <input type="number" min=0 class="form-control"
                                                                                 disabled id="ColumnWidth" style="width: 80px !important;"
                                                                                 value=>
                                                                             <br> <br>
@@ -1445,7 +1445,7 @@
                                                                             <br>
                                                                             <div class="form-group">
                                                                                 <label> Bar Spacing:</label>
-                                                                                <input type="number" required min=0 id="ColumnSpacing"
+                                                                                <input type="number" min=0 id="ColumnSpacing"
                                                                                     class="form-control" style="width: 100px !important;"
                                                                                     value=>
                                                                             </div> <br> <br>
@@ -1723,7 +1723,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 id="FootingVolume"
+                                                                            <input type="number" min=0 value=0.8 id="FootingVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -1733,13 +1733,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="FootingThickness"
+                                                                            <input type="number" min=0 class="form-control" id="FootingThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="FootingLength"
+                                                                            <input type="number" min=0 class="form-control" id="FootingLength"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="FootingWidth"
+                                                                            <input type="number" min=0 class="form-control" id="FootingWidth"
                                                                                 style="width: 80px !important;"
                                                                                 disabled>
                                                                             <br> <br>
@@ -1751,7 +1751,7 @@
 
                                                                             <div class="form-group form-inline pull-center">
                                                                                 <label> Number of bars per Footing:</label>
-                                                                                <input type="number" required min=0 id="FootingNoOfBars"
+                                                                                <input type="number" min=0 id="FootingNoOfBars"
                                                                                     class="form-control" style="width: 100px !important;"
                                                                                     value=4 min=4> <br> <br>
                                                                                 <label for="">Bar Length:</label>
@@ -6495,10 +6495,10 @@
 
         var metalica = function (noofbars, spacing) {
             //
-            var tiebar = Math.ceil(((Math.ceil(parseFloat($("#ColumnThickness").val()) / spacing) + 1) * ((
-                parseFloat($("#ColumnWidth").val()) * 2) + (parseFloat($("#ColumnLength").val()) *
+            var tiebar = Math.ceil(((Math.ceil($("#ColumnThickness").val() / spacing) + 1) * ((
+                $("#ColumnWidth").val() * 2) + ($("#ColumnLength").val() *
                 2))) / 6);
-            var tiewire = (((Math.ceil(parseFloat($("#ColumnThickness").val()) / spacing) + 1) * noofbars) *
+            var tiewire = (((Math.ceil($("#ColumnThickness").val() / spacing) + 1) * noofbars) *
                 0.4) / 53;
             var metals1 = DirectCountingEsti(noofbars, 4);
             var cost1 = metals1.total;
@@ -6514,22 +6514,21 @@
                 costa: cost1
             };
         }
-        if (parseFloat($("#ColumnThickness").val()) < 0 || parseFloat($("#ColumnWidth").val()) < 0 ||
-            parseFloat($("#ColumnLength").val()) < 0 || parseFloat($("#ColumnVolume").val()) < 0) {
+        if ($("#ColumnThickness").val() < 0 ||
+            $("#ColumnLength").val() < 0 || $("#ColumnSpacing").val()<0 ) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#ColumnThickness").val()) == 0 && parseFloat($("#ColumnWidth").val()) ==
-            0 && parseFloat($("#ColumnLength").val()) == 0) {
-            var concrete = ConcreteEsti(1, 1.6, 1, parseFloat($("#ColumnCC").val()), 1);
+        } else if ($("#ColumnThickness").val() == "" 
+            && $("#ColumnLength").val() == "" && $("#ColumnSpacing").val() == "") {
+            var concrete = ConcreteEsti(1, 1.6, 1, $("#ColumnCC").val(), 1);
             var metal = metalica(4, 0.5);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if (parseFloat($("#ColumnThickness").val()) != 0 && parseFloat($("#ColumnWidth").val()) !=
-            0 && parseFloat($("#ColumnLength").val()) != 0) {
+        } else if ($("#ColumnThickness").val() != 0 && $("#ColumnLength").val() != 0 && $("#ColumnSpacing").val()!=0) {
             $("#ColumnVolume").val(parseFloat($("#ColumnThickness").val()) * parseFloat($("#ColumnWidth").val()) *
                 parseFloat($("#ColumnLength").val()));
-            var concrete = ConcreteEsti(1, parseFloat($("#ColumnVolume").val()), 1, parseFloat($("#ColumnCC").val()),
+            var concrete = ConcreteEsti(1, $("#ColumnVolume").val(), 1, $("#ColumnCC").val(),
                 1);
-            var metal = metalica(parseFloat($("#ColumnNoOfBars").val()), 0.192);
+            var metal = metalica($("#ColumnNoOfBars").val(), $("#ColumnSpacing").val());
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, parseFloat($("#ColumnNoOfBars").val()), metal.tiebar, metal.tiewire,
                 metal.costa, metal.costb, metal.costc);
@@ -6584,9 +6583,8 @@
         }
 
         var metalica = function () {
-            var mainbar = Math.ceil((parseFloat($("#FootingWidth").val()) - 0.15) * (parseFloat($(
-                "#FootingNoOfBars").val()) * 2) / 6);
-            var tiewire = ((parseFloat($("#FootingNoOfBars").val()) * parseFloat($("#FootingNoOfBars").val())) *
+            var mainbar = Math.ceil(($("#FootingWidth").val() - 0.15) * ($("#FootingNoOfBars").val() * 2) / 6);
+            var tiewire = (($("#FootingNoOfBars").val() * $("#FootingNoOfBars").val()) *
                 0.4) / 53;
             var metals1 = DirectCountingEsti(mainbar, 4);
             var cost1 = metals1.total;
@@ -6600,24 +6598,22 @@
             };
         }
 
-        if (parseFloat($("#FootingThickness").val()) < 0 || parseFloat($("#FootingWidth").val()) < 0 ||
-            parseFloat($("#FootingLength").val()) < 0 || parseFloat($("#FootingVolume").val()) < 0 ||
-            parseFloat($("#FootingNoOfBars").val()) < 0) {
+        if ($("#FootingThickness").val() < 0 |
+            $("#FootingLength").val() < 0 ||
+            $("#FootingNoOfBars").val() < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#FootingThickness").val()) == 0 && parseFloat($("#FootingWidth").val()) ==
-            0 && parseFloat($("#FootingLength").val()) == 0 || parseFloat($("#FootingNoOfBars").val()) ==
-            0) {
-            var concrete = ConcreteEsti(1, 0.8, 1, parseFloat($("#FootingCC").val()), 1);
+        } else if ( $("#FootingThickness").val() == "" &&  $("#FootingLength").val() == "" ||  $("#FootingNoOfBars").val() == "") {
+            var concrete = ConcreteEsti(1, 0.8, 1, $("#FootingCC").val(), 1);
             var metal = metalica();
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost);
-        } else if (parseFloat($("#FootingThickness").val()) != 0 && parseFloat($("#FootingWidth").val()) !=
-            0 && parseFloat($("#FootingLength").val()) != 0 || parseFloat($("#FootingNoOfBars").val()) !=
+                concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
+        } else if ($("#FootingThickness").val() != 0
+         && $("#FootingLength").val() != 0 || $("#FootingNoOfBars").val() !=
             0) {
             $("#FootingVolume").val(parseFloat($("#FootingThickness").val()) * parseFloat($("#FootingWidth").val()) *
                 parseFloat($("#FootingLength").val()));
-            var concrete = ConcreteEsti(1, parseFloat($("#FootingVolume").val()), 1, parseFloat($("#FootingCC")
-                .val()), 1);
+            var concrete = ConcreteEsti(1, $("#FootingVolume").val(), 1, $("#FootingCC")
+                .val(), 1);
             var metal = metalica();
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
