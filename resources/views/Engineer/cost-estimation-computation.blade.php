@@ -4679,21 +4679,21 @@
                                                                             </label>
                                                                             <br>
                                                                             <div class="form-group form-inline"> 
-                                                                            <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="PaintWidth1" style="width: 130px !important;">
-                                                                            <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="PaintLength1" style="width: 130px !important;">
-                                                                            <br>
-                                                                            <br>
+                                                                                <label>Width:</label>
+                                                                                <input type="number" required min=0 class="form-control" id="PaintWidth1" style="width: 130px !important;">
+                                                                                <label>Length:</label>
+                                                                                <input type="number" required min=0 class="form-control" id="PaintLength1" style="width: 130px !important;">
+                                                                                <br>
+                                                                                <br>
                                                                                 <select class="form-control" id=""
-                                                                                        style="width: 230px !important;">
-                                                                                        <option selected> Primer
-                                                                                        </option>
-                                                                                        <option> Enamel </option>
-                                                                                        <option>Roof </option>
-                                                                                        <option>Varnishing </option>
-                                                                                    </select>
-                                                                                </div>
+                                                                                    style="width: 230px !important;">
+                                                                                    <option selected> Primer
+                                                                                    </option>
+                                                                                    <option> Enamel </option>
+                                                                                    <option>Roof </option>
+                                                                                    <option>Varnishing </option>
+                                                                                </select>
+                                                                            </div>
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-danger">
@@ -4704,18 +4704,7 @@
                                                                             </div>
                                                                         </div>
 
-                                                                               
-
-                                                                                
-
-                                                                             
-                                                                                <br>
-                                                                                
-                                                                            </div>
-
-
-
-                                                                        </div>
+                                                            
                                                                     </div>
                                                                 </div>
 
