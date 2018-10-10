@@ -1723,7 +1723,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" min=0 id="FootingVolume"
+                                                                            <input type="number" min=0 value=0.8 id="FootingVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -6594,9 +6594,8 @@
         }
 
         var metalica = function () {
-            var mainbar = Math.ceil((parseFloat($("#FootingWidth").val()) - 0.15) * (parseFloat($(
-                "#FootingNoOfBars").val()) * 2) / 6);
-            var tiewire = ((parseFloat($("#FootingNoOfBars").val()) * parseFloat($("#FootingNoOfBars").val())) *
+            var mainbar = Math.ceil(($("#FootingWidth").val() - 0.15) * ($("#FootingNoOfBars").val() * 2) / 6);
+            var tiewire = (($("#FootingNoOfBars").val() * $("#FootingNoOfBars").val()) *
                 0.4) / 53;
             var metals1 = DirectCountingEsti(mainbar, 4);
             var cost1 = metals1.total;
@@ -6614,13 +6613,13 @@
             $("#FootingLength").val() < 0 ||
             $("#FootingNoOfBars").val() < 0) {
             alert("Invalid Input.");
-        } else if ( $("#FootingThickness").val() == "" &&  $("#FootingLength").val() == "" ||  $("#FootingNoOfBars").val() ==
-            "") {
+        } else if ( $("#FootingThickness").val() == "" &&  $("#FootingLength").val() == "" ||  $("#FootingNoOfBars").val() == "") {
             var concrete = ConcreteEsti(1, 0.8, 1, $("#FootingCC").val(), 1);
             var metal = metalica();
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost);
-        } else if ($("#FootingThickness").val() != 0 && $("#FootingLength").val() != 0 || $("#FootingNoOfBars").val() !=
+                concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
+        } else if ($("#FootingThickness").val() != 0
+         && $("#FootingLength").val() != 0 || $("#FootingNoOfBars").val() !=
             0) {
             $("#FootingVolume").val(parseFloat($("#FootingThickness").val()) * parseFloat($("#FootingWidth").val()) *
                 parseFloat($("#FootingLength").val()));
