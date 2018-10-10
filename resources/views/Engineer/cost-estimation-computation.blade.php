@@ -3446,14 +3446,14 @@
                                                                             <br>
                                                                             <div class="form-group form-inline">
                                                                                 <label>Area:</label>
-                                                                                <input type="number" required min=0 class="form-control"
+                                                                                <input type="number"  min=0 class="form-control"
                                                                                     disabled id="CHBArea" style="width: 100px !important;"
                                                                                     >
                                                                                 <label>Height:</label>
-                                                                                <input type="number" required min=0 class="form-control"
+                                                                                <input type="number" min=0 class="form-control"
                                                                                     id="CHBWidth" style="width: 80px !important;">
                                                                                 <label>Length:</label>
-                                                                                <input type="number" required min=0 class="form-control"
+                                                                                <input type="number" min=0 class="form-control"
                                                                                     id="CHBLength" style="width: 80px !important;">
                                                                             </div>
                                                                             <br>
@@ -3482,7 +3482,7 @@
                                                                                     </select>
                                                                                 </div><br><br>
                                                                                 <label for="">Thickness:</label>
-                                                                                <input type="number" required min=0 style="width: 140px"
+                                                                                <input type="number" min=0 style="width: 140px"
                                                                                     class="form-control" id="CHBMortarThickness">
                                                                             </div>
 
@@ -3503,7 +3503,7 @@
                                                                                 </select>
                                                                                 <br><br>
                                                                                 <label for="">Thickness:</label>
-                                                                                <input type="number" required min=0 style="width: 140px"
+                                                                                <input type="number" min=0 style="width: 140px"
                                                                                     class="form-control" id="CHBPlasterThickness">
                                                                             </div>
                                                                             <br> <br>
@@ -3550,7 +3550,7 @@
                                                                                         of Wall(s):</b> </label>&nbsp;
                                                                                 <input type="number" disabled class="form-control"
                                                                                     id="CHBWallNo" style="width: 100px !important;"
-                                                                                    value=9>
+                                                                                    value=10>
                                                                                 <button type="button" id="Masonry"
                                                                                     class="btn btn-primary" style="margin-left: 50px">Compute</button>
                                                                             </div>
@@ -3786,7 +3786,7 @@
                                                                                 </option>
                                                                             </select>
                                                                             
-                                                                            <input type="number" required min=1 value=1 class="form-control"
+                                                                            <input type="number" min=1 value=1 class="form-control"
                                                                                 id="RoofMaterialQ" style="width: 60px !important;"
                                                                                 placeholder="+">
                                                                             </div>
@@ -4086,7 +4086,7 @@
                                                                                 </select>
                                                                                 
                                                                                     
-                                                                                    <input type="number" required min=1 value=1 class="form-control"
+                                                                                    <input type="number" min=1 value=1 class="form-control"
                                                                                         id="WindowMaterialQ" style="width: 60px !important;">
                                                                                 </div>
                                                                                 <hr>
@@ -4269,7 +4269,7 @@
                                                                                     </option>
                                                                                 </select>
 
-                                                                                <input type="number" required min=1  value=1 class="form-control"
+                                                                                <input type="number" min=1  value=1 class="form-control"
                                                                                     id="DoorMaterialQ" style="width: 60px !important;"
                                                                                     placeholder="+">
 
@@ -4681,9 +4681,9 @@
                                                                             <br>
                                                                             <div class="form-group form-inline"> 
                                                                                 <label>Width:</label>
-                                                                                <input type="number" required min=0 class="form-control" id="PaintWidth1" style="width: 130px !important;">
+                                                                                <input type="number" min=0 class="form-control" id="PaintWidth1" style="width: 130px !important;">
                                                                                 <label>Length:</label>
-                                                                                <input type="number" required min=0 class="form-control" id="PaintLength1" style="width: 130px !important;">
+                                                                                <input type="number" min=0 class="form-control" id="PaintLength1" style="width: 130px !important;">
                                                                                 <br>
                                                                                 <br>
                                                                                 <select class="form-control" id=""
@@ -4700,7 +4700,7 @@
                                                                                 <label class="text text-danger">
                                                                                     <b>How Many of these?</b>
                                                                                 </label>&nbsp;
-                                                                                <input type="number" required min=1 class="form-control" disabled id="PaintCeilingNo" style="width: 100px !important;" value=1>
+                                                                                <input type="number" min=1 class="form-control" disabled id="PaintCeilingNo" style="width: 100px !important;" value=1>
                                                                                 <button type="button" class="btn" id="PaintCeiling" style="margin-left: 90px">Compute</button>
                                                                             </div>
                                                                         </div>
@@ -4866,10 +4866,10 @@
                                                                                 </label>
                                                                                 <br>
                                                                                 <label>Width:</label>
-                                                                                <input type="number" required min=0 class="form-control" id=""
+                                                                                <input type="number" min=0 class="form-control" id=""
                                                                                     style="width: 130px !important;">
                                                                                 <label>Length:</label>
-                                                                                <input type="number" required min=0 class="form-control" id=""
+                                                                                <input type="number" min=0 class="form-control" id=""
                                                                                     style="width: 130px !important;">
                                                                                 <br>
                                                                                 <br>
@@ -4909,7 +4909,7 @@
                                                                                     <label class="text text-danger">
                                                                                         <b>How Many of these?</b>
                                                                                     </label>&nbsp;
-                                                                                    <input type="number" required min=1 class="form-control"
+                                                                                    <input type="number" min=1 class="form-control"
                                                                                         id="" style="width: 100px !important;">
                                                                                     <button type="button" class="btn btn-primary"
                                                                                         id="PaintWalls" style="margin-left: 90px">Compute</button>
@@ -5122,7 +5122,7 @@
 
 
 
-                                                                                <input type="number" required min=1 value=1 class="form-control"
+                                                                                <input type="number" min=1 value=1 class="form-control"
                                                                                     id="ElectricalWorksMaterialQ" style="width: 60px !important;"
                                                                                     placeholder="+">
                                                                                 
@@ -5367,10 +5367,10 @@
                                                                                 </label>
                                                                                 <br>
                                                                                 <label>Width:</label>
-                                                                                <input type="number" required min=0 class="form-control"
+                                                                                <input type="number" min=0 class="form-control"
                                                                                     id="TileWidth" style="width: 130px !important;">
                                                                                 <label>Length:</label>
-                                                                                <input type="number" required min=0 class="form-control"
+                                                                                <input type="number" min=0 class="form-control"
                                                                                     id="TileLength" style="width: 130px !important;">
                                                                                 <br>
                                                                                 <br>
@@ -5430,7 +5430,7 @@
 
                                                                                     <label class="text text-danger"><b>How
                                                                                             Many of these?</b> </label>&nbsp;
-                                                                                    <input type="number" required min=1 class="form-control"
+                                                                                    <input type="number" min=1 class="form-control"
                                                                                         id="TileCount" style="width: 100px !important;">
                                                                                     <button type="button" class="btn btn-primary"
                                                                                         id="Tiles" style="margin-left: 300px">Compute</button>
@@ -7095,7 +7095,7 @@
 
     $("#Roofing").click(function () {
         if (parseFloat($("#RoofMaterialQ").val()) == 0 || parseFloat($("#RoofMaterialQ").val()) < 0) {
-            //
+            alert("Invalid Input!");
         } else {
             var count = DirectCountingEsti(parseFloat($("#RoofMaterialQ").val()), parseFloat($("#RoofMaterials").val()));
             var cost = count.total;
@@ -7228,6 +7228,7 @@
     $("#Windows").click(function () {
         if (parseFloat($("#WindowMaterialQ").val()) == 0 || parseFloat($("#WindowMaterialQ").val()) < 0) {
             //
+            alert("Invalid Input");
         } else {
             var count = DirectCountingEsti(parseFloat($("#WindowMaterialQ").val()), parseFloat($("#WindowMaterials").val()));
             var cost = count.total;
