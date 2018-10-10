@@ -7080,8 +7080,7 @@
                     tie = 25;
                 }
             }
-            var formulas = searchValues(tie, 20, 3);
-            console.log(formulas);
+            var formulas = searchValues(tie, 20, 5);
             var tiebar = parseFloat($("#CHBArea").val()) * formulas.Answer;
             var metals2 = DirectCountingEsti(tiebar, 6);
             var cost2 = metals2.total;
@@ -7133,7 +7132,6 @@
             var sandqty = concrete1.sandqty + concrete2.sandqty;
             var sandcost = concrete1.sandcost + concrete2.sandcost;
             var metals = metalica();
-            console.log(metals);
             panapos(cementqty, cementcost, sandqty, sandcost, metals.mainbar, metals.cost1, metals.tiebar,
                 metals.cost2);
             //
@@ -7644,4 +7642,4 @@
 
 </script>
 
-@endsection -->
+@endsection
