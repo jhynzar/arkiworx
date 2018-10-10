@@ -2298,7 +2298,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 id="BeamVolume"
+                                                                            <input type="number" min=0 id="BeamVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -2308,13 +2308,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="BeamThickness"
+                                                                            <input type="number" min=0 class="form-control" id="BeamThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control"
+                                                                            <input type="number" min=0 class="form-control"
                                                                                 disabled id="BeamWidth" style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="BeamLength"
+                                                                            <input type="number" min=0 class="form-control" id="BeamLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -2324,7 +2324,7 @@
                                                                             <br>
                                                                             <div class="form-group">
                                                                                 <label> Bar Spacing:</label>
-                                                                                <input type="number" required min=0 id="BeamSpacing"
+                                                                                <input type="number" min=0 id="BeamSpacing"
                                                                                     class="form-control" style="width: 100px !important;"
                                                                                     value=>
                                                                             </div> <br> <br>
@@ -2392,7 +2392,7 @@
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-default"><b>No
                                                                                         of Beam(s): </b> </label>&nbsp;
-                                                                                <input type="number" disabled class="form-control"
+                                                                                <input type="number" disabled value=4 class="form-control"
                                                                                     id="HowManyBeams" style="width: 100px !important;">
                                                                                 <button type="button" class="btn" id="Beam"
                                                                                     style="margin-left: 90px">Compute</button>
@@ -6760,11 +6760,8 @@
 
         var metalica = function (noofbars, spacing) {
             //
-            var tiebar = Math.ceil(((Math.ceil(parseFloat($("#BeamThickness").val()) / spacing) + 1) * ((
-                parseFloat($("#BeamWidth").val()) * 2) + (parseFloat($("#BeamLength").val()) *
-                2))) / 6);
-            var tiewire = (((Math.ceil(parseFloat($("#BeamThickness").val()) / spacing) + 1) * noofbars) *
-                0.4) / 53;
+            var tiebar = Math.ceil( ( ( Math.ceil( $("#BeamThickness").val() / spacing) + 1 ) * ( ($("#BeamWidth").val() * 2 ) + ( $("#BeamLength").val() * 2 ) ) ) / 6  );
+            var tiewire = ( ( ( Math.ceil( $("#BeamThickness").val() / spacing ) + 1 ) * noofbars ) * 0.4 ) / 53;
             var metals1 = DirectCountingEsti(noofbars, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiebar, 5);
@@ -6780,24 +6777,21 @@
             };
         }
 
-        if (parseFloat($("#BeamThickness").val()) < 0 || parseFloat($("#BeamWidth").val()) < 0 || parseFloat(
-                $("#BeamLength").val()) < 0 || parseFloat($("#ColumnSpacing").val()) < 0) {
+        if ($("#BeamThickness").val() < 0 || $("#BeamLength").val() < 0 || $("#BeamSpacing").val() < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#BeamThickness").val()) == 0 && parseFloat($("#BeamWidth").val()) == 0 &&
-            parseFloat($("#BeamLength").val()) == 0 || parseFloat($("#ColumnSpacing").val()) == 0) {
-            var concrete = ConcreteEsti(1, 1.6, 1, parseFloat($("#BeamCC").val()), 1);
+        } else if ($("#BeamThickness").val() == "" && $("#BeamLength").val() == "" || $("#BeamSpacing").val() == "") {
+            var concrete = ConcreteEsti(1, 1.6, 1, $("#BeamCC").val(), 1);
             var metal = metalica(4, 0.5);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if (parseFloat($("#BeamThickness").val()) != 0 && parseFloat($("#BeamWidth").val()) != 0 &&
-            parseFloat($("#BeamLength").val()) != 0 && parseFloat($("#ColumnSpacing").val()) != 0) {
-            $("#BeamVolume").val(parseFloat($("#BeamThickness").val()) * parseFloat($("#BeamWidth").val()) *
-                parseFloat($("#BeamLength").val()));
-            var concrete = ConcreteEsti(1, parseFloat($("#BeamVolume").val()), 1, parseFloat($("#BeamCC").val()),
+        } else if ($("#BeamThickness").val() != 0 && $("#BeamLength").val() != 0 && $("#BeamSpacing").val() != 0) {
+            $("#BeamVolume").val($("#BeamThickness").val() * $("#BeamWidth").val() *
+                $("#BeamLength").val());
+            var concrete = ConcreteEsti(1, $("#BeamVolume").val(), 1, $("#BeamCC").val(),
                 1);
-            var metal = metalica(parseFloat($("#BeamNoOfBars").val()), parseFloat($("#BeamSpacing").val()));
+            var metal = metalica($("#BeamNoOfBars").val(), $("#BeamSpacing").val());
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost, parseFloat($("#BeamNoOfBars").val()), metal.tiebar, metal.tiewire, metal
+                concrete.sandcost, $("#BeamNoOfBars").val(), metal.tiebar, metal.tiewire, metal
                 .costa, metal.costb, metal.costc);
 
         } else {
