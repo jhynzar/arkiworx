@@ -501,21 +501,21 @@ class CostEstimationsController extends Controller
 
     public function saveEstimation($id){
         //general construction ;
-        $BuildingPermit = $_POST['BuildingPermit'];
+        $BuildingPermit = preg_replace("/[,]/ ","",$_POST['BuildingPermit']);
         if(isset($_POST['DENR'])){
-            $DENR = $_POST['DENR'];
+            $DENR = preg_replace("/[,]/ ","",$_POST['DENR']);
         }
-        $TemporaryFacilities = $_POST['TemporaryFacilities'];
-        $WorkersBarracks = $_POST['WorkersBarracks'];
-        $Excavation = $_POST['Excavation'];
-        $Backfill = $_POST['Backfill'];
-        $Lastillas = $_POST['Lastillas'];
-        $SoilPoisoning = $_POST['SoilPoisoning'];
-        $LaborCost = $_POST['LaborCost'];
-        $ToolsEquipments = $_POST['ToolsEquipments'];
-        $Transportation = $_POST['Transportation'];
-        $Contigency = $_POST['Contigency'];
-        $OverheadProfit = $_POST['OverheadProfit'];
+        $TemporaryFacilities = preg_replace("/[,]/ ","",$_POST['TemporaryFacilities']);
+        $WorkersBarracks = preg_replace("/[,]/ ","",$_POST['WorkersBarracks']);
+        $Excavation = preg_replace("/[,]/ ","",$_POST['Excavation']);
+        $Backfill = preg_replace("/[,]/ ","",$_POST['Backfill']);
+        $Lastillas = preg_replace("/[,]/ ","",$_POST['Lastillas']);
+        $SoilPoisoning = preg_replace("/[,]/ ","",$_POST['SoilPoisoning']);
+        $LaborCost = preg_replace("/[,]/ ","",$_POST['LaborCost']);
+        $ToolsEquipments = preg_replace("/[,]/ ","",$_POST['ToolsEquipments']);
+        $Transportation = preg_replace("/[,]/ ","",$_POST['Transportation']);
+        $Contigency = preg_replace("/[,]/ ","",$_POST['Contigency']);
+        $OverheadProfit = preg_replace("/[,]/ ","",$_POST['OverheadProfit']);
 
         DB::table('tblprojectrequirements')
         ->insertGetId([
