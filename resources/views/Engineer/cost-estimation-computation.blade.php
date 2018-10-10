@@ -2299,7 +2299,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" min=0 id="BeamVolume"
+                                                                            <input type="number" value=1.8 min=0 id="BeamVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -2615,7 +2615,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 disabled id="WallFootingVolume"
+                                                                            <input type="number" value=2 min=0 disabled id="WallFootingVolume"
                                                                                 style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -2625,14 +2625,14 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="WallFootingThickness"
+                                                                            <input type="number" min=0 class="form-control" id="WallFootingThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="WallFootingWidth"
+                                                                            <input type="number" min=0 class="form-control" id="WallFootingWidth"
                                                                                 style="width: 80px !important;"
                                                                                 disabled>
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="WallFootingLength"
+                                                                            <input type="number" min=0 class="form-control" id="WallFootingLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -2643,7 +2643,7 @@
 
                                                                             <div class="form-group">
                                                                                 <label> No of Bars per Footing:</label>
-                                                                                <input type=number required min=0 class="form-control" id="WallFootingNoOfBars"
+                                                                                <input type=number min=0 class="form-control" id="WallFootingNoOfBars"
                                                                                     style="width: 100px !important;">
                                                                             </div> <br> <br>
 
@@ -6583,10 +6583,9 @@
             computeAndDisplayOverallTotal();
         }
 
-        var metalica = function () {
-            var mainbar = Math.ceil(($("#FootingWidth").val() - 0.15) * ($("#FootingNoOfBars").val() * 2) / 6);
-            var tiewire = (($("#FootingNoOfBars").val() * $("#FootingNoOfBars").val()) *
-                0.4) / 53;
+        var metalica = function (Width,NoOfBars) {
+            var mainbar = Math.ceil((Width - 0.15) * (NoOfBars * 2) / 6);
+            var tiewire = ((NoOfBars * NoOfBars) * 0.4) / 53;
             var metals1 = DirectCountingEsti(mainbar, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiewire, 6);
@@ -6605,17 +6604,15 @@
             alert("Invalid Input.");
         } else if ( $("#FootingThickness").val() == "" &&  $("#FootingLength").val() == "" ||  $("#FootingNoOfBars").val() == "") {
             var concrete = ConcreteEsti(1, 0.8, 1, $("#FootingCC").val(), 1);
-            var metal = metalica();
+            var metal = metalica(0.92,13);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
         } else if ($("#FootingThickness").val() != 0
          && $("#FootingLength").val() != 0 || $("#FootingNoOfBars").val() !=
             0) {
-            $("#FootingVolume").val(parseFloat($("#FootingThickness").val()) * parseFloat($("#FootingWidth").val()) *
-                parseFloat($("#FootingLength").val()));
-            var concrete = ConcreteEsti(1, $("#FootingVolume").val(), 1, $("#FootingCC")
-                .val(), 1);
-            var metal = metalica();
+            $("#FootingVolume").val( $("#FootingThickness").val() * $("#FootingWidth").val() *  $("#FootingLength").val() );
+            var concrete = ConcreteEsti(1, $("#FootingVolume").val(), 1, $("#FootingCC").val(), 1);
+            var metal = metalica($("#FootingWidth").val(),$("#FootingNoOfBars").val());
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
 
@@ -6844,11 +6841,9 @@
             computeAndDisplayOverallTotal();
         }
 
-        var metalica = function () {
-            var mainbar = Math.ceil((parseFloat($("#WallFootingWidth").val()) - 0.15) * (parseFloat($(
-                "#WallFootingNoOfBars").val()) * 2) / 6);
-            var tiewire = ((parseFloat($("#WallFootingNoOfBars").val()) * parseFloat($(
-                "#WallFootingNoOfBars").val())) * 0.4) / 53;
+        var metalica = function (Width,NoOfBars) {
+            var mainbar = Math.ceil( ( ( Width - 0.15 ) * ( NoOfBars * 2 ) ) / 6 );
+            var tiewire = ( ( NoOfBars * NoOfBars ) * 0.4 ) / 53;
             var metals1 = DirectCountingEsti(mainbar, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiewire, 6);
@@ -6861,24 +6856,24 @@
             };
         }
 
-        if (parseFloat($("#WallFootingThickness").val()) < 0 || parseFloat($("#WallFootingWidth").val()) < 0 ||
-            parseFloat($("#WallFootingLength").val()) < 0 || parseFloat($("#WallFootingNoOfBars").val()) < 0) {
+        if ($("#WallFootingThickness").val() < 0 || $("#WallFootingWidth").val() < 0 ||
+            $("#WallFootingLength").val() < 0 || $("#WallFootingNoOfBars").val() < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#WallFootingThickness").val()) == 0 && parseFloat($("#WallFootingWidth").val()) ==
-            0 && parseFloat($("#WallFootingLength").val()) == 0 || parseFloat($("#WallFootingNoOfBars").val()) ==
-            0) {
-            var concrete = ConcreteEsti(1, 0.8, 1, parseFloat($("#WallFootingCC").val()), 1);
-            var metal = metalica();
+        } else if ($("#WallFootingThickness").val() == "" && $("#WallFootingWidth").val() ==
+            "" && $("#WallFootingLength").val() == "" || $("#WallFootingNoOfBars").val() ==
+            "") {
+            var concrete = ConcreteEsti(1, 0.8, 1, $("#WallFootingCC").val(), 1);
+            var metal = metalica(1.26,23);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost);
-        } else if (parseFloat($("#WallFootingThickness").val()) != 0 && parseFloat($("#WallFootingWidth").val()) !=
-            0 && parseFloat($("#WallFootingLength").val()) != 0 || parseFloat($("#WallFootingNoOfBars").val()) !=
+                concrete.sandcost, metal.qtya,metal.costa, metal.tiewire, metal.costb);
+        } else if ($("#WallFootingThickness").val() != 0 && $("#WallFootingWidth").val() !=
+            0 && $("#WallFootingLength").val() != 0 || $("#WallFootingNoOfBars").val() !=
             0) {
-            $("#WallFootingVolume").val(parseFloat($("#WallFootingThickness").val()) * parseFloat($(
-                "#WallFootingWidth").val()) * parseFloat($("#WallFootingLength").val()));
-            var concrete = ConcreteEsti(1, parseFloat($("#WallFootingVolume").val()), 1, parseFloat($(
-                "#WallFootingCC").val()), 1);
-            var metal = metalica();
+            $("#WallFootingVolume").val($("#WallFootingThickness").val() * $(
+                "#WallFootingWidth").val() * $("#WallFootingLength").val());
+            var concrete = ConcreteEsti(1, $("#WallFootingVolume").val(), 1, $(
+                "#WallFootingCC").val(), 1);
+            var metal = metalica($("#WallFootingWidth").val(),$("#WallFootingNoOfBars").val());
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya,metal.costa, metal.tiewire, metal.costb);
 
@@ -6923,14 +6918,15 @@
             $("#Cost20").val(cost20);
             var qty21 = parseFloat($("#Quantity21").val());
             qty21 += tiebar;
-            $("#Quantity5").val(qty21);
+            $("#Quantity21").val(qty21);
             var cost21 = parseFloat($("#Cost21").val());
             cost21 += costb;
+            $("#Cost21").val(cost21);
             var qty22 = parseFloat($("#Quantity22").val());
             qty22 += tiewire;
             $("#Quantity22").val(qty22);
             var cost22 = parseFloat($("#Cost22").val());
-            cost22 += costb;
+            cost22 += costc;    
             $("#Cost22").val(cost22);
             var no = parseFloat($("#HowManyRoofBeams").val());
             $("#HowManyRoofBeams").val(no + 1);
@@ -6940,10 +6936,8 @@
 
         var metalica = function (noofbars, spacing) {
             //
-            var tiebar = Math.ceil(((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * (($(
-                "#RoofBeamWidth").val() * 2) + (parseFloat($("#RoofBeamLength").val()) * 2))) / 6);
-            var tiewire = (((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * noofbars) * 0.4) /
-                53;
+            var tiebar = Math.ceil(((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * (($("#RoofBeamWidth").val() * 2) + (parseFloat($("#RoofBeamLength").val()) * 2))) / 6);
+            var tiewire = (((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * noofbars) * 0.4) / 53;
             var metals1 = DirectCountingEsti(noofbars, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiebar, 5);
