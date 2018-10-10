@@ -5520,58 +5520,58 @@
                                                                                                 </tr>@endif @endforeach
                                                                                                 <tr class="table-success">
                                                                                                     <td id="MaterialA"></td>
-                                                                                                    <td id="TQtyA "></td>
+                                                                                                    <td id="TQtyA"></td>
                                                                                                     <td id="TCostA"></td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td id="MaterialB"></td>
-                                                                                                    <td id="TQtyB "></td>
-                                                                                                    <td id="TCostB "></td>
+                                                                                                    <td id="TQtyB"></td>
+                                                                                                    <td id="TCostB"></td>
                                                                                                 </tr>
                                                                                                 <tr class="table-warning">
                                                                                                     <td id="MaterialC"></td>
-                                                                                                    <td id="TQtyC "></td>
-                                                                                                    <td id="TCostC "></td>
+                                                                                                    <td id="TQtyC"></td>
+                                                                                                    <td id="TCostC"></td>
                                                                                                 </tr>
                                                                                                 <tr class="table-success">
                                                                                                     <td id="MaterialD"></td>
-                                                                                                    <td id="TQtyD "></td>
-                                                                                                    <td id="TCostD "></td>
+                                                                                                    <td id="TQtyD"></td>
+                                                                                                    <td id="TCostD"></td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td id="MaterialE"></td>
-                                                                                                    <td id="TQtyE "></td>
-                                                                                                    <td id="TCostE "></td>
+                                                                                                    <td id="TQtyE"></td>
+                                                                                                    <td id="TCostE"></td>
                                                                                                 </tr>
                                                                                                 <tr class="table-warning">
                                                                                                     <td id="MaterialF"></td>
-                                                                                                    <td id="TQtyF "></td>
-                                                                                                    <td id="TCostF "></td>
+                                                                                                    <td id="TQtyF"></td>
+                                                                                                    <td id="TCostF"></td>
                                                                                                 </tr>
                                                                                                 <tr class="table-success">
                                                                                                     <td id="MaterialG"></td>
-                                                                                                    <td id="TQtyG "></td>
-                                                                                                    <td id="TCostG "></td>
+                                                                                                    <td id="TQtyG"></td>
+                                                                                                    <td id="TCostG"></td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td id="MaterialH"></td>
-                                                                                                    <td id="TQtyH "></td>
-                                                                                                    <td id="TCostH "></td>
+                                                                                                    <td id="TQtyH"></td>
+                                                                                                    <td id="TCostH"></td>
                                                                                                 </tr>
                                                                                                 <tr class="table-warning">
                                                                                                     <td id="MaterialI"></td>
-                                                                                                    <td id="TQtyI "></td>
-                                                                                                    <td id="TCostI "></td>
+                                                                                                    <td id="TQtyI"></td>
+                                                                                                    <td id="TCostI"></td>
                                                                                                 </tr>
                                                                                                 <tr class="table-success">
                                                                                                     <td id="MaterialJ"></td>
-                                                                                                    <td id="TQtyJ "></td>
-                                                                                                    <td id="TCostJ "></td>
+                                                                                                    <td id="TQtyJ"></td>
+                                                                                                    <td id="TCostJ"></td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td id="MaterialK"></td>
-                                                                                                    <td id="TQtyK "></td>
-                                                                                                    <td id="TCostK "></td>
+                                                                                                    <td id="TQtyK"></td>
+                                                                                                    <td id="TCostK"></td>
                                                                                                 </tr>
 
 
@@ -7437,13 +7437,178 @@
     });
 
     $("#Tiles").click(function () {
-        if ($("#TileWidth").val() < 0 || $("#TileLength").val() < 0 || $("#TileWidth").val() == 0 || $(
+
+        var addmaterial = function (tileClass, totalTiles, cost, name) {
+                var tileqty;
+                var tilecost;
+
+                if (tileClass != 71 && parseFloat($("#QuantityA").val()) == 0 && parseFloat($("#CostA").val()) == 0) {
+                    $("#MaterialIdA").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityB").val()) == 0 && parseFloat($("#CostB").val()) == 0) {
+                    $("#MaterialIdB").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityC").val()) == 0 && parseFloat($("#CostC").val()) == 0) {
+                    $("#MaterialIdC").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityD").val()) == 0 && parseFloat($("#CostD").val()) == 0) {
+                    $("#MaterialIdD").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityE").val()) == 0 && parseFloat($("#CostE").val()) == 0) {
+                    $("#MaterialIdE").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityF").val()) == 0 && parseFloat($("#CostF").val()) == 0) {
+                    $("#MaterialIdF").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityG").val()) == 0 && parseFloat($("#CostG").val()) == 0) {
+                    $("#MaterialIdG").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityH").val()) == 0 && parseFloat($("#CostH").val()) == 0) {
+                    $("#MaterialIdH").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityI").val()) == 0 && parseFloat($("#CostI").val()) == 0) {
+                    $("#MaterialIdI").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityJ").val()) == 0 && parseFloat($("#CostJ").val()) == 0) {
+                    $("#MaterialIdJ").val(tileClass);
+
+                } else if (tileClass != 71 && parseFloat($("#QuantityK").val()) == 0 && parseFloat($("#CostK").val()) == 0) {
+                    $("#MaterialIdK").val(tileClass);
+
+                }
+
+                if (tileClass == 71) {
+                    tileqty = parseFloat($("#Quantity85").val());
+                    tilecost = parseFloat($("#Cost85").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#Quantity85").val(tileqty);
+                    $("#Cost85").val(tilecost);
+                } else if (parseFloat($("#MaterialIdA").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityA").val());
+                    tilecost = parseFloat($("#CostA").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityA").val(tileqty);
+                    $("#CostA").val(tilecost);
+                    $("#MaterialA").html(name);
+                    $("#TQtyA").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostA").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdB").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityB").val());
+                    tilecost = parseFloat($("#CostB").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityB").val(tileqty);
+                    $("#CostB").val(tilecost);
+                    $("#MaterialB").html(name);
+                    $("#TQtyB").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostB").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdC").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityC").val());
+                    tilecost = parseFloat($("#CostC").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityC").val(tileqty);
+                    $("#CostC").val(tilecost);
+                    $("#MaterialC").html(name);
+                    $("#TQtyC").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostC").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdD").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityD").val());
+                    tilecost = parseFloat($("#CostD").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityD").val(tileqty);
+                    $("#CostD").val(tilecost);
+                    $("#MaterialD").html(name);
+                    $("#TQtyD").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostD").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdE").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityE").val());
+                    tilecost = parseFloat($("#CostE").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityE").val(tileqty);
+                    $("#CostE").val(tilecost);
+                    $("#MaterialE").html(name);
+                    $("#TQtyE").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostE").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdF").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityF").val());
+                    tilecost = parseFloat($("#CostF").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityF").val(tileqty);
+                    $("#CostF").val(tilecost);
+                    $("#MaterialF").html(name);
+                    $("#TQtyF").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostF").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdG").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityG").val());
+                    tilecost = parseFloat($("#CostG").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityG").val(tileqty);
+                    $("#CostG").val(tilecost);
+                    $("#MaterialG").html(name);
+                    $("#TQtyG").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostG").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdH").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityH").val());
+                    tilecost = parseFloat($("#CostH").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityH").val(tileqty);
+                    $("#CostH").val(tilecost);
+                    $("#MaterialH").html(name);
+                    $("#TQtyH").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostH").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdI").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityI").val());
+                    tilecost = parseFloat($("#CostI").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityI").val(tileqty);
+                    $("#CostI").val(tilecost);
+                    $("#MaterialI").html(name);
+                    $("#TQtyI").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostI").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdJ").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityJ").val());
+                    tilecost = parseFloat($("#CostJ").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityJ").val(tileqty);
+                    $("#CostJ").val(tilecost);
+                    $("#MaterialJ").html(name);
+                    $("#TQtyJ").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostJ").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                } else if (parseFloat($("#MaterialIdK").val()) == tileClass) {
+                    tileqty = parseFloat($("#QuantityK").val());
+                    tilecost = parseFloat($("#CostK").val());
+                    tileqty += totalTiles;
+                    tilecost += cost;
+                    $("#QuantityK").val(tileqty);
+                    $("#CostK").val(tilecost);
+                    $("#MaterialK").html(name);
+                    $("#TQtyK").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                    $("#TCostK").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                }
+                
+                
+            }
+
+
+
+
+        if (parseFloat($("#TileWidth").val()) < 0 || parseFloat($("#TileLength").val()) < 0 || parseFloat($("#TileWidth").val()) == 0 || $(
                 "#TileLength").val() == 0) {
 
             alert("Invalid Input");
         } else {
-            var TileArea = $("#TileWidth").val() * $("#TileLength").val();
-            var tileClass = $("#TileClass").val();
+            var TileArea = parseFloat($("#TileWidth").val()) * parseFloat($("#TileLength").val());
+            var tileClass = parseFloat($("#TileClass").val());
             var totalTiles;
             if (tileClass == 74) {
                 totalTiles = TileArea / 0.0144;
@@ -7463,178 +7628,52 @@
                 totalTiles = TileArea / 0.16;
             }
 
-            totalTiles = totalTiles * $("#TileCount").val();
+            totalTiles = totalTiles * parseFloat($("#TileCount").val());
             var tilecost = DirectCountingEsti(totalTiles, tileClass);
             var cost = tilecost.total;
             var name = tilecost.materialname;
             addmaterial(tileClass, totalTiles, cost, name);
 
+            // MJ ADDED COMPUTATIONS. (For Logic of continues adding, grout and adhesive must also continue to add)
+            
+            //Adhesive
+            
+            var addedQtyAd = (TileArea / 3) * 20;
+            var currentQtyAd = parseFloat($("#Quantity86").val());
+            var totalQtyAd = currentQtyAd + addedQtyAd;
+            $("#Quantity86").val(totalQtyAd);
+
+
+            var addedCostAd = DirectCountingEsti(addedQtyAd, parseFloat($("#MaterialId86").val())).total;
+            var currentCostAd = parseFloat($("#Cost86").val());
+            var totalCostAd = currentCostAd + addedCostAd;
+            $("#Cost86").val(totalCostAd);
+
+            //Grout
+            var addedQtyGrout = (TileArea / 11) * 5;
+            var currentQtyGrout = parseFloat($("#Quantity87").val());
+            var totalQtyGrout = currentQtyGrout + addedQtyGrout;
+            $("#Quantity87").val(totalQtyGrout);
+
+            var addedCostGrout = DirectCountingEsti(addedQtyGrout, parseFloat($("#MaterialId87").val())).total;
+            var currentCostGrout = parseFloat($("#Cost87").val());
+            var totalCostGrout = currentCostGrout + addedCostGrout;
+            $("#Cost87").val(totalCostGrout);
+
+            /*
+            // ORIGINAL ERWIN COMPUTATIONS CODE. DO NOT DELETE!
+
             $("#Quantity86").val((TileArea / 3) * 20);
-            var tileAd = DirectCountingEsti($("#Quantity86").val(), $("#MaterialId86").val());
+            var tileAd = DirectCountingEsti(parseFloat($("#Quantity86").val()), parseFloat($("#MaterialId86").val()));
             var cost = tileAd.total;
             $("#Cost86").val(cost);
 
             $("#Quantity87").val((TileArea / 11) * 5);
-            var tileGrout = DirectCountingEsti($("#Quantity87").val(), $("#MaterialId87").val());
+            var tileGrout = DirectCountingEsti(parseFloat($("#Quantity87").val()), parseFloat($("#MaterialId87").val()));
             var cost = tileGrout.total;
             $("#Cost87").val(cost);
 
-            var addmaterial = function (tileClass, totalTiles, cost, name) {
-                var tileqty;
-                var tilecost;
-
-                if (tileClass == 71) {
-                    tileqty = $("#Quantity85").val();
-                    tilecost = $("#Cost85").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#Quantity85").val(tileqty);
-                    $("#Cost85").val(tilecost);
-                } else if ($("#MaterialIdA").val() == tileClass) {
-                    tileqty = $("#QuantityA").val();
-                    tilecost = $("#CostA").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityA").val(tileqty);
-                    $("#CostA").val(tilecost);
-                    $("#MaterialA").html(name);
-                    $("#TQtyA").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostA").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdB").val() == tileClass) {
-                    tileqty = $("#QuantityB").val();
-                    tilecost = $("#CostB").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityB").val(tileqty);
-                    $("#CostB").val(tilecost);
-                    $("#MaterialB").html(name);
-                    $("#TQtyB").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostB").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdC").val() == tileClass) {
-                    tileqty = $("#QuantityC").val();
-                    tilecost = $("#CostC").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityC").val(tileqty);
-                    $("#CostC").val(tilecost);
-                    $("#MaterialC").html(name);
-                    $("#TQtyC").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostC").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdD").val() == tileDlass) {
-                    tileqty = $("#QuantityD").val();
-                    tilecost = $("#CostD").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityD").val(tileqty);
-                    $("#CostD").val(tilecost);
-                    $("#MaterialD").html(name);
-                    $("#TQtyD").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostD").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdE").val() == tileElass) {
-                    tileqty = $("#QuantityE").val();
-                    tilecost = $("#CostE").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityE").val(tileqty);
-                    $("#CostE").val(tilecost);
-                    $("#MaterialE").html(name);
-                    $("#TQtyE").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostE").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdF").val() == tileFlass) {
-                    tileqty = $("#QuantityF").val();
-                    tilecost = $("#CostF").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityF").val(tileqty);
-                    $("#CostF").val(tilecost);
-                    $("#MaterialF").html(name);
-                    $("#TQtyF").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostF").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdG").val() == tileGlass) {
-                    tileqty = $("#QuantityG").val();
-                    tilecost = $("#CostG").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityG").val(tileqty);
-                    $("#CostG").val(tilecost);
-                    $("#MaterialG").html(name);
-                    $("#TQtyG").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostG").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdH").val() == tileHlass) {
-                    tileqty = $("#QuantityH").val();
-                    tilecost = $("#CostH").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityH").val(tileqty);
-                    $("#CostH").val(tilecost);
-                    $("#MaterialH").html(name);
-                    $("#TQtyH").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostH").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdI").val() == tileIlass) {
-                    tileqty = $("#QuantityI").val();
-                    tilecost = $("#CostI").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityI").val(tileqty);
-                    $("#CostI").val(tilecost);
-                    $("#MaterialI").html(name);
-                    $("#TQtyI").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostI").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdJ").val() == tileJlass) {
-                    tileqty = $("#QuantityJ").val();
-                    tilecost = $("#CostJ").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityJ").val(tileqty);
-                    $("#CostJ").val(tilecost);
-                    $("#MaterialJ").html(name);
-                    $("#TQtyJ").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostJ").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if ($("#MaterialIdK").val() == tileKlass) {
-                    tileqty = $("#QuantityK").val();
-                    tilecost = $("#CostK").val();
-                    tileqty += totalTiles;
-                    tilecost += cost;
-                    $("#QuantityK").val(tileqty);
-                    $("#CostK").val(tilecost);
-                    $("#MaterialK").html(name);
-                    $("#TQtyK").html(parseFloat(tileqty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                    $("#TCostK").html(parseFloat(tilecost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-                } else if (tileClass != 71 && $("#QuantityA").val() == 0 && $("#CostA").val() == 0) {
-                    $("#MaterialIdA").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityB").val() == 0 && $("#CostB").val() == 0) {
-                    $("#MaterialIdB").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityC").val() == 0 && $("#CostC").val() == 0) {
-                    $("#MaterialIdC").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityD").val() == 0 && $("#CostD").val() == 0) {
-                    $("#MaterialIdD").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityE").val() == 0 && $("#CostE").val() == 0) {
-                    $("#MaterialIdE").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityF").val() == 0 && $("#CostF").val() == 0) {
-                    $("#MaterialIdF").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityG").val() == 0 && $("#CostG").val() == 0) {
-                    $("#MaterialIdG").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityH").val() == 0 && $("#CostH").val() == 0) {
-                    $("#MaterialIdH").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityI").val() == 0 && $("#CostI").val() == 0) {
-                    $("#MaterialIdI").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityJ").val() == 0 && $("#CostJ").val() == 0) {
-                    $("#MaterialIdJ").val(tileClass);
-
-                } else if (tileClass != 71 && $("#QuantityK").val() == 0 && $("#CostK").val() == 0) {
-                    $("#MaterialIdK").val(tileClass);
-
-                }
-            }
+            */
 
             computeAndDisplayOverallTotal();
         }
