@@ -7365,7 +7365,7 @@
             //
             var qty54 = parseFloat($("#Quantity54").val());
             qty54 += qtya;
-            $("#Quantity51").val(qty51);
+            $("#Quantity54").val(qty54);
             var cost54 = parseFloat($("#Cost54").val());
             cost54 += costa;
             $("#Cost54").val(cost54);
@@ -7383,7 +7383,7 @@
             $("#Cost56").val(cost56);
             var qty57 = parseFloat($("#Quantity57").val());
             qty57 += qtyd;
-            $("#Quantity56").val(qty56);
+            $("#Quantity57").val(qty57);
             var cost57 = parseFloat($("#Cost57").val());
             cost57 += costd;
             $("#Cost57").val(cost57);
