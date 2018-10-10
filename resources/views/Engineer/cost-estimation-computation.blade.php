@@ -4065,7 +4065,7 @@
 
                                                                                 <label>Add Window: </label>
                                                                                 <br>
-                                                                                <select class="form-control" id=""
+                                                                                <select class="form-control" id="WindowMaterials"
                                                                                     style="width: 300px !important;">
                                                                                     <option value=22 selected> 1.2 x
                                                                                         1.2 </option>
@@ -4082,7 +4082,7 @@
                                                                                         <b>How many of this? </b>
                                                                                     </label>&nbsp;
                                                                                     <input type="number" class="form-control"
-                                                                                        id="" style="width: 100px !important;">
+                                                                                        id="WindowMaterialQ" style="width: 100px !important;">
                                                                                     <button type="button" class="btn "
                                                                                         id="Windows" style="margin-left: 300px">Compute</button>
                                                                                 </div>
@@ -7299,30 +7299,30 @@
     });
 
     $("#Windows").click(function () {
-        if ($("#WindowMaterialQ").val() == 0 || $("#WindowMaterialQ").val() < 0) {
+        if (parseFloat($("#WindowMaterialQ").val()) == 0 || parseFloat($("#WindowMaterialQ").val()) < 0) {
             //
         } else {
-            var count = DirectCountingEsti($("#WindowMaterialQ").val(), $("#WindowMaterials").val());
+            var count = DirectCountingEsti(parseFloat($("#WindowMaterialQ").val()), parseFloat($("#WindowMaterials").val()));
             var cost = count.total;
 
-            if ($("#WindowMaterials").val() == 22) {
-                var qty = $("#Quantity88").val();
-                cost += $("#Cost88").val();
-                qty += $("#WindowMaterialQ").val();
+            if (parseFloat($("#WindowMaterials").val()) == 22) {
+                var qty = parseFloat($("#Quantity88").val());
+                cost += parseFloat($("#Cost88").val());
+                qty += parseFloat($("#WindowMaterialQ").val());
                 $("#Quantity88").val(qty);
-                $("#Cost88").val(total);
-            } else if ($("#WindowMaterials").val() == 23) {
-                var qty = $("#Quantity89").val();
-                cost += $("#Cost89").val();
-                qty += $("#WindowMaterialQ").val();
+                $("#Cost88").val(cost);
+            } else if (parseFloat($("#WindowMaterials").val()) == 23) {
+                var qty = parseFloat($("#Quantity89").val());
+                cost += parseFloat($("#Cost89").val());
+                qty += parseFloat($("#WindowMaterialQ").val());
                 $("#Quantity89").val(qty);
-                $("#Cost89").val(total);
-            } else if ($("#WindowMaterials").val() == 24) {
-                var qty = $("#Quantity90").val();
-                cost += $("#Cost90").val();
-                qty += $("#WindowMaterialQ").val();
+                $("#Cost89").val(cost);
+            } else if (parseFloat($("#WindowMaterials").val()) == 24) {
+                var qty = parseFloat($("#Quantity90").val());
+                cost += parseFloat($("#Cost90").val());
+                qty += parseFloat($("#WindowMaterialQ").val());
                 $("#Quantity90").val(qty);
-                $("#Cost90").val(total);
+                $("#Cost90").val(cost);
             }
             alert("Nagdagdag ka ng Material sa Window");
             computeAndDisplayOverallTotal();
