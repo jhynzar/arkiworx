@@ -3139,7 +3139,7 @@
                                                                                     id="RoofBeamSpacing" style="width: 100px !important;">
                                                                             </div> <br> <br>
                                                                             <div class="form-group">
-                                                                                <label> No of Bars per Beam:</label>
+                                                                                <label> No of Bars per Beam:</label> <br> 
                                                                                 <select class="form-control" id="RoofBeamNoOfBars"
                                                                                     style="width: 100px !important;">
                                                                                     <option value="4" selected> 4
@@ -3514,9 +3514,9 @@
                                                                             <br>
 
                                                                             <div class="form-group form-inline pull-center">
-                                                                                <label for="">Bar Spacing (Vertical):</label>
+                                                                                <label for="">Bar Spacing (Vertical):</label> &nbsp; &nbsp;
                                                                                 <select class="form-control" id="masonryBarSize"
-                                                                                    style="width: 200px !important;">
+                                                                                    style="width: 210px !important;">
                                                                                     <option value="40" selected>40 cm</option>
                                                                                     <option value="60">60 cm</option>
                                                                                     <option value="80">80 cm</option>
@@ -3534,7 +3534,7 @@
                                                                                 <br><br>
                                                                                 <label for="">Tie wire:</label>
                                                                                 <select class="form-control" id="masonryTieWire"
-                                                                                    style="width: 220px !important;">
+                                                                                    style="width: 110px !important;">
                                                                                     <option value=30 selected>30 cm
                                                                                     </option>
                                                                                     <!--<option value=40>40 cm </option>-->
@@ -3542,7 +3542,7 @@
                                                                                 </select>
                                                                             </div>
 
-                                                                            <br> <br>
+                                                                            
                                                                             <hr>
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-danger"><b>No
