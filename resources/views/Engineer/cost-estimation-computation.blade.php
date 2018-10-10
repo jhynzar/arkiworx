@@ -1038,7 +1038,7 @@
 
 
 
-<div class="content-wrapper" style="margin-top: 10px">
+<div class="content-wrapper" style="margin-top: 30px">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
 
@@ -1067,7 +1067,7 @@
                                                                
                                                             </div>  -->
 
-                <div style=" position: absolute; margin-top: -50; margin-left: 300px">
+                <div style=" position: absolute; margin-top: -50px; margin-left: 300px">
                     <label class="text text-muted">Project:</label>
                     <select class="form-control text text-primary" name="project" id="project" style="width: 400px; height: 40px !important;"
                         disabled>
@@ -1741,10 +1741,10 @@
                                                                             <br>
 
                                                                             <div class="form-group form-inline pull-center">
-                                                                                <label> Number of bars per Column:</label>
+                                                                                <label> Number of bars per Footing:</label>
                                                                                 <input type="number" required min=0 id="FootingNoOfBars"
                                                                                     class="form-control" style="width: 100px !important;"
-                                                                                    value=4 min=4>
+                                                                                    value=4 min=4> <br> <br>
                                                                                 <label for="">Bar Length:</label>
                                                                                 <select class="form-control" id="footingBarLength"
                                                                                     style="width: 150px !important;">
@@ -1772,7 +1772,7 @@
                                                                             <div class="form-group form-inline pull-center">
                                                                                 <label for="">Tie wire:</label>
                                                                                 <select class="form-control" id="footingTiewire"
-                                                                                    style="width: 140px !important;">
+                                                                                    style="width: 170px !important;">
                                                                                     <option value="30" selected>30 cm
                                                                                     </option>
                                                                                     <!--<option value="40" >40 cm </option>-->
