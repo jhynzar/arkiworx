@@ -7330,55 +7330,55 @@
     });
 
     $("#Doors").click(function () {
-        if ($("#DoorMaterialQ").val() == 0 || $("#DoorMaterialQ").val() < 0) {
+        if (parseFloat($("#DoorMaterialQ").val()) == 0 || parseFloat($("#DoorMaterialQ").val()) < 0) {
 
             alert("Invalid Input");
         } else {
-            var count = DirectCountingEsti($("#DoorMaterialQ").val(), $("#DoorMaterials").val());
+            var count = DirectCountingEsti(parseFloat($("#DoorMaterialQ").val()), parseFloat($("#DoorMaterials").val()));
             var cost = count.total;
 
-            if ($("#DoorMaterials").val() == 25) {
-                var qty = $("#Quantity91").val();
-                cost += $("#Cost91").val();
-                qty += $("#DoorMaterialQ").val();
+            if (parseFloat($("#DoorMaterials").val()) == 25) {
+                var qty = parseFloat($("#Quantity91").val());
+                cost += parseFloat($("#Cost91").val());
+                qty += parseFloat($("#DoorMaterialQ").val());
                 $("#Quantity91").val(qty);
-                $("#Cost91").val(total);
-            } else if ($("#DoorMaterials").val() == 26) {
-                var qty = $("#Quantity92").val();
-                cost += $("#Cost92").val();
-                qty += $("#DoorMaterialQ").val();
+                $("#Cost91").val(cost);
+            } else if (parseFloat($("#DoorMaterials").val()) == 26) {
+                var qty = parseFloat($("#Quantity92").val());
+                cost += parseFloat($("#Cost92").val());
+                qty += parseFloat($("#DoorMaterialQ").val());
                 $("#Quantity92").val(qty);
-                $("#Cost92").val(total);
-            } else if ($("#DoorMaterials").val() == 27) {
-                var qty = $("#Quantity93").val();
-                cost += $("#Cost93").val();
-                qty += $("#DoorMaterialQ").val();
+                $("#Cost92").val(cost);
+            } else if (parseFloat($("#DoorMaterials").val()) == 27) {
+                var qty = parseFloat($("#Quantity93").val());
+                cost += parseFloat($("#Cost93").val());
+                qty += parseFloat($("#DoorMaterialQ").val());
                 $("#Quantity93").val(qty);
-                $("#Cost93").val(total);
-            } else if ($("#DoorMaterials").val() == 28) {
-                var qty = $("#Quantity94").val();
-                cost += $("#Cost94").val();
-                qty += $("#DoorMaterialQ").val();
+                $("#Cost93").val(cost);
+            } else if (parseFloat($("#DoorMaterials").val()) == 28) {
+                var qty = parseFloat($("#Quantity94").val());
+                cost += parseFloat($("#Cost94").val());
+                qty += parseFloat($("#DoorMaterialQ").val());
                 $("#Quantity94").val(qty);
-                $("#Cost94").val(total);
-            } else if ($("#DoorMaterials").val() == 29) {
-                var qty = $("#Quantity95").val();
-                cost += $("#Cost95").val();
-                qty += $("#DoorMaterialQ").val();
+                $("#Cost94").val(cost);
+            } else if (parseFloat($("#DoorMaterials").val()) == 29) {
+                var qty = parseFloat($("#Quantity95").val());
+                cost += parseFloat($("#Cost95").val());
+                qty += parseFloat($("#DoorMaterialQ").val());
                 $("#Quantity95").val(qty);
-                $("#Cost95").val(total);
-            } else if ($("#DoorMaterials").val() == 30) {
-                var qty = $("#Quantity96").val();
-                cost += $("#Cost96").val();
-                qty += $("#DoorMaterialQ").val();
+                $("#Cost95").val(cost);
+            } else if (parseFloat($("#DoorMaterials").val()) == 30) {
+                var qty = parseFloat($("#Quantity96").val());
+                cost += parseFloat($("#Cost96").val());
+                qty += parseFloat($("#DoorMaterialQ").val());
                 $("#Quantity96").val(qty);
-                $("#Cost96").val(total);
-            } else if ($("#DoorMaterials").val() == 36) {
-                var qty = $("#Quantity97").val();
-                cost += $("#Cost97").val();
-                qty += $("#DoorMaterialQ").val();
+                $("#Cost96").val(cost);
+            } else if (parseFloat($("#DoorMaterials").val()) == 36) {
+                var qty = parseFloat($("#Quantity97").val());
+                cost += parseFloat($("#Cost97").val());
+                qty += parseFloat($("#DoorMaterialQ").val());
                 $("#Quantity97").val(qty);
-                $("#Cost97").val(total);
+                $("#Cost97").val(cost);
             }
             alert("Nagdagdag ka ng Material sa Door");
             computeAndDisplayOverallTotal();
