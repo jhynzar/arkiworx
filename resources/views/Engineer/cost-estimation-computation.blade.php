@@ -1418,7 +1418,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 disabled id="ColumnVolume"
+                                                                            <input type="number" min=0 disabled id="ColumnVolume"
                                                                                 style="width: 160px !important;" value='1.6'>
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -1428,13 +1428,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Height:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="ColumnThickness"
+                                                                            <input type="number" min=0 class="form-control" id="ColumnThickness"
                                                                                 style="width: 90px !important;" value=>
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="ColumnLength"
+                                                                            <input type="number" min=0 class="form-control" id="ColumnLength"
                                                                                 style="width: 80px !important;" value=>
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control"
+                                                                            <input type="number" min=0 class="form-control"
                                                                                 disabled id="ColumnWidth" style="width: 80px !important;"
                                                                                 value=>
                                                                             <br> <br>
@@ -1445,7 +1445,7 @@
                                                                             <br>
                                                                             <div class="form-group">
                                                                                 <label> Bar Spacing:</label>
-                                                                                <input type="number" required min=0 id="ColumnSpacing"
+                                                                                <input type="number" min=0 id="ColumnSpacing"
                                                                                     class="form-control" style="width: 100px !important;"
                                                                                     value=>
                                                                             </div> <br> <br>
@@ -6513,10 +6513,10 @@
 
         var metalica = function (noofbars, spacing) {
             //
-            var tiebar = Math.ceil(((Math.ceil(parseFloat($("#ColumnThickness").val()) / spacing) + 1) * ((
-                parseFloat($("#ColumnWidth").val()) * 2) + (parseFloat($("#ColumnLength").val()) *
+            var tiebar = Math.ceil(((Math.ceil($("#ColumnThickness").val() / spacing) + 1) * ((
+                $("#ColumnWidth").val() * 2) + ($("#ColumnLength").val() *
                 2))) / 6);
-            var tiewire = (((Math.ceil(parseFloat($("#ColumnThickness").val()) / spacing) + 1) * noofbars) *
+            var tiewire = (((Math.ceil($("#ColumnThickness").val() / spacing) + 1) * noofbars) *
                 0.4) / 53;
             var metals1 = DirectCountingEsti(noofbars, 4);
             var cost1 = metals1.total;
@@ -6532,22 +6532,21 @@
                 costa: cost1
             };
         }
-        if (parseFloat($("#ColumnThickness").val()) < 0 || parseFloat($("#ColumnWidth").val()) < 0 ||
-            parseFloat($("#ColumnLength").val()) < 0 || parseFloat($("#ColumnVolume").val()) < 0) {
+        if ($("#ColumnThickness").val() < 0 ||
+            $("#ColumnLength").val() < 0 || $("#ColumnSpacing").val()<0 ) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#ColumnThickness").val()) == 0 && parseFloat($("#ColumnWidth").val()) ==
-            0 && parseFloat($("#ColumnLength").val()) == 0) {
-            var concrete = ConcreteEsti(1, 1.6, 1, parseFloat($("#ColumnCC").val()), 1);
+        } else if ($("#ColumnThickness").val() == "" 
+            && $("#ColumnLength").val() == "" && $("#ColumnSpacing").val() == "") {
+            var concrete = ConcreteEsti(1, 1.6, 1, $("#ColumnCC").val(), 1);
             var metal = metalica(4, 0.5);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if (parseFloat($("#ColumnThickness").val()) != 0 && parseFloat($("#ColumnWidth").val()) !=
-            0 && parseFloat($("#ColumnLength").val()) != 0) {
+        } else if ($("#ColumnThickness").val() != 0 && $("#ColumnLength").val() != 0 && $("#ColumnSpacing").val()!=0) {
             $("#ColumnVolume").val(parseFloat($("#ColumnThickness").val()) * parseFloat($("#ColumnWidth").val()) *
                 parseFloat($("#ColumnLength").val()));
-            var concrete = ConcreteEsti(1, parseFloat($("#ColumnVolume").val()), 1, parseFloat($("#ColumnCC").val()),
+            var concrete = ConcreteEsti(1, $("#ColumnVolume").val(), 1, $("#ColumnCC").val(),
                 1);
-            var metal = metalica(parseFloat($("#ColumnNoOfBars").val()), 0.192);
+            var metal = metalica($("#ColumnNoOfBars").val(), $("#ColumnSpacing").val());
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, parseFloat($("#ColumnNoOfBars").val()), metal.tiebar, metal.tiewire,
                 metal.costa, metal.costb, metal.costc);
