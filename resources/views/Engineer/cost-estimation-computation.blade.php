@@ -3959,6 +3959,30 @@
                                                                                                         }} </td>
 
                                                                                                 </tr>@endif @endforeach
+                                                                                                @foreach (
+                                                                                                $TemplateArray2
+                                                                                                as $key=>$record )
+                                                                                                @if($record -> id ==
+                                                                                                50)
+                                                                                                <tr class="text text-primary">
+                                                                                                    <td><b>Metal
+                                                                                                            Reinforcement</b></td>
+                                                                                                </tr>
+                                                                                                <tr class="table-success">
+                                                                                                    <td id="RoofingSteelBar">
+                                                                                                        {{ $record ->
+                                                                                                        materialName }}
+                                                                                                    </td>
+                                                                                                    <td id="TQty{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        qty
+                                                                                                        }} </td>
+                                                                                                    <td id="TCost{{$record -> id}}">
+                                                                                                        {{ $record ->
+                                                                                                        cost
+                                                                                                        }} </td>
+
+                                                                                                </tr>@endif @endforeach
 
                                                                                             </tbody>
                                                                                         </table>
@@ -7148,36 +7172,45 @@
             var count = DirectCountingEsti(parseFloat($("#RoofMaterialQ").val()), parseFloat($("#RoofMaterials").val()));
             var cost = count.total;
 
+            //TODO
+            /* TIE WIRE
+            var qty = parseFloat($("#Quantity45").val());
+            cost += parseFloat($("#Cost45").val());
+            qty += parseFloat($("#RoofMaterialQ").val());
+            $("#Quantity45").val(qty);
+            $("#Cost45").val(cost);
+            */
+
             if (parseFloat($("#RoofMaterials").val()) == 17) {
-                var qty = parseFloat($("#Quantity45").val());
-                cost += parseFloat($("#Cost45").val());
-                qty += parseFloat($("#RoofMaterialQ").val());
-                $("#Quantity45").val(qty);
-                $("#Cost45").val(cost);
-            } else if (parseFloat($("#RoofMaterials").val()) == 18) {
                 var qty = parseFloat($("#Quantity46").val());
                 cost += parseFloat($("#Cost46").val());
                 qty += parseFloat($("#RoofMaterialQ").val());
                 $("#Quantity46").val(qty);
                 $("#Cost46").val(cost);
-            } else if (parseFloat($("#RoofMaterials").val()) == 19) {
+            } else if (parseFloat($("#RoofMaterials").val()) == 18) {
                 var qty = parseFloat($("#Quantity47").val());
                 cost += parseFloat($("#Cost47").val());
                 qty += parseFloat($("#RoofMaterialQ").val());
                 $("#Quantity47").val(qty);
                 $("#Cost47").val(cost);
-            } else if (parseFloat($("#RoofMaterials").val()) == 20) {
+            } else if (parseFloat($("#RoofMaterials").val()) == 19) {
                 var qty = parseFloat($("#Quantity48").val());
                 cost += parseFloat($("#Cost48").val());
                 qty += parseFloat($("#RoofMaterialQ").val());
-                $("#Quantity48").val(cost);
-                $("#Cost48").val(total);
-            } else if (parseFloat($("#RoofMaterials").val()) == 21) {
+                $("#Quantity48").val(qty);
+                $("#Cost48").val(cost);
+            } else if (parseFloat($("#RoofMaterials").val()) == 20) {
                 var qty = parseFloat($("#Quantity49").val());
                 cost += parseFloat($("#Cost49").val());
                 qty += parseFloat($("#RoofMaterialQ").val());
                 $("#Quantity49").val(qty);
                 $("#Cost49").val(cost);
+            } else if (parseFloat($("#RoofMaterials").val()) == 21) {
+                var qty = parseFloat($("#Quantity50").val());
+                cost += parseFloat($("#Cost50").val());
+                qty += parseFloat($("#RoofMaterialQ").val());
+                $("#Quantity50").val(qty);
+                $("#Cost50").val(cost);
             }
             alert("Nagdagdag ka ng Material sa Roofing");
             computeAndDisplayOverallTotal();
