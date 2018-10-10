@@ -1723,7 +1723,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 id="FootingVolume"
+                                                                            <input type="number" min=0 id="FootingVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -1733,13 +1733,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="FootingThickness"
+                                                                            <input type="number" min=0 class="form-control" id="FootingThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="FootingLength"
+                                                                            <input type="number" min=0 class="form-control" id="FootingLength"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="FootingWidth"
+                                                                            <input type="number" min=0 class="form-control" id="FootingWidth"
                                                                                 style="width: 80px !important;"
                                                                                 disabled>
                                                                             <br> <br>
@@ -1751,7 +1751,7 @@
 
                                                                             <div class="form-group form-inline pull-center">
                                                                                 <label> Number of bars per Footing:</label>
-                                                                                <input type="number" required min=0 id="FootingNoOfBars"
+                                                                                <input type="number" min=0 id="FootingNoOfBars"
                                                                                     class="form-control" style="width: 100px !important;"
                                                                                     value=4 min=4> <br> <br>
                                                                                 <label for="">Bar Length:</label>
@@ -6610,24 +6610,22 @@
             };
         }
 
-        if (parseFloat($("#FootingThickness").val()) < 0 || parseFloat($("#FootingWidth").val()) < 0 ||
-            parseFloat($("#FootingLength").val()) < 0 || parseFloat($("#FootingVolume").val()) < 0 ||
-            parseFloat($("#FootingNoOfBars").val()) < 0) {
+        if ($("#FootingThickness").val() < 0 |
+            $("#FootingLength").val() < 0 ||
+            $("#FootingNoOfBars").val() < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#FootingThickness").val()) == 0 && parseFloat($("#FootingWidth").val()) ==
-            0 && parseFloat($("#FootingLength").val()) == 0 || parseFloat($("#FootingNoOfBars").val()) ==
-            0) {
-            var concrete = ConcreteEsti(1, 0.8, 1, parseFloat($("#FootingCC").val()), 1);
+        } else if ( $("#FootingThickness").val() == "" &&  $("#FootingLength").val() == "" ||  $("#FootingNoOfBars").val() ==
+            "") {
+            var concrete = ConcreteEsti(1, 0.8, 1, $("#FootingCC").val(), 1);
             var metal = metalica();
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost);
-        } else if (parseFloat($("#FootingThickness").val()) != 0 && parseFloat($("#FootingWidth").val()) !=
-            0 && parseFloat($("#FootingLength").val()) != 0 || parseFloat($("#FootingNoOfBars").val()) !=
+        } else if ($("#FootingThickness").val() != 0 && $("#FootingLength").val() != 0 || $("#FootingNoOfBars").val() !=
             0) {
             $("#FootingVolume").val(parseFloat($("#FootingThickness").val()) * parseFloat($("#FootingWidth").val()) *
                 parseFloat($("#FootingLength").val()));
-            var concrete = ConcreteEsti(1, parseFloat($("#FootingVolume").val()), 1, parseFloat($("#FootingCC")
-                .val()), 1);
+            var concrete = ConcreteEsti(1, $("#FootingVolume").val(), 1, $("#FootingCC")
+                .val(), 1);
             var metal = metalica();
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
