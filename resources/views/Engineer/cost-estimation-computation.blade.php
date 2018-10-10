@@ -1166,8 +1166,8 @@
                                                                                         <label> Building Permit</label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 1)<input type="number"
-                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
+                                                                                        id == 1)<input
+                                                                                            class="currencyInput form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="BuildingPermit" name="BuildingPermit"
                                                                                             style="width: 100px !important;"
                                                                                             placeholder="">@endif
@@ -1177,14 +1177,15 @@
                                                                                         &nbsp;
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 2)<input type="number"
-                                                                                            class="form-control" min=0 value="{{ $record -> cost }}"
+                                                                                        id == 2)<input
+                                                                                            class="currencyInput form-control" min=0 value="{{ $record -> cost }}"
                                                                                             id="DENR" name="DENR" style="width: 100px !important;"
                                                                                             placeholder="">
                                                                                             <input type="checkbox" checked onchange="{
                                                                                                 if(this.checked){
                                                                                                     $('#DENR').prop('disabled',false);
                                                                                                 }else{
+                                                                                                    $('#DENR').val(0);
                                                                                                     $('#DENR').prop('disabled',true);
                                                                                                 }
                                                                                                 console.log($('#DENR').prop('disabled'));
@@ -1196,8 +1197,8 @@
                                                                                         <label> Temporary Facilities</label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 3)<input type="number"
-                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
+                                                                                        id == 3)<input
+                                                                                            class="currencyInput form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="TemporaryFacilities"
                                                                                             name="TemporaryFacilities"
                                                                                             style="width: 100px !important;"
@@ -1207,8 +1208,8 @@
                                                                                         <label> Workers' Barracks</label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 4)<input type="number"
-                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
+                                                                                        id == 4)<input
+                                                                                            class="currencyInput form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="WorkersBarracks" name="WorkersBarracks"
                                                                                             style="width: 100px !important;"
                                                                                             placeholder="">@endif
@@ -1221,8 +1222,8 @@
                                                                                         <label> Excavation</label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 5)<input type="number"
-                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
+                                                                                        id == 5)<input
+                                                                                            class="currencyInput form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="Excavation" name="Excavation"
                                                                                             style="width: 150px !important;"
                                                                                             placeholder="">@endif
@@ -1232,8 +1233,8 @@
                                                                                         <label> Backfill</label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 6)<input type="number"
-                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
+                                                                                        id == 6)<input
+                                                                                            class="currencyInput form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="Backfill" name="Backfill"
                                                                                             style="width: 150px !important;"
                                                                                             placeholder="">@endif
@@ -1242,8 +1243,8 @@
                                                                                         <label> Lastillas</label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 7)<input type="number"
-                                                                                            class="form-control" min=0 value="{{ $record -> cost }}"
+                                                                                        id == 7)<input
+                                                                                            class="currencyInput form-control" min=0 value="{{ $record -> cost }}"
                                                                                             id="Lastillas" name="Lastillas"
                                                                                             style="width: 150px !important;"
                                                                                             placeholder="Optional">@endif
@@ -1252,8 +1253,8 @@
                                                                                         <label> Soil Poisoning</label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 8)<input type="number"
-                                                                                            class="form-control" min=0 value="{{ $record -> cost }}"
+                                                                                        id == 8)<input
+                                                                                            class="currencyInput form-control" min=0 value="{{ $record -> cost }}"
                                                                                             id="SoilPoisoning" name="SoilPoisoning"
                                                                                             style="width: 150px !important;"
                                                                                             placeholder="Optional">@endif
@@ -1264,8 +1265,8 @@
                                                                                                 Cost</b> </label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 9)<input type="number"
-                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
+                                                                                        id == 9)<input
+                                                                                            class="currencyInput form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="LaborCost" name="LaborCost"
                                                                                             style="width: 180px !important;"
                                                                                             placeholder="">@endif
@@ -1277,8 +1278,8 @@
                                                                                         </label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 10)<input type="number"
-                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
+                                                                                        id == 10)<input
+                                                                                            class="currencyInput form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="ToolsEquipments" name="ToolsEquipments"
                                                                                             style="width: 180px !important;"
                                                                                             placeholder="">@endif
@@ -1288,8 +1289,8 @@
                                                                                         </label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 11)<input type="number"
-                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
+                                                                                        id == 11)<input
+                                                                                            class="currencyInput form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="Transportation" name="Transportation"
                                                                                             style="width: 180px !important;"
                                                                                             placeholder="">@endif
@@ -1300,8 +1301,8 @@
                                                                                         </label>
                                                                                         @foreach ( $TemplateArray1 as
                                                                                         $key=>$record ) @if($record ->
-                                                                                        id == 12)<input type="number"
-                                                                                            class="form-control" required min=1 value="{{ $record -> cost }}"
+                                                                                        id == 12)<input
+                                                                                            class="currencyInput form-control" required min=1 value="{{ $record -> cost }}"
                                                                                             id="Contigency" name="Contigency"
                                                                                             style="width: 200px !important;"
                                                                                             placeholder="">@endif
@@ -6178,18 +6179,18 @@
         $("#TCost97").html(parseFloat($("#Cost97").val()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
 
         var totalGeneralReq = 0;
-        totalGeneralReq += parseFloat($("#BuildingPermit").val());
-        totalGeneralReq += parseFloat($("#DENR").val());
-        totalGeneralReq += parseFloat($("#TemporaryFacilities").val());
-        totalGeneralReq += parseFloat($("#WorkersBarracks").val());
-        totalGeneralReq += parseFloat($("#Excavation").val());
-        totalGeneralReq += parseFloat($("#Backfill").val());
-        totalGeneralReq += parseFloat($("#Lastillas").val());
-        totalGeneralReq += parseFloat($("#SoilPoisoning").val());
-        totalGeneralReq += parseFloat($("#LaborCost").val());
-        totalGeneralReq += parseFloat($("#ToolsEquipments").val());
-        totalGeneralReq += parseFloat($("#Transportation").val());
-        totalGeneralReq += parseFloat($("#Contigency").val());
+        totalGeneralReq += currencyInputToFloat($("#BuildingPermit").val());
+        totalGeneralReq += currencyInputToFloat($("#DENR").val());
+        totalGeneralReq += currencyInputToFloat($("#TemporaryFacilities").val());
+        totalGeneralReq += currencyInputToFloat($("#WorkersBarracks").val());
+        totalGeneralReq += currencyInputToFloat($("#Excavation").val());
+        totalGeneralReq += currencyInputToFloat($("#Backfill").val());
+        totalGeneralReq += currencyInputToFloat($("#Lastillas").val());
+        totalGeneralReq += currencyInputToFloat($("#SoilPoisoning").val());
+        totalGeneralReq += currencyInputToFloat($("#LaborCost").val());
+        totalGeneralReq += currencyInputToFloat($("#ToolsEquipments").val());
+        totalGeneralReq += currencyInputToFloat($("#Transportation").val());
+        totalGeneralReq += currencyInputToFloat($("#Contigency").val());
         $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
 
         var totalCost5 = 0;
