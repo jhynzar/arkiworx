@@ -2674,7 +2674,7 @@
                                                                             <div class="form-group form-inline pull-center">
                                                                                 <label for="">Tie wire:</label>
                                                                                 <select class="form-control" id="wallFootigTiewire"
-                                                                                    style="width: 140px !important;">
+                                                                                    style="width: 170px !important;">
                                                                                     <option value="30" selected>30 cm
                                                                                     </option>
                                                                                     <!--<option value="40" >40 cm </option>-->
@@ -2691,7 +2691,7 @@
                                                                                     disabled class="form-control" id=""
                                                                                     style="width: 100px !important;">
                                                                                 <button type="button" id="WallFooting"
-                                                                                    class="btn btn-primary" style="margin-left: 90px">Compute</button>
+                                                                                    class="btn btn-primary" style="margin-left: 30px">Compute</button>
                                                                             </div>
                                                                         </div>
 
