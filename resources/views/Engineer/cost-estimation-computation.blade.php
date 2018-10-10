@@ -2299,7 +2299,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 id="BeamVolume"
+                                                                            <input type="number" value=1.8 min=0 id="BeamVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -2309,13 +2309,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="BeamThickness"
+                                                                            <input type="number" min=0 class="form-control" id="BeamThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control"
+                                                                            <input type="number" min=0 class="form-control"
                                                                                 disabled id="BeamWidth" style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="BeamLength"
+                                                                            <input type="number" min=0 class="form-control" id="BeamLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -2325,7 +2325,7 @@
                                                                             <br>
                                                                             <div class="form-group">
                                                                                 <label> Bar Spacing:</label>
-                                                                                <input type="number" required min=0 id="BeamSpacing"
+                                                                                <input type="number" min=0 id="BeamSpacing"
                                                                                     class="form-control" style="width: 100px !important;"
                                                                                     value=>
                                                                             </div> <br> <br>
@@ -2393,7 +2393,7 @@
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-default"><b>No
                                                                                         of Beam(s): </b> </label>&nbsp;
-                                                                                <input type="number" disabled class="form-control"
+                                                                                <input type="number" disabled value=4 class="form-control"
                                                                                     id="HowManyBeams" style="width: 100px !important;">
                                                                                 <button type="button" class="btn" id="Beam"
                                                                                     style="margin-left: 90px">Compute</button>
@@ -2615,7 +2615,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 disabled id="WallFootingVolume"
+                                                                            <input type="number" value=2 min=0 disabled id="WallFootingVolume"
                                                                                 style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -2625,14 +2625,14 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="WallFootingThickness"
+                                                                            <input type="number" min=0 class="form-control" id="WallFootingThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="WallFootingWidth"
+                                                                            <input type="number" min=0 class="form-control" id="WallFootingWidth"
                                                                                 style="width: 80px !important;"
                                                                                 disabled>
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="WallFootingLength"
+                                                                            <input type="number" min=0 class="form-control" id="WallFootingLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -2643,7 +2643,7 @@
 
                                                                             <div class="form-group">
                                                                                 <label> No of Bars per Footing:</label>
-                                                                                <input type=number required min=0 class="form-control" id="WallFootingNoOfBars"
+                                                                                <input type=number min=0 class="form-control" id="WallFootingNoOfBars"
                                                                                     style="width: 100px !important;">
                                                                             </div> <br> <br>
 
@@ -2688,8 +2688,8 @@
                                                                             <div class="form-group form-inline">
                                                                                 <label class="text text-default"><b>No
                                                                                         of Wall Footing(s): </b>
-                                                                                </label>&nbsp; <input type="number"
-                                                                                    disabled class="form-control" id=""
+                                                                                </label>&nbsp; <input type="number" value=4
+                                                                                    disabled class="form-control" id="HowManyWallFootings"
                                                                                     style="width: 100px !important;">
                                                                                 <button type="button" id="WallFooting"
                                                                                     class="btn btn-primary" style="margin-left: 30px">Compute</button>
@@ -3110,7 +3110,7 @@
                                                                         <div>
                                                                             <label for="">Volume:</label> <br>
 
-                                                                            <input type="number" required min=0 id="RoofBeamVolume"
+                                                                            <input type="number" value=1.6 min=0 id="RoofBeamVolume"
                                                                                 disabled style="width: 160px !important;">
                                                                             <label class="text text-default"> cu.m
                                                                             </label>
@@ -3120,13 +3120,13 @@
                                                                         <div class="form-group form-inline">
 
                                                                             <label>Thickness:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="RoofBeamThickness"
+                                                                            <input type="number"min=0 class="form-control" id="RoofBeamThickness"
                                                                                 style="width: 80px !important;">
                                                                             <label>Width:</label>
-                                                                            <input type="number" required min=0 class="form-control"
+                                                                            <input type="number" min=0 class="form-control"
                                                                                 disabled id="RoofBeamWidth" style="width: 80px !important;">
                                                                             <label>Length:</label>
-                                                                            <input type="number" required min=0 class="form-control" id="RoofBeamLength"
+                                                                            <input type="number" min=0 class="form-control" id="RoofBeamLength"
                                                                                 style="width: 80px !important;">
                                                                             <br> <br>
                                                                             <div class="container" style="margin-left: -20px !important">
@@ -3136,7 +3136,7 @@
                                                                             <br>
                                                                             <div class="form-group">
                                                                                 <label> Bar Spacing:</label>
-                                                                                <input type="number" required min=0 class="form-control"
+                                                                                <input type="number" min=0 class="form-control"
                                                                                     id="RoofBeamSpacing" style="width: 100px !important;">
                                                                             </div> <br> <br>
                                                                             <div class="form-group">
@@ -3203,8 +3203,8 @@
                                                                                     <label class="text text-default"><b>No
                                                                                             of Roof Beam(s): </b>
                                                                                     </label>&nbsp; <input type="number"
-                                                                                        disabled class="form-control"
-                                                                                        id="" style="width: 100px !important;">
+                                                                                        disabled value=8 class="form-control"
+                                                                                        id="HowManyRoofBeams" style="width: 100px !important;">
                                                                                     <button type="button" class="btn"
                                                                                         id="RoofBeam" style="margin-left: 90px">Compute</button>
                                                                                 </div>
@@ -6583,10 +6583,9 @@
             computeAndDisplayOverallTotal();
         }
 
-        var metalica = function () {
-            var mainbar = Math.ceil(($("#FootingWidth").val() - 0.15) * ($("#FootingNoOfBars").val() * 2) / 6);
-            var tiewire = (($("#FootingNoOfBars").val() * $("#FootingNoOfBars").val()) *
-                0.4) / 53;
+        var metalica = function (Width,NoOfBars) {
+            var mainbar = Math.ceil((Width - 0.15) * (NoOfBars * 2) / 6);
+            var tiewire = ((NoOfBars * NoOfBars) * 0.4) / 53;
             var metals1 = DirectCountingEsti(mainbar, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiewire, 6);
@@ -6605,17 +6604,15 @@
             alert("Invalid Input.");
         } else if ( $("#FootingThickness").val() == "" &&  $("#FootingLength").val() == "" ||  $("#FootingNoOfBars").val() == "") {
             var concrete = ConcreteEsti(1, 0.8, 1, $("#FootingCC").val(), 1);
-            var metal = metalica();
+            var metal = metalica(0.92,13);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
         } else if ($("#FootingThickness").val() != 0
          && $("#FootingLength").val() != 0 || $("#FootingNoOfBars").val() !=
             0) {
-            $("#FootingVolume").val(parseFloat($("#FootingThickness").val()) * parseFloat($("#FootingWidth").val()) *
-                parseFloat($("#FootingLength").val()));
-            var concrete = ConcreteEsti(1, $("#FootingVolume").val(), 1, $("#FootingCC")
-                .val(), 1);
-            var metal = metalica();
+            $("#FootingVolume").val( $("#FootingThickness").val() * $("#FootingWidth").val() *  $("#FootingLength").val() );
+            var concrete = ConcreteEsti(1, $("#FootingVolume").val(), 1, $("#FootingCC").val(), 1);
+            var metal = metalica($("#FootingWidth").val(),$("#FootingNoOfBars").val());
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya, metal.costa, metal.tiewire, metal.costb);
 
@@ -6759,13 +6756,10 @@
             computeAndDisplayOverallTotal();
         }
 
-        var metalica = function (noofbars, spacing) {
+        var metalica = function (Thickness,Width,Length,noofbars, spacing) {
             //
-            var tiebar = Math.ceil(((Math.ceil(parseFloat($("#BeamThickness").val()) / spacing) + 1) * ((
-                parseFloat($("#BeamWidth").val()) * 2) + (parseFloat($("#BeamLength").val()) *
-                2))) / 6);
-            var tiewire = (((Math.ceil(parseFloat($("#BeamThickness").val()) / spacing) + 1) * noofbars) *
-                0.4) / 53;
+            var tiebar = Math.ceil( ( ( Math.ceil( Thickness / spacing) + 1 ) * ( (Width * 2 ) + ( Length * 2 ) ) ) / 6  );
+            var tiewire = ( ( ( Math.ceil( Thickness / spacing ) + 1 ) * noofbars ) * 0.4 ) / 53;
             var metals1 = DirectCountingEsti(noofbars, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiebar, 5);
@@ -6781,24 +6775,21 @@
             };
         }
 
-        if (parseFloat($("#BeamThickness").val()) < 0 || parseFloat($("#BeamWidth").val()) < 0 || parseFloat(
-                $("#BeamLength").val()) < 0 || parseFloat($("#ColumnSpacing").val()) < 0) {
+        if ($("#BeamThickness").val() < 0 || $("#BeamLength").val() < 0 || $("#BeamSpacing").val() < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#BeamThickness").val()) == 0 && parseFloat($("#BeamWidth").val()) == 0 &&
-            parseFloat($("#BeamLength").val()) == 0 || parseFloat($("#ColumnSpacing").val()) == 0) {
-            var concrete = ConcreteEsti(1, 1.6, 1, parseFloat($("#BeamCC").val()), 1);
-            var metal = metalica(4, 0.5);
+        } else if ($("#BeamThickness").val() == "" && $("#BeamLength").val() == "" || $("#BeamSpacing").val() == "") {
+            var concrete = ConcreteEsti(1, 1.8, 1, $("#BeamCC").val(), 1);
+            var metal = metalica(1.21,1.21,1.21,4,0.5);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if (parseFloat($("#BeamThickness").val()) != 0 && parseFloat($("#BeamWidth").val()) != 0 &&
-            parseFloat($("#BeamLength").val()) != 0 && parseFloat($("#ColumnSpacing").val()) != 0) {
-            $("#BeamVolume").val(parseFloat($("#BeamThickness").val()) * parseFloat($("#BeamWidth").val()) *
-                parseFloat($("#BeamLength").val()));
-            var concrete = ConcreteEsti(1, parseFloat($("#BeamVolume").val()), 1, parseFloat($("#BeamCC").val()),
+        } else if ($("#BeamThickness").val() != 0 && $("#BeamLength").val() != 0 && $("#BeamSpacing").val() != 0) {
+            $("#BeamVolume").val($("#BeamThickness").val() * $("#BeamWidth").val() *
+                $("#BeamLength").val());
+            var concrete = ConcreteEsti(1, $("#BeamVolume").val(), 1, $("#BeamCC").val(),
                 1);
-            var metal = metalica(parseFloat($("#BeamNoOfBars").val()), parseFloat($("#BeamSpacing").val()));
+            var metal = metalica($("#BeamThickness").val(),$("#BeamWidth").val(),$("#BeamLength").val(),$("#BeamNoOfBars").val(), $("#BeamSpacing").val());
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost, parseFloat($("#BeamNoOfBars").val()), metal.tiebar, metal.tiewire, metal
+                concrete.sandcost, $("#BeamNoOfBars").val(), metal.tiebar, metal.tiewire, metal
                 .costa, metal.costb, metal.costc);
 
         } else {
@@ -6850,11 +6841,9 @@
             computeAndDisplayOverallTotal();
         }
 
-        var metalica = function () {
-            var mainbar = Math.ceil((parseFloat($("#WallFootingWidth").val()) - 0.15) * (parseFloat($(
-                "#WallFootingNoOfBars").val()) * 2) / 6);
-            var tiewire = ((parseFloat($("#WallFootingNoOfBars").val()) * parseFloat($(
-                "#WallFootingNoOfBars").val())) * 0.4) / 53;
+        var metalica = function (Width,NoOfBars) {
+            var mainbar = Math.ceil( ( ( Width - 0.15 ) * ( NoOfBars * 2 ) ) / 6 );
+            var tiewire = ( ( NoOfBars * NoOfBars ) * 0.4 ) / 53;
             var metals1 = DirectCountingEsti(mainbar, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiewire, 6);
@@ -6867,24 +6856,24 @@
             };
         }
 
-        if (parseFloat($("#WallFootingThickness").val()) < 0 || parseFloat($("#WallFootingWidth").val()) < 0 ||
-            parseFloat($("#WallFootingLength").val()) < 0 || parseFloat($("#WallFootingNoOfBars").val()) < 0) {
+        if ($("#WallFootingThickness").val() < 0 || $("#WallFootingWidth").val() < 0 ||
+            $("#WallFootingLength").val() < 0 || $("#WallFootingNoOfBars").val() < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#WallFootingThickness").val()) == 0 && parseFloat($("#WallFootingWidth").val()) ==
-            0 && parseFloat($("#WallFootingLength").val()) == 0 || parseFloat($("#WallFootingNoOfBars").val()) ==
-            0) {
-            var concrete = ConcreteEsti(1, 0.8, 1, parseFloat($("#WallFootingCC").val()), 1);
-            var metal = metalica();
+        } else if ($("#WallFootingThickness").val() == "" && $("#WallFootingWidth").val() ==
+            "" && $("#WallFootingLength").val() == "" || $("#WallFootingNoOfBars").val() ==
+            "") {
+            var concrete = ConcreteEsti(1, 0.8, 1, $("#WallFootingCC").val(), 1);
+            var metal = metalica(1.26,23);
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost);
-        } else if (parseFloat($("#WallFootingThickness").val()) != 0 && parseFloat($("#WallFootingWidth").val()) !=
-            0 && parseFloat($("#WallFootingLength").val()) != 0 || parseFloat($("#WallFootingNoOfBars").val()) !=
+                concrete.sandcost, metal.qtya,metal.costa, metal.tiewire, metal.costb);
+        } else if ($("#WallFootingThickness").val() != 0 && $("#WallFootingWidth").val() !=
+            0 && $("#WallFootingLength").val() != 0 || $("#WallFootingNoOfBars").val() !=
             0) {
-            $("#WallFootingVolume").val(parseFloat($("#WallFootingThickness").val()) * parseFloat($(
-                "#WallFootingWidth").val()) * parseFloat($("#WallFootingLength").val()));
-            var concrete = ConcreteEsti(1, parseFloat($("#WallFootingVolume").val()), 1, parseFloat($(
-                "#WallFootingCC").val()), 1);
-            var metal = metalica();
+            $("#WallFootingVolume").val($("#WallFootingThickness").val() * $(
+                "#WallFootingWidth").val() * $("#WallFootingLength").val());
+            var concrete = ConcreteEsti(1, $("#WallFootingVolume").val(), 1, $(
+                "#WallFootingCC").val(), 1);
+            var metal = metalica($("#WallFootingWidth").val(),$("#WallFootingNoOfBars").val());
             panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
                 concrete.sandcost, metal.qtya,metal.costa, metal.tiewire, metal.costb);
 
@@ -6929,14 +6918,15 @@
             $("#Cost20").val(cost20);
             var qty21 = parseFloat($("#Quantity21").val());
             qty21 += tiebar;
-            $("#Quantity5").val(qty21);
+            $("#Quantity21").val(qty21);
             var cost21 = parseFloat($("#Cost21").val());
             cost21 += costb;
+            $("#Cost21").val(cost21);
             var qty22 = parseFloat($("#Quantity22").val());
             qty22 += tiewire;
             $("#Quantity22").val(qty22);
             var cost22 = parseFloat($("#Cost22").val());
-            cost22 += costb;
+            cost22 += costc;    
             $("#Cost22").val(cost22);
             var no = parseFloat($("#HowManyRoofBeams").val());
             $("#HowManyRoofBeams").val(no + 1);
@@ -6944,12 +6934,10 @@
             computeAndDisplayOverallTotal();
         }
 
-        var metalica = function (noofbars, spacing) {
+        var metalica = function (Thickness,Width,Length,noofbars, spacing) {
             //
-            var tiebar = Math.ceil(((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * (($(
-                "#RoofBeamWidth").val() * 2) + (parseFloat($("#RoofBeamLength").val()) * 2))) / 6);
-            var tiewire = (((Math.ceil(parseFloat($("#RoofBeamThickness").val()) / spacing) + 1) * noofbars) * 0.4) /
-                53;
+            var tiebar = Math.ceil(((Math.ceil(Thickness / spacing) + 1) * ((Width * 2) + (Length * 2))) / 6);
+            var tiewire = (((Math.ceil(Thickness / spacing) + 1) * noofbars) * 0.4) / 53;
             var metals1 = DirectCountingEsti(noofbars, 4);
             var cost1 = metals1.total;
             var metals2 = DirectCountingEsti(tiebar, 5);
@@ -6965,24 +6953,17 @@
             };
         }
 
-        if (parseFloat($("#RoofBeamThickness").val()) < 0 || parseFloat($("#RoofBeamWidth").val()) < 0 || parseFloat($("#RoofBeamLength").val()) <
-            0 || parseFloat($("#RoofBeamVolume").val()) < 0 || parseFloat($("#ColumnSpacing").val()) < 0) {
+        if ($("#RoofBeamThickness").val() < 0 || $("#RoofBeamLength").val() < 0 || $("#RoofBeamSpacing").val() < 0) {
             alert("Invalid Input.");
-        } else if (parseFloat($("#RoofBeamThickness").val()) == 0 && parseFloat($("#RoofBeamWidth").val()) == 0 && $(
-                "#RoofBeamLength").val() == 0 || parseFloat($("#ColumnSpacing").val()) == 0) {
-            var concrete = ConcreteEsti(1, 1.6, 1, parseFloat($("#RoofBeamCC").val()), 1);
-            var metal = metalica(4, 0.5);
-            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
-        } else if (parseFloat($("#RoofBeamThickness").val()) != 0 && parseFloat($("#RoofBeamWidth").val()) != 0 && $(
-                "#RoofBeamLength").val() != 0 && parseFloat($("#ColumnSpacing").val()) != 0) {
-            $("#RoofBeamVolume").val(parseFloat($("#RoofBeamThickness").val()) * parseFloat($("#RoofBeamWidth").val()) * $(
-                "#RoofBeamLength").val());
-            var concrete = ConcreteEsti(1, parseFloat($("#RoofBeamVolume").val()), 1, parseFloat($("#RoofBeamCC").val()), 1);
-            var metal = metalica(parseFloat($("#RoofBeamNoOfBars").val()), parseFloat($("#RoofBeamSpacing").val()));
-            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,
-                concrete.sandcost, parseFloat($("#RoofBeamNoOfBars").val()), metal.tiebar, metal.tiewire, metal.costa,
-                metal.costb, metal.costc);
+        } else if ($("#RoofBeamThickness").val() == "" && $("#RoofBeamLength").val() == "" && $("#RoofBeamSpacing").val() == "") {
+            var concrete = ConcreteEsti(1, 1.6, 1, $("#RoofBeamCC").val(), 1);
+            var metal = metalica(1.7,1.7,1.7,4,0.5);
+            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,concrete.sandcost, 4, metal.tiebar, metal.tiewire, metal.costa, metal.costb, metal.costc);
+        } else if ($("#RoofBeamThickness").val() != 0 && $("#RoofBeamLength").val() != 0 && $("#RoofBeamSpacing").val() != 0) {
+            $("#RoofBeamVolume").val($("#RoofBeamThickness").val() * $("#RoofBeamWidth").val() * $("#RoofBeamLength").val());
+            var concrete = ConcreteEsti(1, $("#RoofBeamVolume").val(), 1, $("#RoofBeamCC").val(), 1);
+            var metal = metalica($("#RoofBeamThickness").val(),$("#RoofBeamWidth").val(),$("#RoofBeamLength").val(),$("#RoofBeamNoOfBars").val(), $("#RoofBeamSpacing").val());
+            panapos(concrete.cementqty, concrete.cementcost, concrete.gravelqty, concrete.gravelcost, concrete.sandqty,concrete.sandcost, $("#RoofBeamNoOfBars").val(), metal.tiebar, metal.tiewire, metal.costa,metal.costb, metal.costc);
 
         } else {
             alert("Please fill up the required fields");
@@ -7025,38 +7006,37 @@
             computeAndDisplayOverallTotal();
         }
         var metalica = function () {
-            var qtybars = ((parseFloat($("#masonryBarSize").val()) / parseFloat($("#CHBLength").val())) + 1) * (($(
-                "#masonryBarLayer").val() / parseFloat($("#CHBWidth").val())) + 1);
+            var qtybars = (($("#masonryBarSize").val() / $("#CHBLength").val()) + 1) * (($("#masonryBarLayer").val() / $("#CHBWidth").val()) + 1);
             var metals1 = DirectCountingEsti(qtybars, 14);
             var cost1 = metals1.total;
             var tie;
-            if (parseFloat($("#masonryBarSize").val()) == 40) {
-                if (parseFloat($("#masonryBarLayer").val()) == 2) {
+            if ($("#masonryBarSize").val() == 40) {
+                if ($("#masonryBarLayer").val() == 2) {
                     tie = 17;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 3) {
+                } else if ($("#masonryBarLayer").val() == 3) {
                     tie = 18;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 4) {
+                } else if ($("#masonryBarLayer").val() == 4) {
                     tie = 19;
                 }
-            } else if (parseFloat($("#masonryBarSize").val()) == 60) {
-                if (parseFloat($("#masonryBarLayer").val()) == 2) {
+            } else if ($("#masonryBarSize").val() == 60) {
+                if ($("#masonryBarLayer").val() == 2) {
                     tie = 20;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 3) {
+                } else if ($("#masonryBarLayer").val() == 3) {
                     tie = 21;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 4) {
+                } else if ($("#masonryBarLayer").val() == 4) {
                     tie = 22;
                 }
-            } else if (parseFloat($("#masonryBarSize").val()) == 80) {
-                if (parseFloat($("#masonryBarLayer").val()) == 2) {
+            } else if ($("#masonryBarSize").val() == 80) {
+                if ($("#masonryBarLayer").val() == 2) {
                     tie = 23;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 3) {
+                } else if ($("#masonryBarLayer").val() == 3) {
                     tie = 24;
-                } else if (parseFloat($("#masonryBarLayer").val()) == 4) {
+                } else if ($("#masonryBarLayer").val() == 4) {
                     tie = 25;
                 }
             }
             var formulas = searchValues(tie, 20, 5);
-            var tiebar = parseFloat($("#CHBArea").val()) * formulas.Answer;
+            var tiebar = $("#CHBArea").val() * formulas.Answer;
             var metals2 = DirectCountingEsti(tiebar, 6);
             var cost2 = metals2.total;
             return {
@@ -7067,40 +7047,37 @@
             };
         }
 
-        if (parseFloat($("#CHBWidth").val()) < 0 || parseFloat($("#CHBLength").val()) < 0 || parseFloat($("#CHBMortarThickness").val()) < 0 || $(
-                "#CHBPlasterThickness").val() < 0) {
+        if ($("#CHBWidth").val() < 0 || $("#CHBLength").val() < 0 || $("#CHBMortarThickness").val() < 0 || $("#CHBPlasterThickness").val() < 0) {
 
             alert("Invalid Inputs");
-        } else if (parseFloat($("#CHBWidth").val()) == 0 || parseFloat($("#CHBLength").val()) == 0 || parseFloat($("#CHBMortarThickness").val()) ==
-            0 || parseFloat($("#CHBPlasterThickness").val()) == 0) {
+        } else if ($("#CHBWidth").val() == "" || $("#CHBLength").val() == "" || $("#CHBMortarThickness").val() == "" || $("#CHBPlasterThickness").val() =="") {
             //
-            alert('pangalawa');
-        } else if (parseFloat($("#CHBWidth").val()) != 0 || parseFloat($("#CHBLength").val()) != 0 || parseFloat($("#CHBMortarThickness").val()) !=
-            0 || parseFloat($("#CHBPlasterThickness").val()) != 0) {
-            $("#CHBArea").val(parseFloat($("#CHBWidth").val()) * parseFloat($("#CHBLength").val()));
+            alert("Please fill up the required fields");
+        } else if ($("#CHBWidth").val() != 0 || $("#CHBLength").val() != 0 || $("#CHBMortarThickness").val() !=0 || $("#CHBPlasterThickness").val() != 0) {
+            $("#CHBArea").val($("#CHBWidth").val() * $("#CHBLength").val());
             var chbcost1 = 0;
             var chbcost2 = 0;
-            var chbqty = Math.ceil((parseFloat($("#CHBWidth").val()) * parseFloat($("#CHBLength").val())) * 12.5);
-            if (parseFloat($("#CHBSize").val()) == 16) {
+            var chbqty = Math.ceil(($("#CHBWidth").val() * $("#CHBLength").val()) * 12.5);
+            if ($("#CHBSize").val() == 16) {
                 chbcost1 = DirectCountingEsti(chbqty, 16);
-                var qty43 = parseFloat($("#Quantity43").val());
+                var qty43 = $("#Quantity43").val();
                 qty43 += chbqty;
                 $("#Quantity43").val(qty43);
-                var cost43 = parseFloat($("#Cost43").val());
+                var cost43 = $("#Cost43").val();
                 cost43 += chbcost1.total;
                 $("#Cost43").val(cost43);
             } else {
                 chbcost2 = DirectCountingEsti(chbqty, 15);
-                var qty44 = parseFloat($("#Quantity44").val());
+                var qty44 = $("#Quantity44").val();
                 qty44 += chbqty;
                 $("#Quantity44").val(qty44);
-                var cost44 = parseFloat($("#Cost44").val());
+                var cost44 = $("#Cost44").val();
                 cost44 += chbcost2.total;
                 $("#Cost44").val(cost44);
             }
-            var concrete1 = ConcreteEsti(1, parseFloat($("#CHBArea").val()) * parseFloat($("#CHBMortarThickness").val()), 1, $(
+            var concrete1 = ConcreteEsti(1, $("#CHBArea").val() * $("#CHBMortarThickness").val(), 1, $(
                 "#CHBMortarMixture").val(), 1);
-            var concrete2 = ConcreteEsti(1, parseFloat($("#CHBArea").val()) * parseFloat($("#CHBPlasterThickness").val()), 1, $(
+            var concrete2 = ConcreteEsti(1, $("#CHBArea").val() * $("#CHBPlasterThickness").val(), 1, $(
                 "#CHBPlasterMixture").val(), 1);
             var cementqty = concrete1.cementqty + concrete2.cementqty;
             var cementcost = concrete1.cementcost + concrete2.cementcost;
