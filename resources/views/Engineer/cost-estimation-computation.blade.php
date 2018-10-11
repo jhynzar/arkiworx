@@ -6192,6 +6192,8 @@
         totalGeneralReq += currencyInputToFloat($("#Transportation").val());
         totalGeneralReq += currencyInputToFloat($("#Contigency").val());
         $("#totalGeneralReq").html(parseFloat(totalGeneralReq).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        $("#OverallTotalCost2").val(totalGeneralReq);
+        
 
         var totalCost5 = 0;
         totalCost5 += parseFloat($("#Cost1").val());
