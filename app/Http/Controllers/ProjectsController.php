@@ -1032,7 +1032,179 @@ class ProjectsController extends Controller
         return view ('Admin/project-progress-schedule',compact(['allProjectSchedulesWithPhases']));
     }
 
+    public function highestProjectTotalCostSort($a , $b){
+        if($a->projectTotalCost == $b->projectTotalCost){
+            return 0;
+        }
+
+        return ($a->projectTotalCost < $b->projectTotalCost) ? 1 : -1;
+    }
+
     public function reports(){
-        return view('Admin/reports-projects');
+
+        
+
+        //====================HIGHEST PAYING
+        $allProjects = DB::table('tblproject')
+                    ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                    ->where('tblproject.intActive','=',1)
+                    ->get();
+        $highestPayingProjects = array();
+        foreach($allProjects as $project){
+            $projectRequirements = DB::table('tblprojectrequirements')
+                                ->where('tblprojectrequirements.intProjectId','=',$project->intProjectId)
+                                ->get();
+            $projectRequirementsEstimatedTotalCost = 0;
+            foreach($projectRequirements as $projReq){
+                $projectRequirementsEstimatedTotalCost += $projReq->decEstimatedPrice;
+            }
+
+            $projectEstimatedMaterials = DB::table('tblmaterialestimates')
+                                ->where('tblmaterialestimates.intProjectId','=',$project->intProjectId)
+                                ->get();
+            $projectEstimatedMaterialsTotalCost = 0;
+            foreach($projectEstimatedMaterials as $projMat){
+                $projectEstimatedMaterialsTotalCost += $projMat->decCost;
+            }
+
+            $projectTotalCost = $projectRequirementsEstimatedTotalCost + $projectEstimatedMaterialsTotalCost;
+
+            array_push($highestPayingProjects, (object) [
+                'projectDetails' => $project,
+                'projectTotalCost' => $projectTotalCost,
+            ]);
+        }
+
+        usort($highestPayingProjects,array($this,"highestProjectTotalCostSort"));
+        array_splice($highestPayingProjects,5);//remove everything from index four and up
+        //dd($highestPayingProjects);
+
+        //==================HIGHEST PAYING END
+
+        //==================PENDING PROJECTS
+
+        $pendingProjects = DB::table('tblproject')
+                        ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                        ->where('tblproject.intActive','=',1)
+                        ->where(function($query){
+                            $query->where('tblproject.strProjectStatus','=','pending')
+                                ->orWhere('tblproject.strProjectStatus','=','for approval');
+                        })->get();
+
+        //==================PENDING PROJECTS END
+
+        //==================ON GOING PROJECTS
+
+        $ongoingProjects = DB::table('tblproject')
+                        ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                        ->where('tblproject.intActive','=',1)
+                        ->where('tblproject.strProjectStatus','=','on going')
+                        ->get();
+
+        //==================ON GOING PROJECTS END
+
+        //==================FINISHED PROJECTS - MONTH END
+
+        $date_now = new \DateTime('today');// add 'today' to reset the clock to start of day
+        $date_min = new \DateTime('first day of '.$date_now->format('M'));
+        $date_max = new \DateTime("first day of next month ".$date_now->format('M'));
+
+        $finishedProjectsMonth = DB::table('tblproject')
+                            ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                            ->where('dtmDateFinished','>=',$date_min->format('Y-m-d'))
+                            ->where('dtmDateFinished','<',$date_max->format('Y-m-d'))
+                            ->where('tblproject.strProjectStatus','=','finished')
+                            ->get();
+
+
+        //==================FINISHED PROJECTS - MONTH END
+
+        //==================FINISHED PROJECTS - WEEK
+
+        $date_now = new \DateTime('today');// add 'today' to reset the clock to start of day
+        if($date_now->format('l') == 'Monday'){//if today is monday, set today as min
+            $date_min = clone($date_now);
+        }else{
+            $date_min = new \DateTime("last monday");
+        }
+        $date_max = new \DateTime("next monday");
+
+        $finishedProjectsWeek = DB::table('tblproject')
+                            ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                            ->where('dtmDateFinished','>=',$date_min->format('Y-m-d'))
+                            ->where('dtmDateFinished','<',$date_max->format('Y-m-d'))
+                            ->where('tblproject.strProjectStatus','=','finished')
+                            ->get();
+
+
+        //==================FINISHED PROJECTS - WEEK END
+
+        //==================FINISHED PROJECTS - COMPARISON
+
+        $latestThreeFinishedProjects = DB::table('tblproject')
+                            ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                            ->where('dtmDateFinished','>=',$date_min->format('Y-m-d'))
+                            ->where('dtmDateFinished','<',$date_max->format('Y-m-d'))
+                            ->where('tblproject.strProjectStatus','=','finished')
+                            ->latest('dtmDateFinished')
+                            ->limit(3)
+                            ->get();
+
+        $finishedProjectsComparison = array();
+        foreach($latestThreeFinishedProjects as $project){
+            $projectRequirements = DB::table('tblprojectrequirements')
+                                ->where('tblprojectrequirements.intProjectId','=',$project->intProjectId)
+                                ->get();
+            $projectRequirementsEstimatedTotalCost = 0;
+            $projectRequirementsActualTotalCost = 0;
+            foreach($projectRequirements as $projReq){
+                $projectRequirementsEstimatedTotalCost += $projReq->decEstimatedPrice;
+                $projectRequirementsActualTotalCost += $projReq->decActualPrice;
+            }
+
+            $projectEstimatedMaterials = DB::table('tblmaterialestimates')
+                                ->where('tblmaterialestimates.intProjectId','=',$project->intProjectId)
+                                ->get();
+            $projectEstimatedMaterialsTotalCost = 0;
+            foreach($projectEstimatedMaterials as $projMatEsti){
+                $projectEstimatedMaterialsTotalCost += $projMatEsti->decCost;
+            }
+            $projectActualMaterials = DB::table('tblmaterialactuals')
+                            ->where('intProjectId','=',$project->intProjectId)
+                            ->get();
+            $projectActualMaterialsTotalCost = 0;
+            foreach($projectActualMaterials as $projMatActual){
+                $materialActualHistory = DB::table('tblmaterialactualshistory')
+                                    ->where('intMaterialActualsId','=',$projMatActual->intMaterialActualsId)
+                                    ->orderBy('dtmDate','desc')
+                                    ->get();
+                
+                foreach($materialActualHistory as $history){
+                    $projectActualMaterialsTotalCost += $history->decCost;
+                }
+            }
+
+            $projectEstimatedTotalCost = $projectRequirementsEstimatedTotalCost + $projectEstimatedMaterialsTotalCost;
+            $projectActualTotalCost = $projectRequirementsActualTotalCost + $projectActualMaterialsTotalCost;
+
+            array_push($finishedProjectsComparison, (object) [
+                'projectDetails' => $project,
+                'projectEstimatedTotalCost' => $projectEstimatedTotalCost,
+                'projectActualTotalCost' => $projectActualTotalCost,
+            ]);
+        }
+        
+
+        //==================FINISHED PROJECTS - COMPARISON
+
+
+        return view('Admin/reports-projects',compact(
+            'highestPayingProjects',
+            'pendingProjects',
+            'ongoingProjects',
+            'finishedProjectsMonth',
+            'finishedProjectsWeek',
+            'finishedProjectsComparison'
+        ));
     }
 }
