@@ -321,14 +321,15 @@
 
                         </ol>
 
-
-
-
+                        <button id="reports" type="button" class="btn btn-primary waves-effect waves-light">
+                            <i class="icon-eye"> </i>Show Reports</button>
 
 
                     </div>
 
                 </div>
+
+                
 
 
 
@@ -896,4 +897,16 @@
     </div>
     </div>
 
+@endsection
+
+@section ("script")
+<script src="/js/jQuery-printPage/jquery.printPage.js"></script>
+
+<script>
+    $('#reports').printPage({
+        url: "Cost-Summary/Reports",
+        attr: "href",
+        message: "Your document is being created"
+    });
+</script>
 @endsection

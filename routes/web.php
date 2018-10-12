@@ -82,6 +82,8 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('Admin/Projects/{id}/Cost-Summary','ProjectsController@viewCostSummary'); //view cost summary
 
+        Route::get('Admin/Projects/{id}/Cost-Summary/Reports','ProjectsController@viewCostSummaryReports'); //view cost summary reports
+
         Route::get('Admin/Projects/{id}/Progress-Schedule','ProjectsController@viewProgressSchedule'); //view progress
 
         Route::get('Admin/Project-Details', function(){
