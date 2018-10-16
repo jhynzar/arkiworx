@@ -1168,8 +1168,6 @@ class ProjectsController extends Controller
 
         $latestThreeFinishedProjects = DB::table('tblproject')
                             ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
-                            ->where('dtmDateFinished','>=',$date_min->format('Y-m-d'))
-                            ->where('dtmDateFinished','<',$date_max->format('Y-m-d'))
                             ->where('tblproject.strProjectStatus','=','finished')
                             ->latest('dtmDateFinished')
                             ->limit(3)
@@ -1221,7 +1219,6 @@ class ProjectsController extends Controller
         
 
         //==================FINISHED PROJECTS - COMPARISON
-
 
         return view('Admin/reports-projects',compact(
             'highestPayingProjects',

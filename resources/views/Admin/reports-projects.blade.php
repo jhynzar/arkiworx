@@ -191,6 +191,7 @@
                             <tr class="text text-primary">
                                 <th scope="col">#</th>
                                 <th scope="col">Project Name</th>
+                                <th scope="col">Date Finished</th>
                                 <th scope="col">Client</th>
                                 <th scope="col">Engineer (in charge)</th>
                                 <th scope="col">Location</th>
@@ -203,6 +204,7 @@
                             <tr>
                                 <th scope="row">{{$projectKey + 1}}</th>
                                 <td>{{$project->projectDetails->strProjectName}}</td>
+                                <td>{{$project->projectDetails->dtmDateFinished}}</td>
                                 <td>{{$project->projectDetails->strClientName}}</td>
                                 <td>{{$project->projectDetails->strEmployeeFName}}&nbsp;{{$project->projectDetails->strEmployeeMName}}&nbsp;{{$project->projectDetails->strEmployeeLName}}</td>
                                 <td>{{$project->projectDetails->strProjectLocation}}</td>
