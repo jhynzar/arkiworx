@@ -1103,16 +1103,41 @@ class ProjectsController extends Controller
 
         //==================ON GOING PROJECTS END
 
-        //==================FINISHED PROJECTS - MONTH END
+        //==================FINISHED PROJECTS - YEAR
 
         $date_now = new \DateTime('today');// add 'today' to reset the clock to start of day
-        $date_min = new \DateTime('first day of '.$date_now->format('M'));
-        $date_max = new \DateTime("first day of next month ".$date_now->format('M'));
+
+        $date_min = new \DateTime('first day of January'.$date_now->format('Y'));
+
+        $date_next_year = new \DateTime('next year midnight');
+        
+        $date_max = new \DateTime('first day of January'.$date_next_year->format('Y'));
+
+
+
+        //don't check if active or not, regardless it is still a profit if it's finished
+        $finishedProjectsYear = DB::table('tblproject')
+                        ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                        ->where('tblproject.strProjectStatus','=','finished')//TODO OVERHEAD PROFIT
+                        ->where('tblproject.dtmDateFinished','>=',$date_min->format('Y-m-d'))
+                        ->where('tblproject.dtmDateFinished','<',$date_max->format('Y-m-d'))
+                        ->get();
+
+
+
+
+        //==================FINISHED PROJECTS - YEAR END
+
+        //==================FINISHED PROJECTS - MONTH END
+
+        $date_now_month = new \DateTime('today');// add 'today' to reset the clock to start of day
+        $date_min_month = new \DateTime('first day of '.$date_now_month->format('M'));
+        $date_max_month = new \DateTime("first day of next month ".$date_now_month->format('M'));
 
         $finishedProjectsMonth = DB::table('tblproject')
                             ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
-                            ->where('dtmDateFinished','>=',$date_min->format('Y-m-d'))
-                            ->where('dtmDateFinished','<',$date_max->format('Y-m-d'))
+                            ->where('dtmDateFinished','>=',$date_min_month->format('Y-m-d'))
+                            ->where('dtmDateFinished','<',$date_max_month->format('Y-m-d'))
                             ->where('tblproject.strProjectStatus','=','finished')
                             ->get();
 
@@ -1202,6 +1227,7 @@ class ProjectsController extends Controller
             'highestPayingProjects',
             'pendingProjects',
             'ongoingProjects',
+            'finishedProjectsYear',
             'finishedProjectsMonth',
             'finishedProjectsWeek',
             'finishedProjectsComparison'
