@@ -135,6 +135,10 @@
                     @endforeach
                 </tbody>
             </table>
+            
+            <div class="d-flex justify-content-end px-5 my-5" style="font-size: 1.5em;">
+                <strong>Total:&nbsp;</strong><span>{{number_format($totalEstimatedCost,2)}}</span>
+            </div>
         </div>
     </div>
 </body>
