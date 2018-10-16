@@ -11,7 +11,7 @@
         display: -moz-groupbox;
     }
 
-    tbody {
+    tbody.mainTable {
         overflow-y: scroll;
         height: 500px;
 
@@ -963,9 +963,9 @@
 
 
 <!-- View Audit Trail Modal -->
-
-<div class="modal fade" id="viewAudit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document" >
+@foreach ($projectWithDetails->materialActuals as $keyActual=>$materialActual)
+<div class="modal fade" id="viewAudit{{$materialActual->materialActualsDetails->intMaterialActualsId}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
         <div class="modal-content pull-center">
             <div class="modal-header bg-primary">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -985,44 +985,40 @@
                 <form action="/action_page.php">
 
 
-                
-        <div class="card">            
-                    
-                    
-                    <table class="table" style="height: 300px !important">
-  <thead style="background-color: #354444A">
-    <tr>
-      <th scope="col" style="background-color: #354444A">Date</th>
-      <th scope="col" style="background-color: #354444A">Qty</th>
-      <th scope="col" style="background-color: #354444A">Unit Cost</th>
-      <th scope="col" style="background-color: #354444A">Total Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">12/8/28</th>
-      <td>5</td>
-      <td>100.00</td>
-      <td>500.00</td>
-    </tr>
-  
-    
-  </tbody>
-</table>
 
-</div>
-                    
-                    
-                    
-                    
-                    
+                    <div class="card">
+
+
+                        <table class="table" style="height: 300px !important">
+                            <thead style="background-color: #354444A">
+                                <tr>
+                                    <th scope="col" style="background-color: #354444A">Date</th>
+                                    <th scope="col" style="background-color: #354444A">Qty</th>
+                                    <th scope="col" style="background-color: #354444A">Unit Cost</th>
+                                    <th scope="col" style="background-color: #354444A">Total Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($materialActual->materialActualsHistory as $history)
+                                <tr>
+                                    <th scope="row">{{$history->dtmDate}}</th>
+                                    <td>{{number_format($history->decQty)}}</td>
+                                    <td>{{number_format(($history->decCost / $history->decQty),2)}}</td>
+                                    <td>{{number_format($history->decCost,2)}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+
+
+
 
 
                     <div class="modal-footer">
-              
-
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-left: 280px">
-                            <i class="icon icon-close"> </i>Close</button>
 
                     </div>
                 </form>
@@ -1033,8 +1029,7 @@
         </div>
     </div>
 </div>
-
-
+@endforeach
 
 
 
@@ -1351,7 +1346,7 @@
 
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="mainTable">
                                         <!-- HERE -->
 
                                         @foreach ($projectRequirementsWorkCategories as $workCategory)
@@ -1505,7 +1500,7 @@
 
                                                                     <td>
 
-                                                                        <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
+                                                                        <button data-toggle="modal" data-target="#viewAudit{{$materialActual->materialActualsDetails->intMaterialActualsId}}" class="btn " style="background-color: #DCDCDC">
                                                                             <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
                                                                         </button>
 
