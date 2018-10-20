@@ -562,10 +562,10 @@
 
             <!-- start col-lg-9 -->
             <div class="pull-center align-center text-center" style="margin-top: -40px; margin-left: 100px">
-                <div class="col-xl-12 col-lg-12">
+                <div class="col-xl-10 col-lg-12">
                     <!-- Nav tabs -->
                     <div class="tab-header">
-                        <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
+                        <ul class="nav nav-tabs md-tabs tab-timeline" style="margin-left: 120px" role="tablist">
                             <li class="nav-item">
                                 <a id="estimatedSchedulesTabButton" class="nav-link active" data-toggle="tab" href="#estimated" role="tab">Estimated Schedule </a>
                                 <div class="slide" style="color: #009900 !important"></div>
@@ -611,7 +611,7 @@
 
 
                 <br>
-                <div class="container-fluid gantt-target my-5"></div>
+                <div class="container-fluid gantt-target my-5" style="margin-left: 80px"></div>
             </div>
             <!-- FRAPPE END -->
 
