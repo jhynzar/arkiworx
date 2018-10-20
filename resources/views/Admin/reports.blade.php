@@ -435,8 +435,8 @@
        
               <div class="col-sm-9 p-0">
                     <div class="main-header">
-                        <h4>
-                            <i class="icon-note"></i> Reports</h4>
+                        <h3>
+                            <i class="icon-note"></i> Reports</h3>
                         <ol class="breadcrumb breadcrumb-arrow">
                             <li class="breadcrumb-item">
                                 <a href="Admin/Reports"></a>
@@ -458,7 +458,7 @@
                                 <div class="col-sm-12 table-responsive">
                                     <table class="table table-hover text-center">
                                         <thead>
-                                        <tr class="text text-primary " >
+                                        <tr class="text text-primary "  >
                                             <th style="width: 400px">Report Name</th>
                                             <th class="text-center text text-success">Project</th>
                                             <th class="text-center text text-danger ">Action</th>
