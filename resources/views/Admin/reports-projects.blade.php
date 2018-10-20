@@ -154,31 +154,7 @@
             </div>
 
 
-            <div class="m-5">
-                    <h6 class="text text-default"> <u>Finished Projects - Week</u> </h6>
-                    <table class="table table-bordered">
-                        <thead style="background-color: #000000">
-                            <tr class="text text-primary">
-                                <th scope="col">#</th>
-                                <th scope="col">Project Name</th>
-                                <th scope="col">Client</th>
-                                <th scope="col">Engineer (in charge)</th>
-                                <th scope="col">Location</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($finishedProjectsWeek as $projectKey=>$project)
-                            <tr>
-                                <th scope="row">{{$projectKey + 1}}</th>
-                                <td>{{$project->strProjectName}}</td>
-                                <td>{{$project->strClientName}}</td>
-                                <td>{{$project->strEmployeeFName}}&nbsp;{{$project->strEmployeeMName}}&nbsp;{{$project->strEmployeeLName}}</td>
-                                <td>{{$project->strProjectLocation}}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-            </div>
+        <br> <br> <br>
 
 
 

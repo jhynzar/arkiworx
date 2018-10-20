@@ -526,16 +526,7 @@
     <!-- end of sidebar-->
     <div class="content-wrapper" style="background-color: white; ">
         
-       
-      
-
-    <div class="" style="margin-top: 60px; margin-left: -80px">
-        <!-- FRAPPE START -->
-        <div class="container " style="background-color: white; ">
-            
-           
-           
-            <div class="container form-group form-inline" style="background-color: white; margin-top: -80px; margin-left: 180px"> <br><br> <br>
+       <div class="container form-group form-inline" style="background-color: white; margin-top: -70px; margin-left: 250px"> <br><br> <br>
              
                
                     <div style="margin-left: -200px; margin-top: -3px">
@@ -551,6 +542,12 @@
                             </li>
 
                         </ol>
+                        
+                        <div class="form-group form-inline" style="position:absolute; margin-left: 250px; margin-top: -70px " > <label> <span class="text text-primary"><b>Project:</b></span> </label> <input  class="form-control" type="text" value="Project sample" disabled>
+                    
+                        </div>
+                        <hr class="bg bg-info"><br>
+                        
                         <div style="margin-left: 200px; margin-top: -20px">
                                       <label class="text text-primary"> <span  class="label label-primary form-control"> &nbsp;</span> <b>- Delayed</b></label> &nbsp;&nbsp;
                 <label class="text text-danger"> <span  class="label label-danger form-control"> &nbsp;</span> <b>- Overdue</b></label> &nbsp;&nbsp;
@@ -572,8 +569,62 @@
             <button type="button" class="form-control btn btn-outline-warning" name="" id="" onclick="gantt_chart.change_view_mode('Day')" >Day</button> &nbsp;
             <button type="button" class="form-control btn btn-outline-success" name="" id="" onclick="gantt_chart.change_view_mode('Week')" >Week</button> &nbsp;
             <button type="button" class="form-control btn btn-outline-primary" name="" id="" onclick="gantt_chart.change_view_mode('Month')" >Month</button> &nbsp;
-        </div> <br>
-            <div class="gantt-target scroll" style="width: 1100px; height 900px !important"></div>
+        </div>
+      
+
+    <div class="" style="margin-top: 60px; margin-left: -80px">
+        
+        <!-- start col-lg-9 --> <div class="pull-center align-center text-center" style="margin-top: -40px; margin-left: 100px">
+                        <div class="col-xl-12 col-lg-12">
+                            <!-- Nav tabs -->
+                            <div class="tab-header">
+                                <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#estimated" role="tab">Estimated Schedule </a>
+                                        <div class="slide" style="color: #009900 !important"></div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#actual" role="tab">Actual Schedule</a>
+                                        <div class="slide"></div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                            <!-- end of tab-header -->
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="estimated" role="tabpanel">
+
+
+
+
+
+
+
+                                </div>
+                                <!-- end of tab-pane -->
+                                <!-- end of about us tab-pane -->
+
+                                <!-- start tab-pane of project tab -->
+                                <div class="tab-pane" id="actual" role="tabpanel">
+                                   
+                                        <!-- end of card-main -->
+                                    </div>
+                                    <!-- end of project pane -->
+
+
+                                </div>
+                                <!-- end of main tab content -->
+                            </div>
+        </div>
+        <!-- FRAPPE START -->
+        <div class="container " style="background-color: white; ">
+            
+           
+           
+             <br>
+            <div class="gantt-target scroll" style="width: 3000px; height 900px !important"></div>
         </div>
         <!-- FRAPPE END -->
 
