@@ -49,6 +49,10 @@ Route::middleware(['auth'])->group(function(){
         Route::get('Admin/Profile', function(){ 
             return view('Admin/profile');
         });
+        
+        Route::get('Admin/Reports',function(){
+            return view('admin/reports');
+        });
 
         Route::get('Admin/Account-Settings', function(){
             return view('Admin/accountsettings');
@@ -120,6 +124,10 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('Engineer/Accounts', function(){
             return view ('Engineer/accounts');
+        });
+        
+        Route::get('Engineer/Reports',function(){
+            return view('engineer/reports');
         });
 
         Route::get('Engineer/Accounts-Settings', function (){
