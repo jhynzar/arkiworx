@@ -407,17 +407,10 @@
                     </a>
                 </li>
 
-                <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Calendar">
-                        <i class="icon-calendar"></i>
-                        <span> Calendar</span>
-                    </a>
-                </li>
-
-                <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="/Admin/Inbox">
-                        <i class="icon-envelope-letter"></i>
-                        <span> Inbox</span>
+                <li class=" active treeview">
+                    <a class="waves-effect waves-dark" href="/Admin/Reports">
+                        <i class="icon-note"></i>
+                        <span> Reports</span>
                     </a>
                 </li>
 

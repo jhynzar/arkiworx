@@ -281,17 +281,10 @@
                     </a>
                 </li>
 
-                <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Calendar">
-                        <i class="icon-calendar"></i>
-                        <span> Calendar</span>
-                    </a>
-                </li>
-
-                <li class="treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Inbox">
-                        <i class="icon-envelope-letter"></i>
-                        <span> Inbox</span>
+                 <li class=" treeview">
+                    <a class="waves-effect waves-dark" href="/Engineer/Reports">
+                        <i class="icon-note"></i>
+                        <span> Reports</span>
                     </a>
                 </li>
 
