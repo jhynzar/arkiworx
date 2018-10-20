@@ -1079,18 +1079,10 @@
         var estimatedTaskSchedules = [];
 
         for(var x = 0; x < allProjectSchedules.length; x++){
-            //--Logic for computing progress of category
             var projectProgress = 0;
-
-            for (i = 0; i < allProjectSchedules[x].schedulePhases.length; i++) {
-                projectProgress += allProjectSchedules[x].schedulePhases[i].intProgress;
-            }
-            projectProgress = projectProgress / allProjectSchedules[x].schedulePhases.length;
 
             //--Logic for adding classes
             projectCustomClasses = 'bar-normal bar-overdue bar-delay ';
-            //WIP OR COMPLETED
-            projectCustomClasses += (projectProgress == 100 ? 'progress-completed ' : 'progress-wip ');
 
             //--For displaying
             //If task is dependent to other tasks or not
