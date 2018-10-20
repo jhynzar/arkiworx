@@ -287,12 +287,7 @@
                 </a>
             </li>
 
-             <li class=" treeview">
-                    <a class="waves-effect waves-dark" href="/Engineer/Reports">
-                        <i class="icon-note"></i>
-                        <span> Reports</span>
-                    </a>
-                </li>
+            
 
             <li class="treeview">
                 <a class="waves-effect waves-dark" href="/Engineer/Accounts-Settings">

@@ -430,13 +430,135 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 45px">
+    <div class="content-wrapper" style="margin-top: 120px; width: 1400px" >
+        
+       
+              <div class="col-sm-9 p-0">
+                    <div class="main-header">
+                        <h4>
+                            <i class="icon-note"></i> Reports</h4>
+                        <ol class="breadcrumb breadcrumb-arrow">
+                            <li class="breadcrumb-item">
+                                <a href="Admin/Reports"></a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#!">List</a>
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+            
+   <!-- Hover effect table starts -->
+                    <div class="card" style="margin-left: 20px">
+                      
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col-sm-12 table-responsive">
+                                    <table class="table table-hover text-center">
+                                        <thead>
+                                        <tr class="text text-primary " >
+                                            <th style="width: 400px">Report Name</th>
+                                            <th class="text-center text text-success">Project</th>
+                                            <th class="text-center text text-danger ">Action</th>
+                                            
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="" style="height: 50px">
+                                            <td class="text-left text-secondary " ><h4><span class="bg bg-primary">&nbsp;&nbsp;</span> &nbsp; Project Reports</h4></td>
+                                            <td></td>
+                                            <td> 
+                                                <button type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
+                                                    <i class="fa fa-print" ></i>Print</button>
+                
+                                            </td>
+                                            
+                                        </tr>
+                                            
+                                              <tr style="height: 50px">
+                                            <td class="text-left text-secondary" ><h4><span class="bg bg-warning">&nbsp;&nbsp;</span> &nbsp; Cost Summary Report</h4></td>
+                                                    <td> <select class="form-group form-control text text-primary" style="height: 40px">
+                                                        <option value="" disabled selected>Select project</option>
+                                                        <option value=""> Project 1</option>
+                                                        <option value=""> Project 2</option>
+                                                        </select>
+                                                  </td>
+                                            <td> 
+                                                <button type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
+                                                    <i class="fa fa-print" ></i>Print</button>
+                
+                                            </td>
+                                            
+                                        </tr>
+                                            
+                                            
+                                            
+                                             <tr class="" style="height: 50px">
+                                            <td class="text-left text-secondary " ><h4><span class="bg bg-success">&nbsp;&nbsp;</span> &nbsp; Project Plan Reports</h4></td>
+                                            <td></td>
+                                            <td> 
+                                                <button type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
+                                                    <i class="fa fa-print" ></i>Print</button>
+                
+                                            </td>
+                                            
+                                        </tr>
+                                            
+                                            
+                                            
+                                              <tr style="height: 50px">
+                                            <td class="text-left text-secondary" ><h4><span class="bg bg-primary">&nbsp;&nbsp;</span> &nbsp; Project Schedule Report</h4></td>
+                                                    <td> <select class="form-group form-control text text-primary" style="height: 40px">
+                                                        <option value="" disabled selected>Select project </option>
+                                                        <option value=""> Project 1</option>
+                                                        <option value=""> Project 2</option>
+                                                        </select>
+                                                        
+                                                  </td>
+                                            <td> 
+                                                <button type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
+                                                    <i class="fa fa-print" ></i>Print</button>
+                
+                                            </td>
+                                            
+                                        </tr>
+                                            
+                                            
+                                             <tr style="height: 50px">
+                                            <td class="text-left text-secondary" ><h4><span class="bg bg-warning">&nbsp;&nbsp;</span> &nbsp; Materials Pricelist Report</h4></td>
+                                                    <td>
+                                                        <select class="form-group form-control form-inline text text-primary" style="height: 40px">
+                                                            <option value="" disabled selected>Date As of: </option>
+                                                            <option value="">17/10/28</option>
+                                                            <option value="">20/10/28</option>
+                                                        </select>
+                                                        
+                                                  </td>
+                                            <td> 
+                                                <button type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
+                                                    <i class="fa fa-print" ></i>Print</button>
+                
+                                            </td>
+                                            
+                                        </tr>
+                                            
+                                       
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hover effect table ends -->
+                  
+                  
+                  
+                  
 
        
-
-
-
-
+</div>
 
     </div>
     <!-- content wrapper end-->
