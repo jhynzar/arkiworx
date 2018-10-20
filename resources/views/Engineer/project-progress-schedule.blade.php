@@ -2,60 +2,60 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>ArkiWorx | Cost Management and Progress Monitoring System</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ArkiWorx | Cost Management and Progress Monitoring System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
      <![endif]-->
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-        <!-- Favicon icon -->
-        <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
-        <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
-        <!--tabs-->
-        <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> 
+    <!--tabs-->
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> 
      <script src="/js/jquery.min.js"></script>
      <script src="/js/bootstrap.min.js"></script> -->
 
-        <!-- Google font-->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-        <!-- iconfont -->
-        <link rel="stylesheet" type="text/css" href="/assets/icon/icofont/css/icofont.css">
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="/assets/icon/icofont/css/icofont.css">
 
-        <!-- simple line icon -->
-        <link rel="stylesheet" type="text/css" href="/assets/icon/simple-line-icons/css/simple-line-icons.css">
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="/assets/icon/simple-line-icons/css/simple-line-icons.css">
 
-        <!-- Required Fremwork -->
-        <link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
 
-        <!-- Weather css -->
-        <link href="/assets/css/svg-weather.css" rel="stylesheet">
+    <!-- Weather css -->
+    <link href="/assets/css/svg-weather.css" rel="stylesheet">
 
-        <!-- Echart js -->
-        <script src="/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+    <!-- Echart js -->
+    <script src="/assets/plugins/charts/echarts/js/echarts-all.js"></script>
 
-        <!-- Style.css [REPLACED FOR FRAPPE]-->
-        <link rel="stylesheet" type="text/css" href="/assets/css/mainForFrappe.css"> 
+    <!-- Style.css [REPLACED FOR FRAPPE]-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/mainForFrappe.css">
 
-        <!-- Responsive.css-->
-        <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
 
-        <!--color css-->
-        <link rel="stylesheet" type="text/css" href="/assets/css/color/color-1.min.css" id="color" />
+    <!--color css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/color/color-1.min.css" id="color" />
 
-        <!-- fullCalendar -->
-        <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.min.css" media="print">
-        <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.min.css" media="print">
+    <link rel="stylesheet" href="../Admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
 
 
 
@@ -166,10 +166,10 @@
 
     <!-- FRAPPE START -->
     <link rel="stylesheet" href="/frappe/dist/frappe-gantt.css" />
-	<script src="/frappe/dist/frappe-gantt.js"></script>
+    <script src="/frappe/dist/frappe-gantt.js"></script>
 
     <style>
-		body {
+        body {
 			font-family: sans-serif;
 			
 		}
@@ -341,14 +341,12 @@
                         <div class="dummy-column">
                             <h2>People</h2>
                             <a class="dummy-media-object" href="#!">
-                                <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan"
-                                />
+                                <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan" />
                                 <h3>Sara Soueidan</h3>
                             </a>
 
                             <a class="dummy-media-object" href="#!">
-                                <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona"
-                                />
+                                <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona" />
                                 <h3>Shaun Dona</h3>
                             </a>
                         </div>
@@ -433,13 +431,13 @@
                     </a>
                 </li>
             </ul>
-             <!-- Sidebar Menu-->
+            <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
                 <li class="nav-level">
-                    <span >
-                        <h6 class="text-center" ><b><span style="color:  #222d32" ><b>Hello</b></span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
+                    <span>
+                        <h6 class="text-center"><b><span style="color:  #222d32"><b>Hello</b></span><span class="text text-success">!</span> </b><span class="text text-primary">Engineer</span></h6>
                     </span>
-                    <hr> 
+                    <hr>
                 </li>
                 <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Home">
@@ -447,8 +445,8 @@
                         <span> Dashboard</span>
                     </a>
                 </li>
-                
-                
+
+
                 <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Materials-Pricelist">
                         <i class="icon-notebook"></i>
@@ -457,21 +455,21 @@
                 </li>
 
 
-                
-                 <li class="treeview">
+
+                <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Cost-Estimation">
                         <i class="icon-calculator"></i>
                         <span> Estimation</span>
                     </a>
                 </li>
 
-               <li class="treeview">
+                <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Engineer-Projects">
                         <i class="icon-briefcase"></i>
                         <span> Projects</span>
                     </a>
                 </li>
-                
+
 
 
 
@@ -495,7 +493,7 @@
                     </a>
                 </li>
 
-                  
+
 
                 <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Engineer/Accounts-Settings">
@@ -508,121 +506,122 @@
 
     </aside>
     <!-- end of sidebar-->
-    
+
 
 
     <!-- end of sidebar-->
     <div class="content-wrapper" style="background-color: white; ">
-        
-       <div class="container form-group form-inline" style="background-color: white; margin-top: -70px; margin-left: 250px"> <br><br> <br>
-             
-               
-                    <div style="margin-left: -200px; margin-top: -3px">
-                        <h4>
-                            <i class="icon-graph"></i> Gantt</h4>
-                        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
-                            <li class="breadcrumb-item">
-                                <a href="/Engineer/Project-Progress"></a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="/Engineer/Project-Progress" data-toggle="tooltip" data-placement="right" title="back" >Projects List</a>
-                           
-                            </li>
 
-                        </ol>
-                        
-                        <div class="form-group form-inline text text-primary" style="position:absolute; margin-left: 250px; margin-top: -70px " > <label> <span class="text text-primary"><b>Project:</b></span> </label> <input  class="form-control" type="text" value="Project sample" disabled>
-                    
-                        </div>
-                        <hr class="bg bg-info"><br>
-                        
-                        <div style="margin-left: 200px; margin-top: -20px">
-                                      <label class="text text-primary"> <span  class="label label-primary form-control"> &nbsp;</span> <b>- Delayed</b></label> &nbsp;&nbsp;
-                <label class="text text-danger"> <span  class="label label-danger form-control"> &nbsp;</span> <b>- Overdue</b></label> &nbsp;&nbsp;
-                <label class="text text-info" > <span  class="label label-info form-control"> &nbsp;</span> <b>- In progress</b></label> &nbsp;&nbsp;
-                <label class="text text-success"> <span  class="label label-success form-control"> &nbsp;</span> <b>- Complete</b></label> &nbsp;&nbsp;
-</div>
-                    </div>
-                
+        <div class="container form-group form-inline" style="background-color: white; margin-top: -70px; margin-left: 250px"> <br><br> <br>
 
+
+            <div style="margin-left: -200px; margin-top: -3px">
+                <h4>
+                    <i class="icon-graph"></i> Gantt</h4>
+                <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                    <li class="breadcrumb-item">
+                        <a href="/Engineer/Project-Progress"></a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/Engineer/Project-Progress" data-toggle="tooltip" data-placement="right" title="back">Projects List</a>
+
+                    </li>
+
+                </ol>
+
+                <div class="form-group form-inline text text-primary" style="position:absolute; margin-left: 250px; margin-top: -70px "> <label> <span class="text text-primary"><b>Project:</b></span> </label> <input class="form-control" type="text" value="Project sample" disabled>
+
+                </div>
+                <hr class="bg bg-info"><br>
+
+                <div style="margin-left: 200px; margin-top: -20px">
+                    <label class="text text-primary"> <span class="label label-primary form-control"> &nbsp;</span> <b>- Delayed</b></label> &nbsp;&nbsp;
+                    <label class="text text-danger"> <span class="label label-danger form-control"> &nbsp;</span> <b>- Overdue</b></label> &nbsp;&nbsp;
+                    <label class="text text-info"> <span class="label label-info form-control"> &nbsp;</span> <b>- In progress</b></label> &nbsp;&nbsp;
+                    <label class="text text-success"> <span class="label label-success form-control"> &nbsp;</span> <b>- Complete</b></label> &nbsp;&nbsp;
+                </div>
+            </div>
 
 
 
-<br> 
-                 
 
-               
+
+            <br>
+
+
+
             <button type="button" class="form-control btn btn-outline-danger" name="" id="" onclick="gantt_chart.change_view_mode('Quarter Day')">Quarter Day</button> &nbsp;
-            <button type="button" class="form-control btn btn-outline-info" name="" id="" onclick="gantt_chart.change_view_mode('Half Day')" >Half Day</button> &nbsp;
-            <button type="button" class="form-control btn btn-outline-warning" name="" id="" onclick="gantt_chart.change_view_mode('Day')" >Day</button> &nbsp;
-            <button type="button" class="form-control btn btn-outline-success" name="" id="" onclick="gantt_chart.change_view_mode('Week')" >Week</button> &nbsp;
-            <button type="button" class="form-control btn btn-outline-primary" name="" id="" onclick="gantt_chart.change_view_mode('Month')" >Month</button> &nbsp;
+            <button type="button" class="form-control btn btn-outline-info" name="" id="" onclick="gantt_chart.change_view_mode('Half Day')">Half Day</button> &nbsp;
+            <button type="button" class="form-control btn btn-outline-warning" name="" id="" onclick="gantt_chart.change_view_mode('Day')">Day</button> &nbsp;
+            <button type="button" class="form-control btn btn-outline-success" name="" id="" onclick="gantt_chart.change_view_mode('Week')">Week</button> &nbsp;
+            <button type="button" class="form-control btn btn-outline-primary" name="" id="" onclick="gantt_chart.change_view_mode('Month')">Month</button> &nbsp;
         </div>
-      
-
-    <div class="" style="margin-top: 60px; margin-left: -80px">
-        
-        <!-- start col-lg-9 --> <div class="pull-center align-center text-center" style="margin-top: -40px; margin-left: 100px">
-                        <div class="col-xl-12 col-lg-12">
-                            <!-- Nav tabs -->
-                            <div class="tab-header">
-                                <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#estimated" role="tab">Estimated Schedule </a>
-                                        <div class="slide" style="color: #009900 !important"></div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#actual" role="tab">Actual Schedule</a>
-                                        <div class="slide"></div>
-                                    </li>
 
 
-                                </ul>
-                            </div>
-                            <!-- end of tab-header -->
+        <div class="" style="margin-top: 60px; margin-left: -80px">
 
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="estimated" role="tabpanel">
+            <!-- start col-lg-9 -->
+            <div class="pull-center align-center text-center" style="margin-top: -40px; margin-left: 100px">
+                <div class="col-xl-12 col-lg-12">
+                    <!-- Nav tabs -->
+                    <div class="tab-header">
+                        <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#estimated" role="tab">Estimated Schedule </a>
+                                <div class="slide" style="color: #009900 !important"></div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#actual" role="tab">Actual Schedule</a>
+                                <div class="slide"></div>
+                            </li>
 
 
+                        </ul>
+                    </div>
+                    <!-- end of tab-header -->
 
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="estimated" role="tabpanel">
 
 
 
 
-                                </div>
-                                <!-- end of tab-pane -->
-                                <!-- end of about us tab-pane -->
-
-                                <!-- start tab-pane of project tab -->
-                                <div class="tab-pane" id="actual" role="tabpanel">
-                                   
-                                        <!-- end of card-main -->
-                                    </div>
-                                    <!-- end of project pane -->
 
 
-                                </div>
-                                <!-- end of main tab content -->
-                            </div>
-        </div>
-        <!-- FRAPPE START -->
-        <div class="container " style="background-color: white; ">
-            
-           
-           
-             <br>
-            <div class="container-fluid gantt-target my-5"></div>
-        </div>
-        <!-- FRAPPE END -->
 
-        
-        
-        
-   
+                        </div>
+                        <!-- end of tab-pane -->
+                        <!-- end of about us tab-pane -->
 
-        <!-- Task Details Modal -->
-        @foreach ($allProjectSchedulesWithPhases as $projectSchedule)
+                        <!-- start tab-pane of project tab -->
+                        <div class="tab-pane" id="actual" role="tabpanel">
+
+                            <!-- end of card-main -->
+                        </div>
+                        <!-- end of project pane -->
+
+
+                    </div>
+                    <!-- end of main tab content -->
+                </div>
+            </div>
+            <!-- FRAPPE START -->
+            <div class="container " style="background-color: white; ">
+
+
+
+                <br>
+                <div class="container-fluid gantt-target my-5"></div>
+            </div>
+            <!-- FRAPPE END -->
+
+
+
+
+
+
+            <!-- Task Details Modal -->
+            @foreach ($allProjectSchedulesWithPhases as $projectSchedule)
             <div class="modal fade" id="scheduleDetailsModal{{$projectSchedule->scheduleDetails->intScheduleId}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -643,36 +642,36 @@
                                 <input type="hidden" name="phasesCount" value="{{count($projectSchedule->schedulePhases)}}">
                                 @foreach ($projectSchedule->schedulePhases as $phaseKey=>$phase)
 
-                                    <!-- input type hidden -->
-                                    <input type="hidden" name="schedulePhase{{$phaseKey}}id" value="{{$phase->intSchedulePhasesId}}">
+                                <!-- input type hidden -->
+                                <input type="hidden" name="schedulePhase{{$phaseKey}}id" value="{{$phase->intSchedulePhasesId}}">
 
-                                    <br>
-                                    <div class="form-group form-inline">
-                                        
-                                        @if ($phaseKey % 2 != 0)
-                                            <label class="label label-primary"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                        @else
-                                            <label class="label label-success"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                        @endif
-                                        <input type="text" name="" class="form-control" style="width:160px" value="{{$phase->strName}}" readonly>
-                                        &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
-                                        <input type="number" name="schedulePhase{{$phaseKey}}progress"  value="{{$phase->intProgress}}" min="{{$phase->intProgress}}" max="100" class="form-control" style="width:165px"> <br> <br>
-                                        
-                                        
-                                        <label for="sex">Estimated Dates <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
-                                        <input type="date" name="schedulePhase{{$phaseKey}}estimatedStartDate" value="{{$phase->dtmEstimatedStart}}" class="form-control" style="width:160px" readonly>
-                                        <label for="sex">To</label>
-                                        <input type="date" name="schedulePhase{{$phaseKey}}estimatedEndDate" value="{{$phase->dtmEstimatedEnd}}" class="form-control" style="width:160px" readonly>
+                                <br>
+                                <div class="form-group form-inline">
 
-                                        <label for="sex">Actual Dates <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
-                                        <input type="date" name="schedulePhase{{$phaseKey}}actualStartDate" value="{{$phase->dtmActualStart}}" class="form-control" style="width:160px" readonly>
-                                        <label for="sex">To</label>
-                                        <input type="date" name="schedulePhase{{$phaseKey}}actualEndDate" value="{{$phase->dtmActualEnd}}" class="form-control" style="width:160px" readonly>
-                                        
+                                    @if ($phaseKey % 2 != 0)
+                                    <label class="label label-primary"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                    @else
+                                    <label class="label label-success"> Phase {{$phaseKey+1}}</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                    @endif
+                                    <input type="text" name="" class="form-control" style="width:160px" value="{{$phase->strName}}" readonly>
+                                    &nbsp;&nbsp;&nbsp; <label class="text text-primary"> Progress</label>&nbsp;&nbsp;
+                                    <input type="number" name="schedulePhase{{$phaseKey}}progress" value="{{$phase->intProgress}}" min="{{$phase->intProgress}}" max="100" class="form-control" style="width:165px"> <br> <br>
 
 
-                                    </div>
-                                    <hr>
+                                    <label for="sex">Estimated Dates <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                    <input type="date" name="schedulePhase{{$phaseKey}}estimatedStartDate" value="{{$phase->dtmEstimatedStart}}" class="form-control" style="width:160px" readonly>
+                                    <label for="sex">To</label>
+                                    <input type="date" name="schedulePhase{{$phaseKey}}estimatedEndDate" value="{{$phase->dtmEstimatedEnd}}" class="form-control" style="width:160px" readonly>
+
+                                    <label for="sex">Actual Dates <i class="icon-calendar text text-primary"></i>&nbsp;:</label>
+                                    <input type="date" name="schedulePhase{{$phaseKey}}actualStartDate" value="{{$phase->dtmActualStart}}" class="form-control" style="width:160px" readonly>
+                                    <label for="sex">To</label>
+                                    <input type="date" name="schedulePhase{{$phaseKey}}actualEndDate" value="{{$phase->dtmActualEnd}}" class="form-control" style="width:160px" readonly>
+
+
+
+                                </div>
+                                <hr>
                                 @endforeach
                             </div>
                             <div class="modal-footer" style="background-color: #E3FAD4">
@@ -683,13 +682,13 @@
                     </div>
                 </div>
             </div>
-        @endforeach
-        
-        
-        
+            @endforeach
 
-    </div>
+
+
+
         </div>
+    </div>
     <!-- content wrapper end-->
 
 
@@ -793,13 +792,13 @@
 
     </script>
     <script>
-        function dateDifference(date1,date2){
+        function dateDifference(date1, date2) {
             var timeDiff = Math.abs(date2.getTime() - date1.getTime());
             var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
             return diffDays;
         }
 
-        function addDate(date,daysToAdd){
+        function addDate(date, daysToAdd) {
             var returnDate = date;
             returnDate.setDate(returnDate.getDate() + daysToAdd);
             return returnDate;
@@ -815,20 +814,21 @@
 
             return [year, month, day].join('-');
         }
+
     </script>
     <!-- FRAPPE START -->
     <script>
-        var allProjectSchedules = {!!json_encode($allProjectSchedulesWithPhases)!!};
+        var allProjectSchedules = {!!json_encode($allProjectSchedulesWithPhases) !!};
 
         console.log(allProjectSchedules[0].scheduleDetails);
 
         var scheduledTasks = [];
 
-        for(x = 0; x < allProjectSchedules.length ; x++){
+        for (x = 0; x < allProjectSchedules.length; x++) {
             //--Logic for computing progress of category
             var projectProgress = 0;
 
-            for(i = 0; i < allProjectSchedules[x].schedulePhases.length; i++){
+            for (i = 0; i < allProjectSchedules[x].schedulePhases.length; i++) {
                 projectProgress += allProjectSchedules[x].schedulePhases[i].intProgress;
             }
             projectProgress = projectProgress / allProjectSchedules[x].schedulePhases.length;
@@ -837,12 +837,12 @@
             projectCustomClasses = 'bar-normal bar-overdue bar-delay ';
             //WIP OR COMPLETED
             projectCustomClasses += (projectProgress == 100 ? 'progress-completed ' : 'progress-wip ');
-            
+
             //--For displaying
             //If task is dependent to other tasks or not
 
             //========IF INDEPENDENT
-            if(allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] == null){
+            if (allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] == null) {
 
                 //logic
                 //estimated start
@@ -872,29 +872,29 @@
                 /* ===[START]=== */
 
                 //if there is no set actualStart where should I be?
-                if(actualStart == null){
+                if (actualStart == null) {
                     //IM FREE. actual Start is today!
                     start = new Date();
                     //today is actual start
-                }else{
+                } else {
                     //if there is, set it.
                     start = new Date(actualStart);
                 }
 
                 /* ===[START] END=== */
 
-                
+
                 /* ===[END]=== */
 
-                supposedEnd = addDate(new Date(start),dateDifference(new Date(estimatedEnd),new Date(estimatedStart)));
-                
+                supposedEnd = addDate(new Date(start), dateDifference(new Date(estimatedEnd), new Date(estimatedStart)));
+
                 //if actualEnd is alreadySet and is earlier than my supposedEnd, cut it
-                if(
+                if (
                     (actualEnd != null) &&
                     ((new Date(actualEnd)).getTime() < supposedEnd.getTime())
-                ){
+                ) {
                     end = new Date(actualEnd);
-                }else{
+                } else {
                     end = supposedEnd;
                 }
 
@@ -903,15 +903,15 @@
                 /* ===[OVERDUE]=== */
 
                 //if overdue is null, where should I be?
-                if(actualEnd == null){
+                if (actualEnd == null) {
                     //if today is less than end of task, overdue will be at the end
-                    if((new Date()).getTime() < end.getTime()){
+                    if ((new Date()).getTime() < end.getTime()) {
                         overdue = new Date(end);
-                    }else{
+                    } else {
                         //else overdue is today
                         overdue = new Date();
                     }
-                }else{
+                } else {
                     //else if there is an actual end, set it
                     overdue = new Date(actualEnd);
                 }
@@ -919,7 +919,7 @@
                 /* ===[OVERDUE] END=== */
 
 
-                
+
 
                 //overdue = actualEnd == null ? new Date() : new Date(actualEnd);
 
@@ -939,8 +939,8 @@
                     delay: delay,
                     overdue: overdue, //code: if first is null/undefined, then assign second value
                 };
-            }//========IF DEPENDENT
-            else{
+            } //========IF DEPENDENT
+            else {
                 //logic
                 //estimated start
                 var estimatedStart = allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'];
@@ -964,8 +964,8 @@
 
                 //get parentSchedule
                 var parentSchedule;
-                for(i = 0; i < allProjectSchedules.length ; i++){
-                    if(allProjectSchedules[i].scheduleDetails['intScheduleId'] == dependencyId){
+                for (i = 0; i < allProjectSchedules.length; i++) {
+                    if (allProjectSchedules[i].scheduleDetails['intScheduleId'] == dependencyId) {
                         parentSchedule = allProjectSchedules[i];
                         break;
                     }
@@ -973,8 +973,8 @@
 
                 //get parentTask
                 var parentTask;
-                for(i = 0; i < scheduledTasks.length; i++){
-                    if(scheduledTasks[i].id == dependencyId){
+                for (i = 0; i < scheduledTasks.length; i++) {
+                    if (scheduledTasks[i].id == dependencyId) {
                         parentTask = scheduledTasks[i];
                         break;
                     }
@@ -990,36 +990,36 @@
                 /* ===[START]=== */
 
                 //if there is no set actualStart where should I be?
-                if(actualStart == null){
+                if (actualStart == null) {
 
                     //if not yet done, I'm locked to following it.
-                    if(parentSchedule.scheduleDetails['dtmActualEnd'] == null){
+                    if (parentSchedule.scheduleDetails['dtmActualEnd'] == null) {
                         //My temporary ActualStartDate is my dependency Overdue
                         //set the start to the overdue of the parent
-                        start = addDate(new Date(parentTask.overdue),dateDifference(new Date(parentSchedule.scheduleDetails['dtmEstimatedEnd']),new Date(estimatedStart)));
-                    }else{
+                        start = addDate(new Date(parentTask.overdue), dateDifference(new Date(parentSchedule.scheduleDetails['dtmEstimatedEnd']), new Date(estimatedStart)));
+                    } else {
                         //if already done, IM FREE. actual Start is today!
                         start = new Date();
                     }
-                }else{
+                } else {
                     //if there is, set it.
                     start = new Date(actualStart);
                 }
 
                 /* ===[START] END=== */
 
-                
+
                 /* ===[END]=== */
 
-                supposedEnd = addDate(new Date(start),dateDifference(new Date(estimatedEnd),new Date(estimatedStart)));
-                
+                supposedEnd = addDate(new Date(start), dateDifference(new Date(estimatedEnd), new Date(estimatedStart)));
+
                 //if actualEnd is alreadySet and is earlier than my supposedEnd, cut it
-                if(
+                if (
                     (actualEnd != null) &&
                     ((new Date(actualEnd)).getTime() < supposedEnd.getTime())
-                ){
+                ) {
                     end = new Date(actualEnd);
-                }else{
+                } else {
                     end = supposedEnd;
                 }
 
@@ -1028,15 +1028,15 @@
                 /* ===[OVERDUE]=== */
 
                 //if overdue is null, where should I be?
-                if(actualEnd == null){
+                if (actualEnd == null) {
                     //if today is less than end of task, overdue will be at the end
-                    if((new Date()).getTime() < end.getTime()){
+                    if ((new Date()).getTime() < end.getTime()) {
                         overdue = new Date(end);
-                    }else{
+                    } else {
                         //else overdue is today
                         overdue = new Date();
                     }
-                }else{
+                } else {
                     //else if there is an actual end, set it
                     overdue = new Date(actualEnd);
                 }
@@ -1044,7 +1044,7 @@
                 /* ===[OVERDUE] END=== */
 
 
-                
+
 
                 //overdue = actualEnd == null ? new Date() : new Date(actualEnd);
 
@@ -1063,314 +1063,39 @@
                     progress: projectProgress,
                     delay: delay,
                     overdue: overdue, //code: if first is null/undefined, then assign second value
-                    dependencies: [ allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] ]
+                    dependencies: [allProjectSchedules[x].scheduleDetails['intDependencyScheduleId']]
                 };
             }
 
             scheduledTasks.push(task);
-           
+
         }
 
         console.log(scheduledTasks);
 
         var tasks = scheduledTasks;
 
-        /*
-		var tasks = [
-			{
-                
-				start: '2018-10-01',
-				end: '2018-10-03',
-				name: 'Building Permit',
-				id: "Task 0",
-				progress: 100
-			},
-			{
-				start: '2018-10-03',
-				end: '2018-10-06',
-				name: 'Planning',
-				id: "Task 1",
-				progress: 100,
-				dependencies: 'Task 0'
-			},
-			{
-				start: '2018-10-04',
-				end: '2018-10-08',
-				name: 'Excavation',
-				id: "Task 2",
-				progress: 80,
-				dependencies: 'Task 1'
-			},
-			{
-				start: '2018-10-08',
-				end: '2018-10-09',
-				name: 'Back Fill',
-				id: "Task 3",
-				progress: 0,
-				dependencies: 'Task 2'
-			},
-			{
-				start: '2018-10-10',
-				end: '2018-10-11',
-				name: 'Lastillas',
-				id: "Task 4",
-				progress: 0,
-				dependencies: 'Task 3'
-			},
-			{
-				start: '2018-10-12',
-				end: '2018-10-15',
-				name: 'Soil Posoining',
-				id: "Task 5",
-				progress: 0,
-				dependencies: 'Task 4'
-			},
-            
-            {
-				start: '2018-10-15',
-				end: '2019-01-24',
-				name: 'General Construction',
-				id: "Task 6",
-				progress: 0,
-				dependencies: 'Task 5'
-			},
-            
-            {
-				start: '2018-10-15',
-				end: '2018-10-22',
-				name: 'Column',
-				id: "Task 7",
-				progress: 0,
-				dependencies: 'Task 6'
-			},
-            {
-				start: '2018-10-15',
-				end: '2018-10-19',
-				name: 'Footing',
-				id: "Task 8",
-				progress: 0,
-				dependencies: 'Task 6'
-			},
-            {
-				start: '2018-10-19',
-				end: '2018-10-29',
-				name: 'Slab',
-				id: "Task 9",
-				progress: 0,
-				dependencies: 'Task 8'
-			},
-            
-            {
-				start: '2018-10-29',
-				end: '2018-11-04',
-				name: 'Beams',
-				id: "Task 10",
-				progress: 0,
-				dependencies: 'Task 9'
-			},
-            
-             {
-				start: '2018-11-04',
-				end: '2018-11-08',
-				name: 'Wall Footing',
-				id: "Task 11",
-				progress: 0,
-				dependencies: 'Task 10'
-			},
-            
-             {
-				start: '2018-11-04',
-				end: '2018-11-11',
-				name: 'Floor Beams',
-				id: "Task 12",
-				progress: 0,
-				dependencies: 'Task 10'
-			},
-            
-            {
-				start: '2018-11-11',
-				end: '2018-11-29',
-				name: 'Masonry',
-				id: "Task 13",
-				progress: 0,
-				dependencies: 'Task 12'
-			},
-            
-            {
-				start: '2018-11-29',
-				end: '2018-12-08',
-				name: 'Roofing',
-				id: "Task 14",
-				progress: 0,
-				dependencies: 'Task 13'
-			},
-            
-            {
-				start: '2018-12-08',
-				end: '2018-12-15',
-				name: 'Windows',
-				id: "Task 15",
-				progress: 0,
-				dependencies: 'Task 14'
-			},
-            
-            {
-				start: '2018-12-08',
-				end: '2018-12-18',
-				name: 'Doors',
-				id: "Task 16",
-				progress: 0,
-				dependencies: 'Task 14'
-			},
-            
-             {
-				start: '2018-12-08',
-				end: '2018-12-20',
-				name: 'Ceiling',
-				id: "Task 17",
-				progress: 0,
-				dependencies: 'Task 14'
-			},
-            
-            {
-				start: '2018-12-20',
-				end: '2018-12-25',
-				name: 'Paint Ceiling',
-				id: "Task 18",
-				progress: 0,
-				dependencies: 'Task 17'
-			},
-            
-            {
-				start: '2018-12-20',
-				end: '2018-12-26',
-				name: 'Paint Walls',
-				id: "Task 19",
-				progress: 0,
-				dependencies: 'Task 17'
-			},
-            
-            {
-				start: '2018-12-26',
-				end: '2019-01-02',
-				name: 'Staircase',
-				id: "Task 20",
-				progress: 0,
-				dependencies: 'Task 19'
-			},
-            
-            {
-				start: '2019-01-02',
-				end: '2019-01-10',
-				name: 'Plumbing Works',
-				id: "Task 21",
-				progress: 0,
-				dependencies: 'Task 20'
-			},
-            
-            {
-				start: '2019-01-10',
-				end: '2019-01-15',
-				name: 'Electrical Works',
-				id: "Task 22",
-				progress: 0,
-				dependencies: 'Task 21'
-			},
-            
-            {
-				start: '2019-01-15',
-				end: '2019-01-24',
-				name: 'Tiles',
-				id: "Task 23",
-				progress: 0,
-				dependencies: 'Task 22'
-			},
-            
-            {
-				start: '2019-01-24',
-				end: '2019-01-26',
-				name: 'Inspection',
-				id: "Task 24",
-				progress: 0,
-				dependencies: 'Task 23'
-			},
-            
-             {
-				start: '2019-01-26',
-				end: '2019-01-27',
-				name: 'Turn Over',
-				id: "Task 25",
-				progress: 0,
-				dependencies: 'Task 24'
-			},
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        ]*/
-
-        
-        
-        
-     
-        
-       // var gantt = new Gantt("#gantt", tasks, {
-   // header_height: 50,
-   // column_width: 30,
-   // step: 24,
-   // view_modes: ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'],
-   // bar_height: 20,
-   // bar_corner_radius: 3,
-   // arrow_curve: 5,
-   // padding: 18,
-   // view_mode: 'Day',   
-   // date_format: 'YYYY-MM-DD',
-//custom_popup_html: null
-//});
-    
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-		var gantt_chart = new Gantt(".gantt-target", tasks, {
-			on_click: function (task) {
-				console.log(task.id);
-                $("#scheduleDetailsModal"+task.id).modal("show");
-			},
-			on_date_change: function(task, start, end) {
-				console.log(task, start, end);
-			},
-			on_progress_change: function(task, progress) {
-				console.log(task, progress);
-			},
-			on_view_change: function(mode) {
-				console.log(mode);
-			},
-            view_mode:'Day',
+        var gantt_chart = new Gantt(".gantt-target", tasks, {
+            on_click: function (task) {
+                console.log(task.id);
+                $("#scheduleDetailsModal" + task.id).modal("show");
+            },
+            on_date_change: function (task, start, end) {
+                console.log(task, start, end);
+            },
+            on_progress_change: function (task, progress) {
+                console.log(task, progress);
+            },
+            on_view_change: function (mode) {
+                console.log(mode);
+            },
+            view_mode: 'Day',
             /* custom options */
-			bar_progress_height_percentage: 40,
-		});
-		console.log(gantt_chart);
-	</script>
+            bar_progress_height_percentage: 40,
+        });
+        console.log(gantt_chart);
+
+    </script>
     <!-- FRAPPE END -->
 </body>
 
