@@ -567,11 +567,11 @@
                     <div class="tab-header">
                         <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#estimated" role="tab">Estimated Schedule </a>
+                                <a id="estimatedSchedulesTabButton" class="nav-link active" data-toggle="tab" href="#estimated" role="tab">Estimated Schedule </a>
                                 <div class="slide" style="color: #009900 !important"></div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#actual" role="tab">Actual Schedule</a>
+                                <a id="actualSchedulesTabButton" class="nav-link" data-toggle="tab" href="#actual" role="tab">Actual Schedule</a>
                                 <div class="slide"></div>
                             </li>
 
@@ -819,12 +819,12 @@
     <!-- FRAPPE START -->
     <script>
         var allProjectSchedules = {!!json_encode($allProjectSchedulesWithPhases) !!};
+        
 
-        console.log(allProjectSchedules[0].scheduleDetails);
+        //==============================ACTUAL TASK SCHEDULES END
+        var actualTaskSchedules = [];
 
-        var scheduledTasks = [];
-
-        for (x = 0; x < allProjectSchedules.length; x++) {
+        for (var x = 0; x < allProjectSchedules.length; x++) {
             //--Logic for computing progress of category
             var projectProgress = 0;
 
@@ -973,9 +973,9 @@
 
                 //get parentTask
                 var parentTask;
-                for (i = 0; i < scheduledTasks.length; i++) {
-                    if (scheduledTasks[i].id == dependencyId) {
-                        parentTask = scheduledTasks[i];
+                for (i = 0; i < actualTaskSchedules.length; i++) {
+                    if (actualTaskSchedules[i].id == dependencyId) {
+                        parentTask = actualTaskSchedules[i];
                         break;
                     }
                 }
@@ -1067,33 +1067,187 @@
                 };
             }
 
-            scheduledTasks.push(task);
+            actualTaskSchedules.push(task);
 
         }
 
-        console.log(scheduledTasks);
+        //==============================ACTUAL TASK SCHEDULES END
 
-        var tasks = scheduledTasks;
+        
 
-        var gantt_chart = new Gantt(".gantt-target", tasks, {
-            on_click: function (task) {
-                console.log(task.id);
-                $("#scheduleDetailsModal" + task.id).modal("show");
-            },
-            on_date_change: function (task, start, end) {
-                console.log(task, start, end);
-            },
-            on_progress_change: function (task, progress) {
-                console.log(task, progress);
-            },
-            on_view_change: function (mode) {
-                console.log(mode);
-            },
-            view_mode: 'Day',
-            /* custom options */
-            bar_progress_height_percentage: 40,
+        //==============================ESTIMATED TASK SCHEDULES
+        var estimatedTaskSchedules = [];
+
+        for(var x = 0; x < allProjectSchedules.length; x++){
+            //--Logic for computing progress of category
+            var projectProgress = 0;
+
+            for (i = 0; i < allProjectSchedules[x].schedulePhases.length; i++) {
+                projectProgress += allProjectSchedules[x].schedulePhases[i].intProgress;
+            }
+            projectProgress = projectProgress / allProjectSchedules[x].schedulePhases.length;
+
+            //--Logic for adding classes
+            projectCustomClasses = 'bar-normal bar-overdue bar-delay ';
+            //WIP OR COMPLETED
+            projectCustomClasses += (projectProgress == 100 ? 'progress-completed ' : 'progress-wip ');
+
+            //--For displaying
+            //If task is dependent to other tasks or not
+
+            //========IF INDEPENDENT
+            if (allProjectSchedules[x].scheduleDetails['intDependencyScheduleId'] == null) {
+
+                //logic
+                //estimated start
+                var estimatedStart = allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'];
+                //estimated end
+                var estimatedEnd = allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'];
+
+                //the actual start
+                var actualStart = allProjectSchedules[x].scheduleDetails['dtmActualStart'];
+                //the actual end
+                var actualEnd = allProjectSchedules[x].scheduleDetails['dtmActualEnd'];
+
+                var start;
+                var end;
+                var delay;
+                var overdue;
+
+                //setting up
+                start = new Date(estimatedStart);
+                end = new Date(estimatedEnd);
+                delay = new Date(estimatedStart);
+                overdue = new Date(estimatedEnd);
+
+                //format date
+                start = formatDate(start);
+                end = formatDate(end);
+                delay = formatDate(delay);
+                overdue = formatDate(overdue);
+
+                task = {
+                    start: start,
+                    end: end,
+                    name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
+                    id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
+                    custom_class: projectCustomClasses,
+                    progress: projectProgress,
+                    delay: delay,
+                    overdue: overdue, //code: if first is null/undefined, then assign second value
+                };
+            } //========IF DEPENDENT
+            else {
+                //logic
+                //estimated start
+                var estimatedStart = allProjectSchedules[x].scheduleDetails['dtmEstimatedStart'];
+                //estimated end
+                var estimatedEnd = allProjectSchedules[x].scheduleDetails['dtmEstimatedEnd'];
+
+                //the actual start
+                var actualStart = allProjectSchedules[x].scheduleDetails['dtmActualStart'];
+                //the actual end
+                var actualEnd = allProjectSchedules[x].scheduleDetails['dtmActualEnd'];
+
+                var start;
+                var end;
+                var delay;
+                var overdue;
+
+                //setting up
+                start = new Date(estimatedStart);
+                end = new Date(estimatedEnd);
+                delay = new Date(estimatedStart);
+                overdue = new Date(estimatedEnd);
+
+                //format date
+                start = formatDate(start);
+                end = formatDate(end);
+                delay = formatDate(delay);
+                overdue = formatDate(overdue);
+
+                task = {
+                    start: start, //code: if first is null/undefined, then assign second value ; For Delay
+                    end: end,
+                    name: allProjectSchedules[x].scheduleDetails['strWorkSubCategoryDesc'],
+                    id: allProjectSchedules[x].scheduleDetails['intScheduleId'],
+                    custom_class: projectCustomClasses,
+                    progress: projectProgress,
+                    delay: delay,
+                    overdue: overdue, //code: if first is null/undefined, then assign second value
+                    dependencies: [allProjectSchedules[x].scheduleDetails['intDependencyScheduleId']]
+                };
+            }
+
+            estimatedTaskSchedules.push(task);
+        }
+
+        //==============================ESTIMATED TASK SCHEDULES END
+
+
+        //gantt chart declaration
+        var gantt_chart;
+
+        //assigning onclicks on tabs
+        $('#estimatedSchedulesTabButton').on('click',function(){
+
+
+        console.log('click');
+            $('.gantt-target').html(''); //clear the existing gantt first
+
+
+            gantt_chart = new Gantt(".gantt-target", estimatedTaskSchedules, {
+                on_click: function (task) {
+                    console.log(task.id);
+                },
+                on_date_change: function (task, start, end) {
+                    console.log(task, start, end);
+                },
+                on_progress_change: function (task, progress) {
+                    console.log(task, progress);
+                },
+                on_view_change: function (mode) {
+                    console.log(mode);
+                },
+                view_mode: 'Day',
+                /* custom options */
+                bar_progress_height_percentage: 40,
+            });
+            console.log(gantt_chart);
         });
-        console.log(gantt_chart);
+
+        $('#actualSchedulesTabButton').on('click',function(){
+
+
+            $('.gantt-target').html(''); //clear the existing gantt first
+
+
+            gantt_chart = new Gantt(".gantt-target", actualTaskSchedules, {
+                on_click: function (task) {
+                    console.log(task.id);
+                    $("#scheduleDetailsModal" + task.id).modal("show");
+                },
+                on_date_change: function (task, start, end) {
+                    console.log(task, start, end);
+                },
+                on_progress_change: function (task, progress) {
+                    console.log(task, progress);
+                },
+                on_view_change: function (mode) {
+                    console.log(mode);
+                },
+                view_mode: 'Day',
+                /* custom options */
+                bar_progress_height_percentage: 40,
+            });
+            console.log(gantt_chart);
+        });
+
+        //INITIALIZE ESTIMATED SCHEDULES FIRST
+        $('#estimatedSchedulesTabButton').trigger('click');
+
+
+        
 
     </script>
     <!-- FRAPPE END -->
