@@ -529,7 +529,7 @@
 
                 </ol>
 
-                <div class="form-group form-inline text text-primary" style="position:absolute; margin-left: 250px; margin-top: -70px "> <label> <span class="text text-primary"><b>Project:</b></span> </label> <input class="form-control" type="text" value="Project sample" disabled>
+                <div class="form-group form-inline text text-primary" style="position:absolute; margin-left: 250px; margin-top: -70px "> <label> <span class="text text-primary"><b>Project:</b></span> </label> <input class="form-control" type="text" value="{{$projectDetails->strProjectName}}" disabled>
 
                 </div>
                 <hr class="bg bg-info"><br>

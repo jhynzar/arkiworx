@@ -224,6 +224,11 @@ class ProjectProgressController extends Controller
     }
 
     public function viewSchedule($id){
+        $projectDetails = DB::table('tblproject')
+                        ->where('tblproject.intProjectId','=',$id)
+                        ->first();
+
+
         $allProjectSchedules = DB::table('tblschedules')
                     ->join('tblworksubcategory','tblschedules.intWorkSubCategoryId','=','tblworksubcategory.intWorkSubCategoryId')
                     ->where('tblschedules.intProjectId','=',$id)
@@ -248,7 +253,7 @@ class ProjectProgressController extends Controller
         
 
         //dd($allProjectSchedulesWithPhases);
-        return view ('Engineer/project-progress-schedule',compact(['allProjectSchedulesWithPhases']));
+        return view ('Engineer/project-progress-schedule',compact(['allProjectSchedulesWithPhases','projectDetails']));
     }
 
     public function saveSchedule($id){
