@@ -380,7 +380,7 @@
                                                             <th style="background-color: coral;  color: black !important">Estimated Cost</th>
                                                             <th class=" text-center" style="background-color: lightgreen; color: black !important">Qty</th>
                                                             <th style="background-color: lightgreen; color: black !important">Unit</th>
-                                                            <th class=" text-center" style="background-color: lightgreen; color: black !important">Actuals</th>
+                                                            <th class=" text-center" style="background-color: lightgreen; color: black !important">Actual Cost</th>
                                                            
 
                                                         </tr>
@@ -592,7 +592,8 @@
                                                     <th class="text-center"></th>
 
 
-                                                    <th class="text-center text-primary"> {{number_format($totalEstimatedCost,2)}}</th>
+                                                    <th class="text-right text-primary"> {{number_format($totalEstimatedCost,2)}}</th>
+                                                    <th></th>
                                                     <th class="text-center text-primary">{{number_format($totalActualsCost,2)}}</th>
 
 

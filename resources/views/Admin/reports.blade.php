@@ -453,10 +453,10 @@
    <!-- Hover effect table starts -->
                     <div class="card" style="margin-left: 20px">
                       
-                        <div class="card-block">
+                        <div class="card-block ">
                             <div class="row">
                                 <div class="col-sm-12 table-responsive">
-                                    <table class="table table-hover text-center">
+                                    <table class="table table-hover text-center ">
                                         <thead>
                                         <tr class="text text-primary "  >
                                             <th style="width: 400px">Report Name</th>
