@@ -612,7 +612,7 @@
            
            
              <br>
-            <div class="gantt-target scroll" style="width: 3000px; height 900px !important"></div>
+            <div class="container-fluid gantt-target my-5"></div>
         </div>
         <!-- FRAPPE END -->
 

@@ -1,3 +1,5 @@
+
+
 .gantt .grid-background {
   fill: none; }
 
@@ -16,13 +18,13 @@
   stroke: #ebeff2; }
 
 .gantt .tick {
-  stroke: #e0e0e0;
+  stroke: black;
   stroke-width: 0.2; }
   .gantt .tick.thick {
     stroke-width: 0.4; }
 
 .gantt .today-highlight {
-  fill: #fcf8e3;
+  fill: #a39f8a;
   opacity: 0.5; }
 
 .gantt .arrow {
@@ -97,6 +99,9 @@
 
 .gantt-container {
   position: relative;
+  height: 25rem; /* Mj Added */
+  width: 50rem; /* Mj Added */
+  margin: 5rem 0; /* Mj Added */
   overflow: auto;
   font-size: 12px; }
   .gantt-container .popup-wrapper {

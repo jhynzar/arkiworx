@@ -1292,13 +1292,47 @@ var Gantt = (function () {
             this.map_arrows_on_bars();
             this.set_width();
             this.set_scroll_position();
+
+            //Mj added
+            this.setup_date_header_scroll();
+            //Mj added end
         }
+
+        //Mj added
+        setup_date_header_scroll(){
+            $.on(this.$container,'scroll',function(){
+                console.log(this.scrollTop);
+                var headerChildNodes = document.getElementById('date-header-scroll').children;
+
+                for(var i = 0; i < headerChildNodes.length ; i++){
+                    var child = headerChildNodes[i];
+                    var originalY = Number(child.getAttribute('origY'));
+                    var newY = originalY + this.scrollTop;
+                    //set attribute
+                    child.setAttribute('y',newY);
+                    //console.log(newY);
+                }
+            });
+        }
+        //Mj added end
 
         setup_layers() {
             this.layers = {};
-            const layers = ['grid', 'date', 'arrow', 'progress', 'bar', 'details'];
+            const layers = ['grid', 'date', 'arrow', 'progress', 'bar', 'details','dateHeaderScroll'];//Mj Added dateHeaderScroll
             // make group layers
             for (let layer of layers) {
+
+                //Mj added
+                if(layer === 'dateHeaderScroll'){
+                    this.layers[layer] = createSVG('g', {
+                        class: layer,
+                        id: 'date-header-scroll',
+                        append_to: this.$svg
+                    });
+                    continue;
+                }
+                //Mj Added end
+
                 this.layers[layer] = createSVG('g', {
                     class: layer,
                     append_to: this.$svg
@@ -1384,6 +1418,17 @@ var Gantt = (function () {
                 class: 'grid-header',
                 append_to: this.layers.grid
             });
+
+            //Mj Added
+            createSVG('rect', {
+                x: 0,
+                y: 0,
+                width: header_width,
+                height: header_height,
+                class: 'grid-header',
+                append_to: this.layers.dateHeaderScroll
+            });
+            //Mj added end
         }
 
         make_grid_ticks() {
@@ -1483,6 +1528,37 @@ var Gantt = (function () {
                     }
                 }
             }
+
+            //Mj Added
+            for (let date of this.get_dates_to_draw()) {
+                createSVG('text', {
+                    x: date.lower_x,
+                    y: date.lower_y,
+                    origY: date.lower_y,
+                    innerHTML: date.lower_text,
+                    class: 'lower-text',
+                    append_to: this.layers.dateHeaderScroll
+                });
+
+                if (date.upper_text) {
+                    const $upper_text = createSVG('text', {
+                        x: date.upper_x,
+                        y: date.upper_y,
+                        origY: date.upper_y,
+                        innerHTML: date.upper_text,
+                        class: 'upper-text',
+                        append_to: this.layers.dateHeaderScroll
+                    });
+
+                    // remove out-of-bound dates
+                    if (
+                        $upper_text.getBBox().x2 > this.layers.grid.getBBox().width
+                    ) {
+                        $upper_text.remove();
+                    }
+                }
+            }
+            //Mj added end
         }
 
         get_dates_to_draw() {
