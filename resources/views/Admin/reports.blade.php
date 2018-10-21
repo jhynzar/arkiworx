@@ -529,15 +529,19 @@
                                              <tr style="height: 50px">
                                             <td class="text-left text-secondary" ><h4><span class="bg bg-warning">&nbsp;&nbsp;</span> &nbsp; Materials Pricelist Report</h4></td>
                                                     <td>
-                                                        <select class="form-group form-control form-inline text text-primary" style="height: 40px">
-                                                            <option value="" disabled selected>Date As of: </option>
-                                                            <option value="">17/10/28</option>
-                                                            <option value="">20/10/28</option>
-                                                        </select>
-                                                        
-                                                  </td>
+                                                    <input onchange="{
+                                                        //console.log(this.value);
+                                                        var link = '/Admin/Reports/Materials-Pricelist/'+this.value;
+                                                        //$('#reports').prop('href',link);
+                                                        $('#materialsPricelistReportBtn').printPage({
+                                                            url: link,
+                                                            attr: 'href',
+                                                            message: 'Your document is being created'
+                                                        });
+                                                    }" type="date" name="date" class="form-control" style="width: 200px">
+                                                    </td>
                                             <td> 
-                                                <button type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
+                                                <button id='materialsPricelistReportBtn' type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
                                                     <i class="fa fa-print" ></i>Print</button>
                 
                                             </td>
@@ -663,6 +667,10 @@
         });
 
     </script>
+
+    <!-- printPage -->
+    <script src="/js/jQuery-printPage/jquery.printPage.js"></script>
+    
 </body>
 
 </html>

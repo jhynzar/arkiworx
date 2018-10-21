@@ -49,10 +49,6 @@ Route::middleware(['auth'])->group(function(){
         Route::get('Admin/Profile', function(){ 
             return view('Admin/profile');
         });
-        
-        Route::get('Admin/Reports',function(){
-            return view('admin/reports');
-        });
 
         Route::get('Admin/Account-Settings', function(){
             return view('Admin/accountsettings');
@@ -91,6 +87,17 @@ Route::middleware(['auth'])->group(function(){
         Route::get('Admin/Projects/{id}/Cost-Summary/Reports','ProjectsController@viewCostSummaryReports'); //view cost summary reports
 
         Route::get('Admin/Projects/{id}/Progress-Schedule','ProjectsController@viewProgressSchedule'); //view progress
+
+
+        //reports
+
+        
+        
+        Route::get('Admin/Reports','ReportsController@index');
+        
+        Route::get('Admin/Reports/Materials-Pricelist/{date}','ReportsController@materialsPricelistReport');
+
+        //reports end
 
         Route::get('Admin/Project-Details', function(){
             return view ('Admin/projectdetails');
@@ -164,8 +171,6 @@ Route::middleware(['auth'])->group(function(){
         Route::post('Engineer/Materials-Pricelist/Create', 'MaterialsController@store');
 
         Route::patch('Engineer/Materials-Pricelist/{id}','MaterialsController@update');
-
-        Route::get('Engineer/Materials-Pricelist/Reports/{date}','MaterialsController@reports');
 
         Route::get('Engineer/Project-Progress', 'ProjectProgressController@index');
 
