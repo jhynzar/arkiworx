@@ -405,7 +405,7 @@
                                                             <th class=" text-center" style="background-color: lightgreen; color: black !important">Qty</th>
                                                             <th style="background-color: lightgreen; color: black !important">Unit</th>
                                                             <th class=" text-center" style="background-color: lightgreen; color: black !important">Actuals</th>
-
+                                                           
 
                                                         </tr>
                                                     </thead>
@@ -462,6 +462,7 @@
                                                                 @endif 
                                                             @endforeach
                                                         @endforeach
+                                                        
 
 
 
