@@ -99,6 +99,8 @@ Route::middleware(['auth'])->group(function(){
         
         Route::get('Admin/Reports/Materials-Pricelist/{date}','ReportsController@materialsPricelistReport');
 
+        Route::get('Admin/Reports/Project-Plan','ReportsController@projectPlanReports');
+
        
 
         //reports end

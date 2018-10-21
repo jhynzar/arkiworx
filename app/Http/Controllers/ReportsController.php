@@ -659,7 +659,93 @@ class ReportsController extends Controller
     }
 
     public function projectPlanReports(){
-        //todo
+        //Projects without schedules
+        $projectsWithoutSchedulesIds = DB::table('tblproject')
+                                ->select('tblproject.intProjectId')
+                                ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                                ->leftJoin('tblschedules','tblproject.intProjectId','=','tblschedules.intProjectId')
+                                ->where('tblschedules.intProjectId','=',null)
+                                ->where('tblproject.strProjectStatus','=','on going')
+                                ->where('tblproject.intActive','=',1)
+                                ->get();
+
+        $pendingProjectSchedules = array();
+        foreach($projectsWithoutSchedulesIds as $projectId){
+            $projectDetails = DB::table('tblproject')
+                            ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                            ->where('tblproject.intProjectId','=',$projectId->intProjectId)
+                            ->where('tblproject.intActive','=',1)
+                            ->first();
+
+            $projectRequirementsWorkSubCategoryIds = DB::select("
+                SELECT tblprojectrequirements.intWorkSubCategoryId
+                FROM tblprojectrequirements
+                WHERE tblprojectrequirements.intProjectId = :id
+                GROUP BY tblprojectrequirements.intWorkSubCategoryId
+            ",[$projectId->intProjectId]);
+
+            $materialsWorkSubCategoryIds = DB::select("
+                SELECT tblmaterialestimates.intWorkSubCategoryId
+                FROM tblmaterialestimates
+                WHERE tblmaterialestimates.intProjectId = :id
+                GROUP BY tblmaterialestimates.intWorkSubCategoryId
+            ",[$projectId->intProjectId]);
+            
+            $projectWorkSubCategoryIds = array_merge($projectRequirementsWorkSubCategoryIds,$materialsWorkSubCategoryIds);
+
+            $projectWorkSubCategories = array();
+            foreach($projectWorkSubCategoryIds as $workSubCategoryId){
+                $workSubCategoryDetails = DB::table('tblworksubcategory')
+                                        ->where('tblworksubcategory.intWorkSubCategoryId','=',$workSubCategoryId->intWorkSubCategoryId)
+                                        ->first();
+                
+                $workSubCategoryPhases = DB::table('tblworksubcategoryphases')
+                                        ->where('tblworksubcategoryphases.intWorkSubCategoryId','=',$workSubCategoryId->intWorkSubCategoryId)
+                                        ->get()
+                                        ->toArray();
+
+                array_push($projectWorkSubCategories,(object) [
+                    'workSubCategoryDetails' => $workSubCategoryDetails,
+                    'workSubCategoryPhases' => $workSubCategoryPhases,
+                ]);
+            }
+
+            $project = (object) [
+                'projectDetails' => $projectDetails,
+                'projectWorkSubCategories' => $projectWorkSubCategories
+            ];
+
+            array_push($pendingProjectSchedules,$project);
+        }
+        //dd($pendingProjectSchedules);
+
+        //Projects with schedules
+
+        $projectsWithSchedulesIds = DB::select("
+            SELECT DISTINCT tblproject.intProjectId
+            FROM tblproject
+            LEFT JOIN tblschedules ON tblproject.intProjectId = tblschedules.intProjectId
+            WHERE tblschedules.intProjectId IS NOT NULL AND tblproject.strProjectStatus = 'on going' AND tblproject.intActive = 1
+        ");
+
+        $finishedProjectSchedules = array();
+        foreach($projectsWithSchedulesIds as $projectId){
+            $projectDetails = DB::table('tblproject')
+                            ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                            ->where('tblproject.intProjectId','=',$projectId->intProjectId)
+                            ->where('tblproject.intActive','=',1)
+                            ->first();
+
+            array_push($finishedProjectSchedules,$projectDetails);
+        }
+
+        //dd($pendingProjectSchedules);
+
+        //pass to view
+        return view ('Admin/reports-proj-plan',compact(
+            'pendingProjectSchedules',
+            'finishedProjectSchedules'
+        ));
     }
 
     public function projectScheduleReport($id){
