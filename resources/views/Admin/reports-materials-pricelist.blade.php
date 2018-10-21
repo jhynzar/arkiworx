@@ -11,8 +11,11 @@
 <body>
     <div class="container">
         <div class="card-body">
-            <h2 class="text-center my-5">Materials Pricelist Report</h2>
-            <h6>Price as of: {{$date}}</h6>
+            <div class="my-5">
+                <h1 class="text-center display-4"><strong>Materials Pricelist Report</strong></h1>
+                <h4 class="text-center">{{date('F d, Y')}}</h4>
+            </div>
+            <h5>Price as of: {{date_format(date_create($date),'F d, Y')}}</h5>
             <table class="table">
                 <thead>
                     <tr>

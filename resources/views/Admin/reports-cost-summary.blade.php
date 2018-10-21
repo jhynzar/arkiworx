@@ -21,8 +21,9 @@
         <div class="card-body">
             <div class="my-3">
                 <h1 class="text-center display-4"><strong>Cost Summary Report</strong></h1>
-                <h2 class="text-center">{{$project->strProjectName}}</h2>
-            </div
+                <h1 class="text-center">{{$project->strProjectName}}</h1>
+                <h4 class="text-center">{{date('F d, Y')}}</h4>
+            </div>
 
             <!-- estimate - actual(null) -->
             <div class="m-5">
