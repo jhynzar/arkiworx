@@ -916,6 +916,81 @@
 
 @section('script')
     <script>
+        //setup date template values
+        window.onload = function() {
+            var pendingProjectSchedules = {!! json_encode($pendingProjectSchedules) !!};
+            console.log(pendingProjectSchedules);
+
+            for(var projectIndex = 0; projectIndex < pendingProjectSchedules.length; projectIndex++){
+
+                var projectWorkSubCategories = pendingProjectSchedules[projectIndex].projectWorkSubCategories;
+
+                for(var workSubCategoryIndex = 0 ; workSubCategoryIndex < projectWorkSubCategories.length; workSubCategoryIndex++){
+                    var workSubCategoryPhases = projectWorkSubCategories[workSubCategoryIndex].workSubCategoryPhases;
+
+                    for(var phaseIndex = 0; phaseIndex < workSubCategoryPhases.length; phaseIndex++){
+                        var phase = workSubCategoryPhases[phaseIndex];
+                        var thisStartDateNode = $('#createProjectSchedule'+projectIndex+' #subCategory'+workSubCategoryIndex+'phase'+phaseIndex+'startDate');
+                        var thisEndDateNode = $('#createProjectSchedule'+projectIndex+' #subCategory'+workSubCategoryIndex+'phase'+phaseIndex+'endDate');
+                        var prevStartDateNode;
+                        var today = new Date();
+
+                        //preparation time allowance [3 days]
+                        today.setDate(today.getDate() + 3);
+
+                        console.log('phase: ',phase);
+                        //$('#createProjectSchedule'+projectIndex+' #subCategory'+workSubCategoryIndex+'phase'+phaseIndex+'startDate').attr('hidden',true);
+
+
+                        //----calculating date logic
+                        var startDate = new Date(today.getTime());
+                        
+                        //if it is not the first phase
+                        if(phaseIndex !== 0){
+                            prevStartDateNode =  $('#createProjectSchedule'+projectIndex+' #subCategory'+workSubCategoryIndex+'phase'+(phaseIndex-1)+'endDate');
+                            startDate = new Date(prevStartDateNode.val());
+                            startDate.setDate(startDate.getDate() + 1);
+                        }
+
+                        var endDate = new Date(startDate.getTime());
+                        endDate.setDate(endDate.getDate() + phase.intDays);
+
+                        //----calculating date logic end
+                        
+                        //formatting date
+
+                        //startDate formatting
+                        var yyyyStart = startDate.getFullYear();
+                        var mmStart = startDate.getMonth() + 1; //January is 0
+                        var ddStart = startDate.getDate();
+
+                        mmStart = mmStart < 10 ? '0' + mmStart : mmStart;
+                        ddStart = ddStart < 10 ? '0' + ddStart : ddStart;
+                        var startDateString =  yyyyStart + '-' + mmStart + '-' + ddStart;
+
+                        //endDate formatting
+                        var yyyyEnd = endDate.getFullYear();
+                        var mmEnd = endDate.getMonth() + 1; //January is 0
+                        var ddEnd = endDate.getDate();
+
+                        mmEnd = mmEnd < 10 ? '0' + mmEnd : mmEnd;
+                        ddEnd = ddEnd < 10 ? '0' + ddEnd : ddEnd;
+                        var endDateString =  yyyyEnd + '-' + mmEnd + '-' + ddEnd;
+                        
+                        
+                        //assigning values to input
+                        //startDate
+                        thisStartDateNode.val(startDateString);
+                        thisStartDateNode.trigger('change');
+                        //endDate
+                        thisEndDateNode.val(endDateString);
+                        thisEndDateNode.trigger('change');
+                    }
+                }
+            }
+        };
+
+        console.log('lol');
 
         function onDependencyChange(selectTag,projectKey,subCategoryKey){
 
