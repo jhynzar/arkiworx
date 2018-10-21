@@ -549,7 +549,7 @@
                                                             attr: 'href',
                                                             message: 'Your document is being created'
                                                         });
-                                                    }" type="date" value="{{date('Y-m-d')}}" required name="date" class="form-control" style="width: 200px">
+                                                    }" type="date" required name="date" class="form-control" style="width: 200px">
                                                     </td>
                                             <td> 
                                                 <button id='materialsPricelistReportBtn' type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
