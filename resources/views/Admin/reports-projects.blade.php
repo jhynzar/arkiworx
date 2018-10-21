@@ -14,6 +14,11 @@
     <div class="container">
         <div class="card-body">
 
+            <div class="my-3">
+                <h1 class="text-center display-4"><strong>Project Reports</strong></h1>
+                <h4 class="text-center">{{date('F d, Y')}}</h4>
+            </div>
+            
             <div class="m-5">
                     <h6 class="text text-default"> <u>Highest Paying Projects</u> </h6>
                     <table class="table table-bordered">
@@ -101,7 +106,7 @@
             </div>
 
             <div class="m-5">
-                    <h6 class="text text-default"> <u>Finished Projects - Year</u> </h6>
+                    <h6 class="text text-default"> <u>Finished Projects - Year of {{date('Y')}}</u> </h6>
                     <table class="table table-bordered">
                         <thead style="background-color: #000000">
                             <tr class="text text-primary">
@@ -128,7 +133,7 @@
 
 
             <div class="m-5">
-                    <h6 class="text text-default"> <u>Finished Projects - Month</u> </h6>
+                    <h6 class="text text-default"> <u>Finished Projects - Month of {{date('F Y')}}</u> </h6>
                     <table class="table table-bordered">
                         <thead style="background-color: #000000">
                             <tr class="text text-primary">
