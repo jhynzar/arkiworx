@@ -919,7 +919,7 @@
         //setup date template values
         window.onload = function() {
             var pendingProjectSchedules = {!! json_encode($pendingProjectSchedules) !!};
-            console.log(pendingProjectSchedules);
+            //console.log(pendingProjectSchedules);
 
             for(var projectIndex = 0; projectIndex < pendingProjectSchedules.length; projectIndex++){
 
@@ -938,7 +938,7 @@
                         //preparation time allowance [3 days]
                         today.setDate(today.getDate() + 3);
 
-                        console.log('phase: ',phase);
+                        //console.log('phase: ',phase);
                         //$('#createProjectSchedule'+projectIndex+' #subCategory'+workSubCategoryIndex+'phase'+phaseIndex+'startDate').attr('hidden',true);
 
 
@@ -989,9 +989,7 @@
                 }
             }
         };
-
-        console.log('lol');
-
+        
         function onDependencyChange(selectTag,projectKey,subCategoryKey){
 
             var fromDate = $('#createProjectSchedule'+projectKey+' #subCategory'+selectTag.value+'endDate');
