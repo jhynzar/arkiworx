@@ -92,8 +92,4 @@ class EngineerProjectsController extends Controller
     {
         //
     }
-
-    public function reports(){
-        return view('Engineer/reports-engi-projects');
-    }
 }
