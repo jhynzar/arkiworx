@@ -470,7 +470,7 @@
                                             <td class="text-left text-secondary " ><h4><span class="bg bg-primary">&nbsp;&nbsp;</span> &nbsp; Project Reports</h4></td>
                                             <td></td>
                                             <td> 
-                                                <button type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
+                                                <button id="projectReportsBtn" type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
                                                     <i class="fa fa-print" ></i>Print</button>
                 
                                             </td>
@@ -670,6 +670,14 @@
 
     <!-- printPage -->
     <script src="/js/jQuery-printPage/jquery.printPage.js"></script>
+
+    <script>
+        $("#projectReportsBtn").printPage({
+            url: "/Admin/Reports/Project",
+            attr: "href",
+            message: "Your document is being created"
+        });
+    </script>
     
 </body>
 

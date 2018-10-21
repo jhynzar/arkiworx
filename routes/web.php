@@ -70,8 +70,6 @@ Route::middleware(['auth'])->group(function(){
 
         Route::post('Admin/Projects','ProjectsController@store');
 
-        Route::get('Admin/Projects/Reports','ProjectsController@reports');
-
         Route::patch('Admin/Projects/{id}','ProjectsController@update'); //change from approval to finished
 
         Route::post('Admin/Projects/{id}/Delete','ProjectsController@delete'); //change from approval to finished
@@ -94,6 +92,8 @@ Route::middleware(['auth'])->group(function(){
         
         
         Route::get('Admin/Reports','ReportsController@index');
+
+        Route::get('Admin/Reports/Project','ReportsController@projectReports');
         
         Route::get('Admin/Reports/Materials-Pricelist/{date}','ReportsController@materialsPricelistReport');
 
