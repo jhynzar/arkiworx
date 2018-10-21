@@ -19,7 +19,10 @@
 <body>
     <div class="container">
         <div class="card-body">
-
+            <div class="my-3">
+                <h1 class="text-center display-4"><strong>Cost Summary Report</strong></h1>
+                <h2 class="text-center">{{$project->strProjectName}}</h2>
+            </div
 
             <!-- estimate - actual(null) -->
             <div class="m-5">

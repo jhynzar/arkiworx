@@ -479,14 +479,25 @@
                                             
                                               <tr style="height: 50px">
                                             <td class="text-left text-secondary" ><h4><span class="bg bg-warning">&nbsp;&nbsp;</span> &nbsp; Cost Summary Report</h4></td>
-                                                    <td> <select class="form-group form-control text text-primary" style="height: 40px">
-                                                        <option value="" disabled selected>Select project</option>
-                                                        <option value=""> Project 1</option>
-                                                        <option value=""> Project 2</option>
+                                                    <td>
+                                                        <select class="form-group form-control text text-primary" style="height: 40px"
+                                                        onchange="{
+                                                            var link = '/Admin/Reports/Cost-Summary/'+this.value;
+                                                            //$('#reports').prop('href',link);
+                                                            $('#costSummaryReportBtn').printPage({
+                                                                url: link,
+                                                                attr: 'href',
+                                                                message: 'Your document is being created'
+                                                            });
+                                                        }">
+                                                            <option disabled selected>Select project</option>
+                                                            @foreach($costSummaryReportProjectChoices as $project)
+                                                            <option value="{{$project->intProjectId}}">{{$project->strProjectName}}</option>
+                                                            @endforeach
                                                         </select>
                                                   </td>
                                             <td> 
-                                                <button type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
+                                                <button id="costSummaryReportBtn" type="button"  class="btn btn-outline-warning waves-effect waves-light pull-center" style="width: 130px" >
                                                     <i class="fa fa-print" ></i>Print</button>
                 
                                             </td>

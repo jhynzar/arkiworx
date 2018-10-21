@@ -94,8 +94,12 @@ Route::middleware(['auth'])->group(function(){
         Route::get('Admin/Reports','ReportsController@index');
 
         Route::get('Admin/Reports/Project','ReportsController@projectReports');
+
+        Route::get('Admin/Reports/Cost-Summary/{id}','ReportsController@costSummaryReport');
         
         Route::get('Admin/Reports/Materials-Pricelist/{date}','ReportsController@materialsPricelistReport');
+
+       
 
         //reports end
 
