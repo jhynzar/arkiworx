@@ -23,6 +23,15 @@ class ReportsController extends Controller
         ]));
     }
 
+    //for sorting projectReports
+    public function highestProjectTotalCostSort($a , $b){
+        if($a->projectTotalCost == $b->projectTotalCost){
+            return 0;
+        }
+
+        return ($a->projectTotalCost < $b->projectTotalCost) ? 1 : -1;
+    }
+
     public function projectReports(){
         //====================HIGHEST PAYING
         $allProjects = DB::table('tblproject')
