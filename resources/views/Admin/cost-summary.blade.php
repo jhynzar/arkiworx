@@ -321,7 +321,7 @@
 
                         </ol>
 
-                        <button id="reports" type="button" class="btn btn-primary waves-effect waves-light">
+                        <button id="reports" type="button" class="btn btn-primary waves-effect waves-light" style="margin-left: 900px">
                             <i class="icon-eye"> </i>Show Reports</button>
 
 

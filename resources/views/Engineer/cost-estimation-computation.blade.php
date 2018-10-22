@@ -5713,6 +5713,20 @@
                                     <table class="table m-b-0 photo-table">
 
                                         <thead>
+                                              <tr class="text-uppercase">
+                                                <th class="text-left text-secondary">General Requirements Total Cost:</th>
+
+                                                <th class="text-center text-primary" id=""></th>
+
+                                            </tr>
+                                            
+                                             <tr class="text-uppercase">
+                                                <th class="text-left text-secondary">Materials Total Cost:</th>
+
+                                                <th class="text-center text-primary" id=""></th>
+
+                                            </tr>
+                                            
                                             <tr class="text-uppercase">
                                                 <th class="text-left text-secondary">Overall Total Cost:</th>
 
