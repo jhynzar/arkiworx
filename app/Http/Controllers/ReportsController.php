@@ -16,10 +16,31 @@ class ReportsController extends Controller
                         ->get();
         //================Cost Summary Report End
 
+        //================Proj Sched Report
+
+        $projectsWithSchedulesIds = DB::select("
+            SELECT DISTINCT tblproject.intProjectId
+            FROM tblproject
+            LEFT JOIN tblschedules ON tblproject.intProjectId = tblschedules.intProjectId
+            WHERE tblschedules.intProjectId IS NOT NULL AND tblproject.intActive = 1
+        ");
+
+        $projSchedReportProjectChoices = array();
+        foreach($projectsWithSchedulesIds as $projectId){
+            $projectDetails = DB::table('tblproject')
+                            ->where('tblproject.intProjectId','=',$projectId->intProjectId)
+                            ->where('tblproject.intActive','=',1)
+                            ->first();
+
+            array_push($projSchedReportProjectChoices,$projectDetails);
+        }
+
+        //================Proj Sched Report End
 
 
         return view('Admin/reports',compact([
-            'costSummaryReportProjectChoices'
+            'costSummaryReportProjectChoices',
+            'projSchedReportProjectChoices'
         ]));
     }
 
@@ -758,7 +779,104 @@ class ReportsController extends Controller
     }
 
     public function projectScheduleReport($id){
-        //todo
+        $project = DB::table('tblproject')
+                        ->where('tblproject.intProjectId','=',$id)
+                        ->first();
+
+
+        $allProjectSchedules = DB::table('tblschedules')
+                    ->join('tblworksubcategory','tblschedules.intWorkSubCategoryId','=','tblworksubcategory.intWorkSubCategoryId')
+                    ->where('tblschedules.intProjectId','=',$id)
+                    ->get();
+
+        $allProjectSchedulesWithPhases = array();
+        foreach($allProjectSchedules as $projectSchedule){
+            $projectPhases = DB::table('tblschedulesphases')
+                    ->join('tblworksubcategoryphases','tblworksubcategoryphases.intWorkSubCategoryPhasesId','=','tblschedulesphases.intWorkSubCategoryPhasesId')
+                    ->where('tblschedulesphases.intScheduleId','=',$projectSchedule->intScheduleId)
+                    ->get()
+                    ->toArray();
+
+            //progress compute
+            $overallProgress = 0;
+            foreach($projectPhases as $phase){
+                //overall progress accumulative adding
+                $overallProgress += $phase->intProgress;
+
+                //delay computation
+                if($phase->dtmActualStart != null){
+                    $estimatedStart = new \DateTime($phase->dtmEstimatedStart);
+                    $actualStart = new \DateTime($phase->dtmActualStart);
+
+                    $phase->delayDays = ($actualStart > $estimatedStart) ? date_diff($estimatedStart,$actualStart)->days : 0;
+                } else {
+                    $phase->delayDays = 0;
+                }
+
+                //overdue computation
+                if(
+                    $phase->dtmActualStart != null &&
+                    $phase->dtmActualEnd != null
+                ){
+                    $estimatedEnd = new \DateTime($phase->dtmEstimatedEnd);
+                    $actualEnd = new \DateTime($phase->dtmActualEnd);
+
+                    $scheduleEstimatedDaysRange = date_diff($estimatedStart,$estimatedEnd)->days;
+                    $scheduleActualDaysRange = date_diff($actualStart,$actualEnd)->days;
+
+                    $phase->overdueDays = $scheduleActualDaysRange - $scheduleEstimatedDaysRange;
+                } else {
+                    $phase->overdueDays = 0;
+                }
+                
+            }
+            //overall progress division by count of progress to get average
+            $overallProgress = $overallProgress/count($projectPhases);
+            $projectSchedule->overAllProgress = $overallProgress;
+            
+            //schedule
+            //delay computation
+            if($projectSchedule->dtmActualStart != null){
+                $estimatedStart = new \DateTime($projectSchedule->dtmEstimatedStart);
+                $actualStart = new \DateTime($projectSchedule->dtmActualStart);
+    
+                $projectSchedule->delayDays = ($actualStart > $estimatedStart) ? date_diff($estimatedStart,$actualStart)->days : 0;
+            } else {
+                $projectSchedule->delayDays = 0;
+            }
+           
+
+            //overdue computation
+            if(
+                $projectSchedule->dtmActualStart != null &&
+                $projectSchedule->dtmActualEnd != null
+            ){
+                $estimatedEnd = new \DateTime($projectSchedule->dtmEstimatedEnd);
+                $actualEnd = new \DateTime($projectSchedule->dtmActualEnd);
+
+                $scheduleEstimatedDaysRange = date_diff($estimatedStart,$estimatedEnd)->days;
+                $scheduleActualDaysRange = date_diff($actualStart,$actualEnd)->days;
+
+                $projectSchedule->overdueDays = $scheduleActualDaysRange - $scheduleEstimatedDaysRange;
+            } else {
+                $projectSchedule->overdueDays = 0;
+            }
+            
+
+
+
+            $projectScheduleWithPhases = (object) [
+                'scheduleDetails' => $projectSchedule,
+                'schedulePhases' => $projectPhases,
+            ];
+
+            array_push($allProjectSchedulesWithPhases, $projectScheduleWithPhases);
+            
+        }
+        
+
+        //dd($allProjectSchedulesWithPhases);
+        return view ('Admin/reports-proj-sched',compact(['allProjectSchedulesWithPhases','project']));
     }
 
     public function materialsPricelistReport($date){

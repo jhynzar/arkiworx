@@ -101,6 +101,8 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('Admin/Reports/Project-Plan','ReportsController@projectPlanReports');
 
+        Route::get('Admin/Reports/Project-Sched/{id}','ReportsController@projectScheduleReport');
+
        
 
         //reports end
