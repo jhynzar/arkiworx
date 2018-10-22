@@ -368,7 +368,7 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
                                     <div class="card">
-                                        <div class="card-block">
+                                       
                                             <div class="table-responsive ">
                                                 <table class="table m-b-0 photo-table">
                                                     <thead>
@@ -568,7 +568,7 @@
 
 
 
-                                    </div>
+                               
                                 </div>
 
 
