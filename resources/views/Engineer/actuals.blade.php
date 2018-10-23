@@ -1377,25 +1377,19 @@
                                                                     <td class="text-center">{{$projectRequirement->strDesc}}
 
                                                                     </td>
-                                                                    <td class="text-center">-</td>
-                                                                    <td class="text-center">-</td>
-                                                                    <td class="text-center">{{number_format($projectRequirement->decActualPrice,2)}}</td>
-                                                                    <td>
+                                                                    <td class="text-left">-</td>
+                                                                    <td class="text-left">-</td>
+                                                                    <td class="text-left">{{number_format($projectRequirement->decActualPrice,2)}}</td>
+                                                                 <td class="text-left"></td>
+                                                                    <td class="pull-center text-center">
                                                                         <button data-toggle="modal" data-target="#updateCustomActual{{$projectRequirement->intRequirementId}}" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
 
                                                                     </td>
 
+                                                                  <td class="text-left"></td>
+
+
                                                                   
-
-
-                                                                    <td>
-
-                                                                        <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
-                                                                            <i class="icofont icofont-ui-delete"> </i>
-                                                                        </button>
-
-
-                                                                    </td>
                                                                 </tr>
 
 
@@ -1508,14 +1502,7 @@
                                                                     </td>
 
 
-                                                                    <td>
-
-                                                                        <button data-toggle="modal" data-target="#deleteActuals" class="btn btn-danger btn-sm " title="Delete">
-                                                                            <i class="icofont icofont-ui-delete"> </i>
-                                                                        </button>
-
-
-                                                                    </td>
+                                                                
                                                                 </tr>
 
                                                                 
