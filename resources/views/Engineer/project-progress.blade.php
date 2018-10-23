@@ -928,6 +928,15 @@
                 for(var workSubCategoryIndex = 0 ; workSubCategoryIndex < projectWorkSubCategories.length; workSubCategoryIndex++){
                     var workSubCategoryPhases = projectWorkSubCategories[workSubCategoryIndex].workSubCategoryPhases;
 
+
+
+                    //dependency logic
+                    //if it is not the first category
+                    if(workSubCategoryIndex != 0){
+                        $('#subCategory'+workSubCategoryIndex+'dependency').val(workSubCategoryIndex-1);
+                        $('#subCategory'+workSubCategoryIndex+'dependency').trigger('change');
+                    }
+
                     for(var phaseIndex = 0; phaseIndex < workSubCategoryPhases.length; phaseIndex++){
                         var phase = workSubCategoryPhases[phaseIndex];
                         var thisStartDateNode = $('#createProjectSchedule'+projectIndex+' #subCategory'+workSubCategoryIndex+'phase'+phaseIndex+'startDate');
@@ -943,7 +952,16 @@
 
 
                         //----calculating date logic
-                        var startDate = new Date(today.getTime());
+                        
+
+                        var startDate = new Date(thisStartDateNode.val());
+                        console.log(startDate);
+                        //if it is the first subcategory and first phase
+                        if(workSubCategoryIndex == 0 && phaseIndex == 0){
+                            startDate = new Date(today.getTime());
+                        }
+
+                        
                         
                         //if it is not the first phase
                         if(phaseIndex !== 0){
