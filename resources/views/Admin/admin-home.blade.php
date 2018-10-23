@@ -331,7 +331,7 @@
                     <tbody style="background-color:white">
                         @foreach($display->pendingProjects as $project)
                             <tr>
-                                <td>{{$project->strProjectName}}</td>
+                                <th>{{$project->strProjectName}}</th>
                                 <td>{{$project->strClientName}}</td>
                             </tr>
                         @endforeach
@@ -364,7 +364,7 @@
                     <tbody style="background-color:white">
                         @foreach($display->ongoingProjects as $project)
                             <tr>
-                                <td>{{$project->strProjectName}}</td>
+                                <th>{{$project->strProjectName}}</th>
                                 <td>{{$project->strClientName}}</td>
                             </tr>
                         @endforeach
@@ -396,7 +396,7 @@
                     <tbody style="background-color:white">
                         @foreach($display->finishedProjects as $project)
                             <tr>
-                                <td>{{$project->strProjectName}}</td>
+                                <th>{{$project->strProjectName}}</th>
                                 <td>{{$project->strClientName}}</td>
                             </tr>
                         @endforeach
@@ -430,7 +430,7 @@
                     <tbody style="background-color:white">
                         @foreach($display->highestPayingProjects as $project)
                             <tr>
-                                <td>{{$project->projectDetails->strProjectName}}</td>
+                                <th>{{$project->projectDetails->strProjectName}}</th>
                                 <td>{{$project->projectDetails->strClientName}}</td>
                                 <td>P {{number_format($project->projectTotalCost,2)}}</td>
                             </tr>
