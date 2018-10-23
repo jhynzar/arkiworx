@@ -49,8 +49,8 @@
                                 <td>{{$schedule->scheduleDetails->dtmEstimatedEnd}}</td>
                                 <td>{{$schedule->scheduleDetails->dtmActualStart}}</td>
                                 <td>{{$schedule->scheduleDetails->dtmActualEnd}}</td>
-                                <td></td>
-                                <td></td>
+                                <th>{{$schedule->scheduleDetails->delayDays}}</th>
+                                <th>{{$schedule->scheduleDetails->overdueDays}}</th>
                             </tr>
 
                                 @foreach($schedule->schedulePhases as $phase)
