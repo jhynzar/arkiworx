@@ -9,6 +9,7 @@ class AdminHomeController extends Controller
 {
     //
     public function index(){
+        /*
         $pendingProjectCostEstimationsCount = 
                     DB::table('tblproject')
                     ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
@@ -77,8 +78,90 @@ class AdminHomeController extends Controller
 
         //dd($display);
 
+        */
+
+        $pendingProjects = DB::table('tblproject')
+                        ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                        ->where(function ($query){
+                            $query->where('tblproject.strProjectStatus','=','pending')
+                                ->orWhere('tblproject.strProjectStatus','=','for approval');
+                        })
+                        ->where('tblproject.intActive','=',1)
+                        ->get();
+
+        $ongoingProjects = DB::table('tblproject')
+                        ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                        ->where('tblproject.strProjectStatus','=','on going')
+                        ->where('tblproject.intActive','=',1)
+                        ->get();
+
+                        
+        //don't check if active, because regardless, it is still a finished project
+        $finishedProjects = DB::table('tblproject')
+                        ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                        ->where('tblproject.strProjectStatus','=','finished')
+                        ->get();
+
+        //==================HIGHEST PAYING
+        $allProjects = DB::table('tblproject')
+                    ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
+                    ->where(function($query){
+                        $query->where('tblproject.intActive','=',1)
+                            ->orWhere('tblproject.strProjectStatus','=','finished');
+                    })
+                    ->get();
+        $highestPayingProjects = array();
+        foreach($allProjects as $project){
+            $projectRequirements = DB::table('tblprojectrequirements')
+                                ->where('tblprojectrequirements.intProjectId','=',$project->intProjectId)
+                                ->get();
+            $projectRequirementsEstimatedTotalCost = 0;
+            foreach($projectRequirements as $projReq){
+                $projectRequirementsEstimatedTotalCost += $projReq->decEstimatedPrice;
+            }
+
+            $projectEstimatedMaterials = DB::table('tblmaterialestimates')
+                                ->where('tblmaterialestimates.intProjectId','=',$project->intProjectId)
+                                ->get();
+            $projectEstimatedMaterialsTotalCost = 0;
+            foreach($projectEstimatedMaterials as $projMat){
+                $projectEstimatedMaterialsTotalCost += $projMat->decCost;
+            }
+
+            $projectTotalCost = $projectRequirementsEstimatedTotalCost + $projectEstimatedMaterialsTotalCost;
+
+            array_push($highestPayingProjects, (object) [
+                'projectDetails' => $project,
+                'projectTotalCost' => $projectTotalCost,
+            ]);
+        }
+
+        usort($highestPayingProjects,array($this,"highestProjectTotalCostSort"));
+        array_splice($highestPayingProjects,5);//remove everything from index four and up
+        //dd($highestPayingProjects);
+
+        //==================HIGHEST PAYING END
+
+
+        $display = (object) [
+            'pendingProjects' => $pendingProjects,
+            'ongoingProjects' => $ongoingProjects,
+            'finishedProjects' => $finishedProjects,
+            'highestPayingProjects' => $highestPayingProjects
+        ];
+
+        //dd($display);
         return view('Admin/admin-home',compact(
             'display'
         ));
+    }
+
+    //for sorting projectReports
+    public function highestProjectTotalCostSort($a , $b){
+        if($a->projectTotalCost == $b->projectTotalCost){
+            return 0;
+        }
+
+        return ($a->projectTotalCost < $b->projectTotalCost) ? 1 : -1;
     }
 }
