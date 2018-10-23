@@ -381,7 +381,7 @@
                     <tbody style="background-color:white">
                         @foreach($display->pendingCostEstimations as $project)
                             <tr>
-                                <td>{{$project->strProjectName}}</td>
+                                <th>{{$project->strProjectName}}</th>
                                 <td>{{$project->strClientName}}</td>
                             </tr>
                         @endforeach
@@ -409,7 +409,7 @@
                 <tbody style="background-color:white">
                     @foreach($display->ongoingProjects as $project)
                         <tr>
-                            <td>{{$project->strProjectName}}</td>
+                            <th>{{$project->strProjectName}}</th>
                             <td>{{$project->strClientName}}</td>
                         </tr>
                     @endforeach
@@ -438,25 +438,18 @@
 
                         @foreach($display->projectPlans->pendingProjectSchedules as $project)
                             <tr>
-                                <td>{{$project->projectDetails->strProjectName}}</td>
+                                <th>{{$project->projectDetails->strProjectName}}</th>
                                 <td>{{$project->projectDetails->strClientName}}</td>
                                 <td> <span class="label label-warning">Pending</span></td>
                             </tr>
                         @endforeach
                         @foreach($display->projectPlans->finishedProjectSchedules as $project)
                             <tr>
-                                <td>{{$project->strProjectName}}</td>
+                                <th>{{$project->strProjectName}}</th>
                                 <td>{{$project->strClientName}}</td>
                                 <td><span class="label label-success">Finished</span></td>
                             </tr>
                         @endforeach
-                        <tr>
-                            <th>Project 3</th>
-                            <td>William Santos</td>
-                            <td><span class="label label-success">Finished</span></td>
-
-                        </tr>
-
                     </tbody>
                 </table>
 
