@@ -824,7 +824,7 @@ class ReportsController extends Controller
                     $scheduleEstimatedDaysRange = date_diff($estimatedStart,$estimatedEnd)->days;
                     $scheduleActualDaysRange = date_diff($actualStart,$actualEnd)->days;
 
-                    $phase->overdueDays = $scheduleActualDaysRange - $scheduleEstimatedDaysRange;
+                    $phase->overdueDays = ($scheduleActualDaysRange > $scheduleEstimatedDaysRange) ? $scheduleActualDaysRange - $scheduleEstimatedDaysRange : 0;
                 } else {
                     $phase->overdueDays = 0;
                 }
@@ -857,7 +857,7 @@ class ReportsController extends Controller
                 $scheduleEstimatedDaysRange = date_diff($estimatedStart,$estimatedEnd)->days;
                 $scheduleActualDaysRange = date_diff($actualStart,$actualEnd)->days;
 
-                $projectSchedule->overdueDays = $scheduleActualDaysRange - $scheduleEstimatedDaysRange;
+                $projectSchedule->overdueDays = ($scheduleActualDaysRange > $scheduleEstimatedDaysRange) ?  $scheduleActualDaysRange - $scheduleEstimatedDaysRange : 0;
             } else {
                 $projectSchedule->overdueDays = 0;
             }
