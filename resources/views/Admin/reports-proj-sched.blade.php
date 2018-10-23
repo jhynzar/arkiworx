@@ -21,6 +21,8 @@
             </div>
             
             <div class="my-5">
+                    <h3>Delays: {{$overallDelay}} day/s</h3>
+                    <h3>Overdues: {{$overallOverdue}} day/s</h3>
                     <table class="table table-bordered">
                         <thead style="background-color: #000000">
                             <tr class="text text-primary">
@@ -47,8 +49,8 @@
                                 <td>{{$schedule->scheduleDetails->dtmEstimatedEnd}}</td>
                                 <td>{{$schedule->scheduleDetails->dtmActualStart}}</td>
                                 <td>{{$schedule->scheduleDetails->dtmActualEnd}}</td>
-                                <td>{{$schedule->scheduleDetails->delayDays}} Day/s</td>
-                                <td>{{$schedule->scheduleDetails->overdueDays}} Day/s</td>
+                                <td></td>
+                                <td></td>
                             </tr>
 
                                 @foreach($schedule->schedulePhases as $phase)

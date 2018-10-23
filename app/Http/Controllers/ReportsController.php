@@ -873,10 +873,25 @@ class ReportsController extends Controller
             array_push($allProjectSchedulesWithPhases, $projectScheduleWithPhases);
             
         }
+
+        //project overall delays and overdue computation
+        $overallDelay = 0;
+        $overallOverdue = 0;
+        foreach($allProjectSchedulesWithPhases as $schedule){
+            foreach($schedule->schedulePhases as $phase){
+                $overallDelay += $phase->delayDays;
+                $overallOverdue += $phase->overdueDays;
+            }
+        }
         
 
         //dd($allProjectSchedulesWithPhases);
-        return view ('Admin/reports-proj-sched',compact(['allProjectSchedulesWithPhases','project']));
+        return view ('Admin/reports-proj-sched',compact([
+            'allProjectSchedulesWithPhases',
+            'project',
+            'overallDelay',
+            'overallOverdue'
+        ]));
     }
 
     public function materialsPricelistReport($date){
