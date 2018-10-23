@@ -1301,7 +1301,7 @@ var Gantt = (function () {
         //Mj added
         setup_date_header_scroll(){
             $.on(this.$container,'scroll',function(){
-                console.log(this.scrollTop);
+                //console.log(this.scrollTop);
                 var headerChildNodes = document.getElementById('date-header-scroll').children;
 
                 for(var i = 0; i < headerChildNodes.length ; i++){
