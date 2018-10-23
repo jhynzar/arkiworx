@@ -5768,11 +5768,11 @@
 
 
 
-                            <div class="form-group form-inline">
-                                <a type="button" class="btn btn-outline-success" style="margin-left: 700px" href="#"
+                           <div class="form-group form-inline">
+                               <!-- <a type="button" class="btn btn-outline-success" style="margin-left: 700px" href="#"
                                     onclick="HTMLtoPDF()">Save as pdf</a>
-                                &nbsp;
-                                <button type="submit" class="btn btn-primary ">Save Estimation</button>
+                                &nbsp; -->
+                                <button type="submit" class="btn btn-outline-primary " style="margin-left: 900px">Save Estimation</button>
                             </div>
 
                         </div>

@@ -579,7 +579,7 @@
         <!-- Add user Modal -->
 
         <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog" role="document" style="height: 300px">
                 <div class="modal-content pull-center">
                     <div class="modal-header color color-info">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -591,38 +591,7 @@
                     </div>
                     <div class="modal-body" style="background: #e5e5f2 !important; ">
 
-                        <div class="row">
-                            <div class="col-sm-4" style="margin-left: 210px !important;">
-                                <div class="card faq-left">
-                                    <div class="social-profile">
-                                        <img class="img-fluid img-sm" src="../assets/images/social/profile.jpg" alt="">
-                                        <div class="profile-hvr m-t-15">
-                                            <i class="icofont icofont-ui-edit p-r-10 c-pointer"></i>
-                                            <i class="icofont icofont-ui-delete c-pointer"></i>
-                                        </div>
-                                    </div>
-                                    <div class="card-block">
-
-
-                                        <div class="faq-profile-btn">
-                                            <p class="text-muted"> Add image</p>
-                                            <div style="font-size: 10px !important;">
-                                                <form action="/action_page.php">
-                                                    <!--add pic-->
-                                                    <input type="file" name="pic" accept="image/*">
-                                                    <br>
-                                                    <br>
-                                                    <input type="submit" class="btn btn-info"> {{ csrf_field() }}
-                                                </form>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- end of card-block -->
-                            </div>
-                        </div>
+                     
 
 
 
@@ -639,7 +608,7 @@
                                 <label for="mname">Middle Name:</label>
                                 <input required type="text" name="mname" class="form-control" placeholder="Middle name">
                             </div>
-
+<br> <br>
                             <div class="form-group">
                                 <label for="lname">Last Name:</label>
                                 <input required type="text" name="lname" class="form-control" placeholder="Last name">
