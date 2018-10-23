@@ -1390,14 +1390,7 @@
 
                                                                     </td>
 
-                                                                    <td>
-
-                                                                        <button data-toggle="modal" data-target="#viewAudit" class="btn " style="background-color: #DCDCDC">
-                                                                            <span style="color: dimgray" title="Audit Trail">Audit Trail</span>
-                                                                        </button>
-
-
-                                                                    </td>
+                                                                  
 
 
                                                                     <td>

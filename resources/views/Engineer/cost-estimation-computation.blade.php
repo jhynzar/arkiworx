@@ -3203,7 +3203,7 @@
                                                                                     <label class="text text-default"><b>No
                                                                                             of Roof Beam(s): </b>
                                                                                     </label>&nbsp; <input type="number"
-                                                                                        disabled value=8 class="form-control"
+                                                                                        disabled value=4 class="form-control"
                                                                                         id="HowManyRoofBeams" style="width: 100px !important;">
                                                                                     <button type="button" class="btn"
                                                                                         id="RoofBeam" style="margin-left: 90px">Compute</button>
@@ -5716,14 +5716,14 @@
                                               <tr class="text-uppercase">
                                                 <th class="text-left text-secondary">General Requirements Total Cost:</th>
 
-                                                <th class="text-center text-primary" id=""></th>
+                                                <th class="text-center text-primary" id="OverallTotalCost3">@foreach ( $TemplateArray3 as $key1=>$record1 ) @if($record1 -> Id == 1) {{ $record1 -> Cost }} @endif @endforeach</th>
 
                                             </tr>
                                             
                                              <tr class="text-uppercase">
                                                 <th class="text-left text-secondary">Materials Total Cost:</th>
 
-                                                <th class="text-center text-primary" id=""></th>
+                                                <th class="text-center text-primary" id="OverallTotalCost4">@foreach ( $TemplateArray4 as $key=>$record ) @if($record -> id == 1) {{ $record -> OverallTotal }} @endif @endforeach</th>
 
                                             </tr>
                                             
@@ -6349,7 +6349,10 @@
 
         var OverheadCost;
         var OverallTotalCost = parseFloat($("#OverallTotalCost1").val()) + parseFloat($("#OverallTotalCost2").val());
+        $("#OverallTotalCost3").html(parseFloat($("#OverallTotalCost2").val()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        $("#OverallTotalCost4").html(parseFloat($("#OverallTotalCost1").val()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         $("#OverallTotalCost").html(parseFloat(OverallTotalCost).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        
         if (OverallTotalCost < 1000000) {
             OverheadCost = OverallTotalCost * 0.20;
             $("#OverheadProfitPercentage").html('20%');
