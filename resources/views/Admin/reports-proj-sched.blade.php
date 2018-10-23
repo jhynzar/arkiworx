@@ -42,15 +42,15 @@
                             @foreach($allProjectSchedulesWithPhases as $scheduleKey => $schedule)
                             <tr>
                                 <th scope="row">{{$scheduleKey + 1}}</th>
-                                <td><strong>{{$schedule->scheduleDetails->strWorkSubCategoryDesc}}</strong></td>
+                                <th><strong>{{$schedule->scheduleDetails->strWorkSubCategoryDesc}}</strong></th>
                                 <td></td>
-                                <td>{{$schedule->scheduleDetails->overAllProgress}}%</td>
-                                <td>{{$schedule->scheduleDetails->dtmEstimatedStart}}</td>
-                                <td>{{$schedule->scheduleDetails->dtmEstimatedEnd}}</td>
-                                <td>{{$schedule->scheduleDetails->dtmActualStart}}</td>
-                                <td>{{$schedule->scheduleDetails->dtmActualEnd}}</td>
-                                <th>{{$schedule->scheduleDetails->delayDays}}</th>
-                                <th>{{$schedule->scheduleDetails->overdueDays}}</th>
+                                <th>{{$schedule->scheduleDetails->overAllProgress}}%</th>
+                                <th>{{$schedule->scheduleDetails->dtmEstimatedStart}}</th>
+                                <th>{{$schedule->scheduleDetails->dtmEstimatedEnd}}</th>
+                                <th>{{$schedule->scheduleDetails->dtmActualStart}}</th>
+                                <th>{{$schedule->scheduleDetails->dtmActualEnd}}</th>
+                                <th>{{$schedule->scheduleDetails->delayDays}}  Day/s</th>
+                                <th>{{$schedule->scheduleDetails->overdueDays}}  Day/s</th>
                             </tr>
 
                                 @foreach($schedule->schedulePhases as $phase)
