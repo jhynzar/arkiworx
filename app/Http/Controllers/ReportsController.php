@@ -29,6 +29,64 @@ class ReportsController extends Controller
                     ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
                     ->where('tblproject.intActive','=',1)
                     ->get();
+
+        //==================DELAYED
+        
+        $delayedOngoingProjects = array();
+        $delayedFinishedProjects = array();
+        
+        foreach($allProjects as $project){
+            $isProjectDelayed = false;
+
+            $projectSchedules = DB::table('tblschedules')
+                        ->where('tblschedules.intProjectId','=',$project->intProjectId)
+                        ->get();
+            foreach($projectSchedules as $schedule){
+                $schedulePhases = DB::table('tblschedulesphases')
+                            ->where('tblschedulesphases.intScheduleId','=',$schedule->intScheduleId)
+                            ->get();
+
+                foreach($schedulePhases as $phase){
+                    $today = new \DateTime('today');
+                    $estimatedStart = new \DateTime($phase->dtmEstimatedStart);
+                    
+                    //checker if delayed
+                    if($phase->dtmActualStart === null){
+                        if($today > $estimatedStart){
+                            //delayed = true
+                            $isProjectDelayed = true;
+                            break;
+                        }
+                    } else {
+                        $actualStart = new \DateTime($phase->dtmActualStart);
+                        if($actualStart > $estimatedStart){
+                            //delayed = true
+                            $isProjectDelayed = true;
+                            break;
+                        }
+                    }
+                }
+                //checker to see if it is delayed, to terminate checking
+                if($isProjectDelayed === true){
+                    break;
+                }
+            }
+            //checker if project delayed, push it
+            if($isProjectDelayed === true){
+                //checker if finished or ongoing project
+                if ($project->strProjectStatus === 'on going'){
+                    array_push($delayedOngoingProjects,$project);
+                } else if($project->strProjectStatus === 'finished'){
+                    array_push($delayedFinishedProjects,$project);
+                }
+            }
+        }
+
+        //dd($delayedFinishedProjects);
+
+        //==================DELAYED END
+
+        //==================HIGHEST PAYING
         $highestPayingProjects = array();
         foreach($allProjects as $project){
             $projectRequirements = DB::table('tblprojectrequirements')
@@ -207,6 +265,8 @@ class ReportsController extends Controller
             'finishedProjectsYear',
             'finishedProjectsMonth',
             'finishedProjectsWeek',
+            'delayedOngoingProjects',
+            'delayedFinishedProjects',
             'finishedProjectsComparison'
         ));
     }
