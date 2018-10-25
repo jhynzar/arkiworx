@@ -805,8 +805,9 @@ class ReportsController extends Controller
                 $overallProgress += $phase->intProgress;
 
                 //delay computation
+                
+                $estimatedStart = new \DateTime($phase->dtmEstimatedStart);
                 if($phase->dtmActualStart != null){
-                    $estimatedStart = new \DateTime($phase->dtmEstimatedStart);
                     $actualStart = new \DateTime($phase->dtmActualStart);
 
                     $phase->delayDays = ($actualStart > $estimatedStart) ? date_diff($estimatedStart,$actualStart)->days : 0;
@@ -815,10 +816,10 @@ class ReportsController extends Controller
                 }
 
                 //overdue computation
+                $estimatedEnd = new \DateTime($phase->dtmEstimatedEnd);
                 if(
                     $phase->dtmActualEnd != null
                 ){
-                    $estimatedEnd = new \DateTime($phase->dtmEstimatedEnd);
                     $actualEnd = new \DateTime($phase->dtmActualEnd);
 
                     $phase->overdueDays = ($actualEnd > $estimatedEnd) ? date_diff($estimatedEnd,$actualEnd)->days : 0;
@@ -833,8 +834,9 @@ class ReportsController extends Controller
             
             //schedule
             //delay computation
+            $estimatedStart = new \DateTime($projectSchedule->dtmEstimatedStart);
             if($projectSchedule->dtmActualStart != null){
-                $estimatedStart = new \DateTime($projectSchedule->dtmEstimatedStart);
+                
                 $actualStart = new \DateTime($projectSchedule->dtmActualStart);
     
                 $projectSchedule->delayDays = ($actualStart > $estimatedStart) ? date_diff($estimatedStart,$actualStart)->days : 0;
@@ -844,10 +846,11 @@ class ReportsController extends Controller
            
 
             //overdue computation
+            
+            $estimatedEnd = new \DateTime($projectSchedule->dtmEstimatedEnd);
             if(
                 $projectSchedule->dtmActualEnd != null
             ){
-                $estimatedEnd = new \DateTime($projectSchedule->dtmEstimatedEnd);
                 $actualEnd = new \DateTime($projectSchedule->dtmActualEnd);
 
                 $projectSchedule->overdueDays = ($actualEnd > $estimatedEnd) ? date_diff($estimatedEnd,$actualEnd)->days : 0;
