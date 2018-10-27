@@ -333,6 +333,15 @@ class ProjectProgressController extends Controller
                     ->update([
                         'dtmActualEnd' => date("Y-m-d"), //today's date
                     ]);
+
+            
+            DB::table('tblschedules')
+                ->where('tblschedules.intDependencyScheduleId','=',$scheduleId)
+                ->update([
+                    'dtmActualStart' => date("Y-m-d"), //today's date
+                ]);
+            
+            
         }
 
 
