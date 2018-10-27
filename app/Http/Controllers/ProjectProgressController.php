@@ -301,11 +301,11 @@ class ProjectProgressController extends Controller
             }
 
             //if there's no actualEndDate and the updated progress is 100 (means it's completed)
-            //put actual endDate as of today
             if(
                 $schedulePhaseActualEndDate == null &&
                 $schedulePhaseProgress == 100
             ){
+                //put actual endDate as of today
                 $schedulePhaseActualEndDate = date("Y-m-d"); //today's date
             }
 
@@ -334,6 +334,7 @@ class ProjectProgressController extends Controller
                         'dtmActualEnd' => date("Y-m-d"), //today's date
                     ]);
 
+<<<<<<< HEAD
             
             DB::table('tblschedules')
                 ->where('tblschedules.intDependencyScheduleId','=',$scheduleId)
@@ -342,6 +343,31 @@ class ProjectProgressController extends Controller
                 ]);
             
             
+=======
+
+            //if progress of this task is maxed out
+            //check if all phases of the project is 100percent, if yes, change project status to 'finished'
+            $allProjectPhases = DB::table('tblschedulesphases')
+                        ->join('tblschedules','tblschedules.intScheduleId','=','tblschedulesphases.intScheduleId')
+                        ->where('tblschedules.intProjectId','=',$id)
+                        ->get();
+
+            $isFinished = true;
+            foreach($allProjectPhases as $projectPhase){
+                if($projectPhase->intProgress != 100){
+                    $isFinished = false;
+                }
+            }
+
+            //if finished, update status
+            if($isFinished){
+                DB::table('tblproject')
+                ->where('tblproject.intProjectId','=',$id)
+                ->update([
+                    'strProjectStatus' => 'finished',
+                ]);
+            }
+>>>>>>> c87c38836fbe9be482172a3404bab6d1a1020d02
         }
 
 
