@@ -2826,7 +2826,7 @@
                 
                
                 
-                                 <div class="accordion-panel">
+              <div class="accordion-panel">
                 <div class=" accordion-heading" role="tab" id="headingNine">
                   <h3 class="card-title accordion-title">
                     <a class="accordion-msg bg-primary" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
