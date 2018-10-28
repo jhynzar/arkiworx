@@ -2715,6 +2715,7 @@
                         </div>
                     </div>
           </div>
+                    
             
           <div class="col-sm-6 col-xs-12 "><br>
                 <div>
@@ -2788,7 +2789,7 @@
                         </div>
                   
                     </div>
-                    
+             
                     <!-- TOTALS TABLE -->
 
                                     <div class="card-block">
@@ -2864,23 +2865,26 @@
                                     <option value=15 selected>5"</option>
                                     
                                 </select>
-                           <br><br>
+                             </div>
+                           <br>
+                             <div class="form-group form-inline">
                             <label >Area:</label>
-                            <input type="number" class="form-control" id="CHBArea" style="width: 80px !important;" placeholder="Optional" >
+                            <input type="number" class="form-control" id="CHBArea" style="width: 100px !important;" placeholder="Optional" >
                             <label >Width:</label>
                             <input type="number" class="form-control" id="CHBWidth" style="width: 80px !important;" >
                             <label >Length:</label>
                             <input type="number" class="form-control" id="CHBLength" style="width: 80px !important;" >
-                                 <br> <br>
+                                 </div>
+                                 <br> 
                                  
                                  
                                  
                                  
                                  
-                                    <div class="form-group pull-center">
+                                    <div class="form-group form-inline pull-center">
                                 <label for=""><b>Mortar:</b></label>
                                
-                            </div><br>
+                            <br>
                                  
                                  <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
@@ -2894,13 +2898,13 @@
                                   <label for="">Thickness:</label>
                                 <input type="number" style="width: 140px" class="form-control" id="CHBMortarThickness" >
                             </div>
-                                 <br><br>
+                               
                                    <div class="form-group pull-center">
                                 <label for=""><b>Plaster:</b></label>
                                
-                             </div><br>
+                             </div>
                                  
-                                 <div class="form-group pull-center">
+                                 <div class="form-group form-inline pull-center">
                                 <label for="">Cement Class Mixture:</label>
                                 <select class="form-control" id="CHBPlasterMixture" style="width: 160px !important;">
                                     <option value="1">Class AA </option>
@@ -2908,10 +2912,10 @@
                                     <option value="3" selected>Class B </option>
                                     <option value="4" >Class C </option>
                                 </select>
-                            </div><br><br>
+                            <br><br>
                                   <label for="">Thickness:</label>
                                 <input type="number" style="width: 140px" class="form-control" id="CHBPlasterThickness" >
-                            </div>  
+                            </div>
                                  <br> <br>
                                  
                                       <div class="container" style="margin-left: -20px !important">
@@ -2921,7 +2925,7 @@
                                  
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Bar Spacing:</label>
-                                <select class="form-control" id="masonryBarSize" style="width: 136px !important;">
+                                <select class="form-control" id="masonryBarSize" style="width: 200px !important;">
                                     <option value="40" selected>40 cm</option>
                                     <option value="60" >60 cm</option>
                                     <option value="80" >80 cm</option>
@@ -2929,7 +2933,7 @@
                                 </select>
                                 <br><br>
                                      <label for="">Bar Layer:</label>
-                                <select class="form-control" id="masonryBarLayer" style="width: 150px !important;">
+                                <select class="form-control" id="masonryBarLayer" style="width: 210px !important;">
                                     <option value="2" selected>2</option>
                                     <option value="3" >3 </option>
                                     <option value="4" >4</option>
@@ -2937,7 +2941,7 @@
                                 </select>
                                 <br><br>
                                 <label for="">Tie wire:</label>
-                                <select class="form-control" id="masonryTieWire" style="width: 140px !important;">
+                                <select class="form-control" id="masonryTieWire" style="width: 220px !important;">
                                     <option value=30 selected>30 cm </option>
                                     <option value=40>40 cm </option>
                                     
@@ -2956,7 +2960,7 @@
                              
                         </div>
                     </div>
-          </div>
+         
             
           <div class="col-sm-6 col-xs-12 "><br>
                 <div>
