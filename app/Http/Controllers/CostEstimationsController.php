@@ -161,45 +161,27 @@ class CostEstimationsController extends Controller
         }
         //dd($TemplateArray2);
 
-        /*$template3 = DB::select("
-        SELECT (SUM(a.decQty*b.Price)) as intOverallTotal
-        FROM tblmaterialestimationtemplate a INNER JOIN 
-        (   
-            SELECT e.price as Price, e.material as Material, f.strMaterialName as strMaterialName
-            FROM 
-            (
-                SELECT t.decPrice as price, t.intMaterialId as material
-                FROM 
-                (
-                    SELECT intMaterialId, MAX(dtmPriceAsOf) as latestPriceDate
-                    FROM tblprice
-                    GROUP BY intMaterialId
-                ) as r 
-                INNER JOIN tblprice t
-                ON (t.intMaterialId = r.intMaterialId AND t.dtmPriceAsOf = r.latestPriceDate)
-            ) as e
-            INNER JOIN tblmaterials f
-            ON (e.material = f.intMaterialId)
-            WHERE f.intActive = 1
-        ) as b
-        ON b.Material = a.intMaterialId
-        WHERE intProjectTemplateId = ?",$templateid);
+        $template3 = DB::select("
+        select SUM(decCost) as decCost, intProjectTemplateId
+        from tblprojectrequirementstemplate 
+        WHERE intProjectTemplateId = ?
+        group by intProjectTemplateId
+        ",$templateid);
 
         $TemplateArray3 = array();
         foreach($template3 as $fields3){
                 $TemplateArr3 = (object)[
-                    'OverallTotal' => $fields3 -> intOverallTotal
+                    'Cost' => $fields3 -> decCost,
+                    'Id' => $fields3 -> intProjectTemplateId
                 ];
                 array_push($TemplateArray3,$TemplateArr3);
         }
-        //dd($TemplateArray3);*/
+        //dd($TemplateArray3);
 
         $template4 = DB::select("
         SELECT 
         intProjectTemplateId,
-        ( SUM(a.decQty * b.Price) ) as intOverallTotal, 
-        ( (SUM(a.decQty * b.Price)) * 0.10 ) as intOverheadTotal, 
-        ( (SUM(a.decQty * b.Price)) + ((SUM(a.decQty * b.Price)) * 0.10) )  as intGrandTotal
+        ( SUM(a.decQty * b.Price) ) as intOverallTotal
         FROM tblmaterialestimationtemplate a 
         INNER JOIN 
         (   
@@ -221,16 +203,14 @@ class CostEstimationsController extends Controller
             WHERE f.intActive = 1
         ) as b
         ON b.Material = a.intMaterialId
-        WHERE intProjectTemplateId = ?
+        WHERE intProjectTemplateId = 1
         GROUP BY intProjectTemplateId",$templateid);
 
         $TemplateArray4 = array();
         foreach($template4 as $fields4){
                 $TemplateArr4 = (object)[
                     'id' => $fields4 -> intProjectTemplateId,
-                    'OverallTotal' => $fields4 -> intOverallTotal,
-                    'OverheadTotal' => $fields4 -> intOverheadTotal,
-                    'GrandTotal' => $fields4 -> intGrandTotal
+                    'OverallTotal' => $fields4 -> intOverallTotal
                 ];
                 array_push($TemplateArray4,$TemplateArr4);
         }
@@ -310,7 +290,7 @@ class CostEstimationsController extends Controller
                     ->where('intProjectId','=',$id)
                     ->first();
 
-        return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray','TemplateArray1','TemplateArray2','TemplateArray4'));
+        return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray','TemplateArray1','TemplateArray2','TemplateArray3','TemplateArray4'));
     }
 
     public function saveEstimation($id){
@@ -327,109 +307,6 @@ class CostEstimationsController extends Controller
         $Transportation = $_POST['Transportation'];
         $Contigency = $_POST['Contigency'];
         $OverheadProfit = $_POST['OverheadProfit'];
-        //column 
-        $ColumnCement = $_POST['ColumnCement'];
-        $ColumnCementBag = $_POST['ColumnCementBag'];
-        $ColumnCementCost = $_POST['ColumnCementCost'];
-        
-        $ColumnS = $_POST['ColumnS'];
-        $ColumnSand = $_POST['ColumnSand'];
-        $ColumnSandCost = $_POST['ColumnSandCost'];
-        
-        $ColumnG = $_POST['ColumnG'];
-        $ColumnGravel = $_POST['ColumnGravel'];
-        $ColumnGravelCost = $_POST['ColumnGravelCost'];
-        
-        $ColumnSteelBar = $_POST['ColumnSteelBar'];
-        $ColumnSteelBarQty = $_POST['ColumnSteelBarQty'];
-        $ColumnSteelBarCost = $_POST['ColumnSteelBarCost'];
-        
-        $ColumnTieBar = $_POST['ColumnTieBar'];
-        $ColumnTieBarQty = $_POST['ColumnTieBarQty'];
-        $ColumnTieBarCost = $_POST['ColumnTieBarCost'];
-        
-        $ColumnTieWire = $_POST['ColumnTieWire'];
-        $ColumnTieWireKg = $_POST['ColumnTieWireKg'];
-        $ColumnTieWireCost = $_POST['ColumnTieWireCost'];
-                //Footing 
-                $FootingCement = $_POST['FootingCement'];
-                $FootingCementBag = $_POST['FootingCementBag'];
-                $FootingCementCost = $_POST['FootingCementCost'];
-                
-                $FootingS = $_POST['FootingS'];
-                $FootingSand = $_POST['FootingSand'];
-                $FootingSandCost = $_POST['FootingSandCost'];
-                
-                $FootingG = $_POST['FootingG'];
-                $FootingGravel = $_POST['FootingGravel'];
-                $FootingGravelCost = $_POST['FootingGravelCost'];
-                
-                $FootingSteelBar = $_POST['FootingSteelBar'];
-                $FootingSteelBarQty = $_POST['FootingSteelBarQty'];
-                $FootingSteelBarCost = $_POST['FootingSteelBarCost'];
-
-                $FootingTieWire = $_POST['FootingTieWire'];
-                $FootingTieWireKg = $_POST['FootingTieWireKg'];
-                $FootingTieWireCost = $_POST['FootingTieWireCost'];
-                        //Slab 
-        $SlabCement = $_POST['SlabCement'];
-        $SlabCementBag = $_POST['SlabCementBag'];
-        $SlabCementCost = $_POST['SlabCementCost'];
-        
-        $SlabS = $_POST['SlabS'];
-        $SlabSand = $_POST['SlabSand'];
-        $SlabSandCost = $_POST['SlabSandCost'];
-        
-        $SlabG = $_POST['SlabG'];
-        $SlabGravel = $_POST['SlabGravel'];
-        $SlabGravelCost = $_POST['SlabGravelCost'];
-        
-        $SlabSteelBar = $_POST['SlabSteelBar'];
-        $SlabSteelBarQty = $_POST['SlabSteelBarQty'];
-        $SlabSteelBarCost = $_POST['SlabSteelBarCost'];
-        
-        $SlabTieWire = $_POST['SlabTieWire'];
-        $SlabTieWireKg = $_POST['SlabTieWireKg'];
-        $SlabTieWireCost = $_POST['SlabTieWireCost'];
-        //Beam 
-        $BeamCement = $_POST['BeamCement'];
-        $BeamCementBag = $_POST['BeamCementBag'];
-        $BeamCementCost = $_POST['BeamCementCost'];
-        
-        $BeamS = $_POST['BeamS'];
-        $BeamSand = $_POST['BeamSand'];
-        $BeamSandCost = $_POST['BeamSandCost'];
-        
-        $BeamG = $_POST['BeamG'];
-        $BeamGravel = $_POST['BeamGravel'];
-        $BeamGravelCost = $_POST['BeamGravelCost'];
-        
-        $BeamSteelBar = $_POST['BeamSteelBar'];
-        $BeamSteelBarQty = $_POST['BeamSteelBarQty'];
-        $BeamSteelBarCost = $_POST['BeamSteelBarCost'];
-        
-        $BeamTieBar = $_POST['BeamTieBar'];
-        $BeamTieBarQty = $_POST['BeamTieBarQty'];
-        $BeamTieBarCost = $_POST['BeamTieBarCost'];
-        
-        $BeamTieWire = $_POST['BeamTieWire'];
-        $BeamTieWireKg = $_POST['BeamTieWireKg'];
-        $BeamTieWireCost = $_POST['BeamTieWireCost'];
-        //--saving of data
-        //$BuildingPermit = $_POST['BuildingPermit'];
-        //$TemporaryFacilities = $_POST['TemporaryFacilities'];
-        //$WorkersBarracks = $_POST['WorkersBarracks'];
-        //$Excavation = $_POST['Excavation'];
-        //$Backfill = $_POST['Backfill'];
-        //$Lastillas = $_POST['Lastillas'];
-        //$SoilPoisoning = $_POST['SoilPoisoning'];
-        //------$LaborCost = $_POST['LaborCost'];
-        //$ToolsEquipments = $_POST['ToolsEquipments'];
-        //$Transportation = $_POST['Transportation'];
-        //$Contigency = $_POST['Contigency'];
-        //$OverheadProfit = $_POST['OverheadProfit'];
-
-        //General construction
 
         DB::table('tblprojectrequirements')
         ->insertGetId([
@@ -540,236 +417,967 @@ class CostEstimationsController extends Controller
             'intProjectId' => $id,
         ]);
 
+            //materials
 
-
-        //- static
-        // $id = projectId
-        // 5 = column (subcategoryId static from database)
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $ColumnCement,
-                'decQty' => $ColumnCementBag,
-                'decCost' => $ColumnCementCost,
+                'intMaterialId' => $_POST['MaterialId1'],
+                'decQty' => $_POST['Quantity1'],
+                'decCost' => $_POST['Cost1'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 5
+                'intWorkSubCategoryId' => $_POST['CategoryId1']
             ]
         );
+        
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $ColumnS,
-                'decQty' => $ColumnSand,
-                'decCost' => $ColumnSandCost,
+                'intMaterialId' => $_POST['MaterialId2'],
+                'decQty' => $_POST['Quantity2'],
+                'decCost' => $_POST['Cost2'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 5
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $ColumnG,
-                'decQty' => $ColumnGravel,
-                'decCost' => $ColumnGravelCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 5
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $ColumnSteelBar,
-                'decQty' => $ColumnSteelBarQty,
-                'decCost' => $ColumnSteelBarCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 5
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $ColumnTieBar,
-                'decQty' => $ColumnTieBarQty,
-                'decCost' => $ColumnTieBarCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 5
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $ColumnTieWire,
-                'decQty' => $ColumnTieWireKg,
-                'decCost' => $ColumnTieWireCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 5
+                'intWorkSubCategoryId' => $_POST['CategoryId2']
             ]
         );
 
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $FootingCement,
-                'decQty' => $FootingCementBag,
-                'decCost' => $FootingCementCost,
+                'intMaterialId' => $_POST['MaterialId3'],
+                'decQty' => $_POST['Quantity3'],
+                'decCost' => $_POST['Cost3'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 6
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $FootingS,
-                'decQty' => $FootingSand,
-                'decCost' => $FootingSandCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 6
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $FootingG,
-                'decQty' => $FootingGravel,
-                'decCost' => $FootingGravelCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 6
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $FootingSteelBar,
-                'decQty' => $FootingSteelBarQty,
-                'decCost' => $FootingSteelBarCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 6
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $FootingTieWire,
-                'decQty' => $FootingTieWireKg,
-                'decCost' => $FootingTieWireCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 6
+                'intWorkSubCategoryId' => $_POST['CategoryId3']
             ]
         );
 
-        //slab
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $SlabCement,
-                'decQty' => $SlabCementBag,
-                'decCost' => $SlabCementCost,
+                'intMaterialId' => $_POST['MaterialId4'],
+                'decQty' => $_POST['Quantity4'],
+                'decCost' => $_POST['Cost4'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 7
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $SlabS,
-                'decQty' => $SlabSand,
-                'decCost' => $SlabSandCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 7
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $SlabG,
-                'decQty' => $SlabGravel,
-                'decCost' => $SlabGravelCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 7
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $SlabSteelBar,
-                'decQty' => $SlabSteelBarQty,
-                'decCost' => $SlabSteelBarCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 7
-            ]
-        );
-        DB::table('tblmaterialestimates')
-        ->insertGetId(
-            [
-                'intMaterialId' => $SlabTieWire,
-                'decQty' => $SlabTieWireKg,
-                'decCost' => $SlabTieWireCost,
-                'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 7
+                'intWorkSubCategoryId' => $_POST['CategoryId4']
             ]
         );
 
-        //beam
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $BeamCement,
-                'decQty' => $BeamCementBag,
-                'decCost' => $BeamCementCost,
+                'intMaterialId' => $_POST['MaterialId5'],
+                'decQty' => $_POST['Quantity5'],
+                'decCost' => $_POST['Cost5'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 8
+                'intWorkSubCategoryId' => $_POST['CategoryId5']
             ]
         );
+
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $BeamS,
-                'decQty' => $BeamSand,
-                'decCost' => $BeamSandCost,
+                'intMaterialId' => $_POST['MaterialId6'],
+                'decQty' => $_POST['Quantity6'],
+                'decCost' => $_POST['Cost6'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 8
+                'intWorkSubCategoryId' => $_POST['CategoryId6']
             ]
         );
+
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $BeamG,
-                'decQty' => $BeamGravel,
-                'decCost' => $BeamGravelCost,
+                'intMaterialId' => $_POST['MaterialId7'],
+                'decQty' => $_POST['Quantity7'],
+                'decCost' => $_POST['Cost7'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 8
+                'intWorkSubCategoryId' => $_POST['CategoryId7']
             ]
         );
+
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $BeamSteelBar,
-                'decQty' => $BeamSteelBarQty,
-                'decCost' => $BeamSteelBarCost,
+                'intMaterialId' => $_POST['MaterialId8'],
+                'decQty' => $_POST['Quantity8'],
+                'decCost' => $_POST['Cost8'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 8
+                'intWorkSubCategoryId' => $_POST['CategoryId8']
             ]
         );
+
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $BeamTieBar,
-                'decQty' => $BeamTieBarQty,
-                'decCost' => $BeamTieBarCost,
+                'intMaterialId' => $_POST['MaterialId9'],
+                'decQty' => $_POST['Quantity9'],
+                'decCost' => $_POST['Cost9'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 8
+                'intWorkSubCategoryId' => $_POST['CategoryId9']
             ]
         );
+
         DB::table('tblmaterialestimates')
         ->insertGetId(
             [
-                'intMaterialId' => $BeamTieWire,
-                'decQty' => $BeamTieWireKg,
-                'decCost' => $BeamTieWireCost,
+                'intMaterialId' => $_POST['MaterialId10'],
+                'decQty' => $_POST['Quantity10'],
+                'decCost' => $_POST['Cost10'],
                 'intProjectId' => $id ,
-                'intWorkSubCategoryId' => 8
+                'intWorkSubCategoryId' => $_POST['CategoryId10']
             ]
         );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId11'],
+                'decQty' => $_POST['Quantity11'],
+                'decCost' => $_POST['Cost11'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId11']
+            ]
+        );
+        
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId12'],
+                'decQty' => $_POST['Quantity12'],
+                'decCost' => $_POST['Cost12'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId12']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId13'],
+                'decQty' => $_POST['Quantity13'],
+                'decCost' => $_POST['Cost13'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId13']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId14'],
+                'decQty' => $_POST['Quantity14'],
+                'decCost' => $_POST['Cost14'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId14']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId15'],
+                'decQty' => $_POST['Quantity15'],
+                'decCost' => $_POST['Cost15'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId15']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId16'],
+                'decQty' => $_POST['Quantity16'],
+                'decCost' => $_POST['Cost16'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId16']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId17'],
+                'decQty' => $_POST['Quantity17'],
+                'decCost' => $_POST['Cost17'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId17']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId18'],
+                'decQty' => $_POST['Quantity18'],
+                'decCost' => $_POST['Cost18'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId18']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId19'],
+                'decQty' => $_POST['Quantity19'],
+                'decCost' => $_POST['Cost19'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId19']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId20'],
+                'decQty' => $_POST['Quantity20'],
+                'decCost' => $_POST['Cost20'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId20']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId21'],
+                'decQty' => $_POST['Quantity21'],
+                'decCost' => $_POST['Cost21'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId21']
+            ]
+        );
+        
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId22'],
+                'decQty' => $_POST['Quantity22'],
+                'decCost' => $_POST['Cost22'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId22']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId23'],
+                'decQty' => $_POST['Quantity23'],
+                'decCost' => $_POST['Cost23'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId23']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId24'],
+                'decQty' => $_POST['Quantity24'],
+                'decCost' => $_POST['Cost24'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId24']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId25'],
+                'decQty' => $_POST['Quantity25'],
+                'decCost' => $_POST['Cost25'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId25']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId26'],
+                'decQty' => $_POST['Quantity26'],
+                'decCost' => $_POST['Cost26'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId26']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId27'],
+                'decQty' => $_POST['Quantity27'],
+                'decCost' => $_POST['Cost27'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId27']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId28'],
+                'decQty' => $_POST['Quantity28'],
+                'decCost' => $_POST['Cost28'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId28']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId29'],
+                'decQty' => $_POST['Quantity29'],
+                'decCost' => $_POST['Cost29'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId29']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId30'],
+                'decQty' => $_POST['Quantity30'],
+                'decCost' => $_POST['Cost30'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId30']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId31'],
+                'decQty' => $_POST['Quantity31'],
+                'decCost' => $_POST['Cost31'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId31']
+            ]
+        );
+        
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId32'],
+                'decQty' => $_POST['Quantity32'],
+                'decCost' => $_POST['Cost32'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId32']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId33'],
+                'decQty' => $_POST['Quantity33'],
+                'decCost' => $_POST['Cost33'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId33']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId34'],
+                'decQty' => $_POST['Quantity34'],
+                'decCost' => $_POST['Cost34'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId34']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId35'],
+                'decQty' => $_POST['Quantity35'],
+                'decCost' => $_POST['Cost35'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId35']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId36'],
+                'decQty' => $_POST['Quantity36'],
+                'decCost' => $_POST['Cost36'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId36']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId37'],
+                'decQty' => $_POST['Quantity37'],
+                'decCost' => $_POST['Cost37'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId37']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId38'],
+                'decQty' => $_POST['Quantity38'],
+                'decCost' => $_POST['Cost38'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId38']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId39'],
+                'decQty' => $_POST['Quantity39'],
+                'decCost' => $_POST['Cost39'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId39']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId40'],
+                'decQty' => $_POST['Quantity40'],
+                'decCost' => $_POST['Cost40'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId40']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId41'],
+                'decQty' => $_POST['Quantity41'],
+                'decCost' => $_POST['Cost41'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId41']
+            ]
+        );
+        
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId42'],
+                'decQty' => $_POST['Quantity42'],
+                'decCost' => $_POST['Cost42'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId42']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId43'],
+                'decQty' => $_POST['Quantity43'],
+                'decCost' => $_POST['Cost43'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId43']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId44'],
+                'decQty' => $_POST['Quantity44'],
+                'decCost' => $_POST['Cost44'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId44']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId45'],
+                'decQty' => $_POST['Quantity45'],
+                'decCost' => $_POST['Cost45'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId45']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId46'],
+                'decQty' => $_POST['Quantity46'],
+                'decCost' => $_POST['Cost46'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId46']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId47'],
+                'decQty' => $_POST['Quantity47'],
+                'decCost' => $_POST['Cost47'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId47']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId48'],
+                'decQty' => $_POST['Quantity48'],
+                'decCost' => $_POST['Cost48'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId48']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId49'],
+                'decQty' => $_POST['Quantity49'],
+                'decCost' => $_POST['Cost49'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId49']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId50'],
+                'decQty' => $_POST['Quantity50'],
+                'decCost' => $_POST['Cost50'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId50']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId51'],
+                'decQty' => $_POST['Quantity51'],
+                'decCost' => $_POST['Cost51'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId51']
+            ]
+        );
+        
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId52'],
+                'decQty' => $_POST['Quantity52'],
+                'decCost' => $_POST['Cost52'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId52']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId53'],
+                'decQty' => $_POST['Quantity53'],
+                'decCost' => $_POST['Cost53'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId53']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId54'],
+                'decQty' => $_POST['Quantity54'],
+                'decCost' => $_POST['Cost54'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId54']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId55'],
+                'decQty' => $_POST['Quantity55'],
+                'decCost' => $_POST['Cost55'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId55']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId56'],
+                'decQty' => $_POST['Quantity56'],
+                'decCost' => $_POST['Cost56'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId56']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId57'],
+                'decQty' => $_POST['Quantity57'],
+                'decCost' => $_POST['Cost57'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId57']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId58'],
+                'decQty' => $_POST['Quantity58'],
+                'decCost' => $_POST['Cost58'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId58']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId59'],
+                'decQty' => $_POST['Quantity59'],
+                'decCost' => $_POST['Cost59'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId59']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId60'],
+                'decQty' => $_POST['Quantity60'],
+                'decCost' => $_POST['Cost60'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId60']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId61'],
+                'decQty' => $_POST['Quantity61'],
+                'decCost' => $_POST['Cost61'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId61']
+            ]
+        );
+        
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId62'],
+                'decQty' => $_POST['Quantity62'],
+                'decCost' => $_POST['Cost62'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId62']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId63'],
+                'decQty' => $_POST['Quantity63'],
+                'decCost' => $_POST['Cost63'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId63']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId64'],
+                'decQty' => $_POST['Quantity64'],
+                'decCost' => $_POST['Cost64'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId64']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId65'],
+                'decQty' => $_POST['Quantity65'],
+                'decCost' => $_POST['Cost65'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId65']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId66'],
+                'decQty' => $_POST['Quantity66'],
+                'decCost' => $_POST['Cost66'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId66']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId67'],
+                'decQty' => $_POST['Quantity67'],
+                'decCost' => $_POST['Cost67'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId67']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId68'],
+                'decQty' => $_POST['Quantity68'],
+                'decCost' => $_POST['Cost68'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId68']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId69'],
+                'decQty' => $_POST['Quantity69'],
+                'decCost' => $_POST['Cost69'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId69']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId70'],
+                'decQty' => $_POST['Quantity70'],
+                'decCost' => $_POST['Cost70'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId70']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId71'],
+                'decQty' => $_POST['Quantity71'],
+                'decCost' => $_POST['Cost71'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId71']
+            ]
+        );
+        
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId72'],
+                'decQty' => $_POST['Quantity72'],
+                'decCost' => $_POST['Cost72'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId72']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId73'],
+                'decQty' => $_POST['Quantity73'],
+                'decCost' => $_POST['Cost73'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId73']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId74'],
+                'decQty' => $_POST['Quantity74'],
+                'decCost' => $_POST['Cost74'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId74']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId75'],
+                'decQty' => $_POST['Quantity75'],
+                'decCost' => $_POST['Cost75'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId75']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId76'],
+                'decQty' => $_POST['Quantity76'],
+                'decCost' => $_POST['Cost76'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId76']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId77'],
+                'decQty' => $_POST['Quantity77'],
+                'decCost' => $_POST['Cost77'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId77']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId78'],
+                'decQty' => $_POST['Quantity78'],
+                'decCost' => $_POST['Cost78'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId78']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId79'],
+                'decQty' => $_POST['Quantity79'],
+                'decCost' => $_POST['Cost79'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId79']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId80'],
+                'decQty' => $_POST['Quantity80'],
+                'decCost' => $_POST['Cost80'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId80']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId81'],
+                'decQty' => $_POST['Quantity81'],
+                'decCost' => $_POST['Cost81'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId81']
+            ]
+        );
+        
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId82'],
+                'decQty' => $_POST['Quantity82'],
+                'decCost' => $_POST['Cost82'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId82']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId83'],
+                'decQty' => $_POST['Quantity83'],
+                'decCost' => $_POST['Cost83'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId83']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId84'],
+                'decQty' => $_POST['Quantity84'],
+                'decCost' => $_POST['Cost84'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId84']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId85'],
+                'decQty' => $_POST['Quantity85'],
+                'decCost' => $_POST['Cost85'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId85']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId86'],
+                'decQty' => $_POST['Quantity86'],
+                'decCost' => $_POST['Cost86'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId86']
+            ]
+        );
+
+        DB::table('tblmaterialestimates')
+        ->insertGetId(
+            [
+                'intMaterialId' => $_POST['MaterialId87'],
+                'decQty' => $_POST['Quantity87'],
+                'decCost' => $_POST['Cost87'],
+                'intProjectId' => $id ,
+                'intWorkSubCategoryId' => $_POST['CategoryId87']
+            ]
+        );
+
+        //trabahong tamad HAHAHA
+
         // ALWAYS MAKE THIS LAST
 
         // update project status

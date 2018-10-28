@@ -334,16 +334,6 @@ class ProjectProgressController extends Controller
                         'dtmActualEnd' => date("Y-m-d"), //today's date
                     ]);
 
-<<<<<<< HEAD
-            
-            DB::table('tblschedules')
-                ->where('tblschedules.intDependencyScheduleId','=',$scheduleId)
-                ->update([
-                    'dtmActualStart' => date("Y-m-d"), //today's date
-                ]);
-            
-            
-=======
 
             //if progress of this task is maxed out
             //check if all phases of the project is 100percent, if yes, change project status to 'finished'
@@ -367,7 +357,6 @@ class ProjectProgressController extends Controller
                     'strProjectStatus' => 'finished',
                 ]);
             }
->>>>>>> c87c38836fbe9be482172a3404bab6d1a1020d02
         }
 
 

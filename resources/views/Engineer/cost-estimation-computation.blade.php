@@ -1137,7 +1137,7 @@
                                 <label class="text text-default"><b>Permit</b> </label>  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label class="text text-default"><b>Miscellaneous</b> </label> <br><br>
                                     <label> Building Permit</label>
-                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input class="form-control currencyInput" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
+                                    @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 1)<input type="number" class="form-control" value="{{ $record -> cost }}" id="BuildingPermit" name="BuildingPermit" style="width: 100px !important;" placeholder="">@endif @endforeach
                                      &nbsp; &nbsp; &nbsp; &nbsp; 
                                     <label> DENR <span class="text text-primary"><i>Optional</i></span></label>  &nbsp; 
                                     @foreach ( $TemplateArray1 as $key=>$record ) @if($record -> id == 2)<input type="number" class="form-control" value="{{ $record -> cost }}" id="DENR" name="DENR" style="width: 100px !important;" placeholder="">@endif @endforeach
@@ -1269,8 +1269,8 @@
                         <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
                                 <select class="form-control" id="ColumnCC" style="width: 160px !important;">
-                                    <option value="1" selected>Class AA </option>
-                                    <option value="2">Class A </option>
+                                    <option value="1">Class AA </option>
+                                    <option value="2" selected>Class A </option>
                                     <option value="3">Class B </option>
                                     <option value="4">Class C </option>
                                 </select>
@@ -1286,11 +1286,11 @@
                              <div class="form-group form-inline">
                            
                             <label >Thickness:</label>
-                            <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" value=1.16>
+                            <input type="" class="form-control" id="ColumnThickness" style="width: 90px !important;" value=>
                             <label >Width:</label>
-                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;" value=1.16>
+                            <input type="" class="form-control" id="ColumnWidth" style="width: 90px !important;" value=>
                             <label >Length:</label>
-                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;" value=1.16>
+                            <input type="" class="form-control" id="ColumnLength" style="width: 90px !important;" value=>
                                  <br> <br>
                                       <div class="container" style="margin-left: -20px !important">
                                         <H6 class="text text-primary">Metal Reinforcement</H6>
@@ -1304,14 +1304,14 @@
                                 <label for="">Bar Length:</label>
                                 <select class="form-control" id="ColumnsBarLeng" style="width: 150px !important;">
                                     <option value="6" selected>6 meters </option>
-                                    <option value="7.5" >7.5 meters </option>
+                                    <!--<option value="7.5" >7.5 meters </option>
                                     <option value="9" >9 meters </option>
-                                    <option value="12">12 meters </option>
+                                    <option value="12">12 meters </option>-->
                                 </select>
                                      <label for="">Bar Size:</label>
                                 <select class="form-control" id="ColumnsBarSize" style="width: 170px !important;">
-                                    <option value=6 >6 mm</option>
-                                    <option value=10>10 mm </option>
+                                    <!--<option value=6 >6 mm</option>
+                                    <option value=10>10 mm </option>-->
                                     <option value=12 selected>12 mm </option>
                                 </select>
                             </div> <br> <br>
@@ -1320,9 +1320,9 @@
                                  <div class="form-group form-inline pull-center">
                                 <label for="">Tie Bar Size:</label>
                                 <select class="form-control" id="ColumnsTieBarSize" style="width: 150px !important;">
-                                    <option value=6 >6 mm</option>
+                                    <!--<option value=6 >6 mm</option>-->
                                     <option value=10 selected>10 mm </option>
-                                    <option value=12>12 mm </option>
+                                    <!--<option value=12>12 mm </option>-->
                                 </select>
                                      <label for="">Tie wire:</label>
                                 <select class="form-control" id="ColumnsTieWire" style="width: 140px !important;">
@@ -2858,13 +2858,19 @@
                              
                     
                              <div class="form-group form-inline">
-                           
+                             <label for="">CHB Size:</label>
+                                <select class="form-control" id="CHBSize" style="width: 140px !important;">
+                                    <option value=16>4"</option>
+                                    <option value=15 selected>5"</option>
+                                    
+                                </select>
+                           <br><br>
                             <label >Area:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" placeholder="Optional" >
+                            <input type="number" class="form-control" id="CHBArea" style="width: 80px !important;" placeholder="Optional" >
                             <label >Width:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="number" class="form-control" id="CHBWidth" style="width: 80px !important;" >
                             <label >Length:</label>
-                            <input type="" class="form-control" id="" style="width: 80px !important;" >
+                            <input type="number" class="form-control" id="CHBLength" style="width: 80px !important;" >
                                  <br> <br>
                                  
                                  
@@ -2878,66 +2884,17 @@
                                  
                                  <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="masonryCementClassMixture" style="width: 160px !important;">
-                                    <option value="AA" selected>Class AA </option>
-                                    <option value="A" >Class A </option>
-                                    <option value="B" >Class B </option>
-                                    <option value="B" >Class C </option>
+                                <select class="form-control" id="CHBMortarMixture" style="width: 160px !important;">
+                                    <option value="1">Class AA </option>
+                                    <option value="2" >Class A </option>
+                                    <option value="3" selected>Class B </option>
+                                    <option value="4" >Class C </option>
                                 </select>
                             </div><br><br>
-                                 
-                             <div class="form-group form-inline">
-                                <label for="">Volume:</label>
-                                <input type="number" class="form-control" style="width: 140px" id="" placeholder="Optional">
                                   <label for="">Thickness:</label>
-                                <input type="number" style="width: 140px" class="form-control" id="" >
-                            </div>  
-                                 <br> <br>
-                                 <div class="form-group">
-                                <label for="">Area:</label>
-                                <input type="number" class="form-control" style="width: 160px" id="" placeholder="Optional">
-                            </div> 
-                                 
-                                 <br> <br>
-                                 <div class="form-group form-inline">
-                                <label for="">Width:</label>
-                                <input type="number" style="width: 150px" class="form-control" id="" >
-                                     <label for="">Length:</label>
-                                <input type="number" style="width: 160px" class="form-control" id="" >
-                            </div> 
-                                 
-                                 
-                                 
+                                <input type="number" style="width: 140px" class="form-control" id="CHBMortarThickness" >
+                            </div>
                                  <br><br>
-                                 
-                                   <div class="form-group pull-center">
-                                <label for=""><b>Hollow Cores:</b></label>
-                               
-                            </div><br><br>
-                                 
-                                 
-                             <div class="form-group form-inline">
-                                <label for="">Volume:</label>
-                                <input type="number" class="form-control" style="width: 140px" id="" placeholder="Optional">
-                                  <label for="">Thickness:</label>
-                                <input type="number" style="width: 140px" class="form-control" id="" >
-                            </div>  
-                                 <br> <br>
-                                 <div class="form-group">
-                                <label for="">Area:</label>
-                                <input type="number" class="form-control" style="width: 160px" id="" placeholder="Optional">
-                            </div> 
-                                 
-                                 <br> <br>
-                                 <div class="form-group form-inline">
-                                <label for="">Width:</label>
-                                <input type="number" style="width: 150px" class="form-control" id="" >
-                                     <label for="">Length:</label>
-                                <input type="number" style="width: 160px" class="form-control" id="" >
-                            </div> 
-                                 
-                                  <br><br>
-                                 
                                    <div class="form-group pull-center">
                                 <label for=""><b>Plaster:</b></label>
                                
@@ -2945,35 +2902,16 @@
                                  
                                  <div class="form-group pull-center">
                                 <label for="">Cement Class Mixture:</label>
-                                <select class="form-control" id="masonryCementClassMixture" style="width: 160px !important;">
-                                    <option value="AA" selected>Class AA </option>
-                                    <option value="A" >Class A </option>
-                                    <option value="B" >Class B </option>
-                                    <option value="C" >Class C </option>
+                                <select class="form-control" id="CHBPlasterMixture" style="width: 160px !important;">
+                                    <option value="1">Class AA </option>
+                                    <option value="2" >Class A </option>
+                                    <option value="3" selected>Class B </option>
+                                    <option value="4" >Class C </option>
                                 </select>
                             </div><br><br>
-                                 
-                             <div class="form-group form-inline">
-                                <label for="">Volume:</label>
-                                <input type="number" class="form-control" style="width: 140px" id="" placeholder="Optional">
                                   <label for="">Thickness:</label>
-                                <input type="number" style="width: 140px" class="form-control" id="" >
+                                <input type="number" style="width: 140px" class="form-control" id="CHBPlasterThickness" >
                             </div>  
-                                 <br> <br>
-                                 <div class="form-group">
-                                <label for="">Area:</label>
-                                <input type="number" class="form-control" style="width: 160px" id="" placeholder="Optional">
-                            </div> 
-                                 
-                                 <br> <br>
-                                 <div class="form-group form-inline">
-                                <label for="">Width:</label>
-                                <input type="number" style="width: 150px" class="form-control" id="" >
-                                     <label for="">Length:</label>
-                                <input type="number" style="width: 160px" class="form-control" id="" >
-                            </div> 
-                                 
-                                 
                                  <br> <br>
                                  
                                       <div class="container" style="margin-left: -20px !important">
@@ -2982,13 +2920,14 @@
                                  <br>
                                  
                                  <div class="form-group form-inline pull-center">
-                                <label for="">Bar Size:</label>
+                                <label for="">Bar Spacing:</label>
                                 <select class="form-control" id="masonryBarSize" style="width: 136px !important;">
                                     <option value="40" selected>40 cm</option>
                                     <option value="60" >60 cm</option>
                                     <option value="80" >80 cm</option>
                                 
                                 </select>
+                                <br><br>
                                      <label for="">Bar Layer:</label>
                                 <select class="form-control" id="masonryBarLayer" style="width: 150px !important;">
                                     <option value="2" selected>2</option>
@@ -2996,13 +2935,20 @@
                                     <option value="4" >4</option>
                                    
                                 </select>
+                                <br><br>
+                                <label for="">Tie wire:</label>
+                                <select class="form-control" id="masonryTieWire" style="width: 140px !important;">
+                                    <option value=30 selected>30 cm </option>
+                                    <option value=40>40 cm </option>
+                                    
+                                </select>
                             </div> 
                    
                                  <br> <br>
                                  <hr>
                                  <div class="form-group form-inline">
-                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="" style="width: 100px !important;">
-                                <button type="button" class="btn btn-primary" style="margin-left: 50px" >Compute</button>
+                                <label class="text text-danger"><b>How Many of these?</b> </label>&nbsp; <input type="number" class="form-control" id="CHBWallNo" style="width: 100px !important;">
+                                <button type="button" id="CHBCompute" class="btn btn-primary" style="margin-left: 50px" >Compute</button>
                                  </div>
                         </div>
                              
@@ -3033,44 +2979,44 @@
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 40)    
                                         <tr class="table-success">
                                             <td id="MasonryCement"> {{ $record -> materialName }} </td> 
-                                            <td id="MasonryCementBag"> {{ $record -> qty }} </td>
-                                            <td id="MasonryCementCost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 41)    
                                         <tr>
                                             <td id="MasonryS"> {{ $record -> materialName }} </td>
-                                            <td id="MasonrySand"> {{ $record -> qty }} </td>
-                                            <td id="MasonrySandCost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                        
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 43)    
                                         <tr class="table-warning">
-                                            <td id="MasonryCHB2"> {{ $record -> materialName }} </td>
-                                            <td id="MasonryCHB2Qty"> {{ $record -> qty }} </td>
-                                            <td id="MasonryCHB2Cost"> {{ $record -> cost }} </td>
+                                            <td id="MasonryCHB1"> {{ $record -> materialName }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 44)    
-                                            <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                             <tr class="table-success">
                                             <td id="MasonryCHB2"> {{ $record -> materialName }} </td>
-                                            <td id="MasonryCHB2Qty"> {{ $record -> qty }} </td>
-                                            <td id="MasonryCHB2Cost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
+                                            <tr class="text text-primary"> <td><b>Metal Reinforcement</b></td></tr>
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 42)    
                                             <tr>
                                             <td id="MasonrySteelBar"> {{ $record -> materialName }} </td>
-                                            <td id="MasonrySteelBarQty"> {{ $record -> qty }} </td>
-                                            <td id="MasonrySteelBarCost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                        
                                         </tr>@endif @endforeach
                                         @foreach ( $TemplateArray2 as $key=>$record ) @if($record -> id == 45)    
                                         <tr class="table-warning">
                                             <td id="MasonryTieWire"> {{ $record -> materialName }} </td>
-                                            <td id="MasonryTieWireKg"> {{ $record -> qty }} </td>
-                                            <td id="MasonryTieWireCost"> {{ $record -> cost }} </td>
+                                            <td id="TQty{{$record -> id}}"> {{ $record -> qty }} </td>
+                                            <td id="TCost{{$record -> id}}"> {{ $record -> cost }} </td>
                                            
                                         </tr>@endif @endforeach
                                       
@@ -4746,7 +4692,7 @@
                                                                                 </label> &nbsp; &nbsp;
                                                                                 <label for="">Length:</label>
                                                                                 <select class="form-control" id="" style="width: 130px !important;">
-                                                                                    <option selected> 60 </option>
+                                                                                    <option selected> 30 </option>
                                                                                     <option> 60 </option>
                                                                                     <option>90</option>
                                                                                     <option>120 </option>
@@ -4875,28 +4821,33 @@
            
           <div class="card-block">
                                             <div class="table-responsive">
-                                            <input type=hidden id="OverallTotalCost1" name="OverallTotalCost" value="">
+                                            @foreach ( $TemplateArray4 as $key=>$record ) @if($record -> id == 1)  
+                                                <input type=hidden id="OverallTotalCost1" name="OverallTotalCost1" value=" {{ $record -> OverallTotal }} ">
+                                            @endif @endforeach
+                                            @foreach ( $TemplateArray3 as $key1=>$record1 ) @if($record1 -> Id == 1)
+                                                <input type=hidden id="OverallTotalCost2" name="OverallTotalCost2" value=" {{ $record1 -> Cost }} ">
+                                            @endif @endforeach
                                                 <table class="table m-b-0 photo-table">
-                                                    @foreach ( $TemplateArray4 as $key=>$record ) @if($record -> id == 1)  
+                                                    
                                                     <thead>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overall Total Cost:</th>
                                                          
-                                                            <th class="text-center text-primary" id="OverallTotalCost"> {{ $record -> OverallTotal }} </th>
+                                                            <th class="text-center text-primary" id="OverallTotalCost"></th>
                                                             
 
                                                         </tr>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overhead Profit %:</th>
                                                          
-                                                            <th class="text-center text-primary" id=""> 10% </th>
+                                                            <th class="text-center text-primary" id="OverheadProfit"></th>
                                                             
 
                                                         </tr>
                                                         <tr class="text-uppercase">
                                                             <th class="text-left text-secondary">Overhead Profit Amount:</th>
                                                          
-                                                            <th class="text-center text-primary" id=""> {{ $record -> OverheadTotal }} </th>
+                                                            <th class="text-center text-primary" id="OverheadTotalCost"></th>
                                                             
 
                                                         </tr>
@@ -4904,11 +4855,11 @@
                                                         <tr class="text-uppercase " style="background-color: #ffc551">
                                                             <th class="text-left text-secondary">Grand Total Cost:</th>
                                                          
-                                                            <th class="text-center text-default"     id="OverallTotalCost"> {{ $record -> GrandTotal }} </th>
+                                                            <th class="text-center text-default"     id="GrandTotalCost"></th>
                                                             
 
                                                         </tr>
-                                                    </thead> @endif @endforeach
+                                                    </thead>
                                                   
                                                 </table>
                                                 <input type=hidden id=OverallTotalCost1 value=>
@@ -5163,32 +5114,307 @@
 
 
 <script>
+    //from template????
 
- //computeAndDisplayOverallTotal(); //compute at the beginning removed because total cost is already set in html
+    $("#TQty1").html( parseFloat( $("#Quantity1").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost1").html( parseFloat( $("#Cost1").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
 
-        $("#ColumnCementBag").html( parseFloat($("#ColumnCementBag").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        $("#ColumnCementCost").html( parseFloat($("#ColumnCementCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        
-        $("#ColumnSand").html( parseFloat($("#ColumnSand").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        $("#ColumnSandCost").html( parseFloat($("#ColumnSandCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        
-        $("#ColumnGravel").html( parseFloat($("#ColumnGravel").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        $("#ColumnGravelCost").html( parseFloat($("#ColumnGravelCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        
-        $("#ColumnSteelBarQty").html( parseFloat($("#ColumnSteelBarQty").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        $("#ColumnSteelBarCost").html( parseFloat($("#ColumnSteelBarCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        
-        $("#ColumnTieBarQty").html( parseFloat($("#ColumnTieBarQty").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        $("#ColumnTieBarCost").html( parseFloat($("#ColumnTieBarCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        
-        $("#ColumnTieWireKg").html( parseFloat($("#ColumnTieWireKg").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
-        $("#ColumnTieWireCost").html( parseFloat($("#ColumnTieWireCost").html()).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TQty2").html( parseFloat( $("#Quantity2").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost2").html( parseFloat( $("#Cost2").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty3").html( parseFloat( $("#Quantity3").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost3").html( parseFloat( $("#Cost3").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty4").html( parseFloat( $("#Quantity4").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost4").html( parseFloat( $("#Cost4").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty5").html( parseFloat( $("#Quantity5").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost5").html( parseFloat( $("#Cost5").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty6").html( parseFloat( $("#Quantity6").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost6").html( parseFloat( $("#Cost6").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty7").html( parseFloat( $("#Quantity7").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost7").html( parseFloat( $("#Cost7").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty8").html( parseFloat( $("#Quantity8").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost8").html( parseFloat( $("#Cost8").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty9").html( parseFloat( $("#Quantity9").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost9").html( parseFloat( $("#Cost9").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty10").html( parseFloat( $("#Quantity10").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost10").html( parseFloat( $("#Cost10").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty11").html( parseFloat( $("#Quantity11").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost11").html( parseFloat( $("#Cost11").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty12").html( parseFloat( $("#Quantity12").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost12").html( parseFloat( $("#Cost12").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty13").html( parseFloat( $("#Quantity13").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost13").html( parseFloat( $("#Cost13").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty14").html( parseFloat( $("#Quantity14").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost14").html( parseFloat( $("#Cost14").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty15").html( parseFloat( $("#Quantity15").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost15").html( parseFloat( $("#Cost15").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty16").html( parseFloat( $("#Quantity16").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost16").html( parseFloat( $("#Cost16").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty17").html( parseFloat( $("#Quantity17").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost17").html( parseFloat( $("#Cost17").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty18").html( parseFloat( $("#Quantity18").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost18").html( parseFloat( $("#Cost18").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty19").html( parseFloat( $("#Quantity19").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost19").html( parseFloat( $("#Cost19").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty20").html( parseFloat( $("#Quantity20").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost20").html( parseFloat( $("#Cost20").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty21").html( parseFloat( $("#Quantity21").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost21").html( parseFloat( $("#Cost21").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty22").html( parseFloat( $("#Quantity22").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost22").html( parseFloat( $("#Cost22").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty23").html( parseFloat( $("#Quantity23").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost23").html( parseFloat( $("#Cost23").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty24").html( parseFloat( $("#Quantity24").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost24").html( parseFloat( $("#Cost24").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty25").html( parseFloat( $("#Quantity25").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost25").html( parseFloat( $("#Cost25").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty26").html( parseFloat( $("#Quantity26").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost26").html( parseFloat( $("#Cost26").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty27").html( parseFloat( $("#Quantity27").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost27").html( parseFloat( $("#Cost27").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty28").html( parseFloat( $("#Quantity28").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost28").html( parseFloat( $("#Cost28").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty29").html( parseFloat( $("#Quantity29").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost29").html( parseFloat( $("#Cost29").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty30").html( parseFloat( $("#Quantity30").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost30").html( parseFloat( $("#Cost30").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty31").html( parseFloat( $("#Quantity31").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost31").html( parseFloat( $("#Cost31").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty32").html( parseFloat( $("#Quantity32").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost32").html( parseFloat( $("#Cost32").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty33").html( parseFloat( $("#Quantity33").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost33").html( parseFloat( $("#Cost33").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty34").html( parseFloat( $("#Quantity34").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost34").html( parseFloat( $("#Cost34").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty35").html( parseFloat( $("#Quantity35").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost35").html( parseFloat( $("#Cost35").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty36").html( parseFloat( $("#Quantity36").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost36").html( parseFloat( $("#Cost36").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty37").html( parseFloat( $("#Quantity37").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost37").html( parseFloat( $("#Cost37").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty38").html( parseFloat( $("#Quantity38").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost38").html( parseFloat( $("#Cost38").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty39").html( parseFloat( $("#Quantity39").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost39").html( parseFloat( $("#Cost39").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty40").html( parseFloat( $("#Quantity40").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost40").html( parseFloat( $("#Cost40").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty41").html( parseFloat( $("#Quantity41").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost41").html( parseFloat( $("#Cost41").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty42").html( parseFloat( $("#Quantity42").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost42").html( parseFloat( $("#Cost42").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty43").html( parseFloat( $("#Quantity43").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost43").html( parseFloat( $("#Cost43").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty44").html( parseFloat( $("#Quantity44").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost44").html( parseFloat( $("#Cost44").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty45").html( parseFloat( $("#Quantity45").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost45").html( parseFloat( $("#Cost45").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty46").html( parseFloat( $("#Quantity46").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost46").html( parseFloat( $("#Cost46").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty47").html( parseFloat( $("#Quantity47").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost47").html( parseFloat( $("#Cost47").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty48").html( parseFloat( $("#Quantity48").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost48").html( parseFloat( $("#Cost48").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty49").html( parseFloat( $("#Quantity49").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost49").html( parseFloat( $("#Cost49").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty50").html( parseFloat( $("#Quantity50").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost50").html( parseFloat( $("#Cost50").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty51").html( parseFloat( $("#Quantity51").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost51").html( parseFloat( $("#Cost51").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty52").html( parseFloat( $("#Quantity52").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost52").html( parseFloat( $("#Cost52").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty53").html( parseFloat( $("#Quantity53").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost53").html( parseFloat( $("#Cost53").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty54").html( parseFloat( $("#Quantity54").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost54").html( parseFloat( $("#Cost54").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty55").html( parseFloat( $("#Quantity55").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost55").html( parseFloat( $("#Cost55").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty56").html( parseFloat( $("#Quantity56").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost56").html( parseFloat( $("#Cost56").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty57").html( parseFloat( $("#Quantity57").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost57").html( parseFloat( $("#Cost57").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty58").html( parseFloat( $("#Quantity58").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost58").html( parseFloat( $("#Cost58").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty59").html( parseFloat( $("#Quantity59").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost59").html( parseFloat( $("#Cost59").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty60").html( parseFloat( $("#Quantity60").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost60").html( parseFloat( $("#Cost60").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty61").html( parseFloat( $("#Quantity61").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost61").html( parseFloat( $("#Cost61").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty62").html( parseFloat( $("#Quantity62").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost62").html( parseFloat( $("#Cost62").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty63").html( parseFloat( $("#Quantity63").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost63").html( parseFloat( $("#Cost63").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty64").html( parseFloat( $("#Quantity64").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost64").html( parseFloat( $("#Cost64").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty65").html( parseFloat( $("#Quantity65").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost65").html( parseFloat( $("#Cost65").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty66").html( parseFloat( $("#Quantity66").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost66").html( parseFloat( $("#Cost66").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty67").html( parseFloat( $("#Quantity67").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost67").html( parseFloat( $("#Cost67").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty68").html( parseFloat( $("#Quantity68").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost68").html( parseFloat( $("#Cost68").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty69").html( parseFloat( $("#Quantity69").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost69").html( parseFloat( $("#Cost69").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty70").html( parseFloat( $("#Quantity70").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost70").html( parseFloat( $("#Cost70").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty71").html( parseFloat( $("#Quantity71").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost71").html( parseFloat( $("#Cost71").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty72").html( parseFloat( $("#Quantity72").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost72").html( parseFloat( $("#Cost72").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty73").html( parseFloat( $("#Quantity73").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost73").html( parseFloat( $("#Cost73").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty74").html( parseFloat( $("#Quantity74").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost74").html( parseFloat( $("#Cost74").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty75").html( parseFloat( $("#Quantity75").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost75").html( parseFloat( $("#Cost75").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty76").html( parseFloat( $("#Quantity76").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost76").html( parseFloat( $("#Cost76").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty77").html( parseFloat( $("#Quantity77").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost77").html( parseFloat( $("#Cost77").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty78").html( parseFloat( $("#Quantity78").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost78").html( parseFloat( $("#Cost78").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty79").html( parseFloat( $("#Quantity79").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost79").html( parseFloat( $("#Cost79").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty80").html( parseFloat( $("#Quantity80").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost80").html( parseFloat( $("#Cost80").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty81").html( parseFloat( $("#Quantity81").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost81").html( parseFloat( $("#Cost81").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty82").html( parseFloat( $("#Quantity82").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost82").html( parseFloat( $("#Cost82").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty83").html( parseFloat( $("#Quantity83").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost83").html( parseFloat( $("#Cost83").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty84").html( parseFloat( $("#Quantity84").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost84").html( parseFloat( $("#Cost84").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty85").html( parseFloat( $("#Quantity85").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost85").html( parseFloat( $("#Cost85").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty86").html( parseFloat( $("#Quantity86").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost86").html( parseFloat( $("#Cost86").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+    $("#TQty87").html( parseFloat( $("#Quantity87").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+    $("#TCost87").html( parseFloat( $("#Cost87").val() ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') );
+
+
+
+    var OverallTotalCost = parseFloat($("#OverallTotalCost1").val()) + parseFloat($("#OverallTotalCost2").val());
+    $("#OverallTotalCost").html(parseFloat( OverallTotalCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+    if( OverallTotalCost < 1000000){
+        OverheadCost = OverallTotalCost * 0.20;
+        $("#OverheadProfit").html('20%');
+    }
+    else{
+        OverheadCost = OverallTotalCost * 0.10;
+        $("#OverheadProfit").html('10%');
+    }
+    $("#OverheadTotalCost").html(parseFloat( OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+    $("#GrandTotalCost").html(parseFloat( OverallTotalCost + OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+
 
     function computeAndDisplayOverallTotal(){
-        var overAllTotal = parseFloat( parseFloat($("#totalGeneralReq1").val()) ) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
+        var overAllTotal = parseFloat($("#totalGeneralReq1").val()) ; // + parseFloat($("#ColumnTotalCost1").val()) + parseFloat($("#FootingTotalCost1").val()) + parseFloat($("#SlabTotalCost1").val()) + parseFloat($("#BeamTotalCost1").val())  );
+        var OverheadProfit;
+        if(overAllTotal < 1000000){
+            OverheadProfit = 0.20;
+            var OverheadCost = overAllTotal * OverheadProfit;
+            $("#OverheadProfit").html('20%');
+        }
+        else{
+            OverheadProfit = 0.10;
+            var OverheadCost = overAllTotal * OverheadProfit;
+            $("#OverheadProfit").html('10%');
+        }
 
-        $("#OverallTotalCost").html(parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
-        $("#OverallTotalCost1").val(parseFloat(overAllTotal));
+        $("#OverallTotalCost").html(parseFloat( overAllTotal ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        $("#OverheadTotalCost").html(parseFloat( OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        $("#GrandTotalCost").html(parseFloat( overAllTotal + OverheadCost ).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        
+        $("#OverallTotalCost1").val( overAllTotal );
+        $("#OverheadTotalCost1").val( OverheadCost );
+        $("#GrandTotalCost1").val( overAllTotal + OverheadCost );
+        //parseFloat(overAllTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
     }
 
     var searchValues = function (X1,Y1,Work1){
@@ -5287,6 +5513,43 @@
 
         computeAndDisplayOverallTotal();
     });
+
+    $("#CHBCompute").click(function() {
+        var totalPcs4;
+        var total4;
+        var totalPcs5;
+        var total5;
+        $("#CHBArea").val( parseFloat($("#CHBWidth").val()) + parseFloat($("#CHBLength").val()) );
+        var CHBLayers = parseFloat($("#CHBWidth").val()) / 0.20;
+        var CHBLength = parseFloat($("#CHBLength").val()) / 0.40;
+        var CHBPcs = CHBLayers * CHBLength;
+        var EstiCHB = DirectCountingEsti( CHBPcs , $("#CHBSize").val() );
+        var total = EstiCHB.totals;
+        if($("#CHBSize").val() == 15){
+            totalPcs5 += CHBPcs;
+            totalCost5 += total;
+            $("#CHBMortarWidth").val(0.15);
+            $("#CHBMortarVolume").val( parseFloat($("#CHBArea").val()) * 0.15 );
+            $("#MasonryCHB1Qty").html( parseFloat(totalPcs5).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+            $("#MasonryCHB1Cost").html( parseFloat(total5).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        }
+        else if($("#CHBSize").val() == 16){
+            totalPcs4 += CHBPcs;
+            total4 += total;
+            $("#CHBMortarWidth").val(0.10);
+            $("#CHBMortarVolume").val( parseFloat($("#CHBArea").val()) * 0.10 );
+            $("#MasonryCHB2Qty").html( parseFloat(totalPcs4) .toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+            $("#MasonryCHB2Cost").html( parseFloat(total4) .toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+        }
+        $("#CHBPlasterVolume").val( parseFloat($("#CHBPlasterThickness").val()) * parseFloat($("#CHBArea").val()) );
+            
+        var EstiConcretes1 = ConcreteEsti($("#CHBWallNo").val(),$("#CHBMortarVolume").val(),1,$("#CHBMortarMixture").val(),1);
+        var EstiConcretes2 = ConcreteEsti($("#CHBWallNo").val(),0.003,1,$("#CHBMortarMixture").val(),1);
+        var EstiConcretes3 = ConcreteEsti($("#CHBWallNo").val(),$("#CHBPlasterVolume").val(),1,$("#CHBPlasterMixture").val(),1);
+        
+        
+    });
+
 /*
     $("#ComputeElectricalWorks").click(function(){
         if($("#ElectricalWorksMaterial").val()==43){
