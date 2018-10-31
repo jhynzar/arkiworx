@@ -799,6 +799,7 @@ class ReportsController extends Controller
 
             //progress compute
             $overallProgress = 0;
+            $today = new \DateTime('today'); //for date comparison in computation of delay and overdue
             foreach($projectPhases as $phase){
                 //overall progress accumulative adding
                 $overallProgress += $phase->intProgress;
@@ -810,23 +811,19 @@ class ReportsController extends Controller
 
                     $phase->delayDays = ($actualStart > $estimatedStart) ? date_diff($estimatedStart,$actualStart)->days : 0;
                 } else {
-                    $phase->delayDays = 0;
+                    $phase->delayDays = ($today > $estimatedStart) ? date_diff($estimatedStart,$today)->days : 0;
                 }
 
                 //overdue computation
                 if(
-                    $phase->dtmActualStart != null &&
                     $phase->dtmActualEnd != null
                 ){
                     $estimatedEnd = new \DateTime($phase->dtmEstimatedEnd);
                     $actualEnd = new \DateTime($phase->dtmActualEnd);
 
-                    $scheduleEstimatedDaysRange = date_diff($estimatedStart,$estimatedEnd)->days;
-                    $scheduleActualDaysRange = date_diff($actualStart,$actualEnd)->days;
-
-                    $phase->overdueDays = ($scheduleActualDaysRange > $scheduleEstimatedDaysRange) ? $scheduleActualDaysRange - $scheduleEstimatedDaysRange : 0;
+                    $phase->overdueDays = ($actualEnd > $estimatedEnd) ? date_diff($estimatedEnd,$actualEnd)->days : 0;
                 } else {
-                    $phase->overdueDays = 0;
+                    $phase->overdueDays = ($today > $estimatedEnd) ? date_diff($estimatedEnd,$today)->days : 0;
                 }
                 
             }
@@ -842,24 +839,20 @@ class ReportsController extends Controller
     
                 $projectSchedule->delayDays = ($actualStart > $estimatedStart) ? date_diff($estimatedStart,$actualStart)->days : 0;
             } else {
-                $projectSchedule->delayDays = 0;
+                $projectSchedule->delayDays = ($today > $estimatedStart) ? date_diff($estimatedStart,$today)->days : 0;
             }
            
 
             //overdue computation
             if(
-                $projectSchedule->dtmActualStart != null &&
                 $projectSchedule->dtmActualEnd != null
             ){
                 $estimatedEnd = new \DateTime($projectSchedule->dtmEstimatedEnd);
                 $actualEnd = new \DateTime($projectSchedule->dtmActualEnd);
 
-                $scheduleEstimatedDaysRange = date_diff($estimatedStart,$estimatedEnd)->days;
-                $scheduleActualDaysRange = date_diff($actualStart,$actualEnd)->days;
-
-                $projectSchedule->overdueDays = ($scheduleActualDaysRange > $scheduleEstimatedDaysRange) ?  $scheduleActualDaysRange - $scheduleEstimatedDaysRange : 0;
+                $projectSchedule->overdueDays = ($actualEnd > $estimatedEnd) ? date_diff($estimatedEnd,$actualEnd)->days : 0;
             } else {
-                $projectSchedule->overdueDays = 0;
+                $projectSchedule->overdueDays = ($today > $estimatedEnd) ? date_diff($estimatedEnd,$today)->days : 0;
             }
             
 
@@ -878,8 +871,9 @@ class ReportsController extends Controller
         $overallDelay = 0;
         $overallOverdue = 0;
         foreach($allProjectSchedulesWithPhases as $schedule){
-            $overallDelay += $schedule->scheduleDetails->delayDays;
-            $overallOverdue += $schedule->scheduleDetails->overdueDays;
+            //hindi kasama yung schedule
+            //$overallDelay += $schedule->scheduleDetails->delayDays;
+            //$overallOverdue += $schedule->scheduleDetails->overdueDays;
             foreach($schedule->schedulePhases as $phase){
                 $overallDelay += $phase->delayDays;
                 $overallOverdue += $phase->overdueDays;
