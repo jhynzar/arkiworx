@@ -858,7 +858,8 @@
                 var start;
                 var end;
                 var delay;
-                var overdue;
+                var overdue_start;
+                var overdue_end;
 
                 /* ===[GETTING DETAILS]=== */
 
@@ -900,23 +901,28 @@
 
                 /* ===[END] END=== */
 
-                /* ===[OVERDUE]=== */
+                /* ===[OVERDUE_start]=== */
+                overdue_start = new Date(estimatedEnd);
+                /* ===[OVERDUE_start] END=== */
+
+
+                /* ===[OVERDUE_end]=== */
 
                 //if overdue is null, where should I be?
                 if (actualEnd == null) {
                     //if today is less than end of task, overdue will be at the end
                     if ((new Date()).getTime() < end.getTime()) {
-                        overdue = new Date(end);
+                        overdue_end = new Date(end);
                     } else {
                         //else overdue is today
-                        overdue = new Date();
+                        overdue_end = new Date();
                     }
                 } else {
                     //else if there is an actual end, set it
-                    overdue = new Date(actualEnd);
+                    overdue_end = new Date(actualEnd);
                 }
 
-                /* ===[OVERDUE] END=== */
+                /* ===[OVERDUE_end] END=== */
 
 
 
@@ -927,7 +933,8 @@
                 start = formatDate(start);
                 end = formatDate(end);
                 delay = formatDate(delay);
-                overdue = formatDate(overdue);
+                overdue_start = formatDate(overdue_start);
+                overdue_end = formatDate(overdue_end);
 
                 task = {
                     start: start,
@@ -937,7 +944,8 @@
                     custom_class: projectCustomClasses,
                     progress: projectProgress,
                     delay: delay,
-                    overdue: overdue, //code: if first is null/undefined, then assign second value
+                    overdue_start: overdue_start,
+                    overdue_end: overdue_end, //code: if first is null/undefined, then assign second value
                 };
             } //========IF DEPENDENT
             else {
@@ -955,7 +963,8 @@
                 var start;
                 var end;
                 var delay;
-                var overdue;
+                var overdue_start;
+                var overdue_end;
 
                 /* ===[GETTING DETAILS]=== */
 
@@ -996,7 +1005,7 @@
                     if (parentSchedule.scheduleDetails['dtmActualEnd'] == null) {
                         //My temporary ActualStartDate is my dependency Overdue
                         //set the start to the overdue of the parent
-                        start = addDate(new Date(parentTask.overdue), dateDifference(new Date(parentSchedule.scheduleDetails['dtmEstimatedEnd']), new Date(estimatedStart)));
+                        start = addDate(new Date(parentTask.overdue_end), dateDifference(new Date(parentSchedule.scheduleDetails['dtmEstimatedEnd']), new Date(estimatedStart)));
                     } else {
                         //if already done, IM FREE. actual Start is today!
                         start = new Date();
@@ -1025,23 +1034,27 @@
 
                 /* ===[END] END=== */
 
-                /* ===[OVERDUE]=== */
+                /* ===[OVERDUE_start]=== */
+                overdue_start = new Date(estimatedEnd);
+                /* ===[OVERDUE_start] END=== */
+
+                /* ===[OVERDUE_end]=== */
 
                 //if overdue is null, where should I be?
                 if (actualEnd == null) {
                     //if today is less than end of task, overdue will be at the end
                     if ((new Date()).getTime() < end.getTime()) {
-                        overdue = new Date(end);
+                        overdue_end = new Date(end);
                     } else {
                         //else overdue is today
-                        overdue = new Date();
+                        overdue_end = new Date();
                     }
                 } else {
                     //else if there is an actual end, set it
-                    overdue = new Date(actualEnd);
+                    overdue_end = new Date(actualEnd);
                 }
 
-                /* ===[OVERDUE] END=== */
+                /* ===[OVERDUE_end] END=== */
 
 
 
@@ -1052,7 +1065,8 @@
                 start = formatDate(start);
                 end = formatDate(end);
                 delay = formatDate(delay);
-                overdue = formatDate(overdue);
+                overdue_start = formatDate(overdue_start);
+                overdue_end = formatDate(overdue_end);
 
                 task = {
                     start: start, //code: if first is null/undefined, then assign second value ; For Delay
@@ -1062,7 +1076,8 @@
                     custom_class: projectCustomClasses,
                     progress: projectProgress,
                     delay: delay,
-                    overdue: overdue, //code: if first is null/undefined, then assign second value
+                    overdue_start: overdue_start,
+                    overdue_end: overdue_end, //code: if first is null/undefined, then assign second value
                     dependencies: [allProjectSchedules[x].scheduleDetails['intDependencyScheduleId']]
                 };
             }
@@ -1104,19 +1119,22 @@
                 var start;
                 var end;
                 var delay;
-                var overdue;
+                var overdue_start;
+                var overdue_end;
 
                 //setting up
                 start = new Date(estimatedStart);
                 end = new Date(estimatedEnd);
                 delay = new Date(estimatedStart);
-                overdue = new Date(estimatedEnd);
+                overdue_start = new Date(estimatedEnd);
+                overdue_end = new Date(estimatedEnd);
 
                 //format date
                 start = formatDate(start);
                 end = formatDate(end);
                 delay = formatDate(delay);
-                overdue = formatDate(overdue);
+                overdue_start = formatDate(overdue_start);
+                overdue_end = formatDate(overdue_end);
 
                 task = {
                     start: start,
@@ -1126,7 +1144,8 @@
                     custom_class: projectCustomClasses,
                     progress: projectProgress,
                     delay: delay,
-                    overdue: overdue, //code: if first is null/undefined, then assign second value
+                    overdue_start: overdue_start,
+                    overdue_end: overdue_end, //code: if first is null/undefined, then assign second value
                 };
             } //========IF DEPENDENT
             else {
@@ -1144,19 +1163,22 @@
                 var start;
                 var end;
                 var delay;
-                var overdue;
+                var overdue_start;
+                var overdue_end;
 
                 //setting up
                 start = new Date(estimatedStart);
                 end = new Date(estimatedEnd);
                 delay = new Date(estimatedStart);
-                overdue = new Date(estimatedEnd);
+                overdue_start = new Date(estimatedEnd);
+                overdue_end = new Date(estimatedEnd);
 
                 //format date
                 start = formatDate(start);
                 end = formatDate(end);
                 delay = formatDate(delay);
-                overdue = formatDate(overdue);
+                overdue_start = formatDate(overdue_start);
+                overdue_end = formatDate(overdue_end);
 
                 task = {
                     start: start, //code: if first is null/undefined, then assign second value ; For Delay
@@ -1166,7 +1188,8 @@
                     custom_class: projectCustomClasses,
                     progress: projectProgress,
                     delay: delay,
-                    overdue: overdue, //code: if first is null/undefined, then assign second value
+                    overdue_start: overdue_start,
+                    overdue_end: overdue_end, //code: if first is null/undefined, then assign second value
                     dependencies: [allProjectSchedules[x].scheduleDetails['intDependencyScheduleId']]
                 };
             }

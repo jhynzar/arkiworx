@@ -398,6 +398,7 @@ var Gantt = (function () {
             this.x = this.compute_x();
             this.y = this.compute_y();
             this.x_delay = this.compute_x_delay(); /* added */
+            this.x_overdue_start = this.compute_x_overdue_start(); /* added */
             this.corner_radius = this.gantt.options.bar_corner_radius;
             this.duration =
                 date_utils.diff(this.task._end, this.task._start, 'hour') /
@@ -411,7 +412,7 @@ var Gantt = (function () {
             this.delay_width = this.gantt.options.column_width * this.delay_duration;
 
             this.overdue_duration =
-                date_utils.diff(this.task._overdue, this.task._start, 'hour') /
+                date_utils.diff(this.task._overdue_end, this.task._overdue_start, 'hour') /
                 this.gantt.options.step;
             this.overdue_width = this.gantt.options.column_width * this.overdue_duration;
             /* [added] end */
@@ -483,8 +484,8 @@ var Gantt = (function () {
         }
         draw_overdue_bar() {
             this.$bar_overdue = createSVG('rect', {
-                x: this.x,
-                y: this.y,
+                x: this.x_overdue_start,
+                y: this.y + 5, /* added */
                 width: this.overdue_width,
                 height: this.height,
                 rx: this.corner_radius,
@@ -761,6 +762,22 @@ var Gantt = (function () {
     
             if (this.gantt.view_is('Month')) {
                 const diff = date_utils.diff(task_delay, gantt_start, 'day');
+                x = diff * column_width / 30;
+            }
+            return x;
+        }
+        /* added end */
+        /* added */
+        compute_x_overdue_start() {
+            const { step, column_width } = this.gantt.options;
+            const task_overdue_start = this.task._overdue_start;
+            const gantt_start = this.gantt.gantt_start;
+    
+            const diff = date_utils.diff(task_overdue_start, gantt_start, 'hour');
+            let x = diff / step * column_width;
+    
+            if (this.gantt.view_is('Month')) {
+                const diff = date_utils.diff(task_overdue_start, gantt_start, 'day');
                 x = diff * column_width / 30;
             }
             return x;
@@ -1108,7 +1125,8 @@ var Gantt = (function () {
                 task._end = date_utils.parse(task.end);
 
                 /* [added] */
-                task._overdue = date_utils.parse(task.overdue);
+                task._overdue_start = date_utils.parse(task.overdue_start);
+                task._overdue_end = date_utils.parse(task.overdue_end);
                 task._delay = date_utils.parse(task.delay);
                 /* [added] end */
 
@@ -1142,9 +1160,13 @@ var Gantt = (function () {
                     task._end = date_utils.add(task._end, 24, 'hour');
                 }
                 /* [added] */
-                const task_overdue_values = date_utils.get_date_values(task._overdue);
-                if (task_overdue_values.slice(3).every(d => d === 0)) {
-                    task._overdue = date_utils.add(task._overdue, 24, 'hour');
+                const task_overdue_start_values = date_utils.get_date_values(task._overdue_start);
+                if (task_overdue_start_values.slice(3).every(d => d === 0)) {
+                    task._overdue_start = date_utils.add(task._overdue_start, 24, 'hour');
+                }
+                const task_overdue_end_values = date_utils.get_date_values(task._overdue_end);
+                if (task_overdue_end_values.slice(3).every(d => d === 0)) {
+                    task._overdue_end = date_utils.add(task._overdue_end, 24, 'hour');
                 }
                 /* never mind adding 24 hour value in delay */
                 /*
