@@ -407,7 +407,7 @@ var Gantt = (function () {
 
             /* [added] */
             this.delay_duration = 
-                date_utils.diff(this.task._end, this.task._delay, 'hour') /
+                date_utils.diff(this.task._start, this.task._delay, 'hour') /
                 this.gantt.options.step;
             this.delay_width = this.gantt.options.column_width * this.delay_duration;
 
@@ -454,8 +454,8 @@ var Gantt = (function () {
 
         draw() {
             /* [added] */
-            this.draw_delay_bar();
             this.draw_overdue_bar();
+            this.draw_delay_bar();
             /* [added] end */
             this.draw_bar();
             this.draw_progress_bar();
@@ -467,7 +467,7 @@ var Gantt = (function () {
         draw_delay_bar() {
             this.$bar_delay = createSVG('rect', {
                 x: this.x_delay,
-                y: this.y,
+                y: this.y - 5,
                 width: this.delay_width,
                 height: this.height,
                 rx: this.corner_radius,
