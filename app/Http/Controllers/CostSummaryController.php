@@ -18,6 +18,7 @@ class CostSummaryController extends Controller
         //getting project details
         $project = DB::table('tblproject')
                 ->where('intProjectId','=',$id)
+                ->where('tblproject.intActive','=',1)
                 ->first();
             
         $materialEstimates = DB::table('tblmaterialestimates')

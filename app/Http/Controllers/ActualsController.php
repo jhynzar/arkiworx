@@ -20,6 +20,7 @@ class ActualsController extends Controller
         //getting project details
         $project = DB::table('tblproject')
                 ->where('strProjectStatus','=','on going')
+                ->where('tblproject.intActive','=',1)
                 ->where('intProjectId','=',$id)
                 ->first();
             

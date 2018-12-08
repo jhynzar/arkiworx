@@ -22,6 +22,7 @@ class CostEstimationsController extends Controller
             ->join('tblemployee','tblemployee.intEmployeeId','=','tblproject.intEmployeeId')
             ->where('tblproject.intEmployeeId','=',Auth::user()->id)//EMPLOYEE ID
             ->where('tblproject.strProjectStatus','=','pending')
+            ->where('tblproject.intActive','=',1)
             ->orderBy('tblproject.intProjectId','desc')
             ->get();
 
@@ -289,6 +290,7 @@ class CostEstimationsController extends Controller
 
         $project =  DB::table('tblproject')
                     ->where('intProjectId','=',$id)
+                    ->where('tblproject.intActive','=',1)
                     ->first();
 
         return view('Engineer/cost-estimation-computation',compact('AnswersArray','project','MaterialArray','TemplateArray1','TemplateArray2','TemplateArray3','TemplateArray4'));
@@ -1312,6 +1314,7 @@ class CostEstimationsController extends Controller
         // update project status
         DB::table('tblproject')
         ->where('tblproject.intProjectId','=',$id)
+        ->where('tblproject.intActive','=',1)
         ->update(['strProjectStatus' => 'for approval']);
 
         //refresh
