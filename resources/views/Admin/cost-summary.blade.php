@@ -408,7 +408,11 @@
                                                                                 ($projectRequirement->intWorkCategoryId == $workCategory->intWorkCategoryId)
                                                                             )
                                                                                 <tr>
-                                                                                    <td>{{$keyProjectRequirement+1}}</td>
+                                                                                    <td>
+                                                                                        @if($projectRequirement->decActualPrice > $projectRequirement->decEstimatedPrice)
+                                                                                            <h1><i class="icon icon-flag text-danger m-20"></i></h1>
+                                                                                        @endif
+                                                                                    </td>
 
                                                                                     <td>{{$projectRequirement->strDesc}}</td>
                                                                                     <td class="text-center " style="background-color: coral;  color: black !important">-</td>
@@ -469,7 +473,7 @@
                                                                             ($costSummary->actual->materialActualsDetails->intWorkSubCategoryId == $workSubCategory->intWorkSubCategoryId)
                                                                         )
                                                                             <tr>
-                                                                                <td>{{$keyCostSummary+1}}</td>
+                                                                                <td><h1><i class="icon icon-flag text-danger m-20"></i></h1></td>
 
                                                                                 <td>{{$costSummary->actual->materialActualsDetails->strMaterialName}}</td>
                                                                                 <td class="text-center " style="background-color: coral;  color: black !important">-</td>
@@ -492,7 +496,7 @@
                                                                         )
                                                                             <tr>
 
-                                                                                <td>{{$keyCostSummary+1}}</td>
+                                                                                <td></td>
 
                                                                                 <td>{{$costSummary->estimate->strMaterialName}}</td>
                                                                                 <td class="text-center " style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decQty,2)}}</td>
@@ -516,7 +520,11 @@
                                                                         )
                                                                         <tr>
 
-                                                                            <td>{{$keyCostSummary+1}}</td>
+                                                                            <td>
+                                                                                @if( $costSummary->actual->materialActualsTotals->totalCost > $costSummary->estimate->decCost )
+                                                                                    <h1><i class="icon icon-flag text-danger m-20"></i></h1>
+                                                                                @endif
+                                                                            </td>
 
                                                                             <td>{{$costSummary->estimate->strMaterialName}}</td>
                                                                             <td class="text-center " style="background-color: coral;  color: black !important">{{number_format($costSummary->estimate->decQty,2)}}</td>
@@ -574,9 +582,14 @@
                                         <table class="table m-b-0 photo-table">
                                             <thead>
                                                 <tr class="text-uppercase">
-                                                    <th class="text-left text-primary">TOTALS:</th>
+                                                    <th class="text-left text-primary">TOTALS:
+                                                        @if($totalActualsCost > $totalEstimatedCost)
+                                                            <i class="icon icon-flag text-danger m-20"></i>
+                                                        @endif
+                                                    </th>
                                                     <th class="text-center"></th>
-
+                                                                            
+                                                    
 
                                                     <th class="text-center text-primary"> {{number_format($totalEstimatedCost,2)}}</th>
                                                     <th class="text-center text-primary">{{number_format($totalActualsCost,2)}}</th>

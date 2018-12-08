@@ -87,6 +87,7 @@ class ProjectsController extends Controller
         $engineers = DB::table('tblaccounts')
                     ->join('tblemployee','tblaccounts.id','=','tblemployee.intAccountId')
                     ->where('tblaccounts.strUserType','=','Engineer')
+                    ->where('tblaccounts.intActive','=',1)
                     ->get();
 
 
@@ -591,7 +592,7 @@ class ProjectsController extends Controller
             }
         }*/
         //dd($projectCostSummary);
-        return view('Engineer/cost-summary',compact(
+        return view('Admin/cost-summary',compact(
             'projectCostSummary',
             'projectWorkCategories',
             'projectWorkSubCategories',

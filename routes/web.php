@@ -42,6 +42,8 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('Admin/Accounts', 'AccountsController@accounts');
 
+        Route::post('Admin/Accounts/{id}/Delete', 'AccountsController@delete');
+
         Route::post('Admin/Add-User', 'AccountsController@addusers');
 
         Route::get('Admin/Profile', function(){ 
