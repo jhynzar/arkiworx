@@ -198,13 +198,13 @@
             <br>
             <br>
             <div class="f-left image">
-                <img src="/assets/images/erwin.jpg" alt="User Image" class="img-circle">
+                <img src="/assets/images/avatar-2.png" alt="User Image" class="img-circle">
             </div>
             <div class="f-left info">
                 <br>
                 <br>
                 <p>
-                    <b>Erwin</b>
+                    <b> {{session("fname")}}</b>
                 </p>
                 <p class="designation">
                     <span class="text-info">
