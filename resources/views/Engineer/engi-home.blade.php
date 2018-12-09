@@ -476,7 +476,7 @@
                                         <h5 class="city-cloud">Hot &amp; Sunny</h5>
                                     </div>
                                     <div>
-                                        <h6 class="cloud-date">Today, 7th Aug 2018</h6>
+                                        <h6 class="cloud-date">Today, 17th Oct 2018</h6>
                                         <div class="cloud-speed">
                                             <i class="icofont icofont-social-cloudapp"></i>
                                             <span>57
@@ -1051,5 +1051,5 @@
 
     </div>
 
-    <label class="text text-muted" style="position: absolute; margin-top: -640px; margin-left: 250px">Quick View</label>
+    <label class="text text-muted" style="position: absolute; margin-top: -580px; margin-left: 250px">Quick View</label>
 @endsection

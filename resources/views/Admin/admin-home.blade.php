@@ -519,7 +519,7 @@
                                         <h5 class="city-cloud">Hot &amp; Sunny</h5>
                                     </div>
                                     <div>
-                                        <h6 class="cloud-date">Today, 7th Aug 2018</h6>
+                                        <h6 class="cloud-date">Today, 17th Oct 2018</h6>
                                         <div class="cloud-speed">
                                             <i class="icofont icofont-social-cloudapp"></i>
                                             <span>57
