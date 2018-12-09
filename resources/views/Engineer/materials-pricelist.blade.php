@@ -468,6 +468,9 @@
                
                 <button type="button" id="reports" class="btn btn-primary waves-effect waves-light" style="position: absolute; margin-left: -610px; margin-top: 110px">
                     <i class="icon-eye"> </i>Show Reports</button>
+                 <button type="button" data-toggle="modal" data-target="#reportDateModal" class="btn btn-primary waves-effect waves-light" >
+                    <i class="icon-plus"> </i>modal</button>
+                
             </div>
             <div class="col-sm-3 pull-right">
                <br> <br> <br>
@@ -724,6 +727,83 @@
             </div>
         </div>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="modal fade" id="reportDateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content pull-center">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        <h4 class="modal-title" id="myModalLabel">
+                                                            <span class="label label-info">Materials Report Date</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="modal-body" style="background: #e5e5f2 !important; ">
+
+
+
+
+
+
+
+                                                        <form action="" method="POST">
+                                                            
+                                                          
+                                                            <input name="materialIdToUpdate" type="hidden" value={{$material->intMaterialId}}>
+                                                            
+                                                          
+                                                            <div class="form-group form-inline pull-center text-center">
+                                                                <label for="">Date as of:</label> &nbsp;
+                                                               <select class="form-control" style="width: 200px">
+                                                                   <option selected> 12/8/18 </option>
+                                                                   <option> 12/7/18</option>
+                                                                </select>
+                                                            </div>
+
+
+                                                            <div class="modal-footer">
+
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 260px">
+                                                                    <i class="icon icon-close"> </i>Cancel</button>
+
+                                                            </div>
+                                                        </form>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     <!-- delete material modal -->
