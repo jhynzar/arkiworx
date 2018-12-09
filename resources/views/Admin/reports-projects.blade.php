@@ -8,11 +8,11 @@
 <div class="container">
    <div class="col-sm-6 col-xs-12 waves-effect waves-light">
             <div class="grid-material">
-                <h6 class="text text-primary"> <u>Highest Paying Projects</u> </h6>
+                <h6 class="text text-default"> <u>Highest Paying Projects</u> </h6>
                 
-                <table class="table table-striped">
-  <thead>
-    <tr>
+                <table class="table table-bordered">
+  <thead style="background-color: #000000">
+    <tr class="text text-primary">
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
@@ -54,11 +54,10 @@
     
     <div class="col-sm-6 col-xs-12 waves-effect waves-light">
             <div class="grid-material">
-                <h6 class="text text-primary"> <u>Delayed Projects - Month</u> </h6>
-                
-                <table class="table table-striped">
-  <thead>
-    <tr>
+                <h6 class="text text-default"> <u>Delayed Projects - Month</u> </h6>
+                <table class="table table-bordered">
+  <thead style="background-color: #000000">
+    <tr class="text text-primary">
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
@@ -94,11 +93,11 @@
     
     <div class="col-sm-6 col-xs-12 waves-effect waves-light">
             <div class="grid-material">
-                <h6 class="text text-primary"> <u>Delayed Projects - Week</u> </h6>
+                <h6 class="text text-default"> <u>Delayed Projects - Week</u> </h6>
                 
-                <table class="table table-striped">
-  <thead>
-    <tr>
+               <table class="table table-bordered">
+  <thead style="background-color: #000000">
+    <tr class="text text-primary">
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
@@ -134,11 +133,11 @@
     
     <div class="col-sm-6 col-xs-12 waves-effect waves-light">
             <div class="grid-material">
-                <h6 class="text text-primary"> <u>Pending Projects</u> </h6>
+                <h6 class="text text-default"> <u>Pending Projects</u> </h6>
                 
-                <table class="table table-striped">
-  <thead>
-    <tr>
+            <table class="table table-bordered">
+  <thead style="background-color: #000000">
+    <tr class="text text-primary">
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
@@ -172,11 +171,11 @@
     
     <div class="col-sm-12 col-xs-12 waves-effect waves-light">
             <div class="grid-material">
-                <h6 class="text text-primary"> <u>On-going Projects</u> </h6>
+                <h6 class="text text-default"> <u>On-going Projects</u> </h6>
                 
-                <table class="table table-striped">
-  <thead>
-    <tr>
+                <table class="table table-bordered">
+  <thead style="background-color: #000000">
+    <tr class="text text-primary">
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
@@ -212,11 +211,11 @@
     
     <div class="col-sm-6 col-xs-12 waves-effect waves-light">
             <div class="grid-material">
-                <h6 class="text text-primary"> <u>Finished Projects - Month</u> </h6>
+                <h6 class="text text-default"> <u>Finished Projects - Month</u> </h6>
                 
-                <table class="table table-striped">
-  <thead>
-    <tr>
+             <table class="table table-bordered">
+  <thead style="background-color: #000000">
+    <tr class="text text-primary">
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
@@ -253,11 +252,11 @@
     
     <div class="col-sm-6 col-xs-12 waves-effect waves-light">
             <div class="grid-material">
-                <h6 class="text text-primary"> <u>Finished Projects - Week</u> </h6>
+                <h6 class="text text-default"> <u>Finished Projects - Week</u> </h6>
                 
-                <table class="table table-striped">
-  <thead>
-    <tr>
+               <table class="table table-bordered">
+  <thead style="background-color: #000000">
+    <tr class="text text-primary">
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
@@ -294,11 +293,11 @@
     
     <div class="col-sm-12 col-xs-12 waves-effect waves-light">
             <div class="grid-material">
-                <h6 class="text text-primary"> <u>Recent Finished Projects Comparison (2)</u> </h6>
+                <h6 class="text text-default"> <u>Recent Finished Projects Comparison (2)</u> </h6>
                 
-                <table class="table table-bordered">
-  <thead>
-    <tr>
+               <table class="table table-bordered">
+  <thead style="background-color: #000000">
+    <tr class="text text-primary">
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
