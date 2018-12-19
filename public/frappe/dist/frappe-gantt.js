@@ -468,7 +468,7 @@ var Gantt = (function () {
             this.$bar_delay = createSVG('rect', {
                 x: this.x_delay,
                 y: this.y - 5,
-                width: this.delay_width,
+                width: this.delay_width + 5,
                 height: this.height,
                 rx: this.corner_radius,
                 ry: this.corner_radius,
@@ -484,9 +484,9 @@ var Gantt = (function () {
         }
         draw_overdue_bar() {
             this.$bar_overdue = createSVG('rect', {
-                x: this.x_overdue_start,
+                x: this.x_overdue_start - 5,
                 y: this.y + 5, /* added */
-                width: this.overdue_width,
+                width: this.overdue_width + 5,
                 height: this.height,
                 rx: this.corner_radius,
                 ry: this.corner_radius,
