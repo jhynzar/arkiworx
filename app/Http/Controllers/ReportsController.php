@@ -878,6 +878,8 @@ class ReportsController extends Controller
         $overallDelay = 0;
         $overallOverdue = 0;
         foreach($allProjectSchedulesWithPhases as $schedule){
+            $overallDelay += $schedule->scheduleDetails->delayDays;
+            $overallOverdue += $schedule->scheduleDetails->overdueDays;
             foreach($schedule->schedulePhases as $phase){
                 $overallDelay += $phase->delayDays;
                 $overallOverdue += $phase->overdueDays;
