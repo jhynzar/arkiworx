@@ -818,8 +818,6 @@
     </script>
     <!-- FRAPPE START -->
     <script>
-
-        alert('here');
         var allProjectSchedules = {!!json_encode($allProjectSchedulesWithPhases) !!};
         
 
@@ -1090,7 +1088,6 @@
                 };
             }
 
-            console.log(actualTaskSchedules);
             actualTaskSchedules.push(task);
 
         }
