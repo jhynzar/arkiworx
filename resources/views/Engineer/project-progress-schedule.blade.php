@@ -818,6 +818,8 @@
     </script>
     <!-- FRAPPE START -->
     <script>
+
+        alert('here');
         var allProjectSchedules = {!!json_encode($allProjectSchedulesWithPhases) !!};
         
 
@@ -903,6 +905,9 @@
 
                 /* ===[OVERDUE_start]=== */
                 overdue_start = new Date(estimatedEnd);
+                if (overdue_start.getTime() > end.getTime()) {
+                    overdue_start = new Date(end);
+                }
                 /* ===[OVERDUE_start] END=== */
 
 
@@ -1036,6 +1041,9 @@
 
                 /* ===[OVERDUE_start]=== */
                 overdue_start = new Date(estimatedEnd);
+                if (overdue_start.getTime() > end.getTime()) {
+                    overdue_start = new Date(end);
+                }
                 /* ===[OVERDUE_start] END=== */
 
                 /* ===[OVERDUE_end]=== */
@@ -1082,6 +1090,7 @@
                 };
             }
 
+            console.log(actualTaskSchedules);
             actualTaskSchedules.push(task);
 
         }
