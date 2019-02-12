@@ -1066,7 +1066,7 @@
                                                         @foreach ($pendingProjectCostEstimations as $key=>$pendingProjectCostEstimation)
                                                         <tr class=@if ( ($key+1)%2==1 ) "table-info" @endif>
                                                             <td>{{$key+1}}</td>
-                                                            <td>
+                                                            <td class="text-left pull-left align-left">
                                                                 <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
                                                                 &nbsp; &nbsp; {{$pendingProjectCostEstimation->strClientName}}
                                                             </td>
