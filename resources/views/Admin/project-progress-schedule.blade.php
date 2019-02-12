@@ -372,7 +372,7 @@
                     </a>
                 </li>
 
-                <li class=" active treeview">
+                <li class="treeview">
                     <a class="waves-effect waves-dark" href="/Admin/Projects">
                         <i class="icon-book-open"></i>
                         <span> Project</span>
@@ -388,7 +388,7 @@
 
 
 
-                <li class="treeview">
+                <li class=" active treeview">
                     <a class="waves-effect waves-dark" href="/Admin/Project-Progress">
                         <i class="icon-chart"></i>
                         <span> Project Plan</span>
