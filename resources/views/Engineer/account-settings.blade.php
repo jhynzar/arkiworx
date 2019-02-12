@@ -516,7 +516,7 @@
                                     </div>
                                     <!-- end of view-info -->
                                     <!-- form cool -->
-                                    <div class="edit-info" hidden>
+                                    <div class="edit-info">
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="general-info">
@@ -642,7 +642,7 @@
                                                     </div>
                                                     <!-- end of row -->
                                                     <div class="text-center">
-                                                        <a href="#!" class="btn btn-primary waves-effect waves-light m-r-20">Save</a>
+                                                        <a href="#!" id="edit-save" class="btn btn-primary waves-effect waves-light m-r-20">Save</a>
                                                         <a href="#!" id="edit-cancel" class="btn btn-default waves-effect">Cancel</a>
                                                     </div>
                                                 </div>
@@ -681,4 +681,25 @@
     <!-- Container-fluid ends -->
 
 
+@endsection
+
+@section('script')
+    <script>
+        $('.edit-info').hide(); //set hidden as default
+    
+        $('#edit-btn').on('click', function(){
+            $('.view-info').hide();
+            $('.edit-info').show();
+        });
+
+        $('#edit-save').on('click', function(){
+            $('.edit-info').hide();
+            $('.view-info').show();
+        });
+
+        $('#edit-cancel').on('click', function(){
+            $('.edit-info').hide();
+            $('.view-info').show();
+        });
+    </script>
 @endsection
