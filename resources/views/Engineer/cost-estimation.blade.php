@@ -1,9 +1,11 @@
 @extends('layouts.master-engineer')
 @section('body')
-    <div class="loader-bg">
+    <!--  <div class="loader-bg">
         <div class="loader-bar">
         </div>
     </div>
+
+-->
     <div class="wrapper">
         <!--   <div class="loader-bg">
     <div class="loader-bar">

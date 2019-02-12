@@ -19,7 +19,7 @@
 </style>
 @endsection
 @section('body')
-    <div class="loader-bg">
+    <!--<div class="loader-bg">
         <div class="loader-bar">
         </div>
     </div>

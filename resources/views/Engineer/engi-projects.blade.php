@@ -1,8 +1,9 @@
 @extends('layouts.master-engineer') @section('body')
-<div class="loader-bg">
+<!-- <div class="loader-bg">
     <div class="loader-bar">
     </div>
 </div>
+-->
 <div class="wrapper">
     <!--   <div class="loader-bg">
     <div class="loader-bar">
@@ -415,7 +416,7 @@
                                                     @foreach($onGoingProjects as $key=>$project)
                                                     <tr class=@if($key%2==1) "table-info" @endif>
                                                         <td>{{$key+1}}</td>
-                                                        <td>
+                                                        <td class="text-left align-left pull-left">
                                                             <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl"> 
                                                             &nbsp; &nbsp; {{$project->strClientName}}
                                                         </td>

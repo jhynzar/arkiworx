@@ -15,7 +15,7 @@
 
 @section('body')
 <body class="sidebar-mini fixed">
-    <div class="loader-bg">
+  <!--  <div class="loader-bg">
         <div class="loader-bar">
         </div>
     </div>
