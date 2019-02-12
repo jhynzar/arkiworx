@@ -167,6 +167,7 @@
 <![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jqurey -->
+    <script src="assets/plugins/Jquery/dist/jquery.min.js"></script>
     <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script src="assets/plugins/tether/dist/js/tether.min.js"></script>
     <!-- Required Fremwork -->
