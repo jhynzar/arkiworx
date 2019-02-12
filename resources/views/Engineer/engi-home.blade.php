@@ -363,8 +363,7 @@
         </div>
 
 
-
-
+ 
         <div class="card">
             <div class="col-sm-6 col-xs-12">
                 <table class="table">
@@ -419,9 +418,55 @@
         </div>
 
 
+        
+           <div class="col-sm-3 col-xs-12">
+            <div class="col-sm-12 card dashboard-product">
+                <span>Materials Price Update</span>
+                <h2 class="dashboard-total-products counter">{{number_format($display->updatedMaterialPricesCount)}}</h2>
+                <span class="label label-warning">Updates</span>This week
+                <div class="side-box bg-warning">
+                    <i class="icon-note"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-3 col-xs-12">
+            <div class="col-sm-12 card dashboard-product">
+                <span>Delayed Projects</span>
+                <h2>6 </h2>
+                <span class="label label-primary">Updates</span>This week
+                <div class="side-box bg-primary">
+                    <i class="icon-map"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-3 col-xs-12">
+            <div class="col-sm-12 card dashboard-product">
+                <span>New Estimation Request</span>
+                <h2>3</h2>
+                <span class="label label-success">Updates</span>
+                <div class="side-box bg-success">
+                    <i class="icon-notebook"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-3 col-xs-12">
+            <div class="col-sm-12 card dashboard-product">
+                <span>New Project Schedule Request</span>
+               <h2>1</h2>
+                <span class="label label-danger">Updates</span>
+                <div class="side-box bg-danger">
+                    <i class="icon-clock"></i>
+                </div>
+            </div>
+        </div>
+
+        
 
         <div class="card">
-            <div class="col-sm-9 col-xs-12">
+            <div class="col-sm-12 col-xs-12">
                 <table class="table">
                     <div class="card-header" style="background-color: #222d32; color: white !important">
                         <h5> Project Plans</h5>
@@ -461,16 +506,7 @@
 
 
 
-        <div class="col-sm-3 col-xs-12">
-            <div class="col-sm-12 card dashboard-product">
-                <span>Materials Price Update</span>
-                <h2 class="dashboard-total-products counter">{{number_format($display->updatedMaterialPricesCount)}}</h2>
-                <span class="label label-warning">Updates</span>This week
-                <div class="side-box bg-warning">
-                    <i class="icon-note"></i>
-                </div>
-            </div>
-        </div>
+    
 
 
 

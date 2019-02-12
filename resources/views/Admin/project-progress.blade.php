@@ -426,7 +426,7 @@
                                                                     @foreach ($finishedProjectSchedules as $projectKey=>$project)
                                                                     <tr>
                                                                         <td>{{$projectKey + 1}}</td>
-                                                                        <td>
+                                                                        <td class="text-left align-left pull-left">
                                                                             <img src="/assets/images/avatar-2.png" class="img-circle" alt="tbl">
                                                                             &nbsp; &nbsp; {{$project->strClientName}}
                                                                         </td>
