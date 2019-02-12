@@ -516,7 +516,7 @@
                                     </div>
                                     <!-- end of view-info -->
                                     <!-- form cool -->
-                                    <div class="edit-info">
+                                    <div class="edit-info" hidden>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="general-info">
