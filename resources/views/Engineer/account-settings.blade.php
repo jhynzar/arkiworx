@@ -317,7 +317,7 @@
                         </div>
                         <div class="card-block">
                             <h4 class="f-18 f-normal m-b-10 txt-primary"> {{session("fname")}}&nbsp; {{session("lname")}}</h4>
-                            <h5 class="f-14">Admin</h5>
+                            <h5 class="f-14">Engineer</h5>
                             <p class="m-b-15">Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt
                                 ut labore et.Lorem ipsum dolor sit amet, consecte</p>
                             <ul>
