@@ -325,8 +325,8 @@
 
                 <form action="Materials-Pricelist/Create" method="POST">
                     {{ csrf_field() }}
-                    <label class="text text-muted" style="margin-left: 450px">
-                        <i>07 August 2018</i>
+                    <label class="text text-muted" style="margin-left: 400px">
+                        <i>15 February 2019</i>
                     </label>
                     <!-- current date -->
                     <br>

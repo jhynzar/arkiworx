@@ -1206,7 +1206,7 @@
 
 
 
-<div class="content-wrapper" style="margin-top: 35px">
+<div class="content-wrapper" style="margin-top: 60px">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
 
@@ -1314,15 +1314,16 @@
                                 <table class="table table-hover ">
                                     <thead>
                                         <tr>
-                                            <th style="color: black">Line Item</th>
-                                            <th style="color: black">Description</th>
-                                            <th style="color: black">Quantity</th>
-                                            <th style="color: black">Unit</th>
-                                            <th class="text-center pull-center" style="color: black">Total
-                                                <br>Unit Cost</th>
+                                            <th style="color: black" class="text-center">Line Item</th>
+                                            <th style="color: black" class="text-right">Description</th>
+                                            <th style="color: black" class="text-right">Quantity</th>
+                                            <th style="color: black" class="text-right">Unit</th>
                                             <th>
 
                                             </th>
+                                            <th class="text-left pull-center" style="color: black">Total
+                                                <br>Unit Cost</th>
+                                            
                                             <th class="text-center">
                                                 <span class="text text-info"> Action</span>
                                             </th>
@@ -1362,13 +1363,15 @@
                                                             )
                                                             <tr class="table-info">
                                                                     <td class="text-center">{{$keyProjectRequirement+1}}</td>
-                                                                    <td class="text-center">{{$projectRequirement->strDesc}}
+                                                                    <td class="text-left">{{$projectRequirement->strDesc}}
 
                                                                     </td>
-                                                                    <td class="text-left">-</td>
-                                                                    <td class="text-left">-</td>
+                                                                    <td class="text-center">-</td>
+                                                                <td class="text-left">-</td>
+                                                              
+                                                                   
                                                                     <td class="text-left">{{number_format($projectRequirement->decActualPrice,2)}}</td>
-                                                                 <td class="text-left"></td>
+                                                               
                                                                     <td class="pull-center text-center">
                                                                         <button data-toggle="modal" data-target="#updateCustomActual{{$projectRequirement->intRequirementId}}" class="btn btn btn-dark pull-right" style="background-color: #2F4F4F; color: white !important">Update</button>
 

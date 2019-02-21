@@ -1,0 +1,39 @@
+> Download the latest db (presentation.sql)
+> open XAMPP
+> Click Apache 
+> Click Mysql > Click Admin
+						//DROP AND CREATE NEW DB
+> On local host phpMyAdmin, click arkiworxdb
+> Click Operations > Click Drop the database (DROP)
+*wait*
+> Create new db name it "arkiworxdb"
+> Click "SQL" tab
+> Copy all the text from downloaded (presentation.sql)
+> Paste it on SQL text area
+> Click "Go" sa baba
+
+
+On your local						//PULL LATEST SYSTEM UPDATE
+> Go to Arkiworx Folder
+> Right click > OPEN GIT BASH HERE
+> Type "php artisan serve" > minimize the window
+> Right click again > OPEN GIT BASH HERE 
+(must be on separate bash window)
+> Type "git pull"
+> Requires password > type your password
+> minimize
+--
+
+> Open the system > type sa url "localhost:8000"
+ LOG IN
+	Admin
+		user: admin
+		pass: admin
+	Engineer
+		user: engi
+		pass: engi
+
+NOTE: practice your designated tab for presentation and feel free to
+update, edit, delete, and add. As long as ibalik nalang yung db sa dati.
+Do the step //DROP AND CREATE NEW DB
+

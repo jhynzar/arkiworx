@@ -84,10 +84,10 @@
 </head>
 
 <body class="sidebar-mini fixed">
-    <div class="loader-bg">
+   <!-- <div class="loader-bg">
         <div class="loader-bar">
         </div>
-    </div>
+    </div> -->
     <div class="wrapper">
         <!--   <div class="loader-bg">
     <div class="loader-bar">
@@ -465,7 +465,7 @@
                                         <thead>
                                             <tr>
                                                 <th style="color: black">#</th>
-                                                <th style="color: black">First Name</th>
+                                                <th style="color: black">First Name</th> <br> <br>
                                                 <th style="color: black">Last Name</th>
                                                 <th style="color: black">Username</th>
                                                 <th>
@@ -601,7 +601,7 @@
                                 <label for="mname">Middle Name:</label>
                                 <input required type="text" name="mname" class="form-control" placeholder="Middle name">
                             </div>
-<br> <br>
+<br><br>
                             <div class="form-group">
                                 <label for="lname">Last Name:</label>
                                 <input required type="text" name="lname" class="form-control" placeholder="Last name">

@@ -7,12 +7,12 @@
             table-layout: fixed;
         }
         table {
-            height: 300px;
+            height: 500px;
             display: -moz-groupbox;
         }
         tbody {
             overflow-y: scroll;
-            height: 250px;
+            height: 460px;
             width: 100%;
             position: absolute;
         }
@@ -313,7 +313,7 @@
 
 
 
-    <div class="content-wrapper" style="margin-top: 30px">
+    <div class="content-wrapper" style="margin-top: 70px">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
 
