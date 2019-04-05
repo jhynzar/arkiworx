@@ -1,0 +1,4 @@
+===IMPORT Logs===
+3:33 AM 23 Aug 2018 -> [CREATED THIS FOLDER] ACTUALS ADD FIXED , NO DUPLICATE PRICE, added test data cost esti for project 1.
+===DB SCHEMA Logs===
+3:35 AM 23 Aug 2018 -> timestamps, auto increment Id, removed qty and decCost from parent table in materialactuals
